@@ -1,0 +1,118 @@
+{
+    "PROFACE": {
+        "image": "WebHMI.jpg",
+        "title": "HMI",
+        "default_tag": "HMI_0000",
+        "color": "orange",
+        "data": {
+            "Gamme eXtrem": {
+                "12'": {
+                    "id": "PFSCR03",
+                    "generic name": "IHM 12 pouces"
+                },
+                "15'": {
+                    "id": "PFSCR04",
+                    "generic name": "IHM 15 pouces"
+                }
+            },
+            "Gamme budget": {
+                "10'": {
+                    "id": "PFSCR05",
+                    "generic name": "IHM 10 pouces"
+                },
+                "12'": {
+                    "id": "PFSCR06",
+                    "generic name": "IHM 12 pouces"
+                }
+            },
+            "Gamme premium": {
+                "12'": {
+                    "id": "PFSCR07",
+                    "generic name": "IHM 12 pouces"
+                },
+                "15'": {
+                    "id": "PFSCR08",
+                    "generic name": "IHM 15 pouces"
+                },
+                "19'": {
+                    "id": "PFSCR09",
+                    "generic name": "IHM 19 pouces"
+                }
+            }
+        }
+    },
+    "WAGO": {
+        "image": "WebHMI.jpg",
+        "title": "HMI",
+        "default_tag": "HMI_0000",
+        "color": "orange",
+        "data": {
+            "WAgo01": {
+                "13'": {
+                    "id": "wago001",
+                    "generic name": "IHM 13 pouces"
+                },
+                "17'": {
+                    "id": "wago002",
+                    "generic name": "IHM 17 pouces"
+                }
+            }
+        }
+    },
+    "Instrumentations": {
+        "image": "instrum.jpg",
+        "title": "Intrumentations",
+        "default_tag": "Sensor_0000",
+        "color": "teal",
+        "data": {
+            "capteur de pression": {
+                "simple pression": {
+                    "id": 100,
+                    "generic name": "Pressure transmitter"
+                },
+                "avec impulsion pression": {
+                    "id": 200,
+                    "generic name": "Pressure transmitter"
+                }
+            },
+            "capteur de débit": {
+                "simple débit": {
+                    "id": 300,
+                    "generic name": "Flow transmitter"
+                },
+                "hybride débit": {
+                    "id": 400,
+                    "generic name": "Flow transmitter"
+                }
+            },
+            "capteur de temperature": {
+                "simple temperature": {
+                    "id": 500,
+                    "generic name": "Temperature transmitter"
+                },
+                "hybride temperature": {
+                    "id": 600,
+                    "generic name": "Temperature transmitter"
+                }
+            }
+        }
+    },
+    "Compresseurs": {
+        "image": "compressors.jpg",
+        "title": "Compresseurs",
+        "default_tag": "CP_0000",
+        "color": "pink",
+        "data": {
+            "Kaeser": {
+                "350": {
+                    "id": 700,
+                    "generic name": "Kaeser compressor 300"
+                },
+                "450": {
+                    "id": 800,
+                    "generic name": "Kaeser compressor 400"
+                }
+            }
+        }
+    }
+}
