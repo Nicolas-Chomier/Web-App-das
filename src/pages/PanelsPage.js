@@ -21,13 +21,15 @@ const PanelsPage = () => {
   const [abstract, setAbstract] = useState("");
   //
   useEffect(() => {
-    if (abstract.length !== 0) {
+    if (abstract.length !== 0 && projectData.length !== 0) {
       navToLastPage("/last", {
         state: {
           Project: projectData,
           Elements: abstract,
         },
       });
+    } else if (abstract.length === 0) {
+      console.log("trap");
     } else {
       alert("Something wrong append, please restart application");
       // Faire qqchose pour refresh all !!

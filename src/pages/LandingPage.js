@@ -44,7 +44,7 @@ const LandingPage = () => {
   // Landing Page //
   return (
     <Grid container rowSpacing={2} alignItems="center" justify="center">
-      <Grid item md={4} xs={1}></Grid>
+      <Grid item md={4} xs={12}></Grid>
       <Grid item md={4} xs={10}>
         <TitleSection output={setText} />
       </Grid>
