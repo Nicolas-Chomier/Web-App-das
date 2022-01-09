@@ -5,6 +5,7 @@ import {
   RadioGroup,
   FormControl,
 } from "@mui/material";
+import { green, grey } from "@mui/material/colors";
 
 const RadioCustom = ({
   qty,
@@ -28,7 +29,17 @@ const RadioCustom = ({
           <FormControlLabel
             disabled={state}
             key={`rn°${i}`}
-            control={<Radio size="small" />}
+            control={
+              <Radio
+                sx={{
+                  color: grey[900],
+                  "&.Mui-checked": {
+                    color: green[600],
+                  },
+                }}
+                size="small"
+              />
+            }
             value={i}
             label={`${displayedLabel}${i}`}
             labelPlacement={position}

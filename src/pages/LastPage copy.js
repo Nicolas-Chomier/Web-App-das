@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card } from "@mui/material";
+import { Grid, Button, Card } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import RequestCards from "../components/RequestCards";
 
@@ -9,20 +9,20 @@ const LastPage = () => {
   const datas = { ...location.state };
   // Request cards content for word documentation:
   const doc = {
-    title: "Analyse fonctionnelle",
-    text: "Génère une analyse fonctionnelle au format word partiellement complétée avec les informations renseignés dans pages précedentes",
-    color: "#4169E1",
+    title: "document word",
+    text: "Analyse fonctionelle",
+    color: "#af52bf",
   };
   // Request cards content for pdf documentation:
   const pdf = {
-    title: "Demande de chiffrage",
-    text: "Génère une demande de chiffrage au format PDF formaté et prète à l'envoie pour toute demande de matériel",
+    title: "document pdf",
+    text: "demmande de chiffrage",
     color: "teal",
   };
   // Request cards content for custom documentation:
   const arch = {
-    title: "Architecture matériel",
-    text: "Génère l'architecture materiel du projet avec les elements renseignés dans pages précedentes correspondant au fabricant sélectionné.",
+    title: "document custom",
+    text: "architecture materielle",
     color: "orange",
   };
   // Function which build documentation
@@ -35,18 +35,15 @@ const LastPage = () => {
   function genDoc3(d) {
     console.log("... generation de la doc 3", d.Elements);
   }
-  // Last page //
+  //
   return (
-    <div className="grid-container-last-page">
-      <div className="head"></div>
-      <div className="leftp"></div>
-      <div className="rightp"></div>
-      <div className="r1">
+    <Grid container rowSpacing={2} alignItems="center" justify="center">
+      <Grid item md={4} xs={12}>
         <Card sx={{ maxWidth: 345 }}>
           <RequestCards title={doc.title} text={doc.text} color={doc.color} />
           <Button
             fullWidth={true}
-            sx={{ mt: "5px", mb: "8px", color: doc.color }}
+            sx={{ color: doc.color }}
             variant="text"
             onClick={() => {
               genDoc1(datas);
@@ -55,13 +52,13 @@ const LastPage = () => {
             Valider
           </Button>
         </Card>
-      </div>
-      <div className="r2">
+      </Grid>
+      <Grid item md={4} xs={12}>
         <Card sx={{ maxWidth: 345 }}>
           <RequestCards title={pdf.title} text={pdf.text} color={pdf.color} />
           <Button
             fullWidth={true}
-            sx={{ mt: "5px", mb: "8px", color: pdf.color }}
+            sx={{ color: pdf.color }}
             variant="text"
             onClick={() => {
               genDoc2(datas);
@@ -70,8 +67,8 @@ const LastPage = () => {
             Valider
           </Button>
         </Card>
-      </div>
-      <div className="r3">
+      </Grid>
+      <Grid item md={4} xs={12}>
         <Card sx={{ maxWidth: 345 }}>
           <RequestCards
             title={arch.title}
@@ -80,7 +77,7 @@ const LastPage = () => {
           />
           <Button
             fullWidth={true}
-            sx={{ mt: "5px", mb: "8px", color: arch.color }}
+            sx={{ color: arch.color }}
             variant="text"
             onClick={() => {
               genDoc3(datas);
@@ -89,9 +86,8 @@ const LastPage = () => {
             Valider
           </Button>
         </Card>
-      </div>
-      <div className="bott"></div>
-    </div>
+      </Grid>
+    </Grid>
   );
 };
 

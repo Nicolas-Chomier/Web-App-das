@@ -1,0 +1,151 @@
+@media (min-width: 876px) {
+  .grid-container-panels-page {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-areas:
+      "head head head head head "
+      "leftp p1 p2 p3 rightp"
+      "leftp p4 p5 p6 rightp"
+      "leftp tables tables tables rightp"
+      "bott bott bott bott bott";
+    grid-template-rows: 10vh auto auto auto 10vh;
+    grid-template-columns: 5vw 30vw 30vw 30vw 5vw;
+    overflow-x: hidden;
+
+    .head {
+      grid-area: head;
+      display: flex;
+      justify-content: center;
+    }
+
+    .leftp {
+      grid-area: leftp;
+      display: flex;
+    }
+
+    .rightp {
+      grid-area: rightp;
+      display: flex;
+    }
+
+    .p1 {
+      grid-area: p1;
+      display: flex;
+      margin-bottom: 2vh;
+    }
+    .p2 {
+      grid-area: p2;
+      display: flex;
+      margin-bottom: 2vh;
+    }
+    .p3 {
+      grid-area: p3;
+      display: flex;
+      margin-bottom: 2vh;
+    }
+    .p4 {
+      grid-area: p4;
+      display: flex;
+      margin-bottom: 2vh;
+    }
+    .p5 {
+      grid-area: p5;
+      display: flex;
+      margin-bottom: 2vh;
+    }
+    .p6 {
+      grid-area: p6;
+      display: flex;
+      margin-bottom: 2vh;
+    }
+    .tables {
+      grid-area: tables;
+      display: flex;
+    }
+    .bott {
+      grid-area: bott;
+      display: flex;
+    }
+
+    .MuiCard-root {
+      background-color: $main-bg-color;
+    }
+  }
+}
+@media (max-width: 875px) {
+  .grid-container-panels-page {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-areas:
+      "head head head head"
+      "leftp p1 p2 rightp"
+      "leftp p3 p4 rightp"
+      "leftp p5 p6 rightp"
+      "leftp tables tables rightp"
+      "bott bott bott bott";
+    grid-template-rows: 5vh 40vh 40vh 40vh 15vh 5vh;
+    grid-template-columns: 2vw 48vw 48vw 2vw;
+    overflow-x: hidden;
+
+    .head {
+      grid-area: head;
+      display: flex;
+      justify-content: center;
+    }
+
+    .leftp {
+      grid-area: leftp;
+      display: flex;
+    }
+
+    .rightp {
+      grid-area: rightp;
+      display: flex;
+    }
+
+    .p1 {
+      grid-area: p1;
+      display: flex;
+      margin-bottom: 1vh;
+    }
+    .p2 {
+      grid-area: p2;
+      display: flex;
+      margin-bottom: 1vh;
+    }
+    .p3 {
+      grid-area: p3;
+      display: flex;
+      margin-bottom: 1vh;
+    }
+    .p4 {
+      grid-area: p4;
+      display: flex;
+      margin-bottom: 1vh;
+    }
+    .p5 {
+      grid-area: p5;
+      display: flex;
+      margin-bottom: 1vh;
+    }
+    .p6 {
+      grid-area: p6;
+      display: flex;
+      margin-bottom: 1vh;
+    }
+    .tables {
+      grid-area: tables;
+      display: flex;
+    }
+    .bott {
+      grid-area: bott;
+      display: flex;
+    }
+
+    .MuiCard-root {
+      background-color: $main-bg-color;
+    }
+  }
+}

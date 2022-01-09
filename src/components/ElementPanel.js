@@ -9,21 +9,20 @@ import {
 } from "@mui/material";
 import SelectCustom from "./SelectCustom";
 import RadioCustom from "./RadioCustom";
-import ImageCustom from "./ImageCustom";
+//import ImageCustom from "./ImageCustom";
 
 const ElementPanel = ({ data, config, output }) => {
   // Datas distribution (From JSON):
   const title = data.title;
-  const image = data.image;
+  //const image = data.image;
   const datas = data.data;
   const noTag = data.default_tag;
+  const color = data.color;
   const radio = config.Option;
-
   // Return from composant:
   const [selection, setSelecion] = useState(false);
   const textRef = useRef("");
   const [radios, setRadios] = useState(0);
-
   // Validation datas function to create a object carrying results
   function handleClick() {
     //console.log(selection, textRef, radios);
@@ -42,17 +41,17 @@ const ElementPanel = ({ data, config, output }) => {
 
   // MAIN //
   return (
-    <Card sx={{ maxWidth: 280 }}>
+    <Card sx={{ width: "100%", mx: "1vw" }}>
       {/* CARD TITLE */}
       <CardActions sx={{ mt: 1, justifyContent: "center" }}>
-        <Typography variant="h5" color="primary" align="center">
+        <Typography variant="h5" color={color} align="center">
           {title}
         </Typography>
       </CardActions>
-      {/* CARD IMAGE */}
+      {/* CARD IMAGE 
       <CardActions sx={{ justifyContent: "center" }}>
         <ImageCustom image={image} />
-      </CardActions>
+      </CardActions>*/}
       {/* CARD SELECTION */}
       <CardActions sx={{ justifyContent: "center" }}>
         <SelectCustom data={datas} output={setSelecion} />
@@ -60,10 +59,11 @@ const ElementPanel = ({ data, config, output }) => {
       {/* CARD TEXTFIELD */}
       <CardActions sx={{ justifyContent: "center" }}>
         <Stack spacing={2}>
-          <Typography variant="h5" color="primary" align="center">
+          <Typography variant="h6" color={color} align="center">
             {"Tag (PID)"}
           </Typography>
           <TextField
+            sx={{ m: 1, width: "15.5vw" }}
             inputRef={textRef}
             inputProps={{ maxLength: 20 }}
             defaultValue={noTag}
@@ -81,7 +81,7 @@ const ElementPanel = ({ data, config, output }) => {
           alignItems="center"
           spacing={1}
         >
-          <Typography variant="h5" color="primary" align="center">
+          <Typography variant="h6" color={color} align="center">
             Choix du groupe
           </Typography>
           <RadioCustom
@@ -94,7 +94,11 @@ const ElementPanel = ({ data, config, output }) => {
       </CardActions>
       {/* CARD BUTTON */}
       <CardActions sx={{ mb: 1, justifyContent: "center" }}>
-        <Button variant="contained" onClick={handleClick}>
+        <Button
+          sx={{ bgcolor: color }}
+          variant="contained"
+          onClick={handleClick}
+        >
           Ajouter +1
         </Button>
       </CardActions>

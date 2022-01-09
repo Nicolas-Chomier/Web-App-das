@@ -14,34 +14,38 @@ const TitleSection = ({ output }) => {
   const textFieldRef = useRef(false);
 
   return (
-    <Card sx={{ maxWidth: 350 }}>
+    <Card elevation={5}>
       <CardActions sx={{ justifyContent: "center" }}>
+        <Typography variant="h5" color="dark">
+          Nom du projet
+        </Typography>
+      </CardActions>
+      <CardActions sx={{ mb: 2, justifyContent: "center" }}>
         <Stack
           direction="row"
           justifyContent="center"
           alignItems="center"
           spacing={2}
         >
-          <Avatar variant="rounded" sx={{ bgcolor: grey[700] }}>
-            <AssignmentIcon />
+          <Avatar
+            variant="rounded"
+            sx={{ width: 54, height: 54, bgcolor: grey[800] }}
+          >
+            <AssignmentIcon fontSize="large" />
           </Avatar>
-          <Typography variant="h5" color="primary">
-            Nom du projet
-          </Typography>
+          <TextField
+            color="success"
+            inputRef={textFieldRef}
+            inputProps={{ maxLength: 20 }}
+            /* defaultValue={"New Project"} */
+            type="text"
+            label="Project title here!"
+            variant="outlined"
+            onChange={() => {
+              output(textFieldRef.current?.value);
+            }}
+          />
         </Stack>
-      </CardActions>
-      <CardActions sx={{ mb: 2, justifyContent: "center" }}>
-        <TextField
-          inputRef={textFieldRef}
-          inputProps={{ maxLength: 20 }}
-          /* defaultValue={"New Project"} */
-          type="text"
-          label="Project title here!"
-          variant="outlined"
-          onChange={() => {
-            output(textFieldRef.current?.value);
-          }}
-        />
       </CardActions>
     </Card>
   );

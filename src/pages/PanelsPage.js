@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Grid, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import ElementPanel from "../components/ElementPanel";
@@ -11,10 +10,12 @@ const PanelsPage = () => {
   // Datas from previous page:
   const location = useLocation();
   const projectData = location.state;
-  // Panel datas attribution (Instrumentation):
-  const instrumentation = location.state.datas.Instrumentations;
-  // Panel datas attribution (Compresseurs):
-  const compresseurs = location.state.datas.Compresseurs;
+  // All panel datas attribution (by category):
+  const instrum = location.state.datas.Instrumentations;
+  const process = location.state.datas.Génie_des_procédés;
+  const piloted = location.state.datas.Eléments_pilotés;
+  const analyzer = location.state.datas.Analiseurs;
+  const machine = location.state.datas.Compresseurs;
   // Result from choice on different panels (false protect against empty entry when page build/refresh)
   const [config, setConfig] = useState(false);
   // Result read from abstract table
@@ -38,39 +39,32 @@ const PanelsPage = () => {
 
   // Panels Page //
   return (
-    <div>
-      <Grid container spacing={0}>
-        <Grid item xs={6}>
-          <ElementPanel
-            data={instrumentation}
-            config={projectData}
-            output={setConfig}
-          />
-        </Grid>
-        <Grid item xs={6}>
-          <ElementPanel
-            data={compresseurs}
-            config={projectData}
-            output={setConfig}
-          />
-        </Grid>
-        <Grid item xs={8}>
-          <TableCustom item={config} output={setAbstract} />
-        </Grid>
-        <Grid item xs={4}>
-          <Button
-            variant="contained"
-            color="warning"
-            onClick={() => {
-              console.log("projectData", projectData);
-              console.log("config", config);
-              console.log("abstract", abstract);
-            }}
-          >
-            TEST ONLY !
-          </Button>
-        </Grid>
-      </Grid>
+    <div className="grid-container-panels-page">
+      <div className="head"></div>
+      <div className="leftp"></div>
+      <div className="rightp"></div>
+      <div className="p1">
+        <ElementPanel data={instrum} config={projectData} output={setConfig} />
+      </div>
+      <div className="p2">
+        <ElementPanel data={process} config={projectData} output={setConfig} />
+      </div>
+      <div className="p3">
+        <ElementPanel data={piloted} config={projectData} output={setConfig} />
+      </div>
+      <div className="p4">
+        <ElementPanel data={analyzer} config={projectData} output={setConfig} />
+      </div>
+      <div className="p5">
+        <ElementPanel data={machine} config={projectData} output={setConfig} />
+      </div>
+      <div className="p6">
+        {/* <ElementPanel data={} config={projectData} output={setConfig} /> */}
+      </div>
+      <div className="tables">
+        <TableCustom item={config} output={setAbstract} />
+      </div>
+      <div className="bott"></div>
     </div>
   );
 };

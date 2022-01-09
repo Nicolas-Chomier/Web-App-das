@@ -13,6 +13,9 @@ import SelectCustom from "./SelectCustom";
 import TabletIcon from "@mui/icons-material/Tablet";
 import { grey } from "@mui/material/colors";
 
+////////////////////////////
+// to keep for futur
+////////////////////////////
 const TechnoSection = ({ datas, output }) => {
   const [state1, setState1] = useState(false);
   // (WAGO is deactived)
@@ -29,8 +32,8 @@ const TechnoSection = ({ datas, output }) => {
   }
 
   useEffect(() => {
-    const data1 = datas["PROFACE"]["data"];
-    const sd1 = <SelectCustom data={data1} output={output} />;
+    const data = datas.IHM_PROFACE.data;
+    const sd1 = <SelectCustom data={data} output={output} />;
     // (WAGO is deactived)
     /* const data2 = datas["WAGO"]["data"];
     const sd2 = <SelectCustom data={data2} output={output} />; */
@@ -48,18 +51,21 @@ const TechnoSection = ({ datas, output }) => {
   }, [state1 /* state2 */, datas, output]);
 
   return (
-    <Card sx={{ maxWidth: 350 }}>
-      <CardActions sx={{ justifyContent: "center" }}>
+    <Card className="techno-section" sx={{ bgcolor: grey[100] }} elevation={5}>
+      <CardActions sx={{ mt: 2, justifyContent: "center" }}>
         <Stack
           direction="row"
           justifyContent="center"
           alignItems="center"
           spacing={2}
         >
-          <Avatar variant="rounded" sx={{ bgcolor: grey[700] }}>
-            <TabletIcon />
+          <Avatar
+            variant="rounded"
+            sx={{ bgcolor: grey[800], width: 54, height: 54 }}
+          >
+            <TabletIcon fontSize="large" />
           </Avatar>
-          <Typography variant="h5" color="primary" align="center">
+          <Typography variant="h5" color="dark" align="center">
             Technologie
           </Typography>
         </Stack>
@@ -69,7 +75,9 @@ const TechnoSection = ({ datas, output }) => {
         <FormGroup>
           <FormControlLabel
             labelPlacement="top"
-            control={<Switch checked={state1} onClick={handleChange} />}
+            control={
+              <Switch color="success" checked={state1} onClick={handleChange} />
+            }
             label="PROFACE"
           />
         </FormGroup>
@@ -82,7 +90,12 @@ const TechnoSection = ({ datas, output }) => {
           <FormControlLabel
             disabled
             labelPlacement="top"
-            control={<Switch /* checked={state2} */ onClick={handleChange} />}
+            control={
+              <Switch
+                color="success"
+                /* checked={state2} */ onClick={handleChange}
+              />
+            }
             label="WAGO"
           />
         </FormGroup>

@@ -7,6 +7,7 @@ const SelectCustom = ({ data, output }) => {
   const [category, setCategory] = useState("");
   const [optionList, setOptionList] = useState([]);
   const [option, setOption] = useState("");
+
   // Call one time only and generate list of category inside first select element
   useEffect(() => {
     const cList = [];
@@ -40,7 +41,7 @@ const SelectCustom = ({ data, output }) => {
   return (
     <>
       <div>
-        <FormControl sx={{ m: 0, minWidth: 220 }}>
+        <FormControl sx={{ width: "20vw" }}>
           <InputLabel htmlFor="category-select">Category</InputLabel>
           <Select
             defaultValue=""
@@ -55,9 +56,10 @@ const SelectCustom = ({ data, output }) => {
           </Select>
         </FormControl>
         <div style={{ padding: 6 }}></div>
-        <FormControl sx={{ m: 0, minWidth: 220 }}>
+        <FormControl sx={{ width: "20vw" }}>
           <InputLabel htmlFor="option-select">Option</InputLabel>
           <Select
+            color="success"
             defaultValue=""
             value={option}
             id="option-select"

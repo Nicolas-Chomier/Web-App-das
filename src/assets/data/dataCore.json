@@ -1,116 +1,387 @@
 {
-    "PROFACE": {
-        "image": "WebHMI.jpg",
-        "title": "HMI",
+    "IHM_PROFACE": {
+        "image": "generic.jpeg",
+        "title": "HMI Proface",
         "default_tag": "HMI_0000",
-        "color": "orange",
+        "color": "#3F4246",
         "data": {
             "Gamme eXtrem": {
                 "12'": {
-                    "id": "PFSCR03",
+                    "id": "0001",
                     "generic name": "IHM 12 pouces"
                 },
                 "15'": {
-                    "id": "PFSCR04",
+                    "id": "0002",
                     "generic name": "IHM 15 pouces"
                 }
             },
             "Gamme budget": {
-                "10'": {
-                    "id": "PFSCR05",
-                    "generic name": "IHM 10 pouces"
-                },
                 "12'": {
-                    "id": "PFSCR06",
+                    "id": "0003",
                     "generic name": "IHM 12 pouces"
                 }
             },
             "Gamme premium": {
                 "12'": {
-                    "id": "PFSCR07",
+                    "id": "0004",
                     "generic name": "IHM 12 pouces"
                 },
                 "15'": {
-                    "id": "PFSCR08",
+                    "id": "0005",
                     "generic name": "IHM 15 pouces"
                 },
                 "19'": {
-                    "id": "PFSCR09",
+                    "id": "0006",
                     "generic name": "IHM 19 pouces"
                 }
             }
         }
     },
-    "WAGO": {
-        "image": "WebHMI.jpg",
-        "title": "HMI",
-        "default_tag": "HMI_0000",
-        "color": "orange",
+    "IHM_WAGO": {
+        "image": "generic.jpeg",
+        "title": "HMI Wago",
+        "default_tag": "HMI_1000",
+        "color": "#3F4246",
+        "data": {}
+    },
+    "Instrumentations": {
+        "image": "generic.jpeg",
+        "title": "Intrumentation",
+        "default_tag": "Sensor_2000",
+        "color": "#3F4246",
         "data": {
-            "WAgo01": {
-                "13'": {
-                    "id": "wago001",
-                    "generic name": "IHM 13 pouces"
+            "Capteur de pression": {
+                "standard": {
+                    "id": 2001,
+                    "generic name": "Pressure transmitter"
                 },
-                "17'": {
-                    "id": "wago002",
-                    "generic name": "IHM 17 pouces"
+                "avec 1 contact sec": {
+                    "id": 2002,
+                    "generic name": "Pressure transmitter"
+                },
+                "avec 2 contact sec": {
+                    "id": 2003,
+                    "generic name": "Pressure transmitter"
+                }
+            },
+            "Pressostat": {
+                "standard": {
+                    "id": 2004,
+                    "generic name": "Pressostat"
+                }
+            },
+            "Capteur de débit": {
+                "standard": {
+                    "id": 2005,
+                    "generic name": "Flow transmitter"
+                },
+                "avec compteur à impulsion": {
+                    "id": 2006,
+                    "generic name": "Flow transmitter"
+                }
+            },
+            "Détecteur de Débit": {
+                "standard": {
+                    "id": 2007,
+                    "generic name": "Flow detector"
+                }
+            },
+            "Capteur de Température": {
+                "standard": {
+                    "id": 2008,
+                    "generic name": "Temperature transmitter"
+                },
+                "PT100 ou PT1000 ou Thermocouple": {
+                    "id": 2009,
+                    "generic name": "Temperature sensor"
+                },
+                "avec signal de commutation": {
+                    "id": 2010,
+                    "generic name": "Temperature transmitter"
+                }
+            },
+            "Thermostat": {
+                "standard": {
+                    "id": 2011,
+                    "generic name": "Thermostat"
+                }
+            },
+            "Hygrometre": {
+                "standard": {
+                    "id": 2012,
+                    "generic name": "Hygrometer"
+                }
+            },
+            "Capteur de niveau d'eau": {
+                "standard": {
+                    "id": 2013,
+                    "generic name": "water detector"
+                }
+            },
+            "Compteurs": {
+                "Compteur d'eau": {
+                    "id": 2014,
+                    "generic name": "water meter"
+                },
+                "Compteur d'energie thermique": {
+                    "id": 2015,
+                    "generic name": "energy meter"
+                },
+                "Compteur electrique": {
+                    "id": 2016,
+                    "generic name": "electric meter"
+                }
+            },
+            "Capteur hybride": {
+                "Débit & T°": {
+                    "id": 2017,
+                    "generic name": "Hybride transmitter"
                 }
             }
         }
     },
-    "Instrumentations": {
-        "image": "instrum.jpg",
-        "title": "Intrumentations",
-        "default_tag": "Sensor_0000",
-        "color": "teal",
+    "Génie_des_procédés": {
+        "image": "generic.jpeg",
+        "title": "Process component",
+        "default_tag": "Process_3000",
+        "color": "#3F4246",
         "data": {
-            "capteur de pression": {
-                "simple pression": {
-                    "id": 100,
-                    "generic name": "Pressure transmitter"
-                },
-                "avec impulsion pression": {
-                    "id": 200,
-                    "generic name": "Pressure transmitter"
+            "Chilleur": {
+                "standard": {
+                    "id": 3001,
+                    "generic name": "Chilleur"
                 }
             },
-            "capteur de débit": {
-                "simple débit": {
-                    "id": 300,
-                    "generic name": "Flow transmitter"
+            "Secheur frigorifique": {
+                "standard": {
+                    "id": 3002,
+                    "generic name": "Dryier"
                 },
-                "hybride débit": {
-                    "id": 400,
-                    "generic name": "Flow transmitter"
+                "avec capteur d'hygrométrie integré": {
+                    "id": 3003,
+                    "generic name": "Dryier"
                 }
             },
-            "capteur de temperature": {
-                "simple temperature": {
-                    "id": 500,
-                    "generic name": "Temperature transmitter"
+            "Secheur à adsorbtion": {
+                "standard": {
+                    "id": 3004,
+                    "generic name": "Dryier"
                 },
-                "hybride temperature": {
-                    "id": 600,
-                    "generic name": "Temperature transmitter"
+                "avec mode économique, sans capteur d'hygrométrie integré": {
+                    "id": 3005,
+                    "generic name": "Dryier"
+                },
+                "standard avec capteur d'hygrométrie integré": {
+                    "id": 3006,
+                    "generic name": "Dryier"
+                },
+                "avec mode économique, et capteur d'hygrométrie integré": {
+                    "id": 3007,
+                    "generic name": "Dryier"
+                }
+            },
+            "Separateur de condensat": {
+                "BEKOSPLIT": {
+                    "id": 3008,
+                    "generic name": "Separator"
+                }
+            },
+            "Corps chauffants": {
+                "Rechauffeur electrique": {
+                    "id": 3009,
+                    "generic name": "Resistor"
+                },
+                "Resistance de traçage": {
+                    "id": 3010,
+                    "generic name": "Resistor"
+                }
+            },
+            "Purgeur": {
+                "standard sans retour de defaut": {
+                    "id": 3011,
+                    "generic name": "Water trap"
+                },
+                "standard avec retour de defaut": {
+                    "id": 3012,
+                    "generic name": "Water trap"
+                },
+                "piloté sans retour de defaut": {
+                    "id": 3013,
+                    "generic name": "Water trap"
+                },
+                "piloté avec retour de defaut": {
+                    "id": 3014,
+                    "generic name": "Water trap"
+                }
+            }
+        }
+    },
+    "Eléments_pilotés": {
+        "image": "generic.jpeg",
+        "title": "Controlled component",
+        "default_tag": "Controlled_4000",
+        "color": "#3F4246",
+        "data": {
+            "Vanne 2 voies pneumatique": {
+                "monostable simple": {
+                    "id": 4001,
+                    "generic name": "2-way valve"
+                },
+                "monostable + retour de position": {
+                    "id": 4002,
+                    "generic name": "2-way valve"
+                },
+                "bistable simple": {
+                    "id": 4003,
+                    "generic name": "2-way valve"
+                },
+                "bistable + retour de position": {
+                    "id": 4004,
+                    "generic name": "2-way valve"
+                }
+            },
+            "Vanne 2 voies motorisée": {
+                "Simple": {
+                    "id": 4005,
+                    "generic name": "2-way valve"
+                },
+                "Simple + retour de position": {
+                    "id": 4006,
+                    "generic name": "2-way valve"
+                },
+                "Pilotée": {
+                    "id": 4007,
+                    "generic name": "2-way valve"
+                },
+                "Pilotée + retour de position(analogique)": {
+                    "id": 4008,
+                    "generic name": "2-way valve"
+                }
+            },
+            "Vanne 3 voies pneumatique": {
+                "Monostable sans retour de position": {
+                    "id": 4009,
+                    "generic name": "3-way valve"
+                },
+                "Monostable avec retour de position": {
+                    "id": 4010,
+                    "generic name": "3-way valve"
+                },
+                "Bistable sans retour de position": {
+                    "id": 4011,
+                    "generic name": "3-way valve"
+                },
+                "Bistable avec retour de position": {
+                    "id": 4012,
+                    "generic name": "3-way valve"
+                }
+            },
+            "Vanne 3 voies motorisée": {
+                "Simple": {
+                    "id": 4013,
+                    "generic name": "3-way valve"
+                },
+                "Simple + retour de position": {
+                    "id": 4014,
+                    "generic name": "3-way valve"
+                },
+                "Pilotée": {
+                    "id": 4015,
+                    "generic name": "3-way valve"
+                },
+                "Pilotée + retour de position (analogique)": {
+                    "id": 4016,
+                    "generic name": "3-way valve"
+                }
+            },
+            "Registre motorisée": {
+                "Simple": {
+                    "id": 4017,
+                    "generic name": "Air flap"
+                },
+                "Simple + retour de position": {
+                    "id": 4018,
+                    "generic name": "Air flap"
+                },
+                "Pilotée": {
+                    "id": 4019,
+                    "generic name": "Air flap"
+                },
+                "Pilotée + retour de position (analogique)": {
+                    "id": 4020,
+                    "generic name": "Air flap"
+                }
+            },
+            "Souflante": {
+                "standard": {
+                    "id": 4021,
+                    "generic name": "Fan"
+                }
+            },
+            "Pompe à eau": {
+                "standard": {
+                    "id": 4022,
+                    "generic name": "Water pump"
+                }
+            },
+            "Pompe à vide": {
+                "standard": {
+                    "id": 4023,
+                    "generic name": "Vacuum pump"
+                }
+            }
+        }
+    },
+    "Analiseurs": {
+        "image": "generic.jpeg",
+        "title": "Analyzer",
+        "default_tag": "Analyzer_5000",
+        "color": "#3F4246",
+        "data": {
+            "Analiseurs d'air": {
+                "ULTRAMAT": {
+                    "id": 5001,
+                    "generic name": "Analyzer"
+                },
+                "VAR-18": {
+                    "id": 5002,
+                    "generic name": "Analyzer"
+                },
+                "Analiseurs d'oxygene": {
+                    "id": 5003,
+                    "generic name": "Analyzer"
                 }
             }
         }
     },
     "Compresseurs": {
-        "image": "compressors.jpg",
-        "title": "Compresseurs",
-        "default_tag": "CP_0000",
-        "color": "pink",
+        "image": "generic.jpeg",
+        "title": "Compressor",
+        "default_tag": "Compressors_6000",
+        "color": "#3F4246",
         "data": {
-            "Kaeser": {
-                "350": {
-                    "id": 700,
-                    "generic name": "Kaeser compressor 300"
+            "Compresseurs": {
+                "Débit fixe": {
+                    "id": 6001,
+                    "generic name": "Compressor"
                 },
-                "450": {
-                    "id": 800,
-                    "generic name": "Kaeser compressor 400"
+                "Débit variable": {
+                    "id": 6002,
+                    "generic name": "Compressor"
+                },
+                "standard": {
+                    "id": 6003,
+                    "generic name": "Compressor"
+                },
+                "avec options": {
+                    "id": 6004,
+                    "generic name": "Compressor"
+                }
+            },
+            "Surpresseur": {
+                "standard": {
+                    "id": 6005,
+                    "generic name": "Booster"
                 }
             }
         }
