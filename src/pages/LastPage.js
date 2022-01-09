@@ -11,19 +11,19 @@ const LastPage = () => {
   const doc = {
     title: "Analyse fonctionnelle",
     text: "Génère une analyse fonctionnelle au format word partiellement complétée avec les informations renseignés dans pages précedentes",
-    color: "#4169E1",
+    color: "#FFBE00",
   };
   // Request cards content for pdf documentation:
   const pdf = {
     title: "Demande de chiffrage",
     text: "Génère une demande de chiffrage au format PDF formaté et prète à l'envoie pour toute demande de matériel",
-    color: "teal",
+    color: "#97B92D",
   };
   // Request cards content for custom documentation:
   const arch = {
     title: "Architecture matériel",
     text: "Génère l'architecture materiel du projet avec les elements renseignés dans pages précedentes correspondant au fabricant sélectionné.",
-    color: "orange",
+    color: "#35A55D",
   };
   // Function which build documentation
   function genDoc1(d) {
