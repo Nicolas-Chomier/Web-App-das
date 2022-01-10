@@ -7,7 +7,7 @@ const RequestCards = ({ title, text, color }) => {
       <Typography gutterBottom variant="h4" component="div" align="center">
         {title}
       </Typography>
-      <Typography variant="body2" align="center">
+      <Typography variant="body1" align="center">
         {text}
       </Typography>
     </CardContent>

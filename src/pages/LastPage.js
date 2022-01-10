@@ -2,39 +2,34 @@ import React from "react";
 import { Button, Card } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import RequestCards from "../components/RequestCards";
+import FA from "../assets/logic/functionalAnalysis";
+import QR from "../assets/logic/quotationRequest";
+import MA from "../assets/logic/materialArchitecture";
 
 const LastPage = () => {
   // General abstract from PanelsPage
   const location = useLocation();
   const datas = { ...location.state };
-  // Request cards content for word documentation:
-  const doc = {
-    title: "Analyse fonctionnelle",
-    text: "Génère une analyse fonctionnelle au format word partiellement complétée avec les informations renseignés dans pages précedentes",
-    color: "#FFBE00",
+  // styles:
+  const btnStyle = { mt: "5px", mb: "8px", color: "#3f4246" };
+  // Request cards content for all documentation:
+  const contents = {
+    doc: {
+      title: "Analyse fonctionnelle",
+      text: "Génère une analyse fonctionnelle au format Word partiellement complétée avec les informations renseignés dans pages précedentes.",
+      color: "#FFBE00",
+    },
+    pdf: {
+      title: "Demande de chiffrage",
+      text: "Génère une demande de chiffrage au format Word formaté et prète à l'emploi pour toute demande de matériel ou de devis.",
+      color: "#97B92D",
+    },
+    arch: {
+      title: "Architecture matériel",
+      text: "Génère l'architecture materiel du projet avec les elements renseignés dans pages précedentes correspondant au fabricant sélectionné.",
+      color: "#35A55D",
+    },
   };
-  // Request cards content for pdf documentation:
-  const pdf = {
-    title: "Demande de chiffrage",
-    text: "Génère une demande de chiffrage au format PDF formaté et prète à l'envoie pour toute demande de matériel",
-    color: "#97B92D",
-  };
-  // Request cards content for custom documentation:
-  const arch = {
-    title: "Architecture matériel",
-    text: "Génère l'architecture materiel du projet avec les elements renseignés dans pages précedentes correspondant au fabricant sélectionné.",
-    color: "#35A55D",
-  };
-  // Function which build documentation
-  function genDoc1(d) {
-    console.log("... generation de la doc 1", d);
-  }
-  function genDoc2(d) {
-    console.log("... generation de la doc 2", d.Project);
-  }
-  function genDoc3(d) {
-    console.log("... generation de la doc 3", d.Elements);
-  }
   // Last page //
   return (
     <div className="grid-container-last-page">
@@ -42,14 +37,18 @@ const LastPage = () => {
       <div className="leftp"></div>
       <div className="rightp"></div>
       <div className="r1">
-        <Card sx={{ maxWidth: 345 }}>
-          <RequestCards title={doc.title} text={doc.text} color={doc.color} />
+        <Card sx={{ maxWidth: 345 }} elevation={5}>
+          <RequestCards
+            title={contents.doc.title}
+            text={contents.doc.text}
+            color={contents.doc.color}
+          />
           <Button
             fullWidth={true}
-            sx={{ mt: "5px", mb: "8px", color: doc.color }}
+            sx={btnStyle}
             variant="text"
             onClick={() => {
-              genDoc1(datas);
+              FA(datas);
             }}
           >
             Valider
@@ -57,14 +56,18 @@ const LastPage = () => {
         </Card>
       </div>
       <div className="r2">
-        <Card sx={{ maxWidth: 345 }}>
-          <RequestCards title={pdf.title} text={pdf.text} color={pdf.color} />
+        <Card sx={{ maxWidth: 345 }} elevation={5}>
+          <RequestCards
+            title={contents.pdf.title}
+            text={contents.pdf.text}
+            color={contents.pdf.color}
+          />
           <Button
             fullWidth={true}
-            sx={{ mt: "5px", mb: "8px", color: pdf.color }}
+            sx={btnStyle}
             variant="text"
             onClick={() => {
-              genDoc2(datas);
+              QR(datas);
             }}
           >
             Valider
@@ -72,18 +75,18 @@ const LastPage = () => {
         </Card>
       </div>
       <div className="r3">
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 345 }} elevation={5}>
           <RequestCards
-            title={arch.title}
-            text={arch.text}
-            color={arch.color}
+            title={contents.arch.title}
+            text={contents.arch.text}
+            color={contents.arch.color}
           />
           <Button
             fullWidth={true}
-            sx={{ mt: "5px", mb: "8px", color: arch.color }}
+            sx={btnStyle}
             variant="text"
             onClick={() => {
-              genDoc3(datas);
+              MA(datas);
             }}
           >
             Valider

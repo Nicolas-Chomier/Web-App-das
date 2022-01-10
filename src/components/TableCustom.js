@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {
   Button,
-  Paper,
+  /* Paper, */
   Stack,
   TableRow,
   TableContainer,
@@ -96,19 +96,19 @@ const TableCustom = ({ item, output }) => {
   }
 
   return (
-    <Card sx={{ width: "100%", mx: "1vw" }}>
+    <Card className="table-custom" sx={{ width: "100%", mx: "1vw" }}>
       <Stack
         direction="column"
         justifyContent="center"
         alignItems="center"
         spacing={1}
       >
-        <TableContainer component={Paper}>
+        <TableContainer /* component={Paper} */>
           <Table aria-label="simple table">
             <TableBody id="table-body-test">{listToDisplay}</TableBody>
           </Table>
         </TableContainer>
-        <Button variant="contained" color="success" onClick={handleClick}>
+        <Button variant="contained" onClick={handleClick}>
           Validation des choix
         </Button>
       </Stack>

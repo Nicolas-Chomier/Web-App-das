@@ -25,11 +25,11 @@ const LandingPage = () => {
   const navigate = useNavigate();
   const handleClick = () => {
     if (text === "") {
-      alert("Please fill text field");
+      alert("Give a name to your project");
     } else if (techno === false) {
-      alert("Please fill techno ");
+      alert("Choose an HMI");
     } else if (option === false) {
-      alert("Please fill option ");
+      alert("Choose an HMI numbers");
     } else {
       navigate("/panels", {
         state: {
