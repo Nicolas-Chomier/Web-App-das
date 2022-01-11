@@ -41,7 +41,7 @@ const SelectCustom = ({ data, output }) => {
   return (
     <>
       <div>
-        <FormControl sx={{ width: "20vw" }}>
+        <FormControl sx={{ width: "15em" }}>
           <InputLabel htmlFor="category-select">Category</InputLabel>
           <Select
             defaultValue=""
@@ -56,7 +56,7 @@ const SelectCustom = ({ data, output }) => {
           </Select>
         </FormControl>
         <div style={{ padding: 6 }}></div>
-        <FormControl sx={{ width: "20vw" }}>
+        <FormControl sx={{ width: "15em" }}>
           <InputLabel htmlFor="option-select">Option</InputLabel>
           <Select
             color="success"
