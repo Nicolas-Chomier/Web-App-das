@@ -63,7 +63,7 @@ const ElementPanel = ({ data, config, output }) => {
             {"Tag (PID)"}
           </Typography>
           <TextField
-            sx={{ m: 1, width: "15.5vw" }}
+            sx={{ m: 1, width: "15em" }}
             inputRef={textRef}
             inputProps={{ maxLength: 20 }}
             defaultValue={noTag}

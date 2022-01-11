@@ -1,4 +1,4 @@
-@media (min-width: 876px) {
+@media (min-width: 990px) {
   .grid-container-panels-page {
     display: grid;
     width: 100%;
@@ -73,20 +73,23 @@
     }
   }
 }
-@media (max-width: 875px) {
+@media (max-width: 989px) {
   .grid-container-panels-page {
     display: grid;
     width: 100%;
     height: 100%;
     grid-template-areas:
-      "head head head head"
-      "leftp p1 p2 rightp"
-      "leftp p3 p4 rightp"
-      "leftp p5 p6 rightp"
-      "leftp tables tables rightp"
-      "bott bott bott bott";
-    grid-template-rows: 5vh 40vh 40vh 40vh 15vh 5vh;
-    grid-template-columns: 2vw 48vw 48vw 2vw;
+      "head head head"
+      "leftp p1 rightp"
+      "leftp p2 rightp"
+      "leftp p3 rightp"
+      "leftp p4 rightp"
+      "leftp p5 rightp"
+      "leftp p6 rightp"
+      "leftp tables rightp"
+      "bott bott bott";
+    grid-template-rows: 5vh auto auto auto auto auto auto auto auto;
+    grid-template-columns: 1vw 98vw 1vw;
     overflow-x: hidden;
 
     .head {
