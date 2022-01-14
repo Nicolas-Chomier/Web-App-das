@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import dataCore from "../assets/data/dataCore.json";
+import publics from "../assets/data/public.json";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import TitleTile from "../components/TitleTile";
@@ -10,7 +10,7 @@ import { grey } from "@mui/material/colors";
 import SendIcon from "@mui/icons-material/Send";
 
 // Importation of main datas sources
-const datas = JSON.parse(JSON.stringify(dataCore));
+const datas = JSON.parse(JSON.stringify(publics));
 
 const LandingPage = () => {
   //const componentData = data["data"];

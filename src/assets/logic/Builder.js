@@ -1,4 +1,5 @@
 import privates from "../data/private.json";
+import technical from "../data/technical.json";
 
 // Class wich build tag architecture //
 export class Architecture {
@@ -99,12 +100,6 @@ export class IOList {
     // Load builded dictionnary
     this.dataset = dictionnary;
   }
-  // Method wich return empty List //
-  list() {
-    const _list = [];
-    _list.length = 0;
-    return _list;
-  }
   // Method which build the main IOList project (raw) //
   rawList() {
     const dictionnary = this.dataset;
@@ -132,4 +127,18 @@ export class IOList {
     }
     return _obj;
   }
+}
+
+export class Proface {
+  constructor() {
+    // Load technical datas
+    this.data_proface = JSON.parse(JSON.stringify(technical));
+  }
+  // Method wich return empty List //
+  list() {
+    const _list = [];
+    _list.length = 0;
+    return _list;
+  }
+  //
 }
