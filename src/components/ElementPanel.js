@@ -12,8 +12,10 @@ import RadioCustom from "./RadioCustom";
 //import ImageCustom from "./ImageCustom";
 
 const ElementPanel = ({ data, config, output }) => {
+  console.log("efsefesfefsefse", data);
   // Datas distribution (From JSON):
   const title = data.title;
+  console.log(title);
   //const image = data.image;
   const datas = data.data;
   const noTag = data.default_tag;

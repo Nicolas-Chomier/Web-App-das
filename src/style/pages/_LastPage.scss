@@ -7,8 +7,8 @@
       "head head head head head "
       "leftp r1 r2 r3 rightp"
       "bott bott bott bott bott";
-    grid-template-rows: 37vh auto 37vh;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: 35vh auto 35vh;
+    grid-template-columns: 10vw auto auto auto 10vw;
 
     .head {
       grid-area: head;
@@ -33,6 +33,8 @@
       grid-area: r2;
       display: flex;
       justify-content: center;
+      margin-right: 3vw;
+      margin-left: 3vw;
     }
     .r3 {
       grid-area: r3;
@@ -59,6 +61,53 @@
       "bott bott bott ";
     grid-template-rows: 10vh auto auto auto 10vh;
     grid-template-columns: 35vw 30vw 35vw;
+    overflow-x: hidden;
+
+    .head {
+      grid-area: head;
+      display: flex;
+      justify-content: center;
+    }
+    .leftp {
+      grid-area: leftp;
+      display: flex;
+    }
+    .rightp {
+      grid-area: rightp;
+      display: flex;
+    }
+    .r1 {
+      grid-area: r1;
+      margin-bottom: 3vh;
+    }
+    .r2 {
+      grid-area: r2;
+      margin-bottom: 3vh;
+    }
+    .r3 {
+      grid-area: r3;
+      margin-bottom: 3vh;
+    }
+    .bott {
+      grid-area: bott;
+      display: flex;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .grid-container-last-page {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-areas:
+      "head head head "
+      "leftp r1 rightp"
+      "leftp r2 rightp"
+      "leftp r3 rightp"
+      "bott bott bott ";
+    grid-template-rows: 10vh auto auto auto 10vh;
+    grid-template-columns: 5vw 90vw 5vw;
     overflow-x: hidden;
 
     .head {

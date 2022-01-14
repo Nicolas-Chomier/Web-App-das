@@ -62,7 +62,7 @@ const TableCustom = ({ item, output }) => {
                   return garbage;
                 }}
               >
-                <DeleteIcon sx={{ fill: "black" }} />
+                <DeleteIcon sx={{ fill: "white" }} />
               </Button>
             </TableCell>
           </TableRow>

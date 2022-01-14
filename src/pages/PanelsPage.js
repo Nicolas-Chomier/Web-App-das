@@ -12,7 +12,7 @@ const PanelsPage = () => {
   const projectData = location.state;
   // All panel datas attribution (by category):
   const instrum = location.state.datas.Instrumentations;
-  const process = location.state.datas.Génie_des_procédés;
+  const Auxiliaires = location.state.datas.Auxiliaires;
   const piloted = location.state.datas.Eléments_pilotés;
   const analyzer = location.state.datas.Analiseurs;
   const machine = location.state.datas.Compresseurs;
@@ -47,7 +47,11 @@ const PanelsPage = () => {
         <ElementPanel data={instrum} config={projectData} output={setConfig} />
       </div>
       <div className="p2">
-        <ElementPanel data={process} config={projectData} output={setConfig} />
+        <ElementPanel
+          data={Auxiliaires}
+          config={projectData}
+          output={setConfig}
+        />
       </div>
       <div className="p3">
         <ElementPanel data={piloted} config={projectData} output={setConfig} />

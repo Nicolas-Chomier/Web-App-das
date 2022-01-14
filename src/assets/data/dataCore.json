@@ -140,7 +140,7 @@
             }
         }
     },
-    "Génie_des_procédés": {
+    "Auxiliaires": {
         "image": "generic.jpeg",
         "title": "Process component",
         "default_tag": "Process_3000",
