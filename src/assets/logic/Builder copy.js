@@ -10,6 +10,12 @@ export class Architecture {
     this.data_elements = rawAbstract.Elements;
     this.data_projects = rawAbstract.Project;
   }
+  // Method wich return empty List //
+  list() {
+    const _list = [];
+    _list.length = 0;
+    return _list;
+  }
   // Method wich return empty Object //
   object() {
     const _obj = {};
@@ -36,20 +42,49 @@ export class Architecture {
   // Method wich return fullfilled dictionnary with all item's tag stored correctly //
   dictionnary() {
     const structure = this.skeleton();
+    const prv = this.data_privates;
     const dataset = this.data_elements;
-    // Open air identifacation flag & number:
+    // Open air identifacation flag:
     const flag = "OPA";
-    let j = 1;
+    let j = 0;
+    /* const structure_test = {
+      1: { ni: ["*"], no: ["*"], ai: ["*"], ao: ["*"], ti: ["*"] },
+      2: { ni: ["*"], no: ["*"], ai: ["*"], ao: ["*"], ti: ["*"] },
+      3: { ni: ["*"], no: ["*"], ai: ["*"], ao: ["*"], ti: ["*"] },
+      4: { ni: ["*"], no: ["*"], ai: ["*"], ao: ["*"], ti: ["*"] },
+    }; */
     for (const item of dataset) {
-      const name = item.name;
+      console.log("!", item);
       const grp = item.group;
+      const tag = item.tag;
+      const name = item.name;
+      const niNbs = prv[item.id]["ni"];
+      const noNbs = prv[item.id]["no"];
+      const aiNbs = prv[item.id]["ai"];
+      const aoNbs = prv[item.id]["ao"];
+      const tiNbs = prv[item.id]["ti"];
       for (const [key, value] of Object.entries(structure)) {
         if (key === grp) {
-          if (name !== flag) {
-            structure[key] = this.addItem(item, value);
-          } else {
-            structure[key][`CP0${j}`] = this.addOpenAir(item);
+          if (name === flag) {
             j += 1;
+            const add = this.addOpenAir(item);
+            structure[key][`OpenAir-n°${j}`] = add;
+          } else {
+            for (let i = 0; i < niNbs; i++) {
+              value.ni.push(tag);
+            }
+            for (let i = 0; i < noNbs; i++) {
+              value.no.push(tag);
+            }
+            for (let i = 0; i < aiNbs; i++) {
+              value.ai.push(tag);
+            }
+            for (let i = 0; i < aoNbs; i++) {
+              value.ao.push(tag);
+            }
+            for (let i = 0; i < tiNbs; i++) {
+              value.ti.push(tag);
+            }
           }
         }
       }
@@ -58,8 +93,9 @@ export class Architecture {
   }
   // Method which build open air tag structure and add it to main dictionnary //
   addOpenAir(item) {
+    console.log("openair builder =", item);
     const prv = this.data_privates;
-    const structure = {
+    const opaStructure = {
       ni: [],
       no: [],
       ai: [],
@@ -73,26 +109,34 @@ export class Architecture {
     const aoNbs = prv[item.id]["ao"];
     const tiNbs = prv[item.id]["ti"];
     for (let i = 0; i < niNbs; i++) {
-      structure.ni.push(tag);
+      opaStructure.ni.push(tag);
     }
     for (let i = 0; i < noNbs; i++) {
-      structure.no.push(tag);
+      opaStructure.no.push(tag);
     }
     for (let i = 0; i < aiNbs; i++) {
-      structure.ai.push(tag);
+      opaStructure.ai.push(tag);
     }
     for (let i = 0; i < aoNbs; i++) {
-      structure.ao.push(tag);
+      opaStructure.ao.push(tag);
     }
     for (let i = 0; i < tiNbs; i++) {
-      structure.ti.push(tag);
+      opaStructure.ti.push(tag);
       //value.ti.push(tag);
     }
-    return structure;
+    return opaStructure;
   }
   // Method which build item tag structure and add it to main dictionnary //
-  addItem(item, value) {
+  addItem(item) {
+    console.log("openair builder =", item);
     const prv = this.data_privates;
+    const opaStructure = {
+      ni: [],
+      no: [],
+      ai: [],
+      ao: [],
+      ti: [],
+    };
     const tag = item.tag;
     const niNbs = prv[item.id]["ni"];
     const noNbs = prv[item.id]["no"];
@@ -100,22 +144,24 @@ export class Architecture {
     const aoNbs = prv[item.id]["ao"];
     const tiNbs = prv[item.id]["ti"];
     for (let i = 0; i < niNbs; i++) {
-      value.ni.push(tag);
+      opaStructure.ni.push(tag);
     }
     for (let i = 0; i < noNbs; i++) {
-      value.no.push(tag);
+      opaStructure.no.push(tag);
     }
     for (let i = 0; i < aiNbs; i++) {
-      value.ai.push(tag);
+      opaStructure.ai.push(tag);
     }
     for (let i = 0; i < aoNbs; i++) {
-      value.ao.push(tag);
+      opaStructure.ao.push(tag);
     }
     for (let i = 0; i < tiNbs; i++) {
-      value.ti.push(tag);
+      opaStructure.ti.push(tag);
+      //value.ti.push(tag);
     }
-    return value;
+    return false;
   }
+
   // Method used to add basical project needs to standard dictionnary //
   reservedDictionnary(grp = 1) {
     const _obj = { ...this.dictionnary() };
@@ -129,12 +175,8 @@ export class Architecture {
     }
     // Fill choosen group with reserved slot:
     for (const [key, value] of Object.entries(_obj[grp])) {
-      //console.log("====", key, value); // Keep to understand or debug
-      // Avoid Open Air compressor line
-      if (key in prs === true) {
-        for (let i = 0; i < prs[key]; i++) {
-          value.unshift(name);
-        }
+      for (let i = 0; i < prs[key]; i++) {
+        value.unshift(name);
       }
     }
     return _obj;
@@ -151,32 +193,20 @@ export class IOList {
   rawList() {
     const dictionnary = this.dataset;
     const size = Object.keys(dictionnary).length;
-    const _obj = { ni: 0, no: 0, ai: 0, ao: 0, ti: 0 };
+    let niNbs = 0;
+    let noNbs = 0;
+    let aiNbs = 0;
+    let aoNbs = 0;
+    let tiNbs = 0;
     for (let i = 1; i < size + 1; i++) {
-      _obj["ni"] += dictionnary[i]["ni"].length;
-      _obj["no"] += dictionnary[i]["no"].length;
-      _obj["ai"] += dictionnary[i]["ai"].length;
-      _obj["ao"] += dictionnary[i]["ao"].length;
-      _obj["ti"] += dictionnary[i]["ti"].length;
+      niNbs += dictionnary[i]["ni"].length;
+      noNbs += dictionnary[i]["no"].length;
+      aiNbs += dictionnary[i]["ai"].length;
+      aoNbs += dictionnary[i]["ao"].length;
+      tiNbs += dictionnary[i]["ti"].length;
     }
-    return _obj;
+    return { ni: niNbs, no: noNbs, ai: aiNbs, ao: aoNbs, ti: tiNbs };
   }
-  // Method which return IOList with input ouput open air requisit //
-  OpenAirList(i = 1) {
-    const dictionnary = this.dataset;
-    const raw = { ...this.rawList() };
-    for (const key of Object.keys(dictionnary[i])) {
-      if (key in raw === false) {
-        raw["ni"] += dictionnary[i][key]["ni"].length;
-        raw["no"] += dictionnary[i][key]["no"].length;
-        raw["ai"] += dictionnary[i][key]["ai"].length;
-        raw["ao"] += dictionnary[i][key]["ao"].length;
-        raw["ti"] += dictionnary[i][key]["ti"].length;
-      }
-    }
-    return raw;
-  }
-
   // Method which return IOList with gap coef (k) applied //
   coefList(k) {
     const _ioList = this.rawList();
@@ -194,11 +224,6 @@ export class Proface {
     // Load technical datas
     this.data_proface = JSON.parse(JSON.stringify(device));
   }
-  // Method wich return empty List //
-  list() {
-    const _list = [];
-    _list.length = 0;
-    return _list;
-  }
+
   //
 }

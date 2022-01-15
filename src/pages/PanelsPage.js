@@ -15,7 +15,10 @@ const PanelsPage = () => {
   const Auxiliaires = location.state.datas.Auxiliaires;
   const piloted = location.state.datas.Eléments_pilotés;
   const analyzer = location.state.datas.Analiseurs;
+  // Depend on Open Air option chossen or not:
+  const opt = projectData.Option2;
   const machine = location.state.datas.Compresseurs;
+  const openair = location.state.datas.OpenAir;
   // Result from choice on different panels (false protect against empty entry when page build/refresh)
   const [config, setConfig] = useState(false);
   // Result read from abstract table
@@ -60,7 +63,11 @@ const PanelsPage = () => {
         <ElementPanel data={analyzer} config={projectData} output={setConfig} />
       </div>
       <div className="p5">
-        <ElementPanel data={machine} config={projectData} output={setConfig} />
+        <ElementPanel
+          data={opt === false ? machine : openair}
+          config={projectData}
+          output={setConfig}
+        />
       </div>
       <div className="p6">
         {/* <ElementPanel data={} config={projectData} output={setConfig} /> */}

@@ -2,21 +2,22 @@ import React from "react";
 import { Button, Card } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import RequestCards from "../components/RequestCards";
+import { generateDocx } from "../assets/logic/document";
+//
 import { Architecture, IOList } from "../assets/logic/Builder";
-import FA from "../assets/logic/functionalAnalysis";
-import QR from "../assets/logic/quotationRequest";
-import MA from "../assets/logic/materialArchitecture";
 
 const LastPage = () => {
   // General abstract from PanelsPage
   const location = useLocation();
   const rawAbstract = { ...location.state };
-  //console.log("rawAbstract", rawAbstract);
+  // console.log("rawAbstract", rawAbstract);
   // Build basical datas needed for document construction (methods are imported from mainDataBuilder):
-  const dict = new Architecture(rawAbstract).dictionnary();
-  console.log("dict", dict);
-  const answer = new IOList(dict).coefList(1.2);
-  console.log("answer", answer);
+  const resultats = new Architecture(rawAbstract).reservedDictionnary();
+  console.log("resultats", resultats);
+  //
+  const liste = new IOList(resultats).OpenAirList();
+  console.log("liste", liste);
+
   // styles:
   const btnStyle = { mt: "5px", mb: "8px", color: "#3f4246" };
   // Request cards content for all documentation:
@@ -55,7 +56,7 @@ const LastPage = () => {
             sx={btnStyle}
             variant="text"
             onClick={() => {
-              FA();
+              console.log("resultats", resultats);
             }}
           >
             Valider
@@ -73,9 +74,7 @@ const LastPage = () => {
             fullWidth={true}
             sx={btnStyle}
             variant="text"
-            onClick={() => {
-              QR();
-            }}
+            onClick={generateDocx}
           >
             Valider
           </Button>
@@ -92,9 +91,7 @@ const LastPage = () => {
             fullWidth={true}
             sx={btnStyle}
             variant="text"
-            onClick={() => {
-              MA();
-            }}
+            onClick={generateDocx}
           >
             Valider
           </Button>
