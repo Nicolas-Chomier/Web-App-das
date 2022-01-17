@@ -1,0 +1,357 @@
+{
+    "proface": {
+        "ihm": {
+            "eXtrem": {
+                "12": {
+                    "Denomination": "HMI",
+                    "Image": "HMI12SP5000X",
+                    "Series": "SP5000X Series",
+                    "Infos": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
+                    "Reference": "PFXSP5690WAD",
+                    "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
+                    "Fabricant": "PROFACE",
+                    "Prix": 1162.35,
+                    "PLC": {
+                        "Reference": "PFXSP5B90",
+                        "IOListe": false,
+                        "Infos": "PLC & HMI all in one",
+                        "Price": 560,
+                        "Quantity": 1
+                    },
+                    "MASTERCANOPEN": {
+                        "Denomination": "*",
+                        "Reference": "*",
+                        "Manufacturer": "*",
+                        "Infos": "*",
+                        "Price": "*",
+                        "Quantity": 1
+                    }
+                },
+                "15": {
+                    "Denomination": "HMI",
+                    "Image": "HMI12SP5000X",
+                    "Series": "SP5000X Series",
+                    "Infos": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
+                    "Reference": "PFXSP5690WAD",
+                    "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
+                    "Fabricant": "PROFACE",
+                    "Prix": 1162.35,
+                    "PLC": {
+                        "Reference": "PFXSP5B90",
+                        "IOListe": false,
+                        "Infos": "PLC & HMI all in one",
+                        "Price": 560,
+                        "Quantity": 1
+                    },
+                    "MASTERCANOPEN": {
+                        "Denomination": "*",
+                        "Reference": "*",
+                        "Manufacturer": "*",
+                        "Infos": "*",
+                        "Price": "*",
+                        "Quantity": 1
+                    }
+                }
+            },
+            "budget": {
+                "12": {
+                    "Denomination": "HMI",
+                    "Image": "HMI12SP5000X",
+                    "Series": "SP5000X Series",
+                    "Infos": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
+                    "Reference": "PFXSP5690WAD",
+                    "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
+                    "Fabricant": "PROFACE",
+                    "Prix": 1162.35,
+                    "PLC": {
+                        "Reference": "PFXSP5B90",
+                        "IOListe": false,
+                        "Infos": "PLC & HMI all in one",
+                        "Price": 560,
+                        "Quantity": 1
+                    },
+                    "MASTERCANOPEN": {
+                        "Denomination": "*",
+                        "Reference": "*",
+                        "Manufacturer": "*",
+                        "Infos": "*",
+                        "Price": "*",
+                        "Quantity": 1
+                    }
+                }
+            },
+            "premium": {
+                "12": {
+                    "Denomination": "HMI",
+                    "Image": "HMI12SP5000X",
+                    "Series": "SP5000X Series",
+                    "Infos": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
+                    "Reference": "PFXSP5690WAD",
+                    "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
+                    "Fabricant": "PROFACE",
+                    "Prix": 1162.35,
+                    "PLC": {
+                        "Reference": "PFXSP5B90",
+                        "IOListe": false,
+                        "Infos": "PLC & HMI all in one",
+                        "Price": 560,
+                        "Quantity": 1
+                    },
+                    "MASTERCANOPEN": {
+                        "Denomination": "*",
+                        "Reference": "*",
+                        "Manufacturer": "*",
+                        "Infos": "*",
+                        "Price": "*",
+                        "Quantity": 1
+                    }
+                },
+                "15": {
+                    "Denomination": "HMI",
+                    "Image": "HMI12SP5000X",
+                    "Series": "SP5000X Series",
+                    "Infos": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
+                    "Reference": "PFXSP5690WAD",
+                    "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
+                    "Fabricant": "PROFACE",
+                    "Prix": 1162.35,
+                    "PLC": {
+                        "Reference": "PFXSP5B90",
+                        "IOListe": false,
+                        "Infos": "PLC & HMI all in one",
+                        "Price": 560,
+                        "Quantity": 1
+                    },
+                    "MASTERCANOPEN": {
+                        "Denomination": "*",
+                        "Reference": "*",
+                        "Manufacturer": "*",
+                        "Infos": "*",
+                        "Price": "*",
+                        "Quantity": 1
+                    }
+                },
+                "19": {
+                    "Denomination": "HMI",
+                    "Image": "HMI12SP5000X",
+                    "Series": "SP5000X Series",
+                    "Infos": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
+                    "Reference": "PFXSP5690WAD",
+                    "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
+                    "Fabricant": "PROFACE",
+                    "Prix": 1162.35,
+                    "PLC": {
+                        "Reference": "PFXSP5B90",
+                        "IOListe": false,
+                        "Infos": "PLC & HMI all in one",
+                        "Price": 560,
+                        "Quantity": 1
+                    },
+                    "MASTERCANOPEN": {
+                        "Denomination": "*",
+                        "Reference": "*",
+                        "Manufacturer": "*",
+                        "Infos": "*",
+                        "Price": "*",
+                        "Quantity": 1
+                    }
+                }
+            }
+        },
+        "module1": {
+            "Description": "Module 16 entrées TOR",
+            "Interface": "Input x16",
+            "Denomination": "I/O Board",
+            "IoList": {
+                "ni": 16,
+                "no": 0,
+                "ai": 0,
+                "ao": 0,
+                "ti": 0
+            },
+            "Reference": "TM3DI16G",
+            "Manufacturer": "PRO-FACE",
+            "Price": 118.98,
+            "Img": "TM3DI16G"
+        },
+        "module2": {
+            "Description": "Module 8 entrées TOR",
+            "Interface": "Input x8",
+            "Denomination": "I/O Board",
+            "IoList": {
+                "ni": 8,
+                "no": 0,
+                "ai": 0,
+                "ao": 0,
+                "ti": 0
+            },
+            "Reference": "TM3DI8G",
+            "Manufacturer": "PRO-FACE",
+            "Price": 69.99,
+            "Img": "TM3DI8G"
+        },
+        "module3": {
+            "Description": "Module 16 sorties TOR",
+            "Interface": "Output x16",
+            "Denomination": "I/O Board",
+            "IoList": {
+                "ni": 0,
+                "no": 16,
+                "ai": 0,
+                "ao": 0,
+                "ti": 0
+            },
+            "Reference": "TM3DQ16TG",
+            "Manufacturer": "PRO-FACE",
+            "Price": 118.98,
+            "Img": "TM3DI8G"
+        },
+        "module4": {
+            "Description": "Module 8 sorties TOR",
+            "Interface": "Output x8",
+            "Denomination": "I/O Board",
+            "IoList": {
+                "ni": 0,
+                "no": 8,
+                "ai": 0,
+                "ao": 0,
+                "ti": 0
+            },
+            "Reference": "TM3DQ8TG",
+            "Manufacturer": "PRO-FACE",
+            "Price": 69.99,
+            "Img": "TM3DI8G"
+        },
+        "module5": {
+            "Description": "Module 4 entrées et 4 sorties TOR",
+            "Interface": "Hybride 4/4",
+            "Denomination": "I/O Board",
+            "IoList": {
+                "ni": 4,
+                "no": 4,
+                "ai": 0,
+                "ao": 0,
+                "ti": 0
+            },
+            "Reference": "TM3DM8RG",
+            "Manufacturer": "PRO-FACE",
+            "Price": 0,
+            "Img": "TM3DM8RG"
+        },
+        "module6": {
+            "Description": "Module 8 entrées analogiques",
+            "Interface": "Input x8",
+            "Denomination": "I/O Board",
+            "IoList": {
+                "ni": 0,
+                "no": 0,
+                "ai": 8,
+                "ao": 0,
+                "ti": 0
+            },
+            "Reference": "TM3AI8G",
+            "Manufacturer": "PRO-FACE",
+            "Price": 180.66,
+            "Img": "TM3DI8G"
+        },
+        "module7": {
+            "Description": "Module 4 entrées analogiques et sondes de températures",
+            "Interface": "Input x4",
+            "Denomination": "I/O Board",
+            "IoList": {
+                "ni": 0,
+                "no": 0,
+                "ai": 0,
+                "ao": 0,
+                "ti": 4
+            },
+            "Reference": "TM3TI4G",
+            "Manufacturer": "PRO-FACE",
+            "Price": 0,
+            "Img": "TM3DI8G"
+        },
+        "module8": {
+            "Description": "Module 4 sorties analogiques",
+            "Interface": "Output x4",
+            "Denomination": "I/O Board",
+            "IoList": {
+                "ni": 0,
+                "no": 0,
+                "ai": 0,
+                "ao": 4,
+                "ti": 0
+            },
+            "Reference": "TM3AQ4G",
+            "Manufacturer": "PRO-FACE",
+            "Price": 207.33,
+            "Img": "TM3DI8G"
+        },
+        "module9": {
+            "Description": "Module 4 entrées et 2 sorties analogiques",
+            "Interface": "Hybride 4/2",
+            "Denomination": "I/O Board",
+            "IoList": {
+                "ni": 0,
+                "no": 0,
+                "ai": 4,
+                "ao": 2,
+                "ti": 0
+            },
+            "Reference": "TM3AM6G",
+            "Manufacturer": "PRO-FACE",
+            "Price": 0,
+            "Img": "TM3DI8G"
+        },
+        "module10": {
+            "Description": "Module coupleur CAnopen",
+            "Interface": "Tête de ligne\nCanopen",
+            "Denomination": "I/O Board",
+            "IoList": {
+                "ni": 0,
+                "no": 0,
+                "ai": 0,
+                "ao": 0,
+                "ti": 0
+            },
+            "Reference": "TM3BCCO",
+            "Manufacturer": "PRO-FACE",
+            "Price": 161.65,
+            "Img": "TM3BCCO"
+        },
+        "module11": {
+            "Description": "Module d'extension émetteur",
+            "Interface": "Rallonge\némettrice",
+            "Denomination": "I/O Board",
+            "IoList": {
+                "ni": 0,
+                "no": 0,
+                "ai": 0,
+                "ao": 0,
+                "ti": 0
+            },
+            "Reference": "TM3XTRA1",
+            "Manufacturer": "PRO-FACE",
+            "Price": 43.27,
+            "Img": "TM3XTRA1"
+        },
+        "module12": {
+            "Description": "Module d'extension récepteur",
+            "Interface": "Rallonge\nréceptrice",
+            "Denomination": "I/O Board",
+            "IoList": {
+                "ni": 0,
+                "no": 0,
+                "ai": 0,
+                "ao": 0,
+                "ti": 0
+            },
+            "Reference": "TM3XREC1",
+            "Manufacturer": "PRO-FACE",
+            "Price": 43.27,
+            "Img": "TM3XREC1"
+        }
+    },
+    "wago": {
+        "ihm": "spare"
+    }
+}

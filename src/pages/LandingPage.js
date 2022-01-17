@@ -8,6 +8,7 @@ import OptionTile from "../components/OptionTile";
 import SwitchTile from "../components/SwitchTile";
 import { grey } from "@mui/material/colors";
 import SendIcon from "@mui/icons-material/Send";
+import CoefTile from "../components/CoefTile";
 
 // Importation of main datas sources
 const datas = JSON.parse(JSON.stringify(publics));
@@ -21,6 +22,8 @@ const LandingPage = () => {
   const [option, setOption] = useState(false);
   // Open air toggle switch boolean
   const [option2, setOption2] = useState(false);
+  // Open air toggle switch boolean
+  const [option3, setOption3] = useState(1);
   // Send data to next page when click validation btn
   const navigate = useNavigate();
   const handleClick = () => {
@@ -37,6 +40,7 @@ const LandingPage = () => {
           Technology: techno,
           Option: option,
           Option2: option2,
+          Coef: option3,
           datas: datas,
         },
       });
@@ -57,6 +61,9 @@ const LandingPage = () => {
       </div>
       <div className="optionTile">
         <OptionTile title={"Nombre d'IHM"} output={setOption} />
+      </div>
+      <div className="coefTile">
+        <CoefTile title={"Coefficient"} output={setOption3} />
       </div>
       <div className="switchTile">
         <SwitchTile title={"Open Air"} output={setOption2} />

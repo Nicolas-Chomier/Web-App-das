@@ -4,20 +4,24 @@ import { useLocation } from "react-router-dom";
 import RequestCards from "../components/RequestCards";
 import { generateDocx } from "../assets/logic/document";
 //
-import { Architecture, IOList } from "../assets/logic/Builder";
+import { Architecture, IOList, Proface } from "../assets/logic/Builder";
 
 const LastPage = () => {
   // General abstract from PanelsPage
   const location = useLocation();
   const rawAbstract = { ...location.state };
-  // console.log("rawAbstract", rawAbstract);
+  console.log("rawAbstract", rawAbstract);
+  // ................................................................................ test
   // Build basical datas needed for document construction (methods are imported from mainDataBuilder):
   const resultats = new Architecture(rawAbstract).reservedDictionnary();
-  console.log("resultats", resultats);
+  console.log("resultats de l'architecture", resultats);
   //
-  const liste = new IOList(resultats).OpenAirList();
-  console.log("liste", liste);
-
+  const liste = new IOList(rawAbstract).mainList(resultats);
+  console.log("resultats de l'IO Liste", liste);
+  //
+  const mod = new Proface(liste[1]).totalModule();
+  console.log("modules", mod);
+  // ................................................................................
   // styles:
   const btnStyle = { mt: "5px", mb: "8px", color: "#3f4246" };
   // Request cards content for all documentation:

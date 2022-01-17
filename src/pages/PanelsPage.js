@@ -25,6 +25,7 @@ const PanelsPage = () => {
   const [abstract, setAbstract] = useState("");
   //
   useEffect(() => {
+    // Send data to last page if data exist
     if (abstract.length !== 0 && projectData.length !== 0) {
       navToLastPage("/last", {
         state: {
@@ -32,6 +33,7 @@ const PanelsPage = () => {
           Elements: abstract,
         },
       });
+      // Trap first loading page
     } else if (abstract.length === 0) {
       console.log("trap");
     } else {

@@ -3,16 +3,16 @@
     display: grid;
     width: 100%;
     height: 100%;
-
     grid-template-areas:
       "headers headers  headers "
       "lpanel title  rpanel"
       "lpanel  optionTile rpanel"
       "lpanel technology  rpanel"
       "lpanel  switchTile rpanel"
+      "lpanel  coefTile rpanel"
       "lpanel validation  rpanel"
       "bott bott bott ";
-    grid-template-rows: 2vh auto auto auto auto;
+    grid-template-rows: 2vh auto auto auto auto auto;
     grid-template-columns: 35vw 30vw 35vw;
     overflow-x: hidden;
 
@@ -21,17 +21,14 @@
       display: flex;
       justify-content: center;
     }
-
     .lpanel {
       grid-area: lpanel;
       display: flex;
     }
-
     .rpanel {
       grid-area: rpanel;
       display: flex;
     }
-
     .title {
       grid-area: title;
       display: flex;
@@ -44,21 +41,24 @@
       align-items: center;
       justify-content: center;
     }
-
     .switchTile {
       grid-area: switchTile;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-
+    .coefTile {
+      grid-area: coefTile;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .technology {
       grid-area: technology;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-
     .validation {
       grid-area: validation;
       display: flex;
@@ -66,12 +66,10 @@
       justify-content: center;
       margin-bottom: 2vh;
     }
-
     .bott {
       grid-area: bott;
       display: flex;
     }
-
     .validation-section {
       min-width: 22vw;
       min-height: 13vh;
@@ -86,17 +84,17 @@
     display: grid;
     width: 100%;
     height: 100%;
-
     grid-template-areas:
-      " headers   "
-      " title  "
-      "  optionTile "
-      " technology  "
-      "  switchTile "
-      " validation  "
-      " bott  ";
-    grid-template-rows: 2vh auto auto auto auto;
-    grid-template-columns: 100vw;
+      "headers headers headers "
+      "lpanel title rpanel"
+      "lpanel optionTile rpanel"
+      "lpanel technology rpanel"
+      "lpanel switchTile rpanel"
+      "lpanel coefTile rpanel"
+      "lpanel validation rpanel"
+      "bott bott bott ";
+    grid-template-rows: 2vh auto auto auto auto auto;
+    grid-template-columns: 2vw 96vw 2vw;
     overflow-x: hidden;
 
     .headers {
@@ -104,17 +102,14 @@
       display: flex;
       justify-content: center;
     }
-
-    /* .lpanel {
+    .lpanel {
       grid-area: lpanel;
       display: flex;
     }
-
     .rpanel {
       grid-area: rpanel;
       display: flex;
-    } */
-
+    }
     .title {
       grid-area: title;
       display: flex;
@@ -127,21 +122,30 @@
       align-items: center;
       justify-content: center;
     }
-
     .switchTile {
       grid-area: switchTile;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-
+    .coefTile {
+      grid-area: coefTile;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .coefTile {
+      grid-area: coefTile;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .technology {
       grid-area: technology;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-
     .validation {
       grid-area: validation;
       display: flex;
@@ -149,12 +153,10 @@
       justify-content: center;
       margin-bottom: 2vh;
     }
-
     .bott {
       grid-area: bott;
       display: flex;
     }
-
     .validation-section {
       min-width: 22vw;
       min-height: 13vh;
