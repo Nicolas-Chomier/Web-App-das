@@ -1,0 +1,17 @@
+{
+    "doc": {
+        "title": "Analyse fonctionnelle",
+        "text": "Génère une analyse fonctionnelle au format Word partiellement complétée avec les informations renseignés dans pages précedentes.",
+        "color": "#FFBE00"
+    },
+    "quot": {
+        "title": "Demande de chiffrage",
+        "text": "Génère une demande de chiffrage au format Word formaté et prète à l'emploi pour toute demande de matériel ou de devis.",
+        "color": "#97B92D"
+    },
+    "arch": {
+        "title": "Architecture matériel",
+        "text": "Génère l'architecture materiel du projet avec les elements renseignés dans pages précedentes correspondant au fabricant sélectionné.",
+        "color": "#35A55D"
+    }
+}

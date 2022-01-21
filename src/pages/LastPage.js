@@ -1,47 +1,20 @@
 import React from "react";
-import { Button, Card } from "@mui/material";
 import { useLocation } from "react-router-dom";
+import { Button, Card } from "@mui/material";
 import RequestCards from "../components/RequestCards";
-import { generateDocx } from "../assets/logic/document";
-//
-import { Architecture, IOList, Proface } from "../assets/logic/Builder";
+import { handleClick_Quotation } from "../assets/logic/Quotation";
+import contents from "../assets/data/lastPageDatas.json";
 
+// Load text information to display for Requestcards elements
+const content = JSON.parse(JSON.stringify(contents));
+//
 const LastPage = () => {
   // General abstract from PanelsPage
   const location = useLocation();
   const rawAbstract = { ...location.state };
-  console.log("rawAbstract", rawAbstract);
-  // ................................................................................ test
-  // Build basical datas needed for document construction (methods are imported from mainDataBuilder):
-  const resultats = new Architecture(rawAbstract).reservedDictionnary();
-  console.log("resultats de l'architecture", resultats);
-  //
-  const liste = new IOList(rawAbstract).mainList(resultats);
-  console.log("resultats de l'IO Liste", liste);
-  //
-  const mod = new Proface(liste[1]).totalModule();
-  console.log("modules", mod);
-  // ................................................................................
-  // styles:
+  // console.log("rawAbstract", rawAbstract);
+  // Boutton styles:
   const btnStyle = { mt: "5px", mb: "8px", color: "#3f4246" };
-  // Request cards content for all documentation:
-  const contents = {
-    doc: {
-      title: "Analyse fonctionnelle",
-      text: "Génère une analyse fonctionnelle au format Word partiellement complétée avec les informations renseignés dans pages précedentes.",
-      color: "#FFBE00",
-    },
-    quot: {
-      title: "Demande de chiffrage",
-      text: "Génère une demande de chiffrage au format Word formaté et prète à l'emploi pour toute demande de matériel ou de devis.",
-      color: "#97B92D",
-    },
-    arch: {
-      title: "Architecture matériel",
-      text: "Génère l'architecture materiel du projet avec les elements renseignés dans pages précedentes correspondant au fabricant sélectionné.",
-      color: "#35A55D",
-    },
-  };
   // Last page //
   return (
     <div className="grid-container-last-page">
@@ -51,17 +24,15 @@ const LastPage = () => {
       <div className="r1">
         <Card sx={{ width: "100%", mx: "1vw" }} elevation={5}>
           <RequestCards
-            title={contents.doc.title}
-            text={contents.doc.text}
-            color={contents.doc.color}
+            title={content.quot.title}
+            text={content.quot.text}
+            color={content.quot.color}
           />
           <Button
             fullWidth={true}
             sx={btnStyle}
             variant="text"
-            onClick={() => {
-              console.log("resultats", resultats);
-            }}
+            onClick={() => handleClick_Quotation(rawAbstract)}
           >
             Valider
           </Button>
@@ -70,15 +41,17 @@ const LastPage = () => {
       <div className="r2">
         <Card sx={{ width: "100%", mx: "1vw" }} elevation={5}>
           <RequestCards
-            title={contents.quot.title}
-            text={contents.quot.text}
-            color={contents.quot.color}
+            title={content.doc.title}
+            text={content.doc.text}
+            color={content.doc.color}
           />
           <Button
             fullWidth={true}
             sx={btnStyle}
             variant="text"
-            onClick={generateDocx}
+            onClick={() => {
+              console.log("Functional Analisys WIP");
+            }}
           >
             Valider
           </Button>
@@ -87,15 +60,17 @@ const LastPage = () => {
       <div className="r3">
         <Card sx={{ width: "100%", mx: "1vw" }} elevation={5}>
           <RequestCards
-            title={contents.arch.title}
-            text={contents.arch.text}
-            color={contents.arch.color}
+            title={content.arch.title}
+            text={content.arch.text}
+            color={content.arch.color}
           />
           <Button
             fullWidth={true}
             sx={btnStyle}
             variant="text"
-            onClick={generateDocx}
+            onClick={() => {
+              console.log("Architecture WIP");
+            }}
           >
             Valider
           </Button>

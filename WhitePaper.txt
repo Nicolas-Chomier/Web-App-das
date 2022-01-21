@@ -1,0 +1,4 @@
+Modification pour plus tard:
+
+Afficher le contenu des documents générés dans une liste sur les requestCards en LastPage.
+Corriger les bugs d'affichages des boutton des requestCards en LastPage.

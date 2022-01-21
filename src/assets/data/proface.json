@@ -1,161 +1,171 @@
 {
-    "proface": {
-        "ihm": {
-            "eXtrem": {
-                "12": {
-                    "Denomination": "HMI",
-                    "Image": "HMI12SP5000X",
-                    "Series": "SP5000X Series",
-                    "Infos": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
-                    "Reference": "PFXSP5690WAD",
-                    "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
-                    "Fabricant": "PROFACE",
-                    "Prix": 1162.35,
-                    "PLC": {
-                        "Reference": "PFXSP5B90",
-                        "IOListe": false,
-                        "Infos": "PLC & HMI all in one",
-                        "Price": 560,
-                        "Quantity": 1
-                    },
-                    "MASTERCANOPEN": {
-                        "Denomination": "*",
-                        "Reference": "*",
-                        "Manufacturer": "*",
-                        "Infos": "*",
-                        "Price": "*",
-                        "Quantity": 1
-                    }
-                },
-                "15": {
-                    "Denomination": "HMI",
-                    "Image": "HMI12SP5000X",
-                    "Series": "SP5000X Series",
-                    "Infos": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
-                    "Reference": "PFXSP5690WAD",
-                    "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
-                    "Fabricant": "PROFACE",
-                    "Prix": 1162.35,
-                    "PLC": {
-                        "Reference": "PFXSP5B90",
-                        "IOListe": false,
-                        "Infos": "PLC & HMI all in one",
-                        "Price": 560,
-                        "Quantity": 1
-                    },
-                    "MASTERCANOPEN": {
-                        "Denomination": "*",
-                        "Reference": "*",
-                        "Manufacturer": "*",
-                        "Infos": "*",
-                        "Price": "*",
-                        "Quantity": 1
-                    }
-                }
+    "PROFACE": {
+        "0001": {
+            "Taille": 12,
+            "Gamme": "eXtrem",
+            "Image": "HMI12SP5000X",
+            "Series": "SP5000X Series",
+            "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
+            "InfosHMI": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
+            "InfosPLC": "PLC & HMI all in one",
+            "InfosCAN": "Master canopen board",
+            "PriceHMI": 1162.35,
+            "PricePLC": 1162.35,
+            "PriceCAN": 1162.35,
+            "HMI": {
+                "Denomination": "HMI",
+                "Ref": "PFXSP5690WAD",
+                "Manufacturer": "PROFACE"
             },
-            "budget": {
-                "12": {
-                    "Denomination": "HMI",
-                    "Image": "HMI12SP5000X",
-                    "Series": "SP5000X Series",
-                    "Infos": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
-                    "Reference": "PFXSP5690WAD",
-                    "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
-                    "Fabricant": "PROFACE",
-                    "Prix": 1162.35,
-                    "PLC": {
-                        "Reference": "PFXSP5B90",
-                        "IOListe": false,
-                        "Infos": "PLC & HMI all in one",
-                        "Price": 560,
-                        "Quantity": 1
-                    },
-                    "MASTERCANOPEN": {
-                        "Denomination": "*",
-                        "Reference": "*",
-                        "Manufacturer": "*",
-                        "Infos": "*",
-                        "Price": "*",
-                        "Quantity": 1
-                    }
-                }
+            "PLC": {
+                "Denomination": "PLC",
+                "Ref": "PFXSP5B90",
+                "Manufacturer": "PROFACE"
             },
-            "premium": {
-                "12": {
-                    "Denomination": "HMI",
-                    "Image": "HMI12SP5000X",
-                    "Series": "SP5000X Series",
-                    "Infos": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
-                    "Reference": "PFXSP5690WAD",
-                    "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
-                    "Fabricant": "PROFACE",
-                    "Prix": 1162.35,
-                    "PLC": {
-                        "Reference": "PFXSP5B90",
-                        "IOListe": false,
-                        "Infos": "PLC & HMI all in one",
-                        "Price": 560,
-                        "Quantity": 1
-                    },
-                    "MASTERCANOPEN": {
-                        "Denomination": "*",
-                        "Reference": "*",
-                        "Manufacturer": "*",
-                        "Infos": "*",
-                        "Price": "*",
-                        "Quantity": 1
-                    }
-                },
-                "15": {
-                    "Denomination": "HMI",
-                    "Image": "HMI12SP5000X",
-                    "Series": "SP5000X Series",
-                    "Infos": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
-                    "Reference": "PFXSP5690WAD",
-                    "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
-                    "Fabricant": "PROFACE",
-                    "Prix": 1162.35,
-                    "PLC": {
-                        "Reference": "PFXSP5B90",
-                        "IOListe": false,
-                        "Infos": "PLC & HMI all in one",
-                        "Price": 560,
-                        "Quantity": 1
-                    },
-                    "MASTERCANOPEN": {
-                        "Denomination": "*",
-                        "Reference": "*",
-                        "Manufacturer": "*",
-                        "Infos": "*",
-                        "Price": "*",
-                        "Quantity": 1
-                    }
-                },
-                "19": {
-                    "Denomination": "HMI",
-                    "Image": "HMI12SP5000X",
-                    "Series": "SP5000X Series",
-                    "Infos": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
-                    "Reference": "PFXSP5690WAD",
-                    "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
-                    "Fabricant": "PROFACE",
-                    "Prix": 1162.35,
-                    "PLC": {
-                        "Reference": "PFXSP5B90",
-                        "IOListe": false,
-                        "Infos": "PLC & HMI all in one",
-                        "Price": 560,
-                        "Quantity": 1
-                    },
-                    "MASTERCANOPEN": {
-                        "Denomination": "*",
-                        "Reference": "*",
-                        "Manufacturer": "*",
-                        "Infos": "*",
-                        "Price": "*",
-                        "Quantity": 1
-                    }
-                }
+            "CAN": {
+                "Denomination": "CANOPEN MASTER",
+                "Ref": "99999",
+                "Manufacturer": "PROFACE"
+            }
+        },
+        "0002": {
+            "Taille": 12,
+            "Gamme": "eXtrem",
+            "Image": "HMI12SP5000X",
+            "Series": "SP5000X Series",
+            "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
+            "InfosHMI": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
+            "InfosPLC": "PLC & HMI all in one",
+            "InfosCAN": "Master canopen board",
+            "PriceHMI": 1162.35,
+            "PricePLC": 1162.35,
+            "PriceCAN": 1162.35,
+            "HMI": {
+                "Denomination": "HMI",
+                "Ref": "PFXSP5690WAD",
+                "Manufacturer": "PROFACE"
+            },
+            "PLC": {
+                "Denomination": "PLC",
+                "Ref": "PFXSP5B90",
+                "Manufacturer": "PROFACE"
+            },
+            "CAN": {
+                "Denomination": "CANOPEN MASTER",
+                "Ref": "99999",
+                "Manufacturer": "PROFACE"
+            }
+        },
+        "0003": {
+            "Taille": 12,
+            "Gamme": "eXtrem",
+            "Image": "HMI12SP5000X",
+            "Series": "SP5000X Series",
+            "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
+            "InfosHMI": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
+            "InfosPLC": "PLC & HMI all in one",
+            "InfosCAN": "Master canopen board",
+            "PriceHMI": 1162.35,
+            "PricePLC": 1162.35,
+            "PriceCAN": 1162.35,
+            "HMI": {
+                "Denomination": "HMI",
+                "Ref": "PFXSP5690WAD",
+                "Manufacturer": "PROFACE"
+            },
+            "PLC": {
+                "Denomination": "PLC",
+                "Ref": "PFXSP5B90",
+                "Manufacturer": "PROFACE"
+            },
+            "CAN": {
+                "Denomination": "CANOPEN MASTER",
+                "Ref": "99999",
+                "Manufacturer": "PROFACE"
+            }
+        },
+        "0004": {
+            "Taille": 12,
+            "Gamme": "eXtrem",
+            "Image": "HMI12SP5000X",
+            "Series": "SP5000X Series",
+            "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
+            "InfosHMI": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
+            "InfosPLC": "PLC & HMI all in one",
+            "InfosCAN": "Master canopen board",
+            "PriceHMI": 1162.35,
+            "PricePLC": 1162.35,
+            "PriceCAN": 1162.35,
+            "HMI": {
+                "Denomination": "HMI",
+                "Ref": "PFXSP5690WAD",
+                "Manufacturer": "PROFACE"
+            },
+            "PLC": {
+                "Denomination": "PLC",
+                "Ref": "PFXSP5B90",
+                "Manufacturer": "PROFACE"
+            },
+            "CAN": {
+                "Denomination": "CANOPEN MASTER",
+                "Ref": "99999",
+                "Manufacturer": "PROFACE"
+            }
+        },
+        "0005": {
+            "Taille": 12,
+            "Gamme": "eXtrem",
+            "Image": "HMI12SP5000X",
+            "Series": "SP5000X Series",
+            "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
+            "InfosHMI": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
+            "InfosPLC": "PLC & HMI all in one",
+            "InfosCAN": "Master canopen board",
+            "PriceHMI": 1162.35,
+            "PricePLC": 1162.35,
+            "PriceCAN": 1162.35,
+            "HMI": {
+                "Denomination": "HMI",
+                "Ref": "PFXSP5690WAD",
+                "Manufacturer": "PROFACE"
+            },
+            "PLC": {
+                "Denomination": "PLC",
+                "Ref": "PFXSP5B90",
+                "Manufacturer": "PROFACE"
+            },
+            "CAN": {
+                "Denomination": "CANOPEN MASTER",
+                "Ref": "99999",
+                "Manufacturer": "PROFACE"
+            }
+        },
+        "0006": {
+            "Taille": 12,
+            "Gamme": "eXtrem",
+            "Image": "HMI12SP5000X",
+            "Series": "SP5000X Series",
+            "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
+            "InfosHMI": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
+            "InfosPLC": "PLC & HMI all in one",
+            "InfosCAN": "Master canopen board",
+            "PriceHMI": 1162.35,
+            "PricePLC": 1162.35,
+            "PriceCAN": 1162.35,
+            "HMI": {
+                "Denomination": "HMI",
+                "Ref": "PFXSP5690WAD",
+                "Manufacturer": "PROFACE"
+            },
+            "PLC": {
+                "Denomination": "PLC",
+                "Ref": "PFXSP5B90",
+                "Manufacturer": "PROFACE"
+            },
+            "CAN": {
+                "Denomination": "CANOPEN MASTER",
+                "Ref": "99999",
+                "Manufacturer": "PROFACE"
             }
         },
         "module1": {

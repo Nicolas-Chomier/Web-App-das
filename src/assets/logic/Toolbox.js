@@ -1,13 +1,20 @@
 import privates from "../data/private.json";
+import proface from "../data/proface.json";
 
-// Class wich build tag architecture //
-export class Architecture {
+// Class wich regroup methods used to build documents //
+export class DocumentTools {
   constructor(rawAbstract) {
-    // Load private datas
-    this.data_privates = JSON.parse(JSON.stringify(privates));
-    // Load datas from FRONT
-    this.data_elements = rawAbstract.Elements;
-    this.data_projects = rawAbstract.Project;
+    // Load special datas (private info and technical infos)
+    this.private = JSON.parse(JSON.stringify(privates));
+    this.proface = JSON.parse(JSON.stringify(proface));
+    // Datas from Landing page
+    this.coef = rawAbstract.Project.Coef;
+    this.group = rawAbstract.Project.Option;
+    this.title = rawAbstract.Project.Title;
+    this.openAir = rawAbstract.Project.Option2;
+    this.HMI_id = rawAbstract.Project.Technology.id;
+    // Elements list from PanelsPage
+    this.dataset = rawAbstract.Elements;
   }
   // Method wich return empty Object //
   object() {
@@ -19,9 +26,8 @@ export class Architecture {
   }
   // Method wich return an empty structure for stock tag, according item project list choosen //
   skeleton() {
-    const nbs = this.data_projects.Option;
     const obj = this.object();
-    for (let i = 0; i < nbs; i++) {
+    for (let i = 0; i < this.group; i++) {
       obj[i + 1] = {
         ni: [],
         no: [],
@@ -35,7 +41,7 @@ export class Architecture {
   // Method wich return fullfilled dictionnary with all item's tag stored correctly //
   dictionnary() {
     const structure = this.skeleton();
-    const dataset = this.data_elements;
+    const dataset = this.dataset;
     // Open air identifacation flag & number:
     const flag = "OPA";
     let j = 1;
@@ -61,7 +67,7 @@ export class Architecture {
   }
   // Method which build open air tag structure and add it to main dictionnary //
   addOpenAir(item) {
-    const prv = this.data_privates;
+    const prv = this.private;
     const structure = {
       ni: [],
       no: [],
@@ -95,7 +101,7 @@ export class Architecture {
   }
   // Method which build item tag structure and add it to main dictionnary //
   addItem(item, value) {
-    const prv = this.data_privates;
+    const prv = this.private;
     const tag = item.tag;
     const niNbs = prv[item.id]["ni"];
     const noNbs = prv[item.id]["no"];
@@ -122,12 +128,11 @@ export class Architecture {
   // Method used to add basical project needs to standard dictionnary //
   reservedDictionnary(grp = 1) {
     const _obj = { ...this.dictionnary() };
-    const nbs = this.data_projects.Option;
     // Project reserved slot config:
     const prs = { ni: 8, no: 6, ai: 1, ao: 0, ti: 0 };
     const name = "Reserved";
     // Security against bad group number:
-    if (grp > nbs || grp <= 0) {
+    if (grp > this.group || grp <= 0) {
       grp = 1;
     }
     // Fill choosen group with reserved slot:
@@ -139,22 +144,6 @@ export class Architecture {
           value.unshift(name);
         }
       }
-    }
-    return _obj;
-  }
-}
-
-// Class wich build IOList //
-export class IOList {
-  constructor(rawAbstract) {
-    // Incertitude coeficient
-    this.coef = rawAbstract.Project.Coef;
-  }
-  // Method wich return empty Object //
-  object() {
-    const _obj = {};
-    for (const prop of Object.getOwnPropertyNames(_obj)) {
-      delete _obj[prop];
     }
     return _obj;
   }
@@ -194,8 +183,66 @@ export class IOList {
     }
     return _result;
   }
+  // Method which build one main object with global IOList
+  ioListAdder(obj) {
+    const elementIoList = { ni: 0, no: 0, ai: 0, ao: 0, ti: 0 };
+    const compressorIoList = { ni: 0, no: 0, ai: 0, ao: 0, ti: 0 };
+    for (let i = 0; i < Object.keys(obj).length; i++) {
+      for (const [key, value] of Object.entries(obj[i + 1])) {
+        if (typeof value === "number") {
+          elementIoList[key] += value;
+        } else {
+          for (const [subKey, subValue] of Object.entries(value)) {
+            compressorIoList[subKey] += subValue;
+          }
+        } // resoudre le probleme des compresseur open air !!
+      }
+    }
+    return true;
+  }
+  // Method wich return empty list
+  list(gift) {
+    const _list = [];
+    _list.length = 0;
+    if (gift) {
+      _list.push(gift);
+    }
+    return _list;
+  }
+  // Method wich return informations from landing page
+  nomenclatureHmi() {
+    const conceptionList = ["HMI", "PLC", "CAN"];
+    const firstRow = ["Denomination", "Reference", "Manufacturer", "Quantity"];
+    const table = this.list(firstRow);
+    for (const item of conceptionList) {
+      const rows = this.list();
+      for (const value of Object.values(
+        this.proface.PROFACE[this.idHmi][item]
+      )) {
+        rows.push(value);
+      }
+      rows.push(this.group);
+      table.push(rows);
+    }
+    return table;
+  }
+  // Method wich return table of table representing the modules nomenclature
+  nomenclatureModule(obj) {
+    const firstRow = ["Reference", "Manufacturer", "Description", "Quantity"];
+    const table = this.list(firstRow);
+    for (const [key, value] of Object.entries(obj)) {
+      if (value !== 0) {
+        const rows = this.list();
+        rows.push(this.proface.PROFACE[key]["Reference"]);
+        rows.push(this.proface.PROFACE[key]["Manufacturer"]);
+        rows.push(this.proface.PROFACE[key]["Description"]);
+        rows.push(value);
+        table.push(rows);
+      }
+    }
+    return table;
+  }
 }
-
 // Class wich build special module and technical data like IO board (only with PROFACE)
 export class Proface {
   constructor(iolist) {
@@ -308,21 +355,17 @@ export class Proface {
     this.numericalModule();
     this.analogModule();
     let totalModules = 0;
+    // Calcul the total amount of module needed by the project to determine below wich and how many special module use in the project
     for (const value of Object.values(this._results)) {
       totalModules += value;
     }
-    console.log("totalModules", totalModules);
     var restModule = totalModules % this.sMax;
-    console.log("restModule", restModule);
     if (restModule > 0) {
-      console.log("restmodule plus grand que 0");
       if (restModule <= 7) {
-        console.log("restmodule plus <= 7");
         this._results.module10 += Math.floor(totalModules / this.sMax) + 1;
         this._results.module11 += Math.floor(totalModules / this.sMax);
         this._results.module12 += Math.floor(totalModules / this.sMax);
       } else {
-        console.log("restmodule plus grand que 7");
         this._results.module10 += Math.floor(totalModules / this.sMax) + 1;
         this._results.module11 += Math.floor(totalModules / this.sMax) + 1;
         this._results.module12 += Math.floor(totalModules / this.sMax) + 1;
