@@ -1,26 +1,26 @@
 import { DocumentTools, Proface } from "./Toolbox";
 
 export function handleClick_Quotation(rawAbstract) {
-  // ................................................................................ test
-  // Build basical datas needed for document construction (methods are imported from mainDataBuilder):
-  const resultats = new DocumentTools(rawAbstract).reservedDictionnary();
-  console.log("resultats de l'architecture", resultats);
-  //
-  const liste = new DocumentTools(rawAbstract).mainList(resultats);
-  console.log("resultats de l'IO Liste", liste);
-  //
-  const addedListe = new DocumentTools(rawAbstract).ioListAdder(liste);
-  console.log("addedListe", addedListe);
-  //
-  const mod1 = new Proface(liste[1]).totalModule();
-  const mod2 = new Proface(liste[2]).totalModule();
-  const mod3 = new Proface(liste[3]).totalModule();
-  console.log("modules1", mod1);
-  console.log("modules2", mod2);
-  console.log("modules3", mod3);
-  //
-  const proj = new DocumentTools(rawAbstract).nomenclatureModule(mod1);
-  console.log(proj);
-
-  // ................................................................................
+  // Instantiation of the Document Tools class
+  const Dt = new DocumentTools(rawAbstract);
+  // Instantiation of the Technology Provider (PROFACE) class
+  const Tp = new Proface();
+  // Build tag architecture
+  const tagArch = Dt.dictionnaryWithTag();
+  console.log("Resultats de l'architecture (avec TAG)", tagArch);
+  // Build fully main IOList
+  const fullIOlist = Dt.ioListBuilder();
+  console.log("Fully main IO List => ", fullIOlist);
+  // Build main module line
+  const mod1 = Tp.totalModule(fullIOlist);
+  console.log("All TM3 project Module", mod1);
+  // Build open air compressor module line
+  const mod2 = Dt.openAirModule();
+  console.log("Module TM3 des compresseurs open air", mod2);
+  // Merge this two module line up
+  const mergedModules = Dt.mergeModuleLine(mod1, mod2);
+  console.log("Resultat apres la fusion des listes de module", mergedModules);
+  // Build general module nomenclature
+  const elementsNomenclature = Dt.nomenclatureModule(mergedModules);
+  console.log("Nomenclature des elements", elementsNomenclature);
 }

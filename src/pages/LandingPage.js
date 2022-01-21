@@ -55,18 +55,18 @@ const LandingPage = () => {
       <div className="title">
         <TitleTile title={"Nom du projet"} output={setText} />
       </div>
+      <div className="optionTile">
+        <OptionTile title={"Nombre d'IHM"} output={setOption} />
+      </div>
       <div className="technology">
         <TechnoTile title={"Technologie"} datas={datas} output={setTechno} />
         {/* <TechnoSection datas={datas} output={setTechno} /> */}
       </div>
-      <div className="optionTile">
-        <OptionTile title={"Nombre d'IHM"} output={setOption} />
+      <div className="switchTile">
+        <SwitchTile title={"Open Air"} output={setOption2} />
       </div>
       <div className="coefTile">
         <CoefTile title={"Coefficient"} output={setOption3} />
-      </div>
-      <div className="switchTile">
-        <SwitchTile title={"Open Air"} output={setOption2} />
       </div>
       <div className="validation">
         <Button

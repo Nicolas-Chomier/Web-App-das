@@ -1,5 +1,5 @@
 import { Architecture, IOList, Proface } from "./Builder";
-import { Design } from "./Wordx";
+import { Design } from "./WordxFunctions";
 import { saveAs } from "file-saver";
 import { Buffer } from "buffer";
 import {
@@ -9,7 +9,7 @@ import {
   base64Header4,
   base64Header5,
   base64LogoDalkia,
-} from "../data/images";
+} from "../image/images.js";
 import {
   Document,
   Packer,

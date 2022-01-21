@@ -354,6 +354,24 @@
             }
         }
     },
+    "OpenAir": {
+        "image": "generic.jpeg",
+        "title": "Open Air",
+        "default_tag": "Compressors_6000",
+        "color": "#3F4246",
+        "data": {
+            "Compresseurs": {
+                "Débit fixe": {
+                    "id": 6001,
+                    "generic name": "OPA"
+                },
+                "Débit variable": {
+                    "id": 6002,
+                    "generic name": "OPA"
+                }
+            }
+        }
+    },
     "Compresseurs": {
         "image": "generic.jpeg",
         "title": "Compressor",
@@ -374,24 +392,6 @@
                 "standard": {
                     "id": 6005,
                     "generic name": "Booster"
-                }
-            }
-        }
-    },
-    "OpenAir": {
-        "image": "generic.jpeg",
-        "title": "Open Air",
-        "default_tag": "Compressors_6000",
-        "color": "#3F4246",
-        "data": {
-            "Compresseurs": {
-                "Débit fixe": {
-                    "id": 6001,
-                    "generic name": "OPA"
-                },
-                "Débit variable": {
-                    "id": 6002,
-                    "generic name": "OPA"
                 }
             }
         }

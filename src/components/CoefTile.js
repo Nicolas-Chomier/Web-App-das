@@ -9,19 +9,15 @@ import {
 } from "@mui/material";
 import ScienceIcon from "@mui/icons-material/Science";
 import Slider from "@mui/material/Slider";
-import { grey, amber } from "@mui/material/colors";
+import { amber } from "@mui/material/colors";
 
 const CoefTile = ({ title, output }) => {
   // Avatar basical style:
   const [color, setColor] = useState(200);
-  const basicStyle = { bgcolor: grey[800], width: 54, height: 54 };
-  // State
-  const [value, setValue] = useState(1.2);
-  const [style, setStyle] = useState(basicStyle);
+  const [style, setStyle] = useState({});
 
-  //
+  // Slider value changement
   const handleChange = (event, newValue) => {
-    console.log("===", newValue);
     setColor(newValue);
     output(newValue);
   };
@@ -30,7 +26,7 @@ const CoefTile = ({ title, output }) => {
     <Box width={190}>
       <Slider
         color="primary"
-        defaultValue={value}
+        defaultValue={1.2}
         aria-label="Default"
         size="medium"
         valueLabelDisplay="auto"
@@ -47,6 +43,7 @@ const CoefTile = ({ title, output }) => {
     setStyle({ bgcolor: amber[colorIndex], width: 54, height: 54 });
   }, [color]);
   // //
+
   return (
     <Card sx={{ width: "100%", mx: "1vw", my: "1vh" }} elevation={5}>
       <Stack
