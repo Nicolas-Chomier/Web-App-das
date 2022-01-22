@@ -180,7 +180,7 @@
                 "ti": 0
             },
             "Reference": "TM3DI16G",
-            "Manufacturer": "PRO-FACE",
+            "Manufacturer": "PROFACE",
             "Price": 118.98,
             "Img": "TM3DI16G"
         },
@@ -196,7 +196,7 @@
                 "ti": 0
             },
             "Reference": "TM3DI8G",
-            "Manufacturer": "PRO-FACE",
+            "Manufacturer": "PROFACE",
             "Price": 69.99,
             "Img": "TM3DI8G"
         },
@@ -212,7 +212,7 @@
                 "ti": 0
             },
             "Reference": "TM3DQ16TG",
-            "Manufacturer": "PRO-FACE",
+            "Manufacturer": "PROFACE",
             "Price": 118.98,
             "Img": "TM3DI8G"
         },
@@ -228,7 +228,7 @@
                 "ti": 0
             },
             "Reference": "TM3DQ8TG",
-            "Manufacturer": "PRO-FACE",
+            "Manufacturer": "PROFACE",
             "Price": 69.99,
             "Img": "TM3DI8G"
         },
@@ -244,7 +244,7 @@
                 "ti": 0
             },
             "Reference": "TM3DM8RG",
-            "Manufacturer": "PRO-FACE",
+            "Manufacturer": "PROFACE",
             "Price": 0,
             "Img": "TM3DM8RG"
         },
@@ -260,7 +260,7 @@
                 "ti": 0
             },
             "Reference": "TM3AI8G",
-            "Manufacturer": "PRO-FACE",
+            "Manufacturer": "PROFACE",
             "Price": 180.66,
             "Img": "TM3DI8G"
         },
@@ -276,7 +276,7 @@
                 "ti": 4
             },
             "Reference": "TM3TI4G",
-            "Manufacturer": "PRO-FACE",
+            "Manufacturer": "PROFACE",
             "Price": 0,
             "Img": "TM3DI8G"
         },
@@ -292,7 +292,7 @@
                 "ti": 0
             },
             "Reference": "TM3AQ4G",
-            "Manufacturer": "PRO-FACE",
+            "Manufacturer": "PROFACE",
             "Price": 207.33,
             "Img": "TM3DI8G"
         },
@@ -308,7 +308,7 @@
                 "ti": 0
             },
             "Reference": "TM3AM6G",
-            "Manufacturer": "PRO-FACE",
+            "Manufacturer": "PROFACE",
             "Price": 0,
             "Img": "TM3DI8G"
         },
@@ -324,7 +324,7 @@
                 "ti": 0
             },
             "Reference": "TM3BCCO",
-            "Manufacturer": "PRO-FACE",
+            "Manufacturer": "PROFACE",
             "Price": 161.65,
             "Img": "TM3BCCO"
         },
@@ -340,7 +340,7 @@
                 "ti": 0
             },
             "Reference": "TM3XTRA1",
-            "Manufacturer": "PRO-FACE",
+            "Manufacturer": "PROFACE",
             "Price": 43.27,
             "Img": "TM3XTRA1"
         },
@@ -356,7 +356,7 @@
                 "ti": 0
             },
             "Reference": "TM3XREC1",
-            "Manufacturer": "PRO-FACE",
+            "Manufacturer": "PROFACE",
             "Price": 43.27,
             "Img": "TM3XREC1"
         }

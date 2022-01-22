@@ -12,7 +12,7 @@ const LastPage = () => {
   // General abstract from PanelsPage
   const location = useLocation();
   const rawAbstract = { ...location.state };
-  console.log("rawAbstract", rawAbstract);
+  //console.log("rawAbstract", rawAbstract);
   // Boutton styles:
   const btnStyle = { mt: "5px", mb: "8px", color: "#3f4246" };
   // Last page //

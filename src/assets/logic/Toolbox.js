@@ -1,3 +1,4 @@
+import { TableRow, TableCell, Paragraph, VerticalAlign, TextRun } from "docx";
 import privates from "../data/private.json";
 import proface from "../data/proface.json";
 
@@ -66,7 +67,15 @@ export class DocumentTools {
     return _obj;
   }
   // ** Advanced function ** //
-  // Method wich return fullfilled dictionnary with all item's tag stored correctly
+  // Method which return formatted main document title
+  Buildtitle() {
+    const string = `${this.title}`;
+    const lowerString = string.toLowerCase();
+    const resultString =
+      lowerString.charAt(0).toUpperCase() + lowerString.slice(1);
+    return resultString;
+  }
+  // Method which return fullfilled dictionnary with all item's tag stored correctly
   rawDictionnary() {
     const structure = this.skeleton();
     const dataset = this.dataset;
@@ -296,12 +305,12 @@ export class DocumentTools {
   // Method wich return informations from landing page
   nomenclatureHmi() {
     const conceptionList = ["HMI", "PLC", "CAN"];
-    const firstRow = ["Denomination", "Reference", "Manufacturer", "Quantity"];
+    const firstRow = ["Denomination", "Ref", "Provider", "Qtty"];
     const table = this.list(firstRow);
     for (const item of conceptionList) {
       const rows = this.list();
       for (const value of Object.values(
-        this.proface.PROFACE[this.idHmi][item]
+        this.proface.PROFACE[this.HMI_id][item]
       )) {
         rows.push(value);
       }
@@ -313,7 +322,7 @@ export class DocumentTools {
   // Method wich return table of table representing the modules nomenclature
   nomenclatureModule(obj) {
     // obj param must be a module list ex :{moduleN:0 ...}
-    const firstRow = ["Reference", "Manufacturer", "Description", "Quantity"];
+    const firstRow = ["Ref", "Provider", "Description", "Qtty"];
     const table = this.list(firstRow);
     for (const [key, value] of Object.entries(obj)) {
       if (value !== 0) {
@@ -321,7 +330,8 @@ export class DocumentTools {
         rows.push(this.proface.PROFACE[key]["Reference"]);
         rows.push(this.proface.PROFACE[key]["Manufacturer"]);
         rows.push(this.proface.PROFACE[key]["Description"]);
-        rows.push(value);
+        // Qty of module can only be a str for display in wordx function
+        rows.push(`${value}`);
         table.push(rows);
       }
     }
@@ -471,5 +481,50 @@ export class Proface {
       return this._results;
     }
     return this._results;
+  }
+}
+// Class wich provide several method to design and build word document
+export class docxBuilder {
+  // Method which return table according matrix parameter
+  docxTable(matrix) {
+    const result = [];
+    for (const [key, value] of Object.entries(matrix)) {
+      const row = new TableRow({
+        children: [],
+      });
+      for (const item of value) {
+        row.root.push(
+          new TableCell({
+            children: [
+              key === "0"
+                ? new Paragraph({
+                    children: [
+                      new TextRun({
+                        text: item,
+                        bold: true,
+                        font: "Calibri",
+                        size: 22,
+                        color: "2E2E2E",
+                      }),
+                    ],
+                  })
+                : new Paragraph({
+                    children: [
+                      new TextRun({
+                        text: item,
+                        font: "Calibri",
+                        size: 20,
+                        color: "2E2E2E",
+                      }),
+                    ],
+                  }),
+            ],
+            verticalAlign: VerticalAlign.BOTTOM,
+          })
+        );
+      }
+      result.push(row);
+    }
+    return result;
   }
 }
