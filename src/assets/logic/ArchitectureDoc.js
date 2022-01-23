@@ -20,9 +20,10 @@ import {
   AlignmentType,
   ImageRun,
   HeadingLevel,
+  TextRun,
 } from "docx";
 
-export function handleClick_Quotation(rawAbstract) {
+export function handleClick_Architecture(rawAbstract) {
   // Instantiation of the Document Tools class
   const Dt = new DocumentTools(rawAbstract);
   // Instantiation of the Technology Provider (PROFACE) class
@@ -31,36 +32,29 @@ export function handleClick_Quotation(rawAbstract) {
   const Wx = new docxBuilder();
   // Main project title
   const t1 = Dt.Buildtitle();
-  // Build fully main IOList
-  const fullIOlist = Dt.ioListBuilder();
-  // Build main module line
-  const mod1 = Tp.totalModule(fullIOlist);
-  // Build open air compressor module line
-  const mod2 = Dt.openAirModule();
-  // Merge this two module line up
-  const mergedModules = Dt.mergeModuleLine(mod1, mod2);
-  // Build general module nomenclature
-  const HmiNomenclature = Dt.nomenclatureHmi();
-  const elementsNomenclature = Dt.nomenclatureModule(mergedModules);
-  // Print wordx table with nomenclature
-  const table1 = Wx.docxTable(HmiNomenclature);
-  const table2 = Wx.docxTable(elementsNomenclature);
-  // Varable declaration for quotation document only
+  // test
+  const g = 1;
+  // Start with fully tagged dictionnary
+  const fullTagDict = Dt.dictionnaryWithTag();
+  console.log("dict with tag + reserved slot", fullTagDict);
+  // Build dictionnary with IOList in place of tag list from tag list dictionnary build above
+  const fullIoDict = Dt.dictionnaryWithIO(fullTagDict);
+  console.log("Same like tag dict but with IOList");
+  // Variable declaration for architecture document only
   const conf = {
     // Size for image document header:
     width: 120,
     height: 110,
     title1: t1,
-    text1:
-      "Bonjour, veuillez trouver dans ce document une demande de chiffrage pour les références et les quantités suivantes :",
-    title2: "2. NOMENCLATURE IHM",
-    title3: "3. NOMENCLATURE MODULES",
+    text1: `Ce document décrit l'Architecture Materiel pour le projet ${t1}`,
+    titleX: `${g}. Architecture GRP ${g}`,
+    name: "Nicolas CHOMIER",
+    mail: "nicolaschomier@dalkiaairsolutions.fr",
   };
-
-  // ................................. //
-  // DOCXJS QUOTATION DOCUMENT PATTERN //
-  // ................................. //
-  const doc = new Document({
+  // ........................... //
+  // DOCXJS ARCHITECTURE PATTERN //
+  // ........................... //
+  /* const doc = new Document({
     sections: [
       {
         headers: {
@@ -121,8 +115,39 @@ export function handleClick_Quotation(rawAbstract) {
                       width: conf.width,
                       height: conf.height,
                     },
+                    floating: {
+                      horizontalPosition: {
+                        offset: 700000,
+                      },
+                      verticalPosition: {
+                        offset: 9250000,
+                      },
+                    },
                   }),
                 ],
+              }),
+              new Paragraph({
+                children: [
+                  new TextRun({
+                    text: conf.name,
+                    bold: true,
+                    font: "Calibri",
+                    size: 20,
+                    color: "2E2E2E",
+                  }),
+
+                  new TextRun({
+                    break: 1,
+                  }),
+                  new TextRun({
+                    text: conf.mail,
+                    bold: true,
+                    font: "Calibri",
+                    size: 20,
+                    color: "2E2E2E",
+                  }),
+                ],
+                alignment: AlignmentType.RIGHT,
               }),
             ],
           }),
@@ -140,38 +165,20 @@ export function handleClick_Quotation(rawAbstract) {
             text: conf.text1,
             alignment: AlignmentType.LEFT,
           }),
-          // HMI nomenclature title rank 2 n°1
+          //
           new Paragraph({
-            text: conf.title2,
-            heading: HeadingLevel.HEADING_2,
-            thematicBreak: false,
-            alignment: AlignmentType.LEFT,
-          }),
-          // Nomenclature for IHM
-          new Table({
-            columnWidths: [2500, 2800, 7000, 2000],
-            rows: table1,
-            width: {
-              size: 100,
-              type: WidthType.PERCENTAGE,
+            text: "Bullet points",
+            bullet: {
+              level: 3, // How deep you want the bullet to be. Maximum level is 9
             },
           }),
-          // Module nomenclature title rank 2 n°2
           new Paragraph({
-            text: conf.title3,
-            heading: HeadingLevel.HEADING_2,
-            thematicBreak: false,
-            alignment: AlignmentType.LEFT,
-          }),
-          // Nomenclature for IHM
-          new Table({
-            columnWidths: [2500, 2800, 7000, 2000],
-            rows: table2,
-            width: {
-              size: 100,
-              type: WidthType.PERCENTAGE,
+            text: "Are awesome",
+            bullet: {
+              level: 5,
             },
           }),
+          //
         ],
       },
     ],
@@ -179,7 +186,7 @@ export function handleClick_Quotation(rawAbstract) {
 
   Packer.toBlob(doc).then((blob) => {
     console.log(blob);
-    saveAs(blob, "example.docx");
+    saveAs(blob, "Architecture materiel.docx");
     console.log("Document created successfully");
-  });
+  }); */
 }

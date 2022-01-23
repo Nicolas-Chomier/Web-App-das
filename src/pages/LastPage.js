@@ -2,7 +2,8 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { Button, Card } from "@mui/material";
 import RequestCards from "../components/RequestCards";
-import { handleClick_Quotation } from "../assets/logic/Quotation";
+import { handleClick_Quotation } from "../assets/logic/QuotationDoc";
+import { handleClick_Architecture } from "../assets/logic/ArchitectureDoc";
 import contents from "../assets/data/lastPageDatas.json";
 
 // Load text information to display for Requestcards elements
@@ -50,7 +51,7 @@ const LastPage = () => {
             sx={btnStyle}
             variant="text"
             onClick={() => {
-              console.log("Functional Analisys WIP");
+              console.log("AF WIP");
             }}
           >
             Valider
@@ -69,7 +70,7 @@ const LastPage = () => {
             sx={btnStyle}
             variant="text"
             onClick={() => {
-              console.log("Architecture WIP");
+              handleClick_Architecture(rawAbstract);
             }}
           >
             Valider

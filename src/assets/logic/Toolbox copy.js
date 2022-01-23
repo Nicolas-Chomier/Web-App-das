@@ -160,7 +160,7 @@ export class DocumentTools {
     }
     return value;
   }
-  // Method used to add mandatory slots to standard dictionnary (default grp 1)
+  // Method used to add basical project needs to standard dictionnary
   dictionnaryWithTag(grp = 1) {
     //amelioration possible en autorisant tt les group a avoir des mandatory slot !!
     const _obj = this.rawDictionnary();
@@ -180,45 +180,76 @@ export class DocumentTools {
     }
     return _obj;
   }
-  // Method which build IOList under dictionnary shape for each group, add coef and reserved slot (Take care to use reserved dictionnary !)
+  // Method which build IOList from tag dictionnary
+
+  // Method which build IOList under dictionnary shape for each group, add coef and reserved slot (obsolete ?)
   dictionnaryWithIO(dictionnary) {
-    const size = Object.keys(dictionnary).length; // Get number of groups
-    const _result = this.object(); // Create an empty object
-    // For each group in dictionnary ...
+    // Take care to use reserved dictionnary !
+    // Get number of groups
+    const size = Object.keys(dictionnary).length;
+    // Create an empty object
+    const _result = this.object();
+    // For each group ...
     for (let i = 1; i < size + 1; i++) {
-      // Build item IOList from a new empty one
-      const _obj = this.emptyIolist();
       // for each type of device (ni, no ...) ...
       for (const key of Object.keys(dictionnary[i])) {
-        // Only key in HWL list are accepted
-        if (this.hwl.includes(key)) {
+        console.log("!!key!!", key);
+        /* // this.hwl
+        console.log(
+          "verification si la clef appartient a une liste (test)====",
+          this.hwl.includes(key)
+        );
+        if (
+          key === "ni" ||
+          key === "no" ||
+          key === "ai" ||
+          key === "ao" ||
+          key === "ti"
+        ) { */
+        // Build item IOList
+        const _obj = this.emptyIolist();
+        for (const objKey of Object.keys(_obj)) {
           // Only for group 1 (the main group)
-          if (i === 1) {
-            // Device (tag list) length minus mandatory reserved slots
-            const rawNbs = dictionnary[i][key].length - this.rsl[key];
-            // Apply incertitude coef to tag list (without mandatory reserved slots)
-            _obj[key] += Math.round(rawNbs * this.coef);
-            // Add mandatory reserved slots to IOList device
-            _obj[key] += this.rsl[key];
-            // Put this fullfilled IOList to a main object
-            _result[i] = _obj;
+          if (this.hwl.includes(key)) {
+            if (i === 1) {
+              console.log(
+                objKey,
+                "device modifié _obj[objKey] == ",
+                _obj[objKey]
+              );
+              // Device (tag list) length minus mandatory reserved slots
+              const rawNbs = dictionnary[i][objKey].length - this.rsl[objKey];
+              console.log(rawNbs);
+              // Apply incertitude coef to tag list (without mandatory reserved slots)
+              _obj[objKey] += Math.round(rawNbs * this.coef);
+              console.log(_obj[objKey]);
+              // Add mandatory reserved slots to IOList device
+              _obj[objKey] += this.rsl[objKey];
+              console.log(_obj[objKey]);
+              // Put this fullfilled IOList to a main object
+              _result[i] = _obj;
+            } else {
+              // Apply incertitude coef to tag list
+              _obj[objKey] += Math.round(
+                dictionnary[i][objKey].length * this.coef
+              );
+              // Put this fullfilled IOList to a main object
+              _result[i] = _obj;
+            }
           } else {
-            // Apply incertitude coef to tag list
-            _obj[key] += Math.round(dictionnary[i][key].length * this.coef);
-            // Put this fullfilled IOList to a main object
-            _result[i] = _obj;
-          }
-        } else {
-          const _obj = this.emptyIolist();
-          for (const bkey of Object.keys(_obj)) {
-            _obj[bkey] += dictionnary[i][key][bkey].length;
-            _result[i][key] = _obj;
+            // Build CP (compressor) IOList
+            const _obj = this.emptyIolist();
+            for (const bkey of Object.keys(_obj)) {
+              _obj[bkey] += dictionnary[i][key][bkey].length;
+              _result[i][key] = _obj;
+            }
           }
         }
       }
     }
     return _result;
   }
+
   // Method which build one main object with global IOList (obsolete ?)
   ioListAdder(obj) {
     const elementIoList = { ni: 0, no: 0, ai: 0, ao: 0, ti: 0 };
