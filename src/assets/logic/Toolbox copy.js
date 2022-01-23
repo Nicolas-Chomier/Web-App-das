@@ -35,7 +35,7 @@ export class DocumentTools {
     }
     return _obj;
   }
-  // Method wich return an empty structure for stock tag, according item project list choosen
+  // Method wich return an formatted empty structure
   skeleton() {
     const obj = this.object();
     for (let i = 0; i < this.group; i++) {
@@ -46,6 +46,14 @@ export class DocumentTools {
         ao: [],
         ti: [],
       };
+    }
+    return obj;
+  }
+  // Method wich return an formatted empty structure only to use with dictionnaryWithIO method
+  skeletonSpecial() {
+    const obj = this.object();
+    for (let i = 0; i < this.group; i++) {
+      obj[i + 1] = { MAIN: "" };
     }
     return obj;
   }
@@ -100,6 +108,32 @@ export class DocumentTools {
     }
     return structure;
   }
+  // Method which build item tag structure and add it to main dictionnary (run only with rawDictionnary method)
+  addItem(item, value) {
+    const prv = this.private;
+    const tag = item.tag;
+    const niNbs = prv[item.id]["ni"];
+    const noNbs = prv[item.id]["no"];
+    const aiNbs = prv[item.id]["ai"];
+    const aoNbs = prv[item.id]["ao"];
+    const tiNbs = prv[item.id]["ti"];
+    for (let i = 0; i < niNbs; i++) {
+      value.ni.push(tag);
+    }
+    for (let i = 0; i < noNbs; i++) {
+      value.no.push(tag);
+    }
+    for (let i = 0; i < aiNbs; i++) {
+      value.ai.push(tag);
+    }
+    for (let i = 0; i < aoNbs; i++) {
+      value.ao.push(tag);
+    }
+    for (let i = 0; i < tiNbs; i++) {
+      value.ti.push(tag);
+    }
+    return value;
+  }
   // Method which build open air tag structure and add it to main dictionnary (run only with rawDictionnary method)
   addOpenAir(item) {
     const prv = this.private;
@@ -134,33 +168,7 @@ export class DocumentTools {
     }
     return structure;
   }
-  // Method which build item tag structure and add it to main dictionnary (run only with rawDictionnary method)
-  addItem(item, value) {
-    const prv = this.private;
-    const tag = item.tag;
-    const niNbs = prv[item.id]["ni"];
-    const noNbs = prv[item.id]["no"];
-    const aiNbs = prv[item.id]["ai"];
-    const aoNbs = prv[item.id]["ao"];
-    const tiNbs = prv[item.id]["ti"];
-    for (let i = 0; i < niNbs; i++) {
-      value.ni.push(tag);
-    }
-    for (let i = 0; i < noNbs; i++) {
-      value.no.push(tag);
-    }
-    for (let i = 0; i < aiNbs; i++) {
-      value.ai.push(tag);
-    }
-    for (let i = 0; i < aoNbs; i++) {
-      value.ao.push(tag);
-    }
-    for (let i = 0; i < tiNbs; i++) {
-      value.ti.push(tag);
-    }
-    return value;
-  }
-  // Method used to add basical project needs to standard dictionnary
+  // Method used to add mandatory slots to standard dictionnary (default grp 1)
   dictionnaryWithTag(grp = 1) {
     //amelioration possible en autorisant tt les group a avoir des mandatory slot !!
     const _obj = this.rawDictionnary();
@@ -180,76 +188,47 @@ export class DocumentTools {
     }
     return _obj;
   }
-  // Method which build IOList from tag dictionnary
-
-  // Method which build IOList under dictionnary shape for each group, add coef and reserved slot (obsolete ?)
+  // Method which build IOList under dictionnary shape for each group, add coef and reserved slot (Take care to use reserved dictionnary !)
   dictionnaryWithIO(dictionnary) {
-    // Take care to use reserved dictionnary !
-    // Get number of groups
-    const size = Object.keys(dictionnary).length;
-    // Create an empty object
-    const _result = this.object();
-    // For each group ...
+    const size = Object.keys(dictionnary).length; // Get number of groups
+    const _result = this.skeletonSpecial(); // Create an pre formatted empty object
+    // For each group in dictionnary ...
     for (let i = 1; i < size + 1; i++) {
+      // Build item IOList from a new empty one
+      const _obj = this.emptyIolist();
+
       // for each type of device (ni, no ...) ...
       for (const key of Object.keys(dictionnary[i])) {
-        console.log("!!key!!", key);
-        /* // this.hwl
-        console.log(
-          "verification si la clef appartient a une liste (test)====",
-          this.hwl.includes(key)
-        );
-        if (
-          key === "ni" ||
-          key === "no" ||
-          key === "ai" ||
-          key === "ao" ||
-          key === "ti"
-        ) { */
-        // Build item IOList
-        const _obj = this.emptyIolist();
-        for (const objKey of Object.keys(_obj)) {
+        // Only key in HWL list are accepted
+        if (this.hwl.includes(key)) {
           // Only for group 1 (the main group)
-          if (this.hwl.includes(key)) {
-            if (i === 1) {
-              console.log(
-                objKey,
-                "device modifié _obj[objKey] == ",
-                _obj[objKey]
-              );
-              // Device (tag list) length minus mandatory reserved slots
-              const rawNbs = dictionnary[i][objKey].length - this.rsl[objKey];
-              console.log(rawNbs);
-              // Apply incertitude coef to tag list (without mandatory reserved slots)
-              _obj[objKey] += Math.round(rawNbs * this.coef);
-              console.log(_obj[objKey]);
-              // Add mandatory reserved slots to IOList device
-              _obj[objKey] += this.rsl[objKey];
-              console.log(_obj[objKey]);
-              // Put this fullfilled IOList to a main object
-              _result[i] = _obj;
-            } else {
-              // Apply incertitude coef to tag list
-              _obj[objKey] += Math.round(
-                dictionnary[i][objKey].length * this.coef
-              );
-              // Put this fullfilled IOList to a main object
-              _result[i] = _obj;
-            }
+          if (i === 1) {
+            // Device (tag list) length minus mandatory reserved slots
+            const rawNbs = dictionnary[i][key].length - this.rsl[key];
+            // Apply incertitude coef to tag list (without mandatory reserved slots)
+            _obj[key] += Math.round(rawNbs * this.coef);
+            // Add mandatory reserved slots to IOList device
+            _obj[key] += this.rsl[key];
+            // Put this fullfilled IOList to a main object
+            //console.log("===", _result[i], "===", _obj);
+            _result[i]["MAIN"] = _obj;
           } else {
-            // Build CP (compressor) IOList
-            const _obj = this.emptyIolist();
-            for (const bkey of Object.keys(_obj)) {
-              _obj[bkey] += dictionnary[i][key][bkey].length;
-              _result[i][key] = _obj;
-            }
+            // Apply incertitude coef to tag list
+            _obj[key] += Math.round(dictionnary[i][key].length * this.coef);
+            // Put this fullfilled IOList to a main object
+            _result[i]["MAIN"] = _obj;
+          }
+        } else {
+          const _obj = this.emptyIolist();
+          for (const bkey of Object.keys(_obj)) {
+            _obj[bkey] += dictionnary[i][key][bkey].length;
+            _result[i][key] = _obj;
           }
         }
       }
     }
     return _result;
   }
-
   // Method which build one main object with global IOList (obsolete ?)
   ioListAdder(obj) {
     const elementIoList = { ni: 0, no: 0, ai: 0, ao: 0, ti: 0 };
@@ -562,5 +541,25 @@ export class docxBuilder {
       result.push(row);
     }
     return result;
+  }
+  // Method which return Title + table builded for architecture
+  architectureBloc() {
+    const _list = [];
+
+    /* new Paragraph({
+      text: conf.title1,
+      heading: HeadingLevel.HEADING_1,
+      thematicBreak: false,
+      alignment: AlignmentType.CENTER,
+    }),
+   // ARCH
+    new Table({
+      columnWidths: [2500, 2800, 7000, 2000],
+      rows: "table1",
+      width: {
+        size: 100,
+        type: WidthType.PERCENTAGE,
+      },
+    }), */
   }
 }

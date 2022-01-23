@@ -35,7 +35,7 @@ export function handleClick_Quotation(rawAbstract) {
   // Build fully main IOList
   const fullIOlist = Dt.ioListBuilder();
   // Build main module line
-  const mod1 = Tp.totalModule(fullIOlist);
+  const mod1 = Tp.moduleBuilder(fullIOlist);
   // Build open air compressor module line
   const mod2 = Dt.openAirModule();
   // Merge this two module line up

@@ -35,7 +35,7 @@ export class DocumentTools {
     }
     return _obj;
   }
-  // Method wich return an empty structure for stock tag, according item project list choosen
+  // Method wich return an formatted empty structure
   skeleton() {
     const obj = this.object();
     for (let i = 0; i < this.group; i++) {
@@ -46,6 +46,14 @@ export class DocumentTools {
         ao: [],
         ti: [],
       };
+    }
+    return obj;
+  }
+  // Method wich return an formatted empty structure only to use with dictionnaryWithIO method
+  skeletonSpecial() {
+    const obj = this.object();
+    for (let i = 0; i < this.group; i++) {
+      obj[i + 1] = { MAIN: "" };
     }
     return obj;
   }
@@ -100,6 +108,32 @@ export class DocumentTools {
     }
     return structure;
   }
+  // Method which build item tag structure and add it to main dictionnary (run only with rawDictionnary method)
+  addItem(item, value) {
+    const prv = this.private;
+    const tag = item.tag;
+    const niNbs = prv[item.id]["ni"];
+    const noNbs = prv[item.id]["no"];
+    const aiNbs = prv[item.id]["ai"];
+    const aoNbs = prv[item.id]["ao"];
+    const tiNbs = prv[item.id]["ti"];
+    for (let i = 0; i < niNbs; i++) {
+      value.ni.push(tag);
+    }
+    for (let i = 0; i < noNbs; i++) {
+      value.no.push(tag);
+    }
+    for (let i = 0; i < aiNbs; i++) {
+      value.ai.push(tag);
+    }
+    for (let i = 0; i < aoNbs; i++) {
+      value.ao.push(tag);
+    }
+    for (let i = 0; i < tiNbs; i++) {
+      value.ti.push(tag);
+    }
+    return value;
+  }
   // Method which build open air tag structure and add it to main dictionnary (run only with rawDictionnary method)
   addOpenAir(item) {
     const prv = this.private;
@@ -134,32 +168,6 @@ export class DocumentTools {
     }
     return structure;
   }
-  // Method which build item tag structure and add it to main dictionnary (run only with rawDictionnary method)
-  addItem(item, value) {
-    const prv = this.private;
-    const tag = item.tag;
-    const niNbs = prv[item.id]["ni"];
-    const noNbs = prv[item.id]["no"];
-    const aiNbs = prv[item.id]["ai"];
-    const aoNbs = prv[item.id]["ao"];
-    const tiNbs = prv[item.id]["ti"];
-    for (let i = 0; i < niNbs; i++) {
-      value.ni.push(tag);
-    }
-    for (let i = 0; i < noNbs; i++) {
-      value.no.push(tag);
-    }
-    for (let i = 0; i < aiNbs; i++) {
-      value.ai.push(tag);
-    }
-    for (let i = 0; i < aoNbs; i++) {
-      value.ao.push(tag);
-    }
-    for (let i = 0; i < tiNbs; i++) {
-      value.ti.push(tag);
-    }
-    return value;
-  }
   // Method used to add mandatory slots to standard dictionnary (default grp 1)
   dictionnaryWithTag(grp = 1) {
     //amelioration possible en autorisant tt les group a avoir des mandatory slot !!
@@ -183,11 +191,12 @@ export class DocumentTools {
   // Method which build IOList under dictionnary shape for each group, add coef and reserved slot (Take care to use reserved dictionnary !)
   dictionnaryWithIO(dictionnary) {
     const size = Object.keys(dictionnary).length; // Get number of groups
-    const _result = this.object(); // Create an empty object
+    const _result = this.skeletonSpecial(); // Create an pre formatted empty object
     // For each group in dictionnary ...
     for (let i = 1; i < size + 1; i++) {
       // Build item IOList from a new empty one
       const _obj = this.emptyIolist();
+
       // for each type of device (ni, no ...) ...
       for (const key of Object.keys(dictionnary[i])) {
         // Only key in HWL list are accepted
@@ -201,12 +210,13 @@ export class DocumentTools {
             // Add mandatory reserved slots to IOList device
             _obj[key] += this.rsl[key];
             // Put this fullfilled IOList to a main object
-            _result[i] = _obj;
+            //console.log("===", _result[i], "===", _obj);
+            _result[i]["MAIN"] = _obj;
           } else {
             // Apply incertitude coef to tag list
             _obj[key] += Math.round(dictionnary[i][key].length * this.coef);
             // Put this fullfilled IOList to a main object
-            _result[i] = _obj;
+            _result[i]["MAIN"] = _obj;
           }
         } else {
           const _obj = this.emptyIolist();
@@ -358,21 +368,6 @@ export class DocumentTools {
 // Class wich build special module and technical data like IO board (only with PROFACE)
 export class Proface {
   constructor() {
-    // Build specific supplier datas:
-    this._results = {
-      module1: 0,
-      module2: 0,
-      module3: 0,
-      module4: 0,
-      module5: 0,
-      module6: 0,
-      module7: 0,
-      module8: 0,
-      module9: 0,
-      module10: 0,
-      module11: 0,
-      module12: 0,
-    };
     this.nMax = 16; // Maximum numerical input / output module capacity
     this.nMid = 8; // Middle size numerical input / output module capacity
     this.nMin = 4; // Minimum numerical input / output module capacity
@@ -384,40 +379,48 @@ export class Proface {
   }
   // Method wich calcul the numbers of numerical proface module selection according given IOList
   numericalModule(target) {
+    const numericalResult = {
+      module1: 0,
+      module2: 0,
+      module3: 0,
+      module4: 0,
+      module5: 0,
+    };
     let ni = target.ni;
     let ri = ni % this.nMax;
     let no = target.no;
     let ro = no % this.nMax;
     let _output = 0;
     // Numerical Input Filling :
-    this._results.module1 += Math.floor(ni / this.nMax);
+    numericalResult.module1 += Math.floor(ni / this.nMax);
     if (ri !== 0) {
       if (ri > this.nMid) {
-        this._results.module1 += 1;
+        numericalResult.module1 += 1;
       } else if (ri > this.nMin && ri <= this.nMid) {
-        this._results.module2 += 1;
+        numericalResult.module2 += 1;
       } else {
-        this._results.module5 += 1;
+        numericalResult.module5 += 1;
         _output += 4;
       }
     }
     // Correction on numerical output :
     no -= 4 * Math.floor(_output / this.nMin);
     // Numerical Output Filling :
-    this._results.module3 += Math.floor(no / this.nMax);
+    numericalResult.module3 += Math.floor(no / this.nMax);
     if (ro !== 0) {
       if (ro > this.nMid) {
-        this._results.module3 += 1;
+        numericalResult.module3 += 1;
       } else if (ro > this.nMin && ro <= this.nMid) {
-        this._results.module4 += 1;
+        numericalResult.module4 += 1;
       } else {
-        this._results.module5 += 1;
+        numericalResult.module5 += 1;
       }
     }
-    return true;
+    return numericalResult;
   }
   // Method wich calcul the numbers of analog proface module selection according given IOList
   analogModule(target) {
+    const analogResult = { module6: 0, module7: 0, module8: 0, module9: 0 };
     let ai = target.ai;
     let ao = target.ao;
     let ti = target.ti;
@@ -426,66 +429,78 @@ export class Proface {
     let _input = 0;
     let _output = 0;
     // Analog Input Filling :
-    this._results.module6 += Math.floor(ai / this.aMax);
+    analogResult.module6 += Math.floor(ai / this.aMax);
     if (ri !== 0) {
       if (ri > this.aMid) {
-        this._results.module6 += 1;
+        analogResult.module6 += 1;
         _input += this.aMax - ri;
       } else {
-        this._results.module9 += 1;
+        analogResult.module9 += 1;
         _input += this.aMid - ri;
         _output += this.aMin;
       }
     }
     // Analog Temperature Input Filling :
-    this._results.module7 += Math.floor(ti / this.temp);
+    analogResult.module7 += Math.floor(ti / this.temp);
     if (ti !== 0) {
-      this._results.module7 += 1;
+      analogResult.module7 += 1;
     }
     // Analog Output Filling :
-    this._results.module8 += Math.floor(ao / this.aMax);
+    analogResult.module8 += Math.floor(ao / this.aMax);
     if (ro !== 0) {
       if (ro > this.aMin) {
-        this._results.module8 += 1;
+        analogResult.module8 += 1;
         _output += this.aMax - ro;
       } else {
-        this._results.module9 += 1;
+        analogResult.module9 += 1;
         _output += this.aMin - ro;
         _input += this.aMid;
       }
     }
     // Correction :
     if (_input === this.aMid && _output === this.aMin) {
-      this._results.module9 -= 1;
+      analogResult.module9 -= 1;
     }
-    return true;
+    return analogResult;
   }
   // Method wich return entire proface module nomenclature
-  totalModule(IOList) {
-    // Shape of IOList needed { ni: *, no: *, ai: *, ao: *, ti: * }
-    const target = { ...IOList };
-    this.numericalModule(target);
-    this.analogModule(target);
+  totalModule(obj) {
+    const specialModuleResult = { module10: 0, module11: 0, module12: 0 };
     let totalModules = 0;
     // Calcul the total amount of module needed by the project to determine below wich and how many special module use in the project
-    for (const value of Object.values(this._results)) {
+    for (const value of Object.values(obj)) {
       totalModules += value;
     }
     var restModule = totalModules % this.sMax;
     if (restModule > 0) {
       if (restModule <= 7) {
-        this._results.module10 += Math.floor(totalModules / this.sMax) + 1;
-        this._results.module11 += Math.floor(totalModules / this.sMax);
-        this._results.module12 += Math.floor(totalModules / this.sMax);
+        specialModuleResult.module10 +=
+          Math.floor(totalModules / this.sMax) + 1;
+        specialModuleResult.module11 += Math.floor(totalModules / this.sMax);
+        specialModuleResult.module12 += Math.floor(totalModules / this.sMax);
       } else {
-        this._results.module10 += Math.floor(totalModules / this.sMax) + 1;
-        this._results.module11 += Math.floor(totalModules / this.sMax) + 1;
-        this._results.module12 += Math.floor(totalModules / this.sMax) + 1;
+        specialModuleResult.module10 +=
+          Math.floor(totalModules / this.sMax) + 1;
+        specialModuleResult.module11 +=
+          Math.floor(totalModules / this.sMax) + 1;
+        specialModuleResult.module12 +=
+          Math.floor(totalModules / this.sMax) + 1;
       }
     } else {
-      return this._results;
+      return specialModuleResult;
     }
-    return this._results;
+    return specialModuleResult;
+  }
+  // Call it
+  moduleBuilder(IOList) {
+    // Shape of IOList needed { ni: *, no: *, ai: *, ao: *, ti: * }
+    const moduleList = {
+      ...this.numericalModule(IOList),
+      ...this.analogModule(IOList),
+    };
+    const specialModule = this.totalModule(moduleList);
+    const finalResult = { ...moduleList, ...specialModule };
+    return finalResult;
   }
 }
 // Class wich provide several method to design and build word document
@@ -531,5 +546,25 @@ export class docxBuilder {
       result.push(row);
     }
     return result;
+  }
+  // Method which return Title + table builded for architecture
+  architectureBloc() {
+    const _list = [];
+
+    /* new Paragraph({
+      text: conf.title1,
+      heading: HeadingLevel.HEADING_1,
+      thematicBreak: false,
+      alignment: AlignmentType.CENTER,
+    }),
+   // ARCH
+    new Table({
+      columnWidths: [2500, 2800, 7000, 2000],
+      rows: "table1",
+      width: {
+        size: 100,
+        type: WidthType.PERCENTAGE,
+      },
+    }), */
   }
 }

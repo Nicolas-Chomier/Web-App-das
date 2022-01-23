@@ -39,7 +39,16 @@ export function handleClick_Architecture(rawAbstract) {
   console.log("dict with tag + reserved slot", fullTagDict);
   // Build dictionnary with IOList in place of tag list from tag list dictionnary build above
   const fullIoDict = Dt.dictionnaryWithIO(fullTagDict);
-  console.log("Same like tag dict but with IOList");
+  console.log("Same like tag dict but with IOList", fullIoDict);
+  //
+  const GrpNumber = rawAbstract.Project.Option;
+  for (let i = 0; i < GrpNumber; i++) {
+    console.log(i + 1);
+    for (const [key, value] of Object.entries(fullIoDict[i + 1])) {
+      console.log(key, value);
+      console.log(Tp.moduleBuilder(fullIoDict[i + 1][key]));
+    }
+  }
   // Variable declaration for architecture document only
   const conf = {
     // Size for image document header:
@@ -54,7 +63,7 @@ export function handleClick_Architecture(rawAbstract) {
   // ........................... //
   // DOCXJS ARCHITECTURE PATTERN //
   // ........................... //
-  /* const doc = new Document({
+  const doc = new Document({
     sections: [
       {
         headers: {
@@ -153,40 +162,15 @@ export function handleClick_Architecture(rawAbstract) {
           }),
         },
         children: [
-          // Title rank 1
-          new Paragraph({
-            text: conf.title1,
-            heading: HeadingLevel.HEADING_1,
-            thematicBreak: false,
-            alignment: AlignmentType.CENTER,
-          }),
-          // Introduction text
-          new Paragraph({
-            text: conf.text1,
-            alignment: AlignmentType.LEFT,
-          }),
-          //
-          new Paragraph({
-            text: "Bullet points",
-            bullet: {
-              level: 3, // How deep you want the bullet to be. Maximum level is 9
-            },
-          }),
-          new Paragraph({
-            text: "Are awesome",
-            bullet: {
-              level: 5,
-            },
-          }),
-          //
+          //wip
         ],
       },
     ],
   });
 
-  Packer.toBlob(doc).then((blob) => {
+  /* Packer.toBlob(doc).then((blob) => {
     console.log(blob);
     saveAs(blob, "Architecture materiel.docx");
     console.log("Document created successfully");
-  }); */
+  });  */
 }
