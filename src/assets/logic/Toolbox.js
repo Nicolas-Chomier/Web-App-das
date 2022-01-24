@@ -405,6 +405,10 @@ export class Proface {
     }
     // Correction on numerical output :
     no -= 4 * Math.floor(_output / this.nMin);
+    if (no < 0) {
+      no = 0;
+    }
+    console.log("================== no", no);
     // Numerical Output Filling :
     numericalResult.module3 += Math.floor(no / this.nMax);
     if (ro !== 0) {
