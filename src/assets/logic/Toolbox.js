@@ -1,4 +1,14 @@
-import { TableRow, TableCell, Paragraph, VerticalAlign, TextRun } from "docx";
+import {
+  Table,
+  TableRow,
+  TableCell,
+  Paragraph,
+  VerticalAlign,
+  TextRun,
+  HeadingLevel,
+  AlignmentType,
+  WidthType,
+} from "docx";
 import privates from "../data/private.json";
 import proface from "../data/proface.json";
 
@@ -375,7 +385,9 @@ export class Proface {
     this.aMid = 4; // Middle size numerical input / output module capacity
     this.aMin = 2; // Minimum numerical input / output module capacity
     this.temp = 4; // Size for temperature analog input capacity
-    this.sMax = 14; // Maximum module capacity by rack
+    this.sMax = 14; // Maximum module capacity accepted by rack (PROFACE specificity)
+    // Module list used for make table in designModuleLine method
+    this.mSpe = ["module10", "module11", "module12"];
   }
   // Method wich calcul the numbers of numerical proface module selection according given IOList
   numericalModule(target) {
@@ -408,7 +420,6 @@ export class Proface {
     if (no < 0) {
       no = 0;
     }
-    console.log("================== no", no);
     // Numerical Output Filling :
     numericalResult.module3 += Math.floor(no / this.nMax);
     if (ro !== 0) {
@@ -467,7 +478,7 @@ export class Proface {
     }
     return analogResult;
   }
-  // Method wich return entire proface module nomenclature
+  // Method wich calcul the numbers of special proface module according previous result on numerical and analog method
   totalModule(obj) {
     const specialModuleResult = { module10: 0, module11: 0, module12: 0 };
     let totalModules = 0;
@@ -495,7 +506,7 @@ export class Proface {
     }
     return specialModuleResult;
   }
-  // Call it
+  // Method wich return entire proface module nomenclature
   moduleBuilder(IOList) {
     // Shape of IOList needed { ni: *, no: *, ai: *, ao: *, ti: * }
     const moduleList = {
@@ -506,9 +517,86 @@ export class Proface {
     const finalResult = { ...moduleList, ...specialModule };
     return finalResult;
   }
+  // Method which transform IOList to clean and ordered line up module lists (using method below)
+  lineUpBuilder(IOList) {
+    // Check if IOList is empty
+    const isEmpty = !Object.values(IOList).some((x) => x !== 0);
+    if (isEmpty !== true) {
+      // Step 1 : build raw line up module
+      const raw = this.moduleBuilder(IOList);
+      // Step 2 : Work on raw
+      const filteredRaw = this.designModuleLine(raw);
+      const splitedLineUp = this.splitModuleLine(filteredRaw);
+      const orderedLineUp = this.orderedModuleLine(splitedLineUp);
+      // Step 3 : return it
+      return orderedLineUp;
+    }
+    return false;
+  }
+  // Method wich return a list with raw module line without special module (run only with lineUpBuilder method)
+  designModuleLine(moduleLine) {
+    const _list = [];
+    _list.length = 0;
+    // Put inside empty table all input output module define in moduleLine
+    for (const [key, value] of Object.entries(moduleLine)) {
+      if (value !== 0 && this.mSpe.includes(key) === false) {
+        for (var i = 0; i < value; ++i) {
+          _list.push(key);
+        }
+      }
+    }
+    return _list;
+  }
+  // Method which build group of list of module line according PROFACE specificity (run only with lineUpBuilder method)
+  splitModuleLine(table) {
+    const _list = [];
+    _list.length = 0;
+    // Emptying given table to fill sub table which match with proface specificity
+    while (table.length !== 0) {
+      const newTable = [];
+      for (let i = 0; i < this.sMax; ++i) {
+        // Remove first item of main table to push it inside new list
+        const item = table.shift();
+        newTable.push(item);
+      }
+      _list.push(newTable.filter(Boolean)); // filter remove undifined value
+    }
+    return _list;
+  }
+  // Method which add and order special module from matrix (parameter given by splitModuleLine), according PROFACE specificity (run only with lineUpBuilder method)
+  orderedModuleLine(matrix) {
+    const _list = [];
+    _list.length = 0;
+    // Add special module from matrix rows to main list
+    for (const list of matrix) {
+      if (list.length > 7) {
+        list.splice(0, 0, "module10");
+        list.splice(8, 0, "module11", "module12");
+      } else {
+        list.splice(0, 0, "module10");
+      }
+    }
+    // Order special module according provider specificity
+    for (const item of matrix) {
+      if (item.slice(0, 9).length !== 0) {
+        _list.push(item.slice(0, 9));
+      }
+      if (item.slice(9).length !== 0) {
+        _list.push(item.slice(9));
+      }
+    }
+    return _list;
+  }
 }
 // Class wich provide several method to design and build word document
 export class docxBuilder {
+  constructor() {
+    this.proface = JSON.parse(JSON.stringify(proface));
+    //
+    this.titleEmptyGrp = "No item has been selected";
+    // Conception of architecture table shape itself
+    this.tableStepType = ["Reference", "Img", "Manufacturer"];
+  }
   // Method which return table according matrix parameter
   docxTable(matrix) {
     const result = [];
@@ -553,8 +641,7 @@ export class docxBuilder {
   }
   // Method which return Title + table builded for architecture
   architectureBloc() {
-    const _list = [];
-
+    //const _list = [];
     /* new Paragraph({
       text: conf.title1,
       heading: HeadingLevel.HEADING_1,
@@ -570,5 +657,108 @@ export class docxBuilder {
         type: WidthType.PERCENTAGE,
       },
     }), */
+  }
+  // Method which build title rank 1 (DocxJs)
+  titleRank1(text) {
+    let title = `Material architecture under HMI`;
+    if (text) {
+      title = `Material architecture under HMI N°${text}`;
+    }
+    const result = new Paragraph({
+      text: title,
+      heading: HeadingLevel.HEADING_1,
+      thematicBreak: false,
+      alignment: AlignmentType.CENTER,
+    });
+    return result;
+  }
+  // Method which build title rank 2 (DocxJs)
+  titleRank2(key, text) {
+    let title = `module line-up`;
+    if (text) {
+      title =
+        key !== "MAIN"
+          ? `Grp ${text} - Module line-up for ${key}`
+          : `Grp ${text} - ${key} module line-up`;
+    }
+    const result = new Paragraph({
+      text: title,
+      heading: HeadingLevel.HEADING_2,
+      thematicBreak: false,
+      alignment: AlignmentType.CENTER,
+    });
+    return result;
+  }
+  // Method which build pre formated title when grp is empty (DocxJs)
+  noTitle() {
+    const result = new Paragraph({
+      text: this.titleEmptyGrp,
+      heading: HeadingLevel.HEADING_2,
+      thematicBreak: false,
+      alignment: AlignmentType.CENTER,
+    });
+    return result;
+  }
+  // Method which build architecture under table shape for each array given in parameters
+  tableShapeArchitecture(array) {
+    const ref = this.tableStepType[0];
+    const img = this.tableStepType[1];
+    const list = this.tableStepType[2];
+    console.log("ref");
+    const row1 = this.TableCellArchitecture(array, ref);
+    console.log("image");
+    const row2 = this.TableCellArchitecture(array, img);
+    console.log("list");
+    const row3 = this.TableCellArchitecture(array, list);
+    //
+    const table = new Table({
+      columnWidths: [3505, 5505],
+      rows: [
+        new TableRow({
+          children: [
+            new TableCell({
+              width: {
+                size: 3505,
+                type: WidthType.DXA,
+              },
+              children: [new Paragraph("Hello")],
+            }),
+            new TableCell({
+              width: {
+                size: 5505,
+                type: WidthType.DXA,
+              },
+              children: [new Paragraph("Hello")],
+            }),
+          ],
+        }),
+        new TableRow({
+          children: row2,
+        }),
+        new TableRow({
+          children: row3,
+        }),
+      ],
+    });
+    return table;
+  }
+  // Sub method which fill TableCell children (only for tableShapeArchitecture method)
+  TableCellArchitecture(array, target) {
+    const _list = [];
+    // `${this.proface.PROFACE[module][target]}`
+    _list.length = 0;
+    for (const module of array) {
+      console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiii", module, target);
+      _list.push(
+        new TableCell({
+          width: {
+            size: 3505,
+            type: WidthType.DXA,
+          },
+          children: [new Paragraph(`${this.proface.PROFACE[module][target]}`)],
+        })
+      );
+    }
+    return _list;
   }
 }
