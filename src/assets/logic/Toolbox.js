@@ -8,7 +8,10 @@ import {
   HeadingLevel,
   AlignmentType,
   WidthType,
+  ImageRun,
 } from "docx";
+import { Buffer } from "buffer";
+import { base64ModuleTest } from "../image/images.js";
 import privates from "../data/private.json";
 import proface from "../data/proface.json";
 
@@ -591,11 +594,14 @@ export class Proface {
 // Class wich provide several method to design and build word document
 export class docxBuilder {
   constructor() {
+    //
     this.proface = JSON.parse(JSON.stringify(proface));
     //
     this.titleEmptyGrp = "No item has been selected";
-    // Conception of architecture table shape itself
-    this.tableStepType = ["Reference", "Img", "Manufacturer"];
+    // Variable used for make the shape of the architecture document
+    this.ref = "Reference";
+    this.img = "Img";
+    this.list = "IoList";
   }
   // Method which return table according matrix parameter
   docxTable(matrix) {
@@ -700,65 +706,111 @@ export class docxBuilder {
     return result;
   }
   // Method which build architecture under table shape for each array given in parameters
-  tableShapeArchitecture(array) {
-    const ref = this.tableStepType[0];
-    const img = this.tableStepType[1];
-    const list = this.tableStepType[2];
-    console.log("ref");
-    const row1 = this.TableCellArchitecture(array, ref);
-    console.log("image");
-    const row2 = this.TableCellArchitecture(array, img);
-    console.log("list");
-    const row3 = this.TableCellArchitecture(array, list);
-    //
+  makeTable(array) {
     const table = new Table({
-      columnWidths: [3505, 5505],
+      width: {
+        size: 100,
+        type: WidthType.PERCENTAGE,
+      },
       rows: [
+        // Call method which build array text
         new TableRow({
-          children: [
-            new TableCell({
-              width: {
-                size: 3505,
-                type: WidthType.DXA,
-              },
-              children: [new Paragraph("Hello")],
-            }),
-            new TableCell({
-              width: {
-                size: 5505,
-                type: WidthType.DXA,
-              },
-              children: [new Paragraph("Hello")],
-            }),
-          ],
+          children: this.makeRowText(array, this.ref),
         }),
+        // Call method which build array image
         new TableRow({
-          children: row2,
+          children: this.makeRowImage(array, this.img),
         }),
-        new TableRow({
-          children: row3,
-        }),
+        // Call methods which build array list of input output
+        /*  new TableRow({
+          children: this.makeRowSpace(array, this.list),
+        }), */
       ],
     });
     return table;
   }
-  // Sub method which fill TableCell children (only for tableShapeArchitecture method)
-  TableCellArchitecture(array, target) {
+  // Sub method which fill TableCell children with text (only for tableShapeArchitecture method)
+  makeRowText(array, target) {
     const _list = [];
-    // `${this.proface.PROFACE[module][target]}`
     _list.length = 0;
     for (const module of array) {
-      console.log("iiiiiiiiiiiiiiiiiiiiiiiiiiiii", module, target);
+      const text = `${this.proface.PROFACE[module][target]}`;
       _list.push(
         new TableCell({
           width: {
-            size: 3505,
-            type: WidthType.DXA,
+            size: 1000,
+            type: WidthType.AUTO,
           },
-          children: [new Paragraph(`${this.proface.PROFACE[module][target]}`)],
+          children: [
+            new Paragraph({
+              children: [
+                new TextRun({
+                  text: text,
+                  bold: true,
+                  font: "Calibri",
+                  size: 16,
+                  color: "2E2E2E",
+                }),
+              ],
+            }),
+          ],
         })
       );
     }
     return _list;
+  }
+  // Sub method which fill TableCell children with image (only for tableShapeArchitecture method)
+  makeRowImage(array, target) {
+    const _list = [];
+    _list.length = 0;
+    for (const module of array) {
+      const img = this.proface.PROFACE[module][target];
+      _list.push(
+        new TableCell({
+          width: {
+            size: 1000,
+            type: WidthType.AUTO,
+          },
+          children: [
+            new Paragraph({
+              children: [
+                new ImageRun({
+                  data: Buffer.from(base64ModuleTest, "base64"),
+                  transformation: {
+                    width: 52,
+                    height: 100,
+                  },
+                }),
+              ],
+            }),
+          ],
+          verticalAlign: VerticalAlign.CENTER,
+        })
+      );
+    }
+    return _list;
+  }
+  // Sub method which fill TableCell children with bullet point (only for tableShapeArchitecture method)
+  makeRowList(array, target) {
+    return false;
+  }
+  // Sub method which fill TableCell children with space (only for tableShapeArchitecture method)
+  makeRowSpace(text = "") {
+    const paragraph = new Paragraph({
+      text: text,
+      spacing: {
+        after: 50,
+        before: 50,
+      },
+    });
+    return paragraph;
+  }
+  // Generate page break before
+  makePagebreak() {
+    const pageBreak = new Paragraph({
+      text: "",
+      pageBreakBefore: true,
+    });
+    return pageBreak;
   }
 }

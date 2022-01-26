@@ -3,3 +3,4 @@ Modification pour plus tard:
 Afficher le contenu des documents générés dans une liste sur les requestCards en LastPage.
 Corriger les bugs d'affichages des boutton des requestCards en LastPage.
 Corriger la Class PROFACE pour que les compresseur open air affiche ai la bonne IOlist pour afficher correctement les module line up
+Heritage de class a mettrre en place pour toolbox
