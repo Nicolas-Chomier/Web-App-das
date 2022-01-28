@@ -2,8 +2,8 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { Button, Card } from "@mui/material";
 import RequestCards from "../components/RequestCards";
-import { handleClick_Quotation } from "../assets/logic/QuotationDoc";
-import { handleClick_Architecture } from "../assets/logic/ArchitectureDoc";
+import { handleClick_Quotation } from "../assets/backend/QuotationDoc";
+import { handleClick_Architecture } from "../assets/backend/ArchitectureDoc";
 import contents from "../assets/data/lastPageDatas.json";
 
 // Load text information to display for Requestcards elements

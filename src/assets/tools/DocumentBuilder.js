@@ -1,45 +1,29 @@
-import {
-  Table,
-  TableRow,
-  TableCell,
-  Paragraph,
-  VerticalAlign,
-  TextRun,
-  HeadingLevel,
-  AlignmentType,
-  WidthType,
-  ImageRun,
-} from "docx";
 import { Buffer } from "buffer";
+import { Table, TableRow, TableCell } from "docx";
+import { Paragraph, TextRun } from "docx";
+import { HeadingLevel, VerticalAlign, AlignmentType, WidthType } from "docx";
+import { ImageRun } from "docx";
 import { base64ModuleTest } from "../image/images.js";
 import privates from "../data/private.json";
 import proface from "../data/proface.json";
 
-// Class wich regroup methods used to build documents //
-export class DocumentTools {
+// Main class used to help application to build document with docxJS
+export default class DocumentBuilder {
   constructor(rawAbstract) {
-    // Load special datas (private info and technical infos)
+    // Load special datas from JSON used by all children class
     this.private = JSON.parse(JSON.stringify(privates));
     this.proface = JSON.parse(JSON.stringify(proface));
-    // Datas from Landing page
+    // Initiate the result from the FRONT with elements list
+    this.infosElement = rawAbstract.Elements;
+    // Initiate the result from the FRONT with project datas
+    this.projectTitle = rawAbstract.Project.Title;
     this.coef = rawAbstract.Project.Coef;
     this.group = rawAbstract.Project.Option;
-    this.title = rawAbstract.Project.Title;
     this.openAir = rawAbstract.Project.Option2;
     this.HMI_id = rawAbstract.Project.Technology.id;
-    // Elements list from PanelsPage
-    this.dataset = rawAbstract.Elements;
-    // Class variable:
-    // Open air identification
-    this.flag = "OPA";
-    // !! -- List of different type of input output hardware -- !! //
+    // Main list configuration for different type of input output hardware
     this.hwl = ["ni", "no", "ai", "ao", "ti"];
-    // Mandatory reserved slot attribute to each project //
-    this.rsl = { ni: 8, no: 6, ai: 1, ao: 0, ti: 0 };
-    // Name for reserved slot
-    this.rname = "Reserved";
   }
-  // ** Basic brick ** //
   // Method wich return empty Object
   object() {
     const _obj = {};
@@ -47,28 +31,6 @@ export class DocumentTools {
       delete _obj[prop];
     }
     return _obj;
-  }
-  // Method wich return an formatted empty structure
-  skeleton() {
-    const obj = this.object();
-    for (let i = 0; i < this.group; i++) {
-      obj[i + 1] = {
-        ni: [],
-        no: [],
-        ai: [],
-        ao: [],
-        ti: [],
-      };
-    }
-    return obj;
-  }
-  // Method wich return an formatted empty structure only to use with dictionnaryWithIO method
-  skeletonSpecial() {
-    const obj = this.object();
-    for (let i = 0; i < this.group; i++) {
-      obj[i + 1] = { MAIN: "" };
-    }
-    return obj;
   }
   // Method wich return empty list
   list(item) {
@@ -87,102 +49,68 @@ export class DocumentTools {
     }
     return _obj;
   }
-  // ** Advanced function ** //
-  // Method which return formatted main document title
-  Buildtitle() {
-    const string = `${this.title}`;
-    const lowerString = string.toLowerCase();
-    const resultString =
-      lowerString.charAt(0).toUpperCase() + lowerString.slice(1);
-    return resultString;
+  // Empty tagList model
+  emptyTagList() {
+    const _obj = this.object();
+    for (const item of this.hwl) {
+      _obj[item] = this.list();
+    }
+    return _obj;
+  }
+}
+// Class wich regroup methods used to build documents //
+export class DataArrangement extends DocumentBuilder {
+  constructor(rawAbstract) {
+    super(rawAbstract);
+    this.flag = "OPA"; // Identification word for an Open Air compressor
+    this.rsl = { ni: 8, no: 6, ai: 1, ao: 0, ti: 0 }; // Mandatory reserved slot attribute to each project
+    this.rname = "Reserved"; // Tag used to fill reserved slot
+  }
+  // Method wich return an formatted empty structure only to use with dictionnaryWithIO method
+  skeletonIoList() {
+    const obj = this.object();
+    for (let i = 0; i < this.group; i++) {
+      obj[i + 1] = { MAIN: "" };
+    }
+    return obj;
+  }
+  // Method wich return an formatted empty structure only to use with dictionnaryWithTag method
+  skeletonTagList() {
+    const obj = this.object();
+    for (let i = 0; i < this.group; i++) {
+      obj[i + 1] = { MAIN: this.emptyTagList() };
+    }
+    return obj;
   }
   // Method which return fullfilled dictionnary with all item's tag stored correctly
   rawDictionnary() {
-    const structure = this.skeleton();
-    const dataset = this.dataset;
+    const structure = this.skeletonTagList();
     let j = 1;
-    for (const item of dataset) {
-      const name = item.name;
-      const grp = item.group;
-      for (const [key, value] of Object.entries(structure)) {
-        // For each group ...
-        if (key === grp) {
-          // If open air compressors are present in wish list or not:
-          if (name !== this.flag) {
-            // Adding corresponding item tag list
-            structure[key] = this.addItem(item, value);
-          } else {
-            // Or adding open air tag list
-            structure[key][`CP0${j}`] = this.addOpenAir(item);
-            j += 1;
+    for (const item of this.infosElement) {
+      if (item.name !== this.flag) {
+        for (const [key, value] of Object.entries(this.private[item.id])) {
+          if (value !== 0) {
+            for (let i = 0; i < value; i++) {
+              structure[item.group]["MAIN"][key].push(item.tag);
+            }
           }
         }
+      } else {
+        structure[item.group][`CP0${j}`] = this.emptyTagList();
+        for (const [key, value] of Object.entries(this.private[item.id])) {
+          if (value !== 0) {
+            for (let i = 0; i < value; i++) {
+              structure[item.group][`CP0${j}`][key].push(item.tag);
+            }
+          }
+        }
+        j += 1;
       }
     }
     return structure;
   }
-  // Method which build item tag structure and add it to main dictionnary (run only with rawDictionnary method)
-  addItem(item, value) {
-    const prv = this.private;
-    const tag = item.tag;
-    const niNbs = prv[item.id]["ni"];
-    const noNbs = prv[item.id]["no"];
-    const aiNbs = prv[item.id]["ai"];
-    const aoNbs = prv[item.id]["ao"];
-    const tiNbs = prv[item.id]["ti"];
-    for (let i = 0; i < niNbs; i++) {
-      value.ni.push(tag);
-    }
-    for (let i = 0; i < noNbs; i++) {
-      value.no.push(tag);
-    }
-    for (let i = 0; i < aiNbs; i++) {
-      value.ai.push(tag);
-    }
-    for (let i = 0; i < aoNbs; i++) {
-      value.ao.push(tag);
-    }
-    for (let i = 0; i < tiNbs; i++) {
-      value.ti.push(tag);
-    }
-    return value;
-  }
-  // Method which build open air tag structure and add it to main dictionnary (run only with rawDictionnary method)
-  addOpenAir(item) {
-    const prv = this.private;
-    const structure = {
-      ni: [],
-      no: [],
-      ai: [],
-      ao: [],
-      ti: [],
-    };
-    const tag = item.tag;
-    const niNbs = prv[item.id]["ni"];
-    const noNbs = prv[item.id]["no"];
-    const aiNbs = prv[item.id]["ai"];
-    const aoNbs = prv[item.id]["ao"];
-    const tiNbs = prv[item.id]["ti"];
-    for (let i = 0; i < niNbs; i++) {
-      structure.ni.push(tag);
-    }
-    for (let i = 0; i < noNbs; i++) {
-      structure.no.push(tag);
-    }
-    for (let i = 0; i < aiNbs; i++) {
-      structure.ai.push(tag);
-    }
-    for (let i = 0; i < aoNbs; i++) {
-      structure.ao.push(tag);
-    }
-    for (let i = 0; i < tiNbs; i++) {
-      structure.ti.push(tag);
-      //value.ti.push(tag);
-    }
-    return structure;
-  }
   // Method used to add mandatory slots to standard dictionnary (default grp 1)
-  dictionnaryWithTag(grp = 1) {
+  tagListObject(grp = 1) {
     //amelioration possible en autorisant tt les group a avoir des mandatory slot !!
     const _obj = this.rawDictionnary();
     // Security against bad group number:
@@ -190,7 +118,7 @@ export class DocumentTools {
       grp = 1;
     }
     // Fill choosen group with reserved slot:
-    for (const [key, value] of Object.entries(_obj[grp])) {
+    for (const [key, value] of Object.entries(_obj[grp]["MAIN"])) {
       //console.log("====", key, value); // Keep to understand or debug
       // Avoid Open Air compressor line
       if (key in this.rsl === true) {
@@ -202,14 +130,13 @@ export class DocumentTools {
     return _obj;
   }
   // Method which build IOList under dictionnary shape for each group, add coef and reserved slot (Take care to use reserved dictionnary !)
-  dictionnaryWithIO(dictionnary) {
+  ioListObject(dictionnary) {
     const size = Object.keys(dictionnary).length; // Get number of groups
-    const _result = this.skeletonSpecial(); // Create an pre formatted empty object
+    const _result = this.skeletonIoList(); // Create an pre formatted empty object
     // For each group in dictionnary ...
     for (let i = 1; i < size + 1; i++) {
       // Build item IOList from a new empty one
       const _obj = this.emptyIolist();
-
       // for each type of device (ni, no ...) ...
       for (const key of Object.keys(dictionnary[i])) {
         // Only key in HWL list are accepted
@@ -256,7 +183,7 @@ export class DocumentTools {
   }
   // Method wich build full elements IOList with reserved slot and incertitude coef (both in option)
   ioListBuilder(coef = true, slot = true) {
-    const dataset = this.dataset;
+    const dataset = this.infosElement;
     const prv = this.private;
     const _ioList = this.emptyIolist();
     for (const item of dataset) {
@@ -296,7 +223,7 @@ export class DocumentTools {
   }
   // Method which return module nomenclature only for Open air compressor setup
   openAirModule() {
-    const dataset = this.dataset;
+    const dataset = this.infosElement;
     const prv = this.private;
     const _list = this.list();
     // Open air builded model mudule list
@@ -330,41 +257,6 @@ export class DocumentTools {
     }
     return moduleList;
   }
-  // Method wich return informations from landing page
-  nomenclatureHmi() {
-    const conceptionList = ["HMI", "PLC", "CAN"];
-    const firstRow = ["Denomination", "Ref", "Provider", "Qtty"];
-    const table = this.list(firstRow);
-    for (const item of conceptionList) {
-      const rows = this.list();
-      for (const value of Object.values(
-        this.proface.PROFACE[this.HMI_id][item]
-      )) {
-        rows.push(value);
-      }
-      rows.push(this.group);
-      table.push(rows);
-    }
-    return table;
-  }
-  // Method wich return table of table representing the modules nomenclature
-  nomenclatureModule(obj) {
-    // obj param must be a module list ex :{moduleN:0 ...}
-    const firstRow = ["Ref", "Provider", "Description", "Qtty"];
-    const table = this.list(firstRow);
-    for (const [key, value] of Object.entries(obj)) {
-      if (value !== 0) {
-        const rows = this.list();
-        rows.push(this.proface.PROFACE[key]["Reference"]);
-        rows.push(this.proface.PROFACE[key]["Manufacturer"]);
-        rows.push(this.proface.PROFACE[key]["Description"]);
-        // Qty of module can only be a str for display in wordx function
-        rows.push(`${value}`);
-        table.push(rows);
-      }
-    }
-    return table;
-  }
   // Method which merge module main line with open air module line (care to parameter orders (big object in 1 small in 2))
   mergeModuleLine(ob1, ob2) {
     let _obj = this.object();
@@ -379,8 +271,9 @@ export class DocumentTools {
   }
 }
 // Class wich build special module and technical data like IO board (only with PROFACE)
-export class Proface {
-  constructor() {
+export class Proface extends DocumentBuilder {
+  constructor(rawAbstract) {
+    super(rawAbstract);
     this.nMax = 16; // Maximum numerical input / output module capacity
     this.nMid = 8; // Middle size numerical input / output module capacity
     this.nMin = 4; // Minimum numerical input / output module capacity
@@ -538,8 +431,7 @@ export class Proface {
   }
   // Method wich return a list with raw module line without special module (run only with lineUpBuilder method)
   designModuleLine(moduleLine) {
-    const _list = [];
-    _list.length = 0;
+    const _list = this.list();
     // Put inside empty table all input output module define in moduleLine
     for (const [key, value] of Object.entries(moduleLine)) {
       if (value !== 0 && this.mSpe.includes(key) === false) {
@@ -552,8 +444,7 @@ export class Proface {
   }
   // Method which build group of list of module line according PROFACE specificity (run only with lineUpBuilder method)
   splitModuleLine(table) {
-    const _list = [];
-    _list.length = 0;
+    const _list = this.list();
     // Emptying given table to fill sub table which match with proface specificity
     while (table.length !== 0) {
       const newTable = [];
@@ -568,8 +459,7 @@ export class Proface {
   }
   // Method which add and order special module from matrix (parameter given by splitModuleLine), according PROFACE specificity (run only with lineUpBuilder method)
   orderedModuleLine(matrix) {
-    const _list = [];
-    _list.length = 0;
+    const _list = this.list();
     // Add special module from matrix rows to main list
     for (const list of matrix) {
       if (list.length > 7) {
@@ -592,16 +482,56 @@ export class Proface {
   }
 }
 // Class wich provide several method to design and build word document
-export class docxBuilder {
-  constructor() {
-    //
-    this.proface = JSON.parse(JSON.stringify(proface));
-    //
+export class docxBuilder extends DocumentBuilder {
+  constructor(rawAbstract) {
+    super(rawAbstract);
     this.titleEmptyGrp = "No item has been selected";
     // Variable used for make the shape of the architecture document
     this.ref = "Reference";
     this.img = "Img";
-    this.list = "IoList";
+  }
+  // Method which return formatted main document title
+  buildTitle() {
+    const string = `${this.projectTitle}`;
+    const lowerString = string.toLowerCase();
+    const resultString =
+      lowerString.charAt(0).toUpperCase() + lowerString.slice(1);
+    return resultString;
+  }
+  // Method wich return informations from landing page
+  nomenclatureHmi() {
+    const conceptionList = ["HMI", "PLC", "CAN"];
+    const firstRow = ["Denomination", "Ref", "Provider", "Qtty"];
+    const table = this.list(firstRow);
+    for (const item of conceptionList) {
+      const rows = this.list();
+      for (const value of Object.values(
+        this.proface.PROFACE[this.HMI_id][item]
+      )) {
+        rows.push(value);
+      }
+      rows.push(this.group);
+      table.push(rows);
+    }
+    return table;
+  }
+  // Method wich return table of table representing the modules nomenclature
+  nomenclatureModule(obj) {
+    // obj param must be a module list ex :{moduleN:0 ...}
+    const firstRow = ["Ref", "Provider", "Description", "Qtty"];
+    const table = this.list(firstRow);
+    for (const [key, value] of Object.entries(obj)) {
+      if (value !== 0) {
+        const rows = this.list();
+        rows.push(this.proface.PROFACE[key]["Reference"]);
+        rows.push(this.proface.PROFACE[key]["Manufacturer"]);
+        rows.push(this.proface.PROFACE[key]["Description"]);
+        // Qty of module can only be a str for display in wordx function
+        rows.push(`${value}`);
+        table.push(rows);
+      }
+    }
+    return table;
   }
   // Method which return table according matrix parameter
   docxTable(matrix) {
@@ -731,8 +661,7 @@ export class docxBuilder {
   }
   // Sub method which fill TableCell children with text (only for tableShapeArchitecture method)
   makeRowText(array, target) {
-    const _list = [];
-    _list.length = 0;
+    const _list = this.list();
     for (const module of array) {
       const text = `${this.proface.PROFACE[module][target]}`;
       _list.push(
@@ -761,10 +690,9 @@ export class docxBuilder {
   }
   // Sub method which fill TableCell children with image (only for tableShapeArchitecture method)
   makeRowImage(array, target) {
-    const _list = [];
-    _list.length = 0;
+    const _list = this.list();
     for (const module of array) {
-      const img = this.proface.PROFACE[module][target];
+      //const img = this.proface.PROFACE[module][target];
       _list.push(
         new TableCell({
           width: {

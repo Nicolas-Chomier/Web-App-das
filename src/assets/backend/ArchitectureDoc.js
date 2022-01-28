@@ -1,7 +1,11 @@
 import { Packer } from "docx";
 import { saveAs } from "file-saver";
 import { Buffer } from "buffer";
-import { DocumentTools, Proface, docxBuilder } from "./Toolbox";
+import {
+  DataArrangement,
+  Proface,
+  docxBuilder,
+} from "../tools/DocumentBuilder";
 import {
   base64Header1,
   base64Header2,
@@ -13,30 +17,27 @@ import {
 import {
   Document,
   Footer,
-  WidthType,
-  Table,
   Header,
   Paragraph,
   AlignmentType,
   ImageRun,
-  HeadingLevel,
   TextRun,
 } from "docx";
 
 export function handleClick_Architecture(rawAbstract) {
   // Instantiation of the Document Tools class
-  const Dt = new DocumentTools(rawAbstract);
+  const Dt = new DataArrangement(rawAbstract);
   // Instantiation of the Technology Provider (PROFACE) class
-  const Tp = new Proface();
+  const Tp = new Proface(rawAbstract);
   // Instantiation of the document design class
-  const Dx = new docxBuilder();
+  const Dx = new docxBuilder(rawAbstract);
   // Main project title
-  const t1 = Dt.Buildtitle();
+  const t1 = Dx.buildTitle();
   // Start with fully tagged dictionnary
-  const fullTagDict = Dt.dictionnaryWithTag();
+  const fullTagDict = Dt.tagListObject();
   console.log("dict with tag + reserved slot", fullTagDict);
   // Build dictionnary with IOList in place of tag list from tag list dictionnary build above
-  const fullIoDict = Dt.dictionnaryWithIO(fullTagDict);
+  const fullIoDict = Dt.ioListObject(fullTagDict);
   console.log("Same like tag dict but with IOList", fullIoDict);
   // Variable declaration for architecture document only
   const conf = {
@@ -98,9 +99,6 @@ export function handleClick_Architecture(rawAbstract) {
     }
     children.push(Dx.makePagebreak());
   }
-
-  //
-
   // ........................... //
   // DOCXJS ARCHITECTURE PATTERN //
   // ........................... //

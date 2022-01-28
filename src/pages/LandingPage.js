@@ -18,7 +18,7 @@ const LandingPage = () => {
   // Fields to fill:
   const [text, setText] = useState("");
   const [techno, setTechno] = useState(false);
-  // HMI choice numbers
+  // HMI group numbers
   const [option, setOption] = useState(false);
   // Open air toggle switch boolean
   const [option2, setOption2] = useState(false);
@@ -38,8 +38,8 @@ const LandingPage = () => {
         state: {
           Title: text,
           Technology: techno,
-          Option: option,
-          Option2: option2,
+          Group: option,
+          OpenAir: option2,
           Coef: option3,
           datas: datas,
         },

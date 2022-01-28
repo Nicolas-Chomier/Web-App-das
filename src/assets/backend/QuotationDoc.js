@@ -1,7 +1,11 @@
 import { Packer } from "docx";
 import { saveAs } from "file-saver";
 import { Buffer } from "buffer";
-import { DocumentTools, Proface, docxBuilder } from "./Toolbox";
+import {
+  DataArrangement,
+  Proface,
+  docxBuilder,
+} from "../tools/DocumentBuilder";
 import {
   base64Header1,
   base64Header2,
@@ -25,13 +29,13 @@ import {
 
 export function handleClick_Quotation(rawAbstract) {
   // Instantiation of the Document Tools class
-  const Dt = new DocumentTools(rawAbstract);
+  const Dt = new DataArrangement(rawAbstract);
   // Instantiation of the Technology Provider (PROFACE) class
-  const Tp = new Proface();
+  const Tp = new Proface(rawAbstract);
   // Instantiation of the document design class
-  const Wx = new docxBuilder();
+  const Dx = new docxBuilder(rawAbstract);
   // Main project title
-  const t1 = Dt.Buildtitle();
+  const t1 = Dx.buildTitle();
   // Build fully main IOList
   const fullIOlist = Dt.ioListBuilder();
   // Build main module line
@@ -41,11 +45,11 @@ export function handleClick_Quotation(rawAbstract) {
   // Merge this two module line up
   const mergedModules = Dt.mergeModuleLine(mod1, mod2);
   // Build general module nomenclature
-  const HmiNomenclature = Dt.nomenclatureHmi();
-  const elementsNomenclature = Dt.nomenclatureModule(mergedModules);
+  const HmiNomenclature = Dx.nomenclatureHmi();
+  const elementsNomenclature = Dx.nomenclatureModule(mergedModules);
   // Print wordx table with nomenclature
-  const table1 = Wx.docxTable(HmiNomenclature);
-  const table2 = Wx.docxTable(elementsNomenclature);
+  const table1 = Dx.docxTable(HmiNomenclature);
+  const table2 = Dx.docxTable(elementsNomenclature);
   // Variable declaration for quotation document only
   const conf = {
     // Size for image document header:
@@ -54,8 +58,8 @@ export function handleClick_Quotation(rawAbstract) {
     title1: t1,
     text1:
       "Bonjour, veuillez trouver dans ce document une demande de chiffrage pour les références et les quantités suivantes :",
-    title2: "2. NOMENCLATURE des IHMs",
-    title3: "3. NOMENCLATURE des MODULES",
+    title2: "2. NOMENCLATURE des IHM à fournir",
+    title3: "3. NOMENCLATURE des modules TM3 à fournir",
     name: "Nicolas CHOMIER",
     mail: "nicolaschomier@dalkiaairsolutions.fr",
   };
@@ -209,7 +213,7 @@ export function handleClick_Quotation(rawAbstract) {
       },
     ],
   });
-
+  // Print document
   Packer.toBlob(doc).then((blob) => {
     console.log(blob);
     saveAs(blob, "Quotation doc.docx");
