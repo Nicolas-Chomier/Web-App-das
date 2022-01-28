@@ -10,13 +10,14 @@ const PanelsPage = () => {
   // Datas from previous page:
   const location = useLocation();
   const projectData = location.state;
+  console.log("==========================<<<<<<<<<<<<", projectData);
   // All panel datas attribution (by category):
   const instrum = location.state.datas.Instrumentations;
   const Auxiliaires = location.state.datas.Auxiliaires;
   const piloted = location.state.datas.Eléments_pilotés;
   const analyzer = location.state.datas.Analiseurs;
   // Depend on Open Air option chossen or not:
-  const opt = projectData.Option2;
+  const opt = projectData.OpenAir;
   const machine = location.state.datas.Compresseurs;
   const openair = location.state.datas.OpenAir;
   // Result from choice on different panels (false protect against empty entry when page build/refresh)

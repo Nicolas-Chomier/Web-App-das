@@ -53,7 +53,7 @@ export function handleClick_Architecture(rawAbstract) {
   /////////////////
   // Children is the main list which contain all architecture
   const children = [];
-  const GrpNumber = rawAbstract.Project.Option;
+  const GrpNumber = rawAbstract.Project.Group;
   for (let i = 1; i < GrpNumber + 1; i++) {
     // Creation for title rank 1
     const tr1 = Dx.titleRank1(i);

@@ -18,8 +18,8 @@ export default class DocumentBuilder {
     // Initiate the result from the FRONT with project datas
     this.projectTitle = rawAbstract.Project.Title;
     this.coef = rawAbstract.Project.Coef;
-    this.group = rawAbstract.Project.Option;
-    this.openAir = rawAbstract.Project.Option2;
+    this.group = rawAbstract.Project.Group;
+    this.openAir = rawAbstract.Project.OpenAir;
     this.HMI_id = rawAbstract.Project.Technology.id;
     // Main list configuration for different type of input output hardware
     this.hwl = ["ni", "no", "ai", "ao", "ti"];
