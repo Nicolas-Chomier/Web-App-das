@@ -10,7 +10,7 @@ import { grey } from "@mui/material/colors";
 import SendIcon from "@mui/icons-material/Send";
 import CoefTile from "../components/CoefTile";
 
-// Importation of main datas sources
+// Importation for main datas sources
 const datas = JSON.parse(JSON.stringify(publics));
 
 const LandingPage = () => {

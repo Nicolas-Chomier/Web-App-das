@@ -216,7 +216,7 @@ export function handleClick_Quotation(rawAbstract) {
   // Print document
   Packer.toBlob(doc).then((blob) => {
     console.log(blob);
-    saveAs(blob, "Quotation doc.docx");
-    console.log("Document created successfully");
+    saveAs(blob, "Demande de chiffrage.docx");
+    //console.log("Document created successfully");
   });
 }

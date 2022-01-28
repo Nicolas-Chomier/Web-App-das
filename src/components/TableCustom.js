@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
   Button,
-  /* Paper, */
   Stack,
   TableRow,
   TableContainer,
@@ -21,7 +20,6 @@ const TableCustom = ({ item, output }) => {
 
   useEffect(() => {
     if (item !== false) {
-      console.log("new entry in table custom components", item);
       masterList.push(item);
       let i = 0;
       const displayedTable = [];
@@ -69,7 +67,6 @@ const TableCustom = ({ item, output }) => {
         );
         i += 1;
       }
-      console.log("");
       setListToDisplay(displayedTable);
     }
   }, [item]);
@@ -88,7 +85,6 @@ const TableCustom = ({ item, output }) => {
       finalResults.push(results);
     }
     if (finalResults.length !== 0) {
-      console.log(finalResults);
       output(finalResults);
     } else {
       alert("Please choose elements");

@@ -10,7 +10,6 @@ const PanelsPage = () => {
   // Datas from previous page:
   const location = useLocation();
   const projectData = location.state;
-  console.log("==========================<<<<<<<<<<<<", projectData);
   // All panel datas attribution (by category):
   const instrum = location.state.datas.Instrumentations;
   const Auxiliaires = location.state.datas.Auxiliaires;
@@ -42,7 +41,6 @@ const PanelsPage = () => {
       // Faire qqchose pour refresh all !!
     }
   }, [abstract, projectData, navToLastPage]);
-
   // Panels Page //
   return (
     <div className="grid-container-panels-page">

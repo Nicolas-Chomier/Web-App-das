@@ -15,7 +15,6 @@ const TechnoTile = ({ title, datas, output }) => {
   const select = <SelectCustom data={data} output={setResult} />;
   // Color change when radio btn checked
   useEffect(() => {
-    console.log(result);
     if (result !== false) {
       setStyle({ bgcolor: green[500], width: 54, height: 54 });
       output(result);
