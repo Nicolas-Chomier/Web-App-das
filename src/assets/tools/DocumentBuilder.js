@@ -489,6 +489,17 @@ export class docxBuilder extends DocumentBuilder {
     // Variable used for make the shape of the architecture document
     this.ref = "Reference";
     this.img = "Img";
+    this.ioList = "IoList";
+    // Name put in input output module list when no correspondance in tag list
+    this.noSlot = "Spare";
+    // Color attribution depending of input or output type
+    this.colorPanel = {
+      ni: "30FF18",
+      no: "2CC132",
+      ai: "1CD2FF",
+      ao: "1C87FF",
+      ti: "FFB01C",
+    };
   }
   // Method which return formatted main document title
   buildTitle() {
@@ -575,25 +586,6 @@ export class docxBuilder extends DocumentBuilder {
     }
     return result;
   }
-  // Method which return Title + table builded for architecture
-  architectureBloc() {
-    //const _list = [];
-    /* new Paragraph({
-      text: conf.title1,
-      heading: HeadingLevel.HEADING_1,
-      thematicBreak: false,
-      alignment: AlignmentType.CENTER,
-    }),
-   // ARCH
-    new Table({
-      columnWidths: [2500, 2800, 7000, 2000],
-      rows: "table1",
-      width: {
-        size: 100,
-        type: WidthType.PERCENTAGE,
-      },
-    }), */
-  }
   // Method which build title rank 1 (DocxJs)
   titleRank1(text) {
     let title = `Material architecture under HMI`;
@@ -636,7 +628,7 @@ export class docxBuilder extends DocumentBuilder {
     return result;
   }
   // Method which build architecture under table shape for each array given in parameters
-  makeTable(array) {
+  makeTable(array, tagList) {
     const table = new Table({
       width: {
         size: 100,
@@ -652,9 +644,9 @@ export class docxBuilder extends DocumentBuilder {
           children: this.makeRowImage(array, this.img),
         }),
         // Call methods which build array list of input output
-        /*  new TableRow({
-          children: this.makeRowSpace(array, this.list),
-        }), */
+        new TableRow({
+          children: this.makeRowList(array, this.ioList, tagList),
+        }),
       ],
     });
     return table;
@@ -719,8 +711,51 @@ export class docxBuilder extends DocumentBuilder {
     return _list;
   }
   // Sub method which fill TableCell children with bullet point (only for tableShapeArchitecture method)
-  makeRowList(array, target) {
-    return false;
+  makeRowList(array, target, tagList) {
+    console.log("pop!", tagList);
+    const _list = this.list();
+    for (const module of array) {
+      const moduleIOList = this.proface.PROFACE[module][target];
+      _list.push(this.attribTagToRowList(moduleIOList, tagList));
+    }
+
+    return _list;
+  }
+  //
+  attribTagToRowList(moduleIoList, tagList) {
+    const _list = this.list();
+    for (const [key, value] of Object.entries(moduleIoList)) {
+      console.log("attribTagToRowList", key, value);
+      if (value !== 0) {
+        for (let i = 0; i < value; i++) {
+          const tag =
+            tagList[key].length > 0 ? tagList[key].shift() : this.noSlot;
+          console.log("pop tag", tag);
+          _list.push(
+            new Paragraph({
+              children: [
+                new TextRun({
+                  text: tag,
+                  bold: false,
+                  font: "Calibri",
+                  size: 14,
+                  color:
+                    key in this.colorPanel ? this.colorPanel[key] : "1E1E1E",
+                }),
+              ],
+            })
+          );
+        }
+      }
+    }
+    const rowList = new TableCell({
+      width: {
+        size: 1000,
+        type: WidthType.AUTO,
+      },
+      children: _list,
+    });
+    return rowList;
   }
   // Sub method which fill TableCell children with space (only for tableShapeArchitecture method)
   makeRowSpace(text = "") {

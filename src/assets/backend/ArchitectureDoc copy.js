@@ -61,34 +61,50 @@ export function handleClick_Architecture(rawAbstract) {
     for (const [key, value] of Object.entries(fullIoDict[i])) {
       // Check if IOList (value) is empty
       const isEmpty = !Object.values(value).some((x) => x !== 0);
-      if (isEmpty !== true) {
-        console.log(key, value);
-        // Get tag list from tag dictionnary
-        const tagList = fullTagDict[i][key];
-        console.log("tagList", tagList);
-        // ts
-        //console.log("tagList", tagList);
-        // Create module line up from value (IOlist)
+      if (key === "MAIN") {
+        if (isEmpty !== true) {
+          console.log(key, value);
+          // Get tag list from tag dictionnary
+          const tagList = fullTagDict[i][key];
+          console.log("tagList", tagList);
+          // ts
+          //console.log("tagList", tagList);
+          // Create module line up from value (IOlist)
+          const lineUp = Tp.lineUpBuilder(value);
+          console.log("lineUp", lineUp);
+          // Creation for title rank 2
+          const tr2 = Dx.titleRank2(key, i);
+          children.push(tr2);
+          // Build many arrays looks like architecture
+          for (const item of lineUp) {
+            console.log("item", item);
+            const array = Dx.makeTable(item, tagList);
+            children.push(array);
+            // Space after module row
+            const space = Dx.makeRowSpace();
+            children.push(space);
+            // TEST !!
+            //Dx.makeRowList();
+          }
+        } else {
+          // Push informative title when nothing inside group
+          const noT = Dx.noTitle();
+          children.push(noT);
+        }
+      } else {
+        /* // Create module line up from value (IOlist)
         const lineUp = Tp.lineUpBuilder(value);
-        console.log("lineUp", lineUp);
         // Creation for title rank 2
         const tr2 = Dx.titleRank2(key, i);
         children.push(tr2);
         // Build many arrays looks like architecture
         for (const item of lineUp) {
-          console.log("item", item);
-          const array = Dx.makeTable(item, tagList);
+          const array = Dx.makeTable(item);
           children.push(array);
           // Space after module row
           const space = Dx.makeRowSpace();
           children.push(space);
-          // TEST !!
-          //Dx.makeRowList();
-        }
-      } else {
-        // Push informative title when nothing inside group
-        const noT = Dx.noTitle();
-        children.push(noT);
+        } */
       }
     }
     children.push(Dx.makePagebreak());
