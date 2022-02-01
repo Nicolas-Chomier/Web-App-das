@@ -13,5 +13,10 @@
         "title": "Architecture matériel",
         "text": "Génère l'architecture materiel du projet avec les elements renseignés dans pages précedentes correspondant au fabricant sélectionné.",
         "color": "#35A55D"
+    },
+    "IOList": {
+        "title": "Liste des éléments",
+        "text": "Génère une liste des elements controlés par l'automate avec leurs entrées et sorties associées.",
+        "color": "#9732EC"
     }
 }

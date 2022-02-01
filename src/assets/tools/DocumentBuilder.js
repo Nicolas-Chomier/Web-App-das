@@ -3,7 +3,15 @@ import { Table, TableRow, TableCell } from "docx";
 import { Paragraph, TextRun } from "docx";
 import { HeadingLevel, VerticalAlign, AlignmentType, WidthType } from "docx";
 import { ImageRun } from "docx";
-import { base64ModuleTest } from "../image/images.js";
+// Images importation
+import { IM1 } from "../image/image_module_pf_1";
+import { IM2 } from "../image/image_module_pf_2";
+import { IM3 } from "../image/image_module_pf_3";
+import { IM4 } from "../image/image_module_pf_4";
+import { IM5 } from "../image/image_module_pf_5";
+import { IM6 } from "../image/image_module_pf_6";
+import { IM7 } from "../image/image_module_pf_7";
+// External datas importation
 import privates from "../data/private.json";
 import proface from "../data/proface.json";
 
@@ -492,6 +500,13 @@ export class docxBuilder extends DocumentBuilder {
     this.ioList = "IoList";
     // Name put in input output module list when no correspondance in tag list
     this.noSlot = "Spare";
+    // Image list for proface module
+    this.imgList = [IM1, IM1, IM2, IM3, IM4, IM5, IM6, IM7];
+    // Displayed text configuration
+    this.bold = false;
+    this.font = "Calibri";
+    this.size = 18;
+    this.color = "2E2E2E";
     // Color attribution depending of input or output type
     this.colorPanel = {
       ni: "30FF18",
@@ -544,9 +559,38 @@ export class docxBuilder extends DocumentBuilder {
     }
     return table;
   }
+  // Method which build table IOList for all element
+  buildElementsIolistTable() {
+    const prv = this.private;
+    //console.log(prv);
+    const firstRow = [
+      "N°",
+      "Name",
+      "Type",
+      "Numeric Input",
+      "Numeric Output",
+      "Analog Input",
+      "Analog Output",
+      "T° Input",
+    ];
+    const table = this.list(firstRow);
+    for (const [key, value] of Object.entries(this.infosElement)) {
+      const _list = this.list();
+      _list.push(key);
+      _list.push(value.name);
+      _list.push(prv[value.id].type);
+      _list.push(prv[value.id].ni);
+      _list.push(prv[value.id].no);
+      _list.push(prv[value.id].ai);
+      _list.push(prv[value.id].ao);
+      _list.push(prv[value.id].ti);
+      table.push(_list);
+    }
+    return table;
+  }
   // Method which return table according matrix parameter
   docxTable(matrix) {
-    const result = [];
+    const result = this.list();
     for (const [key, value] of Object.entries(matrix)) {
       const row = new TableRow({
         children: [],
@@ -570,7 +614,7 @@ export class docxBuilder extends DocumentBuilder {
                 : new Paragraph({
                     children: [
                       new TextRun({
-                        text: item,
+                        text: item === 0 ? "0" : item,
                         font: "Calibri",
                         size: 20,
                         color: "2E2E2E",
@@ -667,10 +711,10 @@ export class docxBuilder extends DocumentBuilder {
               children: [
                 new TextRun({
                   text: text,
-                  bold: true,
-                  font: "Calibri",
-                  size: 16,
-                  color: "2E2E2E",
+                  bold: this.bold,
+                  font: this.font,
+                  size: this.size,
+                  color: this.color,
                 }),
               ],
             }),
@@ -684,7 +728,7 @@ export class docxBuilder extends DocumentBuilder {
   makeRowImage(array, target) {
     const _list = this.list();
     for (const module of array) {
-      //const img = this.proface.PROFACE[module][target];
+      const imageNumber = this.proface.PROFACE[module][target];
       _list.push(
         new TableCell({
           width: {
@@ -695,10 +739,10 @@ export class docxBuilder extends DocumentBuilder {
             new Paragraph({
               children: [
                 new ImageRun({
-                  data: Buffer.from(base64ModuleTest, "base64"),
+                  data: Buffer.from(this.imgList[imageNumber], "base64"),
                   transformation: {
-                    width: 52,
-                    height: 100,
+                    width: 50,
+                    height: 150,
                   },
                 }),
               ],
@@ -718,10 +762,9 @@ export class docxBuilder extends DocumentBuilder {
       const moduleIOList = this.proface.PROFACE[module][target];
       _list.push(this.attribTagToRowList(moduleIOList, tagList));
     }
-
     return _list;
   }
-  //
+  // Pick tag to dictionnary tag and fill list according module size
   attribTagToRowList(moduleIoList, tagList) {
     const _list = this.list();
     for (const [key, value] of Object.entries(moduleIoList)) {
@@ -736,11 +779,11 @@ export class docxBuilder extends DocumentBuilder {
               children: [
                 new TextRun({
                   text: tag,
-                  bold: false,
-                  font: "Calibri",
-                  size: 14,
+                  bold: this.bold,
+                  font: this.font,
+                  size: this.size,
                   color:
-                    key in this.colorPanel ? this.colorPanel[key] : "1E1E1E",
+                    key in this.colorPanel ? this.colorPanel[key] : this.color,
                 }),
               ],
             })

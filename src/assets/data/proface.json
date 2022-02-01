@@ -182,7 +182,7 @@
             "Reference": "TM3DI16G",
             "Manufacturer": "PROFACE",
             "Price": 118.98,
-            "Img": "TM3DI16G"
+            "Img": 1
         },
         "module2": {
             "Description": "Module 8 entrées TOR",
@@ -198,7 +198,7 @@
             "Reference": "TM3DI8G",
             "Manufacturer": "PROFACE",
             "Price": 69.99,
-            "Img": "TM3DI8G"
+            "Img": 2
         },
         "module3": {
             "Description": "Module 16 sorties TOR",
@@ -214,7 +214,7 @@
             "Reference": "TM3DQ16TG",
             "Manufacturer": "PROFACE",
             "Price": 118.98,
-            "Img": "TM3DI8G"
+            "Img": 1
         },
         "module4": {
             "Description": "Module 8 sorties TOR",
@@ -230,7 +230,7 @@
             "Reference": "TM3DQ8TG",
             "Manufacturer": "PROFACE",
             "Price": 69.99,
-            "Img": "TM3DI8G"
+            "Img": 2
         },
         "module5": {
             "Description": "Module 4 entrées et 4 sorties TOR",
@@ -246,7 +246,7 @@
             "Reference": "TM3DM8RG",
             "Manufacturer": "PROFACE",
             "Price": 0,
-            "Img": "TM3DM8RG"
+            "Img": 3
         },
         "module6": {
             "Description": "Module 8 entrées analogiques",
@@ -262,7 +262,7 @@
             "Reference": "TM3AI8G",
             "Manufacturer": "PROFACE",
             "Price": 180.66,
-            "Img": "TM3DI8G"
+            "Img": 3
         },
         "module7": {
             "Description": "Module 4 entrées analogiques et sondes de températures",
@@ -278,7 +278,7 @@
             "Reference": "TM3TI4G",
             "Manufacturer": "PROFACE",
             "Price": 0,
-            "Img": "TM3DI8G"
+            "Img": 3
         },
         "module8": {
             "Description": "Module 4 sorties analogiques",
@@ -294,7 +294,7 @@
             "Reference": "TM3AQ4G",
             "Manufacturer": "PROFACE",
             "Price": 207.33,
-            "Img": "TM3DI8G"
+            "Img": 4
         },
         "module9": {
             "Description": "Module 4 entrées et 2 sorties analogiques",
@@ -310,7 +310,7 @@
             "Reference": "TM3AM6G",
             "Manufacturer": "PROFACE",
             "Price": 0,
-            "Img": "TM3DI8G"
+            "Img": 3
         },
         "module10": {
             "Description": "Module coupleur CAnopen",
@@ -326,7 +326,7 @@
             "Reference": "TM3BCCO",
             "Manufacturer": "PROFACE",
             "Price": 161.65,
-            "Img": "TM3BCCO"
+            "Img": 5
         },
         "module11": {
             "Description": "Module d'extension émetteur",
@@ -342,7 +342,7 @@
             "Reference": "TM3XTRA1",
             "Manufacturer": "PROFACE",
             "Price": 43.27,
-            "Img": "TM3XTRA1"
+            "Img": 6
         },
         "module12": {
             "Description": "Module d'extension récepteur",
@@ -358,7 +358,7 @@
             "Reference": "TM3XREC1",
             "Manufacturer": "PROFACE",
             "Price": 43.27,
-            "Img": "TM3XREC1"
+            "Img": 7
         }
     },
     "WAGO": {

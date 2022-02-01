@@ -1,9 +1,10 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { Button, Card } from "@mui/material";
+import { Button, Card, Stack, Avatar } from "@mui/material";
 import RequestCards from "../components/RequestCards";
 import { handleClick_Quotation } from "../assets/backend/QuotationDoc";
 import { handleClick_Architecture } from "../assets/backend/ArchitectureDoc";
+import { handleClick_ElementsList } from "../assets/backend/ElementsListDoc";
 import contents from "../assets/data/lastPageDatas.json";
 
 // Load text information to display for Requestcards elements
@@ -13,8 +14,8 @@ const LastPage = () => {
   // General abstract from PanelsPage
   const location = useLocation();
   const rawAbstract = { ...location.state };
-  // Boutton styles:
-  const btnStyle = { mt: "5px", mb: "8px", color: "#3f4246" };
+  // Avatar settings
+  const avtConf = { width: 38, height: 38 };
   // Last page //
   return (
     <div className="grid-container-last-page">
@@ -28,14 +29,27 @@ const LastPage = () => {
             text={content.quot.text}
             color={content.quot.color}
           />
-          <Button
-            fullWidth={true}
-            sx={btnStyle}
-            variant="text"
-            onClick={() => handleClick_Quotation(rawAbstract)}
+          <Stack
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+            spacing={4}
           >
-            Valider
-          </Button>
+            <Button
+              className="flag-btn"
+              variant="outlined"
+              onClick={() => handleClick_Quotation(rawAbstract, "uk")}
+            >
+              <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
+            </Button>
+            <Button
+              className="flag-btn"
+              variant="outlined"
+              onClick={() => handleClick_Quotation(rawAbstract, "fr")}
+            >
+              <Avatar alt="FR flag" src="/FRFlag.png" sx={avtConf} />
+            </Button>
+          </Stack>
         </Card>
       </div>
       <div className="r2">
@@ -45,16 +59,31 @@ const LastPage = () => {
             text={content.doc.text}
             color={content.doc.color}
           />
-          <Button
-            fullWidth={true}
-            sx={btnStyle}
-            variant="text"
-            onClick={() => {
-              console.log("AF WIP");
-            }}
+          <Stack
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+            spacing={4}
           >
-            Valider
-          </Button>
+            <Button
+              className="flag-btn"
+              variant="outlined"
+              onClick={() => {
+                console.log("AF WIP - UK");
+              }}
+            >
+              <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
+            </Button>
+            <Button
+              className="flag-btn"
+              variant="outlined"
+              onClick={() => {
+                console.log("AF WIP - FR");
+              }}
+            >
+              <Avatar alt="FR flag" src="/FRFlag.png" sx={avtConf} />
+            </Button>
+          </Stack>
         </Card>
       </div>
       <div className="r3">
@@ -64,16 +93,65 @@ const LastPage = () => {
             text={content.arch.text}
             color={content.arch.color}
           />
-          <Button
-            fullWidth={true}
-            sx={btnStyle}
-            variant="text"
-            onClick={() => {
-              handleClick_Architecture(rawAbstract);
-            }}
+          <Stack
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+            spacing={4}
           >
-            Valider
-          </Button>
+            <Button
+              className="flag-btn"
+              variant="outlined"
+              onClick={() => {
+                handleClick_Architecture(rawAbstract, "uk");
+              }}
+            >
+              <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
+            </Button>
+            <Button
+              className="flag-btn"
+              variant="outlined"
+              onClick={() => {
+                handleClick_Architecture(rawAbstract, "fr");
+              }}
+            >
+              <Avatar alt="FR flag" src="/FRFlag.png" sx={avtConf} />
+            </Button>
+          </Stack>
+        </Card>
+      </div>
+      <div className="r4">
+        <Card sx={{ width: "100%", mx: "1vw" }} elevation={5}>
+          <RequestCards
+            title={content.IOList.title}
+            text={content.IOList.text}
+            color={content.IOList.color}
+          />
+          <Stack
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+            spacing={4}
+          >
+            <Button
+              className="flag-btn"
+              variant="outlined"
+              onClick={() => {
+                handleClick_ElementsList(rawAbstract, "uk");
+              }}
+            >
+              <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
+            </Button>
+            <Button
+              className="flag-btn"
+              variant="outlined"
+              onClick={() => {
+                handleClick_ElementsList(rawAbstract, "fr");
+              }}
+            >
+              <Avatar alt="FR flag" src="/FRFlag.png" sx={avtConf} />
+            </Button>
+          </Stack>
         </Card>
       </div>
       <div className="bott"></div>

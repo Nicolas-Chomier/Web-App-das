@@ -1,33 +1,23 @@
 import { Packer } from "docx";
 import { saveAs } from "file-saver";
-import { Buffer } from "buffer";
 import {
   DataArrangement,
   Proface,
   docxBuilder,
 } from "../tools/DocumentBuilder";
-import {
-  base64Header1,
-  base64Header2,
-  base64Header3,
-  base64Header4,
-  base64Header5,
-  base64LogoDalkia,
-} from "../image/images.js";
+// Elements for document presentation
+import { header } from "../tools/documentHeader";
+import { footer } from "../tools/DocumentFooter";
 import {
   Document,
-  Footer,
   WidthType,
   Table,
-  Header,
   Paragraph,
   AlignmentType,
-  ImageRun,
   HeadingLevel,
-  TextRun,
 } from "docx";
 
-export function handleClick_Quotation(rawAbstract) {
+export function handleClick_Quotation(rawAbstract, flag) {
   // Instantiation of the Document Tools class
   const Dt = new DataArrangement(rawAbstract);
   // Instantiation of the Technology Provider (PROFACE) class
@@ -35,7 +25,7 @@ export function handleClick_Quotation(rawAbstract) {
   // Instantiation of the document design class
   const Dx = new docxBuilder(rawAbstract);
   // Main project title
-  const t1 = Dx.buildTitle();
+  const documentTitle = Dx.buildTitle();
   // Build fully main IOList
   const fullIOlist = Dt.ioListBuilder();
   // Build main module line
@@ -50,18 +40,22 @@ export function handleClick_Quotation(rawAbstract) {
   // Print wordx table with nomenclature
   const table1 = Dx.docxTable(HmiNomenclature);
   const table2 = Dx.docxTable(elementsNomenclature);
-  // Variable declaration for quotation document only
+  // Variable declaration for quotation document only in FR and UK
   const conf = {
-    // Size for image document header:
-    width: 120,
-    height: 110,
-    title1: t1,
-    text1:
-      "Bonjour, veuillez trouver dans ce document une demande de chiffrage pour les références et les quantités suivantes :",
-    title2: "2. NOMENCLATURE des IHM à fournir",
-    title3: "3. NOMENCLATURE des modules TM3 à fournir",
-    name: "Nicolas CHOMIER",
-    mail: "nicolaschomier@dalkiaairsolutions.fr",
+    uk: {
+      text1:
+        "Hello, please find in this document a quotation request for the following references and quantities :",
+      title2: "2. NOMENCLATURE for HMI",
+      title3: "3. NOMENCLATURE for TM3 modules",
+      docName: "Quotation request",
+    },
+    fr: {
+      text1:
+        "Bonjour, veuillez trouver dans ce document une demande de chiffrage pour les références et les quantités suivantes :",
+      title2: "2. NOMENCLATURE des IHM à fournir",
+      title3: "3. NOMENCLATURE des modules TM3 à fournir",
+      docName: "Demande de chiffrage",
+    },
   };
   // ................................. //
   // DOCXJS QUOTATION DOCUMENT PATTERN //
@@ -69,117 +63,24 @@ export function handleClick_Quotation(rawAbstract) {
   const doc = new Document({
     sections: [
       {
-        headers: {
-          default: new Header({
-            // Header with images
-            children: [
-              new Paragraph({
-                children: [
-                  new ImageRun({
-                    data: Buffer.from(base64Header1, "base64"),
-                    transformation: {
-                      width: conf.width,
-                      height: conf.height,
-                    },
-                  }),
-                  new ImageRun({
-                    data: Buffer.from(base64Header2, "base64"),
-                    transformation: {
-                      width: conf.width,
-                      height: conf.height,
-                    },
-                  }),
-                  new ImageRun({
-                    data: Buffer.from(base64Header3, "base64"),
-                    transformation: {
-                      width: conf.width,
-                      height: conf.height,
-                    },
-                  }),
-                  new ImageRun({
-                    data: Buffer.from(base64Header4, "base64"),
-                    transformation: {
-                      width: conf.width,
-                      height: conf.height,
-                    },
-                  }),
-                  new ImageRun({
-                    data: Buffer.from(base64Header5, "base64"),
-                    transformation: {
-                      width: conf.width,
-                      height: conf.height,
-                    },
-                  }),
-                ],
-              }),
-            ],
-          }),
-        },
-        footers: {
-          default: new Footer({
-            // Footer with images
-            children: [
-              new Paragraph({
-                children: [
-                  new ImageRun({
-                    data: Buffer.from(base64LogoDalkia, "base64"),
-                    transformation: {
-                      width: conf.width,
-                      height: conf.height,
-                    },
-                    floating: {
-                      horizontalPosition: {
-                        offset: 700000,
-                      },
-                      verticalPosition: {
-                        offset: 9250000,
-                      },
-                    },
-                  }),
-                ],
-              }),
-              new Paragraph({
-                children: [
-                  new TextRun({
-                    text: conf.name,
-                    bold: true,
-                    font: "Calibri",
-                    size: 20,
-                    color: "2E2E2E",
-                  }),
-
-                  new TextRun({
-                    break: 1,
-                  }),
-                  new TextRun({
-                    text: conf.mail,
-                    bold: true,
-                    font: "Calibri",
-                    size: 20,
-                    color: "2E2E2E",
-                  }),
-                ],
-                alignment: AlignmentType.RIGHT,
-              }),
-            ],
-          }),
-        },
+        headers: header,
+        footers: footer,
         children: [
           // Title rank 1
           new Paragraph({
-            text: conf.title1,
+            text: documentTitle,
             heading: HeadingLevel.HEADING_1,
             thematicBreak: false,
             alignment: AlignmentType.CENTER,
           }),
           // Introduction text
           new Paragraph({
-            text: conf.text1,
+            text: conf[flag].text1,
             alignment: AlignmentType.LEFT,
           }),
           // HMI nomenclature title rank 2 n°1
           new Paragraph({
-            text: conf.title2,
+            text: conf[flag].title2,
             heading: HeadingLevel.HEADING_2,
             thematicBreak: false,
             alignment: AlignmentType.LEFT,
@@ -195,7 +96,7 @@ export function handleClick_Quotation(rawAbstract) {
           }),
           // Module nomenclature title rank 2 n°2
           new Paragraph({
-            text: conf.title3,
+            text: conf[flag].title3,
             heading: HeadingLevel.HEADING_2,
             thematicBreak: false,
             alignment: AlignmentType.LEFT,
@@ -215,8 +116,6 @@ export function handleClick_Quotation(rawAbstract) {
   });
   // Print document
   Packer.toBlob(doc).then((blob) => {
-    console.log(blob);
-    saveAs(blob, "Demande de chiffrage.docx");
-    //console.log("Document created successfully");
+    saveAs(blob, `${conf[flag].docName}-${documentTitle}.docx`);
   });
 }

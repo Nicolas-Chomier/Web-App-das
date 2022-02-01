@@ -369,6 +369,12 @@
                     "id": 6002,
                     "generic name": "OPA"
                 }
+            },
+            "Surpresseur": {
+                "standard": {
+                    "id": 6005,
+                    "generic name": "Booster"
+                }
             }
         }
     },
