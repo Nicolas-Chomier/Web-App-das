@@ -21,8 +21,8 @@ export function handleClick_Architecture(rawAbstract, flag) {
   const documentTitle = Dx.buildTitle();
   // Start with fully tagged dictionnary
   const fullTagDict = Dt.tagListObject();
-  // Build dictionnary with IOList in place of tag list from tag list dictionnary build above
-  const fullIoDict = Dt.ioListObject(fullTagDict);
+  // Build the same but with IOList in place of tags
+  const fullIoDict = Dt.addMandatorySlotToIoListObject2();
   // Variable declaration for quotation document only in FR and UK
   const conf = {
     uk: {
@@ -39,8 +39,8 @@ export function handleClick_Architecture(rawAbstract, flag) {
   const GrpNumber = rawAbstract.Project.Group;
   for (let i = 1; i < GrpNumber + 1; i++) {
     // Creation for title rank 1
-    const tr1 = Dx.titleRank1(i);
-    children.push(tr1);
+    const title1 = Dx.titleRank1(i);
+    children.push(title1);
     for (const [key, value] of Object.entries(fullIoDict[i])) {
       // Check if IOList (value) is empty
       const isEmpty = !Object.values(value).some((x) => x !== 0);
@@ -50,8 +50,8 @@ export function handleClick_Architecture(rawAbstract, flag) {
         // Create module line up from value (IOlist)
         const lineUp = Tp.lineUpBuilder(value);
         // Creation for title rank 2
-        const tr2 = Dx.titleRank2(key, i);
-        children.push(tr2);
+        const title2 = Dx.titleRank2(key, i);
+        children.push(title2);
         // Build many arrays looks like architecture
         for (const item of lineUp) {
           const array = Dx.makeTable(item, tagList);

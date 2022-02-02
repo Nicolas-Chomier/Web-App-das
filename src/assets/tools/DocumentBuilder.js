@@ -74,11 +74,19 @@ export class DataArrangement extends DocumentBuilder {
     this.rsl = { ni: 8, no: 6, ai: 1, ao: 0, ti: 0 }; // Mandatory reserved slot attribute to each project
     this.rname = "Reserved"; // Tag used to fill reserved slot
   }
-  // Method wich return an formatted empty structure only to use with dictionnaryWithIO method
+  // Method wich return an formatted empty structure only to use with dictionnaryWithIO method (Obsolete ??)
   skeletonIoList() {
     const obj = this.object();
     for (let i = 0; i < this.group; i++) {
       obj[i + 1] = { MAIN: "" };
+    }
+    return obj;
+  }
+  // Method wich return an formatted empty structure only to use with dictionnaryWithIO method ======== test ================
+  skeletonIoList2() {
+    const obj = this.object();
+    for (let i = 0; i < this.group; i++) {
+      obj[i + 1] = { MAIN: this.emptyIolist() };
     }
     return obj;
   }
@@ -137,24 +145,80 @@ export class DataArrangement extends DocumentBuilder {
     }
     return _obj;
   }
+  // TEST ============================================================
+  // Method which build a usefull IOList dictionnary from raw abstract elements list
+  ioListObject2() {
+    const modele = this.skeletonIoList2(); // Get the empty modele
+    let j = 1; // Counter for OPEN AIR Compressor
+    // Loop through raw abstract elem list
+    for (const value of Object.values(this.infosElement)) {
+      // Avoid "OPEN AIR" elements
+      if (value.name !== this.flag) {
+        // Loop through => {ni:,no:,ai:,ao:,ti:}
+        for (const [item, numbers] of Object.entries(this.private[value.id])) {
+          // If device match, feed the empty modele
+          if (this.hwl.includes(item)) {
+            modele[value.group]["MAIN"][item] += numbers;
+          }
+        }
+      } else {
+        modele[value.group][`CP0${j}`] = this.emptyIolist();
+        for (const [item, numbers] of Object.entries(this.private[value.id])) {
+          if (this.hwl.includes(item)) {
+            modele[value.group][`CP0${j}`][item] += numbers;
+          }
+        }
+        j += 1;
+      }
+    }
+    return modele;
+  }
+  // Method which add coef to ioListObject2
+  addCoefToIoListObject2() {
+    const ioList = { ...this.ioListObject2() };
+    const size = Object.keys(ioList).length; // Get number of groups
+    for (let i = 1; i < size + 1; i++) {
+      for (const [key, value] of Object.entries(ioList[i]["MAIN"])) {
+        ioList[i]["MAIN"][key] = Math.round(value * this.coef);
+      }
+    }
+    return ioList;
+  }
+  // Method which add mandatory slot to ioListObject2 with coef already added (Method to use !)
+  addMandatorySlotToIoListObject2(grp = 1) {
+    const ioList = { ...this.addCoefToIoListObject2() };
+    for (const key of Object.keys(ioList[grp]["MAIN"])) {
+      ioList[grp]["MAIN"][key] += this.rsl[key];
+    }
+    return ioList;
+  }
+  // TEST ============================================================
   // Method which build IOList under dictionnary shape for each group, add coef and reserved slot (Take care to use reserved dictionnary !)
-  ioListObject(dictionnary) {
+  /* ioListObject(dictionnary) {
     const size = Object.keys(dictionnary).length; // Get number of groups
-    const _result = this.skeletonIoList(); // Create an pre formatted empty object
+    const _result = this.skeletonIoList(); // Create a pre-formatted empty object
     // For each group in dictionnary ...
     for (let i = 1; i < size + 1; i++) {
       // Build item IOList from a new empty one
       const _obj = this.emptyIolist();
       // for each type of device (ni, no ...) ...
       for (const key of Object.keys(dictionnary[i])) {
+        console.log("pop1", key);
         // Only key in HWL list are accepted
         if (this.hwl.includes(key)) {
+          console.log("pop2");
           // Only for group 1 (the main group)
           if (i === 1) {
+            console.log("pop3");
             // Device (tag list) length minus mandatory reserved slots
             const rawNbs = dictionnary[i][key].length - this.rsl[key];
+            console.log("rawNbs", rawNbs);
             // Apply incertitude coef to tag list (without mandatory reserved slots)
             _obj[key] += Math.round(rawNbs * this.coef);
+            console.log(
+              "Math.round(rawNbs * this.coef)",
+              Math.round(rawNbs * this.coef)
+            );
             // Add mandatory reserved slots to IOList device
             _obj[key] += this.rsl[key];
             // Put this fullfilled IOList to a main object
@@ -167,6 +231,7 @@ export class DataArrangement extends DocumentBuilder {
             _result[i]["MAIN"] = _obj;
           }
         } else {
+          console.log("pop4");
           const _obj = this.emptyIolist();
           for (const bkey of Object.keys(_obj)) {
             _obj[bkey] += dictionnary[i][key][bkey].length;
@@ -176,8 +241,8 @@ export class DataArrangement extends DocumentBuilder {
       }
     }
     return _result;
-  }
-  // Method which build one main object with global IOList (obsolete ?)
+  } */
+  /*  // Method which build one main object with global IOList (obsolete ?)
   ioListAdder(obj) {
     const elementIoList = { ni: 0, no: 0, ai: 0, ao: 0, ti: 0 };
     for (let i = 0; i < Object.keys(obj).length; i++) {
@@ -188,7 +253,7 @@ export class DataArrangement extends DocumentBuilder {
       }
     } // a refaire en partant de const dataset = this.dataset;
     return elementIoList;
-  }
+  } */
   // Method wich build full elements IOList with reserved slot and incertitude coef (both in option)
   ioListBuilder(coef = true, slot = true) {
     const dataset = this.infosElement;
@@ -212,7 +277,7 @@ export class DataArrangement extends DocumentBuilder {
     if (slot) {
       this.addSlot(_ioList);
     }
-    //console.log("iolist + reserved slot---------------", _ioList);
+    console.log("iolist + reserved slot---------------", _ioList);
     return _ioList;
   }
   // Method wich add incertitude coeficient to raw IOList (run only with ioListBuilder method)
@@ -756,7 +821,6 @@ export class docxBuilder extends DocumentBuilder {
   }
   // Sub method which fill TableCell children with bullet point (only for tableShapeArchitecture method)
   makeRowList(array, target, tagList) {
-    console.log("pop!", tagList);
     const _list = this.list();
     for (const module of array) {
       const moduleIOList = this.proface.PROFACE[module][target];
@@ -768,12 +832,10 @@ export class docxBuilder extends DocumentBuilder {
   attribTagToRowList(moduleIoList, tagList) {
     const _list = this.list();
     for (const [key, value] of Object.entries(moduleIoList)) {
-      console.log("attribTagToRowList", key, value);
       if (value !== 0) {
         for (let i = 0; i < value; i++) {
           const tag =
             tagList[key].length > 0 ? tagList[key].shift() : this.noSlot;
-          console.log("pop tag", tag);
           _list.push(
             new Paragraph({
               children: [

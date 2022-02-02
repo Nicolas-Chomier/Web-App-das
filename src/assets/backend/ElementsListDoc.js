@@ -1,25 +1,16 @@
 import { Packer } from "docx";
 import { saveAs } from "file-saver";
-import { Buffer } from "buffer";
-import {
-  DataArrangement,
-  Proface,
-  docxBuilder,
-} from "../tools/DocumentBuilder";
+import { docxBuilder } from "../tools/DocumentBuilder";
 // Elements for document presentation
 import { header } from "../tools/documentHeader";
 import { footer } from "../tools/DocumentFooter";
 import {
   Document,
-  Footer,
   WidthType,
   Table,
-  Header,
   Paragraph,
   AlignmentType,
-  ImageRun,
   HeadingLevel,
-  TextRun,
 } from "docx";
 
 export function handleClick_ElementsList(rawAbstract, flag) {
