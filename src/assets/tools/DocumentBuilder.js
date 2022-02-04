@@ -67,23 +67,23 @@ export default class DocumentBuilder {
   }
 }
 // Class wich regroup methods used to build documents //
-export class DataArrangement extends DocumentBuilder {
+export class DataBuilder extends DocumentBuilder {
   constructor(rawAbstract) {
     super(rawAbstract);
     this.flag = "OPA"; // Identification word for an Open Air compressor
     this.rsl = { ni: 8, no: 6, ai: 1, ao: 0, ti: 0 }; // Mandatory reserved slot attribute to each project
     this.rname = "Reserved"; // Tag used to fill reserved slot
   }
-  // Method wich return an formatted empty structure only to use with dictionnaryWithIO method (Obsolete ??)
+  /*  // Method wich return an formatted empty structure only to use with dictionnaryWithIO method (Obsolete ??)
   skeletonIoList() {
     const obj = this.object();
     for (let i = 0; i < this.group; i++) {
       obj[i + 1] = { MAIN: "" };
     }
     return obj;
-  }
-  // Method wich return an formatted empty structure only to use with dictionnaryWithIO method ======== test ================
-  skeletonIoList2() {
+  } */
+  // Method wich return an formatted empty structure only to use with dictionnaryWithIO method
+  emptyShapeForIolist() {
     const obj = this.object();
     for (let i = 0; i < this.group; i++) {
       obj[i + 1] = { MAIN: this.emptyIolist() };
@@ -91,7 +91,7 @@ export class DataArrangement extends DocumentBuilder {
     return obj;
   }
   // Method wich return an formatted empty structure only to use with dictionnaryWithTag method
-  skeletonTagList() {
+  emptyShapeForTagList() {
     const obj = this.object();
     for (let i = 0; i < this.group; i++) {
       obj[i + 1] = { MAIN: this.emptyTagList() };
@@ -100,7 +100,7 @@ export class DataArrangement extends DocumentBuilder {
   }
   // Method which return fullfilled dictionnary with all item's tag stored correctly
   rawDictionnary() {
-    const structure = this.skeletonTagList();
+    const structure = this.emptyShapeForTagList();
     let j = 1;
     for (const item of this.infosElement) {
       if (item.name !== this.flag) {
@@ -145,10 +145,9 @@ export class DataArrangement extends DocumentBuilder {
     }
     return _obj;
   }
-  // TEST ============================================================
   // Method which build a usefull IOList dictionnary from raw abstract elements list
-  ioListObject2() {
-    const modele = this.skeletonIoList2(); // Get the empty modele
+  fullIolistProject() {
+    const modele = this.emptyShapeForIolist(); // Get the empty modele
     let j = 1; // Counter for OPEN AIR Compressor
     // Loop through raw abstract elem list
     for (const value of Object.values(this.infosElement)) {
@@ -173,9 +172,9 @@ export class DataArrangement extends DocumentBuilder {
     }
     return modele;
   }
-  // Method which add coef to ioListObject2
-  addCoefToIoListObject2() {
-    const ioList = { ...this.ioListObject2() };
+  // Method which add coef to fullIolistProject
+  addCoefTofullIolistProject() {
+    const ioList = { ...this.fullIolistProject() };
     const size = Object.keys(ioList).length; // Get number of groups
     for (let i = 1; i < size + 1; i++) {
       for (const [key, value] of Object.entries(ioList[i]["MAIN"])) {
@@ -184,78 +183,28 @@ export class DataArrangement extends DocumentBuilder {
     }
     return ioList;
   }
-  // Method which add mandatory slot to ioListObject2 with coef already added (Method to use !)
-  addMandatorySlotToIoListObject2(grp = 1) {
-    const ioList = { ...this.addCoefToIoListObject2() };
+  // Method which add mandatory slot to fullIolistProject with coef already added (Method to use !)
+  addMandatorySlotTofullIolistProject(grp = 1) {
+    const ioList = { ...this.addCoefTofullIolistProject() };
     for (const key of Object.keys(ioList[grp]["MAIN"])) {
       ioList[grp]["MAIN"][key] += this.rsl[key];
     }
     return ioList;
   }
-  // TEST ============================================================
-  // Method which build IOList under dictionnary shape for each group, add coef and reserved slot (Take care to use reserved dictionnary !)
-  /* ioListObject(dictionnary) {
-    const size = Object.keys(dictionnary).length; // Get number of groups
-    const _result = this.skeletonIoList(); // Create a pre-formatted empty object
-    // For each group in dictionnary ...
+  /* // obsolete depuis l'erreur sur quotation doc
+  projectIolistFusion(iolist) {
+    const emptyOne = this.emptyIolist();
+    const size = Object.keys(iolist).length; // Get number of groups
     for (let i = 1; i < size + 1; i++) {
-      // Build item IOList from a new empty one
-      const _obj = this.emptyIolist();
-      // for each type of device (ni, no ...) ...
-      for (const key of Object.keys(dictionnary[i])) {
-        console.log("pop1", key);
-        // Only key in HWL list are accepted
-        if (this.hwl.includes(key)) {
-          console.log("pop2");
-          // Only for group 1 (the main group)
-          if (i === 1) {
-            console.log("pop3");
-            // Device (tag list) length minus mandatory reserved slots
-            const rawNbs = dictionnary[i][key].length - this.rsl[key];
-            console.log("rawNbs", rawNbs);
-            // Apply incertitude coef to tag list (without mandatory reserved slots)
-            _obj[key] += Math.round(rawNbs * this.coef);
-            console.log(
-              "Math.round(rawNbs * this.coef)",
-              Math.round(rawNbs * this.coef)
-            );
-            // Add mandatory reserved slots to IOList device
-            _obj[key] += this.rsl[key];
-            // Put this fullfilled IOList to a main object
-            //console.log("===", _result[i], "===", _obj);
-            _result[i]["MAIN"] = _obj;
-          } else {
-            // Apply incertitude coef to tag list
-            _obj[key] += Math.round(dictionnary[i][key].length * this.coef);
-            // Put this fullfilled IOList to a main object
-            _result[i]["MAIN"] = _obj;
-          }
-        } else {
-          console.log("pop4");
-          const _obj = this.emptyIolist();
-          for (const bkey of Object.keys(_obj)) {
-            _obj[bkey] += dictionnary[i][key][bkey].length;
-            _result[i][key] = _obj;
-          }
-        }
+      for (const [key, value] of Object.entries(iolist[i]["MAIN"])) {
+        emptyOne[key] += value;
       }
     }
-    return _result;
+    return emptyOne;
   } */
-  /*  // Method which build one main object with global IOList (obsolete ?)
-  ioListAdder(obj) {
-    const elementIoList = { ni: 0, no: 0, ai: 0, ao: 0, ti: 0 };
-    for (let i = 0; i < Object.keys(obj).length; i++) {
-      for (const [key, value] of Object.entries(obj[i + 1])) {
-        if (typeof value === "number") {
-          elementIoList[key] += value;
-        }
-      }
-    } // a refaire en partant de const dataset = this.dataset;
-    return elementIoList;
-  } */
+  //// obsolete depuis l'erreur sur quotation doc
   // Method wich build full elements IOList with reserved slot and incertitude coef (both in option)
-  ioListBuilder(coef = true, slot = true) {
+  /* ioListBuilder(coef = true, slot = true) {
     const dataset = this.infosElement;
     const prv = this.private;
     const _ioList = this.emptyIolist();
@@ -279,8 +228,8 @@ export class DataArrangement extends DocumentBuilder {
     }
     console.log("iolist + reserved slot---------------", _ioList);
     return _ioList;
-  }
-  // Method wich add incertitude coeficient to raw IOList (run only with ioListBuilder method)
+  } */
+  /*  // Method wich add incertitude coeficient to raw IOList (run only with ioListBuilder method)
   addCoef(_obj) {
     for (const [key, value] of Object.entries(_obj)) {
       _obj[key] = Math.round(value * this.coef);
@@ -293,7 +242,7 @@ export class DataArrangement extends DocumentBuilder {
       _obj[key] += this.rsl[key];
     }
     return false;
-  }
+  } */
   // Method which return module nomenclature only for Open air compressor setup
   openAirModule() {
     const dataset = this.infosElement;
@@ -552,6 +501,31 @@ export class Proface extends DocumentBuilder {
       }
     }
     return _list;
+  }
+  //
+  addModuleForQuotationDoc(iolist) {
+    const result = this.list();
+    const size = Object.keys(iolist).length; // Get number of groups
+    for (let i = 0; i < size; i++) {
+      for (const [key, value] of Object.entries(iolist[i + 1])) {
+        console.log("grp", i + 1, key, value);
+        console.log("==========", this.moduleBuilder(value));
+        const module = this.moduleBuilder(value);
+        result.push(module);
+      }
+    }
+    return result;
+  }
+  //
+  addObjectByKey(iolist) {
+    const moduleList = this.addModuleForQuotationDoc(iolist);
+    const result = moduleList.reduce((a, b) => {
+      for (let k in b) {
+        if (b.hasOwnProperty(k)) a[k] = (a[k] || 0) + b[k];
+      }
+      return a;
+    }, {});
+    return result;
   }
 }
 // Class wich provide several method to design and build word document

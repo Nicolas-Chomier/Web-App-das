@@ -140,7 +140,7 @@
             }
         }
     },
-    "Auxiliaires": {
+    "Process_components": {
         "image": "generic.jpeg",
         "title": "Process component",
         "default_tag": "Process_3000",
@@ -216,9 +216,9 @@
             }
         }
     },
-    "Eléments_pilotés": {
+    "Valves_and_dampers": {
         "image": "generic.jpeg",
-        "title": "Controlled component",
+        "title": "Valves and dampers",
         "default_tag": "Controlled_4000",
         "color": "#3F4246",
         "data": {
@@ -312,27 +312,15 @@
                     "generic name": "Air flap"
                 }
             },
-            "Souflante": {
+            "Vannes solénoides (TOR)": {
                 "standard": {
                     "id": 4021,
-                    "generic name": "Fan"
-                }
-            },
-            "Pompe à eau": {
-                "standard": {
-                    "id": 4022,
-                    "generic name": "Water pump"
-                }
-            },
-            "Pompe à vide": {
-                "standard": {
-                    "id": 4023,
-                    "generic name": "Vacuum pump"
+                    "generic name": "Valve TOR"
                 }
             }
         }
     },
-    "Analiseurs": {
+    "Analyzer": {
         "image": "generic.jpeg",
         "title": "Analyzer",
         "default_tag": "Analyzer_5000",
@@ -356,8 +344,8 @@
     },
     "OpenAir": {
         "image": "generic.jpeg",
-        "title": "Open Air",
-        "default_tag": "Compressors_6000",
+        "title": "Air supply",
+        "default_tag": "Open_Air_6000",
         "color": "#3F4246",
         "data": {
             "Compresseurs": {
@@ -375,12 +363,18 @@
                     "id": 6005,
                     "generic name": "Booster"
                 }
+            },
+            "Ventillateur": {
+                "standard": {
+                    "id": 6006,
+                    "generic name": "Fan"
+                }
             }
         }
     },
-    "Compresseurs": {
+    "Air_supply": {
         "image": "generic.jpeg",
-        "title": "Compressor",
+        "title": "Air supply",
         "default_tag": "Compressors_6000",
         "color": "#3F4246",
         "data": {
@@ -398,6 +392,32 @@
                 "standard": {
                     "id": 6005,
                     "generic name": "Booster"
+                }
+            },
+            "Ventillateur": {
+                "standard": {
+                    "id": 6006,
+                    "generic name": "Fan"
+                }
+            }
+        }
+    },
+    "Pumps": {
+        "image": "generic.jpeg",
+        "title": "Pumps",
+        "default_tag": "Pumps_7000",
+        "color": "#3F4246",
+        "data": {
+            "Pompe à eau": {
+                "standard": {
+                    "id": 7001,
+                    "generic name": "Water pump"
+                }
+            },
+            "Pompe à vide": {
+                "standard": {
+                    "id": 7002,
+                    "generic name": "Vacuum pump"
                 }
             }
         }

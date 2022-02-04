@@ -8,3 +8,5 @@ STYLISER LES DOCUMENT GENERER !!
 Creer un nouveau document IOList
 sur tout les element docxjs passer par l'api (root.push ..)
 creation d'un sous dossier images pour le dossier public + re routage des dependances
+Rajout pour le document IOList d'une colonne reference module
+concatenation des textes et elements de traduction sur un seul JSON

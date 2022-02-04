@@ -11,14 +11,14 @@ const PanelsPage = () => {
   const location = useLocation();
   const projectData = location.state;
   // All panel datas attribution (by category):
-  const instrum = location.state.datas.Instrumentations;
-  const Auxiliaires = location.state.datas.Auxiliaires;
-  const piloted = location.state.datas.Eléments_pilotés;
-  const analyzer = location.state.datas.Analiseurs;
-  // Depend on Open Air option chossen or not:
-  const opt = projectData.OpenAir;
-  const machine = location.state.datas.Compresseurs;
+  const Instrumentations = location.state.datas.Instrumentations;
+  const Process_components = location.state.datas.Process_components;
+  const Valves_and_dampers = location.state.datas.Valves_and_dampers;
+  const Analyzer = location.state.datas.Analyzer;
+  const opt = projectData.OpenAir; // Depend on Open Air option chossen or not:
+  const Air_supply = location.state.datas.Air_supply;
   const openair = location.state.datas.OpenAir;
+  const Pumps = location.state.datas.Pumps;
   // Result from choice on different panels (false protect against empty entry when page build/refresh)
   const [config, setConfig] = useState(false);
   // Result read from abstract table
@@ -48,30 +48,38 @@ const PanelsPage = () => {
       <div className="leftp"></div>
       <div className="rightp"></div>
       <div className="p1">
-        <ElementPanel data={instrum} config={projectData} output={setConfig} />
+        <ElementPanel
+          data={Instrumentations}
+          config={projectData}
+          output={setConfig}
+        />
       </div>
       <div className="p2">
         <ElementPanel
-          data={Auxiliaires}
+          data={Process_components}
           config={projectData}
           output={setConfig}
         />
       </div>
       <div className="p3">
-        <ElementPanel data={piloted} config={projectData} output={setConfig} />
+        <ElementPanel
+          data={Valves_and_dampers}
+          config={projectData}
+          output={setConfig}
+        />
       </div>
       <div className="p4">
-        <ElementPanel data={analyzer} config={projectData} output={setConfig} />
+        <ElementPanel data={Analyzer} config={projectData} output={setConfig} />
       </div>
       <div className="p5">
         <ElementPanel
-          data={opt === false ? machine : openair}
+          data={opt === false ? Air_supply : openair}
           config={projectData}
           output={setConfig}
         />
       </div>
       <div className="p6">
-        {/* <ElementPanel data={} config={projectData} output={setConfig} /> */}
+        <ElementPanel data={Pumps} config={projectData} output={setConfig} />
       </div>
       <div className="tables">
         <TableCustom item={config} output={setAbstract} />

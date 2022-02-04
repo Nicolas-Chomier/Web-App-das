@@ -1,10 +1,6 @@
 import { Packer } from "docx";
 import { saveAs } from "file-saver";
-import {
-  DataArrangement,
-  Proface,
-  docxBuilder,
-} from "../tools/DocumentBuilder";
+import { DataBuilder, Proface, docxBuilder } from "../tools/DocumentBuilder";
 // Elements for document presentation
 import { header } from "../tools/documentHeader";
 import { footer } from "../tools/DocumentFooter";
@@ -12,7 +8,7 @@ import { Document } from "docx";
 
 export function handleClick_Architecture(rawAbstract, flag) {
   // Instantiation of the Document Tools class
-  const Dt = new DataArrangement(rawAbstract);
+  const Dt = new DataBuilder(rawAbstract);
   // Instantiation of the Technology Provider (PROFACE) class
   const Tp = new Proface(rawAbstract);
   // Instantiation of the document design class
@@ -22,7 +18,7 @@ export function handleClick_Architecture(rawAbstract, flag) {
   // Start with fully tagged dictionnary
   const fullTagDict = Dt.tagListObject();
   // Build the same but with IOList in place of tags
-  const fullIoDict = Dt.addMandatorySlotToIoListObject2();
+  const fullIoDict = Dt.addMandatorySlotTofullIolistProject();
   // Variable declaration for quotation document only in FR and UK
   const conf = {
     uk: {

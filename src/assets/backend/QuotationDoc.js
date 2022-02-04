@@ -1,65 +1,37 @@
 import { Packer } from "docx";
 import { saveAs } from "file-saver";
-import {
-  DataArrangement,
-  Proface,
-  docxBuilder,
-} from "../tools/DocumentBuilder";
+import { Document, WidthType, Paragraph, HeadingLevel } from "docx";
+import { Table, AlignmentType } from "docx";
+// Home made class importation
+import { DataBuilder, Proface, docxBuilder } from "../tools/DocumentBuilder";
 // Elements for document presentation
 import { header } from "../tools/documentHeader";
 import { footer } from "../tools/DocumentFooter";
-import {
-  Document,
-  WidthType,
-  Table,
-  Paragraph,
-  AlignmentType,
-  HeadingLevel,
-} from "docx";
+// External datas importation
+import language from "../data/language.json";
 
-export function handleClick_Quotation(rawAbstract, flag) {
-  // Instantiation of the Document Tools class
-  const Dt = new DataArrangement(rawAbstract);
-  // Instantiation of the Technology Provider (PROFACE) class
-  const Tp = new Proface(rawAbstract);
-  // Instantiation of the document design class
+export function handleClick_Quotation(rawAbstract, tongue) {
+  // Load and parse special datas from JSON
+  const choosenLanguage = JSON.parse(JSON.stringify(language));
+  // Document text language settings
+  const speak = choosenLanguage["quotation"][tongue === 0 ? "uk" : "fr"];
+  // Instantiation for all class needed (Data builder, Document builder, Technology Provider)
+  const Dt = new DataBuilder(rawAbstract);
   const Dx = new docxBuilder(rawAbstract);
-  // Main project title
-  const documentTitle = Dx.buildTitle();
-  // Build fully main IOList
-  const fullIOlist = Dt.ioListBuilder();
-  // Build main module line
-  const mod1 = Tp.moduleBuilder(fullIOlist);
-  // Build open air compressor module line
-  const mod2 = Dt.openAirModule();
-  // Merge this two module line up
-  const mergedModules = Dt.mergeModuleLine(mod1, mod2);
-  // Build general module nomenclature
-  const HmiNomenclature = Dx.nomenclatureHmi();
-  const elementsNomenclature = Dx.nomenclatureModule(mergedModules);
-  // Print wordx table with nomenclature
-  const table1 = Dx.docxTable(HmiNomenclature);
-  const table2 = Dx.docxTable(elementsNomenclature);
-  // Variable declaration for quotation document only in FR and UK
-  const conf = {
-    uk: {
-      text1:
-        "Hello, please find in this document a quotation request for the following references and quantities :",
-      title2: "2. NOMENCLATURE for HMI",
-      title3: "3. NOMENCLATURE for TM3 modules",
-      docName: "Quotation request",
-    },
-    fr: {
-      text1:
-        "Bonjour, veuillez trouver dans ce document une demande de chiffrage pour les références et les quantités suivantes :",
-      title2: "2. NOMENCLATURE des IHM à fournir",
-      title3: "3. NOMENCLATURE des modules TM3 à fournir",
-      docName: "Demande de chiffrage",
-    },
-  };
-  // ................................. //
+  const Tp = new Proface(rawAbstract);
+  // Build the basic main fully iolist project
+  const MASTER = Dt.addMandatorySlotTofullIolistProject();
+  // Get project title
+  const projectTitle = Dx.buildTitle();
+  // Transform master iolist to single module list
+  const finalModuleList = Tp.addObjectByKey(MASTER);
+  // Build hmi + module nomenclature
+  const hmiNomenclature = Dx.nomenclatureHmi();
+  const moduleNomenclature = Dx.nomenclatureModule(finalModuleList);
+  // Build docxjs table
+  const table1 = Dx.docxTable(hmiNomenclature);
+  const table2 = Dx.docxTable(moduleNomenclature);
   // DOCXJS QUOTATION DOCUMENT PATTERN //
-  // ................................. //
   const doc = new Document({
     sections: [
       {
@@ -68,19 +40,19 @@ export function handleClick_Quotation(rawAbstract, flag) {
         children: [
           // Title rank 1
           new Paragraph({
-            text: documentTitle,
+            text: projectTitle,
             heading: HeadingLevel.HEADING_1,
             thematicBreak: false,
             alignment: AlignmentType.CENTER,
           }),
           // Introduction text
           new Paragraph({
-            text: conf[flag].text1,
+            text: speak.text1,
             alignment: AlignmentType.LEFT,
           }),
           // HMI nomenclature title rank 2 n°1
           new Paragraph({
-            text: conf[flag].title2,
+            text: speak.title2,
             heading: HeadingLevel.HEADING_2,
             thematicBreak: false,
             alignment: AlignmentType.LEFT,
@@ -96,7 +68,7 @@ export function handleClick_Quotation(rawAbstract, flag) {
           }),
           // Module nomenclature title rank 2 n°2
           new Paragraph({
-            text: conf[flag].title3,
+            text: speak.title3,
             heading: HeadingLevel.HEADING_2,
             thematicBreak: false,
             alignment: AlignmentType.LEFT,
@@ -116,6 +88,6 @@ export function handleClick_Quotation(rawAbstract, flag) {
   });
   // Print document
   Packer.toBlob(doc).then((blob) => {
-    saveAs(blob, `${conf[flag].docName}-${documentTitle}.docx`);
+    saveAs(blob, `${speak.docName}-${projectTitle}.docx`);
   });
 }

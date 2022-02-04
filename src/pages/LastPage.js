@@ -38,14 +38,14 @@ const LastPage = () => {
             <Button
               className="flag-btn"
               variant="outlined"
-              onClick={() => handleClick_Quotation(rawAbstract, "uk")}
+              onClick={() => handleClick_Quotation(rawAbstract, 0)}
             >
               <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
             </Button>
             <Button
               className="flag-btn"
               variant="outlined"
-              onClick={() => handleClick_Quotation(rawAbstract, "fr")}
+              onClick={() => handleClick_Quotation(rawAbstract, 1)}
             >
               <Avatar alt="FR flag" src="/FRFlag.png" sx={avtConf} />
             </Button>
@@ -103,7 +103,7 @@ const LastPage = () => {
               className="flag-btn"
               variant="outlined"
               onClick={() => {
-                handleClick_Architecture(rawAbstract, "uk");
+                handleClick_Architecture(rawAbstract, 0);
               }}
             >
               <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
@@ -112,7 +112,7 @@ const LastPage = () => {
               className="flag-btn"
               variant="outlined"
               onClick={() => {
-                handleClick_Architecture(rawAbstract, "fr");
+                handleClick_Architecture(rawAbstract, 1);
               }}
             >
               <Avatar alt="FR flag" src="/FRFlag.png" sx={avtConf} />
@@ -137,7 +137,7 @@ const LastPage = () => {
               className="flag-btn"
               variant="outlined"
               onClick={() => {
-                handleClick_ElementsList(rawAbstract, "uk");
+                handleClick_ElementsList(rawAbstract, 0);
               }}
             >
               <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
@@ -146,7 +146,7 @@ const LastPage = () => {
               className="flag-btn"
               variant="outlined"
               onClick={() => {
-                handleClick_ElementsList(rawAbstract, "fr");
+                handleClick_ElementsList(rawAbstract, 1);
               }}
             >
               <Avatar alt="FR flag" src="/FRFlag.png" sx={avtConf} />
