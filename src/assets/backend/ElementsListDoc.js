@@ -1,42 +1,30 @@
 import { Packer } from "docx";
 import { saveAs } from "file-saver";
-import { docxBuilder } from "../tools/DocumentBuilder";
+import { Document, WidthType, Paragraph, HeadingLevel } from "docx";
+import { Table, AlignmentType } from "docx";
+// Home made class importation
+import { DataBuilder, DocxBuilder } from "../tools/DocumentBuilder";
 // Elements for document presentation
-import { header } from "../tools/documentHeader";
+import { header } from "../tools/DocumentHeader";
 import { footer } from "../tools/DocumentFooter";
-import {
-  Document,
-  WidthType,
-  Table,
-  Paragraph,
-  AlignmentType,
-  HeadingLevel,
-} from "docx";
+// External datas importation
+import language from "../data/language.json";
 
-export function handleClick_ElementsList(rawAbstract, flag) {
-  console.log("pop!!", flag);
-  // Instantiation of the document design class
-  const Dx = new docxBuilder(rawAbstract);
-  // Main project title
-  const documentTitle = Dx.buildTitle();
-  // test
-  const tabletest = Dx.buildElementsIolistTable();
-  // ...
-  const table1 = Dx.docxTable(tabletest);
-  // Variable declaration for quotation document only in FR and UK
-  const conf = {
-    uk: {
-      text1: `This document describe the material architecture for ${documentTitle} project`,
-      docName: "Elem IO list",
-    },
-    fr: {
-      text1: `Ce document décrit l'Architecture Materiel pour le projet ${documentTitle}`,
-      docName: "Elem IO list",
-    },
-  };
-  // ........................... //
+export function handleClick_ElementsList(rawAbstract, tongue) {
+  // Load and parse special datas from JSON
+  const choosenLanguage = JSON.parse(JSON.stringify(language));
+  // Document text language settings
+  const speak = choosenLanguage["quotation"][tongue === 0 ? "uk" : "fr"];
+  // Instantiation for all class needed (Data builder, Document builder, Technology Provider)
+  const Dt = new DataBuilder(rawAbstract);
+  const Dx = new DocxBuilder(rawAbstract);
+  // Get project title
+  const projectTitle = Dx.buildTitle();
+  // Build the main adress list
+  const adressList = Dt.buildAdressList();
+  // Build docxjs table
+  const table1 = Dx.docxTable(adressList);
   // DOCXJS ARCHITECTURE PATTERN //
-  // ........................... //
   const doc = new Document({
     sections: [
       {
@@ -45,17 +33,17 @@ export function handleClick_ElementsList(rawAbstract, flag) {
         children: [
           // Title rank 1
           new Paragraph({
-            text: documentTitle,
+            text: projectTitle,
             heading: HeadingLevel.HEADING_1,
             thematicBreak: false,
             alignment: AlignmentType.CENTER,
           }),
           // Introduction text
           new Paragraph({
-            text: conf[flag].text1,
+            text: speak.text1,
             alignment: AlignmentType.LEFT,
           }),
-          // ...
+          // Adress list table
           new Table({
             columnWidths: [500, 1000, 800, 800, 800, 800, 800, 800],
             rows: table1,
@@ -70,6 +58,6 @@ export function handleClick_ElementsList(rawAbstract, flag) {
   });
   // Print document
   Packer.toBlob(doc).then((blob) => {
-    saveAs(blob, `${conf[flag].docName}-${documentTitle}.docx`);
+    saveAs(blob, `${speak.docName}-${projectTitle}.docx`);
   });
 }

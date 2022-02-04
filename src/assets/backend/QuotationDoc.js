@@ -3,9 +3,9 @@ import { saveAs } from "file-saver";
 import { Document, WidthType, Paragraph, HeadingLevel } from "docx";
 import { Table, AlignmentType } from "docx";
 // Home made class importation
-import { DataBuilder, Proface, docxBuilder } from "../tools/DocumentBuilder";
+import { DataBuilder, Proface, DocxBuilder } from "../tools/DocumentBuilder";
 // Elements for document presentation
-import { header } from "../tools/documentHeader";
+import { header } from "../tools/DocumentHeader";
 import { footer } from "../tools/DocumentFooter";
 // External datas importation
 import language from "../data/language.json";
@@ -17,14 +17,14 @@ export function handleClick_Quotation(rawAbstract, tongue) {
   const speak = choosenLanguage["quotation"][tongue === 0 ? "uk" : "fr"];
   // Instantiation for all class needed (Data builder, Document builder, Technology Provider)
   const Dt = new DataBuilder(rawAbstract);
-  const Dx = new docxBuilder(rawAbstract);
+  const Dx = new DocxBuilder(rawAbstract);
   const Tp = new Proface(rawAbstract);
-  // Build the basic main fully iolist project
-  const MASTER = Dt.addMandatorySlotTofullIolistProject();
+  // Build basical dataset, MASTER => iolist dictionnary
+  const MASTER_IO = Dt.addMandatorySlotTofullIolistProject();
   // Get project title
   const projectTitle = Dx.buildTitle();
   // Transform master iolist to single module list
-  const finalModuleList = Tp.addObjectByKey(MASTER);
+  const finalModuleList = Tp.addObjectByKey(MASTER_IO);
   // Build hmi + module nomenclature
   const hmiNomenclature = Dx.nomenclatureHmi();
   const moduleNomenclature = Dx.nomenclatureModule(finalModuleList);

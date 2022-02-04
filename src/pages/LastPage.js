@@ -5,7 +5,7 @@ import RequestCards from "../components/RequestCards";
 import { handleClick_Quotation } from "../assets/backend/QuotationDoc";
 import { handleClick_Architecture } from "../assets/backend/ArchitectureDoc";
 import { handleClick_ElementsList } from "../assets/backend/ElementsListDoc";
-import contents from "../assets/data/lastPageDatas.json";
+import contents from "../assets/data/lastPage.json";
 
 // Load text information to display for Requestcards elements
 const content = JSON.parse(JSON.stringify(contents));

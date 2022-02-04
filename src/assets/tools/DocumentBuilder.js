@@ -291,7 +291,37 @@ export class DataBuilder extends DocumentBuilder {
     });
     return _obj;
   }
+  // Method which build table IOList for all element
+  buildAdressList() {
+    const prv = this.private;
+    //console.log(prv);
+    const firstRow = [
+      "N°",
+      "Name",
+      "Type",
+      "Numeric Input",
+      "Numeric Output",
+      "Analog Input",
+      "Analog Output",
+      "T° Input",
+    ];
+    const table = this.list(firstRow);
+    for (const [key, value] of Object.entries(this.infosElement)) {
+      const _list = this.list();
+      _list.push(key);
+      _list.push(value.name);
+      _list.push(prv[value.id].type);
+      _list.push(prv[value.id].ni);
+      _list.push(prv[value.id].no);
+      _list.push(prv[value.id].ai);
+      _list.push(prv[value.id].ao);
+      _list.push(prv[value.id].ti);
+      table.push(_list);
+    }
+    return table;
+  }
 }
+
 // Class wich build special module and technical data like IO board (only with PROFACE)
 export class Proface extends DocumentBuilder {
   constructor(rawAbstract) {
@@ -529,7 +559,7 @@ export class Proface extends DocumentBuilder {
   }
 }
 // Class wich provide several method to design and build word document
-export class docxBuilder extends DocumentBuilder {
+export class DocxBuilder extends DocumentBuilder {
   constructor(rawAbstract) {
     super(rawAbstract);
     this.titleEmptyGrp = "No item has been selected";
@@ -595,35 +625,6 @@ export class docxBuilder extends DocumentBuilder {
         rows.push(`${value}`);
         table.push(rows);
       }
-    }
-    return table;
-  }
-  // Method which build table IOList for all element
-  buildElementsIolistTable() {
-    const prv = this.private;
-    //console.log(prv);
-    const firstRow = [
-      "N°",
-      "Name",
-      "Type",
-      "Numeric Input",
-      "Numeric Output",
-      "Analog Input",
-      "Analog Output",
-      "T° Input",
-    ];
-    const table = this.list(firstRow);
-    for (const [key, value] of Object.entries(this.infosElement)) {
-      const _list = this.list();
-      _list.push(key);
-      _list.push(value.name);
-      _list.push(prv[value.id].type);
-      _list.push(prv[value.id].ni);
-      _list.push(prv[value.id].no);
-      _list.push(prv[value.id].ai);
-      _list.push(prv[value.id].ao);
-      _list.push(prv[value.id].ti);
-      table.push(_list);
     }
     return table;
   }

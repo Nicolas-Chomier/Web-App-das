@@ -14,7 +14,23 @@
         }
     },
     "architecture": {
-        "uk": {},
-        "fr": {}
+        "uk": {
+            "text1": "This document details the entire architecture of the automation package",
+            "docName": "Architecture"
+        },
+        "fr": {
+            "text1": "Ce document detaille l'entiere architecture du lot automatisme",
+            "docName": "Architecture"
+        }
+    },
+    "address": {
+        "uk": {
+            "text1": "This document details the entire address of the automation package",
+            "docName": "List and elements adress"
+        },
+        "fr": {
+            "text1": "Ce document detaille l'entiere address du lot automatisme",
+            "docName": "Liste et adresse des elements"
+        }
     }
 }
