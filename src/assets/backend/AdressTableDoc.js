@@ -10,11 +10,11 @@ import { footer } from "../tools/DocumentFooter";
 // External datas importation
 import language from "../data/language.json";
 
-export function handleClick_ElementsList(rawAbstract, tongue) {
+export function handleClick_AdressTable(rawAbstract, tongue) {
   // Load and parse special datas from JSON
   const choosenLanguage = JSON.parse(JSON.stringify(language));
   // Document text language settings
-  const speak = choosenLanguage["quotation"][tongue === 0 ? "uk" : "fr"];
+  const speak = choosenLanguage["addressTable"][tongue === 0 ? "uk" : "fr"];
   // Instantiation for all class needed (Data builder, Document builder, Technology Provider)
   const Dt = new DataBuilder(rawAbstract);
   const Dx = new DocxBuilder(rawAbstract);
@@ -24,7 +24,7 @@ export function handleClick_ElementsList(rawAbstract, tongue) {
   const adressList = Dt.buildAdressList();
   // Build docxjs table
   const table1 = Dx.docxTable(adressList);
-  // DOCXJS ARCHITECTURE PATTERN //
+  // Adress table pattern
   const doc = new Document({
     sections: [
       {

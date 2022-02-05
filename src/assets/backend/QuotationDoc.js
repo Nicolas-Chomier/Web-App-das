@@ -31,7 +31,7 @@ export function handleClick_Quotation(rawAbstract, tongue) {
   // Build docxjs table
   const table1 = Dx.docxTable(hmiNomenclature);
   const table2 = Dx.docxTable(moduleNomenclature);
-  // DOCXJS QUOTATION DOCUMENT PATTERN //
+  // Quotation pattern
   const doc = new Document({
     sections: [
       {

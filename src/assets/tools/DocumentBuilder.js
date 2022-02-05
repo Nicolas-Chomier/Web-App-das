@@ -30,7 +30,7 @@ export default class DocumentBuilder {
     this.openAir = rawAbstract.Project.OpenAir;
     this.HMI_id = rawAbstract.Project.Technology.id;
     // Main list configuration for different type of input output hardware
-    this.hwl = ["ni", "no", "ai", "ao", "ti"];
+    this.hwl = ["DI", "DO", "AI", "AO", "AIt"];
   }
   // Method wich return empty Object
   object() {
@@ -71,17 +71,9 @@ export class DataBuilder extends DocumentBuilder {
   constructor(rawAbstract) {
     super(rawAbstract);
     this.flag = "OPA"; // Identification word for an Open Air compressor
-    this.rsl = { ni: 8, no: 6, ai: 1, ao: 0, ti: 0 }; // Mandatory reserved slot attribute to each project
-    this.rname = "Reserved"; // Tag used to fill reserved slot
+    this.rsl = { DI: 8, DO: 6, AI: 1, AO: 0, AIt: 0 }; // Mandatory reserved slot attribute to each project
+    this.rName = "Reserved"; // Tag used to fill reserved slot
   }
-  /*  // Method wich return an formatted empty structure only to use with dictionnaryWithIO method (Obsolete ??)
-  skeletonIoList() {
-    const obj = this.object();
-    for (let i = 0; i < this.group; i++) {
-      obj[i + 1] = { MAIN: "" };
-    }
-    return obj;
-  } */
   // Method wich return an formatted empty structure only to use with dictionnaryWithIO method
   emptyShapeForIolist() {
     const obj = this.object();
@@ -99,7 +91,7 @@ export class DataBuilder extends DocumentBuilder {
     return obj;
   }
   // Method which return fullfilled dictionnary with all item's tag stored correctly
-  rawDictionnary() {
+  tagListDictionnary() {
     const structure = this.emptyShapeForTagList();
     let j = 1;
     for (const item of this.infosElement) {
@@ -128,7 +120,7 @@ export class DataBuilder extends DocumentBuilder {
   // Method used to add mandatory slots to standard dictionnary (default grp 1)
   tagListObject(grp = 1) {
     //amelioration possible en autorisant tt les group a avoir des mandatory slot !!
-    const _obj = this.rawDictionnary();
+    const _obj = this.tagListDictionnary();
     // Security against bad group number:
     if (grp > this.group || grp <= 0) {
       grp = 1;
@@ -139,7 +131,7 @@ export class DataBuilder extends DocumentBuilder {
       // Avoid Open Air compressor line
       if (key in this.rsl === true) {
         for (let i = 0; i < this.rsl[key]; i++) {
-          value.unshift(this.rname);
+          value.unshift(this.rName);
         }
       }
     }
@@ -191,106 +183,6 @@ export class DataBuilder extends DocumentBuilder {
     }
     return ioList;
   }
-  /* // obsolete depuis l'erreur sur quotation doc
-  projectIolistFusion(iolist) {
-    const emptyOne = this.emptyIolist();
-    const size = Object.keys(iolist).length; // Get number of groups
-    for (let i = 1; i < size + 1; i++) {
-      for (const [key, value] of Object.entries(iolist[i]["MAIN"])) {
-        emptyOne[key] += value;
-      }
-    }
-    return emptyOne;
-  } */
-  //// obsolete depuis l'erreur sur quotation doc
-  // Method wich build full elements IOList with reserved slot and incertitude coef (both in option)
-  /* ioListBuilder(coef = true, slot = true) {
-    const dataset = this.infosElement;
-    const prv = this.private;
-    const _ioList = this.emptyIolist();
-    for (const item of dataset) {
-      if (item.name !== this.flag) {
-        // Fill emptyIolist with item in dataset according hardware input output type
-        for (const tag of this.hwl) {
-          _ioList[tag] += prv[item.id][tag];
-        }
-      }
-    }
-    //console.log("raw iolist--------------", _ioList);
-    // Apply coef if true
-    if (coef) {
-      this.addCoef(_ioList);
-    }
-    //console.log("iolist + coef--------------", _ioList);
-    // Add slots if true
-    if (slot) {
-      this.addSlot(_ioList);
-    }
-    console.log("iolist + reserved slot---------------", _ioList);
-    return _ioList;
-  } */
-  /*  // Method wich add incertitude coeficient to raw IOList (run only with ioListBuilder method)
-  addCoef(_obj) {
-    for (const [key, value] of Object.entries(_obj)) {
-      _obj[key] = Math.round(value * this.coef);
-    }
-    return false;
-  }
-  // Method wich add incertitude coeficient to main IOList (run only with ioListBuilder method)
-  addSlot(_obj) {
-    for (const key of Object.keys(_obj)) {
-      _obj[key] += this.rsl[key];
-    }
-    return false;
-  } */
-  // Method which return module nomenclature only for Open air compressor setup
-  openAirModule() {
-    const dataset = this.infosElement;
-    const prv = this.private;
-    const _list = this.list();
-    // Open air builded model mudule list
-    const moduleList = {
-      module2: 0,
-      module4: 0,
-      module9: 0,
-      module10: 0,
-    };
-    // Fill list with capitale letter which represent de type of open air compressors
-    for (const item of dataset) {
-      if (
-        item.name === this.flag &&
-        prv[item.id].hasOwnProperty("type") === true
-      ) {
-        _list.push(prv[item.id].type);
-      }
-    }
-    // Open air module list incrementation
-    for (const letter of _list) {
-      if (letter === "A") {
-        moduleList.module2 += 1;
-        moduleList.module4 += 1;
-        moduleList.module10 += 1;
-      } else {
-        moduleList.module2 += 1;
-        moduleList.module4 += 1;
-        moduleList.module10 += 1;
-        moduleList.module9 += 1;
-      }
-    }
-    return moduleList;
-  }
-  // Method which merge module main line with open air module line (care to parameter orders (big object in 1 small in 2))
-  mergeModuleLine(ob1, ob2) {
-    let _obj = this.object();
-    Object.keys(ob1).forEach((key) => {
-      if (ob2.hasOwnProperty(key)) {
-        _obj[key] = ob1[key] + ob2[key];
-      } else {
-        _obj[key] = ob1[key];
-      }
-    });
-    return _obj;
-  }
   // Method which build table IOList for all element
   buildAdressList() {
     const prv = this.private;
@@ -299,8 +191,8 @@ export class DataBuilder extends DocumentBuilder {
       "N°",
       "Name",
       "Type",
-      "Numeric Input",
-      "Numeric Output",
+      "Digital Input",
+      "Digital Output",
       "Analog Input",
       "Analog Output",
       "T° Input",
@@ -311,11 +203,11 @@ export class DataBuilder extends DocumentBuilder {
       _list.push(key);
       _list.push(value.name);
       _list.push(prv[value.id].type);
-      _list.push(prv[value.id].ni);
-      _list.push(prv[value.id].no);
-      _list.push(prv[value.id].ai);
-      _list.push(prv[value.id].ao);
-      _list.push(prv[value.id].ti);
+      _list.push(prv[value.id].DI);
+      _list.push(prv[value.id].DO);
+      _list.push(prv[value.id].AI);
+      _list.push(prv[value.id].AO);
+      _list.push(prv[value.id].AIt);
       table.push(_list);
     }
     return table;
@@ -346,9 +238,9 @@ export class Proface extends DocumentBuilder {
       module4: 0,
       module5: 0,
     };
-    let ni = target.ni;
+    let ni = target.DI;
     let ri = ni % this.nMax;
-    let no = target.no;
+    let no = target.DO;
     let ro = no % this.nMax;
     let _output = 0;
     // Numerical Input Filling :
@@ -381,16 +273,17 @@ export class Proface extends DocumentBuilder {
     }
     return numericalResult;
   }
-  // Method wich calcul the numbers of analog proface module selection according given IOList
+  // Method wich calcul the numbers of analog proface module selection according given IOList //obsolete a refaire
   analogModule(target) {
     const analogResult = { module6: 0, module7: 0, module8: 0, module9: 0 };
-    let ai = target.ai;
-    let ao = target.ao;
-    let ti = target.ti;
-    let ri = ai % this.nMax;
-    let ro = ao % this.nMax;
+    let ai = target.AI;
+    let ao = target.AO;
+    let ti = target.AIt;
+    let ri = ai % this.aMax;
+    let ro = ao % this.aMid;
     let _input = 0;
     let _output = 0;
+
     // Analog Input Filling :
     analogResult.module6 += Math.floor(ai / this.aMax);
     if (ri !== 0) {
@@ -409,11 +302,14 @@ export class Proface extends DocumentBuilder {
       analogResult.module7 += 1;
     }
     // Analog Output Filling :
-    analogResult.module8 += Math.floor(ao / this.aMax);
+    analogResult.module8 += Math.floor(ao / this.aMid);
     if (ro !== 0) {
       if (ro > this.aMin) {
         analogResult.module8 += 1;
-        _output += this.aMax - ro;
+        _output += this.aMid - ro;
+      } else if (_output >= ro) {
+        _output += this.aMin - ro;
+        _input += this.aMid;
       } else {
         analogResult.module9 += 1;
         _output += this.aMin - ro;
@@ -456,7 +352,7 @@ export class Proface extends DocumentBuilder {
   }
   // Method wich return entire proface module nomenclature
   moduleBuilder(IOList) {
-    // Shape of IOList needed { ni: *, no: *, ai: *, ao: *, ti: * }
+    // Shape of IOList needed { DI: *, DO: *, AI: *, AO: *, AIt: * }
     const moduleList = {
       ...this.numericalModule(IOList),
       ...this.analogModule(IOList),
@@ -532,21 +428,19 @@ export class Proface extends DocumentBuilder {
     }
     return _list;
   }
-  //
+  // Method which return a list of all module line up from master iolist (used only with addObjectByKey)
   addModuleForQuotationDoc(iolist) {
     const result = this.list();
     const size = Object.keys(iolist).length; // Get number of groups
     for (let i = 0; i < size; i++) {
-      for (const [key, value] of Object.entries(iolist[i + 1])) {
-        console.log("grp", i + 1, key, value);
-        console.log("==========", this.moduleBuilder(value));
-        const module = this.moduleBuilder(value);
-        result.push(module);
+      for (const value of Object.values(iolist[i + 1])) {
+        const moduleLineUp = this.moduleBuilder(value);
+        result.push(moduleLineUp);
       }
     }
     return result;
   }
-  //
+  // Method which add all module number in one module line up
   addObjectByKey(iolist) {
     const moduleList = this.addModuleForQuotationDoc(iolist);
     const result = moduleList.reduce((a, b) => {
@@ -578,11 +472,11 @@ export class DocxBuilder extends DocumentBuilder {
     this.color = "2E2E2E";
     // Color attribution depending of input or output type
     this.colorPanel = {
-      ni: "30FF18",
-      no: "2CC132",
-      ai: "1CD2FF",
-      ao: "1C87FF",
-      ti: "FFB01C",
+      DI: "30FF18",
+      DO: "2CC132",
+      AI: "1CD2FF",
+      AO: "1C87FF",
+      AIt: "FFB01C",
     };
   }
   // Method which return formatted main document title
@@ -733,6 +627,7 @@ export class DocxBuilder extends DocumentBuilder {
         }),
       ],
     });
+    console.log("table", table);
     return table;
   }
   // Sub method which fill TableCell children with text (only for tableShapeArchitecture method)
@@ -807,6 +702,7 @@ export class DocxBuilder extends DocumentBuilder {
   attribTagToRowList(moduleIoList, tagList) {
     const _list = this.list();
     for (const [key, value] of Object.entries(moduleIoList)) {
+      console.log(key);
       if (value !== 0) {
         for (let i = 0; i < value; i++) {
           const tag =
@@ -835,6 +731,7 @@ export class DocxBuilder extends DocumentBuilder {
       },
       children: _list,
     });
+
     return rowList;
   }
   // Sub method which fill TableCell children with space (only for tableShapeArchitecture method)

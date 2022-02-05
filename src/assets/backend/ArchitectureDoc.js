@@ -12,7 +12,7 @@ export function handleClick_Architecture(rawAbstract, tongue) {
   // Load and parse special datas from JSON
   const choosenLanguage = JSON.parse(JSON.stringify(language));
   // Document text language settings
-  const speak = choosenLanguage["quotation"][tongue === 0 ? "uk" : "fr"];
+  const speak = choosenLanguage["architecture"][tongue === 0 ? "uk" : "fr"];
   // Instantiation for all class needed (Data builder, Document builder, Technology Provider)
   const Dt = new DataBuilder(rawAbstract);
   const Dx = new DocxBuilder(rawAbstract);
@@ -36,14 +36,18 @@ export function handleClick_Architecture(rawAbstract, tongue) {
         if (isEmpty !== true) {
           // Get tag list from tag dictionnary
           const tagList = MASTER_TAG[i][key];
+
           // Create module line up from value (IOlist)
           const lineUp = Tp.lineUpBuilder(value);
           // Creation for title rank 2
           const title2 = Dx.titleRank2(key, i);
           children.push(title2);
+
           // Build many arrays looks like architecture
           for (const item of lineUp) {
-            const array = Dx.makeTable(item, tagList);
+            console.log(item, tagList);
+            const array = Dx.makeTable(item, tagList); //!
+
             children.push(array);
             // Space after module row
             const space = Dx.makeRowSpace();
@@ -59,7 +63,7 @@ export function handleClick_Architecture(rawAbstract, tongue) {
     }
     return children;
   }
-  // DOCXJS ARCHITECTURE PATTERN //
+  // Architecture pattern document
   const doc = new Document({
     sections: [
       {

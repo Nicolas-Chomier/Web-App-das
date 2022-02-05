@@ -23,7 +23,7 @@
             "docName": "Architecture"
         }
     },
-    "address": {
+    "addressTable": {
         "uk": {
             "text1": "This document details the entire address of the automation package",
             "docName": "List and elements adress"

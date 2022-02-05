@@ -173,11 +173,11 @@
             "Interface": "Input x16",
             "Denomination": "I/O Board",
             "IoList": {
-                "ni": 16,
-                "no": 0,
-                "ai": 0,
-                "ao": 0,
-                "ti": 0
+                "DI": 16,
+                "DO": 0,
+                "AI": 0,
+                "AO": 0,
+                "AIt": 0
             },
             "Reference": "TM3DI16G",
             "Manufacturer": "PROFACE",
@@ -189,11 +189,11 @@
             "Interface": "Input x8",
             "Denomination": "I/O Board",
             "IoList": {
-                "ni": 8,
-                "no": 0,
-                "ai": 0,
-                "ao": 0,
-                "ti": 0
+                "DI": 8,
+                "DO": 0,
+                "AI": 0,
+                "AO": 0,
+                "AIt": 0
             },
             "Reference": "TM3DI8G",
             "Manufacturer": "PROFACE",
@@ -205,11 +205,11 @@
             "Interface": "Output x16",
             "Denomination": "I/O Board",
             "IoList": {
-                "ni": 0,
-                "no": 16,
-                "ai": 0,
-                "ao": 0,
-                "ti": 0
+                "DI": 0,
+                "DO": 16,
+                "AI": 0,
+                "AO": 0,
+                "AIt": 0
             },
             "Reference": "TM3DQ16TG",
             "Manufacturer": "PROFACE",
@@ -221,11 +221,11 @@
             "Interface": "Output x8",
             "Denomination": "I/O Board",
             "IoList": {
-                "ni": 0,
-                "no": 8,
-                "ai": 0,
-                "ao": 0,
-                "ti": 0
+                "DI": 0,
+                "DO": 8,
+                "AI": 0,
+                "AO": 0,
+                "AIt": 0
             },
             "Reference": "TM3DQ8TG",
             "Manufacturer": "PROFACE",
@@ -237,11 +237,11 @@
             "Interface": "Hybride 4/4",
             "Denomination": "I/O Board",
             "IoList": {
-                "ni": 4,
-                "no": 4,
-                "ai": 0,
-                "ao": 0,
-                "ti": 0
+                "DI": 4,
+                "DO": 4,
+                "AI": 0,
+                "AO": 0,
+                "AIt": 0
             },
             "Reference": "TM3DM8RG",
             "Manufacturer": "PROFACE",
@@ -253,11 +253,11 @@
             "Interface": "Input x8",
             "Denomination": "I/O Board",
             "IoList": {
-                "ni": 0,
-                "no": 0,
-                "ai": 8,
-                "ao": 0,
-                "ti": 0
+                "DI": 0,
+                "DO": 0,
+                "AI": 8,
+                "AO": 0,
+                "AIt": 0
             },
             "Reference": "TM3AI8G",
             "Manufacturer": "PROFACE",
@@ -269,11 +269,11 @@
             "Interface": "Input x4",
             "Denomination": "I/O Board",
             "IoList": {
-                "ni": 0,
-                "no": 0,
-                "ai": 0,
-                "ao": 0,
-                "ti": 4
+                "DI": 0,
+                "DO": 0,
+                "AI": 0,
+                "AO": 0,
+                "AIt": 4
             },
             "Reference": "TM3TI4G",
             "Manufacturer": "PROFACE",
@@ -285,11 +285,11 @@
             "Interface": "Output x4",
             "Denomination": "I/O Board",
             "IoList": {
-                "ni": 0,
-                "no": 0,
-                "ai": 0,
-                "ao": 4,
-                "ti": 0
+                "DI": 0,
+                "DO": 0,
+                "AI": 0,
+                "AO": 4,
+                "AIt": 0
             },
             "Reference": "TM3AQ4G",
             "Manufacturer": "PROFACE",
@@ -301,11 +301,11 @@
             "Interface": "Hybride 4/2",
             "Denomination": "I/O Board",
             "IoList": {
-                "ni": 0,
-                "no": 0,
-                "ai": 4,
-                "ao": 2,
-                "ti": 0
+                "DI": 0,
+                "DO": 0,
+                "AI": 4,
+                "AO": 2,
+                "AIt": 0
             },
             "Reference": "TM3AM6G",
             "Manufacturer": "PROFACE",
@@ -317,11 +317,11 @@
             "Interface": "Tête de ligne\nCanopen",
             "Denomination": "I/O Board",
             "IoList": {
-                "ni": 0,
-                "no": 0,
-                "ai": 0,
-                "ao": 0,
-                "ti": 0
+                "DI": 0,
+                "DO": 0,
+                "AI": 0,
+                "AO": 0,
+                "AIt": 0
             },
             "Reference": "TM3BCCO",
             "Manufacturer": "PROFACE",
@@ -333,11 +333,11 @@
             "Interface": "Rallonge\némettrice",
             "Denomination": "I/O Board",
             "IoList": {
-                "ni": 0,
-                "no": 0,
-                "ai": 0,
-                "ao": 0,
-                "ti": 0
+                "DI": 0,
+                "DO": 0,
+                "AI": 0,
+                "AO": 0,
+                "AIt": 0
             },
             "Reference": "TM3XTRA1",
             "Manufacturer": "PROFACE",
@@ -349,11 +349,11 @@
             "Interface": "Rallonge\nréceptrice",
             "Denomination": "I/O Board",
             "IoList": {
-                "ni": 0,
-                "no": 0,
-                "ai": 0,
-                "ao": 0,
-                "ti": 0
+                "DI": 0,
+                "DO": 0,
+                "AI": 0,
+                "AO": 0,
+                "AIt": 0
             },
             "Reference": "TM3XREC1",
             "Manufacturer": "PROFACE",
