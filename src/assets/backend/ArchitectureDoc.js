@@ -23,7 +23,7 @@ export function handleClick_Architecture(rawAbstract, tongue) {
   // Get project title
   const projectTitle = Dx.buildTitle();
   // Sub function which will generate the entire architecture
-  function childrenGenerator() {
+  function buildEntireArchitecture() {
     const children = [];
     const GrpNumber = rawAbstract.Project.Group;
     for (let i = 1; i < GrpNumber + 1; i++) {
@@ -36,18 +36,14 @@ export function handleClick_Architecture(rawAbstract, tongue) {
         if (isEmpty !== true) {
           // Get tag list from tag dictionnary
           const tagList = MASTER_TAG[i][key];
-
           // Create module line up from value (IOlist)
           const lineUp = Tp.lineUpBuilder(value);
           // Creation for title rank 2
           const title2 = Dx.titleRank2(key, i);
           children.push(title2);
-
           // Build many arrays looks like architecture
           for (const item of lineUp) {
-            console.log(item, tagList);
             const array = Dx.makeTable(item, tagList); //!
-
             children.push(array);
             // Space after module row
             const space = Dx.makeRowSpace();
@@ -69,7 +65,7 @@ export function handleClick_Architecture(rawAbstract, tongue) {
       {
         headers: header,
         footers: footer,
-        children: childrenGenerator(),
+        children: buildEntireArchitecture(),
       },
     ],
   });
@@ -77,4 +73,5 @@ export function handleClick_Architecture(rawAbstract, tongue) {
   Packer.toBlob(doc).then((blob) => {
     saveAs(blob, `${speak.docName}-${projectTitle}.docx`);
   });
+  return false;
 }

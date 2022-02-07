@@ -1,11 +1,72 @@
 {
+    "Spare": {
+        "DI": 0,
+        "DO": 0,
+        "AI": 0,
+        "AO": 0,
+        "AIt": 0,
+        "Text": {
+            "uk": {
+                "DI": "Spare parts",
+                "DO": "Spare parts",
+                "AI": "Spare parts",
+                "AO": "Spare parts",
+                "AIt": "Spare parts"
+            },
+            "fr": {
+                "DI": "Libre",
+                "DO": "Libre",
+                "AI": "Libre",
+                "AO": "Libre",
+                "AIt": "Libre"
+            }
+        }
+    },
+    "0000": {
+        "DI": 0,
+        "DO": 0,
+        "AI": 0,
+        "AO": 0,
+        "AIt": 0,
+        "Text": {
+            "uk": {
+                "DI": "Reserved function",
+                "DO": "Reserved function",
+                "AI": "Reserved function",
+                "AO": "Reserved function",
+                "AIt": "Reserved function"
+            },
+            "fr": {
+                "DI": "Partie réservé",
+                "DO": "Partie réservé",
+                "AI": "Partie réservé",
+                "AO": "Partie réservé",
+                "AIt": "Partie réservé"
+            }
+        }
+    },
     "0001": {
         "DI": 0,
         "DO": 0,
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "?",
+                "DO": "?",
+                "AI": "?",
+                "AO": "?",
+                "AIt": "?"
+            }
+        }
     },
     "0002": {
         "DI": 0,
@@ -13,7 +74,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "0003": {
         "DI": 0,
@@ -21,7 +97,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "0004": {
         "DI": 0,
@@ -29,7 +120,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "0005": {
         "DI": 0,
@@ -37,7 +143,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "0006": {
         "DI": 0,
@@ -45,7 +166,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "1001": {
         "DI": 0,
@@ -53,7 +189,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "2001": {
         "DI": 0,
@@ -61,7 +212,22 @@
         "AI": 1,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "error",
+                "DO": "error",
+                "AI": "Pressure transmitter signal",
+                "AO": "error",
+                "AIt": "error"
+            },
+            "fr": {
+                "DI": "error",
+                "DO": "error",
+                "AI": "Signal d'entré du capteur de pression",
+                "AO": "error",
+                "AIt": "error"
+            }
+        }
     },
     "2002": {
         "DI": 1,
@@ -69,7 +235,22 @@
         "AI": 1,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "error",
+                "AI": "test",
+                "AO": "error",
+                "AIt": "error"
+            },
+            "fr": {
+                "DI": "?",
+                "DO": "error",
+                "AI": "?",
+                "AO": "error",
+                "AIt": "error"
+            }
+        }
     },
     "2003": {
         "DI": 2,
@@ -77,7 +258,22 @@
         "AI": 1,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "2004": {
         "DI": 1,
@@ -85,7 +281,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "2005": {
         "DI": 0,
@@ -93,7 +304,22 @@
         "AI": 1,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "2006": {
         "DI": 1,
@@ -101,7 +327,22 @@
         "AI": 1,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "2007": {
         "DI": 1,
@@ -109,7 +350,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "2008": {
         "DI": 0,
@@ -117,7 +373,22 @@
         "AI": 1,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "2009": {
         "DI": 0,
@@ -125,7 +396,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 1,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "2010": {
         "DI": 1,
@@ -133,7 +419,22 @@
         "AI": 1,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "2011": {
         "DI": 1,
@@ -141,7 +442,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "2012": {
         "DI": 0,
@@ -149,7 +465,22 @@
         "AI": 1,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "2013": {
         "DI": 1,
@@ -157,7 +488,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "2014": {
         "DI": 0,
@@ -165,7 +511,22 @@
         "AI": 1,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "2015": {
         "DI": 0,
@@ -173,7 +534,22 @@
         "AI": 1,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "2016": {
         "DI": 0,
@@ -181,7 +557,22 @@
         "AI": 1,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "2017": {
         "DI": 0,
@@ -189,7 +580,22 @@
         "AI": 1,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "3001": {
         "DI": 1,
@@ -197,7 +603,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "3002": {
         "DI": 1,
@@ -205,7 +626,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "3003": {
         "DI": 1,
@@ -213,7 +649,22 @@
         "AI": 1,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "3004": {
         "DI": 1,
@@ -221,7 +672,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "3005": {
         "DI": 1,
@@ -229,7 +695,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "3006": {
         "DI": 1,
@@ -237,7 +718,22 @@
         "AI": 1,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "3007": {
         "DI": 1,
@@ -245,7 +741,22 @@
         "AI": 1,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "3008": {
         "DI": 1,
@@ -253,7 +764,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "3009": {
         "DI": 0,
@@ -261,7 +787,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "3010": {
         "DI": 0,
@@ -269,7 +810,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "3011": {
         "DI": 0,
@@ -277,7 +833,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "3012": {
         "DI": 1,
@@ -285,7 +856,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "3013": {
         "DI": 0,
@@ -293,7 +879,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "3014": {
         "DI": 1,
@@ -301,7 +902,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4001": {
         "DI": 0,
@@ -309,7 +925,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4002": {
         "DI": 2,
@@ -317,7 +948,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4003": {
         "DI": 0,
@@ -325,7 +971,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4004": {
         "DI": 2,
@@ -333,7 +994,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4005": {
         "DI": 0,
@@ -341,7 +1017,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4006": {
         "DI": 2,
@@ -349,7 +1040,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4007": {
         "DI": 0,
@@ -357,7 +1063,22 @@
         "AI": 0,
         "AO": 1,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4008": {
         "DI": 0,
@@ -365,7 +1086,22 @@
         "AI": 1,
         "AO": 1,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4009": {
         "DI": 0,
@@ -373,7 +1109,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4010": {
         "DI": 2,
@@ -381,7 +1132,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4011": {
         "DI": 0,
@@ -389,7 +1155,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4012": {
         "DI": 2,
@@ -397,7 +1178,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4013": {
         "DI": 0,
@@ -405,7 +1201,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4014": {
         "DI": 2,
@@ -413,7 +1224,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4015": {
         "DI": 0,
@@ -421,7 +1247,22 @@
         "AI": 0,
         "AO": 1,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4016": {
         "DI": 0,
@@ -429,7 +1270,22 @@
         "AI": 1,
         "AO": 1,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4017": {
         "DI": 0,
@@ -437,7 +1293,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4018": {
         "DI": 2,
@@ -445,7 +1316,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4019": {
         "DI": 0,
@@ -453,7 +1339,22 @@
         "AI": 0,
         "AO": 1,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4020": {
         "DI": 0,
@@ -461,7 +1362,22 @@
         "AI": 1,
         "AO": 1,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "4021": {
         "DI": 0,
@@ -469,7 +1385,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "5001": {
         "DI": 0,
@@ -477,7 +1408,22 @@
         "AI": 2,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "5002": {
         "DI": 2,
@@ -485,7 +1431,22 @@
         "AI": 2,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "5003": {
         "DI": 0,
@@ -493,7 +1454,22 @@
         "AI": 1,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "6001": {
         "DI": 6,
@@ -501,7 +1477,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "6002": {
         "DI": 6,
@@ -509,7 +1500,22 @@
         "AI": 2,
         "AO": 2,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "6003": {
         "DI": 1,
@@ -517,7 +1523,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "6004": {
         "DI": 2,
@@ -525,7 +1546,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "6005": {
         "DI": 1,
@@ -533,7 +1569,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "6006": {
         "DI": 1,
@@ -541,7 +1592,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "7001": {
         "DI": 1,
@@ -549,7 +1615,22 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     },
     "7002": {
         "DI": 1,
@@ -557,6 +1638,21 @@
         "AI": 0,
         "AO": 0,
         "AIt": 0,
-        "Type": "test001"
+        "Text": {
+            "uk": {
+                "DI": "test",
+                "DO": "test",
+                "AI": "test",
+                "AO": "test",
+                "AIt": "test"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        }
     }
 }

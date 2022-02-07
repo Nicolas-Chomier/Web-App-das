@@ -16,7 +16,7 @@ import privates from "../data/private.json";
 import proface from "../data/proface.json";
 
 // Main class used to help application to build document with docxJS
-export default class DocumentBuilder {
+class DocumentBuilder {
   constructor(rawAbstract) {
     // Load special datas from JSON used by all children class
     this.private = JSON.parse(JSON.stringify(privates));
@@ -31,6 +31,8 @@ export default class DocumentBuilder {
     this.HMI_id = rawAbstract.Project.Technology.id;
     // Main list configuration for different type of input output hardware
     this.hwl = ["DI", "DO", "AI", "AO", "AIt"];
+    // Name put in input output module list when no correspondance in tag list
+    this.noSlot = "Spare";
   }
   // Method wich return empty Object
   object() {
@@ -65,15 +67,6 @@ export default class DocumentBuilder {
     }
     return _obj;
   }
-}
-// Class wich regroup methods used to build documents //
-export class DataBuilder extends DocumentBuilder {
-  constructor(rawAbstract) {
-    super(rawAbstract);
-    this.flag = "OPA"; // Identification word for an Open Air compressor
-    this.rsl = { DI: 8, DO: 6, AI: 1, AO: 0, AIt: 0 }; // Mandatory reserved slot attribute to each project
-    this.rName = "Reserved"; // Tag used to fill reserved slot
-  }
   // Method wich return an formatted empty structure only to use with dictionnaryWithIO method
   emptyShapeForIolist() {
     const obj = this.object();
@@ -89,6 +82,63 @@ export class DataBuilder extends DocumentBuilder {
       obj[i + 1] = { MAIN: this.emptyTagList() };
     }
     return obj;
+  }
+}
+// Class wich regroup methods used to build documents //
+export class DataBuilder extends DocumentBuilder {
+  constructor(rawAbstract) {
+    super(rawAbstract);
+    this.flag = "OPA"; // Identification word for an Open Air compressor
+    this.rsl = { DI: 8, DO: 6, AI: 1, AO: 0, AIt: 0 }; // Mandatory reserved slot attribute to each project
+    this.rName = "Reserved"; // Tag used to fill reserved slot
+    this.rId = "0000";
+  }
+  // Method which return fullfilled dictionnary with all item's id stored correctly
+  idListDictionnary() {
+    const structure = this.emptyShapeForTagList();
+    let j = 1;
+    for (const item of this.infosElement) {
+      if (item.name !== this.flag) {
+        for (const [key, value] of Object.entries(this.private[item.id])) {
+          if (value !== 0) {
+            for (let i = 0; i < value; i++) {
+              structure[item.group]["MAIN"][key].push(item.id);
+            }
+          }
+        }
+      } else {
+        structure[item.group][`CP0${j}`] = this.emptyTagList();
+        for (const [key, value] of Object.entries(this.private[item.id])) {
+          if (value !== 0) {
+            for (let i = 0; i < value; i++) {
+              structure[item.group][`CP0${j}`][key].push(item.id);
+            }
+          }
+        }
+        j += 1;
+      }
+    }
+    return structure;
+  }
+  // Method used to add mandatory slots to standard dictionnary (default grp 1)
+  idListObject(grp = 1) {
+    //amelioration possible en autorisant tt les group a avoir des mandatory slot !!
+    const _obj = this.idListDictionnary();
+    // Security against bad group number:
+    if (grp > this.group || grp <= 0) {
+      grp = 1;
+    }
+    // Fill choosen group with reserved slot:
+    for (const [key, value] of Object.entries(_obj[grp]["MAIN"])) {
+      //console.log("====", key, value); // Keep to understand or debug
+      // Avoid Open Air compressor line
+      if (key in this.rsl === true) {
+        for (let i = 0; i < this.rsl[key]; i++) {
+          value.unshift(this.rId);
+        }
+      }
+    }
+    return _obj;
   }
   // Method which return fullfilled dictionnary with all item's tag stored correctly
   tagListDictionnary() {
@@ -183,37 +233,7 @@ export class DataBuilder extends DocumentBuilder {
     }
     return ioList;
   }
-  // Method which build table IOList for all element
-  buildAdressList() {
-    const prv = this.private;
-    //console.log(prv);
-    const firstRow = [
-      "N°",
-      "Name",
-      "Type",
-      "Digital Input",
-      "Digital Output",
-      "Analog Input",
-      "Analog Output",
-      "T° Input",
-    ];
-    const table = this.list(firstRow);
-    for (const [key, value] of Object.entries(this.infosElement)) {
-      const _list = this.list();
-      _list.push(key);
-      _list.push(value.name);
-      _list.push(prv[value.id].type);
-      _list.push(prv[value.id].DI);
-      _list.push(prv[value.id].DO);
-      _list.push(prv[value.id].AI);
-      _list.push(prv[value.id].AO);
-      _list.push(prv[value.id].AIt);
-      table.push(_list);
-    }
-    return table;
-  }
 }
-
 // Class wich build special module and technical data like IO board (only with PROFACE)
 export class Proface extends DocumentBuilder {
   constructor(rawAbstract) {
@@ -461,8 +481,6 @@ export class DocxBuilder extends DocumentBuilder {
     this.ref = "Reference";
     this.img = "Img";
     this.ioList = "IoList";
-    // Name put in input output module list when no correspondance in tag list
-    this.noSlot = "Spare";
     // Image list for proface module
     this.imgList = [IM1, IM1, IM2, IM3, IM4, IM5, IM6, IM7];
     // Displayed text configuration
@@ -627,7 +645,6 @@ export class DocxBuilder extends DocumentBuilder {
         }),
       ],
     });
-    console.log("table", table);
     return table;
   }
   // Sub method which fill TableCell children with text (only for tableShapeArchitecture method)
@@ -702,7 +719,6 @@ export class DocxBuilder extends DocumentBuilder {
   attribTagToRowList(moduleIoList, tagList) {
     const _list = this.list();
     for (const [key, value] of Object.entries(moduleIoList)) {
-      console.log(key);
       if (value !== 0) {
         for (let i = 0; i < value; i++) {
           const tag =
@@ -752,5 +768,45 @@ export class DocxBuilder extends DocumentBuilder {
       pageBreakBefore: true,
     });
     return pageBreak;
+  }
+}
+// Class wich provide several method used to build adressTable document
+export class AdressTableDocBuilder extends DocumentBuilder {
+  constructor(rawAbstract) {
+    super(rawAbstract);
+    this.targetA = "IoList";
+    this.targetB = "Reference";
+    this.comment = "...";
+  }
+  // Pick tag to dictionnary tag and fill list according module size
+  attribTagToList(tagList, idList, module, flag) {
+    const _list = this.list();
+    const moduleIOList = this.proface.PROFACE[module][this.targetA];
+    const moduleRef = this.proface.PROFACE[module][this.targetB];
+    for (const [key, value] of Object.entries(moduleIOList)) {
+      if (value !== 0) {
+        for (let i = 0; i < value; i++) {
+          const tag =
+            tagList[key].length > 0 ? tagList[key].shift() : this.noSlot;
+          const id = idList[key].length > 0 ? idList[key].shift() : this.noSlot;
+          const fluf = this.AddFlufToRawAdressTable(id, key, flag);
+          _list.push([i + 1, fluf, tag, key, this.comment, moduleRef]);
+        }
+      }
+    }
+    return _list;
+  }
+  reshapeTagList(tagList, idList, module, flag) {
+    const result = this.attribTagToList(tagList, idList, module, flag);
+    const _list = this.list();
+    for (const item of result) {
+      _list.push(item);
+    }
+    return _list;
+  }
+  //
+  AddFlufToRawAdressTable(id, key, flag) {
+    const fluf = this.private[id]["Text"][flag][key];
+    return fluf;
   }
 }

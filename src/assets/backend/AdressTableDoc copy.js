@@ -20,8 +20,6 @@ export function handleClick_AdressTable(rawAbstract, tongue) {
   const choosenLanguage = JSON.parse(JSON.stringify(language));
   // Document text language settings
   const speak = choosenLanguage["architecture"][tongue === 0 ? "uk" : "fr"];
-  const flag = tongue === 0 ? "uk" : "fr";
-  console.log(flag);
   // Instantiation for all class needed (Data builder, Document builder, Technology Provider)
   const Dt = new DataBuilder(rawAbstract);
   const Dx = new DocxBuilder(rawAbstract);
@@ -30,39 +28,24 @@ export function handleClick_AdressTable(rawAbstract, tongue) {
   // Build basical dataset, MASTER => iolist dictionnary, MASTER2 => tagList dictionnary
   const MASTER_IO = Dt.addMandatorySlotTofullIolistProject();
   const MASTER_TAG = Dt.tagListObject();
-  // test id dict...
-  const MASTER_ID = Dt.idListObject();
-  // test id dict...
   // Get number of group
   const GrpNumber = rawAbstract.Project.Group;
   // Get project title
   const projectTitle = Dx.buildTitle();
   // Build a raw list with all important infos
-  function buildRawArrayOfDatas(MASTER_IO, MASTER_TAG, MASTER_ID, flag) {
+  function buildRawArrayOfDatas(MASTER_IO, MASTER_TAG) {
     const EmptyRawArray = [];
     const limit = ["module10", "module11", "module12"];
     for (let i = 1; i < GrpNumber + 1; i++) {
       for (const [key, value] of Object.entries(MASTER_IO[i])) {
-        //console.log(i, key, value);
-        const idList = MASTER_ID[i][key];
-        const tagList = MASTER_TAG[i][key];
-        const partTitle = `${key}, grp${i}`;
         const isEmpty = !Object.values(value).some((x) => x !== 0);
         if (isEmpty !== true) {
-          EmptyRawArray.push(partTitle);
+          const tagList = MASTER_TAG[i][key];
           const lineUp = Tp.moduleBuilder(value);
-          let j = 0;
           for (const [module, number] of Object.entries(lineUp)) {
             if (number !== 0 && limit.includes(module) === false) {
-              j += 1;
-              const moduleNbs = `module:${j}`;
-              const listWithTag = Atb.reshapeTagList(
-                tagList,
-                idList,
-                module,
-                flag
-              );
-              EmptyRawArray.push(moduleNbs);
+              //const partTitle =
+              const listWithTag = Atb.reshapeTagList(tagList, module);
               EmptyRawArray.push(listWithTag);
             }
           }
@@ -71,8 +54,6 @@ export function handleClick_AdressTable(rawAbstract, tongue) {
     }
     return EmptyRawArray;
   }
-  const test = buildRawArrayOfDatas(MASTER_IO, MASTER_TAG, MASTER_ID, flag);
-  console.log(test);
   // Main document title
   const docTitle = new Paragraph({
     text: projectTitle,
