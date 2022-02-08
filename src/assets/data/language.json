@@ -32,5 +32,17 @@
             "text1": "Ce document detaille l'entiere address du lot automatisme",
             "docName": "Liste et adresse des elements"
         }
+    },
+    "functionalAnalysis": {
+        "uk": {
+            "title1": "Document presentation",
+            "text1": "This document defines the elements, functions and operating principles of the PLC package for the project: ",
+            "title2": "Reference document"
+        },
+        "fr": {
+            "title1": "Présentation du document",
+            "text1": "Ce document definie les elements, les fonctionalitées et les principes de fonctionnement du lot automate pour le projet: ",
+            "title2": "Document de référence"
+        }
     }
 }

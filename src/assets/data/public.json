@@ -47,7 +47,7 @@
     "Instrumentations": {
         "image": "generic.jpeg",
         "title": "Intrumentation",
-        "default_tag": "Sensor_2000",
+        "default_tag": "2000",
         "color": "#3F4246",
         "data": {
             "Capteur de pression": {
@@ -143,7 +143,7 @@
     "Process_components": {
         "image": "generic.jpeg",
         "title": "Process component",
-        "default_tag": "Process_3000",
+        "default_tag": "3000",
         "color": "#3F4246",
         "data": {
             "Chilleur": {
@@ -219,7 +219,7 @@
     "Valves_and_dampers": {
         "image": "generic.jpeg",
         "title": "Valves and dampers",
-        "default_tag": "Controlled_4000",
+        "default_tag": "4000",
         "color": "#3F4246",
         "data": {
             "Vanne 2 voies pneumatique": {
@@ -323,7 +323,7 @@
     "Analyzer": {
         "image": "generic.jpeg",
         "title": "Analyzer",
-        "default_tag": "Analyzer_5000",
+        "default_tag": "5000",
         "color": "#3F4246",
         "data": {
             "Analiseurs d'air": {
@@ -345,7 +345,7 @@
     "OpenAir": {
         "image": "generic.jpeg",
         "title": "Air supply",
-        "default_tag": "Open_Air_6000",
+        "default_tag": "6000",
         "color": "#3F4246",
         "data": {
             "Compresseurs": {
@@ -375,7 +375,7 @@
     "Air_supply": {
         "image": "generic.jpeg",
         "title": "Air supply",
-        "default_tag": "Compressors_6000",
+        "default_tag": "6000",
         "color": "#3F4246",
         "data": {
             "Compresseurs": {
@@ -405,7 +405,7 @@
     "Pumps": {
         "image": "generic.jpeg",
         "title": "Pumps",
-        "default_tag": "Pumps_7000",
+        "default_tag": "7000",
         "color": "#3F4246",
         "data": {
             "Pompe à eau": {

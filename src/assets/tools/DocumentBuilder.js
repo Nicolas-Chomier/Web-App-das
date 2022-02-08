@@ -2,6 +2,7 @@ import { Buffer } from "buffer";
 import { Table, TableRow, TableCell } from "docx";
 import { Paragraph, TextRun } from "docx";
 import { HeadingLevel, VerticalAlign, AlignmentType, WidthType } from "docx";
+import { TableOfContents } from "docx";
 import { ImageRun } from "docx";
 // Images importation
 import { IM1 } from "../image/image_module_pf_1";
@@ -486,7 +487,7 @@ export class DocxBuilder extends DocumentBuilder {
     // Displayed text configuration
     this.bold = false;
     this.font = "Calibri";
-    this.size = 18;
+    this.size = 16;
     this.color = "2E2E2E";
     // Color attribution depending of input or output type
     this.colorPanel = {
@@ -541,48 +542,71 @@ export class DocxBuilder extends DocumentBuilder {
     return table;
   }
   // Method which return table according matrix parameter
-  docxTable(matrix) {
+  docxTable(matrix, span) {
     const result = this.list();
     for (const [key, value] of Object.entries(matrix)) {
       const row = new TableRow({
         children: [],
       });
-      for (const item of value) {
+      if (typeof value === "string") {
         row.root.push(
           new TableCell({
             children: [
-              key === "0"
-                ? new Paragraph({
-                    children: [
-                      new TextRun({
-                        text: item,
-                        bold: true,
-                        font: "Calibri",
-                        size: 22,
-                        color: "2E2E2E",
-                      }),
-                    ],
-                  })
-                : new Paragraph({
-                    children: [
-                      new TextRun({
-                        text: item === 0 ? "0" : item,
-                        font: "Calibri",
-                        size: 20,
-                        color: "2E2E2E",
-                      }),
-                    ],
+              new Paragraph({
+                children: [
+                  new TextRun({
+                    text: value,
+                    bold: true,
+                    font: "Calibri",
+                    size: 24,
+                    color: "2E2E2E",
                   }),
+                ],
+              }),
             ],
+            columnSpan: span,
             verticalAlign: VerticalAlign.BOTTOM,
           })
         );
+        result.push(row);
+      } else {
+        for (const item of value) {
+          row.root.push(
+            new TableCell({
+              children: [
+                key === "0"
+                  ? new Paragraph({
+                      children: [
+                        new TextRun({
+                          text: item,
+                          bold: true,
+                          font: "Calibri",
+                          size: 22,
+                          color: "2E2E2E",
+                        }),
+                      ],
+                    })
+                  : new Paragraph({
+                      children: [
+                        new TextRun({
+                          text: item === 0 ? "0" : item,
+                          font: "Calibri",
+                          size: 20,
+                          color: "2E2E2E",
+                        }),
+                      ],
+                    }),
+              ],
+              verticalAlign: VerticalAlign.BOTTOM,
+            })
+          );
+        }
+        result.push(row);
       }
-      result.push(row);
     }
     return result;
   }
-  // Method which build title rank 1 (DocxJs)
+  // Method which build title rank 1 (DocxJs) A VIRER !!
   titleRank1(text) {
     let title = `Material architecture under HMI`;
     if (text) {
@@ -590,6 +614,16 @@ export class DocxBuilder extends DocumentBuilder {
     }
     const result = new Paragraph({
       text: title,
+      heading: HeadingLevel.HEADING_1,
+      thematicBreak: false,
+      alignment: AlignmentType.CENTER,
+    });
+    return result;
+  }
+  // Method which build title rank 1 (DocxJs) A UTILISER !!
+  makeTitleRankOne(text) {
+    const result = new Paragraph({
+      text: text,
       heading: HeadingLevel.HEADING_1,
       thematicBreak: false,
       alignment: AlignmentType.CENTER,
@@ -626,10 +660,6 @@ export class DocxBuilder extends DocumentBuilder {
   // Method which build architecture under table shape for each array given in parameters
   makeTable(array, tagList) {
     const table = new Table({
-      width: {
-        size: 100,
-        type: WidthType.PERCENTAGE,
-      },
       rows: [
         // Call method which build array text
         new TableRow({
@@ -644,6 +674,12 @@ export class DocxBuilder extends DocumentBuilder {
           children: this.makeRowList(array, this.ioList, tagList),
         }),
       ],
+      width: {
+        size: 100,
+        type: WidthType.PERCENTAGE,
+        /* size: 100,
+        type: WidthType.PERCENTAGE, */
+      },
     });
     return table;
   }
@@ -654,10 +690,6 @@ export class DocxBuilder extends DocumentBuilder {
       const text = `${this.proface.PROFACE[module][target]}`;
       _list.push(
         new TableCell({
-          width: {
-            size: 1000,
-            type: WidthType.AUTO,
-          },
           children: [
             new Paragraph({
               children: [
@@ -671,6 +703,12 @@ export class DocxBuilder extends DocumentBuilder {
               ],
             }),
           ],
+          width: {
+            size: 1,
+            type: WidthType.PERCENTAGE,
+            /* size: 100,
+            type: WidthType.PERCENTAGE, */
+          },
         })
       );
     }
@@ -683,10 +721,6 @@ export class DocxBuilder extends DocumentBuilder {
       const imageNumber = this.proface.PROFACE[module][target];
       _list.push(
         new TableCell({
-          width: {
-            size: 1000,
-            type: WidthType.AUTO,
-          },
           children: [
             new Paragraph({
               children: [
@@ -700,6 +734,12 @@ export class DocxBuilder extends DocumentBuilder {
               ],
             }),
           ],
+          width: {
+            size: 1,
+            type: WidthType.PERCENTAGE,
+            /* size: 100,
+            type: WidthType.PERCENTAGE, */
+          },
           verticalAlign: VerticalAlign.CENTER,
         })
       );
@@ -741,17 +781,19 @@ export class DocxBuilder extends DocumentBuilder {
       }
     }
     const rowList = new TableCell({
-      width: {
-        size: 1000,
-        type: WidthType.AUTO,
-      },
       children: _list,
+      width: {
+        size: 1,
+        type: WidthType.PERCENTAGE,
+        /* size: 100,
+        type: WidthType.PERCENTAGE, */
+      },
     });
 
     return rowList;
   }
   // Sub method which fill TableCell children with space (only for tableShapeArchitecture method)
-  makeRowSpace(text = "") {
+  makeText(text = "") {
     const paragraph = new Paragraph({
       text: text,
       spacing: {
@@ -777,10 +819,27 @@ export class AdressTableDocBuilder extends DocumentBuilder {
     this.targetA = "IoList";
     this.targetB = "Reference";
     this.comment = "...";
+    this.firstRowUK = [
+      "Track N°",
+      "Function",
+      "Tag",
+      "Type",
+      "Description",
+      "Board Ref",
+    ];
+    this.firstRowFR = [
+      "N° Voie",
+      "Fonction",
+      "Repere",
+      "Nature",
+      "Description",
+      "Ref carte",
+    ];
   }
   // Pick tag to dictionnary tag and fill list according module size
-  attribTagToList(tagList, idList, module, flag) {
+  attribTagToList(tagList, idList, module, flag, moduleNbs) {
     const _list = this.list();
+    _list.push(flag === "uk" ? this.firstRowUK : this.firstRowFR);
     const moduleIOList = this.proface.PROFACE[module][this.targetA];
     const moduleRef = this.proface.PROFACE[module][this.targetB];
     for (const [key, value] of Object.entries(moduleIOList)) {
@@ -790,14 +849,26 @@ export class AdressTableDocBuilder extends DocumentBuilder {
             tagList[key].length > 0 ? tagList[key].shift() : this.noSlot;
           const id = idList[key].length > 0 ? idList[key].shift() : this.noSlot;
           const fluf = this.AddFlufToRawAdressTable(id, key, flag);
-          _list.push([i + 1, fluf, tag, key, this.comment, moduleRef]);
+          const trackNbs = this.AddTrackNumberToRawAdressTable(
+            key,
+            moduleNbs,
+            i
+          );
+          _list.push([trackNbs, fluf, tag, key, this.comment, moduleRef]);
         }
       }
     }
     return _list;
   }
-  reshapeTagList(tagList, idList, module, flag) {
-    const result = this.attribTagToList(tagList, idList, module, flag);
+  //
+  reshapeTagList(tagList, idList, module, flag, moduleNbs) {
+    const result = this.attribTagToList(
+      tagList,
+      idList,
+      module,
+      flag,
+      moduleNbs
+    );
     const _list = this.list();
     for (const item of result) {
       _list.push(item);
@@ -808,5 +879,84 @@ export class AdressTableDocBuilder extends DocumentBuilder {
   AddFlufToRawAdressTable(id, key, flag) {
     const fluf = this.private[id]["Text"][flag][key];
     return fluf;
+  }
+  //
+  AddTrackNumberToRawAdressTable(key, moduleNbs, i) {
+    const track = `${moduleNbs}/${key}-${i + 1}`;
+    return track;
+  }
+}
+export class AfDocBuilder extends DocumentBuilder {
+  constructor(rawAbstract) {
+    super(rawAbstract);
+    this.cell = "IoList";
+  }
+  // Generate table of content ... WIP
+  tableOfContents() {
+    const result = new TableOfContents("Summary", {
+      hyperlink: true,
+      headingStyleRange: "1-5",
+    });
+    return result;
+  }
+  // Method which build title rank x for AF (DocxJs)
+  makeAfTitleRankX(text, x = 1) {
+    const tSize = {
+      1: HeadingLevel.HEADING_1,
+      2: HeadingLevel.HEADING_2,
+      3: HeadingLevel.HEADING_3,
+      4: HeadingLevel.HEADING_4,
+    };
+    const result = new Paragraph({
+      text: text,
+      heading: tSize[x],
+      thematicBreak: false,
+      pageBreakBefore: x === 1 ? true : false,
+      alignment: AlignmentType.START,
+    });
+    return result;
+  }
+  // Method which build text with parameters for AF (DocxJs)
+  makeAfText(text, b = false, f = "Calibri", s = 12, c = "2E2E2E") {
+    const paragraph = new Paragraph({
+      children: [
+        new TextRun({
+          text: text,
+          bold: b,
+          font: f,
+          size: s,
+          color: c,
+        }),
+      ],
+    });
+    return paragraph;
+  }
+  // Method which return pre-formated table according matrix parameter for af
+  makeAfTable(matrix) {
+    const span = matrix[1].length;
+    const table = new Table({
+      columnWidths: [],
+      rows: [],
+      width: {
+        size: 100,
+        type: WidthType.PERCENTAGE,
+      },
+    });
+    // Loop through given matrix
+    matrix.forEach((element, key) => {
+      const row = new TableRow({
+        children: [],
+      });
+      element.forEach((item) => {
+        row.root.push(
+          new TableCell({
+            children: [this.makeAfText(item)],
+            columnSpan: key === 0 ? span : 0,
+          })
+        );
+      });
+      table.root.push(row);
+    });
+    return table;
   }
 }

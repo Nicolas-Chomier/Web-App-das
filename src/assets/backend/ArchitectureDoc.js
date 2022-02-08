@@ -45,8 +45,7 @@ export function handleClick_Architecture(rawAbstract, tongue) {
           for (const item of lineUp) {
             const array = Dx.makeTable(item, tagList); //!
             children.push(array);
-            // Space after module row
-            const space = Dx.makeRowSpace();
+            const space = Dx.makeText(); // Space after module row
             children.push(space);
           }
         } else {

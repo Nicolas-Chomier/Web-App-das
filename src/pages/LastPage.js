@@ -5,6 +5,7 @@ import RequestCards from "../components/RequestCards";
 import { handleClick_Quotation } from "../assets/backend/QuotationDoc";
 import { handleClick_Architecture } from "../assets/backend/ArchitectureDoc";
 import { handleClick_AdressTable } from "../assets/backend/AdressTableDoc";
+import { handleClick_AF } from "../assets/backend/FunctionalAnalysisDoc";
 import contents from "../assets/data/lastPage.json";
 
 // Load text information to display for Requestcards elements
@@ -68,18 +69,14 @@ const LastPage = () => {
             <Button
               className="flag-btn"
               variant="outlined"
-              onClick={() => {
-                console.log("AF WIP - UK");
-              }}
+              onClick={() => handleClick_AF(rawAbstract, 0)}
             >
               <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
             </Button>
             <Button
               className="flag-btn"
               variant="outlined"
-              onClick={() => {
-                console.log("AF WIP - FR");
-              }}
+              onClick={() => handleClick_AF(rawAbstract, 1)}
             >
               <Avatar alt="FR flag" src="/FRFlag.png" sx={avtConf} />
             </Button>

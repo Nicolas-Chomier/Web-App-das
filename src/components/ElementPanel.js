@@ -65,7 +65,7 @@ const ElementPanel = ({ data, config, output }) => {
           <TextField
             sx={{ m: 1, width: "15em" }}
             inputRef={textRef}
-            inputProps={{ maxLength: 10 }}
+            inputProps={{ maxLength: 11 }}
             defaultValue={noTag}
             type="text"
             label="Fill tag here !"
