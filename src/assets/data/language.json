@@ -35,14 +35,310 @@
     },
     "functionalAnalysis": {
         "uk": {
+            "docName": "Functional analysis",
             "title1": "Document presentation",
             "text1": "This document defines the elements, functions and operating principles of the PLC package for the project: ",
-            "title2": "Reference document"
+            "title2": "Reference document",
+            "refDocTableText1": "This functional analysis is carried out on the basis of the following documents.",
+            "refDocTable": [
+                [
+                    "Reference document"
+                ],
+                [
+                    "Title",
+                    "Tag",
+                    "Version"
+                ],
+                [
+                    "PROCESS FUNCTIONAL ANALYSIS",
+                    "XXXXX",
+                    "XXXXX"
+                ],
+                [
+                    "MODULE & AUTOMATION ARCHITECTURE",
+                    "ORANO-ARCH-001",
+                    "1.0"
+                ],
+                [
+                    "ELEMENT IOLIST",
+                    "ORANO-IOLIST-001",
+                    "1.0"
+                ],
+                [
+                    "",
+                    "",
+                    ""
+                ],
+                [
+                    "",
+                    "",
+                    ""
+                ]
+            ],
+            "title3": "Installation architecture",
+            "installArchText3": "This installation is managed by @ PROFACE HMI (@), all connected to TM3 input-output modules. See the document describing the PLC architecture, reference : @",
+            "title4": "P&ID element listing",
+            "elemListText4": "This installation is composed of many different elements which involved to the programming and setting / sizing of automation part.See the elements listing document, reference: ORANO-IOLIST-001",
+            "title5": "Network architecture",
+            "netArchText5": "NONE",
+            "title6": "PLC settings",
+            "plcSettingText6A": "The installation is managed by @ PLC and @ Can Open master board.@ is a combined unit of Display Module and Power Box Module.To manage the installation, a panel is installed on the front of the cabinet.",
+            "plcSettingText6B": "For more details see technical documentation, reference: @.",
+            "plcSettingText6C": "Installed equipment are PROFACE materials, they are programming with GP-Pro EX 4.09 SP1.Product Version:V4.09.350, (latest version).Product version date:01\/02\/2022",
+            "title7": "HMI settings",
+            "hmiSettingText7": "The installation is controlled by a PROFACE (SCHNEIDER) human machine interface.For more details see specification document reference: @",
+            "hmiSettTable": [
+                [
+                    "Access level table"
+                ],
+                [
+                    "Name",
+                    "Level",
+                    "Permissions",
+                    "Password"
+                ],
+                [
+                    "User Default",
+                    "0",
+                    "Visualization",
+                    "0"
+                ],
+                [
+                    "Operator",
+                    "1",
+                    "Start and stop installations,alarms acknowledge",
+                    "1"
+                ],
+                [
+                    "Administrator",
+                    "2",
+                    "Start and stop installations, alarms acknowledge, installations parameters setting, access to system view",
+                    "2"
+                ]
+            ],
+            "title8": "Abbreviations",
+            "abbrvTable": [
+                [
+                    "Abbreviations table"
+                ],
+                [
+                    "Short name",
+                    "Name",
+                    "Description"
+                ],
+                [
+                    "ATMP",
+                    "Atmospheric Pressure",
+                    "1Bar"
+                ],
+                [
+                    "MES",
+                    "Message",
+                    "Displayed message"
+                ],
+                [
+                    "TMA",
+                    "Technical major fault",
+                    "Technical fault with equipment stops"
+                ],
+                [
+                    "TMI",
+                    "Technical minor fault",
+                    "Technical fault without equipment stop"
+                ],
+                [
+                    "PMA",
+                    "Process major fault",
+                    "Exceeding threshold in the process with an impact on the quality of the product"
+                ],
+                [
+                    "PMI",
+                    "Process minor fault",
+                    "Exceeding threshold in the process without an impact on the quality of the product"
+                ],
+                [
+                    "DI",
+                    "Digital Input",
+                    "Input 1 or 0"
+                ],
+                [
+                    "DO",
+                    "Digital Output",
+                    "Output 1 or 0"
+                ],
+                [
+                    "AI",
+                    "Analog Input",
+                    "Input 4-20mA for example"
+                ],
+                [
+                    "AI(T°)",
+                    "Analog Input (T°)",
+                    "Special Input for PT100 / 1000 or thermocouple"
+                ],
+                [
+                    "AO",
+                    "Analog Output",
+                    "Output 4-20mA for example"
+                ]
+            ],
+            "title9": "Operation of the installation",
+            "opeInstText9": "Installation have many different parts ...",
+            "title10": "Instrumentation",
+            "introInstrumText10": "All analogue measurements are processed in the same way for them we will use the function bloc programming method (FB)."
         },
         "fr": {
+            "docName": "Analyse fonctionnelle",
             "title1": "Présentation du document",
             "text1": "Ce document definie les elements, les fonctionalitées et les principes de fonctionnement du lot automate pour le projet: ",
-            "title2": "Document de référence"
+            "title2": "Document de référence",
+            "refDocTableText1": "Cette analyse fonctionnelle est basée sur les documents suivants.",
+            "refDocTable": [
+                [
+                    "Document de reference"
+                ],
+                [
+                    "Titre",
+                    "Label",
+                    "Version"
+                ],
+                [
+                    "ANALYSE FONCTIONELLE PROCESS",
+                    "XXXXX",
+                    "XXXXX"
+                ],
+                [
+                    "ARCHITECTURE AUTOMATE",
+                    "ORANO-ARCH-001",
+                    "1.0"
+                ],
+                [
+                    "LISTE DES ENTREES SORTIES",
+                    "ORANO-IOLIST-001",
+                    "1.0"
+                ],
+                [
+                    "",
+                    "",
+                    ""
+                ],
+                [
+                    "",
+                    "",
+                    ""
+                ]
+            ],
+            "title3": "Architecture de l'installation",
+            "installArchText3": "Cette installation est gérée par @ IHM PROFACE (@), tous reliés à des module TM3 d'entrée-sortie. Voir le document decrivant l'architecture automate, référence : @",
+            "title4": "P&ID liste des élements",
+            "elemListText4": "Cette installation est composée de nombreux éléments différents, qui participent à la programmation et au réglage / dimensionnement du lot automate. Voir le document \"liste des éléments\", référence : ORANO-IOLIST-001",
+            "title5": "Architecture réseau",
+            "netArchText5": "NONE",
+            "title6": "Paramètre de l'automate",
+            "plcSettingText6A": "L'installation est gérée par l'automate programmable @ et la carte maîtresse @ Can Open. @ est une unité combinée du module d'affichage et du module d'alimentation. Pour gérer l'installation, un panneau est installé sur le devant de l'armoire.",
+            "plcSettingText6B": "Pour plus de détails, voir la documentation technique, référence : @.",
+            "plcSettingText6C": "Les équipements installés de marque PROFACE, sont programmés avec GP-Pro EX 4.09 SP1. Version du produit : V4.09.350, (dernière version) Date de la version du produit : 01/02/2022",
+            "title7": "Paramètre de l'IHM",
+            "hmiSettingText7": "L'installation est contrôlée par une interface homme-machine PROFACE (SCHNEIDER). Pour plus de détails, voir la référence du document de spécification : @",
+            "hmiSettTable": [
+                [
+                    "Tableau des niveaux d'accès"
+                ],
+                [
+                    "Nom",
+                    "Niveau",
+                    "Permissions",
+                    "Mot de passe"
+                ],
+                [
+                    "Utilisateur par defaut",
+                    "0",
+                    "Naviguation",
+                    "0"
+                ],
+                [
+                    "Opérateur",
+                    "1",
+                    "Demarrage et arrest du systeme, acquittement des alarmes",
+                    "1"
+                ],
+                [
+                    "Administrateur",
+                    "2",
+                    "Demarrage et arrest du systeme, acquittement des alarmes, configuration du systeme, acces vue systeme",
+                    "2"
+                ]
+            ],
+            "title8": "Sigles",
+            "abbrvTable": [
+                [
+                    "Tableau des sigles"
+                ],
+                [
+                    "Sigle",
+                    "Nom",
+                    "Description"
+                ],
+                [
+                    "ATMP",
+                    "Pression atmosphéric",
+                    "1Bar"
+                ],
+                [
+                    "MES",
+                    "Message",
+                    "Affichage de message"
+                ],
+                [
+                    "TMA",
+                    "Technical major fault",
+                    "Technical fault with equipment stops"
+                ],
+                [
+                    "TMI",
+                    "Technical minor fault",
+                    "Technical fault without equipment stop"
+                ],
+                [
+                    "PMA",
+                    "Process major fault",
+                    "Exceeding threshold in the process with an impact on the quality of the product"
+                ],
+                [
+                    "PMI",
+                    "Process minor fault",
+                    "Exceeding threshold in the process without an impact on the quality of the product"
+                ],
+                [
+                    "DI",
+                    "Digital Input",
+                    "Input 1 or 0"
+                ],
+                [
+                    "DO",
+                    "Digital Output",
+                    "Output 1 or 0"
+                ],
+                [
+                    "AI",
+                    "Analog Input",
+                    "Input 4-20mA for example"
+                ],
+                [
+                    "AI(T°)",
+                    "Analog Input (T°)",
+                    "Special Input for PT100 / 1000 or thermocouple"
+                ],
+                [
+                    "AO",
+                    "Analog Output",
+                    "Output 4-20mA for example"
+                ]
+            ],
+            "title9": "Fonctionnement de l'installation",
+            "opeInstText9": "Cette installation comporte plusieurs partie differentes ...",
+            "title10": "Instrumentation",
+            "introInstrumText10": "All analogue measurements are processed in the same way for them we will use the function bloc programming method (FB)."
         }
     }
 }

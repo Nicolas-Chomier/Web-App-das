@@ -53,89 +53,106 @@
             "Capteur de pression": {
                 "standard": {
                     "id": 2001,
-                    "generic name": "Pressure transmitter"
+                    "generic name": "Pressure transmitter",
+                    "analog": true
                 },
                 "avec 1 contact sec": {
                     "id": 2002,
-                    "generic name": "Pressure transmitter"
+                    "generic name": "Pressure transmitter",
+                    "analog": true
                 },
                 "avec 2 contact sec": {
                     "id": 2003,
-                    "generic name": "Pressure transmitter"
+                    "generic name": "Pressure transmitter",
+                    "analog": true
                 }
             },
             "Pressostat": {
                 "standard": {
                     "id": 2004,
-                    "generic name": "Pressostat"
+                    "generic name": "Pressostat",
+                    "analog": true
                 }
             },
             "Capteur de débit": {
                 "standard": {
                     "id": 2005,
-                    "generic name": "Flow transmitter"
+                    "generic name": "Flow transmitter",
+                    "analog": true
                 },
                 "avec compteur à impulsion": {
                     "id": 2006,
-                    "generic name": "Flow transmitter"
+                    "generic name": "Flow transmitter",
+                    "analog": true
                 }
             },
             "Détecteur de Débit": {
                 "standard": {
                     "id": 2007,
-                    "generic name": "Flow detector"
+                    "generic name": "Flow detector",
+                    "analog": true
                 }
             },
             "Capteur de Température": {
                 "standard": {
                     "id": 2008,
-                    "generic name": "Temperature transmitter"
+                    "generic name": "Temperature transmitter",
+                    "analog": true
                 },
                 "PT100 ou PT1000 ou Thermocouple": {
                     "id": 2009,
-                    "generic name": "Temperature sensor"
+                    "generic name": "Temperature sensor",
+                    "analog": true
                 },
                 "avec signal de commutation": {
                     "id": 2010,
-                    "generic name": "Temperature transmitter"
+                    "generic name": "Temperature transmitter",
+                    "analog": true
                 }
             },
             "Thermostat": {
                 "standard": {
                     "id": 2011,
-                    "generic name": "Thermostat"
+                    "generic name": "Thermostat",
+                    "analog": true
                 }
             },
             "Hygrometre": {
                 "standard": {
                     "id": 2012,
-                    "generic name": "Hygrometer"
+                    "generic name": "Hygrometer",
+                    "analog": true
                 }
             },
             "Capteur de niveau d'eau": {
                 "standard": {
                     "id": 2013,
-                    "generic name": "water detector"
+                    "generic name": "water detector",
+                    "analog": true
                 }
             },
             "Compteurs": {
                 "Compteur d'eau": {
                     "id": 2014,
-                    "generic name": "water meter"
+                    "generic name": "water meter",
+                    "analog": true
                 },
                 "Compteur d'energie thermique": {
                     "id": 2015,
-                    "generic name": "energy meter"
+                    "generic name": "energy meter",
+                    "analog": true
                 },
                 "Compteur electrique": {
                     "id": 2016,
-                    "generic name": "electric meter"
+                    "generic name": "electric meter",
+                    "analog": true
                 }
             },
             "Capteur hybride": {
                 "Débit & T°": {
                     "id": 2017,
-                    "generic name": "Hybride transmitter"
+                    "generic name": "Hybride transmitter",
+                    "analog": true
                 }
             }
         }

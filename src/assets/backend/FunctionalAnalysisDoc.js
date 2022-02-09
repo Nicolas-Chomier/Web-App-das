@@ -1,6 +1,7 @@
 import { Packer } from "docx";
 import { saveAs } from "file-saver";
-import { Document, WidthType } from "docx";
+import { Buffer } from "buffer";
+import { Document, WidthType, ImageRun } from "docx";
 import { TableOfContents } from "docx";
 import { Table, Paragraph, StyleLevel, HeadingLevel } from "docx";
 // Home made class importation
@@ -13,10 +14,15 @@ import {
 // Elements for document presentation
 import { header } from "../tools/DocumentHeader";
 import { footer } from "../tools/DocumentFooter";
+// Images importation for AF document
+import { IPLC } from "../image/image_af_plc";
 // External datas importation
 import language from "../data/language.json";
 
 export function handleClick_AF(rawAbstract, tongue) {
+  //
+  console.log("rawAbstract", rawAbstract);
+  //
   // Load and parse special datas from JSON
   const choosenLanguage = JSON.parse(JSON.stringify(language));
   // Document text language settings
@@ -38,6 +44,34 @@ export function handleClick_AF(rawAbstract, tongue) {
   const projectTitle = Dx.buildTitle();
   // Function, variable and object which compose functional analysis
   const children = [];
+  const hmiNbs = rawAbstract.Project.Group;
+  const hmiSeries = Tp.giveMeHmiInformations(
+    rawAbstract.Project.Technology.id,
+    "Series"
+  );
+  const nameRefDoc = speak.refDocTable[3][1];
+  const nameRefDocPLC = Tp.giveMeHmiInformations(
+    rawAbstract.Project.Technology.id,
+    "PLC_documentation"
+  );
+  const image6 = new Paragraph({
+    children: [
+      new ImageRun({
+        data: Buffer.from(IPLC, "base64"),
+        transformation: {
+          width: 120,
+          height: 120,
+        },
+      }),
+    ],
+  });
+  const nameRefDocHMI = Tp.giveMeHmiInformations(
+    rawAbstract.Project.Technology.id,
+    "HMI_documentation"
+  );
+  console.log(nameRefDocHMI);
+  //
+  //
   // Build table of content
   const tableOfContent = Afb.tableOfContents();
   children.push(tableOfContent);
@@ -51,15 +85,86 @@ export function handleClick_AF(rawAbstract, tongue) {
   // Build reference document title
   const title2 = Afb.makeAfTitleRankX(speak.title2, 1);
   children.push(title2);
+  // Build reference document text above table
+  const refDocTableText1 = Afb.makeAfText(speak.refDocTableText1);
+  children.push(refDocTableText1);
   // Build reference document table
-  const rawRefDocTable = [
-    ["test"],
-    ["t", "ze", "rt"],
-    ["eee", "eee", "eee"],
-    ["aaa", "aaa", "aaa"],
-  ];
-  const table1 = Afb.makeAfTable(rawRefDocTable);
+  const table1 = Afb.makeAfTable(speak.refDocTable);
   children.push(table1);
+  // Build installation architecture title
+  const title3 = Afb.makeAfTitleRankX(speak.title3, 1);
+  children.push(title3);
+  // Build description text 3
+  const dataListForCustomText3 = [hmiNbs, hmiSeries, nameRefDoc];
+  const rawText3 = Dx.makeDocxjsCustomText(
+    speak.installArchText3,
+    dataListForCustomText3
+  );
+  const text3 = Afb.makeAfText(rawText3);
+  children.push(text3);
+  // Build element listing title
+  const title4 = Afb.makeAfTitleRankX(speak.title4, 1);
+  children.push(title4);
+  // Build description text 4
+  const text4 = Afb.makeAfText(speak.elemListText4);
+  children.push(text4);
+  // Build network architecture title
+  const title5 = Afb.makeAfTitleRankX(speak.title5, 1);
+  children.push(title5);
+  // Build description text 5
+  const text5 = Afb.makeAfText(speak.netArchText5);
+  children.push(text5);
+  // Build PLC settings title
+  const title6 = Afb.makeAfTitleRankX(speak.title6, 1);
+  children.push(title6);
+  // Build description text 6 ABC
+  const dataListForCustomText6A = [hmiNbs, hmiNbs, hmiSeries];
+  const rawtext6A = Dx.makeDocxjsCustomText(
+    speak.plcSettingText6A,
+    dataListForCustomText6A
+  );
+  const text6A = Afb.makeAfText(rawtext6A);
+  children.push(text6A);
+  const dataListForCustomText6B = [nameRefDocPLC];
+  const rawtext6B = Dx.makeDocxjsCustomText(
+    speak.plcSettingText6B,
+    dataListForCustomText6B
+  );
+  const text6B = Afb.makeAfText(rawtext6B);
+  children.push(text6B);
+  children.push(image6); // Add PLC explicative image
+  const text6C = Afb.makeAfText(speak.plcSettingText6C);
+  children.push(text6C);
+  // Build HMI settings title
+  const title7 = Afb.makeAfTitleRankX(speak.title7, 1);
+  children.push(title7);
+  // Build HMI settings text
+  const rawText7 = Dx.makeDocxjsCustomText(speak.hmiSettingText7, [
+    nameRefDocHMI,
+  ]);
+  const text7 = Afb.makeAfText(rawText7);
+  children.push(text7);
+  // Build HMI settings table
+  const table7 = Afb.makeAfTable(speak.hmiSettTable);
+  children.push(table7);
+  // Build abbreviations title
+  const title8 = Afb.makeAfTitleRankX(speak.title8, 1);
+  children.push(title8);
+  // Build abbreviations table
+  const table8 = Afb.makeAfTable(speak.abbrvTable);
+  children.push(table8);
+  // Build Operation install title & text
+  const title9 = Afb.makeAfTitleRankX(speak.title9, 1);
+  children.push(title9);
+  const text9 = Afb.makeAfText(speak.opeInstText9);
+  children.push(text9);
+  // Build instrumentation title
+  const title10 = Afb.makeAfTitleRankX(speak.title10, 1);
+  children.push(title10);
+  // Build instrumentation intro text
+  const text10 = Afb.makeAfText(speak.introInstrumText10);
+  children.push(text10);
+  //**************//
   // Architecture pattern document
   const doc = new Document({
     features: {

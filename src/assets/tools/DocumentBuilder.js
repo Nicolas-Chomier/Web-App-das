@@ -472,6 +472,10 @@ export class Proface extends DocumentBuilder {
     }, {});
     return result;
   }
+  // Method which give all info about choosen HMI
+  giveMeHmiInformations(id, target) {
+    return this.proface.PROFACE[id][target];
+  }
 }
 // Class wich provide several method to design and build word document
 export class DocxBuilder extends DocumentBuilder {
@@ -498,6 +502,31 @@ export class DocxBuilder extends DocumentBuilder {
       AIt: "FFB01C",
     };
   }
+  // Method which put in place of @ item given in item list parameter ATTENTION to give same list size to @ in str
+  makeDocxjsCustomText(str, list) {
+    let _srt = "";
+    let i = 0;
+    for (const item of str) {
+      if (item === "@") {
+        _srt += list[i];
+        i += 1;
+      } else {
+        _srt += item;
+      }
+    }
+    return _srt;
+  }
+  /* //
+  makeDocxjsImage(name, w, h) {
+    const image = new ImageRun({
+      data: Buffer.from(name, "base64"),
+      transformation: {
+        width: w,
+        height: h,
+      },
+    });
+    return image;
+  } */
   // Method which return formatted main document title
   buildTitle() {
     const string = `${this.projectTitle}`;
@@ -950,7 +979,13 @@ export class AfDocBuilder extends DocumentBuilder {
       element.forEach((item) => {
         row.root.push(
           new TableCell({
-            children: [this.makeAfText(item)],
+            children: [
+              key === 0
+                ? this.makeAfText(item, true, "Calibri", 18, "2E2E2E")
+                : key === 1
+                ? this.makeAfText(item, true, "Calibri", 14, "2E2E2E")
+                : this.makeAfText(item),
+            ],
             columnSpan: key === 0 ? span : 0,
           })
         );
@@ -958,5 +993,9 @@ export class AfDocBuilder extends DocumentBuilder {
       table.root.push(row);
     });
     return table;
+  }
+  // Method which build functionnal analysis for instrumentation FB part
+  makeInstrumFbPattern() {
+    return false;
   }
 }
