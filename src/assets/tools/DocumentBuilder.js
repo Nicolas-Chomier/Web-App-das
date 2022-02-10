@@ -960,7 +960,7 @@ export class AfDocBuilder extends DocumentBuilder {
     });
     return paragraph;
   }
-  // Method which return pre-formated table according matrix parameter for af
+  // Method which return pre-formated table according matrix parameter => [[title],[col,col,col]...]
   makeAfTable(matrix) {
     const span = matrix[1].length;
     const table = new Table({
@@ -994,8 +994,81 @@ export class AfDocBuilder extends DocumentBuilder {
     });
     return table;
   }
-  // Method which build functionnal analysis for instrumentation FB part
-  makeInstrumFbPattern() {
+  // Method which build pre-formatted object => obj = {categorie:{}
+  makeBasisObjectForAf() {
+    const _obj = this.object();
+    for (const value of Object.values(this.infosElement)) {
+      _obj[value.categorie] = this.object();
+    }
+    return _obj;
+  }
+  // Method which build pre-formatted object => obj = {categorie:{generic name:[]}}
+  makeAssignationObj() {
+    const _obj = this.makeBasisObjectForAf();
+    for (const value of Object.values(this.infosElement)) {
+      _obj[value.categorie][value.name] = this.list();
+    }
+    return _obj;
+  }
+  // Method which fill this pre-formatted object with tuple => [id,tag]
+  makeWorkingBasisObjectForAf() {
+    const _obj = this.makeAssignationObj();
+    for (const value of Object.values(this.infosElement)) {
+      _obj[value.categorie][value.name].push([value.id, value.tag]);
+    }
+    //console.log();
+    return _obj;
+  }
+  // Method which re arrange raw tag for part B in AF
+  makeAfBullet(tagList, d = 0, b = false, f = "Calibri", s = 12, c = "2E2E2E") {
+    const _list = this.list();
+    const errorText = "Error / WIP";
+    for (const item of tagList) {
+      const bulletText = `${item[0]}=>${item[1]}`;
+      _list.push(
+        new Paragraph({
+          children: [
+            new TextRun({
+              text: item.length !== 2 ? errorText : bulletText,
+              bold: b,
+              font: f,
+              size: s,
+              color: c,
+            }),
+          ],
+          bullet: {
+            level: d,
+          },
+        })
+      );
+    }
+    return _list;
+  }
+  // Method which remove duplicates from a two-dimensional array
+  multiDimensionalUnique(arr) {
+    var uniques = [];
+    var itemsFound = {};
+    for (var i = 0, l = arr.length; i < l; i++) {
+      var stringified = JSON.stringify(arr[i]);
+      if (itemsFound[stringified]) {
+        continue;
+      }
+      uniques.push(arr[i]);
+      itemsFound[stringified] = true;
+    }
+    return uniques;
+  }
+  // Method
+  tdzdest(tList, firstRow) {
+    const _matrix = this.list();
+    const unique = this.multiDimensionalUnique(tList);
+    for (const item of unique) {
+      console.log("item", item);
+      const id = item[0];
+      const tag = item[1];
+      _matrix.push([tag]);
+      _matrix.push(firstRow);
+    }
     return false;
   }
 }

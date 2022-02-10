@@ -17,7 +17,7 @@ const colorize = ["black", amber[100], teal[100], orange[100], lime[100]];
 
 const TableCustom = ({ item, output }) => {
   const [listToDisplay, setListToDisplay] = useState([]);
-
+  //console.log("item", item);
   useEffect(() => {
     if (item !== false) {
       masterList.push(item);
@@ -34,24 +34,29 @@ const TableCustom = ({ item, output }) => {
             id={uniqueId}
           >
             <TableCell
-              scope="row"
+              align="left"
               size="small"
               padding="normal"
-              sx={{ ml: 10 }}
+              sx={{
+                fontWeight: "bold",
+                pl: 8,
+              }}
             >
+              {items.categorie}
+            </TableCell>
+            <TableCell align="center" size="small" padding="normal">
               {items.name}
             </TableCell>
-            <TableCell align="right" size="small" padding="normal">
+            <TableCell align="center" size="small" padding="normal">
               {items.id}
             </TableCell>
-            {/* <TableCell align="right">{items.name}</TableCell> */}
-            <TableCell align="right" size="small" padding="normal">
+            <TableCell align="center" size="small" padding="normal">
               {items.tag}
             </TableCell>
-            <TableCell align="right" size="small" padding="normal">
+            <TableCell align="center" size="small" padding="normal">
               {items.group}
             </TableCell>
-            <TableCell align="right" size="small" padding="normal">
+            <TableCell align="center" size="small" padding="normal">
               <Button
                 onClick={() => {
                   const top = document.getElementById("table-body-test");
@@ -77,11 +82,11 @@ const TableCustom = ({ item, output }) => {
     var rows = document.getElementsByTagName("tbody")[0].rows;
     for (var i = 0; i < rows.length; i++) {
       const results = {};
-      results["name"] = rows[i].getElementsByTagName("td")[0].innerText;
-      results["id"] = rows[i].getElementsByTagName("td")[1].innerText;
-      /* results["name"] = rows[i].getElementsByTagName("td")[2].innerText; */
-      results["tag"] = rows[i].getElementsByTagName("td")[2].innerText;
-      results["group"] = rows[i].getElementsByTagName("td")[3].innerText;
+      results["categorie"] = rows[i].getElementsByTagName("td")[0].innerText;
+      results["name"] = rows[i].getElementsByTagName("td")[1].innerText;
+      results["id"] = rows[i].getElementsByTagName("td")[2].innerText;
+      results["tag"] = rows[i].getElementsByTagName("td")[3].innerText;
+      results["group"] = rows[i].getElementsByTagName("td")[4].innerText;
       finalResults.push(results);
     }
     if (finalResults.length !== 0) {

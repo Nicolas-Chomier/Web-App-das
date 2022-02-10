@@ -53,106 +53,106 @@
             "Capteur de pression": {
                 "standard": {
                     "id": 2001,
-                    "generic name": "Pressure transmitter",
-                    "analog": true
+                    "generic name": "PT",
+                    "FB": ""
                 },
                 "avec 1 contact sec": {
                     "id": 2002,
-                    "generic name": "Pressure transmitter",
-                    "analog": true
+                    "generic name": "PT I",
+                    "FB": ""
                 },
                 "avec 2 contact sec": {
                     "id": 2003,
-                    "generic name": "Pressure transmitter",
-                    "analog": true
+                    "generic name": "PT 2I",
+                    "FB": ""
                 }
             },
             "Pressostat": {
                 "standard": {
                     "id": 2004,
                     "generic name": "Pressostat",
-                    "analog": true
+                    "FB": ""
                 }
             },
             "Capteur de débit": {
                 "standard": {
                     "id": 2005,
-                    "generic name": "Flow transmitter",
-                    "analog": true
+                    "generic name": "FT",
+                    "FB": ""
                 },
                 "avec compteur à impulsion": {
                     "id": 2006,
-                    "generic name": "Flow transmitter",
-                    "analog": true
+                    "generic name": "FT pulse",
+                    "FB": ""
                 }
             },
             "Détecteur de Débit": {
                 "standard": {
                     "id": 2007,
                     "generic name": "Flow detector",
-                    "analog": true
+                    "FB": ""
                 }
             },
             "Capteur de Température": {
                 "standard": {
                     "id": 2008,
-                    "generic name": "Temperature transmitter",
-                    "analog": true
+                    "generic name": "TT",
+                    "FB": ""
                 },
                 "PT100 ou PT1000 ou Thermocouple": {
                     "id": 2009,
                     "generic name": "Temperature sensor",
-                    "analog": true
+                    "FB": ""
                 },
                 "avec signal de commutation": {
                     "id": 2010,
-                    "generic name": "Temperature transmitter",
-                    "analog": true
+                    "generic name": "TTS",
+                    "FB": ""
                 }
             },
             "Thermostat": {
                 "standard": {
                     "id": 2011,
                     "generic name": "Thermostat",
-                    "analog": true
+                    "FB": ""
                 }
             },
             "Hygrometre": {
                 "standard": {
                     "id": 2012,
                     "generic name": "Hygrometer",
-                    "analog": true
+                    "FB": ""
                 }
             },
             "Capteur de niveau d'eau": {
                 "standard": {
                     "id": 2013,
-                    "generic name": "water detector",
-                    "analog": true
+                    "generic name": "WLS",
+                    "FB": ""
                 }
             },
             "Compteurs": {
                 "Compteur d'eau": {
                     "id": 2014,
-                    "generic name": "water meter",
-                    "analog": true
+                    "generic name": "Water meter",
+                    "FB": ""
                 },
                 "Compteur d'energie thermique": {
                     "id": 2015,
-                    "generic name": "energy meter",
-                    "analog": true
+                    "generic name": "Energy meter",
+                    "FB": ""
                 },
                 "Compteur electrique": {
                     "id": 2016,
-                    "generic name": "electric meter",
-                    "analog": true
+                    "generic name": "Electric meter",
+                    "FB": ""
                 }
             },
             "Capteur hybride": {
                 "Débit & T°": {
                     "id": 2017,
-                    "generic name": "Hybride transmitter",
-                    "analog": true
+                    "generic name": "F&TT",
+                    "FB": ""
                 }
             }
         }
@@ -166,69 +166,83 @@
             "Chilleur": {
                 "standard": {
                     "id": 3001,
-                    "generic name": "Chilleur"
+                    "generic name": "Chill",
+                    "FB": ""
                 }
             },
             "Secheur frigorifique": {
                 "standard": {
                     "id": 3002,
-                    "generic name": "Dryier"
+                    "generic name": "Fg dry",
+                    "FB": ""
                 },
                 "avec capteur d'hygrométrie integré": {
                     "id": 3003,
-                    "generic name": "Dryier"
+                    "generic name": "Fg dry eco",
+                    "FB": ""
                 }
             },
             "Secheur à adsorbtion": {
                 "standard": {
                     "id": 3004,
-                    "generic name": "Dryier"
+                    "generic name": "Ads Dry",
+                    "FB": ""
                 },
-                "avec mode économique, sans capteur d'hygrométrie integré": {
+                "avec mode économique": {
                     "id": 3005,
-                    "generic name": "Dryier"
+                    "generic name": "Ads Dry eco",
+                    "FB": ""
                 },
                 "standard avec capteur d'hygrométrie integré": {
                     "id": 3006,
-                    "generic name": "Dryier"
+                    "generic name": "Ads Dry hygro",
+                    "FB": ""
                 },
                 "avec mode économique, et capteur d'hygrométrie integré": {
                     "id": 3007,
-                    "generic name": "Dryier"
+                    "generic name": "Ads Dry eco hygro",
+                    "FB": ""
                 }
             },
             "Separateur de condensat": {
                 "BEKOSPLIT": {
                     "id": 3008,
-                    "generic name": "Separator"
+                    "generic name": "Separator",
+                    "FB": ""
                 }
             },
             "Corps chauffants": {
                 "Rechauffeur electrique": {
                     "id": 3009,
-                    "generic name": "Resistor"
+                    "generic name": "Resistor",
+                    "FB": ""
                 },
                 "Resistance de traçage": {
                     "id": 3010,
-                    "generic name": "Resistor"
+                    "generic name": "Resistor",
+                    "FB": ""
                 }
             },
             "Purgeur": {
                 "standard sans retour de defaut": {
                     "id": 3011,
-                    "generic name": "Water trap"
+                    "generic name": "Dr",
+                    "FB": ""
                 },
                 "standard avec retour de defaut": {
                     "id": 3012,
-                    "generic name": "Water trap"
+                    "generic name": "Dr f",
+                    "FB": ""
                 },
                 "piloté sans retour de defaut": {
                     "id": 3013,
-                    "generic name": "Water trap"
+                    "generic name": "Dr p",
+                    "FB": ""
                 },
                 "piloté avec retour de defaut": {
                     "id": 3014,
-                    "generic name": "Water trap"
+                    "generic name": "Dr pf",
+                    "FB": ""
                 }
             }
         }
@@ -242,97 +256,118 @@
             "Vanne 2 voies pneumatique": {
                 "monostable simple": {
                     "id": 4001,
-                    "generic name": "2-way valve"
+                    "generic name": "2w pms",
+                    "FB": ""
                 },
                 "monostable + retour de position": {
                     "id": 4002,
-                    "generic name": "2-way valve"
+                    "generic name": "2w pmf",
+                    "FB": ""
                 },
                 "bistable simple": {
                     "id": 4003,
-                    "generic name": "2-way valve"
+                    "generic name": "2w pbs",
+                    "FB": ""
                 },
                 "bistable + retour de position": {
                     "id": 4004,
-                    "generic name": "2-way valve"
+                    "generic name": "2w pbfa",
+                    "FB": ""
                 }
             },
             "Vanne 2 voies motorisée": {
                 "Simple": {
                     "id": 4005,
-                    "generic name": "2-way valve"
+                    "generic name": "2w es",
+                    "FB": ""
                 },
                 "Simple + retour de position": {
                     "id": 4006,
-                    "generic name": "2-way valve"
+                    "generic name": "2w ef",
+                    "FB": ""
                 },
                 "Pilotée": {
                     "id": 4007,
-                    "generic name": "2-way valve"
+                    "generic name": "2w ep",
+                    "FB": ""
                 },
                 "Pilotée + retour de position(analogique)": {
                     "id": 4008,
-                    "generic name": "2-way valve"
+                    "generic name": "2w epfa",
+                    "FB": ""
                 }
             },
             "Vanne 3 voies pneumatique": {
-                "Monostable sans retour de position": {
+                "Monostable simple": {
                     "id": 4009,
-                    "generic name": "3-way valve"
+                    "generic name": "3w pms",
+                    "FB": ""
                 },
-                "Monostable avec retour de position": {
+                "Monostable + retour de position": {
                     "id": 4010,
-                    "generic name": "3-way valve"
+                    "generic name": "3w pmf",
+                    "FB": ""
                 },
-                "Bistable sans retour de position": {
+                "Bistable simple": {
                     "id": 4011,
-                    "generic name": "3-way valve"
+                    "generic name": "3w pbs",
+                    "FB": ""
                 },
-                "Bistable avec retour de position": {
+                "Bistable + retour de position": {
                     "id": 4012,
-                    "generic name": "3-way valve"
+                    "generic name": "3w pbf",
+                    "FB": ""
                 }
             },
             "Vanne 3 voies motorisée": {
                 "Simple": {
                     "id": 4013,
-                    "generic name": "3-way valve"
+                    "generic name": "3w es",
+                    "FB": ""
                 },
                 "Simple + retour de position": {
                     "id": 4014,
-                    "generic name": "3-way valve"
+                    "generic name": "3w ef",
+                    "FB": ""
                 },
                 "Pilotée": {
                     "id": 4015,
-                    "generic name": "3-way valve"
+                    "generic name": "3w ep",
+                    "FB": ""
                 },
                 "Pilotée + retour de position (analogique)": {
                     "id": 4016,
-                    "generic name": "3-way valve"
+                    "generic name": "3w epfa",
+                    "FB": ""
                 }
             },
             "Registre motorisée": {
                 "Simple": {
                     "id": 4017,
-                    "generic name": "Air flap"
+                    "generic name": "Ds",
+                    "FB": ""
                 },
                 "Simple + retour de position": {
                     "id": 4018,
-                    "generic name": "Air flap"
+                    "generic name": "Dsf",
+                    "FB": ""
                 },
                 "Pilotée": {
                     "id": 4019,
-                    "generic name": "Air flap"
+                    "generic name": "Dp",
+                    "FB": ""
                 },
                 "Pilotée + retour de position (analogique)": {
                     "id": 4020,
-                    "generic name": "Air flap"
+                    "generic name": "Dpfa",
+                    "FB": ""
                 }
             },
             "Vannes solénoides (TOR)": {
                 "standard": {
                     "id": 4021,
-                    "generic name": "Valve TOR"
+                    "generic name": "Valve TOR",
+                    "FB": ""
                 }
             }
         }
@@ -346,15 +381,18 @@
             "Analiseurs d'air": {
                 "ULTRAMAT": {
                     "id": 5001,
-                    "generic name": "Analyzer"
+                    "generic name": "ULTRAMAT",
+                    "FB": ""
                 },
                 "VAR-18": {
                     "id": 5002,
-                    "generic name": "Analyzer"
+                    "generic name": "VAR-18",
+                    "FB": ""
                 },
                 "Analiseurs d'oxygene": {
                     "id": 5003,
-                    "generic name": "Analyzer"
+                    "generic name": "O2 Analyzer",
+                    "FB": ""
                 }
             }
         }
@@ -368,23 +406,27 @@
             "Compresseurs": {
                 "Débit fixe": {
                     "id": 6001,
-                    "generic name": "OPA"
+                    "generic name": "OPA-F",
+                    "FB": "OPA"
                 },
                 "Débit variable": {
                     "id": 6002,
-                    "generic name": "OPA"
+                    "generic name": "OPA-V",
+                    "FB": "OPA"
                 }
             },
             "Surpresseur": {
                 "standard": {
                     "id": 6005,
-                    "generic name": "Booster"
+                    "generic name": "Booster",
+                    "FB": ""
                 }
             },
             "Ventillateur": {
                 "standard": {
                     "id": 6006,
-                    "generic name": "Fan"
+                    "generic name": "Fan",
+                    "FB": ""
                 }
             }
         }
@@ -398,23 +440,27 @@
             "Compresseurs": {
                 "standard": {
                     "id": 6003,
-                    "generic name": "Compressor"
+                    "generic name": "CP",
+                    "FB": ""
                 },
                 "avec options": {
                     "id": 6004,
-                    "generic name": "Compressor"
+                    "generic name": "CP opt",
+                    "FB": ""
                 }
             },
             "Surpresseur": {
                 "standard": {
                     "id": 6005,
-                    "generic name": "Booster"
+                    "generic name": "Booster",
+                    "FB": ""
                 }
             },
             "Ventillateur": {
                 "standard": {
                     "id": 6006,
-                    "generic name": "Fan"
+                    "generic name": "Fan",
+                    "FB": ""
                 }
             }
         }
@@ -428,13 +474,15 @@
             "Pompe à eau": {
                 "standard": {
                     "id": 7001,
-                    "generic name": "Water pump"
+                    "generic name": "Water pump",
+                    "FB": ""
                 }
             },
             "Pompe à vide": {
                 "standard": {
                     "id": 7002,
-                    "generic name": "Vacuum pump"
+                    "generic name": "Vacuum pump",
+                    "FB": ""
                 }
             }
         }

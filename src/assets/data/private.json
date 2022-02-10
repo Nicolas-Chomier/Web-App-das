@@ -7,21 +7,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "Spare parts",
-                "DO": "Spare parts",
-                "AI": "Spare parts",
-                "AO": "Spare parts",
-                "AIt": "Spare parts"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "Libre",
-                "DO": "Libre",
-                "AI": "Libre",
-                "AO": "Libre",
-                "AIt": "Libre"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "0000": {
         "DI": 0,
@@ -31,21 +43,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "Reserved function",
-                "DO": "Reserved function",
-                "AI": "Reserved function",
-                "AO": "Reserved function",
-                "AIt": "Reserved function"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "Partie réservé",
-                "DO": "Partie réservé",
-                "AI": "Partie réservé",
-                "AO": "Partie réservé",
-                "AIt": "Partie réservé"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "0001": {
         "DI": 0,
@@ -55,21 +79,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "?",
-                "DO": "?",
-                "AI": "?",
-                "AO": "?",
-                "AIt": "?"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "0002": {
         "DI": 0,
@@ -79,21 +115,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "0003": {
         "DI": 0,
@@ -103,21 +151,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "0004": {
         "DI": 0,
@@ -127,21 +187,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "0005": {
         "DI": 0,
@@ -151,21 +223,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "0006": {
         "DI": 0,
@@ -175,21 +259,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "1001": {
         "DI": 0,
@@ -199,21 +295,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "2001": {
         "DI": 0,
@@ -223,21 +331,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "error",
-                "DO": "error",
-                "AI": "Pressure transmitter signal",
-                "AO": "error",
-                "AIt": "error"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "error",
-                "DO": "error",
-                "AI": "Signal d'entré du capteur de pression",
-                "AO": "error",
-                "AIt": "error"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": true
     },
     "2002": {
         "DI": 1,
@@ -247,21 +367,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "error",
-                "AI": "test",
-                "AO": "error",
-                "AIt": "error"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "?",
-                "DO": "error",
-                "AI": "?",
-                "AO": "error",
-                "AIt": "error"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "2003": {
         "DI": 2,
@@ -271,21 +403,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "2004": {
         "DI": 1,
@@ -295,21 +439,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "2005": {
         "DI": 0,
@@ -319,21 +475,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "2006": {
         "DI": 1,
@@ -343,21 +511,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "2007": {
         "DI": 1,
@@ -367,21 +547,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "2008": {
         "DI": 0,
@@ -391,21 +583,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "2009": {
         "DI": 0,
@@ -415,21 +619,33 @@
         "AIt": 1,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "2010": {
         "DI": 1,
@@ -439,21 +655,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "2011": {
         "DI": 1,
@@ -463,21 +691,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "2012": {
         "DI": 0,
@@ -487,21 +727,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "2013": {
         "DI": 1,
@@ -511,21 +763,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "2014": {
         "DI": 0,
@@ -535,21 +799,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "2015": {
         "DI": 0,
@@ -559,21 +835,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "2016": {
         "DI": 0,
@@ -583,21 +871,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "2017": {
         "DI": 0,
@@ -607,21 +907,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "3001": {
         "DI": 1,
@@ -631,21 +943,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "3002": {
         "DI": 1,
@@ -655,21 +979,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "3003": {
         "DI": 1,
@@ -679,21 +1015,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "3004": {
         "DI": 1,
@@ -703,21 +1051,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "3005": {
         "DI": 1,
@@ -727,21 +1087,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "3006": {
         "DI": 1,
@@ -751,21 +1123,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "3007": {
         "DI": 1,
@@ -775,21 +1159,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "3008": {
         "DI": 1,
@@ -799,21 +1195,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "3009": {
         "DI": 0,
@@ -823,21 +1231,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "3010": {
         "DI": 0,
@@ -847,21 +1267,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "3011": {
         "DI": 0,
@@ -871,21 +1303,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "3012": {
         "DI": 1,
@@ -895,21 +1339,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "3013": {
         "DI": 0,
@@ -919,21 +1375,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "3014": {
         "DI": 1,
@@ -943,21 +1411,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4001": {
         "DI": 0,
@@ -967,21 +1447,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4002": {
         "DI": 2,
@@ -991,21 +1483,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4003": {
         "DI": 0,
@@ -1015,21 +1519,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4004": {
         "DI": 2,
@@ -1039,21 +1555,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4005": {
         "DI": 0,
@@ -1063,21 +1591,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4006": {
         "DI": 2,
@@ -1087,21 +1627,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4007": {
         "DI": 0,
@@ -1111,21 +1663,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4008": {
         "DI": 0,
@@ -1135,21 +1699,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4009": {
         "DI": 0,
@@ -1159,21 +1735,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4010": {
         "DI": 2,
@@ -1183,21 +1771,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4011": {
         "DI": 0,
@@ -1207,21 +1807,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4012": {
         "DI": 2,
@@ -1231,21 +1843,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4013": {
         "DI": 0,
@@ -1255,21 +1879,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4014": {
         "DI": 2,
@@ -1279,21 +1915,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4015": {
         "DI": 0,
@@ -1303,21 +1951,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4016": {
         "DI": 0,
@@ -1327,21 +1987,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4017": {
         "DI": 0,
@@ -1351,21 +2023,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4018": {
         "DI": 2,
@@ -1375,21 +2059,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4019": {
         "DI": 0,
@@ -1399,21 +2095,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4020": {
         "DI": 0,
@@ -1423,21 +2131,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "4021": {
         "DI": 0,
@@ -1447,21 +2167,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "5001": {
         "DI": 0,
@@ -1471,21 +2203,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "5002": {
         "DI": 2,
@@ -1495,21 +2239,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "5003": {
         "DI": 0,
@@ -1519,21 +2275,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "6001": {
         "DI": 6,
@@ -1543,21 +2311,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "6002": {
         "DI": 6,
@@ -1567,21 +2347,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "6003": {
         "DI": 1,
@@ -1591,21 +2383,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "6004": {
         "DI": 2,
@@ -1615,21 +2419,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "6005": {
         "DI": 1,
@@ -1639,21 +2455,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "6006": {
         "DI": 1,
@@ -1663,21 +2491,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "7001": {
         "DI": 1,
@@ -1687,21 +2527,33 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     },
     "7002": {
         "DI": 1,
@@ -1711,20 +2563,32 @@
         "AIt": 0,
         "Text": {
             "uk": {
-                "DI": "test",
-                "DO": "test",
-                "AI": "test",
-                "AO": "test",
-                "AIt": "test"
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             },
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": [
+                    "fault-test-0"
+                ],
+                "DO": [],
+                "AI": [
+                    "Analog-signal-test-4-20mA"
+                ],
+                "AO": [
+                    "xxx-start-test"
+                ],
+                "AIt": []
             }
         },
-        "test": false
+        "FunctionBloc": false
     }
 }

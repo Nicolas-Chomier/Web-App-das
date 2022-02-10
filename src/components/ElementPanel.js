@@ -31,6 +31,7 @@ const ElementPanel = ({ data, config, output }) => {
         title: title,
         id: selection["id"],
         name: selection["generic name"],
+        categorie: title,
         tag: `${textRef.current?.value}`,
         group: radios,
       });

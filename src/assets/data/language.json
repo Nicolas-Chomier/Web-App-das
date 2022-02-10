@@ -185,7 +185,961 @@
             "title9": "Operation of the installation",
             "opeInstText9": "Installation have many different parts ...",
             "title10": "Instrumentation",
-            "introInstrumText10": "All analogue measurements are processed in the same way for them we will use the function bloc programming method (FB)."
+            "introInstrumText10": "All analogue measurements are processed in the same way for them we will use the function bloc programming method (FB).",
+            "subTitleA": "General informations",
+            "subTitleB": "List of concerned items",
+            "subTitleC": "Control and command",
+            "subTitleD": "Faults",
+            "ccTableRow": [
+                "DESIGNATION",
+                "TYPE",
+                "N°",
+                "ACTIVATION CONDITION",
+                "FUNCTION"
+            ],
+            "faultTableRow": [
+                "NAME",
+                "ALARM",
+                "ACTIVATION CONDITION"
+            ],
+            "Intrumentation": {
+                "title": "Intrumentation",
+                "infos": "All analogue measurements are processed in the same way for them we will use the function bloc programming method (FB)."
+            },
+            "Process component": {
+                "title": "Process component",
+                "infos": ""
+            },
+            "Valves and dampers": {
+                "title": "Valves and dampers",
+                "infos": ""
+            },
+            "Analyzer": {
+                "title": "Analyzer",
+                "infos": ""
+            },
+            "Air supply": {
+                "title": "Air supply",
+                "infos": ""
+            },
+            "Pumps": {
+                "title": "Pumps",
+                "infos": ""
+            },
+            "PT": {
+                "title": "Pressure transmitter",
+                "A-infos": "A pressure sensor is a system that converts a mechanical pressure into an electrical value.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PIT",
+                        "Pressure Indicator Transmitter"
+                    ],
+                    [
+                        "PT",
+                        "Pressure Transmitter"
+                    ],
+                    [
+                        "PDT",
+                        "Pressure Differential Transmitter"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "PT I": {
+                "title": "Pressure transmitter whith one dry contact",
+                "A-infos": "A pressure sensor is a system that converts a mechanical pressure into an electrical value. This one can provide one digital information more.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PIT",
+                        "Pressure Indicator Transmitter"
+                    ],
+                    [
+                        "PT",
+                        "Pressure Transmitter"
+                    ],
+                    [
+                        "PDT",
+                        "Pressure Differential Transmitter"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "PT 2I": {
+                "title": "Pressure transmitter whith two dry contact",
+                "A-infos": "A pressure sensor is a system that converts a mechanical pressure into an electrical value. This one can provide two digital informations more.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PIT",
+                        "Pressure Indicator Transmitter"
+                    ],
+                    [
+                        "PT",
+                        "Pressure Transmitter"
+                    ],
+                    [
+                        "PDT",
+                        "Pressure Differential Transmitter"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Pressostat": {
+                "title": "Pressostat",
+                "A-infos": "the pressure switch allows to check the minimum pressure in the water circuit.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PSL",
+                        "Pressure Switch Limit"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "FT": {
+                "title": "Flow transmitter",
+                "A-infos": "Magnetic flow meters consist of a transmitter and a sensor that work together to measure flow. The magnetic flowmeter sensor is placed in-line and measures an induced voltage generated by the fluid as it passes through a pipe.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "FT",
+                        "Flow Transmitter"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "FT pulse": {
+                "title": "Pulse flow transmitter",
+                "A-infos": "Magnetic flow meters consist of a transmitter and a sensor that work together to measure flow. The magnetic flowmeter sensor is placed in-line and measures an induced voltage generated by the fluid as it passes through a pipe.This one can provide one digital informations more.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "FT",
+                        "Flow Transmitter"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Flow detector": {
+                "title": "Flow detector",
+                "A-infos": "Device which provide digital information when the fluid to which it is subjected is in motion",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "FD",
+                        "Flow Detector"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "TT": {
+                "title": "Temperature transmitter",
+                "A-infos": "A temperature transmitter is a system that converts a temperature into an electrical value.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "TT",
+                        "Temperature Transmitter"
+                    ],
+                    [
+                        "TIT",
+                        "Temperature Indicator Transmitter"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Temperature sensor": {
+                "title": "Temperature sensor",
+                "A-infos": "A temperature sensor is a system that converts a temperature into a measurable physical value.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "TT",
+                        "Temperature Transmitter"
+                    ],
+                    [
+                        "TIT",
+                        "Temperature Indicator Transmitter"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "TTS": {
+                "title": "Temperature transmitter witch switch",
+                "A-infos": "A temperature transmitter is a system that converts a temperature into an electrical value.This one can provide one digital informations more.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "TT",
+                        "Temperature Transmitter"
+                    ],
+                    [
+                        "TIT",
+                        "Temperature Indicator Transmitter"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Thermostat": {
+                "title": "Thermostat",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "WIP"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Hygrometer": {
+                "title": "Hygrometer",
+                "A-infos": "Hygrometer is based on the measurement of the dew point temperature, and is used to measure the humidity in the air, or another gas mixture",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "AT",
+                        "Analyser Transmitter"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "WLS": {
+                "title": "Water level sensor",
+                "A-infos": "A level sensor is an electronic device that measures the height of material, usually liquid, in a tank.It detects in a binary way, like a switch, if the water level reaches a certain limit or not.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "LSLL",
+                        "Level Switch Low Low"
+                    ],
+                    [
+                        "LSL",
+                        "Level Switch Low"
+                    ],
+                    [
+                        "LSH",
+                        "Level Switch High"
+                    ],
+                    [
+                        "LSHH",
+                        "Level Switch High High"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Water meter": {
+                "title": "Water meter",
+                "A-infos": "Water meter produce pulse according settable amount water through inside it.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "FQIT",
+                        "WIP"
+                    ],
+                    [
+                        "FQT",
+                        "WIP"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Energy meter": {
+                "title": "Energy meter",
+                "A-infos": "Energy meter produce pulse according settable amount energy through inside it.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "WIP"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Electric meter": {
+                "title": "Electric meter",
+                "A-infos": "Electrical meter produce pulse according settable amount of current through inside it.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "WIP"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "F&TT": {
+                "title": "Hybride transmitter (Flow + T°)",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "WIP"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Chill": {
+                "title": "Chilleur",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "WIP"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Fg dry": {
+                "title": "Dryier",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "WIP"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Fg dry eco": {
+                "title": "Dryer with hygrometer",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "WIP"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Ads Dry": {
+                "title": "Adsorption dryer",
+                "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it. Materials such as silica gel, sodium chloride or sulphuric acid will allow the adsorption of humidity.The operating principle of the adsorption dryer is based on the intermittent use of the two columns in which the moisture adsorbing materials are located. The compressed air will first pass through column 1 in order to dehumidify its air (adsorption phenomenon) while in column 2, the adsorbent material will be heated by a thermal resistor or by the heat recovered from an air compressor or from an industrial process in order to regenerate the adsorbent material (desorption phenomenon) When column 1 can no longer dehumidify the air and column 2 has to regenerate the adsorbent material, a set of valves allows to reverse the dryer cycle and thus to make the compressed air pass into column 2 and to regenerate the adsorbent material which is rich in moisture.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "DRY",
+                        "Dryer"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Ads Dry eco": {
+                "title": "Adsorption dryer with eco mode",
+                "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it. Materials such as silica gel, sodium chloride or sulphuric acid will allow the adsorption of humidity.The operating principle of the adsorption dryer is based on the intermittent use of the two columns in which the moisture adsorbing materials are located. The compressed air will first pass through column 1 in order to dehumidify its air (adsorption phenomenon) while in column 2, the adsorbent material will be heated by a thermal resistor or by the heat recovered from an air compressor or from an industrial process in order to regenerate the adsorbent material (desorption phenomenon) When column 1 can no longer dehumidify the air and column 2 has to regenerate the adsorbent material, a set of valves allows to reverse the dryer cycle and thus to make the compressed air pass into column 2 and to regenerate the adsorbent material which is rich in moisture.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "DRY",
+                        "Dryer"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Ads Dry hygro": {
+                "title": "Adsorption dryer with hygrometer",
+                "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it. Materials such as silica gel, sodium chloride or sulphuric acid will allow the adsorption of humidity.The operating principle of the adsorption dryer is based on the intermittent use of the two columns in which the moisture adsorbing materials are located. The compressed air will first pass through column 1 in order to dehumidify its air (adsorption phenomenon) while in column 2, the adsorbent material will be heated by a thermal resistor or by the heat recovered from an air compressor or from an industrial process in order to regenerate the adsorbent material (desorption phenomenon) When column 1 can no longer dehumidify the air and column 2 has to regenerate the adsorbent material, a set of valves allows to reverse the dryer cycle and thus to make the compressed air pass into column 2 and to regenerate the adsorbent material which is rich in moisture.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "DRY",
+                        "Dryer"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Ads Dry eco hygro": {
+                "title": "Adsorption dryer with hygrometer and eco mode",
+                "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it. Materials such as silica gel, sodium chloride or sulphuric acid will allow the adsorption of humidity.The operating principle of the adsorption dryer is based on the intermittent use of the two columns in which the moisture adsorbing materials are located. The compressed air will first pass through column 1 in order to dehumidify its air (adsorption phenomenon) while in column 2, the adsorbent material will be heated by a thermal resistor or by the heat recovered from an air compressor or from an industrial process in order to regenerate the adsorbent material (desorption phenomenon) When column 1 can no longer dehumidify the air and column 2 has to regenerate the adsorbent material, a set of valves allows to reverse the dryer cycle and thus to make the compressed air pass into column 2 and to regenerate the adsorbent material which is rich in moisture.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "DRY",
+                        "Dryer"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Separator": {
+                "title": "Separator",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Resistor": {
+                "title": "Resistor",
+                "A-infos": "Element which produce heat when current pass through it",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "WIP"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Dr": {
+                "title": "Drain",
+                "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "DR",
+                        "Drain Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Dr f": {
+                "title": "Drain + fault feedback",
+                "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "DR",
+                        "Drain Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Dr p": {
+                "title": "Piloted drain",
+                "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "DR",
+                        "Drain Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Dr pf": {
+                "title": "Piloted drain + fault feedback",
+                "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "DR",
+                        "Drain Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "2w pms": {
+                "title": "pneumatic monostable 2 way valves",
+                "A-infos": "A valve piloted by pneumatic distributor, move back to default and safety position in case of lack of compressed air.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "2w pmf": {
+                "title": "pneumatic monostable 2 way valves whith position feedback",
+                "A-infos": "A valve piloted by pneumatic distributor and sending feedback depending to its position, move back to default and safety position in case of lack of compressed air.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ],
+                    [
+                        "YSC",
+                        "State Switch Close"
+                    ],
+                    [
+                        "YSO",
+                        "State Switch Open"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "2w pbs": {
+                "title": "pneumatic bistable 2 way valves",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "2w pbfa": {
+                "title": "pneumatic bistable 2 way valves whith analog position feedback",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ],
+                    [
+                        "YSC",
+                        "State Switch Close"
+                    ],
+                    [
+                        "YSO",
+                        "State Switch Open"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "2w es": {
+                "title": "Motorised 2 way valves",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "2w ef": {
+                "title": "Motorised 2 way valves whith position feedback",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "2w ep": {
+                "title": "Motorised 2 way valves",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "2w epfa": {
+                "title": "Motorised 2 way valves whith analog position feedback",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "3w pms": {
+                "title": "pneumatic monostable 3 way valves",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "3w pmf": {
+                "title": "pneumatic monostable 3 way valves whith position feedback",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "3w pbs": {
+                "title": "pneumatic bistable 3 way valves",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "3w pbf": {
+                "title": "pneumatic bistable 3 way valves whith position feedback",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "3w es": {
+                "title": "Motorised 3 way valves",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "3w ef": {
+                "title": "Motorised 3 way valves whith position feedback",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "3w ep": {
+                "title": "Motorised 3 way valves",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "3w epfa": {
+                "title": "Motorised 3 way valves whith analog position feedback",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Ds": {
+                "title": "Dampers",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Dsf": {
+                "title": "Dampers with position feedback",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Dp": {
+                "title": "Piloted dampers",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Dpfa": {
+                "title": "Piloted Dampers with analog position feedback",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Valve TOR": {
+                "title": "Solenoide valves",
+                "A-infos": "The electromagnetic valve (EMV) or solenoid valve allows to interrupt or not the fluid flow, it behaves like a switch",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "ULTRAMAT": {
+                "title": "ULTRAMAT",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "VAR-18": {
+                "title": "VAR-18",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "O2 Analyzer": {
+                "title": "O2 Analyzer",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "OPA-F": {
+                "title": "Open Air with static flow",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "OPA-V": {
+                "title": "Open Air with variable flow",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Booster": {
+                "title": "Surpressor / Blower",
+                "A-infos": "An air blower is a piece of equipment designed to deliver air at overpressure. These blowers allow to obtain compressed air at low pressure",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "BL",
+                        "Blower"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Fan": {
+                "title": "Fan",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "CP": {
+                "title": "Standard air compressor",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "CP opt": {
+                "title": "Standard air compressor with options",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Water pump": {
+                "title": "Water pump",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Vacuum pump": {
+                "title": "Vacuum pump",
+                "A-infos": "A vacuum pump is a type of pump allowing to make the vacuum, i.e. to extract the air or any other gas contained in a closed enclosure, in order to decrease its pressure.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PU",
+                        "Pumps"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            }
         },
         "fr": {
             "docName": "Analyse fonctionnelle",
@@ -338,7 +1292,961 @@
             "title9": "Fonctionnement de l'installation",
             "opeInstText9": "Cette installation comporte plusieurs partie differentes ...",
             "title10": "Instrumentation",
-            "introInstrumText10": "All analogue measurements are processed in the same way for them we will use the function bloc programming method (FB)."
+            "introInstrumText10": "All analogue measurements are processed in the same way for them we will use the function bloc programming method (FB).",
+            "subTitleA": "General informations",
+            "subTitleB": "List of concerned items",
+            "subTitleC": "Control and command",
+            "subTitleD": "Faults",
+            "ccTableRow": [
+                "DESIGNATION",
+                "TYPE",
+                "N°",
+                "ACTIVATION CONDITION",
+                "FUNCTION"
+            ],
+            "faultTableRow": [
+                "NAME",
+                "ALARM",
+                "ACTIVATION CONDITION"
+            ],
+            "Intrumentation": {
+                "title": "Intrumentation",
+                "infos": "All analogue measurements are processed in the same way for them we will use the function bloc programming method (FB)."
+            },
+            "Process component": {
+                "title": "Process component",
+                "infos": ""
+            },
+            "Valves and dampers": {
+                "title": "Valves and dampers",
+                "infos": ""
+            },
+            "Analyzer": {
+                "title": "Analyzer",
+                "infos": ""
+            },
+            "Air supply": {
+                "title": "Air supply",
+                "infos": ""
+            },
+            "Pumps": {
+                "title": "Pumps",
+                "infos": ""
+            },
+            "PT": {
+                "title": "Pressure transmitter",
+                "A-infos": "A pressure sensor is a system that converts a mechanical pressure into an electrical value.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PIT",
+                        "Pressure Indicator Transmitter"
+                    ],
+                    [
+                        "PT",
+                        "Pressure Transmitter"
+                    ],
+                    [
+                        "PDT",
+                        "Pressure Differential Transmitter"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "PT I": {
+                "title": "Pressure transmitter whith one dry contact",
+                "A-infos": "A pressure sensor is a system that converts a mechanical pressure into an electrical value. This one can provide one digital information more.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PIT",
+                        "Pressure Indicator Transmitter"
+                    ],
+                    [
+                        "PT",
+                        "Pressure Transmitter"
+                    ],
+                    [
+                        "PDT",
+                        "Pressure Differential Transmitter"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "PT 2I": {
+                "title": "Pressure transmitter whith two dry contact",
+                "A-infos": "A pressure sensor is a system that converts a mechanical pressure into an electrical value. This one can provide two digital informations more.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PIT",
+                        "Pressure Indicator Transmitter"
+                    ],
+                    [
+                        "PT",
+                        "Pressure Transmitter"
+                    ],
+                    [
+                        "PDT",
+                        "Pressure Differential Transmitter"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Pressostat": {
+                "title": "Pressostat",
+                "A-infos": "the pressure switch allows to check the minimum pressure in the water circuit.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PSL",
+                        "Pressure Switch Limit"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "FT": {
+                "title": "Flow transmitter",
+                "A-infos": "Magnetic flow meters consist of a transmitter and a sensor that work together to measure flow. The magnetic flowmeter sensor is placed in-line and measures an induced voltage generated by the fluid as it passes through a pipe.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "FT",
+                        "Flow Transmitter"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "FT pulse": {
+                "title": "Pulse flow transmitter",
+                "A-infos": "Magnetic flow meters consist of a transmitter and a sensor that work together to measure flow. The magnetic flowmeter sensor is placed in-line and measures an induced voltage generated by the fluid as it passes through a pipe.This one can provide one digital informations more.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "FT",
+                        "Flow Transmitter"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Flow detector": {
+                "title": "Flow detector",
+                "A-infos": "Device which provide digital information when the fluid to which it is subjected is in motion",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "FD",
+                        "Flow Detector"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "TT": {
+                "title": "Temperature transmitter",
+                "A-infos": "A temperature transmitter is a system that converts a temperature into an electrical value.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "TT",
+                        "Temperature Transmitter"
+                    ],
+                    [
+                        "TIT",
+                        "Temperature Indicator Transmitter"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Temperature sensor": {
+                "title": "Temperature sensor",
+                "A-infos": "A temperature sensor is a system that converts a temperature into a measurable physical value.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "TT",
+                        "Temperature Transmitter"
+                    ],
+                    [
+                        "TIT",
+                        "Temperature Indicator Transmitter"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "TTS": {
+                "title": "Temperature transmitter witch switch",
+                "A-infos": "A temperature transmitter is a system that converts a temperature into an electrical value.This one can provide one digital informations more.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "TT",
+                        "Temperature Transmitter"
+                    ],
+                    [
+                        "TIT",
+                        "Temperature Indicator Transmitter"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Thermostat": {
+                "title": "Thermostat",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "WIP"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Hygrometer": {
+                "title": "Hygrometer",
+                "A-infos": "Hygrometer is based on the measurement of the dew point temperature, and is used to measure the humidity in the air, or another gas mixture",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "AT",
+                        "Analyser Transmitter"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "WLS": {
+                "title": "Water level sensor",
+                "A-infos": "A level sensor is an electronic device that measures the height of material, usually liquid, in a tank.It detects in a binary way, like a switch, if the water level reaches a certain limit or not.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "LSLL",
+                        "Level Switch Low Low"
+                    ],
+                    [
+                        "LSL",
+                        "Level Switch Low"
+                    ],
+                    [
+                        "LSH",
+                        "Level Switch High"
+                    ],
+                    [
+                        "LSHH",
+                        "Level Switch High High"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Water meter": {
+                "title": "Water meter",
+                "A-infos": "Water meter produce pulse according settable amount water through inside it.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "FQIT",
+                        "WIP"
+                    ],
+                    [
+                        "FQT",
+                        "WIP"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Energy meter": {
+                "title": "Energy meter",
+                "A-infos": "Energy meter produce pulse according settable amount energy through inside it.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "WIP"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Electric meter": {
+                "title": "Electric meter",
+                "A-infos": "Electrical meter produce pulse according settable amount of current through inside it.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "WIP"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "F&TT": {
+                "title": "Hybride transmitter (Flow + T°)",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "WIP"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Chill": {
+                "title": "Chilleur",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "WIP"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Fg dry": {
+                "title": "Dryier",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "WIP"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Fg dry eco": {
+                "title": "Dryer with hygrometer",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "WIP"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Ads Dry": {
+                "title": "Adsorption dryer",
+                "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it. Materials such as silica gel, sodium chloride or sulphuric acid will allow the adsorption of humidity.The operating principle of the adsorption dryer is based on the intermittent use of the two columns in which the moisture adsorbing materials are located. The compressed air will first pass through column 1 in order to dehumidify its air (adsorption phenomenon) while in column 2, the adsorbent material will be heated by a thermal resistor or by the heat recovered from an air compressor or from an industrial process in order to regenerate the adsorbent material (desorption phenomenon) When column 1 can no longer dehumidify the air and column 2 has to regenerate the adsorbent material, a set of valves allows to reverse the dryer cycle and thus to make the compressed air pass into column 2 and to regenerate the adsorbent material which is rich in moisture.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "DRY",
+                        "Dryer"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Ads Dry eco": {
+                "title": "Adsorption dryer with eco mode",
+                "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it. Materials such as silica gel, sodium chloride or sulphuric acid will allow the adsorption of humidity.The operating principle of the adsorption dryer is based on the intermittent use of the two columns in which the moisture adsorbing materials are located. The compressed air will first pass through column 1 in order to dehumidify its air (adsorption phenomenon) while in column 2, the adsorbent material will be heated by a thermal resistor or by the heat recovered from an air compressor or from an industrial process in order to regenerate the adsorbent material (desorption phenomenon) When column 1 can no longer dehumidify the air and column 2 has to regenerate the adsorbent material, a set of valves allows to reverse the dryer cycle and thus to make the compressed air pass into column 2 and to regenerate the adsorbent material which is rich in moisture.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "DRY",
+                        "Dryer"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Ads Dry hygro": {
+                "title": "Adsorption dryer with hygrometer",
+                "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it. Materials such as silica gel, sodium chloride or sulphuric acid will allow the adsorption of humidity.The operating principle of the adsorption dryer is based on the intermittent use of the two columns in which the moisture adsorbing materials are located. The compressed air will first pass through column 1 in order to dehumidify its air (adsorption phenomenon) while in column 2, the adsorbent material will be heated by a thermal resistor or by the heat recovered from an air compressor or from an industrial process in order to regenerate the adsorbent material (desorption phenomenon) When column 1 can no longer dehumidify the air and column 2 has to regenerate the adsorbent material, a set of valves allows to reverse the dryer cycle and thus to make the compressed air pass into column 2 and to regenerate the adsorbent material which is rich in moisture.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "DRY",
+                        "Dryer"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Ads Dry eco hygro": {
+                "title": "Adsorption dryer with hygrometer and eco mode",
+                "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it. Materials such as silica gel, sodium chloride or sulphuric acid will allow the adsorption of humidity.The operating principle of the adsorption dryer is based on the intermittent use of the two columns in which the moisture adsorbing materials are located. The compressed air will first pass through column 1 in order to dehumidify its air (adsorption phenomenon) while in column 2, the adsorbent material will be heated by a thermal resistor or by the heat recovered from an air compressor or from an industrial process in order to regenerate the adsorbent material (desorption phenomenon) When column 1 can no longer dehumidify the air and column 2 has to regenerate the adsorbent material, a set of valves allows to reverse the dryer cycle and thus to make the compressed air pass into column 2 and to regenerate the adsorbent material which is rich in moisture.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "DRY",
+                        "Dryer"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Separator": {
+                "title": "Separator",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Resistor": {
+                "title": "Resistor",
+                "A-infos": "Element which produce heat when current pass through it",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "WIP"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Dr": {
+                "title": "Drain",
+                "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "DR",
+                        "Drain Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Dr f": {
+                "title": "Drain + fault feedback",
+                "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "DR",
+                        "Drain Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Dr p": {
+                "title": "Piloted drain",
+                "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "DR",
+                        "Drain Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Dr pf": {
+                "title": "Piloted drain + fault feedback",
+                "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "DR",
+                        "Drain Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "2w pms": {
+                "title": "pneumatic monostable 2 way valves",
+                "A-infos": "A valve piloted by pneumatic distributor, move back to default and safety position in case of lack of compressed air.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "2w pmf": {
+                "title": "pneumatic monostable 2 way valves whith position feedback",
+                "A-infos": "A valve piloted by pneumatic distributor and sending feedback depending to its position, move back to default and safety position in case of lack of compressed air.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ],
+                    [
+                        "YSC",
+                        "State Switch Close"
+                    ],
+                    [
+                        "YSO",
+                        "State Switch Open"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "2w pbs": {
+                "title": "pneumatic bistable 2 way valves",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "2w pbfa": {
+                "title": "pneumatic bistable 2 way valves whith analog position feedback",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ],
+                    [
+                        "YSC",
+                        "State Switch Close"
+                    ],
+                    [
+                        "YSO",
+                        "State Switch Open"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "2w es": {
+                "title": "Motorised 2 way valves",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "2w ef": {
+                "title": "Motorised 2 way valves whith position feedback",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "2w ep": {
+                "title": "Motorised 2 way valves",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "2w epfa": {
+                "title": "Motorised 2 way valves whith analog position feedback",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "3w pms": {
+                "title": "pneumatic monostable 3 way valves",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "3w pmf": {
+                "title": "pneumatic monostable 3 way valves whith position feedback",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "3w pbs": {
+                "title": "pneumatic bistable 3 way valves",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "3w pbf": {
+                "title": "pneumatic bistable 3 way valves whith position feedback",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "3w es": {
+                "title": "Motorised 3 way valves",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "3w ef": {
+                "title": "Motorised 3 way valves whith position feedback",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "3w ep": {
+                "title": "Motorised 3 way valves",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "3w epfa": {
+                "title": "Motorised 3 way valves whith analog position feedback",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Ds": {
+                "title": "Dampers",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Dsf": {
+                "title": "Dampers with position feedback",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Dp": {
+                "title": "Piloted dampers",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Dpfa": {
+                "title": "Piloted Dampers with analog position feedback",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Valve TOR": {
+                "title": "Solenoide valves",
+                "A-infos": "The electromagnetic valve (EMV) or solenoid valve allows to interrupt or not the fluid flow, it behaves like a switch",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PV",
+                        "Powered Valve"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "ULTRAMAT": {
+                "title": "ULTRAMAT",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "VAR-18": {
+                "title": "VAR-18",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "O2 Analyzer": {
+                "title": "O2 Analyzer",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "OPA-F": {
+                "title": "Open Air with static flow",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "OPA-V": {
+                "title": "Open Air with variable flow",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Booster": {
+                "title": "Surpressor / Blower",
+                "A-infos": "An air blower is a piece of equipment designed to deliver air at overpressure. These blowers allow to obtain compressed air at low pressure",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "BL",
+                        "Blower"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Fan": {
+                "title": "Fan",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "CP": {
+                "title": "Standard air compressor",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "CP opt": {
+                "title": "Standard air compressor with options",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Water pump": {
+                "title": "Water pump",
+                "A-infos": "WIP",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        ""
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            },
+            "Vacuum pump": {
+                "title": "Vacuum pump",
+                "A-infos": "A vacuum pump is a type of pump allowing to make the vacuum, i.e. to extract the air or any other gas contained in a closed enclosure, in order to decrease its pressure.",
+                "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+                "B-tags": [
+                    [
+                        "PU",
+                        "Pumps"
+                    ]
+                ],
+                "C-control&command": "Please refer to chapter XXXXX",
+                "D-fault": "Please refer to chapter XXXXX",
+                "zxyzxy": ""
+            }
         }
     }
 }

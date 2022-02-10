@@ -21,7 +21,7 @@ import language from "../data/language.json";
 
 export function handleClick_AF(rawAbstract, tongue) {
   //
-  console.log("rawAbstract", rawAbstract);
+  //console.log("rawAbstract", rawAbstract);
   //
   // Load and parse special datas from JSON
   const choosenLanguage = JSON.parse(JSON.stringify(language));
@@ -69,9 +69,6 @@ export function handleClick_AF(rawAbstract, tongue) {
     rawAbstract.Project.Technology.id,
     "HMI_documentation"
   );
-  console.log(nameRefDocHMI);
-  //
-  //
   // Build table of content
   const tableOfContent = Afb.tableOfContents();
   children.push(tableOfContent);
@@ -158,12 +155,45 @@ export function handleClick_AF(rawAbstract, tongue) {
   children.push(title9);
   const text9 = Afb.makeAfText(speak.opeInstText9);
   children.push(text9);
-  // Build instrumentation title
-  const title10 = Afb.makeAfTitleRankX(speak.title10, 1);
-  children.push(title10);
-  // Build instrumentation intro text
-  const text10 = Afb.makeAfText(speak.introInstrumText10);
-  children.push(text10);
+  //**************//
+  // -- Automatic build for elements chapter --
+  const elementsMainObject = Afb.makeWorkingBasisObjectForAf();
+  //console.log("elementsMainObject", elementsMainObject);
+  for (const item of Object.keys(elementsMainObject)) {
+    // console.log(item);
+    // Push title rank 1
+    children.push(Afb.makeAfTitleRankX(speak[item].title, 1));
+    // Push main intro text
+    if (speak[item].infos !== "") {
+      children.push(Afb.makeAfText(speak[item].infos));
+    }
+    for (const [key, value] of Object.entries(elementsMainObject[item])) {
+      //console.log(key);
+      // Push sub title rank 2
+      children.push(Afb.makeAfTitleRankX(speak[key].title, 2));
+      // Push sub title rank 3 A
+      children.push(Afb.makeAfTitleRankX(speak.subTitleA, 3));
+      // Push element general information
+      children.push(Afb.makeAfText(speak[key]["A-infos"]));
+      // Push sub title rank 3 B
+      children.push(Afb.makeAfTitleRankX(speak.subTitleB, 3));
+      // Push intro part B
+      children.push(Afb.makeAfText(speak[key]["B-intro"]));
+      // Push tags bullet list in part B
+      const bulletList = Afb.makeAfBullet(speak[key]["B-tags"]);
+      children.push(bulletList[0]);
+      // Push sub title rank 3 C
+      children.push(Afb.makeAfTitleRankX(speak.subTitleC, 3));
+      const keyTupleList = elementsMainObject[item][key];
+      const firstRow = speak["ccTableRow"];
+      //console.log(keyTupleList, firstRow);
+      Afb.tdzdest(keyTupleList, firstRow);
+      //console.log();
+      // Push sub title rank 3 D
+      children.push(Afb.makeAfTitleRankX(speak.subTitleD, 3));
+    }
+  }
+
   //**************//
   // Architecture pattern document
   const doc = new Document({
@@ -178,9 +208,9 @@ export function handleClick_AF(rawAbstract, tongue) {
       },
     ],
   });
-  // Print document
+  /* // Print document
   Packer.toBlob(doc).then((blob) => {
     saveAs(blob, `${speak.docName}-${projectTitle}.docx`);
-  });
+  }); */
   return false;
 }
