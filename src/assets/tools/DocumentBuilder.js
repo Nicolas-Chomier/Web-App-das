@@ -100,7 +100,9 @@ export class DataBuilder extends DocumentBuilder {
     let j = 1;
     for (const item of this.infosElement) {
       if (item.name !== this.flag) {
-        for (const [key, value] of Object.entries(this.private[item.id])) {
+        for (const [key, value] of Object.entries(
+          this.private[item.id]["IO"]
+        )) {
           if (value !== 0) {
             for (let i = 0; i < value; i++) {
               structure[item.group]["MAIN"][key].push(item.id);
@@ -109,7 +111,9 @@ export class DataBuilder extends DocumentBuilder {
         }
       } else {
         structure[item.group][`CP0${j}`] = this.emptyTagList();
-        for (const [key, value] of Object.entries(this.private[item.id])) {
+        for (const [key, value] of Object.entries(
+          this.private[item.id]["IO"]
+        )) {
           if (value !== 0) {
             for (let i = 0; i < value; i++) {
               structure[item.group][`CP0${j}`][key].push(item.id);
@@ -125,6 +129,7 @@ export class DataBuilder extends DocumentBuilder {
   idListObject(grp = 1) {
     //amelioration possible en autorisant tt les group a avoir des mandatory slot !!
     const _obj = this.idListDictionnary();
+
     // Security against bad group number:
     if (grp > this.group || grp <= 0) {
       grp = 1;
@@ -147,7 +152,9 @@ export class DataBuilder extends DocumentBuilder {
     let j = 1;
     for (const item of this.infosElement) {
       if (item.name !== this.flag) {
-        for (const [key, value] of Object.entries(this.private[item.id])) {
+        for (const [key, value] of Object.entries(
+          this.private[item.id]["IO"]
+        )) {
           if (value !== 0) {
             for (let i = 0; i < value; i++) {
               structure[item.group]["MAIN"][key].push(item.tag);
@@ -156,7 +163,9 @@ export class DataBuilder extends DocumentBuilder {
         }
       } else {
         structure[item.group][`CP0${j}`] = this.emptyTagList();
-        for (const [key, value] of Object.entries(this.private[item.id])) {
+        for (const [key, value] of Object.entries(
+          this.private[item.id]["IO"]
+        )) {
           if (value !== 0) {
             for (let i = 0; i < value; i++) {
               structure[item.group][`CP0${j}`][key].push(item.tag);
@@ -166,6 +175,7 @@ export class DataBuilder extends DocumentBuilder {
         j += 1;
       }
     }
+
     return structure;
   }
   // Method used to add mandatory slots to standard dictionnary (default grp 1)
@@ -197,18 +207,17 @@ export class DataBuilder extends DocumentBuilder {
       // Avoid "OPEN AIR" elements
       if (value.name !== this.flag) {
         // Loop through => {ni:,no:,ai:,ao:,ti:}
-        for (const [item, numbers] of Object.entries(this.private[value.id])) {
-          // If device match, feed the empty modele
-          if (this.hwl.includes(item)) {
-            modele[value.group]["MAIN"][item] += numbers;
-          }
+        for (const [item, numbers] of Object.entries(
+          this.private[value.id]["IO"]
+        )) {
+          modele[value.group]["MAIN"][item] += numbers;
         }
       } else {
         modele[value.group][`CP0${j}`] = this.emptyIolist();
-        for (const [item, numbers] of Object.entries(this.private[value.id])) {
-          if (this.hwl.includes(item)) {
-            modele[value.group][`CP0${j}`][item] += numbers;
-          }
+        for (const [item, numbers] of Object.entries(
+          this.private[value.id]["IO"]
+        )) {
+          modele[value.group][`CP0${j}`][item] += numbers;
         }
         j += 1;
       }
@@ -1058,8 +1067,8 @@ export class AfDocBuilder extends DocumentBuilder {
     }
     return uniques;
   }
-  // Method
-  tdzdest(tList, firstRow) {
+  // Method WIP!
+  makeAfControlCommandTable(tList, firstRow, target, flag) {
     const _matrix = this.list();
     const unique = this.multiDimensionalUnique(tList);
     for (const item of unique) {
@@ -1068,7 +1077,15 @@ export class AfDocBuilder extends DocumentBuilder {
       const tag = item[1];
       _matrix.push([tag]);
       _matrix.push(firstRow);
+      for (const [key, value] of Object.entries(this.private[id]["IO"])) {
+        for (let i = 0; i < value; i++) {
+          if (this.private[id][target][flag][key][i] !== 0) {
+            console.log(this.private[id][target][flag][key][i]);
+            _matrix.push(this.private[id][target][flag][key][i]);
+          }
+        }
+      }
     }
-    return false;
+    return _matrix;
   }
 }

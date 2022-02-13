@@ -30,6 +30,9 @@ export function handleClick_AdressTable(rawAbstract, tongue) {
   const MASTER_IO = Dt.addMandatorySlotTofullIolistProject();
   const MASTER_TAG = Dt.tagListObject();
   const MASTER_ID = Dt.idListObject();
+  console.log(MASTER_IO);
+  console.log(MASTER_TAG);
+  console.log(MASTER_ID);
   // Get number of group
   const GrpNumber = rawAbstract.Project.Group;
   // Get project title

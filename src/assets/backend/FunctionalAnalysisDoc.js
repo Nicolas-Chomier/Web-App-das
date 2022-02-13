@@ -168,7 +168,7 @@ export function handleClick_AF(rawAbstract, tongue) {
       children.push(Afb.makeAfText(speak[item].infos));
     }
     for (const [key, value] of Object.entries(elementsMainObject[item])) {
-      //console.log(key);
+      console.log(key);
       // Push sub title rank 2
       children.push(Afb.makeAfTitleRankX(speak[key].title, 2));
       // Push sub title rank 3 A
@@ -186,9 +186,15 @@ export function handleClick_AF(rawAbstract, tongue) {
       children.push(Afb.makeAfTitleRankX(speak.subTitleC, 3));
       const keyTupleList = elementsMainObject[item][key];
       const firstRow = speak["ccTableRow"];
-      //console.log(keyTupleList, firstRow);
-      Afb.tdzdest(keyTupleList, firstRow);
-      //console.log();
+      const target = "AF";
+      console.log(keyTupleList, firstRow);
+      const tableC = Afb.makeAfControlCommandTable(
+        keyTupleList,
+        firstRow,
+        target,
+        flag
+      );
+      console.log(tableC);
       // Push sub title rank 3 D
       children.push(Afb.makeAfTitleRankX(speak.subTitleD, 3));
     }
