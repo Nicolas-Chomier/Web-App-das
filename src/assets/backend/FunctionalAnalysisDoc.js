@@ -155,20 +155,18 @@ export function handleClick_AF(rawAbstract, tongue) {
   children.push(title9);
   const text9 = Afb.makeAfText(speak.opeInstText9);
   children.push(text9);
-  //**************//
-  // -- Automatic build for elements chapter --
+  // -- Automatic build for elements chapter -- //
   const elementsMainObject = Afb.makeWorkingBasisObjectForAf();
-  //console.log("elementsMainObject", elementsMainObject);
   for (const item of Object.keys(elementsMainObject)) {
-    // console.log(item);
     // Push title rank 1
     children.push(Afb.makeAfTitleRankX(speak[item].title, 1));
     // Push main intro text
     if (speak[item].infos !== "") {
       children.push(Afb.makeAfText(speak[item].infos));
     }
-    for (const [key, value] of Object.entries(elementsMainObject[item])) {
-      console.log(key);
+    for (const key of Object.keys(elementsMainObject[item])) {
+      // Variables
+      const keyTupleList = elementsMainObject[item][key];
       // Push sub title rank 2
       children.push(Afb.makeAfTitleRankX(speak[key].title, 2));
       // Push sub title rank 3 A
@@ -184,21 +182,21 @@ export function handleClick_AF(rawAbstract, tongue) {
       children.push(bulletList[0]);
       // Push sub title rank 3 C
       children.push(Afb.makeAfTitleRankX(speak.subTitleC, 3));
-      const keyTupleList = elementsMainObject[item][key];
-      const firstRow = speak["ccTableRow"];
-      const target = "AF";
-      console.log(keyTupleList, firstRow);
-      const tableC = Afb.makeAfControlCommandTable(
-        keyTupleList,
-        firstRow,
-        target,
-        flag
-      );
-      console.log(tableC);
+      // Build control command table part C
+      const firstRowC = speak["ccTableRow"];
+      const rawTableC = Afb.makeAfCustomTable(keyTupleList, firstRowC, flag);
+      children.push(Afb.makeAfTable(rawTableC));
       // Push sub title rank 3 D
       children.push(Afb.makeAfTitleRankX(speak.subTitleD, 3));
+      // Build faults table part D
+      const firstRowD = speak["faultTableRow"];
+      const rawTableD = Afb.makeAfFaultTable(keyTupleList, firstRowD, flag);
+      children.push(Afb.makeAfTable(rawTableD));
     }
   }
+  // -- Automatic build for function bloc chapter -- //
+  const fbList = Afb.makeFunctionBlocList();
+  console.log(fbList);
 
   //**************//
   // Architecture pattern document
@@ -214,8 +212,8 @@ export function handleClick_AF(rawAbstract, tongue) {
       },
     ],
   });
-  /* // Print document
-  Packer.toBlob(doc).then((blob) => {
+  // Print document
+  /*  Packer.toBlob(doc).then((blob) => {
     saveAs(blob, `${speak.docName}-${projectTitle}.docx`);
   }); */
   return false;

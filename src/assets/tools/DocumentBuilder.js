@@ -1053,10 +1053,30 @@ export class AfDocBuilder extends DocumentBuilder {
     }
     return _list;
   }
+  // Method which build control and command table according infos inside private JSON
+  makeAfCustomTable(tList, firstRow, flag) {
+    const _matrix = this.list();
+    const unique = this.multiDimensionalUnique(tList);
+    for (const item of unique) {
+      const id = item[0];
+      const tag = item[1];
+      _matrix.push([tag]);
+      _matrix.push(firstRow);
+      for (const [key, value] of Object.entries(this.private[id]["IO"])) {
+        for (let i = 0; i < value; i++) {
+          if (this.private[id]["AF"][flag][key][i].length !== 0) {
+            const data = this.private[id]["AF"][flag][key][i];
+            _matrix.push(this.buildCompleteArray(i, key, data));
+          }
+        }
+      }
+    }
+    return _matrix;
+  }
   // Method which remove duplicates from a two-dimensional array
   multiDimensionalUnique(arr) {
-    var uniques = [];
-    var itemsFound = {};
+    var uniques = this.list();
+    var itemsFound = this.object();
     for (var i = 0, l = arr.length; i < l; i++) {
       var stringified = JSON.stringify(arr[i]);
       if (itemsFound[stringified]) {
@@ -1067,25 +1087,37 @@ export class AfDocBuilder extends DocumentBuilder {
     }
     return uniques;
   }
-  // Method WIP!
-  makeAfControlCommandTable(tList, firstRow, target, flag) {
+  // Method which add key and number to control and command table
+  buildCompleteArray(i, key, data) {
+    const newData = [...data];
+    newData.splice(1, 0, key);
+    newData.splice(2, 0, i + 1);
+    return newData;
+  }
+  // Method which build control and command table according infos inside private JSON
+  makeAfFaultTable(tList, firstRow, flag) {
     const _matrix = this.list();
     const unique = this.multiDimensionalUnique(tList);
     for (const item of unique) {
-      console.log("item", item);
       const id = item[0];
       const tag = item[1];
       _matrix.push([tag]);
       _matrix.push(firstRow);
-      for (const [key, value] of Object.entries(this.private[id]["IO"])) {
-        for (let i = 0; i < value; i++) {
-          if (this.private[id][target][flag][key][i] !== 0) {
-            console.log(this.private[id][target][flag][key][i]);
-            _matrix.push(this.private[id][target][flag][key][i]);
-          }
-        }
+      for (let i = 0; i < this.private[id]["FAULTS"][flag].length; i++) {
+        _matrix.push(this.private[id]["FAULTS"][flag][i]);
       }
     }
     return _matrix;
+  }
+  // Method which build list with exact number of function bloc used in this project
+  makeFunctionBlocList() {
+    const fbList = this.list();
+    for (const item of this.infosElement) {
+      const scanFb = this.private[item.id]["FunctionBloc"];
+      if (scanFb !== false) {
+        fbList.push(scanFb);
+      }
+    }
+    return [...new Set(fbList)];
   }
 }
