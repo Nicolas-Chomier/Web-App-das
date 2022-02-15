@@ -2,10 +2,10 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { Button, Card, Stack, Avatar } from "@mui/material";
 import RequestCards from "../components/RequestCards";
-import { handleClick_Quotation } from "../assets/backend/QuotationDoc";
-import { handleClick_Architecture } from "../assets/backend/ArchitectureDoc";
-import { handleClick_AdressTable } from "../assets/backend/AdressTableDoc";
-import { handleClick_AF } from "../assets/backend/FunctionalAnalysisDoc";
+import { handleClick_QTS } from "../assets/backend/QTSDoc";
+import { handleClick_ARCH } from "../assets/backend/ARCHDoc";
+import { handleClick_IO } from "../assets/backend/IODoc";
+import { handleClick_AF } from "../assets/backend/AFDoc";
 import contents from "../assets/data/lastPage.json";
 
 // Load text information to display for Requestcards elements
@@ -39,14 +39,14 @@ const LastPage = () => {
             <Button
               className="flag-btn"
               variant="outlined"
-              onClick={() => handleClick_Quotation(rawAbstract, 0)}
+              onClick={() => handleClick_QTS(rawAbstract, 0)}
             >
               <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
             </Button>
             <Button
               className="flag-btn"
               variant="outlined"
-              onClick={() => handleClick_Quotation(rawAbstract, 1)}
+              onClick={() => handleClick_QTS(rawAbstract, 1)}
             >
               <Avatar alt="FR flag" src="/FRFlag.png" sx={avtConf} />
             </Button>
@@ -100,7 +100,7 @@ const LastPage = () => {
               className="flag-btn"
               variant="outlined"
               onClick={() => {
-                handleClick_Architecture(rawAbstract, 0);
+                handleClick_ARCH(rawAbstract, 0);
               }}
             >
               <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
@@ -109,7 +109,7 @@ const LastPage = () => {
               className="flag-btn"
               variant="outlined"
               onClick={() => {
-                handleClick_Architecture(rawAbstract, 1);
+                handleClick_ARCH(rawAbstract, 1);
               }}
             >
               <Avatar alt="FR flag" src="/FRFlag.png" sx={avtConf} />
@@ -134,7 +134,7 @@ const LastPage = () => {
               className="flag-btn"
               variant="outlined"
               onClick={() => {
-                handleClick_AdressTable(rawAbstract, 0);
+                handleClick_IO(rawAbstract, 0);
               }}
             >
               <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
@@ -143,7 +143,7 @@ const LastPage = () => {
               className="flag-btn"
               variant="outlined"
               onClick={() => {
-                handleClick_AdressTable(rawAbstract, 1);
+                handleClick_IO(rawAbstract, 1);
               }}
             >
               <Avatar alt="FR flag" src="/FRFlag.png" sx={avtConf} />

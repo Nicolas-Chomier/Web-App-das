@@ -1,0 +1,14 @@
+{
+    "uk": {
+        "text1": "Hello, please find in this document a quotation request for the following references and quantities :",
+        "title2": "2. NOMENCLATURE for HMI",
+        "title3": "3. NOMENCLATURE for TM3 modules",
+        "docName": "Quotation request"
+    },
+    "fr": {
+        "text1": "Bonjour, veuillez trouver dans ce document une demande de chiffrage pour les références et les quantités suivantes :",
+        "title2": "2. NOMENCLATURE des IHM à fournir",
+        "title3": "3. NOMENCLATURE des modules TM3 à fournir",
+        "docName": "Demande de chiffrage"
+    }
+}

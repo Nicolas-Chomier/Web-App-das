@@ -202,6 +202,9 @@
                 "ALARM",
                 "ACTIVATION CONDITION"
             ],
+            "title11": "Function block description",
+            "intro11": "This is a completely custom installation, however some elements are same, for them we will use the function block programming method (FB).The instrumentation will be managed by standardized blocks, in order to ensure homogenization of the programming. These blocks are used only in the process PLC, this chapter presents their functionalities.",
+            "FB001": {},
             "Intrumentation": {
                 "title": "Intrumentation",
                 "infos": "All analogue measurements are processed in the same way for them we will use the function bloc programming method (FB)."
@@ -1309,6 +1312,7 @@
                 "ALARM",
                 "ACTIVATION CONDITION"
             ],
+            "title11": "Development method & Function bloc description",
             "Intrumentation": {
                 "title": "Intrumentation",
                 "infos": "All analogue measurements are processed in the same way for them we will use the function bloc programming method (FB)."

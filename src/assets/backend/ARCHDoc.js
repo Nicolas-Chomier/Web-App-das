@@ -6,13 +6,14 @@ import { Document } from "docx";
 import { header } from "../tools/DocumentHeader";
 import { footer } from "../tools/DocumentFooter";
 // External datas importation
-import language from "../data/language.json";
+import language from "../data/language/ARCH.json";
 
-export function handleClick_Architecture(rawAbstract, tongue) {
+export function handleClick_ARCH(rawAbstract, tongue) {
   // Load and parse special datas from JSON
-  const choosenLanguage = JSON.parse(JSON.stringify(language));
+  const text = JSON.parse(JSON.stringify(language));
   // Document text language settings
-  const speak = choosenLanguage["architecture"][tongue === 0 ? "uk" : "fr"];
+  const flag = tongue === 0 ? "uk" : "fr"; // Get the flag
+  const speak = text[flag];
   // Instantiation for all class needed (Data builder, Document builder, Technology Provider)
   const Dt = new DataBuilder(rawAbstract);
   const Dx = new DocxBuilder(rawAbstract);

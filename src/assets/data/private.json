@@ -6065,9 +6065,39 @@
                         "Dryer fault",
                         "Dryer output fault",
                         "Fault activation"
+                    ],
+                    [
+                        "Dryer fault",
+                        "Dryer output fault",
+                        "Fault activation"
+                    ],
+                    [
+                        "Dryer fault",
+                        "Dryer output fault",
+                        "Fault activation"
+                    ],
+                    [
+                        "Dryer fault",
+                        "Dryer output fault",
+                        "Fault activation"
+                    ],
+                    [
+                        "Dryer fault",
+                        "Dryer output fault",
+                        "Fault activation"
+                    ],
+                    [
+                        "Dryer fault",
+                        "Dryer output fault",
+                        "Fault activation"
                     ]
                 ],
                 "DO": [
+                    [
+                        "Start order",
+                        "PLC digital output activation",
+                        "Start the dryer"
+                    ],
                     [
                         "Start order",
                         "PLC digital output activation",
@@ -6090,9 +6120,39 @@
                         "Dryer fault",
                         "Dryer output fault",
                         "Fault activation"
+                    ],
+                    [
+                        "Dryer fault",
+                        "Dryer output fault",
+                        "Fault activation"
+                    ],
+                    [
+                        "Dryer fault",
+                        "Dryer output fault",
+                        "Fault activation"
+                    ],
+                    [
+                        "Dryer fault",
+                        "Dryer output fault",
+                        "Fault activation"
+                    ],
+                    [
+                        "Dryer fault",
+                        "Dryer output fault",
+                        "Fault activation"
+                    ],
+                    [
+                        "Dryer fault",
+                        "Dryer output fault",
+                        "Fault activation"
                     ]
                 ],
                 "DO": [
+                    [
+                        "Start order",
+                        "PLC digital output activation",
+                        "Start the dryer"
+                    ],
                     [
                         "Start order",
                         "PLC digital output activation",

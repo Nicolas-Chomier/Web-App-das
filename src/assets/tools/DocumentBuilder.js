@@ -1067,6 +1067,7 @@ export class AfDocBuilder extends DocumentBuilder {
           if (this.private[id]["AF"][flag][key][i].length !== 0) {
             const data = this.private[id]["AF"][flag][key][i];
             _matrix.push(this.buildCompleteArray(i, key, data));
+            // Attention ! Erreur possible si IOList ne correspond pas avec la taille de la liste de liste de text correspondante
           }
         }
       }
