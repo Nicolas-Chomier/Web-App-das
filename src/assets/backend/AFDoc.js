@@ -16,6 +16,10 @@ import { header } from "../tools/DocumentHeader";
 import { footer } from "../tools/DocumentFooter";
 // Images importation for AF document
 import { IPLC } from "../image/image_af_plc";
+import { ICC } from "../image/image_af_colourCode";
+import { IRV } from "../image/image_af_readingValue";
+import { IWV } from "../image/image_af_writingValue";
+import { IFTV } from "../image/image_af_hmiFault";
 // External datas importation
 import language from "../data/language/AF.json";
 
@@ -121,9 +125,85 @@ export function handleClick_AF(rawAbstract, tongue) {
   const table8 = Afb.makeAfTable(speak.table8);
   children.push(title8, table8);
   // ---- Build CHAPTER 9 "Colour code" ---- //
-  //WIP
+  const title9 = Afb.makeAfTitleRankX(speak.title9, 1);
+  const subTitle9A = Afb.makeAfTitleRankX(speak.subTitle9A, 2);
+  const table9A = Afb.makeAfTable(speak.table9A);
+  const smallTitle9A = Afb.makeAfTitleRankX(speak.smallTitle9A, 3);
+  const image9A = new Paragraph({
+    children: [
+      new ImageRun({
+        data: Buffer.from(ICC, "base64"),
+        transformation: {
+          width: 520,
+          height: 450,
+        },
+      }),
+    ],
+  });
+  const subTitle9B = Afb.makeAfTitleRankX(speak.subTitle9B, 2);
+  const text9B = Afb.makeAfText(speak.text9B);
+  const smallTitle9B1 = Afb.makeAfTitleRankX(speak.smallTitle9B1, 3);
+  const image9B1 = new Paragraph({
+    children: [
+      new ImageRun({
+        data: Buffer.from(IRV, "base64"),
+        transformation: {
+          width: 100,
+          height: 65,
+        },
+      }),
+    ],
+  });
+  const smallTitle9B2 = Afb.makeAfTitleRankX(speak.smallTitle9B2, 3);
+  const image9B2 = new Paragraph({
+    children: [
+      new ImageRun({
+        data: Buffer.from(IWV, "base64"),
+        transformation: {
+          width: 100,
+          height: 65,
+        },
+      }),
+    ],
+  });
+  const subTitle9C = Afb.makeAfTitleRankX(speak.subTitle9C, 2);
+  const table9C = Afb.makeAfTable(speak.table9C);
+  const subTitle9D = Afb.makeAfTitleRankX(speak.subTitle9D, 2);
+  const table9D = Afb.makeAfTable(speak.table9D);
+  const smallTitle9D = Afb.makeAfTitleRankX(speak.smallTitle9D, 3);
+  const image9D = new Paragraph({
+    children: [
+      new ImageRun({
+        data: Buffer.from(IFTV, "base64"),
+        transformation: {
+          width: 450,
+          height: 400,
+        },
+      }),
+    ],
+  });
+  const text9D = Afb.makeAfText(speak.text9D);
+  children.push(
+    title9,
+    subTitle9A,
+    table9A,
+    smallTitle9A,
+    image9A,
+    subTitle9B,
+    text9B,
+    smallTitle9B1,
+    image9B1,
+    smallTitle9B2,
+    image9B2,
+    subTitle9C,
+    table9C,
+    subTitle9D,
+    table9D,
+    smallTitle9D,
+    image9D,
+    text9D
+  );
   // ---- Build CHAPTER 10 "Function block description" ---- //
-  //WIP
   const fbList = Afb.makeFunctionBlocList();
   console.log(fbList);
   // ---- Build CHAPTER 11 "Operation of the installation" ---- //

@@ -147,7 +147,94 @@
                 "Output 4-20mA for example"
             ]
         ],
-        "title9": "WIP",
+        "title9": "Colour code",
+        "subTitle9A": "Equipment",
+        "table9A": [
+            [
+                "Equipment's colour code"
+            ],
+            [
+                "States",
+                "Stopped or Closed",
+                "In motion",
+                "Start or open",
+                "Fault"
+            ],
+            [
+                "Colour:",
+                "GREY",
+                "BLUE",
+                "GREEN",
+                "RED"
+            ]
+        ],
+        "smallTitle9A": "HMI screen view",
+        "subTitle9B": "Numeric display",
+        "text9B": "Different types of analog variables are present in the different views. For some it is only possible to view the value, for others it is possible to enter a value.",
+        "smallTitle9B1": "Reading values",
+        "smallTitle9B2": "Writing values",
+        "subTitle9C": "Pipes",
+        "table9C": [
+            [
+                "Pipes colour code"
+            ],
+            [
+                "Types",
+                "Compressed AIR",
+                "Demineralized WATER",
+                "VACUUM",
+                "Polluted AIR",
+                "Helium",
+                "Condensate"
+            ],
+            [
+                "Colour:",
+                "BLUE",
+                "GREEN",
+                "CYAN",
+                "PURPLE",
+                "ORANGE",
+                "BROWN"
+            ]
+        ],
+        "subTitle9D": "Faults and messages",
+        "table9D": [
+            [
+                "Faults and messages colour code"
+            ],
+            [
+                "Types",
+                "Messages",
+                "Description"
+            ],
+            [
+                "MES",
+                "Message",
+                "Message / information"
+            ],
+            [
+                "TMA",
+                "Technical major fault",
+                "Technical fault with equipment stops"
+            ],
+            [
+                "TMI",
+                "Technical minor fault",
+                "Technical fault without equipment stop"
+            ],
+            [
+                "PMA",
+                "Process major fault",
+                "Exceeding threshold in the process with an impact on the quality of the product"
+            ],
+            [
+                "PMI",
+                "Process minor fault",
+                "Exceeding threshold in the process without an impact on the quality of the product"
+            ]
+        ],
+        "smallTitle9D": "HMI screen view",
+        "text9D": "Alarms that have disappeared are shown in white. The alarms are acknowledged by pressing the button (level 1 required).The date and time when the alarm was triggered are indicated on the left. The number of times the alarm has been triggered is shown on the right. The alarm counter is reset by selecting the alarm table and pressing the button (level 1 required).The deletion of a disappeared alarm is done by selecting the line concerned and then pressing the \"Delete\" button (level 1 required). To delete all the missing alarms, select the alarm table and press the \"Delete all\" button (level 1 required).",
         "title10": "Function block description @",
         "text10": "This is a completely custom installation, however some elements are same, for them we will use the function block programming method (FB).The instrumentation will be managed by standardized blocks, in order to ensure homogenization of the programming. These blocks are used only in the process PLC, this chapter presents their functionalities.",
         "title11": "Operation of the installation",
