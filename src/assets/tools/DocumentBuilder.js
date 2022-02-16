@@ -89,7 +89,8 @@ class DocumentBuilder {
 export class DataBuilder extends DocumentBuilder {
   constructor(rawAbstract) {
     super(rawAbstract);
-    this.flag = "OPA"; // Identification word for an Open Air compressor
+    this.openAirLabel1 = "OPA-F"; // Identification word for an Open Air compressor fixe
+    this.openAirLabel2 = "OPA-V"; // Identification word for an Open Air compressor variable
     this.rsl = { DI: 8, DO: 6, AI: 1, AO: 0, AIt: 0 }; // Mandatory reserved slot attribute to each project
     this.rName = "Reserved"; // Tag used to fill reserved slot
     this.rId = "0000";
@@ -99,7 +100,10 @@ export class DataBuilder extends DocumentBuilder {
     const structure = this.emptyShapeForTagList();
     let j = 1;
     for (const item of this.infosElement) {
-      if (item.name !== this.flag) {
+      if (
+        item.name !== this.openAirLabel1 &&
+        item.name !== this.openAirLabel2
+      ) {
         for (const [key, value] of Object.entries(
           this.private[item.id]["IO"]
         )) {
@@ -151,7 +155,10 @@ export class DataBuilder extends DocumentBuilder {
     const structure = this.emptyShapeForTagList();
     let j = 1;
     for (const item of this.infosElement) {
-      if (item.name !== this.flag) {
+      if (
+        item.name !== this.openAirLabel1 &&
+        item.name !== this.openAirLabel2
+      ) {
         for (const [key, value] of Object.entries(
           this.private[item.id]["IO"]
         )) {
@@ -205,7 +212,10 @@ export class DataBuilder extends DocumentBuilder {
     // Loop through raw abstract elem list
     for (const value of Object.values(this.infosElement)) {
       // Avoid "OPEN AIR" elements
-      if (value.name !== this.flag) {
+      if (
+        value.name !== this.openAirLabel1 &&
+        value.name !== this.openAirLabel2
+      ) {
         // Loop through => {ni:,no:,ai:,ao:,ti:}
         for (const [item, numbers] of Object.entries(
           this.private[value.id]["IO"]
@@ -831,12 +841,12 @@ export class DocxBuilder extends DocumentBuilder {
     return rowList;
   }
   // Sub method which fill TableCell children with space (only for tableShapeArchitecture method)
-  makeText(text = "") {
+  makeText(text = "", a = 50, b = 50) {
     const paragraph = new Paragraph({
       text: text,
       spacing: {
-        after: 50,
-        before: 50,
+        after: a,
+        before: b,
       },
     });
     return paragraph;
@@ -883,10 +893,16 @@ export class AdressTableDocBuilder extends DocumentBuilder {
     for (const [key, value] of Object.entries(moduleIOList)) {
       if (value !== 0) {
         for (let i = 0; i < value; i++) {
+          // Object with duplicate {name : number}
+          const counterObject = this.countDuplicateInList(tagList[key]);
+          // Number of duplicate leaving for actual tag
+          const actualTag = tagList[key][0];
+          const counter = counterObject[actualTag];
+          // Shift tag one by one
           const tag =
             tagList[key].length > 0 ? tagList[key].shift() : this.noSlot;
           const id = idList[key].length > 0 ? idList[key].shift() : this.noSlot;
-          const fluf = this.AddFlufToRawAdressTable(id, key, flag);
+          const fluf = this.AddFlufToRawAdressTable(id, key, flag, counter);
           const trackNbs = this.AddTrackNumberToRawAdressTable(
             key,
             moduleNbs,
@@ -897,6 +913,14 @@ export class AdressTableDocBuilder extends DocumentBuilder {
       }
     }
     return _list;
+  }
+  // Method which count duplicate in given list
+  countDuplicateInList(list) {
+    const counts = {};
+    list.forEach(function (x) {
+      counts[x] = (counts[x] || 0) + 1;
+    });
+    return counts;
   }
   //
   reshapeTagList(tagList, idList, module, flag, moduleNbs) {
@@ -914,8 +938,12 @@ export class AdressTableDocBuilder extends DocumentBuilder {
     return _list;
   }
   //
-  AddFlufToRawAdressTable(id, key, flag) {
-    const fluf = this.private[id]["Text"][flag][key];
+  AddFlufToRawAdressTable(id, key, flag, counter) {
+    const dataType = typeof this.private[id]["Text"][flag][key];
+    if (dataType === "string") {
+      return this.private[id]["Text"][flag][key];
+    }
+    const fluf = this.private[id]["Text"][flag][key][counter - 1];
     return fluf;
   }
   //
@@ -1097,12 +1125,14 @@ export class AfDocBuilder extends DocumentBuilder {
         for (let i = 0; i < value; i++) {
           if (this.private[id]["AF"][flag][key][i].length !== 0) {
             const data = this.private[id]["AF"][flag][key][i];
+            console.log(data);
             _matrix.push(this.buildCompleteArray(i, key, data));
             // Attention ! Erreur possible si IOList ne correspond pas avec la taille de la liste de liste de text correspondante
           }
         }
       }
     }
+    console.log(_matrix);
     return _matrix;
   }
   // Method which remove duplicates from a two-dimensional array
@@ -1151,5 +1181,10 @@ export class AfDocBuilder extends DocumentBuilder {
       }
     }
     return [...new Set(fbList)];
+  }
+  // Method which check if element have a function block assigned
+  checkFb(id) {
+    const checkFb = this.private[id]["FunctionBloc"];
+    return checkFb;
   }
 }

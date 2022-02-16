@@ -12,7 +12,7 @@ const OptionTile = ({ title, output }) => {
   const [style, setStyle] = useState(basicStyle);
   // Option core to display:
   const radio = (
-    <RadioCustom qty={4} state={false} output={setResult} position={"top"} />
+    <RadioCustom qty={1} state={false} output={setResult} position={"top"} />
   );
   // Color change when radio btn checked
   useEffect(() => {

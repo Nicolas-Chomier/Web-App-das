@@ -24,6 +24,8 @@ export function handleClick_ARCH(rawAbstract, tongue) {
   // Get project title
   const projectTitle = Dx.buildTitle();
   // Sub function which will generate the entire architecture
+  console.log(MASTER_IO);
+  console.log(MASTER_TAG);
   function buildEntireArchitecture() {
     const children = [];
     const GrpNumber = rawAbstract.Project.Group;
@@ -31,7 +33,9 @@ export function handleClick_ARCH(rawAbstract, tongue) {
       // Creation for title rank 1
       const title1 = Dx.titleRank1(i);
       children.push(title1);
+
       for (const [key, value] of Object.entries(MASTER_IO[i])) {
+        console.log(key, value);
         // Check if IOList (value) is empty
         const isEmpty = !Object.values(value).some((x) => x !== 0);
         if (isEmpty !== true) {

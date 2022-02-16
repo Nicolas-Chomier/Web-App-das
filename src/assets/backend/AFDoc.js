@@ -222,8 +222,8 @@ export function handleClick_AF(rawAbstract, tongue) {
         new ImageRun({
           data: Buffer.from(IFB001, "base64"),
           transformation: {
-            width: 680,
-            height: 450,
+            width: 600,
+            height: 350,
           },
         }),
       ],
@@ -248,6 +248,7 @@ export function handleClick_AF(rawAbstract, tongue) {
     for (const key of Object.keys(elementsMainObject[item])) {
       // Variables
       const keyTupleList = elementsMainObject[item][key];
+      const elemId = elementsMainObject[item][key][0][0];
       // Push sub title rank 2
       children.push(Afb.makeAfTitleRankX(speak[key].title, 2));
       // Push sub title rank 3 A
@@ -260,19 +261,25 @@ export function handleClick_AF(rawAbstract, tongue) {
       children.push(Afb.makeAfText(speak[key]["B-intro"]));
       // Push tags bullet list in part B
       const bulletList = Afb.makeAfBullet(speak[key]["B-tags"]);
-      children.push(bulletList[0]);
+      for (const tag of bulletList) {
+        children.push(tag);
+      }
       // Push sub title rank 3 C
       children.push(Afb.makeAfTitleRankX(speak.subTitleC, 3));
       // Build control command table part C
       const firstRowC = speak["ccTableRow"];
       const rawTableC = Afb.makeAfCustomTable(keyTupleList, firstRowC, flag);
-      children.push(Afb.makeAfTable(rawTableC));
+      const tableC = Afb.makeAfTable(rawTableC);
+      const managedByFbC = Afb.makeAfText(speak[key]["C-control&command"]);
+      children.push(Afb.checkFb(elemId) === false ? tableC : managedByFbC);
       // Push sub title rank 3 D
       children.push(Afb.makeAfTitleRankX(speak.subTitleD, 3));
       // Build faults table part D
       const firstRowD = speak["faultTableRow"];
       const rawTableD = Afb.makeAfFaultTable(keyTupleList, firstRowD, flag);
-      children.push(Afb.makeAfTable(rawTableD));
+      const tableD = Afb.makeAfTable(rawTableD);
+      const managedByFbD = Afb.makeAfText(speak[key]["D-fault"]);
+      children.push(Afb.checkFb(elemId) === false ? tableD : managedByFbD);
     }
   }
   // ---- Build CHAPTER 18- "Alarms management" ---- //
@@ -318,8 +325,8 @@ export function handleClick_AF(rawAbstract, tongue) {
     },
     sections: [
       {
-        headers: header,
-        footers: footer,
+        //headers: header,
+        //footers: footer,
         children: children,
       },
     ],
