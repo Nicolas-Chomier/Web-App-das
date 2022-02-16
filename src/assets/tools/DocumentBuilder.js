@@ -1028,7 +1028,7 @@ export class AfDocBuilder extends DocumentBuilder {
     //console.log();
     return _obj;
   }
-  // Method which re arrange raw tag for part B in AF
+  // Method which re arrange raw tag only for part B in AF
   makeAfBullet(tagList, d = 0, b = false, f = "Calibri", s = 12, c = "2E2E2E") {
     const _list = this.list();
     const errorText = "Error / WIP";
@@ -1039,6 +1039,37 @@ export class AfDocBuilder extends DocumentBuilder {
           children: [
             new TextRun({
               text: item.length !== 2 ? errorText : bulletText,
+              bold: b,
+              font: f,
+              size: s,
+              color: c,
+            }),
+          ],
+          bullet: {
+            level: d,
+          },
+        })
+      );
+    }
+    return _list;
+  }
+  // Method which re arrange raw tag only for FB in AF
+  makeAfFbBullet(
+    bullet,
+    d = 0,
+    b = false,
+    f = "Calibri",
+    s = 12,
+    c = "2E2E2E"
+  ) {
+    const _list = this.list();
+    for (const item of bullet) {
+      const text = item[0];
+      _list.push(
+        new Paragraph({
+          children: [
+            new TextRun({
+              text: text,
               bold: b,
               font: f,
               size: s,

@@ -1,16 +1,10 @@
 import { Packer } from "docx";
 import { saveAs } from "file-saver";
 import { Buffer } from "buffer";
-import { Document, WidthType, ImageRun } from "docx";
-import { TableOfContents } from "docx";
-import { Table, Paragraph, StyleLevel, HeadingLevel } from "docx";
+import { Document, ImageRun } from "docx";
+import { Paragraph } from "docx";
 // Home made class importation
-import {
-  DataBuilder,
-  DocxBuilder,
-  Proface,
-  AfDocBuilder,
-} from "../tools/DocumentBuilder";
+import { DocxBuilder, Proface, AfDocBuilder } from "../tools/DocumentBuilder";
 // Elements for document presentation
 import { header } from "../tools/DocumentHeader";
 import { footer } from "../tools/DocumentFooter";
@@ -20,33 +14,23 @@ import { ICC } from "../image/image_af_colourCode";
 import { IRV } from "../image/image_af_readingValue";
 import { IWV } from "../image/image_af_writingValue";
 import { IFTV } from "../image/image_af_hmiFault";
+import { IFB001 } from "../image/image_af_fb001_screenView";
 // External datas importation
 import language from "../data/language/AF.json";
 
 export function handleClick_AF(rawAbstract, tongue) {
-  //
-  console.log("rawAbstract", rawAbstract);
-  //
   // Load and parse special datas from JSON
   const text = JSON.parse(JSON.stringify(language));
   // Document text language settings
   const flag = tongue === 0 ? "uk" : "fr"; // Get the flag
   const speak = text[flag];
   // Instantiation for all class needed (Data builder, Document builder, Technology Provider)
-  const Dt = new DataBuilder(rawAbstract);
   const Dx = new DocxBuilder(rawAbstract);
   const Tp = new Proface(rawAbstract);
   const Afb = new AfDocBuilder(rawAbstract);
-  // Build basical dataset, MASTER => iolist dictionnary, MASTER2 => tagList dictionnary
-  const MASTER_IO = Dt.addMandatorySlotTofullIolistProject();
-  const MASTER_TAG = Dt.tagListObject();
-  const MASTER_ID = Dt.idListObject();
-
-  // Get number of group
-  const GrpNumber = rawAbstract.Project.Group;
   // Get project title
   const projectTitle = Dx.buildTitle();
-  // Function, variable and object which compose functional analysis
+  // AF main list
   const children = [];
   // ---- Build CHAPTER 0 "Table of content" ---- //
   const tableOfContent = Afb.tableOfContents();
@@ -205,12 +189,54 @@ export function handleClick_AF(rawAbstract, tongue) {
   );
   // ---- Build CHAPTER 10 "Function block description" ---- //
   const fbList = Afb.makeFunctionBlocList();
-  console.log(fbList);
+  for (const block of fbList) {
+    const item = block.toUpperCase();
+    const rawFbTitle1 = Dx.makeDocxjsCustomText(speak[item].title1, [item]);
+    const fbTitle1 = Afb.makeAfTitleRankX(rawFbTitle1, 1);
+    children.push(fbTitle1);
+    const subtitle1 = Afb.makeAfTitleRankX(speak[item].subtitle1, 2);
+    children.push(subtitle1);
+    const text1 = Afb.makeAfText(speak[item].text1);
+    children.push(text1);
+    const subTitle2 = Afb.makeAfTitleRankX(speak[item].subTitle2, 2);
+    children.push(subTitle2);
+    const rawText2 = Dx.makeDocxjsCustomText(speak[item].text2, [item]);
+    const text2 = Afb.makeAfText(rawText2);
+    children.push(text2);
+    const rawBulletList = speak[item].bulletList1;
+    const bulletList1 = Afb.makeAfFbBullet(rawBulletList);
+    for (const bullet of bulletList1) {
+      children.push(bullet);
+    }
+    const smallTilte1 = Afb.makeAfTitleRankX(speak[item].smallTilte1, 3);
+    children.push(smallTilte1);
+    const table1 = Afb.makeAfTable(speak[item].table1);
+    children.push(table1);
+    const rawSmallTilte2 = Dx.makeDocxjsCustomText(speak[item].smallTilte2, [
+      item,
+    ]);
+    const smallTilte2 = Afb.makeAfTitleRankX(rawSmallTilte2, 3);
+    children.push(smallTilte2);
+    const img1 = new Paragraph({
+      children: [
+        new ImageRun({
+          data: Buffer.from(IFB001, "base64"),
+          transformation: {
+            width: 680,
+            height: 450,
+          },
+        }),
+      ],
+    });
+    children.push(img1);
+    const table2 = Afb.makeAfTable(speak[item].table2);
+    children.push(table2);
+  }
   // ---- Build CHAPTER 11 "Operation of the installation" ---- //
   const title11 = Afb.makeAfTitleRankX(speak.title11, 1);
   const text11 = Afb.makeAfText(speak.text11);
   children.push(title11, text11);
-  // ---- Build CHAPTER 12 + "Instrumentation + Process component + ..." ---- //
+  // ---- Build CHAPTER 12+ "Instrumentation + Process component + ..." ---- //
   const elementsMainObject = Afb.makeWorkingBasisObjectForAf();
   for (const item of Object.keys(elementsMainObject)) {
     // Push title rank 1
@@ -249,7 +275,42 @@ export function handleClick_AF(rawAbstract, tongue) {
       children.push(Afb.makeAfTable(rawTableD));
     }
   }
-  // ---- Build CHAPTER XX "" ---- //
+  // ---- Build CHAPTER 18- "Alarms management" ---- //
+  const title18 = Afb.makeAfTitleRankX(speak.title18, 1);
+  const subTitle18 = Afb.makeAfTitleRankX(speak.subTitle18, 2);
+  const text18 = Afb.makeAfText(speak.text18);
+  const smallTitle18A = Afb.makeAfTitleRankX(speak.smallTitle18A, 3);
+  const text18A = Afb.makeAfText(speak.text18A);
+  const smallTitle18B = Afb.makeAfTitleRankX(speak.smallTitle18B, 3);
+  const text18B = Afb.makeAfText(speak.text18B);
+  const subTitle18C = Afb.makeAfTitleRankX(speak.subTitle18C, 2);
+  const table18C = Afb.makeAfTable(speak.table18C);
+  const subTitle18D = Afb.makeAfTitleRankX(speak.subTitle18D, 2);
+  const table18D = Afb.makeAfTable(speak.table18D);
+  const subTitle18E = Afb.makeAfTitleRankX(speak.subTitle18E, 2);
+  const table18E = Afb.makeAfTable(speak.table18E);
+  const subTitle18F = Afb.makeAfTitleRankX(speak.subTitle18F, 2);
+  const table18F = Afb.makeAfTable(speak.table18F);
+  children.push(
+    title18,
+    subTitle18,
+    text18,
+    smallTitle18A,
+    text18A,
+    smallTitle18B,
+    text18B,
+    subTitle18C,
+    table18C,
+    subTitle18D,
+    table18D,
+    subTitle18E,
+    table18E,
+    subTitle18F,
+    table18F
+  );
+  // ---- Build CHAPTER 19 "Security management" ---- //
+  const title19 = Afb.makeAfTitleRankX(speak.title19, 1);
+  children.push(title19);
   // Architecture pattern document
   const doc = new Document({
     features: {

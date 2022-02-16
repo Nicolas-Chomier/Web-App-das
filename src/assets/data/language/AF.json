@@ -235,12 +235,320 @@
         ],
         "smallTitle9D": "HMI screen view",
         "text9D": "Alarms that have disappeared are shown in white. The alarms are acknowledged by pressing the button (level 1 required).The date and time when the alarm was triggered are indicated on the left. The number of times the alarm has been triggered is shown on the right. The alarm counter is reset by selecting the alarm table and pressing the button (level 1 required).The deletion of a disappeared alarm is done by selecting the line concerned and then pressing the \"Delete\" button (level 1 required). To delete all the missing alarms, select the alarm table and press the \"Delete all\" button (level 1 required).",
-        "title10": "Function block description @",
-        "text10": "This is a completely custom installation, however some elements are same, for them we will use the function block programming method (FB).The instrumentation will be managed by standardized blocks, in order to ensure homogenization of the programming. These blocks are used only in the process PLC, this chapter presents their functionalities.",
+        "FB001": {
+            "title1": "Function block description @",
+            "subtitle1": "General description",
+            "text1": "This is a completely custom installation, however some elements are same, for them we will use the function block programming method (FB).The instrumentation will be managed by standardized blocks, in order to ensure homogenization of the programming. These blocks are used only in the process PLC, this chapter presents their functionalities.",
+            "subTitle2": "Analog measurements function block",
+            "text2": "The function block @ is used:",
+            "bulletList1": [
+                [
+                    "To display the measured value from an electrical signal (4-20mA or 0-10V)."
+                ],
+                [
+                    "To set the scale of measured value."
+                ],
+                [
+                    "To filter the measured value."
+                ],
+                [
+                    "To add an offset that can correct a potential derivation."
+                ],
+                [
+                    "To force a value to perform tests."
+                ],
+                [
+                    "To manage the display and the scales of the curves."
+                ],
+                [
+                    "To know sensor fault."
+                ],
+                [
+                    "To memorize 4 thresholds of alarms and one sensor fault."
+                ],
+                [
+                    "To manage 4 thresholds of alarms, each threshold can be activated or deactivated via the panel (these thresholds are used for diagnostics; they are not used for the process, all alarms are temporised)."
+                ],
+                [
+                    "To recovery factory settings."
+                ]
+            ],
+            "smallTilte1": "Block faults",
+            "table1": [
+                [
+                    "Block fault table"
+                ],
+                [
+                    "TAG",
+                    "DESIGNATION",
+                    "TYPE",
+                    "OPTION",
+                    "EFFECT"
+                ],
+                [
+                    "def_signal_[TAG]",
+                    "Default on sensor",
+                    "TMI",
+                    "_",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SL_[TAG]",
+                    "Default Low Threshold",
+                    "PMI",
+                    "_",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SLL_[TAG]",
+                    "Default Very Low Threshold",
+                    "PMA",
+                    "_",
+                    "Drive back installation to Default state"
+                ],
+                [
+                    "def_SH_[TAG]",
+                    "Default High Threshold",
+                    "PMI",
+                    "_",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SHH_[TAG]",
+                    "Default Very High Threshold",
+                    "PMA",
+                    "_",
+                    "Drive back installation to Default state"
+                ]
+            ],
+            "smallTilte2": "Function block @, screen description",
+            "table2": [
+                [
+                    "Function block screen description"
+                ],
+                [
+                    "Number",
+                    "Description"
+                ],
+                [
+                    "1",
+                    "Fault activation pushbutton signal [TAG]"
+                ],
+                [
+                    "2",
+                    "Measure indication [TAG]"
+                ],
+                [
+                    "3",
+                    "Temporisation signal fault [TAG]"
+                ],
+                [
+                    "4",
+                    "Measure memory fault pushbutton activation [TAG]"
+                ],
+                [
+                    "5",
+                    "Signal fault indicator [TAG]"
+                ],
+                [
+                    "6",
+                    "Forcing pushbutton activation [TAG]"
+                ],
+                [
+                    "7",
+                    "Forcing indication value [TAG]"
+                ],
+                [
+                    "8",
+                    "Forcing indicator [TAG]"
+                ],
+                [
+                    "9",
+                    "SHH fault activation [TAG]"
+                ],
+                [
+                    "10",
+                    "SHH value settings [TAG]"
+                ],
+                [
+                    "11",
+                    "SHH signal fault temporisation [TAG]"
+                ],
+                [
+                    "12",
+                    "SHH Memory fault pushbutton [TAG]"
+                ],
+                [
+                    "13",
+                    "SHH fault indicator [TAG]"
+                ],
+                [
+                    "14",
+                    "SH fault activation [TAG]"
+                ],
+                [
+                    "15",
+                    "SH value settings [TAG]"
+                ],
+                [
+                    "16",
+                    "SH signal fault temporisation [TAG]"
+                ],
+                [
+                    "17",
+                    "SH Memory fault pushbutton [TAG]"
+                ],
+                [
+                    "18",
+                    "SH fault indicator [TAG]"
+                ],
+                [
+                    "19",
+                    "SL fault activation [TAG]"
+                ],
+                [
+                    "20",
+                    "SL value settings [TAG]"
+                ],
+                [
+                    "21",
+                    "SL signal fault temporisation [TAG]"
+                ],
+                [
+                    "22",
+                    "SL Memory fault pushbutton [TAG]"
+                ],
+                [
+                    "23",
+                    "SL fault indicator [TAG]"
+                ],
+                [
+                    "24",
+                    "SLL fault activation [TAG]"
+                ],
+                [
+                    "25",
+                    "SLL value settings [TAG]"
+                ],
+                [
+                    "26",
+                    "SLL signal fault temporisation [TAG]"
+                ],
+                [
+                    "27",
+                    "SLL Memory fault pushbutton [TAG]"
+                ],
+                [
+                    "28",
+                    "SLL fault indicator [TAG]"
+                ],
+                [
+                    "29",
+                    "MAX scale range settings [TAG]"
+                ],
+                [
+                    "30",
+                    "MIN scale range settings [TAG]"
+                ],
+                [
+                    "31",
+                    "OFFSET settings [TAG]"
+                ],
+                [
+                    "32",
+                    "Factory settings pushbutton [TAG]"
+                ],
+                [
+                    "33",
+                    "Go to HMI curves screen pushbutton [TAG]"
+                ]
+            ]
+        },
         "title11": "Operation of the installation",
         "text11": " ICI, DESCRIPTION SUCCINTE DE L'INSTALLATION !",
         "title12": "Instrumentation",
         "introInstrumText10": "All analogue measurements are processed in the same way for them we will use the function bloc programming method (FB).",
+        "title18": "Alarms management",
+        "subTitle18": "Introduction",
+        "text18": "Security management share four “big” family of faults.All faults family when triggered set a synthesis and fault message on HMI alarms screen.An acknowledgment request can acquit and reset default. Alarms are classified into 2 categories:",
+        "smallTitle18A": "Minor",
+        "text18A": "Warning without immediate impact on the system's capacity to ensure the main functions of the process or when the state of a measurement approaches the ultimate limits of a process. Without treatment, a minor alarm can lead to a major alarm due to the evolution of the phenomenon. This type of alarm can be treated within a few days and allows to avoid major alarms.",
+        "smallTitle18B": "Major",
+        "text18B": "State of an equipment making it inoperable or a state of a measure having exceeded the ultimate specifications of a process.This type of alarm must be treated as an emergency to avoid loss of production and/or risk of damage to equipment.",
+        "subTitle18C": "Technical major fault",
+        "table18C": [
+            [
+                "TMA"
+            ],
+            [
+                "NAME",
+                "TYPE",
+                "ADRESS",
+                "IMPACT"
+            ],
+            [
+                "",
+                "",
+                "",
+                ""
+            ]
+        ],
+        "subTitle18D": "Technical minor fault",
+        "table18D": [
+            [
+                "TMI"
+            ],
+            [
+                "NAME",
+                "TYPE",
+                "ADRESS",
+                "IMPACT"
+            ],
+            [
+                "",
+                "",
+                "",
+                ""
+            ]
+        ],
+        "subTitle18E": "Process major fault",
+        "table18E": [
+            [
+                "PMA"
+            ],
+            [
+                "NAME",
+                "TYPE",
+                "ADRESS",
+                "IMPACT"
+            ],
+            [
+                "",
+                "",
+                "",
+                ""
+            ]
+        ],
+        "subTitle18F": "Process minor fault",
+        "table18F": [
+            [
+                "PMI"
+            ],
+            [
+                "NAME",
+                "TYPE",
+                "ADRESS",
+                "IMPACT"
+            ],
+            [
+                "",
+                "",
+                "",
+                ""
+            ]
+        ],
+        "title19": "Security management",
+        "-----END-----": "-----END-----",
         "subTitleA": "General informations",
         "subTitleB": "List of concerned items",
         "subTitleC": "Control and command",
