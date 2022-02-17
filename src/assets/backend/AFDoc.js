@@ -268,18 +268,29 @@ export function handleClick_AF(rawAbstract, tongue) {
       children.push(Afb.makeAfTitleRankX(speak.subTitleC, 3));
       // Build control command table part C
       const firstRowC = speak["ccTableRow"];
-      const rawTableC = Afb.makeAfCustomTable(keyTupleList, firstRowC, flag);
-      const tableC = Afb.makeAfTable(rawTableC);
+      // Manage multi c&c table
       const managedByFbC = Afb.makeAfText(speak[key]["C-control&command"]);
-      children.push(Afb.checkFb(elemId) === false ? tableC : managedByFbC);
+      const matrixC = Afb.makeAfCustomTable(keyTupleList, firstRowC, flag);
+      for (const table of matrixC) {
+        children.push(
+          Afb.checkFb(elemId) === false ? Afb.makeAfTable(table) : managedByFbC
+        );
+        children.push(Dx.makeText("", 0, 0));
+      }
       // Push sub title rank 3 D
       children.push(Afb.makeAfTitleRankX(speak.subTitleD, 3));
       // Build faults table part D
       const firstRowD = speak["faultTableRow"];
-      const rawTableD = Afb.makeAfFaultTable(keyTupleList, firstRowD, flag);
-      const tableD = Afb.makeAfTable(rawTableD);
+      // Manage multi fault table
       const managedByFbD = Afb.makeAfText(speak[key]["D-fault"]);
-      children.push(Afb.checkFb(elemId) === false ? tableD : managedByFbD);
+      const matrixD = Afb.makeAfFaultTable(keyTupleList, firstRowD, flag);
+      console.log("<<<<<<<<<<<<", matrixD);
+      for (const table of matrixD) {
+        children.push(
+          Afb.checkFb(elemId) === false ? Afb.makeAfTable(table) : managedByFbD
+        );
+        children.push(Dx.makeText("", 0, 0));
+      }
     }
   }
   // ---- Build CHAPTER 18- "Alarms management" ---- //

@@ -1119,22 +1119,23 @@ export class AfDocBuilder extends DocumentBuilder {
     for (const item of unique) {
       const id = item[0];
       const tag = item[1];
-      _matrix.push([tag]);
-      _matrix.push(firstRow);
+      const table = this.list([tag]);
+      table.push(firstRow);
       for (const [key, value] of Object.entries(this.private[id]["IO"])) {
         for (let i = 0; i < value; i++) {
           if (this.private[id]["AF"][flag][key][i].length !== 0) {
             const data = this.private[id]["AF"][flag][key][i];
-            console.log(data);
-            _matrix.push(this.buildCompleteArray(i, key, data));
+            table.push(this.buildCompleteArray(i, key, data));
             // Attention ! Erreur possible si IOList ne correspond pas avec la taille de la liste de liste de text correspondante
           }
         }
       }
+      _matrix.push(table);
     }
-    console.log(_matrix);
+    //console.log("matrice", _matrix);  //(to keep for debug)
     return _matrix;
   }
+
   // Method which remove duplicates from a two-dimensional array
   multiDimensionalUnique(arr) {
     var uniques = this.list();
@@ -1163,11 +1164,16 @@ export class AfDocBuilder extends DocumentBuilder {
     for (const item of unique) {
       const id = item[0];
       const tag = item[1];
-      _matrix.push([tag]);
-      _matrix.push(firstRow);
-      for (let i = 0; i < this.private[id]["FAULTS"][flag].length; i++) {
-        _matrix.push(this.private[id]["FAULTS"][flag][i]);
+      const table = this.list([tag]);
+      table.push(firstRow);
+      if (this.private[id]["FAULTS"][flag].length > 2) {
+        for (let i = 0; i < this.private[id]["FAULTS"][flag].length; i++) {
+          table.push(this.private[id]["FAULTS"][flag][i]);
+        }
+      } else {
+        table.push(["NONE", "NONE", "NONE"]);
       }
+      _matrix.push(table);
     }
     return _matrix;
   }

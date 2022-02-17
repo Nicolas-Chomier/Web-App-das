@@ -2948,7 +2948,6 @@
         },
         "FunctionBloc": false
     },
-    "--------------------------------------------------": "--------------------------------------------------",
     "4001": {
         "IO": {
             "DI": 0,
@@ -2959,34 +2958,30 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "",
+                "DO": "Valve open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "",
+                "DO": "Valve open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
                     ]
                 ],
                 "AI": [
@@ -3001,17 +2996,13 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
                     ]
                 ],
                 "AI": [
@@ -3027,18 +3018,10 @@
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ],
             "fr": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ]
         },
         "FunctionBloc": false
@@ -3053,17 +3036,23 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Valve position feedback",
+                    "Valve position feedback"
+                ],
+                "DO": "Valve open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Valve position feedback",
+                    "Valve position feedback"
+                ],
+                "DO": "Valve open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
@@ -3071,16 +3060,21 @@
             "uk": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
+                        "Valve Position Feedback (open)",
+                        "Valve open",
+                        "Get position information feedback & Fault activation"
+                    ],
+                    [
+                        "Valve Position Feedback (close)",
+                        "Valve closed",
+                        "Get position information feedback & Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
                     ]
                 ],
                 "AI": [
@@ -3096,16 +3090,21 @@
             "fr": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
+                        "Valve Position Feedback (open)",
+                        "Valve open",
+                        "Get position information feedback & Fault activation"
+                    ],
+                    [
+                        "Valve Position Feedback (close)",
+                        "Valve closed",
+                        "Get position information feedback & Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
                     ]
                 ],
                 "AI": [
@@ -3122,15 +3121,25 @@
         "FAULTS": {
             "uk": [
                 [
-                    "def_dryer",
-                    "TMI",
+                    "Def_opening_valves_discrepancy",
+                    "TMA",
+                    "PLC input activated after 3 seconds"
+                ],
+                [
+                    "Def_closing_valves_discrepancy",
+                    "TMA",
                     "PLC input activated after 3 seconds"
                 ]
             ],
             "fr": [
                 [
-                    "def_dryer",
-                    "TMI",
+                    "Def_opening_valves_discrepancy",
+                    "TMA",
+                    "PLC input activated after 3 seconds"
+                ],
+                [
+                    "Def_closing_valves_discrepancy",
+                    "TMA",
                     "PLC input activated after 3 seconds"
                 ]
             ]
@@ -3147,34 +3156,41 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "",
+                "DO": [
+                    "Valve open order",
+                    "Valve close order"
+                ],
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "",
+                "DO": [
+                    "Valve open order",
+                    "Valve close order"
+                ],
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
+                    ],
+                    [
+                        "Closing valve order",
+                        "PLC digital output activation",
+                        "Close the valve"
                     ]
                 ],
                 "AI": [
@@ -3189,17 +3205,18 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
+                    ],
+                    [
+                        "Closing valve order",
+                        "PLC digital output activation",
+                        "Close the valve"
                     ]
                 ],
                 "AI": [
@@ -3215,18 +3232,12 @@
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                [],
+                []
             ],
             "fr": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                [],
+                []
             ]
         },
         "FunctionBloc": false
@@ -3241,17 +3252,29 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Valve position feedback",
+                    "Valve position feedback"
+                ],
+                "DO": [
+                    "Valve open order",
+                    "Valve close order"
+                ],
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Valve position feedback",
+                    "Valve position feedback"
+                ],
+                "DO": [
+                    "Valve open order",
+                    "Valve close order"
+                ],
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
@@ -3259,16 +3282,26 @@
             "uk": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
+                        "Valve Position Feedback (open)",
+                        "Valve open",
+                        "Get position information feedback & Fault activation"
+                    ],
+                    [
+                        "Valve Position Feedback (close)",
+                        "Valve closed",
+                        "Get position information feedback & Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
+                    ],
+                    [
+                        "Closing valve order",
+                        "PLC digital output activation",
+                        "Close the valve"
                     ]
                 ],
                 "AI": [
@@ -3284,16 +3317,26 @@
             "fr": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
+                        "Valve Position Feedback (open)",
+                        "Valve open",
+                        "Get position information feedback & Fault activation"
+                    ],
+                    [
+                        "Valve Position Feedback (close)",
+                        "Valve closed",
+                        "Get position information feedback & Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
+                    ],
+                    [
+                        "Closing valve order",
+                        "PLC digital output activation",
+                        "Close the valve"
                     ]
                 ],
                 "AI": [
@@ -3310,15 +3353,25 @@
         "FAULTS": {
             "uk": [
                 [
-                    "def_dryer",
-                    "TMI",
+                    "Def_opening_valves_discrepancy",
+                    "TMA",
+                    "PLC input activated after 3 seconds"
+                ],
+                [
+                    "Def_closing_valves_discrepancy",
+                    "TMA",
                     "PLC input activated after 3 seconds"
                 ]
             ],
             "fr": [
                 [
-                    "def_dryer",
-                    "TMI",
+                    "Def_opening_valves_discrepancy",
+                    "TMA",
+                    "PLC input activated after 3 seconds"
+                ],
+                [
+                    "Def_closing_valves_discrepancy",
+                    "TMA",
                     "PLC input activated after 3 seconds"
                 ]
             ]
@@ -3335,34 +3388,30 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "",
+                "DO": "Valve open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "",
+                "DO": "Valve open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
                     ]
                 ],
                 "AI": [
@@ -3377,17 +3426,13 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
                     ]
                 ],
                 "AI": [
@@ -3403,18 +3448,10 @@
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ],
             "fr": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ]
         },
         "FunctionBloc": false
@@ -3429,17 +3466,23 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Valve position feedback",
+                    "Valve position feedback"
+                ],
+                "DO": "Valve open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Valve position feedback",
+                    "Valve position feedback"
+                ],
+                "DO": "Valve open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
@@ -3447,16 +3490,21 @@
             "uk": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
+                        "Valve Position Feedback (open)",
+                        "Valve open",
+                        "Get position information feedback & Fault activation"
+                    ],
+                    [
+                        "Valve Position Feedback (close)",
+                        "Valve closed",
+                        "Get position information feedback & Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
                     ]
                 ],
                 "AI": [
@@ -3472,16 +3520,21 @@
             "fr": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
+                        "Valve Position Feedback (open)",
+                        "Valve open",
+                        "Get position information feedback & Fault activation"
+                    ],
+                    [
+                        "Valve Position Feedback (close)",
+                        "Valve closed",
+                        "Get position information feedback & Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
                     ]
                 ],
                 "AI": [
@@ -3498,15 +3551,25 @@
         "FAULTS": {
             "uk": [
                 [
-                    "def_dryer",
-                    "TMI",
+                    "Def_opening_valves_discrepancy",
+                    "TMA",
+                    "PLC input activated after 3 seconds"
+                ],
+                [
+                    "Def_closing_valves_discrepancy",
+                    "TMA",
                     "PLC input activated after 3 seconds"
                 ]
             ],
             "fr": [
                 [
-                    "def_dryer",
-                    "TMI",
+                    "Def_opening_valves_discrepancy",
+                    "TMA",
+                    "PLC input activated after 3 seconds"
+                ],
+                [
+                    "Def_closing_valves_discrepancy",
+                    "TMA",
                     "PLC input activated after 3 seconds"
                 ]
             ]
@@ -3523,41 +3586,37 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
+                "DI": "",
                 "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "AI": "",
+                "AO": "Drive the valve",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
+                "DI": "",
                 "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "AI": "",
+                "AO": "Drive the valve",
                 "AIt": ""
             }
         },
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
-                    [
-                        "Start order",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
+                    []
                 ],
                 "AI": [
                     []
                 ],
                 "AO": [
-                    []
+                    [
+                        "Driving valve order",
+                        "PLC analog output activation",
+                        "Drive the valve"
+                    ]
                 ],
                 "AIt": [
                     []
@@ -3565,24 +3624,20 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
-                    [
-                        "Start order",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
+                    []
                 ],
                 "AI": [
                     []
                 ],
                 "AO": [
-                    []
+                    [
+                        "Driving valve order",
+                        "PLC analog output activation",
+                        "Drive the valve"
+                    ]
                 ],
                 "AIt": [
                     []
@@ -3591,18 +3646,10 @@
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ],
             "fr": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ]
         },
         "FunctionBloc": false
@@ -3617,41 +3664,41 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
+                "DI": "",
                 "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "AI": "Position feedback",
+                "AO": "Drive the valve",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
+                "DI": "",
                 "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "AI": "Position feedback",
+                "AO": "Drive the valve",
                 "AIt": ""
             }
         },
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
-                    [
-                        "Start order",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
+                    []
                 ],
                 "AI": [
-                    []
+                    [
+                        "Valve position feedback",
+                        "Valve position",
+                        "Get position information feedback & Fault activation"
+                    ]
                 ],
                 "AO": [
-                    []
+                    [
+                        "Driving valve order",
+                        "PLC analog output activation",
+                        "Drive the valve"
+                    ]
                 ],
                 "AIt": [
                     []
@@ -3659,24 +3706,24 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
-                    [
-                        "Start order",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
+                    []
                 ],
                 "AI": [
-                    []
+                    [
+                        "Valve position feedback",
+                        "Valve position",
+                        "Get position information feedback & Fault activation"
+                    ]
                 ],
                 "AO": [
-                    []
+                    [
+                        "Driving valve order",
+                        "PLC analog output activation",
+                        "Drive the valve"
+                    ]
                 ],
                 "AIt": [
                     []
@@ -3686,16 +3733,16 @@
         "FAULTS": {
             "uk": [
                 [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
+                    "Def_position_valves_discrepancy",
+                    "TMA",
+                    "PLC value comparator triggered"
                 ]
             ],
             "fr": [
                 [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
+                    "Def_position_valves_discrepancy",
+                    "TMA",
+                    "PLC value comparator triggered"
                 ]
             ]
         },
@@ -3711,34 +3758,30 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "",
+                "DO": "Valve open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "",
+                "DO": "Valve open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
                     ]
                 ],
                 "AI": [
@@ -3753,17 +3796,13 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
                     ]
                 ],
                 "AI": [
@@ -3779,18 +3818,10 @@
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ],
             "fr": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ]
         },
         "FunctionBloc": false
@@ -3805,17 +3836,23 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Valve position feedback",
+                    "Valve position feedback"
+                ],
+                "DO": "Valve open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Valve position feedback",
+                    "Valve position feedback"
+                ],
+                "DO": "Valve open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
@@ -3823,16 +3860,21 @@
             "uk": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
+                        "Valve Position Feedback (open)",
+                        "Valve open",
+                        "Get position information feedback & Fault activation"
+                    ],
+                    [
+                        "Valve Position Feedback (close)",
+                        "Valve closed",
+                        "Get position information feedback & Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
                     ]
                 ],
                 "AI": [
@@ -3848,16 +3890,21 @@
             "fr": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
+                        "Valve Position Feedback (open)",
+                        "Valve open",
+                        "Get position information feedback & Fault activation"
+                    ],
+                    [
+                        "Valve Position Feedback (close)",
+                        "Valve closed",
+                        "Get position information feedback & Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
                     ]
                 ],
                 "AI": [
@@ -3874,15 +3921,25 @@
         "FAULTS": {
             "uk": [
                 [
-                    "def_dryer",
-                    "TMI",
+                    "Def_opening_valves_discrepancy",
+                    "TMA",
+                    "PLC input activated after 3 seconds"
+                ],
+                [
+                    "Def_closing_valves_discrepancy",
+                    "TMA",
                     "PLC input activated after 3 seconds"
                 ]
             ],
             "fr": [
                 [
-                    "def_dryer",
-                    "TMI",
+                    "Def_opening_valves_discrepancy",
+                    "TMA",
+                    "PLC input activated after 3 seconds"
+                ],
+                [
+                    "Def_closing_valves_discrepancy",
+                    "TMA",
                     "PLC input activated after 3 seconds"
                 ]
             ]
@@ -3899,34 +3956,41 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "",
+                "DO": [
+                    "Valve open order",
+                    "Valve close order"
+                ],
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "",
+                "DO": [
+                    "Valve open order",
+                    "Valve close order"
+                ],
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
+                    ],
+                    [
+                        "Closing valve order",
+                        "PLC digital output activation",
+                        "Close the valve"
                     ]
                 ],
                 "AI": [
@@ -3941,17 +4005,18 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
+                    ],
+                    [
+                        "Closing valve order",
+                        "PLC digital output activation",
+                        "Close the valve"
                     ]
                 ],
                 "AI": [
@@ -3967,18 +4032,12 @@
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                [],
+                []
             ],
             "fr": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                [],
+                []
             ]
         },
         "FunctionBloc": false
@@ -3993,17 +4052,29 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Valve position feedback",
+                    "Valve position feedback"
+                ],
+                "DO": [
+                    "Valve open order",
+                    "Valve close order"
+                ],
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Valve position feedback",
+                    "Valve position feedback"
+                ],
+                "DO": [
+                    "Valve open order",
+                    "Valve close order"
+                ],
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
@@ -4011,16 +4082,26 @@
             "uk": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
+                        "Valve Position Feedback (open)",
+                        "Valve open",
+                        "Get position information feedback & Fault activation"
+                    ],
+                    [
+                        "Valve Position Feedback (close)",
+                        "Valve closed",
+                        "Get position information feedback & Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
+                    ],
+                    [
+                        "Closing valve order",
+                        "PLC digital output activation",
+                        "Close the valve"
                     ]
                 ],
                 "AI": [
@@ -4036,16 +4117,26 @@
             "fr": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
+                        "Valve Position Feedback (open)",
+                        "Valve open",
+                        "Get position information feedback & Fault activation"
+                    ],
+                    [
+                        "Valve Position Feedback (close)",
+                        "Valve closed",
+                        "Get position information feedback & Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
+                    ],
+                    [
+                        "Closing valve order",
+                        "PLC digital output activation",
+                        "Close the valve"
                     ]
                 ],
                 "AI": [
@@ -4062,15 +4153,25 @@
         "FAULTS": {
             "uk": [
                 [
-                    "def_dryer",
-                    "TMI",
+                    "Def_opening_valves_discrepancy",
+                    "TMA",
+                    "PLC input activated after 3 seconds"
+                ],
+                [
+                    "Def_closing_valves_discrepancy",
+                    "TMA",
                     "PLC input activated after 3 seconds"
                 ]
             ],
             "fr": [
                 [
-                    "def_dryer",
-                    "TMI",
+                    "Def_opening_valves_discrepancy",
+                    "TMA",
+                    "PLC input activated after 3 seconds"
+                ],
+                [
+                    "Def_closing_valves_discrepancy",
+                    "TMA",
                     "PLC input activated after 3 seconds"
                 ]
             ]
@@ -4087,34 +4188,30 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "",
+                "DO": "Valve open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "",
+                "DO": "Valve open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
                     ]
                 ],
                 "AI": [
@@ -4129,17 +4226,13 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
                     ]
                 ],
                 "AI": [
@@ -4155,18 +4248,10 @@
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ],
             "fr": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ]
         },
         "FunctionBloc": false
@@ -4181,17 +4266,23 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Valve position feedback",
+                    "Valve position feedback"
+                ],
+                "DO": "Valve open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Valve position feedback",
+                    "Valve position feedback"
+                ],
+                "DO": "Valve open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
@@ -4199,16 +4290,21 @@
             "uk": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
+                        "Valve Position Feedback (open)",
+                        "Valve open",
+                        "Get position information feedback & Fault activation"
+                    ],
+                    [
+                        "Valve Position Feedback (close)",
+                        "Valve closed",
+                        "Get position information feedback & Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
                     ]
                 ],
                 "AI": [
@@ -4224,16 +4320,21 @@
             "fr": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
+                        "Valve Position Feedback (open)",
+                        "Valve open",
+                        "Get position information feedback & Fault activation"
+                    ],
+                    [
+                        "Valve Position Feedback (close)",
+                        "Valve closed",
+                        "Get position information feedback & Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
                     ]
                 ],
                 "AI": [
@@ -4250,15 +4351,25 @@
         "FAULTS": {
             "uk": [
                 [
-                    "def_dryer",
-                    "TMI",
+                    "Def_opening_valves_discrepancy",
+                    "TMA",
+                    "PLC input activated after 3 seconds"
+                ],
+                [
+                    "Def_closing_valves_discrepancy",
+                    "TMA",
                     "PLC input activated after 3 seconds"
                 ]
             ],
             "fr": [
                 [
-                    "def_dryer",
-                    "TMI",
+                    "Def_opening_valves_discrepancy",
+                    "TMA",
+                    "PLC input activated after 3 seconds"
+                ],
+                [
+                    "Def_closing_valves_discrepancy",
+                    "TMA",
                     "PLC input activated after 3 seconds"
                 ]
             ]
@@ -4275,41 +4386,37 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
+                "DI": "",
                 "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "AI": "",
+                "AO": "Drive the valve",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
+                "DI": "",
                 "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "AI": "",
+                "AO": "Drive the valve",
                 "AIt": ""
             }
         },
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
-                    [
-                        "Start order",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
+                    []
                 ],
                 "AI": [
                     []
                 ],
                 "AO": [
-                    []
+                    [
+                        "Driving valve order",
+                        "PLC analog output activation",
+                        "Drive the valve"
+                    ]
                 ],
                 "AIt": [
                     []
@@ -4317,24 +4424,20 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
-                    [
-                        "Start order",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
+                    []
                 ],
                 "AI": [
                     []
                 ],
                 "AO": [
-                    []
+                    [
+                        "Driving valve order",
+                        "PLC analog output activation",
+                        "Drive the valve"
+                    ]
                 ],
                 "AIt": [
                     []
@@ -4343,18 +4446,10 @@
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ],
             "fr": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ]
         },
         "FunctionBloc": false
@@ -4369,41 +4464,41 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
+                "DI": "",
                 "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "AI": "Position feedback",
+                "AO": "Drive the valve",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
+                "DI": "",
                 "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "AI": "Position feedback",
+                "AO": "Drive the valve",
                 "AIt": ""
             }
         },
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
-                    [
-                        "Start order",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
+                    []
                 ],
                 "AI": [
-                    []
+                    [
+                        "Valve position feedback",
+                        "Valve position",
+                        "Get position information feedback & Fault activation"
+                    ]
                 ],
                 "AO": [
-                    []
+                    [
+                        "Driving valve order",
+                        "PLC analog output activation",
+                        "Drive the valve"
+                    ]
                 ],
                 "AIt": [
                     []
@@ -4411,24 +4506,24 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
-                    [
-                        "Start order",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
+                    []
                 ],
                 "AI": [
-                    []
+                    [
+                        "Valve position feedback",
+                        "Valve position",
+                        "Get position information feedback & Fault activation"
+                    ]
                 ],
                 "AO": [
-                    []
+                    [
+                        "Driving valve order",
+                        "PLC analog output activation",
+                        "Drive the valve"
+                    ]
                 ],
                 "AIt": [
                     []
@@ -4438,16 +4533,16 @@
         "FAULTS": {
             "uk": [
                 [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
+                    "Def_position_valves_discrepancy",
+                    "TMA",
+                    "PLC value comparator triggered"
                 ]
             ],
             "fr": [
                 [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
+                    "Def_position_valves_discrepancy",
+                    "TMA",
+                    "PLC value comparator triggered"
                 ]
             ]
         },
@@ -4463,34 +4558,30 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "",
+                "DO": "Damper open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "",
+                "DO": "Damper open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Damper opening order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the Damper"
                     ]
                 ],
                 "AI": [
@@ -4505,17 +4596,13 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Damper opening order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the Damper"
                     ]
                 ],
                 "AI": [
@@ -4531,18 +4618,10 @@
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ],
             "fr": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ]
         },
         "FunctionBloc": false
@@ -4557,17 +4636,23 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Damper position feedback",
+                    "Damper position feedback"
+                ],
+                "DO": "Damper open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Damper position feedback",
+                    "Damper position feedback"
+                ],
+                "DO": "Damper open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
@@ -4575,16 +4660,21 @@
             "uk": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
+                        "Damper Position Feedback (open)",
+                        "Damper open",
+                        "Get position information feedback & Fault activation"
+                    ],
+                    [
+                        "Damper Position Feedback (close)",
+                        "Damper closed",
+                        "Get position information feedback & Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening Damper order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the Damper"
                     ]
                 ],
                 "AI": [
@@ -4600,16 +4690,21 @@
             "fr": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
+                        "Damper Position Feedback (open)",
+                        "Damper open",
+                        "Get position information feedback & Fault activation"
+                    ],
+                    [
+                        "Damper Position Feedback (close)",
+                        "Damper closed",
+                        "Get position information feedback & Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening Damper order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the Damper"
                     ]
                 ],
                 "AI": [
@@ -4626,15 +4721,25 @@
         "FAULTS": {
             "uk": [
                 [
-                    "def_dryer",
-                    "TMI",
+                    "Def_opening_Damper_discrepancy",
+                    "TMA",
+                    "PLC input activated after 3 seconds"
+                ],
+                [
+                    "Def_closing_Damper_discrepancy",
+                    "TMA",
                     "PLC input activated after 3 seconds"
                 ]
             ],
             "fr": [
                 [
-                    "def_dryer",
-                    "TMI",
+                    "Def_opening_Damper_discrepancy",
+                    "TMA",
+                    "PLC input activated after 3 seconds"
+                ],
+                [
+                    "Def_closing_Damper_discrepancy",
+                    "TMA",
                     "PLC input activated after 3 seconds"
                 ]
             ]
@@ -4651,41 +4756,37 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
+                "DI": "",
                 "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "AI": "",
+                "AO": "Drive the damper",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
+                "DI": "",
                 "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "AI": "",
+                "AO": "Drive the damper",
                 "AIt": ""
             }
         },
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
-                    [
-                        "Start order",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
+                    []
                 ],
                 "AI": [
                     []
                 ],
                 "AO": [
-                    []
+                    [
+                        "Driving damper order",
+                        "PLC analog output activation",
+                        "Drive the damper"
+                    ]
                 ],
                 "AIt": [
                     []
@@ -4693,24 +4794,20 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
-                    [
-                        "Start order",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
+                    []
                 ],
                 "AI": [
                     []
                 ],
                 "AO": [
-                    []
+                    [
+                        "Driving damper order",
+                        "PLC analog output activation",
+                        "Drive the damper"
+                    ]
                 ],
                 "AIt": [
                     []
@@ -4719,18 +4816,10 @@
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ],
             "fr": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ]
         },
         "FunctionBloc": false
@@ -4745,41 +4834,41 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
+                "DI": "",
                 "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "AI": "Position feedback",
+                "AO": "Drive the damper",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
+                "DI": "",
                 "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "AI": "Position feedback",
+                "AO": "Drive the damper",
                 "AIt": ""
             }
         },
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
-                    [
-                        "Start order",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
+                    []
                 ],
                 "AI": [
-                    []
+                    [
+                        "Damper position feedback",
+                        "Damper position",
+                        "Get position information feedback & Fault activation"
+                    ]
                 ],
                 "AO": [
-                    []
+                    [
+                        "Driving Damper order",
+                        "PLC analog output activation",
+                        "Drive the Damper"
+                    ]
                 ],
                 "AIt": [
                     []
@@ -4787,24 +4876,24 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
-                    [
-                        "Start order",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
+                    []
                 ],
                 "AI": [
-                    []
+                    [
+                        "Damper position feedback",
+                        "Damper position",
+                        "Get position information feedback & Fault activation"
+                    ]
                 ],
                 "AO": [
-                    []
+                    [
+                        "Driving Damper order",
+                        "PLC analog output activation",
+                        "Drive the Damper"
+                    ]
                 ],
                 "AIt": [
                     []
@@ -4814,16 +4903,16 @@
         "FAULTS": {
             "uk": [
                 [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
+                    "Def_position_Damper_discrepancy",
+                    "TMA",
+                    "PLC value comparator triggered"
                 ]
             ],
             "fr": [
                 [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
+                    "Def_position_Damper_discrepancy",
+                    "TMA",
+                    "PLC value comparator triggered"
                 ]
             ]
         },
@@ -4839,34 +4928,30 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "",
+                "DO": "Valve open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "",
+                "DO": "Valve open order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
                     ]
                 ],
                 "AI": [
@@ -4881,17 +4966,13 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Opening valve order",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Open the valve"
                     ]
                 ],
                 "AI": [
@@ -4907,22 +4988,15 @@
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ],
             "fr": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ]
         },
         "FunctionBloc": false
     },
+    "--------------------------------------------------": "--------------------------------------------------",
     "5001": {
         "IO": {
             "DI": 0,
