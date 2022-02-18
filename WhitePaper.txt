@@ -15,4 +15,4 @@ Utiliser .innerText pour mettre en forme les text depuis JSON
 trouvez comment importer des image dynamiquement pour les function block
 faire en sorte que makeDocxjsCustomText (method pour af) produise directement le text sous forme docxjs
 faire des tableaux de defaut et de controle command separé quand plusieur meme element ont ete choisi
-chnager les header footer de l'af
+changer les header de l'af
