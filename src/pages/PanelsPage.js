@@ -16,9 +16,9 @@ const PanelsPage = () => {
   const Valves_and_dampers = location.state.datas.Valves_and_dampers;
   const Analyzer = location.state.datas.Analyzer;
   const opt = projectData.OpenAir; // Depend on Open Air option chossen or not:
-  const Air_supply = location.state.datas.Air_supply;
+  const Fluid_supply = location.state.datas.Fluid_supply;
   const openair = location.state.datas.OpenAir;
-  const Pumps = location.state.datas.Pumps;
+  const Devices = location.state.datas.Devices;
   // Result from choice on different panels (false protect against empty entry when page build/refresh)
   const [config, setConfig] = useState(false);
   // Result read from abstract table
@@ -73,13 +73,13 @@ const PanelsPage = () => {
       </div>
       <div className="p5">
         <ElementPanel
-          data={opt === false ? Air_supply : openair}
+          data={opt === false ? Fluid_supply : openair}
           config={projectData}
           output={setConfig}
         />
       </div>
       <div className="p6">
-        <ElementPanel data={Pumps} config={projectData} output={setConfig} />
+        <ElementPanel data={Devices} config={projectData} output={setConfig} />
       </div>
       <div className="tables">
         <TableCustom item={config} output={setAbstract} />

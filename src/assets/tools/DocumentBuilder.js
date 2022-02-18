@@ -1059,7 +1059,7 @@ export class AfDocBuilder extends DocumentBuilder {
   // Method which re arrange raw tag only for part B in AF
   makeAfBullet(tagList, d = 0, b = false, f = "Calibri", s = 12, c = "2E2E2E") {
     const _list = this.list();
-    const errorText = "Error / WIP";
+    const errorText = "NONE";
     for (const item of tagList) {
       const bulletText = `${item[0]}=>${item[1]}`;
       _list.push(

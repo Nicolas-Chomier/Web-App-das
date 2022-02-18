@@ -6,7 +6,7 @@ import { Paragraph } from "docx";
 // Home made class importation
 import { DocxBuilder, Proface, AfDocBuilder } from "../tools/DocumentBuilder";
 // Elements for document presentation
-import { header } from "../tools/DocumentHeader";
+//import { header } from "../tools/DocumentHeader";
 import { footer } from "../tools/AfDocumentFooter";
 // Images importation for AF document
 import { IPLC } from "../image/image_af_plc";

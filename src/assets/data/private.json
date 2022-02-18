@@ -55,18 +55,18 @@
         },
         "Text": {
             "uk": {
-                "DI": "000",
-                "DO": "000",
-                "AI": "000",
-                "AO": "000",
-                "AIt": "000"
+                "DI": "Reserved for project",
+                "DO": "Reserved for project",
+                "AI": "Reserved for project",
+                "AO": "Reserved for project",
+                "AIt": "Reserved for project"
             },
             "fr": {
-                "DI": "000",
-                "DO": "000",
-                "AI": "000",
-                "AO": "000",
-                "AIt": "000"
+                "DI": "Reserved for project",
+                "DO": "Reserved for project",
+                "AI": "Reserved for project",
+                "AO": "Reserved for project",
+                "AIt": "Reserved for project"
             }
         },
         "AF": {
@@ -98,6 +98,7 @@
     "0005": {},
     "0006": {},
     "1001": {},
+    "------------------------------------------------": "--------------------------------------------------",
     "2001": {
         "IO": {
             "DI": 0,
@@ -1604,6 +1605,7 @@
         },
         "FunctionBloc": false
     },
+    "----------------------------------------------": "--------------------------------------------------",
     "3001": {
         "IO": {
             "DI": 1,
@@ -2900,6 +2902,109 @@
         },
         "FunctionBloc": false
     },
+    "3015": {
+        "IO": {
+            "DI": 1,
+            "DO": 1,
+            "AI": 0,
+            "AO": 1,
+            "AIt": 0
+        },
+        "Text": {
+            "uk": {
+                "DI": "Heater fault info",
+                "DO": "Heater start order",
+                "AI": "",
+                "AO": "Drive the heater",
+                "AIt": ""
+            },
+            "fr": {
+                "DI": "Heater fault info",
+                "DO": "Heater start order",
+                "AI": "",
+                "AO": "Drive the heater",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "uk": {
+                "DI": [
+                    [
+                        "Heater fault",
+                        "Heater output fault",
+                        "Fault activation"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Heater start order",
+                        "PLC digital output activation",
+                        "Start the heater"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    [
+                        "Driving heater temperature",
+                        "PLC analog output activation",
+                        "Drive the temperature"
+                    ]
+                ],
+                "AIt": [
+                    []
+                ]
+            },
+            "fr": {
+                "DI": [
+                    [
+                        "Heater fault",
+                        "Heater output fault",
+                        "Fault activation"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Heater start order",
+                        "PLC digital output activation",
+                        "Start the heater"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    [
+                        "Driving heater temperature",
+                        "PLC analog output activation",
+                        "Drive the temperature"
+                    ]
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "uk": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "PLC input activated after 3 seconds"
+                ]
+            ],
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "PLC input activated after 3 seconds"
+                ]
+            ]
+        },
+        "FunctionBloc": false
+    },
+    "---------------------------------------------------": "--------------------------------------------------",
     "4001": {
         "IO": {
             "DI": 0,
@@ -5239,6 +5344,7 @@
         },
         "FunctionBloc": false
     },
+    "-------------------------------------------": "--------------------------------------------------",
     "6001": {
         "IO": {
             "DI": 6,
@@ -6047,7 +6153,7 @@
         },
         "FunctionBloc": false
     },
-    "7001": {
+    "6007": {
         "IO": {
             "DI": 1,
             "DO": 1,
@@ -6141,7 +6247,7 @@
         },
         "FunctionBloc": false
     },
-    "7002": {
+    "6008": {
         "IO": {
             "DI": 1,
             "DO": 1,
@@ -6231,6 +6337,393 @@
                     "TMI",
                     "PLC input activated after 3 seconds"
                 ]
+            ]
+        },
+        "FunctionBloc": false
+    },
+    "--------------------------------------------": "--------------------------------------------------",
+    "7001": {
+        "IO": {
+            "DI": 1,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "uk": {
+                "DI": "Special Digital Input",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            },
+            "fr": {
+                "DI": "Special Digital Input",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "uk": {
+                "DI": [
+                    [
+                        "Special",
+                        "Outside needs",
+                        "******"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            },
+            "fr": {
+                "DI": [
+                    [
+                        "Special",
+                        "Outside needs",
+                        "******"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "uk": [
+                []
+            ],
+            "fr": [
+                []
+            ]
+        },
+        "FunctionBloc": false
+    },
+    "7002": {
+        "IO": {
+            "DI": 0,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "uk": {
+                "DI": "",
+                "DO": "Special Digital Output",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            },
+            "fr": {
+                "DI": "",
+                "DO": "Special Digital Output",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "uk": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    [
+                        "Special",
+                        "External needs",
+                        "******"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            },
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    [
+                        "Special",
+                        "External needs",
+                        "******"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "uk": [
+                []
+            ],
+            "fr": [
+                []
+            ]
+        },
+        "FunctionBloc": false
+    },
+    "7003": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 1,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "uk": {
+                "DI": "",
+                "DO": "",
+                "AI": "Special Analog Input",
+                "AO": "",
+                "AIt": ""
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "Special Analog Input",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "uk": {
+                "DI": [
+                    []
+                ],
+                "DO": [],
+                "AI": [
+                    [
+                        "Special",
+                        "External needs",
+                        "******"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            },
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [],
+                "AI": [
+                    [
+                        "Special",
+                        "External needs",
+                        "******"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "uk": [
+                []
+            ],
+            "fr": [
+                []
+            ]
+        },
+        "FunctionBloc": false
+    },
+    "7004": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 1
+        },
+        "Text": {
+            "uk": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": "Special Temperature Input"
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": "Special Temperature Input"
+            }
+        },
+        "AF": {
+            "uk": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    [
+                        "Special",
+                        "External needs",
+                        "******"
+                    ]
+                ]
+            },
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    [
+                        "Special",
+                        "External needs",
+                        "******"
+                    ]
+                ]
+            }
+        },
+        "FAULTS": {
+            "uk": [
+                []
+            ],
+            "fr": [
+                []
+            ]
+        },
+        "FunctionBloc": false
+    },
+    "7005": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 0,
+            "AO": 1,
+            "AIt": 0
+        },
+        "Text": {
+            "uk": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "Special Analog Output",
+                "AIt": ""
+            },
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "Special Analog Output",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "uk": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    [
+                        "Special",
+                        "External needs",
+                        "******"
+                    ]
+                ],
+                "AIt": [
+                    []
+                ]
+            },
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    [
+                        "Special",
+                        "External needs",
+                        "******"
+                    ]
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "uk": [
+                []
+            ],
+            "fr": [
+                []
             ]
         },
         "FunctionBloc": false

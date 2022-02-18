@@ -46,7 +46,7 @@
     },
     "Instrumentations": {
         "image": "generic.jpeg",
-        "title": "Intrumentation",
+        "title": "Instrumentation",
         "default_tag": "2000",
         "color": "#3F4246",
         "data": {
@@ -220,6 +220,11 @@
                 "Resistance de traçage": {
                     "id": 3010,
                     "generic name": "Resistor",
+                    "FB": ""
+                },
+                "Rechauffeur controlé": {
+                    "id": 3015,
+                    "generic name": "Rc",
                     "FB": ""
                 }
             },
@@ -399,7 +404,7 @@
     },
     "OpenAir": {
         "image": "generic.jpeg",
-        "title": "Air supply",
+        "title": "Fluid supply",
         "default_tag": "6000",
         "color": "#3F4246",
         "data": {
@@ -428,12 +433,26 @@
                     "generic name": "Fan",
                     "FB": ""
                 }
+            },
+            "Pompe à eau": {
+                "standard": {
+                    "id": 6007,
+                    "generic name": "Water pump",
+                    "FB": ""
+                }
+            },
+            "Pompe à vide": {
+                "standard": {
+                    "id": 6008,
+                    "generic name": "Vacuum pump",
+                    "FB": ""
+                }
             }
         }
     },
-    "Air_supply": {
+    "Fluid_supply": {
         "image": "generic.jpeg",
-        "title": "Air supply",
+        "title": "Fluid supply",
         "default_tag": "6000",
         "color": "#3F4246",
         "data": {
@@ -462,26 +481,55 @@
                     "generic name": "Fan",
                     "FB": ""
                 }
-            }
-        }
-    },
-    "Pumps": {
-        "image": "generic.jpeg",
-        "title": "Pumps",
-        "default_tag": "7000",
-        "color": "#3F4246",
-        "data": {
+            },
             "Pompe à eau": {
                 "standard": {
-                    "id": 7001,
+                    "id": 6007,
                     "generic name": "Water pump",
                     "FB": ""
                 }
             },
             "Pompe à vide": {
                 "standard": {
-                    "id": 7002,
+                    "id": 6008,
                     "generic name": "Vacuum pump",
+                    "FB": ""
+                }
+            }
+        }
+    },
+    "Devices": {
+        "image": "generic.jpeg",
+        "title": "Devices",
+        "default_tag": "7000",
+        "color": "#3F4246",
+        "data": {
+            "Digital Devices": {
+                "Input": {
+                    "id": 7001,
+                    "generic name": "Special DI",
+                    "FB": ""
+                },
+                "Output": {
+                    "id": 7002,
+                    "generic name": "Special DO",
+                    "FB": ""
+                }
+            },
+            "Analog Devices": {
+                "Input": {
+                    "id": 7003,
+                    "generic name": "Special AI",
+                    "FB": ""
+                },
+                "Temperature": {
+                    "id": 7004,
+                    "generic name": "Special AIt",
+                    "FB": ""
+                },
+                "Output": {
+                    "id": 7005,
+                    "generic name": "Special AO",
                     "FB": ""
                 }
             }

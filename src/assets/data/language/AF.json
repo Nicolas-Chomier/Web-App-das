@@ -546,7 +546,7 @@
             ]
         ],
         "title19": "Security management",
-        "-----END-----": "-----END-----",
+        "----------------------------END----------------------------": "----------------------------END----------------------------",
         "subTitleA": "General informations",
         "subTitleB": "List of concerned items",
         "subTitleC": "Control and command",
@@ -579,13 +579,13 @@
             "title": "Analyzer",
             "infos": ""
         },
-        "Air supply": {
-            "title": "Air supply",
+        "Fluid supply": {
+            "title": "Fluid supply",
             "infos": ""
         },
-        "Pumps": {
-            "title": "Pumps",
-            "infos": ""
+        "Devices": {
+            "title": "Devices",
+            "infos": "External device add to project for special needs"
         },
         "PT": {
             "title": "Pressure transmitter",
@@ -769,7 +769,8 @@
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 [
-                    "WIP"
+                    "TS*",
+                    "Transmitter Switch *level"
                 ]
             ],
             "C-control&command": "Please refer to chapter XXXXX",
@@ -984,6 +985,19 @@
         "Resistor": {
             "title": "Resistor",
             "A-infos": "Element which produce heat when current pass through it",
+            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+            "B-tags": [
+                [
+                    "WIP"
+                ]
+            ],
+            "C-control&command": "Please refer to chapter XXXXX",
+            "D-fault": "Please refer to chapter XXXXX",
+            "zxyzxy": ""
+        },
+        "Rc": {
+            "title": "Drivable Heater",
+            "A-infos": "Element which produce heat when current pass through it, Can be driven by analog signal",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 [
@@ -1500,8 +1514,74 @@
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
             "zxyzxy": ""
+        },
+        "Special DI": {
+            "title": "Special DI",
+            "A-infos": "Add one Digital Input to project from external needs",
+            "B-intro": "This external needs have no TAG on PID",
+            "B-tags": [
+                [
+                    ""
+                ]
+            ],
+            "C-control&command": "Please refer to chapter XXXXX",
+            "D-fault": "Please refer to chapter XXXXX",
+            "zxyzxy": ""
+        },
+        "Special DO": {
+            "title": "Special DO",
+            "A-infos": "Add one Digital Output to project from external needs",
+            "B-intro": "This external needs have no TAG on PID",
+            "B-tags": [
+                [
+                    ""
+                ]
+            ],
+            "C-control&command": "Please refer to chapter XXXXX",
+            "D-fault": "Please refer to chapter XXXXX",
+            "zxyzxy": ""
+        },
+        "Special AI": {
+            "title": "Special AI",
+            "A-infos": "Add one Analog Input to project from external needs",
+            "B-intro": "This external needs have no TAG on PID",
+            "B-tags": [
+                [
+                    ""
+                ]
+            ],
+            "C-control&command": "Please refer to chapter XXXXX",
+            "D-fault": "Please refer to chapter XXXXX",
+            "zxyzxy": ""
+        },
+        "Special AIt": {
+            "title": "Special AIt",
+            "A-infos": "Add one Analog Intput for temperature sensor to project from external needs",
+            "B-intro": "This external needs have no TAG on PID",
+            "B-tags": [
+                [
+                    ""
+                ]
+            ],
+            "C-control&command": "Please refer to chapter XXXXX",
+            "D-fault": "Please refer to chapter XXXXX",
+            "zxyzxy": ""
+        },
+        "Special AO": {
+            "title": "Special AO",
+            "A-infos": "Add one Analog Output to project from external needs",
+            "B-intro": "This external needs have no TAG on PID",
+            "B-tags": [
+                [
+                    ""
+                ]
+            ],
+            "C-control&command": "Please refer to chapter XXXXX",
+            "D-fault": "Please refer to chapter XXXXX",
+            "zxyzxy": ""
         }
     },
+    "----------------------------------------------------------------------------------------------------": "----------------------------------------------------------------------------------------------------",
     "fr": {
         "docName": "Functional analysis",
         "title1": "Document presentation",
@@ -2998,6 +3078,71 @@
                 [
                     "PU",
                     "Pumps"
+                ]
+            ],
+            "C-control&command": "Please refer to chapter XXXXX",
+            "D-fault": "Please refer to chapter XXXXX",
+            "zxyzxy": ""
+        },
+        "Special DI": {
+            "title": "Special DI",
+            "A-infos": "Add one Digital Input to project from external needs",
+            "B-intro": "This external needs have no TAG on PID",
+            "B-tags": [
+                [
+                    ""
+                ]
+            ],
+            "C-control&command": "Please refer to chapter XXXXX",
+            "D-fault": "Please refer to chapter XXXXX",
+            "zxyzxy": ""
+        },
+        "Special DO": {
+            "title": "Special DO",
+            "A-infos": "Add one Digital Output to project from external needs",
+            "B-intro": "This external needs have no TAG on PID",
+            "B-tags": [
+                [
+                    ""
+                ]
+            ],
+            "C-control&command": "Please refer to chapter XXXXX",
+            "D-fault": "Please refer to chapter XXXXX",
+            "zxyzxy": ""
+        },
+        "Special AI": {
+            "title": "Special AI",
+            "A-infos": "Add one Analog Input to project from external needs",
+            "B-intro": "This external needs have no TAG on PID",
+            "B-tags": [
+                [
+                    ""
+                ]
+            ],
+            "C-control&command": "Please refer to chapter XXXXX",
+            "D-fault": "Please refer to chapter XXXXX",
+            "zxyzxy": ""
+        },
+        "Special AIt": {
+            "title": "Special AIt",
+            "A-infos": "Add one Analog Intput for temperature sensor to project from external needs",
+            "B-intro": "This external needs have no TAG on PID",
+            "B-tags": [
+                [
+                    ""
+                ]
+            ],
+            "C-control&command": "Please refer to chapter XXXXX",
+            "D-fault": "Please refer to chapter XXXXX",
+            "zxyzxy": ""
+        },
+        "Special AO": {
+            "title": "Special AO",
+            "A-infos": "Add one Analog Output to project from external needs",
+            "B-intro": "This external needs have no TAG on PID",
+            "B-tags": [
+                [
+                    ""
                 ]
             ],
             "C-control&command": "Please refer to chapter XXXXX",

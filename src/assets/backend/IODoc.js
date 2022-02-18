@@ -52,18 +52,21 @@ export function handleClick_IO(rawAbstract, tongue) {
         if (isEmpty !== true) {
           EmptyRawArray.push([partTitle]);
           const lineUp = Tp.moduleBuilder(value);
+          console.log("lineUp", lineUp);
           let moduleNbs = 0;
           for (const [module, number] of Object.entries(lineUp)) {
             if (number !== 0 && limit.includes(module) === false) {
-              moduleNbs += 1;
-              const listWithTag = Atb.reshapeTagList(
-                tagList,
-                idList,
-                module,
-                flag,
-                moduleNbs
-              );
-              EmptyRawArray.push(listWithTag);
+              for (let k = 0; k < number; k++) {
+                moduleNbs += 1;
+                const listWithTag = Atb.reshapeTagList(
+                  tagList,
+                  idList,
+                  module,
+                  flag,
+                  moduleNbs
+                );
+                EmptyRawArray.push(listWithTag);
+              }
             }
           }
         }
