@@ -7,7 +7,7 @@ import { Paragraph } from "docx";
 import { DocxBuilder, Proface, AfDocBuilder } from "../tools/DocumentBuilder";
 // Elements for document presentation
 import { header } from "../tools/DocumentHeader";
-import { footer } from "../tools/DocumentFooter";
+import { footer } from "../tools/AfDocumentFooter";
 // Images importation for AF document
 import { IPLC } from "../image/image_af_plc";
 import { ICC } from "../image/image_af_colourCode";
@@ -284,7 +284,6 @@ export function handleClick_AF(rawAbstract, tongue) {
       // Manage multi fault table
       const managedByFbD = Afb.makeAfText(speak[key]["D-fault"]);
       const matrixD = Afb.makeAfFaultTable(keyTupleList, firstRowD, flag);
-      console.log("<<<<<<<<<<<<", matrixD);
       for (const table of matrixD) {
         children.push(
           Afb.checkFb(elemId) === false ? Afb.makeAfTable(table) : managedByFbD
@@ -337,7 +336,7 @@ export function handleClick_AF(rawAbstract, tongue) {
     sections: [
       {
         //headers: header,
-        //footers: footer,
+        footers: footer,
         children: children,
       },
     ],

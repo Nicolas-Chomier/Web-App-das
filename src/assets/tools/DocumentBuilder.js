@@ -1123,7 +1123,8 @@ export class AfDocBuilder extends DocumentBuilder {
       table.push(firstRow);
       for (const [key, value] of Object.entries(this.private[id]["IO"])) {
         for (let i = 0; i < value; i++) {
-          if (this.private[id]["AF"][flag][key][i].length !== 0) {
+          const size = this.private[id]["AF"][flag][key][i].length;
+          if (size !== 0) {
             const data = this.private[id]["AF"][flag][key][i];
             table.push(this.buildCompleteArray(i, key, data));
             // Attention ! Erreur possible si IOList ne correspond pas avec la taille de la liste de liste de text correspondante
@@ -1166,7 +1167,8 @@ export class AfDocBuilder extends DocumentBuilder {
       const tag = item[1];
       const table = this.list([tag]);
       table.push(firstRow);
-      if (this.private[id]["FAULTS"][flag].length > 2) {
+      const size = this.private[id]["FAULTS"][flag].length;
+      if (size > 2) {
         for (let i = 0; i < this.private[id]["FAULTS"][flag].length; i++) {
           table.push(this.private[id]["FAULTS"][flag][i]);
         }

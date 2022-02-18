@@ -1725,11 +1725,7 @@
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
@@ -1750,11 +1746,7 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
@@ -1819,11 +1811,7 @@
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
@@ -1848,11 +1836,7 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
@@ -1931,11 +1915,7 @@
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
@@ -1956,11 +1936,7 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
@@ -2031,11 +2007,7 @@
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
@@ -2065,11 +2037,7 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
@@ -2143,11 +2111,7 @@
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
@@ -2172,11 +2136,7 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
@@ -2261,11 +2221,7 @@
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
@@ -2295,11 +2251,7 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
@@ -5007,38 +4959,45 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
+                "DI": "",
                 "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "AI": [
+                    "WIP",
+                    "WIP"
+                ],
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
+                "DI": "",
                 "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "AI": [
+                    "WIP",
+                    "WIP"
+                ],
+                "AO": "",
                 "AIt": ""
             }
         },
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
-                    [
-                        "Start order",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
+                    []
                 ],
                 "AI": [
-                    []
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
                 ],
                 "AO": [
                     []
@@ -5049,21 +5008,22 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
-                    [
-                        "Start order",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
+                    []
                 ],
                 "AI": [
-                    []
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
                 ],
                 "AO": [
                     []
@@ -5075,18 +5035,10 @@
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ],
             "fr": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ]
         },
         "FunctionBloc": false
@@ -5101,17 +5053,29 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
+                "DI": [
+                    "WIP",
+                    "WIP"
+                ],
                 "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "AI": [
+                    "WIP",
+                    "WIP"
+                ],
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
+                "DI": [
+                    "WIP",
+                    "WIP"
+                ],
                 "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "AI": [
+                    "WIP",
+                    "WIP"
+                ],
+                "AO": "",
                 "AIt": ""
             }
         },
@@ -5119,20 +5083,30 @@
             "uk": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
                     ]
                 ],
                 "DO": [
-                    [
-                        "Start order",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
+                    []
                 ],
                 "AI": [
-                    []
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
                 ],
                 "AO": [
                     []
@@ -5144,20 +5118,30 @@
             "fr": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
                     ]
                 ],
                 "DO": [
-                    [
-                        "Start order",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
+                    []
                 ],
                 "AI": [
-                    []
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
                 ],
                 "AO": [
                     []
@@ -5169,18 +5153,10 @@
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ],
             "fr": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ]
         },
         "FunctionBloc": false
@@ -5195,38 +5171,34 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
+                "DI": "",
                 "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "AI": "WIP",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
+                "DI": "",
                 "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "AI": "WIP",
+                "AO": "",
                 "AIt": ""
             }
         },
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
-                    [
-                        "Start order",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
+                    []
                 ],
                 "AI": [
-                    []
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
                 ],
                 "AO": [
                     []
@@ -5237,21 +5209,17 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
-                    [
-                        "Start order",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
+                    []
                 ],
                 "AI": [
-                    []
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
                 ],
                 "AO": [
                     []
@@ -5263,18 +5231,10 @@
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ],
             "fr": [
-                [
-                    "def_dryer",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ]
         },
         "FunctionBloc": false
@@ -5289,17 +5249,37 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Operating compressor",
+                    "On-load operation",
+                    "Engine running",
+                    "Warning synthesis",
+                    "Alarm synthesis",
+                    "local/remote"
+                ],
+                "DO": [
+                    "Remote load activation",
+                    "Load control"
+                ],
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Operating compressor",
+                    "On-load operation",
+                    "Engine running",
+                    "Warning synthesis",
+                    "Alarm synthesis",
+                    "local/remote"
+                ],
+                "DO": [
+                    "Remote load activation",
+                    "Load control"
+                ],
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
@@ -5307,46 +5287,46 @@
             "uk": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
+                        "Operating compressor",
+                        "Compressor is ready",
+                        "Indicates that the compressor is operational"
+                    ],
+                    [
+                        "On-load operation",
+                        "Compressor working",
+                        "Indicates that the compressor is working"
+                    ],
+                    [
+                        "Engine running",
+                        "Compressor engine running",
+                        "Indicates that the compressor engine running"
+                    ],
+                    [
+                        "Warning synthesis",
+                        "Technical or exceeding threshold problem with-out equipment stop",
                         "Fault activation"
                     ],
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
+                        "Alarm synthesis",
+                        "Technical or exceeding threshold problem with equipment stop ",
                         "Fault activation"
                     ],
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ],
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ],
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ],
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
+                        "local/remote order",
+                        "Depend of the operator's choice",
+                        "Let the compressor self managed or not"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Remote load activation",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Let the load management authorization to the external software"
                     ],
                     [
-                        "Start order",
+                        "Load control",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Drive the load"
                     ]
                 ],
                 "AI": [
@@ -5362,46 +5342,46 @@
             "fr": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
+                        "Operating compressor",
+                        "Compressor is ready",
+                        "Indicates that the compressor is operational"
+                    ],
+                    [
+                        "On-load operation",
+                        "Compressor working",
+                        "Indicates that the compressor is working"
+                    ],
+                    [
+                        "Engine running",
+                        "Compressor engine running",
+                        "Indicates that the compressor engine running"
+                    ],
+                    [
+                        "Warning synthesis",
+                        "Technical or exceeding threshold problem with-out equipment stop",
                         "Fault activation"
                     ],
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
+                        "Alarm synthesis",
+                        "Technical or exceeding threshold problem with equipment stop ",
                         "Fault activation"
                     ],
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ],
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ],
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
-                    ],
-                    [
-                        "Dryer fault",
-                        "Dryer output fault",
-                        "Fault activation"
+                        "local/remote order",
+                        "Depend of the operator's choice",
+                        "Let the compressor self managed or not"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Remote load activation",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Let the load management authorization to the external software"
                     ],
                     [
-                        "Start order",
+                        "Load control",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Drive the load"
                     ]
                 ],
                 "AI": [
@@ -5418,15 +5398,25 @@
         "FAULTS": {
             "uk": [
                 [
-                    "def_dryer",
+                    "Def_compressor_warning_[TAG]",
                     "TMI",
+                    "PLC input activated after 3 seconds"
+                ],
+                [
+                    "Def_compressor_alarm_[TAG]",
+                    "TMA",
                     "PLC input activated after 3 seconds"
                 ]
             ],
             "fr": [
                 [
-                    "def_dryer",
+                    "Def_compressor_warning_[TAG]",
                     "TMI",
+                    "PLC input activated after 3 seconds"
+                ],
+                [
+                    "Def_compressor_alarm_[TAG]",
+                    "TMA",
                     "PLC input activated after 3 seconds"
                 ]
             ]
@@ -5443,17 +5433,49 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Operating compressor",
+                    "On-load operation",
+                    "Engine running",
+                    "Warning synthesis",
+                    "Alarm synthesis",
+                    "local/remote"
+                ],
+                "DO": [
+                    "Remote load activation",
+                    "Load control"
+                ],
+                "AI": [
+                    "WIP",
+                    "WIP"
+                ],
+                "AO": [
+                    "WIP",
+                    "WIP"
+                ],
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Operating compressor",
+                    "On-load operation",
+                    "Engine running",
+                    "Warning synthesis",
+                    "Alarm synthesis",
+                    "local/remote"
+                ],
+                "DO": [
+                    "Remote load activation",
+                    "Load control"
+                ],
+                "AI": [
+                    "WIP",
+                    "WIP"
+                ],
+                "AO": [
+                    "WIP",
+                    "WIP"
+                ],
                 "AIt": ""
             }
         },
@@ -5461,23 +5483,71 @@
             "uk": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
+                        "Operating compressor",
+                        "Compressor is ready",
+                        "Indicates that the compressor is operational"
+                    ],
+                    [
+                        "On-load operation",
+                        "Compressor working",
+                        "Indicates that the compressor is working"
+                    ],
+                    [
+                        "Engine running",
+                        "Compressor engine running",
+                        "Indicates that the compressor engine running"
+                    ],
+                    [
+                        "Warning synthesis",
+                        "Technical or exceeding threshold problem with-out equipment stop",
                         "Fault activation"
+                    ],
+                    [
+                        "Alarm synthesis",
+                        "Technical or exceeding threshold problem with equipment stop ",
+                        "Fault activation"
+                    ],
+                    [
+                        "local/remote order",
+                        "Depend of the operator's choice",
+                        "Let the compressor self managed or not"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Remote load activation",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Let the load management authorization to the external software"
+                    ],
+                    [
+                        "Load control",
+                        "PLC digital output activation",
+                        "Drive the load"
                     ]
                 ],
                 "AI": [
-                    []
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
                 ],
                 "AO": [
-                    []
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
                 ],
                 "AIt": [
                     []
@@ -5486,23 +5556,71 @@
             "fr": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
+                        "Operating compressor",
+                        "Compressor is ready",
+                        "Indicates that the compressor is operational"
+                    ],
+                    [
+                        "On-load operation",
+                        "Compressor working",
+                        "Indicates that the compressor is working"
+                    ],
+                    [
+                        "Engine running",
+                        "Compressor engine running",
+                        "Indicates that the compressor engine running"
+                    ],
+                    [
+                        "Warning synthesis",
+                        "Technical or exceeding threshold problem with-out equipment stop",
                         "Fault activation"
+                    ],
+                    [
+                        "Alarm synthesis",
+                        "Technical or exceeding threshold problem with equipment stop ",
+                        "Fault activation"
+                    ],
+                    [
+                        "local/remote order",
+                        "Depend of the operator's choice",
+                        "Let the compressor self managed or not"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Remote load activation",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Let the load management authorization to the external software"
+                    ],
+                    [
+                        "Load control",
+                        "PLC digital output activation",
+                        "Drive the load"
                     ]
                 ],
                 "AI": [
-                    []
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
                 ],
                 "AO": [
-                    []
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
                 ],
                 "AIt": [
                     []
@@ -5512,15 +5630,25 @@
         "FAULTS": {
             "uk": [
                 [
-                    "def_dryer",
+                    "Def_compressor_warning_[TAG]",
                     "TMI",
+                    "PLC input activated after 3 seconds"
+                ],
+                [
+                    "Def_compressor_alarm_[TAG]",
+                    "TMA",
                     "PLC input activated after 3 seconds"
                 ]
             ],
             "fr": [
                 [
-                    "def_dryer",
+                    "Def_compressor_warning_[TAG]",
                     "TMI",
+                    "PLC input activated after 3 seconds"
+                ],
+                [
+                    "Def_compressor_alarm_[TAG]",
+                    "TMA",
                     "PLC input activated after 3 seconds"
                 ]
             ]
@@ -5537,17 +5665,17 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "Compressor fault info",
+                "DO": "Compressor start order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "Compressor fault info",
+                "DO": "Compressor start order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
@@ -5555,16 +5683,16 @@
             "uk": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
+                        "Compressor fault",
+                        "Compressor output fault",
                         "Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Compressor start",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Start the compressor"
                     ]
                 ],
                 "AI": [
@@ -5580,16 +5708,16 @@
             "fr": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
+                        "Compressor fault",
+                        "Compressor output fault",
                         "Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Compressor start",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Start the compressor"
                     ]
                 ],
                 "AI": [
@@ -5606,14 +5734,14 @@
         "FAULTS": {
             "uk": [
                 [
-                    "def_dryer",
+                    "def_[TAG]",
                     "TMI",
                     "PLC input activated after 3 seconds"
                 ]
             ],
             "fr": [
                 [
-                    "def_dryer",
+                    "def_[TAG]",
                     "TMI",
                     "PLC input activated after 3 seconds"
                 ]
@@ -5631,17 +5759,23 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Compressor fault info",
+                    "WIP"
+                ],
+                "DO": "Compressor start order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": [
+                    "Compressor fault info",
+                    "WIP"
+                ],
+                "DO": "Compressor start order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
@@ -5649,16 +5783,21 @@
             "uk": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
+                        "Compressor fault",
+                        "Compressor output fault",
                         "Fault activation"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Compressor start",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Start the compressor"
                     ]
                 ],
                 "AI": [
@@ -5674,16 +5813,21 @@
             "fr": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
+                        "Compressor fault",
+                        "Compressor output fault",
                         "Fault activation"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Compressor start",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Start the compressor"
                     ]
                 ],
                 "AI": [
@@ -5700,14 +5844,14 @@
         "FAULTS": {
             "uk": [
                 [
-                    "def_dryer",
+                    "def_[TAG]",
                     "TMI",
                     "PLC input activated after 3 seconds"
                 ]
             ],
             "fr": [
                 [
-                    "def_dryer",
+                    "def_[TAG]",
                     "TMI",
                     "PLC input activated after 3 seconds"
                 ]
@@ -5725,17 +5869,17 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "Booster fault info",
+                "DO": "Booster start order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "Booster fault info",
+                "DO": "Booster start order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
@@ -5743,16 +5887,16 @@
             "uk": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
+                        "Booster fault",
+                        "Booster output fault",
                         "Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Booster start",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Start the booster"
                     ]
                 ],
                 "AI": [
@@ -5768,16 +5912,16 @@
             "fr": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
+                        "Booster fault",
+                        "Booster output fault",
                         "Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Booster start",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Start the booster"
                     ]
                 ],
                 "AI": [
@@ -5794,14 +5938,14 @@
         "FAULTS": {
             "uk": [
                 [
-                    "def_dryer",
+                    "def_[TAG]",
                     "TMI",
                     "PLC input activated after 3 seconds"
                 ]
             ],
             "fr": [
                 [
-                    "def_dryer",
+                    "def_[TAG]",
                     "TMI",
                     "PLC input activated after 3 seconds"
                 ]
@@ -5819,17 +5963,17 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "Fan fault info",
+                "DO": "Fan start order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "Fan fault info",
+                "DO": "Fan start order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
@@ -5837,16 +5981,16 @@
             "uk": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
+                        "Fan fault",
+                        "Fan output fault",
                         "Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Fan start",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Start the Fan"
                     ]
                 ],
                 "AI": [
@@ -5862,16 +6006,16 @@
             "fr": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
+                        "Fan fault",
+                        "Fan output fault",
                         "Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Fan start",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Start the Fan"
                     ]
                 ],
                 "AI": [
@@ -5888,14 +6032,14 @@
         "FAULTS": {
             "uk": [
                 [
-                    "def_dryer",
+                    "def_[TAG]",
                     "TMI",
                     "PLC input activated after 3 seconds"
                 ]
             ],
             "fr": [
                 [
-                    "def_dryer",
+                    "def_[TAG]",
                     "TMI",
                     "PLC input activated after 3 seconds"
                 ]
@@ -5913,17 +6057,17 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "Water pump fault info",
+                "DO": "Water pump start order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "Water pump fault info",
+                "DO": "Water pump start order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
@@ -5931,16 +6075,16 @@
             "uk": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
+                        "Water pump fault",
+                        "Water pump output fault",
                         "Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Water pump start",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Start the Water pump"
                     ]
                 ],
                 "AI": [
@@ -5956,16 +6100,16 @@
             "fr": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
+                        "Water pump fault",
+                        "Water pump output fault",
                         "Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Water pump start",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Start the Water pump"
                     ]
                 ],
                 "AI": [
@@ -5982,14 +6126,14 @@
         "FAULTS": {
             "uk": [
                 [
-                    "def_dryer",
+                    "def_[TAG]",
                     "TMI",
                     "PLC input activated after 3 seconds"
                 ]
             ],
             "fr": [
                 [
-                    "def_dryer",
+                    "def_[TAG]",
                     "TMI",
                     "PLC input activated after 3 seconds"
                 ]
@@ -6007,17 +6151,17 @@
         },
         "Text": {
             "uk": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "Vacuum pump fault info",
+                "DO": "Vacuum start order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "fault-test-0",
-                "DO": "",
-                "AI": "Analog-signal-test-4-20mA",
-                "AO": "xxx-start-test",
+                "DI": "Vacuum fault info",
+                "DO": "Vacuum start order",
+                "AI": "",
+                "AO": "",
                 "AIt": ""
             }
         },
@@ -6025,16 +6169,16 @@
             "uk": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
+                        "Vacuum fault",
+                        "Vacuum output fault",
                         "Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Vacuum start",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Start the Vacuum"
                     ]
                 ],
                 "AI": [
@@ -6050,16 +6194,16 @@
             "fr": {
                 "DI": [
                     [
-                        "Dryer fault",
-                        "Dryer output fault",
+                        "Vacuum fault",
+                        "Vacuum output fault",
                         "Fault activation"
                     ]
                 ],
                 "DO": [
                     [
-                        "Start order",
+                        "Vacuum start",
                         "PLC digital output activation",
-                        "Start the dryer"
+                        "Start the Vacuum"
                     ]
                 ],
                 "AI": [
@@ -6076,14 +6220,14 @@
         "FAULTS": {
             "uk": [
                 [
-                    "def_dryer",
+                    "def_[TAG]",
                     "TMI",
                     "PLC input activated after 3 seconds"
                 ]
             ],
             "fr": [
                 [
-                    "def_dryer",
+                    "def_[TAG]",
                     "TMI",
                     "PLC input activated after 3 seconds"
                 ]
