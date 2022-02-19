@@ -13,7 +13,7 @@ import { amber } from "@mui/material/colors";
 
 const CoefTile = ({ title, output }) => {
   // Avatar basical style:
-  const [color, setColor] = useState(200);
+  const [color, setColor] = useState(1.2);
   const [style, setStyle] = useState({});
 
   // Slider value changement
@@ -31,15 +31,16 @@ const CoefTile = ({ title, output }) => {
         size="medium"
         valueLabelDisplay="auto"
         step={0.1}
-        min={1.1}
-        max={1.9}
+        min={1}
+        max={1.8}
         onChange={handleChange}
       />
     </Box>
   );
   // Color change according to the slider stroke
   useEffect(() => {
-    let colorIndex = Math.round((color - 1) * 1000);
+    let colorIndex = Math.round((color - 1) * 1000 + 100);
+    console.log(colorIndex);
     setStyle({ bgcolor: amber[colorIndex], width: 54, height: 54 });
   }, [color]);
   // //

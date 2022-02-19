@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import TitleTile from "../components/TitleTile";
 import TechnoTile from "../components/TechnoTile";
-/* import OptionTile from "../components/OptionTile"; */
+import OptionTile from "../components/OptionTile";
 import SwitchTile from "../components/SwitchTile";
 import { grey } from "@mui/material/colors";
 import SendIcon from "@mui/icons-material/Send";
@@ -19,7 +19,7 @@ const LandingPage = () => {
   const [text, setText] = useState("");
   const [techno, setTechno] = useState(false);
   // HMI group numbers
-  //const [option, setOption] = useState(false);
+  const [option, setOption] = useState(false);
   // Open air toggle switch boolean
   const [option2, setOption2] = useState(false);
   // Open air toggle switch boolean
@@ -31,14 +31,14 @@ const LandingPage = () => {
       alert("Give a name to your project");
     } else if (techno === false) {
       alert("Choose an HMI");
-    } /* else if (option === false) {
+    } else if (option === false) {
       alert("Choose an HMI numbers");
-    } */ else {
+    } else {
       navigate("/panels", {
         state: {
           Title: text,
           Technology: techno,
-          Group: 1,
+          Group: option,
           OpenAir: option2,
           Coef: option3,
           datas: datas,
@@ -55,9 +55,9 @@ const LandingPage = () => {
       <div className="title">
         <TitleTile title={"Nom du projet"} output={setText} />
       </div>
-      {/*  <div className="optionTile">
+      <div className="optionTile">
         <OptionTile title={"Nombre d'IHM"} output={setOption} />
-      </div> */}
+      </div>
       <div className="technology">
         <TechnoTile title={"Technologie"} datas={datas} output={setTechno} />
         {/* <TechnoSection datas={datas} output={setTechno} /> */}

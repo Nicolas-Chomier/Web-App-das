@@ -84,6 +84,13 @@ class DocumentBuilder {
     }
     return obj;
   }
+  // Method wich delete duplicate in front elements list (tag is unique)
+  removeAbstractDuplicate() {
+    const uniqueObjects = [
+      ...new Map(this.infosElement.map((item) => [item.tag, item])).values(),
+    ];
+    return uniqueObjects;
+  }
 }
 // Class wich regroup methods used to build documents //
 export class DataBuilder extends DocumentBuilder {
@@ -97,9 +104,10 @@ export class DataBuilder extends DocumentBuilder {
   }
   // Method which return fullfilled dictionnary with all item's id stored correctly
   idListDictionnary() {
+    const dataset = this.removeAbstractDuplicate();
     const structure = this.emptyShapeForTagList();
     let j = 1;
-    for (const item of this.infosElement) {
+    for (const item of dataset) {
       if (
         item.name !== this.openAirLabel1 &&
         item.name !== this.openAirLabel2
@@ -152,9 +160,10 @@ export class DataBuilder extends DocumentBuilder {
   }
   // Method which return fullfilled dictionnary with all item's tag stored correctly
   tagListDictionnary() {
+    const dataset = this.removeAbstractDuplicate();
     const structure = this.emptyShapeForTagList();
     let j = 1;
-    for (const item of this.infosElement) {
+    for (const item of dataset) {
       if (
         item.name !== this.openAirLabel1 &&
         item.name !== this.openAirLabel2
@@ -207,10 +216,11 @@ export class DataBuilder extends DocumentBuilder {
   }
   // Method which build a usefull IOList dictionnary from raw abstract elements list
   fullIolistProject() {
+    const dataset = this.removeAbstractDuplicate();
     const modele = this.emptyShapeForIolist(); // Get the empty modele
     let j = 1; // Counter for OPEN AIR Compressor
     // Loop through raw abstract elem list
-    for (const value of Object.values(this.infosElement)) {
+    for (const value of Object.values(dataset)) {
       // Avoid "OPEN AIR" elements
       if (
         value.name !== this.openAirLabel1 &&

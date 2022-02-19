@@ -5,7 +5,7 @@ import {
   RadioGroup,
   FormControl,
 } from "@mui/material";
-import { green, grey } from "@mui/material/colors";
+import { amber, grey } from "@mui/material/colors";
 
 const RadioCustom = ({
   qty,
@@ -34,7 +34,7 @@ const RadioCustom = ({
                 sx={{
                   color: grey[900],
                   "&.Mui-checked": {
-                    color: green[600],
+                    color: amber[900],
                   },
                 }}
                 size="small"

@@ -8,7 +8,7 @@ import {
   Stack,
 } from "@mui/material";
 import SelectCustom from "./SelectCustom";
-import RadioCustom from "./RadioCustom";
+//import RadioCustom from "./RadioCustom";
 //import ImageCustom from "./ImageCustom";
 
 const ElementPanel = ({ data, config, output }) => {
@@ -18,22 +18,22 @@ const ElementPanel = ({ data, config, output }) => {
   const datas = data.data;
   const noTag = data.default_tag;
   const color = data.color;
-  const radio = config.Group;
+  //const radio = config.Group;
   // Return from composant:
   const [selection, setSelecion] = useState(false);
   const textRef = useRef("");
-  const [radios, setRadios] = useState(0);
+  // const [radios, setRadios] = useState(0);
   // Validation datas function to create a object carrying results
   function handleClick() {
     //console.log(selection, textRef, radios);
-    if (selection !== false && radios !== 0) {
+    if (selection !== false /* && radios !== 0 */) {
       output({
         title: title,
         id: selection["id"],
         name: selection["generic name"],
         categorie: title,
         tag: `${textRef.current?.value}`,
-        group: radios,
+        group: 1, //radios,
       });
     } else {
       alert("Select component and/or fill group !");
@@ -75,7 +75,7 @@ const ElementPanel = ({ data, config, output }) => {
         </Stack>
       </CardActions>
       {/* CARD RADIO */}
-      <CardActions sx={{ justifyContent: "center" }}>
+      {/*  <CardActions sx={{ justifyContent: "center" }}>
         <Stack
           direction="column"
           justifyContent="flex-start"
@@ -92,7 +92,7 @@ const ElementPanel = ({ data, config, output }) => {
             output={setRadios}
           />
         </Stack>
-      </CardActions>
+      </CardActions> */}
       {/* CARD BUTTON */}
       <CardActions sx={{ mb: 1, justifyContent: "center" }}>
         <Button

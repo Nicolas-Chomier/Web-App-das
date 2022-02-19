@@ -7,7 +7,7 @@ import { Paragraph } from "docx";
 import { DocxBuilder, Proface, AfDocBuilder } from "../tools/DocumentBuilder";
 // Elements for document presentation
 //import { header } from "../tools/DocumentHeader";
-import { footer } from "../tools/AfDocumentFooter";
+import { footer } from "../tools/DocumentFooterAf";
 // Images importation for AF document
 import { IPLC } from "../image/image_af_plc";
 import { ICC } from "../image/image_af_colourCode";

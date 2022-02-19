@@ -6,13 +6,13 @@
     grid-template-areas:
       "headers headers  headers "
       "lpanel title  rpanel"
-      "lpanel  optionTile rpanel"
+      /* "lpanel  optionTile rpanel" */
       "lpanel technology  rpanel"
       "lpanel  switchTile rpanel"
       "lpanel  coefTile rpanel"
       "lpanel validation  rpanel"
       "bott bott bott ";
-    grid-template-rows: 2vh auto auto auto auto auto;
+    grid-template-rows: 2vh auto /* auto */ auto auto auto;
     grid-template-columns: 35vw 30vw 35vw;
     overflow-x: hidden;
 
@@ -35,12 +35,12 @@
       align-items: center;
       justify-content: center;
     }
-    .optionTile {
+    /* .optionTile {
       grid-area: optionTile;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
+    } */
     .switchTile {
       grid-area: switchTile;
       display: flex;
@@ -87,13 +87,13 @@
     grid-template-areas:
       "headers headers headers "
       "lpanel title rpanel"
-      "lpanel optionTile rpanel"
+      /* "lpanel optionTile rpanel" */
       "lpanel technology rpanel"
       "lpanel switchTile rpanel"
       "lpanel coefTile rpanel"
       "lpanel validation rpanel"
       "bott bott bott ";
-    grid-template-rows: 2vh auto auto auto auto auto;
+    grid-template-rows: 2vh auto /* auto */ auto auto auto;
     grid-template-columns: 2vw 96vw 2vw;
     overflow-x: hidden;
 
@@ -116,12 +116,12 @@
       align-items: center;
       justify-content: center;
     }
-    .optionTile {
+    /*  .optionTile {
       grid-area: optionTile;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
+    } */
     .switchTile {
       grid-area: switchTile;
       display: flex;
