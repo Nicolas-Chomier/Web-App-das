@@ -5,6 +5,12 @@
         "default_tag": "HMI_0000",
         "color": "#3F4246",
         "data": {
+            "Gamme LT4000": {
+                "5.7'": {
+                    "id": "0000",
+                    "generic name": "IHM 5.7 pouces"
+                }
+            },
             "Gamme eXtrem": {
                 "12'": {
                     "id": "0001",

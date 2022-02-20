@@ -12,6 +12,7 @@ import CoefTile from "../components/CoefTile";
 
 // Importation for main datas sources
 const datas = JSON.parse(JSON.stringify(publics));
+const dataHMI = datas.IHM_PROFACE.data;
 
 const LandingPage = () => {
   //const componentData = data["data"];
@@ -41,7 +42,7 @@ const LandingPage = () => {
           Group: 1,
           OpenAir: option2,
           Coef: option3,
-          datas: datas,
+          /* datas: datas, */
         },
       });
     }
@@ -59,7 +60,7 @@ const LandingPage = () => {
         <OptionTile title={"Nombre d'IHM"} output={setOption} />
       </div> */}
       <div className="technology">
-        <TechnoTile title={"Technologie"} datas={datas} output={setTechno} />
+        <TechnoTile title={"Technologie"} datas={dataHMI} output={setTechno} />
         {/* <TechnoSection datas={datas} output={setTechno} /> */}
       </div>
       <div className="switchTile">

@@ -40,7 +40,6 @@ const CoefTile = ({ title, output }) => {
   // Color change according to the slider stroke
   useEffect(() => {
     let colorIndex = Math.round((color - 1) * 1000 + 100);
-    console.log(colorIndex);
     setStyle({ bgcolor: amber[colorIndex], width: 54, height: 54 });
   }, [color]);
   // //

@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import publics from "../assets/data/public.json";
 import ElementPanel from "../components/ElementPanel";
 import TableCustom from "../components/TableCustom";
+
+// Importation for main datas sources
+const datas = JSON.parse(JSON.stringify(publics));
 
 const PanelsPage = () => {
   // Variable for next page
@@ -11,14 +15,14 @@ const PanelsPage = () => {
   const location = useLocation();
   const projectData = location.state;
   // All panel datas attribution (by category):
-  const Instrumentations = location.state.datas.Instrumentations;
-  const Process_components = location.state.datas.Process_components;
-  const Valves_and_dampers = location.state.datas.Valves_and_dampers;
-  const Analyzer = location.state.datas.Analyzer;
-  const opt = projectData.OpenAir; // Depend on Open Air option chossen or not:
-  const Fluid_supply = location.state.datas.Fluid_supply;
-  const openair = location.state.datas.OpenAir;
-  const Devices = location.state.datas.Devices;
+  const Instrumentations = datas.Instrumentations;
+  const Process_components = datas.Process_components;
+  const Valves_and_dampers = datas.Valves_and_dampers;
+  const Analyzer = datas.Analyzer;
+  const opt = datas.OpenAir; // Depend on Open Air option chossen or not:
+  const Fluid_supply = datas.Fluid_supply;
+  const openair = datas.OpenAir;
+  const Devices = datas.Devices;
   // Result from choice on different panels (false protect against empty entry when page build/refresh)
   const [config, setConfig] = useState(false);
   // Result read from abstract table

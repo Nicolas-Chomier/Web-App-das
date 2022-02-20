@@ -1,9 +1,49 @@
 {
     "PROFACE": {
+        "0000": {
+            "Taille": 5.7,
+            "Gamme": "LT4000",
+            "Image": "LT4000",
+            "Series": "LT4000 Series",
+            "PanelCut": "WIP",
+            "InfosHMI": "WIP",
+            "InfosPLC": "WIP",
+            "InfosCAN": "WIP",
+            "PriceHMI": 666,
+            "PricePLC": 666,
+            "PriceCAN": 666,
+            "HMI_documentation": "PFXSP5690WAD_SPECIFICATIONS",
+            "HMI_Denomination": "HMI",
+            "HMI_Ref": "PFXSP5690WAD",
+            "HMI_Manufacturer": "PROFACE",
+            "PLC_documentation": "PFXSP5690WAD_SPECIFICATIONS",
+            "PLC_Denomination": "PLC",
+            "PLC_Ref": "PFXSP5B90",
+            "PLC_Manufacturer": "PROFACE",
+            "CAN_documentation": "PFXSP5690WAD_SPECIFICATIONS",
+            "CAN_Denomination": "CANOPEN MASTER",
+            "CAN_Ref": "99999",
+            "CAN_Manufacturer": "PROFACE",
+            "HMI": {
+                "Denomination": "HMI",
+                "Ref": "LT4000",
+                "Manufacturer": "PROFACE"
+            },
+            "PLC": {
+                "Denomination": "PLC",
+                "Ref": "PFXSP5B90",
+                "Manufacturer": "PROFACE"
+            },
+            "CAN": {
+                "Denomination": "CANOPEN MASTER",
+                "Ref": "99999",
+                "Manufacturer": "PROFACE"
+            }
+        },
         "0001": {
             "Taille": 12,
             "Gamme": "eXtrem",
-            "Image": "HMI12SP5000X",
+            "Image": "SP5000",
             "Series": "SP5000X Series",
             "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
             "InfosHMI": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
@@ -43,7 +83,7 @@
         "0002": {
             "Taille": 12,
             "Gamme": "eXtrem",
-            "Image": "HMI12SP5000X",
+            "Image": "SP5000",
             "Series": "SP5000X Series",
             "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
             "InfosHMI": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
@@ -83,7 +123,7 @@
         "0003": {
             "Taille": 12,
             "Gamme": "eXtrem",
-            "Image": "HMI12SP5000X",
+            "Image": "SP5000",
             "Series": "SP5000X Series",
             "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
             "InfosHMI": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
@@ -123,7 +163,7 @@
         "0004": {
             "Taille": 12,
             "Gamme": "eXtrem",
-            "Image": "HMI12SP5000X",
+            "Image": "SP5000",
             "Series": "SP5000X Series",
             "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
             "InfosHMI": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
@@ -163,7 +203,7 @@
         "0005": {
             "Taille": 12,
             "Gamme": "eXtrem",
-            "Image": "HMI12SP5000X",
+            "Image": "SP5000",
             "Series": "SP5000X Series",
             "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
             "InfosHMI": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
@@ -203,7 +243,7 @@
         "0006": {
             "Taille": 12,
             "Gamme": "eXtrem",
-            "Image": "HMI12SP5000X",
+            "Image": "SP5000",
             "Series": "SP5000X Series",
             "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
             "InfosHMI": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",

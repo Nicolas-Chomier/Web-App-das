@@ -49,7 +49,6 @@ export function handleClick_IO(rawAbstract, tongue) {
         if (isEmpty !== true) {
           EmptyRawArray.push([partTitle]);
           const lineUp = Tp.moduleBuilder(value);
-          console.log("lineUp", lineUp);
           let moduleNbs = 0;
           for (const [module, number] of Object.entries(lineUp)) {
             if (number !== 0 && limit.includes(module) === false) {

@@ -1,7 +1,16 @@
 import { Packer } from "docx";
 import { saveAs } from "file-saver";
-import { DataBuilder, Proface, DocxBuilder } from "../tools/DocumentBuilder";
-import { Document } from "docx";
+import { Buffer } from "buffer";
+import {
+  DataBuilder,
+  Proface,
+  DocxBuilder,
+  ArchDocBuilder,
+} from "../tools/DocumentBuilder";
+import { Document, Paragraph, ImageRun } from "docx";
+// Images importation for AF document
+import { LT4 } from "../image/image_arch_LT4000";
+import { SP5 } from "../image/image_arch_SP5000";
 // Elements for document presentation
 import { header } from "../tools/DocumentHeader";
 import { footer } from "../tools/DocumentFooter";
@@ -18,20 +27,42 @@ export function handleClick_ARCH(rawAbstract, tongue) {
   const Dt = new DataBuilder(rawAbstract);
   const Dx = new DocxBuilder(rawAbstract);
   const Tp = new Proface(rawAbstract);
+  const Ar = new ArchDocBuilder(rawAbstract);
   // Build basical dataset, MASTER => iolist dictionnary, MASTER2 => tagList dictionnary
   const MASTER_IO = Dt.addMandatorySlotTofullIolistProject();
   const MASTER_TAG = Dt.tagListObject();
   // Get project title
   const projectTitle = Dx.buildTitle();
+  const imageCatalog = { LT4000: LT4, SP5000: SP5 };
   // Sub function which will generate the entire architecture
   /* console.log(MASTER_IO);
   console.log(MASTER_TAG); */
   function buildEntireArchitecture() {
     const children = [];
     const GrpNumber = rawAbstract.Project.Group;
+    const id = rawAbstract.Project.Technology.id;
+    const HmiRef = Ar.GetHmiRef(id);
+    const HmiImage = Ar.GetHmiImg(id);
     for (let i = 1; i < GrpNumber + 1; i++) {
+      // Part 1 : HMI
+      const rawDocTitle = Dx.makeDocxjsCustomText(speak.docTitle, [HmiRef]);
+      const docTitle = Dx.makeTitleRankX(rawDocTitle, 1);
+      children.push(docTitle);
+      // Image of HMI used
+      const imageHMI = new Paragraph({
+        children: [
+          new ImageRun({
+            data: Buffer.from(imageCatalog[HmiImage], "base64"),
+            transformation: {
+              width: 400,
+              height: 300,
+            },
+          }),
+        ],
+      });
+      children.push(imageHMI);
       // Creation for title rank 1
-      const title1 = Dx.titleRank1(i);
+      const title1 = Dx.makeTitleRankX(speak.title1, 1);
       children.push(title1);
       for (const [key, value] of Object.entries(MASTER_IO[i])) {
         console.log(key, value);

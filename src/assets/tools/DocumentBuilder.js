@@ -100,7 +100,7 @@ export class DataBuilder extends DocumentBuilder {
     this.openAirLabel2 = "OPA-V"; // Identification word for an Open Air compressor variable
     this.rsl = { DI: 8, DO: 6, AI: 1, AO: 0, AIt: 0 }; // Mandatory reserved slot attribute to each project
     this.rName = "Reserved"; // Tag used to fill reserved slot
-    this.rId = "0000";
+    this.rId = "0000"; // Id used for reserved slot
   }
   // Method which return fullfilled dictionnary with all item's id stored correctly
   idListDictionnary() {
@@ -545,17 +545,6 @@ export class DocxBuilder extends DocumentBuilder {
     }
     return _srt;
   }
-  /* //
-  makeDocxjsImage(name, w, h) {
-    const image = new ImageRun({
-      data: Buffer.from(name, "base64"),
-      transformation: {
-        width: w,
-        height: h,
-      },
-    });
-    return image;
-  } */
   // Method which return formatted main document title
   buildTitle() {
     const string = `${this.projectTitle}`;
@@ -664,7 +653,7 @@ export class DocxBuilder extends DocumentBuilder {
     }
     return result;
   }
-  // Method which build title rank 1 (DocxJs) A VIRER !!
+  /*   // Method which build title rank 1 (DocxJs) A VIRER !!
   titleRank1(text) {
     let title = `Material architecture under HMI`;
     if (text) {
@@ -677,8 +666,8 @@ export class DocxBuilder extends DocumentBuilder {
       alignment: AlignmentType.CENTER,
     });
     return result;
-  }
-  // Method which build title rank 1 (DocxJs) A UTILISER !!
+  } */
+  // Method which build title rank 1 (DocxJs) obsolete ?
   makeTitleRankOne(text) {
     const result = new Paragraph({
       text: text,
@@ -688,14 +677,36 @@ export class DocxBuilder extends DocumentBuilder {
     });
     return result;
   }
+  // Method which build title rank x for AF (DocxJs) A utiliser et ramplacer les autres makeTitle !!!!!!!!!
+  makeTitleRankX(text, x = 1) {
+    const tSize = {
+      1: HeadingLevel.HEADING_1,
+      2: HeadingLevel.HEADING_2,
+      3: HeadingLevel.HEADING_3,
+      4: HeadingLevel.HEADING_4,
+    };
+    const result = new Paragraph({
+      text: text,
+      heading: tSize[x],
+      thematicBreak: false,
+      pageBreakBefore: x === 1 ? true : false,
+      alignment: AlignmentType.START,
+    });
+    return result;
+  }
   // Method which build title rank 2 (DocxJs)
   titleRank2(key, text) {
     let title = `module line-up`;
-    if (text) {
+    // group disable
+    /* if (text) {
       title =
         key !== "MAIN"
           ? `Grp ${text} - Module line-up for ${key}`
           : `Grp ${text} - ${key} module line-up`;
+    } */
+    if (text) {
+      title =
+        key !== "MAIN" ? `Module line-up for ${key}` : `${key} module line-up`;
     }
     const result = new Paragraph({
       text: title,
@@ -868,6 +879,23 @@ export class DocxBuilder extends DocumentBuilder {
       pageBreakBefore: true,
     });
     return pageBreak;
+  }
+}
+// Class wich provide several method used to build adressTable document
+export class ArchDocBuilder extends DocumentBuilder {
+  constructor(rawAbstract) {
+    super(rawAbstract);
+    this.spare = "spare";
+  }
+  // Method which return HMI ref
+  GetHmiRef(id) {
+    const ref = this.proface["PROFACE"][id]["HMI"]["Ref"];
+    return ref;
+  }
+  // Method which return HMI image
+  GetHmiImg(id) {
+    const img = this.proface["PROFACE"][id]["Image"];
+    return img;
   }
 }
 // Class wich provide several method used to build adressTable document

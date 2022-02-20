@@ -15,6 +15,7 @@ const LastPage = () => {
   // General abstract from PanelsPage
   const location = useLocation();
   const rawAbstract = { ...location.state };
+  console.log(rawAbstract);
   // Avatar settings
   const avtConf = { width: 38, height: 38 };
   // Last page //

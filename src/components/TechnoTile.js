@@ -5,14 +5,13 @@ import AddToQueueIcon from "@mui/icons-material/AddToQueue";
 import { grey, green } from "@mui/material/colors";
 
 const TechnoTile = ({ title, datas, output }) => {
-  const data = datas.IHM_PROFACE.data;
   // Avatar basical style:
   const basicStyle = { bgcolor: grey[800], width: 54, height: 54 };
   // State
   const [result, setResult] = useState(false);
   const [style, setStyle] = useState(basicStyle);
   // Option core to display:
-  const select = <SelectCustom data={data} output={setResult} />;
+  const select = <SelectCustom data={datas} output={setResult} />;
   // Color change when radio btn checked
   useEffect(() => {
     if (result !== false) {

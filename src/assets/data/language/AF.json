@@ -563,7 +563,7 @@
             "ALARM",
             "ACTIVATION CONDITION"
         ],
-        "Intrumentation": {
+        "Instrumentation": {
             "title": "Intrumentation",
             "infos": "All analogue measurements are processed in the same way for them we will use the function bloc programming method (FB)."
         },
