@@ -1,14 +1,22 @@
 {
     "uk": {
-        "docTitle": "HMI @ presentation",
-        "title1": "Material architecture under HMI",
-        "text1": "This document details the entire architecture of the automation package",
+        "docTitle": "@ HMI & PLC architecture",
+        "hmiTitle": "HMI @ presentation",
+        "hmiText": "Size and implantation drawing for choosen HMI",
+        "plcTitle": "Material architecture for @ project",
+        "subTitle": "@ line-up",
+        "plcText": "This chapter details the entire architecture for the automation package",
+        "--": "--",
         "docName": "Architecture"
     },
     "fr": {
-        "docTitle": "HMI @ presentation",
-        "title1": "Material architecture under HMI",
-        "text1": "Ce document detaille l'entiere architecture du lot automatisme",
+        "docTitle": "@ HMI & PLC architecture",
+        "hmiTitle": "HMI @ presentation",
+        "hmiText": "Size and implantation drawing for choosen HMI",
+        "plcTitle": "Material architecture for @ project",
+        "subTitle": "@ line-up",
+        "plcText": "This chapter details the entire architecture for the automation package",
+        "--": "--",
         "docName": "Architecture"
     }
 }

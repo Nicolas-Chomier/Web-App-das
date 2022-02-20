@@ -98,7 +98,7 @@ export class DataBuilder extends DocumentBuilder {
     super(rawAbstract);
     this.openAirLabel1 = "OPA-F"; // Identification word for an Open Air compressor fixe
     this.openAirLabel2 = "OPA-V"; // Identification word for an Open Air compressor variable
-    this.rsl = { DI: 8, DO: 6, AI: 1, AO: 0, AIt: 0 }; // Mandatory reserved slot attribute to each project
+    this.rsl = { DI: 6, DO: 3, AI: 1, AO: 0, AIt: 0 }; // Mandatory reserved slot attribute to each project
     this.rName = "Reserved"; // Tag used to fill reserved slot
     this.rId = "0000"; // Id used for reserved slot
   }
@@ -545,6 +545,20 @@ export class DocxBuilder extends DocumentBuilder {
     }
     return _srt;
   }
+  // Method which put in place of @ item given in item list parameter ATTENTION to give same list size to @ in str ATTENTION VIRER CELLE DU HAUT !!
+  makeCustomText(str, list) {
+    let _srt = "";
+    let i = 0;
+    for (const item of str) {
+      if (item === "@") {
+        _srt += list[i];
+        i += 1;
+      } else {
+        _srt += item;
+      }
+    }
+    return _srt;
+  }
   // Method which return formatted main document title
   buildTitle() {
     const string = `${this.projectTitle}`;
@@ -828,6 +842,7 @@ export class DocxBuilder extends DocumentBuilder {
   attribTagToRowList(moduleIoList, tagList) {
     const _list = this.list();
     for (const [key, value] of Object.entries(moduleIoList)) {
+      //console.log(key, value);
       if (value !== 0) {
         for (let i = 0; i < value; i++) {
           const tag =
@@ -886,16 +901,141 @@ export class ArchDocBuilder extends DocumentBuilder {
   constructor(rawAbstract) {
     super(rawAbstract);
     this.spare = "spare";
+    // Color attribution depending of input or output type
+    this.colorPanel = {
+      DI: "30FF18",
+      DO: "2CC132",
+      AI: "1CD2FF",
+      AO: "1C87FF",
+      AIt: "FFB01C",
+    };
   }
   // Method which return HMI ref
-  GetHmiRef(id) {
+  getHmiRef(id) {
     const ref = this.proface["PROFACE"][id]["HMI"]["Ref"];
     return ref;
   }
   // Method which return HMI image
-  GetHmiImg(id) {
+  getHmiImg(id) {
     const img = this.proface["PROFACE"][id]["Image"];
     return img;
+  }
+  // Method which return Hmi Io or false according type of HMI
+  getHmiIo(id) {
+    const nativIo = this.proface["PROFACE"][id]["NativeIO"];
+    return nativIo;
+  }
+  // Method wich substract nativ Iolist to Master Iolist (incase of LT4000)
+  substractIoList(ioList, native) {
+    for (const [key, value] of Object.entries(native)) {
+      ioList["MAIN"][key] =
+        ioList["MAIN"][key] - value < 0 ? 0 : ioList["MAIN"][key] - value;
+    }
+    return ioList;
+  }
+  // Method which build architecture under table shape for each array given in parameters
+  makeTable(item, masterTag) {
+    const table = new Table({
+      rows: [
+        // Call method which build array text
+        new TableRow({
+          children: this.makeRowText(item),
+        }),
+        // Call methods which build array list of input output
+        new TableRow({
+          children: this.makeRowList(item, masterTag),
+        }),
+      ],
+      width: {
+        size: 100,
+        type: WidthType.PERCENTAGE,
+      },
+    });
+    return table;
+  }
+  // Sub method which fill TableCell children with text (only for tableShapeArchitecture method)
+  makeRowText(item) {
+    const _list = this.list();
+    for (const [key, value] of Object.entries(item)) {
+      const text = `Device=${key}`;
+      _list.push(
+        new TableCell({
+          children: [
+            new Paragraph({
+              children: [
+                new TextRun({
+                  text: text,
+                  bold: this.bold,
+                  font: this.font,
+                  size: this.size,
+                  color: this.color,
+                }),
+              ],
+            }),
+          ],
+          width: {
+            size: 1,
+            type: WidthType.PERCENTAGE,
+            /* size: 100,
+            type: WidthType.PERCENTAGE, */
+          },
+        })
+      );
+    }
+    return _list;
+  }
+
+  // Sub method which fill TableCell children with bullet point (only for tableShapeArchitecture method)
+  makeRowList(item, masterTag) {
+    const _list = this.list();
+    for (const [key, value] of Object.entries(item)) {
+      /*       const AAA = item[key];
+      const BBB = item[value]; */
+      console.log("key", key);
+      console.log("value", value);
+      _list.push(this.attribTagToRowList(key, value, masterTag));
+    }
+    return _list;
+  }
+  // Pick tag to dictionnary tag and fill list according module size
+  attribTagToRowList(AAA, BBB, masterTag) {
+    const _list = this.list();
+
+    console.log("^^^^", AAA, BBB);
+    if (BBB !== 0) {
+      for (let i = 0; i < BBB; i++) {
+        const tag =
+          masterTag["MAIN"][AAA].length > 0
+            ? masterTag["MAIN"][AAA].shift()
+            : this.noSlot;
+        _list.push(
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: tag,
+                bold: this.bold,
+                font: this.font,
+                size: this.size,
+                color:
+                  AAA in this.colorPanel ? this.colorPanel[AAA] : this.color,
+              }),
+            ],
+          })
+        );
+      }
+    }
+
+    const rowList = new TableCell({
+      children: _list,
+      width: {
+        size: 1,
+        type: WidthType.PERCENTAGE,
+        /* size: 100,
+        type: WidthType.PERCENTAGE, */
+      },
+    });
+
+    return rowList;
   }
 }
 // Class wich provide several method used to build adressTable document

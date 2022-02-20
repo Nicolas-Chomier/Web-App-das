@@ -18,88 +18,152 @@ import { footer } from "../tools/DocumentFooter";
 import language from "../data/language/ARCH.json";
 
 export function handleClick_ARCH(rawAbstract, tongue) {
-  // Load and parse special datas from JSON
-  const text = JSON.parse(JSON.stringify(language));
-  // Document text language settings
-  const flag = tongue === 0 ? "uk" : "fr"; // Get the flag
-  const speak = text[flag];
   // Instantiation for all class needed (Data builder, Document builder, Technology Provider)
   const Dt = new DataBuilder(rawAbstract);
   const Dx = new DocxBuilder(rawAbstract);
   const Tp = new Proface(rawAbstract);
   const Ar = new ArchDocBuilder(rawAbstract);
-  // Build basical dataset, MASTER => iolist dictionnary, MASTER2 => tagList dictionnary
-  const MASTER_IO = Dt.addMandatorySlotTofullIolistProject();
-  const MASTER_TAG = Dt.tagListObject();
-  // Get project title
+  // Main datas for document construction
+  const rawMasterIo = Dt.addMandatorySlotTofullIolistProject();
+  const masterIo = rawMasterIo["1"]; // DELETE le GRP
+  const rawMasterTag = Dt.tagListObject();
+  const masterTag = rawMasterTag["1"]; // DELETE le GRP
+  // Variables for document construction
+  const id = rawAbstract.Project.Technology.id;
   const projectTitle = Dx.buildTitle();
   const imageCatalog = { LT4000: LT4, SP5000: SP5 };
-  // Sub function which will generate the entire architecture
-  /* console.log(MASTER_IO);
-  console.log(MASTER_TAG); */
-  function buildEntireArchitecture() {
-    const children = [];
-    const GrpNumber = rawAbstract.Project.Group;
-    const id = rawAbstract.Project.Technology.id;
-    const HmiRef = Ar.GetHmiRef(id);
-    const HmiImage = Ar.GetHmiImg(id);
-    for (let i = 1; i < GrpNumber + 1; i++) {
-      // Part 1 : HMI
-      const rawDocTitle = Dx.makeDocxjsCustomText(speak.docTitle, [HmiRef]);
-      const docTitle = Dx.makeTitleRankX(rawDocTitle, 1);
-      children.push(docTitle);
-      // Image of HMI used
-      const imageHMI = new Paragraph({
-        children: [
-          new ImageRun({
-            data: Buffer.from(imageCatalog[HmiImage], "base64"),
-            transformation: {
-              width: 400,
-              height: 300,
-            },
-          }),
-        ],
-      });
-      children.push(imageHMI);
-      // Creation for title rank 1
-      const title1 = Dx.makeTitleRankX(speak.title1, 1);
-      children.push(title1);
-      for (const [key, value] of Object.entries(MASTER_IO[i])) {
-        console.log(key, value);
-        // Check if IOList (value) is empty
-        const isEmpty = !Object.values(value).some((x) => x !== 0);
-        if (isEmpty !== true) {
-          // Get tag list from tag dictionnary
-          const tagList = MASTER_TAG[i][key];
-          // Create module line up from value (IOlist)
-          const lineUp = Tp.lineUpBuilder(value);
-          // Creation for title rank 2
-          const title2 = Dx.titleRank2(key, i);
-          children.push(title2);
-          // Build many arrays looks like architecture
-          for (const item of lineUp) {
-            const array = Dx.makeTable(item, tagList); //!
-            children.push(array);
-            const space = Dx.makeText(); // Space after module row
-            children.push(space);
-          }
-        } else {
-          // Push informative title when nothing inside group
-          const noT = Dx.noTitle();
-          children.push(noT);
-        }
+  const native = Ar.getHmiIo(id);
+  const HmiRef = Ar.getHmiRef(id);
+  const HmiImage = Ar.getHmiImg(id);
+  const children = [];
+  // Document text language settings
+  const text = JSON.parse(JSON.stringify(language));
+  const flag = tongue === 0 ? "uk" : "fr"; // Get the flag
+  const speak = text[flag];
+  // Creation - Document main title
+  const docTitle = Dx.makeTitleRankX(
+    Dx.makeCustomText(speak.docTitle, [projectTitle]),
+    1
+  );
+  children.push(docTitle);
+  // Creation - HMI part
+  const hmiTitle = Dx.makeTitleRankX(
+    Dx.makeCustomText(speak.hmiTitle, [HmiRef]),
+    2
+  );
+  const hmiIntro = Dx.makeText(speak.hmiText);
+  const hmiImage = new Paragraph({
+    children: [
+      new ImageRun({
+        data: Buffer.from(imageCatalog[HmiImage], "base64"),
+        transformation: {
+          width: 400,
+          height: 300,
+        },
+      }),
+    ],
+  });
+  children.push(hmiTitle, hmiIntro, hmiImage);
+  // Creation - PLC part, Title & Intro
+  const break1 = Dx.makePagebreak();
+  const plcTitle = Dx.makeTitleRankX(
+    Dx.makeCustomText(speak.plcTitle, [projectTitle]),
+    2
+  );
+  const plcIntro = Dx.makeText(speak.plcText);
+  children.push(break1, plcTitle, plcIntro);
+  // Creation - PLC part, structure builded by many array with board image and list of tags ...
+  console.log("masterIo", masterIo);
+  console.log("masterTag", masterTag);
+  console.log("native", native);
+
+  if (native) {
+    // Build substracted IOList in case of LT4000
+    const plcSubTitle = Dx.makeTitleRankX(
+      Dx.makeCustomText(speak.subTitle, [HmiRef]),
+      3
+    );
+    children.push(plcSubTitle);
+    const ioList = Ar.substractIoList(masterIo, native);
+    const array = Ar.makeTable(native, masterTag); //!
+    children.push(array);
+    const space = Dx.makeText(); // Space after module row
+    children.push(space);
+    for (const [key, value] of Object.entries(ioList)) {
+      console.log(key, value);
+      const plcSubTitle = Dx.makeTitleRankX(
+        Dx.makeCustomText(speak.subTitle, [key]),
+        3
+      );
+      children.push(plcSubTitle);
+      // Get tag list from tag dictionnary
+      const tagList = masterTag[key];
+      const lineUp = Tp.lineUpBuilder(value);
+      for (const item of lineUp) {
+        console.log(item);
+        const array = Dx.makeTable(item, tagList); //!
+        children.push(array);
+        const space = Dx.makeText(); // Space after module row
+        children.push(space);
       }
-      children.push(Dx.makePagebreak());
     }
-    return children;
+  } else {
+    for (const [key, value] of Object.entries(masterIo)) {
+      console.log(key, value);
+      const plcSubTitle = Dx.makeTitleRankX(
+        Dx.makeCustomText(speak.subTitle, [key]),
+        3
+      );
+      children.push(plcSubTitle);
+      // Get tag list from tag dictionnary
+      const tagList = masterTag[key];
+      const lineUp = Tp.lineUpBuilder(value);
+      for (const item of lineUp) {
+        console.log(item);
+        const array = Dx.makeTable(item, tagList); //!
+        children.push(array);
+        const space = Dx.makeText(); // Space after module row
+        children.push(space);
+      }
+    }
   }
+
+  //const testt = Ar.substractIoList(MASTER_IO, nativIo);
+
+  /* for (const [key, value] of Object.entries(masterIo)) {
+    console.log(key, value);
+    // Check if IOList (value) is empty
+    const isEmpty = !Object.values(value).some((x) => x !== 0);
+    if (isEmpty !== true) {
+      // Get tag list from tag dictionnary
+      const tagList = masterTag[key];
+      // Create module line up from value (IOlist)
+      const lineUp = Tp.lineUpBuilder(value);
+      // Creation for title rank 2
+      const title2 = Dx.titleRank2(key);
+      children.push(title2);
+      // Build many arrays looks like architecture
+      for (const item of lineUp) {
+        const array = Dx.makeTable(item, tagList); //!
+        children.push(array);
+        const space = Dx.makeText(); // Space after module row
+        children.push(space);
+      }
+    } else {
+      // Push informative title when nothing inside group
+      const noT = Dx.noTitle();
+      children.push(noT);
+    }
+  }
+  children.push(Dx.makePagebreak()); */
+
   // Architecture pattern document
   const doc = new Document({
     sections: [
       {
         headers: header,
         footers: footer,
-        children: buildEntireArchitecture(),
+        children: children,
       },
     ],
   });
