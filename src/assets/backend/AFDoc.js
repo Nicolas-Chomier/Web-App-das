@@ -10,6 +10,7 @@ import { DocxBuilder, Proface, AfDocBuilder } from "../tools/DocumentBuilder";
 import { footer } from "../tools/DocumentFooterAf";
 // Images importation for AF document
 import { IPLC } from "../image/image_af_plc";
+import { IPLCLT4 } from "../image/image_af_plc_lt4000";
 import { ICC } from "../image/image_af_colourCode";
 import { IRV } from "../image/image_af_readingValue";
 import { IWV } from "../image/image_af_writingValue";
@@ -28,6 +29,9 @@ export function handleClick_AF(rawAbstract, tongue) {
   const Dx = new DocxBuilder(rawAbstract);
   const Tp = new Proface(rawAbstract);
   const Afb = new AfDocBuilder(rawAbstract);
+  // LT4000 or SP5000
+  const plcType = Afb.getHmiIo(rawAbstract.Project.Technology.id);
+  console.log(plcType);
   // Get project title
   const projectTitle = Dx.buildTitle();
   // AF main list
@@ -80,7 +84,7 @@ export function handleClick_AF(rawAbstract, tongue) {
   const image6 = new Paragraph({
     children: [
       new ImageRun({
-        data: Buffer.from(IPLC, "base64"),
+        data: Buffer.from(plcType !== false ? IPLCLT4 : IPLC, "base64"),
         transformation: {
           width: 120,
           height: 120,

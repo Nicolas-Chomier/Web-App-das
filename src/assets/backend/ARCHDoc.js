@@ -78,12 +78,13 @@ export function handleClick_ARCH(rawAbstract, tongue) {
   console.log("native", native);
 
   if (native) {
-    // Build substracted IOList in case of LT4000
+    // Build LT4000 Architecture
     const plcSubTitle = Dx.makeTitleRankX(
       Dx.makeCustomText(speak.subTitle, [HmiRef]),
       3
     );
     children.push(plcSubTitle);
+    // Build substracted IOList in case of LT4000
     const ioList = Ar.substractIoList(masterIo, native);
     const array = Ar.makeTable(native, masterTag); //!
     children.push(array);

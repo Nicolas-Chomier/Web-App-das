@@ -7,7 +7,7 @@ import {
   DataBuilder,
   DocxBuilder,
   Proface,
-  AdressTableDocBuilder,
+  IoDocBuilder,
 } from "../tools/DocumentBuilder";
 // Elements for document presentation
 import { header } from "../tools/DocumentHeader";
@@ -16,67 +16,94 @@ import { footer } from "../tools/DocumentFooter";
 import language from "../data/language/IO.json";
 
 export function handleClick_IO(rawAbstract, tongue) {
-  // Load and parse special datas from JSON
-  const text = JSON.parse(JSON.stringify(language));
-  // Document text language settings
-  const flag = tongue === 0 ? "uk" : "fr"; // Get the flag
-  const speak = text[flag];
   // Instantiation for all class needed (Data builder, Document builder, Technology Provider)
   const Dt = new DataBuilder(rawAbstract);
   const Dx = new DocxBuilder(rawAbstract);
   const Tp = new Proface(rawAbstract);
-  const Atb = new AdressTableDocBuilder(rawAbstract);
-  // Build basical dataset, MASTER => iolist dictionnary, MASTER2 => tagList dictionnary
-  const MASTER_IO = Dt.addMandatorySlotTofullIolistProject();
-  const MASTER_TAG = Dt.tagListObject();
-  const MASTER_ID = Dt.idListObject();
-  // Get number of group
-  const GrpNumber = rawAbstract.Project.Group;
-  // Get project title
+  const Iob = new IoDocBuilder(rawAbstract);
+  // Main datas for document construction
+  const rawMasterIo = Dt.addMandatorySlotTofullIolistProject();
+  const masterIo = rawMasterIo["1"]; // DELETE le GRP
+  const rawMasterTag = Dt.tagListObject();
+  const masterTag = rawMasterTag["1"]; // DELETE le GRP
+  const rawMasterId = Dt.idListObject();
+  const masterId = rawMasterId["1"]; // DELETE le GRP
+  // Variables for document construction
+  const id = rawAbstract.Project.Technology.id;
   const projectTitle = Dx.buildTitle();
-  // Function, variable and object which compose functional analysis
+  const UselessModule = ["module10", "module11", "module12"];
+  const native = Iob.getHmiIo(id);
+  const HmiRef = Iob.getHmiRef(id);
+  const EmptyRawArray = [];
   const children = [];
-  // Build a raw list with all important infos
-  function buildRawArrayOfDatas(MASTER_IO, MASTER_TAG, MASTER_ID, flag) {
-    const EmptyRawArray = [];
-    const limit = ["module10", "module11", "module12"];
-    for (let i = 1; i < GrpNumber + 1; i++) {
-      for (const [key, value] of Object.entries(MASTER_IO[i])) {
-        const idList = MASTER_ID[i][key];
-        const tagList = MASTER_TAG[i][key];
-        const partTitle = `${key}, grp${i}`;
-        const isEmpty = !Object.values(value).some((x) => x !== 0);
-        if (isEmpty !== true) {
-          EmptyRawArray.push([partTitle]);
-          const lineUp = Tp.moduleBuilder(value);
-          let moduleNbs = 0;
-          for (const [module, number] of Object.entries(lineUp)) {
-            if (number !== 0 && limit.includes(module) === false) {
-              for (let k = 0; k < number; k++) {
-                moduleNbs += 1;
-                const listWithTag = Atb.reshapeTagList(
-                  tagList,
-                  idList,
-                  module,
-                  flag,
-                  moduleNbs
-                );
-                EmptyRawArray.push(listWithTag);
-              }
-            }
-          }
+  // Document text language settings
+  const text = JSON.parse(JSON.stringify(language));
+  const flag = tongue === 0 ? "uk" : "fr"; // Get the flag
+  const speak = text[flag];
+  // Creation - Document main title
+  const docTitle = Dx.makeTitleRankX(
+    Dx.makeCustomText(speak.docTitle, [projectTitle]),
+    1
+  );
+  children.push(docTitle);
+  // Creation - Document introduction
+  const intro = Dx.makeText(speak.docText);
+  children.push(intro);
+  // Creation - IOList
+  if (native) {
+    // Build LT4000 IOList
+    const hmiTitle = Dx.makeTitleRankX(
+      Dx.makeCustomText(speak.hmiTitle, [HmiRef]),
+      2
+    );
+    children.push(hmiTitle);
+    // Build substracted IOList in case of LT4000
+    const partTitle = `${HmiRef}`;
+    EmptyRawArray.push([partTitle]);
+    for (const [key, value] of Object.entries(native)) {
+      const idList = masterId["MAIN"][key];
+      const tagList = masterTag["MAIN"][key];
+      const listWithTag = Iob.reshapeTagListSpecial(
+        tagList,
+        idList,
+        key,
+        value,
+        flag
+      );
+      EmptyRawArray.push(listWithTag);
+    }
+
+    //const ioList = Iob.substractIoList(masterIo, native);
+  }
+  /* // Creation - HMI part
+  for (const [key, value] of Object.entries(masterIo)) {
+    const idList = masterId[key];
+    const tagList = masterTag[key];
+    const partTitle = `${key}, grp 1`;
+
+    EmptyRawArray.push([partTitle]);
+    const lineUp = Tp.moduleBuilder(value);
+    let moduleNbs = 0;
+    for (const [module, number] of Object.entries(lineUp)) {
+      if (number !== 0 && UselessModule.includes(module) === false) {
+        for (let k = 0; k < number; k++) {
+          moduleNbs += 1;
+          const listWithTag = Iob.reshapeTagList(
+            tagList,
+            idList,
+            module,
+            flag,
+            moduleNbs
+          );
+          EmptyRawArray.push(listWithTag);
         }
       }
     }
-    return EmptyRawArray;
-  }
-  // Add bloc to document
-  children.push(Dx.makeTitleRankOne(projectTitle)); // Main document title
-  children.push(Dx.makeText()); // Space after title
-  children.push(Dx.makeText(speak.text1)); // Document text introduction
+  } */
+
   // Build the table wich will displayed with DOCXJS method & raw list above
-  const _array = buildRawArrayOfDatas(MASTER_IO, MASTER_TAG, MASTER_ID, flag);
-  for (const item of _array) {
+
+  for (const item of EmptyRawArray) {
     const _table = Dx.docxTable(item, 6);
     children.push(
       new Table({

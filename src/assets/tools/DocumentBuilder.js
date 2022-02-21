@@ -900,7 +900,6 @@ export class DocxBuilder extends DocumentBuilder {
 export class ArchDocBuilder extends DocumentBuilder {
   constructor(rawAbstract) {
     super(rawAbstract);
-    this.spare = "spare";
     // Color attribution depending of input or output type
     this.colorPanel = {
       DI: "30FF18",
@@ -984,7 +983,6 @@ export class ArchDocBuilder extends DocumentBuilder {
     }
     return _list;
   }
-
   // Sub method which fill TableCell children with bullet point (only for tableShapeArchitecture method)
   makeRowList(item, masterTag) {
     const _list = this.list();
@@ -997,11 +995,9 @@ export class ArchDocBuilder extends DocumentBuilder {
     }
     return _list;
   }
-  // Pick tag to dictionnary tag and fill list according module size
+  // Pick tag to dictionnary tag and fill list according module size  TO cLEAN !!
   attribTagToRowList(AAA, BBB, masterTag) {
     const _list = this.list();
-
-    console.log("^^^^", AAA, BBB);
     if (BBB !== 0) {
       for (let i = 0; i < BBB; i++) {
         const tag =
@@ -1039,7 +1035,7 @@ export class ArchDocBuilder extends DocumentBuilder {
   }
 }
 // Class wich provide several method used to build adressTable document
-export class AdressTableDocBuilder extends DocumentBuilder {
+export class IoDocBuilder extends DocumentBuilder {
   constructor(rawAbstract) {
     super(rawAbstract);
     this.targetA = "IoList";
@@ -1061,6 +1057,37 @@ export class AdressTableDocBuilder extends DocumentBuilder {
       "Description",
       "Ref carte",
     ];
+  }
+  // Method which return HMI ref
+  getHmiRef(id) {
+    const ref = this.proface["PROFACE"][id]["HMI"]["Ref"];
+    return ref;
+  }
+  // Method which return Hmi Io or false according type of HMI
+  getHmiIo(id) {
+    const nativIo = this.proface["PROFACE"][id]["NativeIO"];
+    return nativIo;
+  }
+  // Priciplae method which buils raw table [[][]...]
+  buildRawIoTable(masterIo, masterTag, masterId, flag) {
+    return false;
+  }
+  // Method which count duplicate in given list
+  countDuplicateInList(list) {
+    const counts = {};
+    list.forEach(function (x) {
+      counts[x] = (counts[x] || 0) + 1;
+    });
+    console.log("ttttttt", counts);
+    return counts;
+  }
+  // Method wich substract nativ Iolist to Master Iolist (incase of LT4000)
+  substractIoList(ioList, native) {
+    for (const [key, value] of Object.entries(native)) {
+      ioList["MAIN"][key] =
+        ioList["MAIN"][key] - value < 0 ? 0 : ioList["MAIN"][key] - value;
+    }
+    return ioList;
   }
   // Pick tag to dictionnary tag and fill list according module size
   attribTagToList(tagList, idList, module, flag, moduleNbs) {
@@ -1092,22 +1119,55 @@ export class AdressTableDocBuilder extends DocumentBuilder {
     }
     return _list;
   }
-  // Method which count duplicate in given list
-  countDuplicateInList(list) {
-    const counts = {};
-    list.forEach(function (x) {
-      counts[x] = (counts[x] || 0) + 1;
-    });
-    return counts;
-  }
   //
-  reshapeTagList(tagList, idList, module, flag, moduleNbs) {
+  reshapeTagList(tagList, idList, moduleNbs, module, flag) {
     const result = this.attribTagToList(
       tagList,
       idList,
       module,
       flag,
       moduleNbs
+    );
+    const _list = this.list();
+    for (const item of result) {
+      _list.push(item);
+    }
+    return _list;
+  }
+  // Pick tag to dictionnary tag and fill list according module size
+  attribTagToListSpecial(tagList, idList, key, value, flag) {
+    const _list = this.list();
+    _list.push(flag === "uk" ? this.firstRowUK : this.firstRowFR);
+    const moduleRef = key;
+    for (let i = 0; i < value; i++) {
+      // Object with duplicate {name : number}
+      const counterObject = this.countDuplicateInList(tagList);
+      // Number of duplicate leaving for actual tag
+      const actualTag = tagList[0];
+      const counter = counterObject[actualTag];
+      // Shift tag one by one
+      const tag = tagList.length > 0 ? tagList.shift() : this.noSlot;
+      const id = idList.length > 0 ? idList.shift() : this.noSlot;
+      const fluf = this.AddFlufToRawAdressTable(id, key, flag, counter);
+      const trackNbs = this.AddTrackNumberToRawAdressTable(
+        key,
+
+        i
+      );
+      _list.push([trackNbs, fluf, tag, key, this.comment, moduleRef]);
+    }
+
+    return _list;
+  }
+
+  //Special == LT4000
+  reshapeTagListSpecial(tagList, idList, key, value, flag) {
+    const result = this.attribTagToListSpecial(
+      tagList,
+      idList,
+      key,
+      value,
+      flag
     );
     const _list = this.list();
     for (const item of result) {
@@ -1134,6 +1194,11 @@ export class AfDocBuilder extends DocumentBuilder {
   constructor(rawAbstract) {
     super(rawAbstract);
     this.cell = "IoList";
+  }
+  // Method which return Hmi Io or false according type of HMI
+  getHmiIo(id) {
+    const nativIo = this.proface["PROFACE"][id]["NativeIO"];
+    return nativIo;
   }
   // Generate table of content ... WIP
   tableOfContents() {
