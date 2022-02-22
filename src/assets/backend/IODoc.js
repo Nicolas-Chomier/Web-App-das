@@ -1,7 +1,6 @@
 import { Packer } from "docx";
 import { saveAs } from "file-saver";
-import { Document, WidthType } from "docx";
-import { Table } from "docx";
+import { Document } from "docx";
 // Home made class importation
 import {
   DataBuilder,
@@ -57,9 +56,10 @@ export function handleClick_IO(rawAbstract, tongue) {
       2
     );
     children.push(hmiTitle);
+    // Rest for IOList
+    const ioList = Iob.substractIoList(masterIo, native);
     // Build substracted IOList in case of LT4000
-    const partTitle = `${HmiRef}`;
-    EmptyRawArray.push([partTitle]);
+    EmptyRawArray.push([`${HmiRef}`]);
     for (const [key, value] of Object.entries(native)) {
       const idList = masterId["MAIN"][key];
       const tagList = masterTag["MAIN"][key];
@@ -68,53 +68,67 @@ export function handleClick_IO(rawAbstract, tongue) {
         idList,
         key,
         value,
-        flag
+        flag,
+        HmiRef
       );
       EmptyRawArray.push(listWithTag);
     }
-
-    //const ioList = Iob.substractIoList(masterIo, native);
-  }
-  /* // Creation - HMI part
-  for (const [key, value] of Object.entries(masterIo)) {
-    const idList = masterId[key];
-    const tagList = masterTag[key];
-    const partTitle = `${key}, grp 1`;
-
-    EmptyRawArray.push([partTitle]);
-    const lineUp = Tp.moduleBuilder(value);
-    let moduleNbs = 0;
-    for (const [module, number] of Object.entries(lineUp)) {
-      if (number !== 0 && UselessModule.includes(module) === false) {
-        for (let k = 0; k < number; k++) {
-          moduleNbs += 1;
-          const listWithTag = Iob.reshapeTagList(
-            tagList,
-            idList,
-            module,
-            flag,
-            moduleNbs
-          );
-          EmptyRawArray.push(listWithTag);
+    Dx.makeMainTable(EmptyRawArray, children);
+    // Build LT4000 rest of IOList
+    const plcTitle = Dx.makeTitleRankX(speak.plcTitle, 2);
+    children.push(plcTitle);
+    for (const [key, value] of Object.entries(ioList)) {
+      const isEmpty = !Object.values(value).some((x) => x !== 0);
+      if (isEmpty !== true) {
+        const idList = masterId[key];
+        const tagList = masterTag[key];
+        const partTitle = `${key}`;
+        EmptyRawArray.push([partTitle]);
+        const lineUp = Tp.moduleBuilder(value);
+        let moduleNbs = 0;
+        for (const [module, number] of Object.entries(lineUp)) {
+          if (number !== 0 && UselessModule.includes(module) === false) {
+            for (let k = 0; k < number; k++) {
+              moduleNbs += 1;
+              const listWithTag = Iob.reshapeTagList(
+                tagList,
+                idList,
+                module,
+                flag,
+                moduleNbs
+              );
+              EmptyRawArray.push(listWithTag);
+            }
+          }
         }
       }
     }
-  } */
-
-  // Build the table wich will displayed with DOCXJS method & raw list above
-
-  for (const item of EmptyRawArray) {
-    const _table = Dx.docxTable(item, 6);
-    children.push(
-      new Table({
-        columnWidths: [600, 1200, 1000, 400, 1200, 800],
-        rows: _table,
-        width: {
-          size: 100,
-          type: WidthType.PERCENTAGE,
-        },
-      })
-    );
+    Dx.makeMainTable(EmptyRawArray, children);
+  } else {
+    for (const [key, value] of Object.entries(masterIo)) {
+      const idList = masterId[key];
+      const tagList = masterTag[key];
+      const partTitle = `${key}`;
+      EmptyRawArray.push([partTitle]);
+      const lineUp = Tp.moduleBuilder(value);
+      let moduleNbs = 0;
+      for (const [module, number] of Object.entries(lineUp)) {
+        if (number !== 0 && UselessModule.includes(module) === false) {
+          for (let k = 0; k < number; k++) {
+            moduleNbs += 1;
+            const listWithTag = Iob.reshapeTagList(
+              tagList,
+              idList,
+              module,
+              flag,
+              moduleNbs
+            );
+            EmptyRawArray.push(listWithTag);
+          }
+        }
+      }
+    }
+    Dx.makeMainTable(EmptyRawArray, children);
   }
   // AdressTable pattern
   const doc = new Document({

@@ -16,17 +16,17 @@
             ],
             [
                 "PROCESS FUNCTIONAL ANALYSIS",
-                "XXXXX",
-                "XXXXX"
+                "",
+                ""
             ],
             [
                 "MODULE & AUTOMATION ARCHITECTURE",
-                "ORANO-ARCH-001",
+                "@-ARCH-001",
                 "1.0"
             ],
             [
                 "ELEMENT IOLIST",
-                "ORANO-IOLIST-001",
+                "@-IOLIST-001",
                 "1.0"
             ],
             [

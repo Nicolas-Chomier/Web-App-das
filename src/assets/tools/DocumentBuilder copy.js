@@ -1237,26 +1237,14 @@ export class AfDocBuilder extends DocumentBuilder {
   makeAfTable(matrix, shape = "classic") {
     const style = {
       classic: {
-        bold: [true, true, false],
+        bold: true,
         font: "Calibri",
-        size: [20, 18, 12],
-        textColor: ["FFFFFF", "000000", "000000"],
-        bgColor: ["3C3C3C", "9D9D9D", "FFFFFF"],
+        size: 18,
+        textColor: "8800FF",
+        bgColor: "7D7D7D",
       },
-      orange: {
-        bold: [true, true, false],
-        font: "Calibri",
-        size: [20, 18, 12],
-        textColor: ["FFFFFF", "000000", "000000"],
-        bgColor: ["FF6B00", "FFB00F", "FFFFFF"],
-      },
-      blue: {
-        bold: [true, true, false],
-        font: "Calibri",
-        size: [20, 18, 12],
-        textColor: ["FFFFFF", "000000", "000000"],
-        bgColor: ["0059FF", "4A8DFF", "FFFFFF"],
-      },
+      orange: {},
+      blue: {},
     };
     const span = matrix[1].length;
     const table = new Table({
@@ -1269,26 +1257,29 @@ export class AfDocBuilder extends DocumentBuilder {
     });
     // Loop through given matrix
     matrix.forEach((element, key) => {
-      //console.log(element, key);
+      console.log(element, key);
       const row = new TableRow({
         children: [],
       });
-      const Vkey = key > 1 ? 2 : key;
       element.forEach((item) => {
         row.root.push(
           new TableCell({
             children: [
-              this.makeAfText(
-                item,
-                style[shape].bold[Vkey],
-                style[shape].font,
-                style[shape].size[Vkey],
-                style[shape].textColor[Vkey]
-              ),
+              key === 0
+                ? this.makeAfText(
+                    item,
+                    style[shape].bold,
+                    style[shape].font,
+                    style[shape].size,
+                    style[shape].textColor
+                  )
+                : key === 1
+                ? this.makeAfText(item, true, "Calibri", 14, "2E2E2E")
+                : this.makeAfText(item),
             ],
             shading: {
               type: ShadingType.PERCENT_75,
-              color: style[shape].bgColor[Vkey],
+              color: "880aa8",
             },
             columnSpan: key === 0 ? span : 0,
           })
@@ -1403,6 +1394,7 @@ export class AfDocBuilder extends DocumentBuilder {
     //console.log("matrice", _matrix);  //(to keep for debug)
     return _matrix;
   }
+
   // Method which remove duplicates from a two-dimensional array
   multiDimensionalUnique(arr) {
     var uniques = this.list();

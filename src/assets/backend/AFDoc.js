@@ -31,14 +31,13 @@ export function handleClick_AF(rawAbstract, tongue) {
   const Afb = new AfDocBuilder(rawAbstract);
   // LT4000 or SP5000
   const plcType = Afb.getHmiIo(rawAbstract.Project.Technology.id);
-  console.log(plcType);
   // Get project title
   const projectTitle = Dx.buildTitle();
   // AF main list
   const children = [];
   // ---- Build CHAPTER 0 "Table of content" ---- //
-  const tableOfContent = Afb.tableOfContents();
-  children.push(tableOfContent);
+  /*  const tableOfContent = Afb.tableOfContents();
+  children.push(tableOfContent); */
   // ---- Build CHAPTER 1 "Document presentation" ---- //
   const title1 = Afb.makeAfTitleRankX(speak.title1, 1);
   const text1 = Afb.makeAfText(speak.text1 + projectTitle);
@@ -333,10 +332,12 @@ export function handleClick_AF(rawAbstract, tongue) {
   const title19 = Afb.makeAfTitleRankX(speak.title19, 1);
   children.push(title19);
   // Architecture pattern document
+
   const doc = new Document({
     features: {
       updateFields: true,
     },
+
     sections: [
       {
         //headers: header,

@@ -19,9 +19,9 @@ const PanelsPage = () => {
   const Process_components = datas.Process_components;
   const Valves_and_dampers = datas.Valves_and_dampers;
   const Analyzer = datas.Analyzer;
-  const opt = datas.OpenAir; // Depend on Open Air option chossen or not:
+  const opt = projectData.OpenAir; // Depend on Open Air option chossen or not:
   const Fluid_supply = datas.Fluid_supply;
-  const openair = datas.OpenAir;
+  const OpenAir = datas.OpenAir;
   const Devices = datas.Devices;
   // Result from choice on different panels (false protect against empty entry when page build/refresh)
   const [config, setConfig] = useState(false);
@@ -77,7 +77,7 @@ const PanelsPage = () => {
       </div>
       <div className="p5">
         <ElementPanel
-          data={opt === false ? Fluid_supply : openair}
+          data={opt === false ? Fluid_supply : OpenAir}
           config={projectData}
           output={setConfig}
         />
