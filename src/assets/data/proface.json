@@ -48,44 +48,35 @@
             }
         },
         "0001": {
-            "Taille": 12,
-            "Gamme": "eXtrem",
             "Image": "SP5000",
-            "Series": "SP5000X Series",
             "NativeIO": false,
-            "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
-            "InfosHMI": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
-            "InfosPLC": "PLC & HMI all in one",
-            "InfosCAN": "Master canopen board",
-            "PriceHMI": 1162.35,
-            "PricePLC": 1162.35,
-            "PriceCAN": 1162.35,
-            "HMI_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "HMI_Denomination": "HMI",
-            "HMI_Ref": "PFXSP5690WAD",
-            "HMI_Manufacturer": "PROFACE",
-            "PLC_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "PLC_Denomination": "PLC",
-            "PLC_Ref": "PFXSP5B90",
-            "PLC_Manufacturer": "PROFACE",
-            "CAN_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "CAN_Denomination": "CANOPEN MASTER",
-            "CAN_Ref": "99999",
-            "CAN_Manufacturer": "PROFACE",
-            "HMI": {
-                "Denomination": "HMI",
-                "Ref": "PFXSP5690WAD",
-                "Manufacturer": "PROFACE"
-            },
             "PLC": {
-                "Denomination": "PLC",
+                "Denomination": "SP5000X eXtreme Box",
+                "Ref": "PFXSP5690WAD",
+                "Devices": [
+                    "RS-232C / 422 / 485 x 2",
+                    "Ethernet x 2",
+                    "USB (Type A) x 2",
+                    "USB (mini-B) x 1",
+                    "SD Card Slot (System) x 1",
+                    "SD Card Slot (Storage) x 1",
+                    "Speaker Output x 1",
+                    "Alarm Output or Buzzer Output x 1",
+                    "Fieldbus Unit x 1 (PROFIBUS / J1939 / CANopen / FLEX NETWORK"
+                ]
+            },
+            "HMI": {
+                "Denomination": "SP5000X eXtreme display",
                 "Ref": "PFXSP5B90",
-                "Manufacturer": "PROFACE"
+                "Devices": [
+                    "TFT Color LCD (High brightness)",
+                    "1,366 x 768 pixels (FWXGA)",
+                    "15” wide"
+                ]
             },
             "CAN": {
-                "Denomination": "CANOPEN MASTER",
-                "Ref": "99999",
-                "Manufacturer": "PROFACE"
+                "Denomination": "CAN open Master Unit for SP5000",
+                "Ref": "PFXZCHEUCAM1"
             }
         },
         "0002": {

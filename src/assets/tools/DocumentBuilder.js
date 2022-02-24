@@ -35,7 +35,7 @@ class DocumentBuilder {
     // Name put in input output module list when no correspondance in tag list
     this.noSlot = "Spare";
   }
-  // Method wich return empty Object
+  // Method which return empty Object
   object() {
     const _obj = {};
     for (const prop of Object.getOwnPropertyNames(_obj)) {
@@ -43,7 +43,7 @@ class DocumentBuilder {
     }
     return _obj;
   }
-  // Method wich return empty list
+  // Method which return empty list
   list(item) {
     const _list = [];
     _list.length = 0;
@@ -68,7 +68,7 @@ class DocumentBuilder {
     }
     return _obj;
   }
-  // Method wich return an formatted empty structure only to use with dictionnaryWithIO method
+  // Method which return an formatted empty structure only to use with dictionnaryWithIO method
   emptyShapeForIolist() {
     const obj = this.object();
     for (let i = 0; i < this.group; i++) {
@@ -76,7 +76,7 @@ class DocumentBuilder {
     }
     return obj;
   }
-  // Method wich return an formatted empty structure only to use with dictionnaryWithTag method
+  // Method which return an formatted empty structure only to use with dictionnaryWithTag method
   emptyShapeForTagList() {
     const obj = this.object();
     for (let i = 0; i < this.group; i++) {
@@ -84,15 +84,19 @@ class DocumentBuilder {
     }
     return obj;
   }
-  // Method wich delete duplicate in front elements list (tag is unique)
+  // Method which delete duplicate in front elements list (tag is unique)
   removeAbstractDuplicate() {
     const uniqueObjects = [
       ...new Map(this.infosElement.map((item) => [item.tag, item])).values(),
     ];
     return uniqueObjects;
   }
+  // Method which return true if pair
+  numIsPair(n) {
+    return n & 1 ? true : false;
+  }
 }
-// Class wich regroup methods used to build documents //
+// Class which regroup methods used to build documents //
 export class DataBuilder extends DocumentBuilder {
   constructor(rawAbstract) {
     super(rawAbstract);
@@ -1187,6 +1191,39 @@ export class AfDocBuilder extends DocumentBuilder {
   constructor(rawAbstract) {
     super(rawAbstract);
     this.cell = "IoList";
+    this.style = {
+      classic: {
+        bold: [true, true, false, false],
+        font: "Calibri",
+        size: [20, 18, 12, 12],
+        textColor: ["FFFFFF", "000000", "000000", "000000"],
+        bgColor: ["3C3C3C", "9D9D9D", "FFFFFF", "FFFFFF"],
+      },
+      orange: {
+        bold: [true, true, false, false],
+        font: "Calibri",
+        size: [20, 18, 12, 12],
+        textColor: ["FFFFFF", "000000", "000000", "000000"],
+        bgColor: ["FF6B00", "FFB00F", "FFFFFF", "FFDBB4"],
+      },
+      blue: {
+        bold: [true, true, false, false],
+        font: "Calibri",
+        size: [20, 18, 12, 12],
+        textColor: ["FFFFFF", "000000", "000000", "000000"],
+        bgColor: ["0059FF", "4A8DFF", "FFFFFF", "B4D2FF"],
+      },
+    };
+  }
+  // Method which return HMI ref
+  afGetHmiRef() {
+    const ref = this.proface["PROFACE"][this.HMI_id]["HMI"]["Ref"];
+    return ref;
+  }
+  // Method which return HMI ref
+  afGetPlcRef() {
+    const ref = this.proface["PROFACE"][this.HMI_id]["PLC"]["Ref"];
+    return ref;
   }
   // Method which return Hmi Io or false according type of HMI
   getHmiIo(id) {
@@ -1218,8 +1255,38 @@ export class AfDocBuilder extends DocumentBuilder {
     });
     return result;
   }
+  // Method which put in place of @ item given in item list parameter ATTENTION to give same list size to @ in str ATTENTION VIRER CELLE DU HAUT !!
+  makeAfCustomText(str, list) {
+    let _srt = "";
+    let i = 0;
+    for (const item of str) {
+      if (item === "@") {
+        _srt += list[i];
+        i += 1;
+      } else {
+        _srt += item;
+      }
+    }
+    return _srt;
+  }
+  // Method which put in place of @,£,§ item given in item list
+  speMakeAfCustomText(str, list) {
+    let _srt = "";
+    for (const item of str) {
+      if (item === "@") {
+        _srt += list[0];
+      } else if (item === "£") {
+        _srt += list[1];
+      } else if (item === "§") {
+        _srt += list[2];
+      } else {
+        _srt += item;
+      }
+    }
+    return _srt;
+  }
   // Method which build text with parameters for AF (DocxJs)
-  makeAfText(text, b = false, f = "Calibri", s = 12, c = "2E2E2E") {
+  makeAfText(text = "", b = false, f = "Calibri", s = 12, c = "2E2E2E") {
     const paragraph = new Paragraph({
       children: [
         new TextRun({
@@ -1234,30 +1301,8 @@ export class AfDocBuilder extends DocumentBuilder {
     return paragraph;
   }
   // Method which return pre-formated table according matrix parameter => [[title],[col,col,col]...]
-  makeAfTable(matrix, shape = "classic") {
-    const style = {
-      classic: {
-        bold: [true, true, false],
-        font: "Calibri",
-        size: [20, 18, 12],
-        textColor: ["FFFFFF", "000000", "000000"],
-        bgColor: ["3C3C3C", "9D9D9D", "FFFFFF"],
-      },
-      orange: {
-        bold: [true, true, false],
-        font: "Calibri",
-        size: [20, 18, 12],
-        textColor: ["FFFFFF", "000000", "000000"],
-        bgColor: ["FF6B00", "FFB00F", "FFFFFF"],
-      },
-      blue: {
-        bold: [true, true, false],
-        font: "Calibri",
-        size: [20, 18, 12],
-        textColor: ["FFFFFF", "000000", "000000"],
-        bgColor: ["0059FF", "4A8DFF", "FFFFFF"],
-      },
-    };
+  makeAfTable(matrix, shape = "classic", l1 = []) {
+    const style = this.style;
     const span = matrix[1].length;
     const table = new Table({
       columnWidths: [],
@@ -1269,17 +1314,20 @@ export class AfDocBuilder extends DocumentBuilder {
     });
     // Loop through given matrix
     matrix.forEach((element, key) => {
-      //console.log(element, key);
       const row = new TableRow({
         children: [],
       });
-      const Vkey = key > 1 ? 2 : key;
+      // Choose text style according some conditions
+      const Vkey = key > 1 ? (this.numIsPair(key) ? 3 : 2) : key;
       element.forEach((item) => {
+        // Replace @ and § by choosen word in list1 or list2
+        const cText =
+          l1.length !== 0 ? this.speMakeAfCustomText(item, l1) : item;
         row.root.push(
           new TableCell({
             children: [
               this.makeAfText(
-                item,
+                cText,
                 style[shape].bold[Vkey],
                 style[shape].font,
                 style[shape].size[Vkey],

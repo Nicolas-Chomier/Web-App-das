@@ -29,10 +29,11 @@ export function handleClick_AF(rawAbstract, tongue) {
   const Dx = new DocxBuilder(rawAbstract);
   const Tp = new Proface(rawAbstract);
   const Afb = new AfDocBuilder(rawAbstract);
-  // LT4000 or SP5000
-  const plcType = Afb.getHmiIo(rawAbstract.Project.Technology.id);
-  // Get project title
-  const projectTitle = Dx.buildTitle();
+  // Variables
+  const plcType = Afb.getHmiIo(rawAbstract.Project.Technology.id); // LT4000 or SP5000
+  const projectTitle = Dx.buildTitle(); // Get project title
+  const hmiRef = Afb.afGetHmiRef(); // Get hmi ref
+  const plcRef = Afb.afGetPlcRef(); // Get plc ref
   // AF main list
   const children = [];
   // ---- Build CHAPTER 0 "Table of content" ---- //
@@ -45,7 +46,11 @@ export function handleClick_AF(rawAbstract, tongue) {
   // ---- Build CHAPTER 2 "Reference document" ---- //
   const title2 = Afb.makeAfTitleRankX(speak.title2, 1);
   const text2 = Afb.makeAfText(speak.text2);
-  const table2 = Afb.makeAfTable(speak.table2);
+  const table2 = Afb.makeAfTable(speak.table2, "classic", [
+    projectTitle.toUpperCase(),
+    hmiRef.toUpperCase(),
+    plcRef.toUpperCase(),
+  ]);
   children.push(title2, text2, table2);
   // ---- Build CHAPTER 3 "Installation architecture" ---- //
   const hmiNbs = rawAbstract.Project.Group;
@@ -53,28 +58,48 @@ export function handleClick_AF(rawAbstract, tongue) {
     rawAbstract.Project.Technology.id,
     "Series"
   );
-  const nameRefDoc = speak.table2[3][1];
-  const rawText3 = Dx.makeDocxjsCustomText(speak.text3, [
-    hmiNbs,
-    hmiSeries,
-    nameRefDoc,
-  ]);
+  //
   const title3 = Afb.makeAfTitleRankX(speak.title3, 1);
-  const text3 = Afb.makeAfText(rawText3);
-  children.push(title3, text3);
-  // ---- Build CHAPTER 4 "Element listing" ---- //
+  const subTitle3a = Afb.makeAfTitleRankX(speak.subTitle3a, 2);
+  const text3a = Afb.makeAfText(speak.text3a);
+  const text3aa = Afb.makeAfText(speak.text3aa);
+  //const Bullet bullet !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  const subTitle3b = Afb.makeAfTitleRankX(speak.subTitle3b, 2);
+  const text3b = Afb.makeAfText(speak.text3b);
+  const smallTitle3b1 = Afb.makeAfTitleRankX(speak.smallTitle3b1, 3);
+  //const list element !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  const smallTitle3b2 = Afb.makeAfTitleRankX(speak.smallTitle3b2, 3);
+  const textWip3 = Afb.makeAfText("NONE");
+  children.push(
+    title3,
+    subTitle3a,
+    text3a,
+    text3aa,
+    subTitle3b,
+    text3b,
+    smallTitle3b1,
+    smallTitle3b2,
+    textWip3
+  );
+  // ---- Build CHAPTER 4 "Network architecture" ---- //
   const title4 = Afb.makeAfTitleRankX(speak.title4, 1);
-  const text4 = Afb.makeAfText(speak.text4);
+  const rawtext4 = Dx.makeDocxjsCustomText(speak.text4, [
+    projectTitle.toUpperCase(),
+  ]);
+  const text4 = Afb.makeAfText(rawtext4);
   children.push(title4, text4);
-  // ---- Build CHAPTER 5 "Network architecture" ---- //
+  // ---- Build CHAPTER 5 "Element listing" ---- //
   const title5 = Afb.makeAfTitleRankX(speak.title5, 1);
-  const text5 = Afb.makeAfText(speak.text5);
+  const rawtext5 = Dx.makeDocxjsCustomText(speak.text5, [
+    projectTitle.toUpperCase(),
+  ]);
+  const text5 = Afb.makeAfText(rawtext5);
   children.push(title5, text5);
   // ---- Build CHAPTER 6 "PLC settings" ---- //
-  const nameRefDocPLC = Tp.giveMeHmiInformations(
+  /* const nameRefDocPLC = Tp.giveMeHmiInformations(
     rawAbstract.Project.Technology.id,
     "PLC_documentation"
-  );
+  ); */
   const rawtext6A = Dx.makeDocxjsCustomText(speak.text6A, [
     hmiNbs,
     hmiNbs,
@@ -91,18 +116,18 @@ export function handleClick_AF(rawAbstract, tongue) {
       }),
     ],
   });
-  const rawtext6B = Dx.makeDocxjsCustomText(speak.text6B, [nameRefDocPLC]);
+  const rawtext6B = Dx.makeDocxjsCustomText(speak.text6B, [plcRef]);
   const title6 = Afb.makeAfTitleRankX(speak.title6, 1);
   const text6A = Afb.makeAfText(rawtext6A);
   const text6B = Afb.makeAfText(rawtext6B);
   const text6C = Afb.makeAfText(speak.text6C);
   children.push(title6, text6A, image6, text6B, text6C);
   // ---- Build CHAPTER 7 "HMI settings" ---- //
-  const nameRefDocHMI = Tp.giveMeHmiInformations(
+  /* const nameRefDocHMI = Tp.giveMeHmiInformations(
     rawAbstract.Project.Technology.id,
     "HMI_documentation"
-  );
-  const rawText7 = Dx.makeDocxjsCustomText(speak.text7, [nameRefDocHMI]);
+  ); */
+  const rawText7 = Dx.makeDocxjsCustomText(speak.text7, [hmiRef]);
   const title7 = Afb.makeAfTitleRankX(speak.title7, 1);
   const text7 = Afb.makeAfText(rawText7);
   const table7 = Afb.makeAfTable(speak.table7);
@@ -276,7 +301,9 @@ export function handleClick_AF(rawAbstract, tongue) {
       const matrixC = Afb.makeAfCustomTable(keyTupleList, firstRowC, flag);
       for (const table of matrixC) {
         children.push(
-          Afb.checkFb(elemId) === false ? Afb.makeAfTable(table) : managedByFbC
+          Afb.checkFb(elemId) === false
+            ? Afb.makeAfTable(table, "blue")
+            : managedByFbC
         );
         children.push(Dx.makeText("", 0, 0));
       }
@@ -289,7 +316,9 @@ export function handleClick_AF(rawAbstract, tongue) {
       const matrixD = Afb.makeAfFaultTable(keyTupleList, firstRowD, flag);
       for (const table of matrixD) {
         children.push(
-          Afb.checkFb(elemId) === false ? Afb.makeAfTable(table) : managedByFbD
+          Afb.checkFb(elemId) === false
+            ? Afb.makeAfTable(table, "orange")
+            : managedByFbD
         );
         children.push(Dx.makeText("", 0, 0));
       }
@@ -332,12 +361,11 @@ export function handleClick_AF(rawAbstract, tongue) {
   const title19 = Afb.makeAfTitleRankX(speak.title19, 1);
   children.push(title19);
   // Architecture pattern document
-
+  //const styles = fs.readFileSync("./styles.xml", "utf-8");
   const doc = new Document({
     features: {
       updateFields: true,
     },
-
     sections: [
       {
         //headers: header,

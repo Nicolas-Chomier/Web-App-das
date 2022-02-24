@@ -16,8 +16,8 @@
             ],
             [
                 "PROCESS FUNCTIONAL ANALYSIS",
-                "",
-                ""
+                "@-XXX-XXX",
+                "X"
             ],
             [
                 "MODULE & AUTOMATION ARCHITECTURE",
@@ -25,33 +25,44 @@
                 "1.0"
             ],
             [
-                "ELEMENT IOLIST",
+                "NETWORK ARCHITECTURE",
+                "@-OVERALL-NETWORK",
+                "1.0"
+            ],
+            [
+                "IO & ELEMENT LIST",
                 "@-IOLIST-001",
                 "1.0"
             ],
             [
-                "",
-                "",
-                ""
+                "HMI TECHNICAL SPECIFICATIONS",
+                "£-SPECIFICATIONS",
+                "X"
             ],
             [
-                "",
-                "",
-                ""
+                "PLC TECHNICAL SPECIFICATIONS",
+                "§-SPECIFICATIONS",
+                "X"
             ]
         ],
         "title3": "Installation architecture",
-        "text3": "This installation is managed by @ PROFACE HMI (@), all connected to TM3 input-output modules. See the document describing the PLC architecture, reference : @",
-        "title4": "P&ID element listing",
-        "text4": "This installation is composed of many different elements which involved to the programming and setting / sizing of automation part.See the elements listing document, reference: ORANO-IOLIST-001",
-        "title5": "Network architecture",
-        "text5": "NONE",
+        "subTitle3a": "PLC & HMI",
+        "text3a": "This installation is controlled by a PROFACE PLC + HMI installed in the control cabinet under the drawing reference WIP",
+        "text3aa": "The controller is composed of:",
+        "subTitle3b": "Managed equipment",
+        "text3b": "Different way is used to manage and share information with equipment's installation.",
+        "smallTitle3b1": "Managed by CANOPEN TM3 module",
+        "smallTitle3b2": "Managed by other communications protocols",
+        "title4": "Network architecture",
+        "text4": "This installation is composed of many different devices which need to communicate with each other. See the document, reference: @-OVERALL-NETWORK",
+        "title5": "P&ID element listing",
+        "text5": "This installation is composed of many different elements which involved to the programming and setting / sizing of automation part.See the elements listing document, reference: @-IOLIST-001",
         "title6": "PLC settings",
         "text6A": "The installation is managed by @ PLC and @ Can Open master board.@ is a combined unit of Display Module and Power Box Module.To manage the installation, a panel is installed on the front of the cabinet.",
-        "text6B": "For more details see technical documentation, reference: @.",
+        "text6B": "For more details see technical documentation, reference: @-SPECIFICATIONS.",
         "text6C": "Installed equipment are PROFACE materials, they are programming with GP-Pro EX 4.09 SP1.Product Version:V4.09.350, (latest version).Product version date:01\/02\/2022",
         "title7": "HMI settings",
-        "text7": "The installation is controlled by a PROFACE (SCHNEIDER) human machine interface.For more details see specification document reference: @",
+        "text7": "The installation is controlled by a PROFACE (SCHNEIDER) human machine interface.For more details see specification document reference: @-SPECIFICATIONS",
         "table7": [
             [
                 "Access level table"
