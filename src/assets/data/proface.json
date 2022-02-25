@@ -1,50 +1,39 @@
 {
     "PROFACE": {
         "0000": {
-            "Taille": 5.7,
-            "Gamme": "LT4000",
             "Image": "LT4000",
-            "Series": "LT4000 Series",
             "NativeIO": {
                 "DI": 12,
-                "DO": 8,
+                "DO": 6,
                 "AI": 2,
                 "AO": 2,
                 "AIt": 2
             },
-            "PanelCut": "WIP",
-            "InfosHMI": "WIP",
-            "InfosPLC": "WIP",
-            "InfosCAN": "WIP",
-            "PriceHMI": 666,
-            "PricePLC": 666,
-            "PriceCAN": 666,
-            "HMI_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "HMI_Denomination": "HMI",
-            "HMI_Ref": "PFXSP5690WAD",
-            "HMI_Manufacturer": "PROFACE",
-            "PLC_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "PLC_Denomination": "PLC",
-            "PLC_Ref": "PFXSP5B90",
-            "PLC_Manufacturer": "PROFACE",
-            "CAN_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "CAN_Denomination": "CANOPEN MASTER",
-            "CAN_Ref": "99999",
-            "CAN_Manufacturer": "PROFACE",
-            "HMI": {
-                "Denomination": "HMI",
-                "Ref": "LT4000",
-                "Manufacturer": "PROFACE"
-            },
             "PLC": {
-                "Denomination": "PLC",
-                "Ref": "PFXSP5B90",
-                "Manufacturer": "PROFACE"
+                "Denomination": "LT4000M Series",
+                "Ref": "PFXLM4301TADAC",
+                "Devices": [
+                    "RS-232C/RS485 x 1 (Connector type: RJ45) ",
+                    "Ethernet x 1",
+                    "USB 2.0 (Type A) x 1",
+                    "USB 2.0 (mini-B) x 1"
+                ]
+            },
+            "HMI": {
+                "Denomination": "LT4000M Series",
+                "Ref": "PFXLM4301TADAC",
+                "Devices": [
+                    "TFT Color LCD",
+                    "320 x 240 (QVGA)",
+                    "5.7” wide"
+                ]
             },
             "CAN": {
-                "Denomination": "CANOPEN MASTER",
-                "Ref": "99999",
-                "Manufacturer": "PROFACE"
+                "Denomination": "LT4000M Series",
+                "Ref": "PFXLM4301TADAC",
+                "Devices": [
+                    "CAN-CiA (ISO 11898-2:2002 Part 2), Connector: D-sub9 (pin)"
+                ]
             }
         },
         "0001": {
@@ -83,208 +72,178 @@
             }
         },
         "0002": {
-            "Taille": 12,
-            "Gamme": "eXtrem",
             "Image": "SP5000",
-            "Series": "SP5000X Series",
             "NativeIO": false,
-            "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
-            "InfosHMI": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
-            "InfosPLC": "PLC & HMI all in one",
-            "InfosCAN": "Master canopen board",
-            "PriceHMI": 1162.35,
-            "PricePLC": 1162.35,
-            "PriceCAN": 1162.35,
-            "HMI_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "HMI_Denomination": "HMI",
-            "HMI_Ref": "PFXSP5690WAD",
-            "HMI_Manufacturer": "PROFACE",
-            "PLC_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "PLC_Denomination": "PLC",
-            "PLC_Ref": "PFXSP5B90",
-            "PLC_Manufacturer": "PROFACE",
-            "CAN_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "CAN_Denomination": "CANOPEN MASTER",
-            "CAN_Ref": "99999",
-            "CAN_Manufacturer": "PROFACE",
-            "HMI": {
-                "Denomination": "HMI",
-                "Ref": "PFXSP5690WAD",
-                "Manufacturer": "PROFACE"
-            },
             "PLC": {
-                "Denomination": "PLC",
+                "Denomination": "SP5000X eXtreme Box",
                 "Ref": "PFXSP5B90",
-                "Manufacturer": "PROFACE"
+                "Devices": [
+                    "RS-232C / 422 / 485 x 2",
+                    "Ethernet x 2",
+                    "USB (Type A) x 2",
+                    "USB (mini-B) x 1",
+                    "SD Card Slot (System) x 1",
+                    "SD Card Slot (Storage) x 1",
+                    "Speaker Output x 1",
+                    "Alarm Output or Buzzer Output x 1",
+                    "Fieldbus Unit x 1 (PROFIBUS / J1939 / CANopen / FLEX NETWORK"
+                ]
+            },
+            "HMI": {
+                "Denomination": "SP5000X eXtreme display",
+                "Ref": "PFXSP5690WAD",
+                "Devices": [
+                    "TFT Color LCD (High brightness)",
+                    "1,366 x 768 pixels (FWXGA)",
+                    "15” wide"
+                ]
             },
             "CAN": {
-                "Denomination": "CANOPEN MASTER",
-                "Ref": "99999",
-                "Manufacturer": "PROFACE"
+                "Denomination": "CAN open Master Unit for SP5000",
+                "Ref": "PFXZCHEUCAM1",
+                "Devices": [
+                    "1024 bit input / output / 256 bit input / output"
+                ]
             }
         },
         "0003": {
-            "Taille": 12,
-            "Gamme": "eXtrem",
             "Image": "SP5000",
-            "Series": "SP5000X Series",
             "NativeIO": false,
-            "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
-            "InfosHMI": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
-            "InfosPLC": "PLC & HMI all in one",
-            "InfosCAN": "Master canopen board",
-            "PriceHMI": 1162.35,
-            "PricePLC": 1162.35,
-            "PriceCAN": 1162.35,
-            "HMI_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "HMI_Denomination": "HMI",
-            "HMI_Ref": "PFXSP5690WAD",
-            "HMI_Manufacturer": "PROFACE",
-            "PLC_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "PLC_Denomination": "PLC",
-            "PLC_Ref": "PFXSP5B90",
-            "PLC_Manufacturer": "PROFACE",
-            "CAN_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "CAN_Denomination": "CANOPEN MASTER",
-            "CAN_Ref": "99999",
-            "CAN_Manufacturer": "PROFACE",
-            "HMI": {
-                "Denomination": "HMI",
-                "Ref": "PFXSP5690WAD",
-                "Manufacturer": "PROFACE"
-            },
             "PLC": {
-                "Denomination": "PLC",
+                "Denomination": "SP5000X eXtreme Box",
                 "Ref": "PFXSP5B90",
-                "Manufacturer": "PROFACE"
+                "Devices": [
+                    "RS-232C / 422 / 485 x 2",
+                    "Ethernet x 2",
+                    "USB (Type A) x 2",
+                    "USB (mini-B) x 1",
+                    "SD Card Slot (System) x 1",
+                    "SD Card Slot (Storage) x 1",
+                    "Speaker Output x 1",
+                    "Alarm Output or Buzzer Output x 1",
+                    "Fieldbus Unit x 1 (PROFIBUS / J1939 / CANopen / FLEX NETWORK"
+                ]
+            },
+            "HMI": {
+                "Denomination": "SP5000X eXtreme display",
+                "Ref": "PFXSP5690WAD",
+                "Devices": [
+                    "TFT Color LCD (High brightness)",
+                    "1,366 x 768 pixels (FWXGA)",
+                    "15” wide"
+                ]
             },
             "CAN": {
-                "Denomination": "CANOPEN MASTER",
-                "Ref": "99999",
-                "Manufacturer": "PROFACE"
+                "Denomination": "CAN open Master Unit for SP5000",
+                "Ref": "PFXZCHEUCAM1",
+                "Devices": [
+                    "1024 bit input / output / 256 bit input / output"
+                ]
             }
         },
         "0004": {
-            "Taille": 12,
-            "Gamme": "eXtrem",
             "Image": "SP5000",
-            "Series": "SP5000X Series",
             "NativeIO": false,
-            "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
-            "InfosHMI": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
-            "InfosPLC": "PLC & HMI all in one",
-            "InfosCAN": "Master canopen board",
-            "PriceHMI": 1162.35,
-            "PricePLC": 1162.35,
-            "PriceCAN": 1162.35,
-            "HMI_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "HMI_Denomination": "HMI",
-            "HMI_Ref": "PFXSP5690WAD",
-            "HMI_Manufacturer": "PROFACE",
-            "PLC_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "PLC_Denomination": "PLC",
-            "PLC_Ref": "PFXSP5B90",
-            "PLC_Manufacturer": "PROFACE",
-            "CAN_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "CAN_Denomination": "CANOPEN MASTER",
-            "CAN_Ref": "99999",
-            "CAN_Manufacturer": "PROFACE",
-            "HMI": {
-                "Denomination": "HMI",
-                "Ref": "PFXSP5690WAD",
-                "Manufacturer": "PROFACE"
-            },
             "PLC": {
-                "Denomination": "PLC",
+                "Denomination": "SP5000X eXtreme Box",
                 "Ref": "PFXSP5B90",
-                "Manufacturer": "PROFACE"
+                "Devices": [
+                    "RS-232C / 422 / 485 x 2",
+                    "Ethernet x 2",
+                    "USB (Type A) x 2",
+                    "USB (mini-B) x 1",
+                    "SD Card Slot (System) x 1",
+                    "SD Card Slot (Storage) x 1",
+                    "Speaker Output x 1",
+                    "Alarm Output or Buzzer Output x 1",
+                    "Fieldbus Unit x 1 (PROFIBUS / J1939 / CANopen / FLEX NETWORK"
+                ]
+            },
+            "HMI": {
+                "Denomination": "SP5000X eXtreme display",
+                "Ref": "PFXSP5690WAD",
+                "Devices": [
+                    "TFT Color LCD (High brightness)",
+                    "1,366 x 768 pixels (FWXGA)",
+                    "15” wide"
+                ]
             },
             "CAN": {
-                "Denomination": "CANOPEN MASTER",
-                "Ref": "99999",
-                "Manufacturer": "PROFACE"
+                "Denomination": "CAN open Master Unit for SP5000",
+                "Ref": "PFXZCHEUCAM1",
+                "Devices": [
+                    "1024 bit input / output / 256 bit input / output"
+                ]
             }
         },
         "0005": {
-            "Taille": 12,
-            "Gamme": "eXtrem",
             "Image": "SP5000",
-            "Series": "SP5000X Series",
             "NativeIO": false,
-            "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
-            "InfosHMI": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
-            "InfosPLC": "PLC & HMI all in one",
-            "InfosCAN": "Master canopen board",
-            "PriceHMI": 1162.35,
-            "PricePLC": 1162.35,
-            "PriceCAN": 1162.35,
-            "HMI_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "HMI_Denomination": "HMI",
-            "HMI_Ref": "PFXSP5690WAD",
-            "HMI_Manufacturer": "PROFACE",
-            "PLC_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "PLC_Denomination": "PLC",
-            "PLC_Ref": "PFXSP5B90",
-            "PLC_Manufacturer": "PROFACE",
-            "CAN_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "CAN_Denomination": "CANOPEN MASTER",
-            "CAN_Ref": "99999",
-            "CAN_Manufacturer": "PROFACE",
-            "HMI": {
-                "Denomination": "HMI",
-                "Ref": "PFXSP5690WAD",
-                "Manufacturer": "PROFACE"
-            },
             "PLC": {
-                "Denomination": "PLC",
+                "Denomination": "SP5000X eXtreme Box",
                 "Ref": "PFXSP5B90",
-                "Manufacturer": "PROFACE"
+                "Devices": [
+                    "RS-232C / 422 / 485 x 2",
+                    "Ethernet x 2",
+                    "USB (Type A) x 2",
+                    "USB (mini-B) x 1",
+                    "SD Card Slot (System) x 1",
+                    "SD Card Slot (Storage) x 1",
+                    "Speaker Output x 1",
+                    "Alarm Output or Buzzer Output x 1",
+                    "Fieldbus Unit x 1 (PROFIBUS / J1939 / CANopen / FLEX NETWORK"
+                ]
+            },
+            "HMI": {
+                "Denomination": "SP5000X eXtreme display",
+                "Ref": "PFXSP5690WAD",
+                "Devices": [
+                    "TFT Color LCD (High brightness)",
+                    "1,366 x 768 pixels (FWXGA)",
+                    "15” wide"
+                ]
             },
             "CAN": {
-                "Denomination": "CANOPEN MASTER",
-                "Ref": "99999",
-                "Manufacturer": "PROFACE"
+                "Denomination": "CAN open Master Unit for SP5000",
+                "Ref": "PFXZCHEUCAM1",
+                "Devices": [
+                    "1024 bit input / output / 256 bit input / output"
+                ]
             }
         },
         "0006": {
-            "Taille": 12,
-            "Gamme": "eXtrem",
             "Image": "SP5000",
-            "Series": "SP5000X Series",
             "NativeIO": false,
-            "PanelCut": "W295 x H217 mm Panel thickness area: 1.6 to 5 mm",
-            "InfosHMI": "TFT Color LCD (Ultra High-brightness) 12 Wide 1,280 x 800 pixels (WXGA)",
-            "InfosPLC": "PLC & HMI all in one",
-            "InfosCAN": "Master canopen board",
-            "PriceHMI": 1162.35,
-            "PricePLC": 1162.35,
-            "PriceCAN": 1162.35,
-            "HMI_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "HMI_Denomination": "HMI",
-            "HMI_Ref": "PFXSP5690WAD",
-            "HMI_Manufacturer": "PROFACE",
-            "PLC_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "PLC_Denomination": "PLC",
-            "PLC_Ref": "PFXSP5B90",
-            "PLC_Manufacturer": "PROFACE",
-            "CAN_documentation": "PFXSP5690WAD_SPECIFICATIONS",
-            "CAN_Denomination": "CANOPEN MASTER",
-            "CAN_Ref": "99999",
-            "CAN_Manufacturer": "PROFACE",
-            "HMI": {
-                "Denomination": "HMI",
-                "Ref": "PFXSP5690WAD",
-                "Manufacturer": "PROFACE"
-            },
             "PLC": {
-                "Denomination": "PLC",
+                "Denomination": "SP5000X eXtreme Box",
                 "Ref": "PFXSP5B90",
-                "Manufacturer": "PROFACE"
+                "Devices": [
+                    "RS-232C / 422 / 485 x 2",
+                    "Ethernet x 2",
+                    "USB (Type A) x 2",
+                    "USB (mini-B) x 1",
+                    "SD Card Slot (System) x 1",
+                    "SD Card Slot (Storage) x 1",
+                    "Speaker Output x 1",
+                    "Alarm Output or Buzzer Output x 1",
+                    "Fieldbus Unit x 1 (PROFIBUS / J1939 / CANopen / FLEX NETWORK"
+                ]
+            },
+            "HMI": {
+                "Denomination": "SP5000X eXtreme display",
+                "Ref": "PFXSP5690WAD",
+                "Devices": [
+                    "TFT Color LCD (High brightness)",
+                    "1,366 x 768 pixels (FWXGA)",
+                    "15” wide"
+                ]
             },
             "CAN": {
-                "Denomination": "CANOPEN MASTER",
-                "Ref": "99999",
-                "Manufacturer": "PROFACE"
+                "Denomination": "CAN open Master Unit for SP5000",
+                "Ref": "PFXZCHEUCAM1",
+                "Devices": [
+                    "1024 bit input / output / 256 bit input / output"
+                ]
             }
         },
         "module1": {
