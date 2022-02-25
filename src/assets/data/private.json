@@ -43,7 +43,7 @@
             "uk": [],
             "fr": []
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "0001": {},
@@ -98,7 +98,7 @@
             "uk": [],
             "fr": []
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "------------------------------------------------": "--------------------------------------------------",
@@ -182,7 +182,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": "FB001"
     },
     "2002": {
@@ -277,7 +277,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "2003": {
@@ -392,7 +392,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "2004": {
@@ -479,7 +479,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "2005": {
@@ -562,7 +562,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": "FB001"
     },
     "2006": {
@@ -657,7 +657,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "2007": {
@@ -744,7 +744,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "2008": {
@@ -827,7 +827,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": "FB001"
     },
     "2009": {
@@ -910,7 +910,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": "FB001"
     },
     "2010": {
@@ -1005,7 +1005,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "2011": {
@@ -1092,7 +1092,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "2012": {
@@ -1179,7 +1179,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "2013": {
@@ -1266,7 +1266,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "2014": {
@@ -1353,7 +1353,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "2015": {
@@ -1440,7 +1440,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "2016": {
@@ -1527,7 +1527,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "2017": {
@@ -1622,7 +1622,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "----------------------------------------------": "--------------------------------------------------",
@@ -1718,7 +1718,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Chilleur",
         "FunctionBloc": false
     },
     "3002": {
@@ -1805,7 +1805,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Frigoric dryer",
         "FunctionBloc": false
     },
     "3003": {
@@ -1910,7 +1910,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Frigoric dryer",
         "FunctionBloc": false
     },
     "3004": {
@@ -1997,7 +1997,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Adsorbtion dryer",
         "FunctionBloc": false
     },
     "3005": {
@@ -2108,7 +2108,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Adsorbtion dryer",
         "FunctionBloc": false
     },
     "3006": {
@@ -2213,7 +2213,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Adsorbtion dryer",
         "FunctionBloc": false
     },
     "3007": {
@@ -2324,7 +2324,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Adsorbtion dryer",
         "FunctionBloc": false
     },
     "3008": {
@@ -2411,7 +2411,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Bekosplit",
         "FunctionBloc": false
     },
     "3009": {
@@ -2498,7 +2498,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Heater",
         "FunctionBloc": false
     },
     "3010": {
@@ -2585,7 +2585,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Heater",
         "FunctionBloc": false
     },
     "3011": {
@@ -2664,7 +2664,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Drain",
         "FunctionBloc": false
     },
     "3012": {
@@ -2751,7 +2751,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Drain",
         "FunctionBloc": false
     },
     "3013": {
@@ -2838,7 +2838,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Drain",
         "FunctionBloc": false
     },
     "3014": {
@@ -2933,7 +2933,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Drain",
         "FunctionBloc": false
     },
     "3015": {
@@ -3036,7 +3036,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Heater",
         "FunctionBloc": false
     },
     "---------------------------------------------------": "--------------------------------------------------",
@@ -3116,7 +3116,7 @@
                 []
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4002": {
@@ -3237,7 +3237,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4003": {
@@ -3334,7 +3334,7 @@
                 []
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4004": {
@@ -3471,7 +3471,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4005": {
@@ -3550,7 +3550,7 @@
                 []
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4006": {
@@ -3671,7 +3671,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4007": {
@@ -3750,7 +3750,7 @@
                 []
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4008": {
@@ -3845,7 +3845,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4009": {
@@ -3924,7 +3924,7 @@
                 []
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4010": {
@@ -4045,7 +4045,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4011": {
@@ -4142,7 +4142,7 @@
                 []
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4012": {
@@ -4279,7 +4279,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4013": {
@@ -4358,7 +4358,7 @@
                 []
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4014": {
@@ -4479,7 +4479,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4015": {
@@ -4558,7 +4558,7 @@
                 []
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4016": {
@@ -4653,7 +4653,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4017": {
@@ -4732,7 +4732,7 @@
                 []
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4018": {
@@ -4853,7 +4853,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4019": {
@@ -4932,7 +4932,7 @@
                 []
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4020": {
@@ -5027,7 +5027,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "4021": {
@@ -5106,7 +5106,7 @@
                 []
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "--------------------------------------------------": "--------------------------------------------------",
@@ -5202,7 +5202,7 @@
                 []
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "ULTRAMAT",
         "FunctionBloc": false
     },
     "5002": {
@@ -5321,7 +5321,7 @@
                 []
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "VAR-18",
         "FunctionBloc": false
     },
     "5003": {
@@ -5400,7 +5400,7 @@
                 []
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "O2 Analyzer",
         "FunctionBloc": false
     },
     "-------------------------------------------": "--------------------------------------------------",
@@ -5586,7 +5586,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Compressor with fixed flow",
         "FunctionBloc": false
     },
     "6002": {
@@ -5819,7 +5819,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Compressor with variable flow",
         "FunctionBloc": false
     },
     "6003": {
@@ -5914,7 +5914,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Compressor standard",
         "FunctionBloc": false
     },
     "6004": {
@@ -6025,7 +6025,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Compressor standard",
         "FunctionBloc": false
     },
     "6005": {
@@ -6120,7 +6120,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Booster",
         "FunctionBloc": false
     },
     "6006": {
@@ -6215,7 +6215,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Fan",
         "FunctionBloc": false
     },
     "6007": {
@@ -6310,7 +6310,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Water pump",
         "FunctionBloc": false
     },
     "6008": {
@@ -6405,7 +6405,7 @@
                 ]
             ]
         },
-        "Name": "nameXYZ",
+        "Name": "Vacuum pump",
         "FunctionBloc": false
     },
     "--------------------------------------------": "--------------------------------------------------",
@@ -6485,7 +6485,7 @@
                 []
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "7002": {
@@ -6564,7 +6564,7 @@
                 []
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "7003": {
@@ -6639,7 +6639,7 @@
                 []
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "7004": {
@@ -6718,7 +6718,7 @@
                 []
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     },
     "7005": {
@@ -6797,7 +6797,7 @@
                 []
             ]
         },
-        "Name": "nameXYZ",
+        "Name": false,
         "FunctionBloc": false
     }
 }

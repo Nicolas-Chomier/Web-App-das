@@ -1233,7 +1233,9 @@ export class AfDocBuilder extends DocumentBuilder {
     const _list = this.list();
     const _list2 = this.list();
     for (const value of Object.values(this.infosElement)) {
-      _list.push(value.id);
+      if (value) {
+        _list.push(value.id);
+      }
     }
     const set1 = new Set(_list);
     for (const item of set1) {
