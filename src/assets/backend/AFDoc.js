@@ -58,29 +58,42 @@ export function handleClick_AF(rawAbstract, tongue) {
     rawAbstract.Project.Technology.id,
     "Series"
   );
-  //
   const title3 = Afb.makeAfTitleRankX(speak.title3, 1);
   const subTitle3a = Afb.makeAfTitleRankX(speak.subTitle3a, 2);
   const text3a = Afb.makeAfText(speak.text3a);
   const text3aa = Afb.makeAfText(speak.text3aa);
-  //const Bullet bullet !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  children.push(title3, subTitle3a, text3a, text3aa);
+  // Build bullet list for PLC part
+  const plcInfos = Afb.afGetDeviceInfoChapter3("PLC");
+  const plcBullet = Afb.makeLevelAfBullet(plcInfos);
+  for (const bullet of plcBullet) {
+    children.push(bullet);
+  }
+  // Build bullet list for HMI part
+  const hmiInfos = Afb.afGetDeviceInfoChapter3("HMI");
+  const hmiBullet = Afb.makeLevelAfBullet(hmiInfos);
+  for (const bullet of hmiBullet) {
+    children.push(bullet);
+  }
+  // Build bullet list for CANOPEN MASTER part
+  const canInfos = Afb.afGetDeviceInfoChapter3("CAN");
+  const canBullet = Afb.makeLevelAfBullet(canInfos);
+  for (const bullet of canBullet) {
+    children.push(bullet);
+  }
   const subTitle3b = Afb.makeAfTitleRankX(speak.subTitle3b, 2);
   const text3b = Afb.makeAfText(speak.text3b);
   const smallTitle3b1 = Afb.makeAfTitleRankX(speak.smallTitle3b1, 3);
-  //const list element !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  children.push(subTitle3b, text3b, smallTitle3b1);
+  // Build element list
+  const elemList = Afb.afGetElemListChapter3();
+  const elemBullet = Afb.makeAfSimpleBullet(elemList);
+  for (const bullet of elemBullet) {
+    children.push(bullet);
+  }
   const smallTitle3b2 = Afb.makeAfTitleRankX(speak.smallTitle3b2, 3);
   const textWip3 = Afb.makeAfText("NONE");
-  children.push(
-    title3,
-    subTitle3a,
-    text3a,
-    text3aa,
-    subTitle3b,
-    text3b,
-    smallTitle3b1,
-    smallTitle3b2,
-    textWip3
-  );
+  children.push(smallTitle3b2, textWip3);
   // ---- Build CHAPTER 4 "Network architecture" ---- //
   const title4 = Afb.makeAfTitleRankX(speak.title4, 1);
   const rawtext4 = Dx.makeDocxjsCustomText(speak.text4, [

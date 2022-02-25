@@ -52,7 +52,7 @@
             "NativeIO": false,
             "PLC": {
                 "Denomination": "SP5000X eXtreme Box",
-                "Ref": "PFXSP5690WAD",
+                "Ref": "PFXSP5B90",
                 "Devices": [
                     "RS-232C / 422 / 485 x 2",
                     "Ethernet x 2",
@@ -67,7 +67,7 @@
             },
             "HMI": {
                 "Denomination": "SP5000X eXtreme display",
-                "Ref": "PFXSP5B90",
+                "Ref": "PFXSP5690WAD",
                 "Devices": [
                     "TFT Color LCD (High brightness)",
                     "1,366 x 768 pixels (FWXGA)",
@@ -76,7 +76,10 @@
             },
             "CAN": {
                 "Denomination": "CAN open Master Unit for SP5000",
-                "Ref": "PFXZCHEUCAM1"
+                "Ref": "PFXZCHEUCAM1",
+                "Devices": [
+                    "1024 bit input / output / 256 bit input / output"
+                ]
             }
         },
         "0002": {

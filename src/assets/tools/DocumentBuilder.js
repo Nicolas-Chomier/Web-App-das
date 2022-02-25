@@ -1215,6 +1215,33 @@ export class AfDocBuilder extends DocumentBuilder {
       },
     };
   }
+  // Method which build info list pre formatted for chapter 3
+  afGetDeviceInfoChapter3(target) {
+    const denomination =
+      this.proface["PROFACE"][this.HMI_id][target]["Denomination"];
+    const ref = this.proface["PROFACE"][this.HMI_id][target]["Ref"];
+    const infoTitle = `${denomination}(${ref}) with:`;
+    const info = this.proface["PROFACE"][this.HMI_id][target]["Devices"];
+    const _list = this.list(infoTitle);
+    for (const item of info) {
+      _list.push(item);
+    }
+    return _list;
+  }
+  // Method which build element list for chapter 3
+  afGetElemListChapter3() {
+    const _list = this.list();
+    const _list2 = this.list();
+    for (const value of Object.values(this.infosElement)) {
+      _list.push(value.id);
+    }
+    const set1 = new Set(_list);
+    for (const item of set1) {
+      _list2.push(this.private[item].Name);
+    }
+    console.log(_list2);
+    return _list2;
+  }
   // Method which return HMI ref
   afGetHmiRef() {
     const ref = this.proface["PROFACE"][this.HMI_id]["HMI"]["Ref"];
@@ -1372,6 +1399,37 @@ export class AfDocBuilder extends DocumentBuilder {
     return _obj;
   }
   // Method which re arrange raw tag only for part B in AF
+  makeLevelAfBullet(
+    list = [],
+    d = 0,
+    b = false,
+    f = "Calibri",
+    s = 12,
+    c = "2E2E2E"
+  ) {
+    const _list = this.list();
+    for (const [key, value] of Object.entries(list)) {
+      const deep = key === "0" ? d : d + 1;
+      _list.push(
+        new Paragraph({
+          children: [
+            new TextRun({
+              text: value,
+              bold: b,
+              font: f,
+              size: s,
+              color: c,
+            }),
+          ],
+          bullet: {
+            level: deep,
+          },
+        })
+      );
+    }
+    return _list;
+  }
+  // Method which re arrange raw tag only for part B in AF
   makeAfBullet(tagList, d = 0, b = false, f = "Calibri", s = 12, c = "2E2E2E") {
     const _list = this.list();
     const errorText = "NONE";
@@ -1382,6 +1440,36 @@ export class AfDocBuilder extends DocumentBuilder {
           children: [
             new TextRun({
               text: item.length !== 2 ? errorText : bulletText,
+              bold: b,
+              font: f,
+              size: s,
+              color: c,
+            }),
+          ],
+          bullet: {
+            level: d,
+          },
+        })
+      );
+    }
+    return _list;
+  }
+  // Method which
+  makeAfSimpleBullet(
+    l1 = [],
+    d = 0,
+    b = false,
+    f = "Calibri",
+    s = 12,
+    c = "2E2E2E"
+  ) {
+    const _list = this.list();
+    for (const item of l1) {
+      _list.push(
+        new Paragraph({
+          children: [
+            new TextRun({
+              text: item,
               bold: b,
               font: f,
               size: s,
