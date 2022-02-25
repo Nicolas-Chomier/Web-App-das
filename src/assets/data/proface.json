@@ -13,7 +13,7 @@
                 "Denomination": "LT4000M Series",
                 "Ref": "PFXLM4301TADAC",
                 "Devices": [
-                    "RS-232C/RS485 x 1 (Connector type: RJ45) ",
+                    "RS-232C/RS485 x 1 (Connector type: RJ45)",
                     "Ethernet x 1",
                     "USB 2.0 (Type A) x 1",
                     "USB 2.0 (mini-B) x 1"

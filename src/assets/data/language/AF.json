@@ -1462,11 +1462,26 @@
         },
         "Fan": {
             "title": "Fan",
-            "A-infos": "WIP",
+            "A-infos": "The fan blows air at low pressure but at high speed",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 [
-                    ""
+                    "FAN",
+                    "Fan"
+                ]
+            ],
+            "C-control&command": "Please refer to chapter XXXXX",
+            "D-fault": "Please refer to chapter XXXXX",
+            "zxyzxy": ""
+        },
+        "Fan F": {
+            "title": "Fan",
+            "A-infos": "The fan blows air at low pressure but at high speed",
+            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+            "B-tags": [
+                [
+                    "FAN",
+                    "Fan"
                 ]
             ],
             "C-control&command": "Please refer to chapter XXXXX",

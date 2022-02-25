@@ -1097,24 +1097,24 @@
     },
     "2012": {
         "IO": {
-            "DI": 1,
+            "DI": 0,
             "DO": 0,
-            "AI": 0,
+            "AI": 1,
             "AO": 0,
             "AIt": 0
         },
         "Text": {
             "uk": {
-                "DI": "Sending digital signal",
+                "DI": "",
                 "DO": "",
-                "AI": "",
+                "AI": "Moisture transmitter",
                 "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "Sending digital signal",
+                "DI": "",
                 "DO": "",
-                "AI": "",
+                "AI": "Moisture transmitter",
                 "AO": "",
                 "AIt": ""
             }
@@ -1122,17 +1122,17 @@
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Humidity level indicator",
-                        "Trigger when Humidity level reached",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     []
                 ],
                 "AI": [
-                    []
+                    [
+                        "Managed by function block",
+                        "Managed by function block",
+                        "Managed by function block"
+                    ]
                 ],
                 "AO": [
                     []
@@ -1143,17 +1143,17 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Humidity level indicator",
-                        "Trigger when Humidity level reached",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     []
                 ],
                 "AI": [
-                    []
+                    [
+                        "Managed by function block",
+                        "Managed by function block",
+                        "Managed by function block"
+                    ]
                 ],
                 "AO": [
                     []
@@ -1166,21 +1166,17 @@
         "FAULTS": {
             "uk": [
                 [
-                    "def_[TAG]",
-                    "PMI",
-                    "PLC input activated after 3 seconds"
+                    "Managed by function block"
                 ]
             ],
             "fr": [
                 [
-                    "def_[TAG]",
-                    "PMI",
-                    "PLC input activated after 3 seconds"
+                    "Managed by function block"
                 ]
             ]
         },
         "Name": false,
-        "FunctionBloc": false
+        "FunctionBloc": "FB001"
     },
     "2013": {
         "IO": {
@@ -6125,7 +6121,7 @@
     },
     "6006": {
         "IO": {
-            "DI": 1,
+            "DI": 0,
             "DO": 1,
             "AI": 0,
             "AO": 0,
@@ -6133,14 +6129,14 @@
         },
         "Text": {
             "uk": {
-                "DI": "Fan fault info",
+                "DI": "",
                 "DO": "Fan start order",
                 "AI": "",
                 "AO": "",
                 "AIt": ""
             },
             "fr": {
-                "DI": "Fan fault info",
+                "DI": "",
                 "DO": "Fan start order",
                 "AI": "",
                 "AO": "",
@@ -6150,11 +6146,7 @@
         "AF": {
             "uk": {
                 "DI": [
-                    [
-                        "Fan fault",
-                        "Fan output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
@@ -6175,11 +6167,7 @@
             },
             "fr": {
                 "DI": [
-                    [
-                        "Fan fault",
-                        "Fan output fault",
-                        "Fault activation"
-                    ]
+                    []
                 ],
                 "DO": [
                     [
@@ -6201,18 +6189,10 @@
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ],
             "fr": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
+                []
             ]
         },
         "Name": "Fan",
@@ -6406,6 +6386,101 @@
             ]
         },
         "Name": "Vacuum pump",
+        "FunctionBloc": false
+    },
+    "6009": {
+        "IO": {
+            "DI": 1,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "uk": {
+                "DI": "Fan fault info",
+                "DO": "Fan start order",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            },
+            "fr": {
+                "DI": "Fan fault info",
+                "DO": "Fan start order",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "uk": {
+                "DI": [
+                    [
+                        "Fan fault",
+                        "Fan output fault",
+                        "Fault activation"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Fan start",
+                        "PLC digital output activation",
+                        "Start the Fan"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            },
+            "fr": {
+                "DI": [
+                    [
+                        "Fan fault",
+                        "Fan output fault",
+                        "Fault activation"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Fan start",
+                        "PLC digital output activation",
+                        "Start the Fan"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "uk": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "PLC input activated after 3 seconds"
+                ]
+            ],
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "PLC input activated after 3 seconds"
+                ]
+            ]
+        },
+        "Name": "Fan",
         "FunctionBloc": false
     },
     "--------------------------------------------": "--------------------------------------------------",

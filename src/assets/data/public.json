@@ -434,9 +434,14 @@
                 }
             },
             "Ventillateur": {
-                "standard": {
+                "simple": {
                     "id": 6006,
                     "generic name": "Fan",
+                    "FB": ""
+                },
+                "Avec retour defaut": {
+                    "id": 6009,
+                    "generic name": "Fan F",
                     "FB": ""
                 }
             },
@@ -482,9 +487,14 @@
                 }
             },
             "Ventillateur": {
-                "standard": {
+                "simple": {
                     "id": 6006,
                     "generic name": "Fan",
+                    "FB": ""
+                },
+                "Avec retour defaut": {
+                    "id": 6009,
+                    "generic name": "Fan F",
                     "FB": ""
                 }
             },

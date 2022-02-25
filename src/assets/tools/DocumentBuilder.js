@@ -102,7 +102,7 @@ export class DataBuilder extends DocumentBuilder {
     super(rawAbstract);
     this.openAirLabel1 = "OPA-F"; // Identification word for an Open Air compressor fixe
     this.openAirLabel2 = "OPA-V"; // Identification word for an Open Air compressor variable
-    this.rsl = { DI: 6, DO: 3, AI: 1, AO: 0, AIt: 0 }; // Mandatory reserved slot attribute to each project
+    this.rsl = { DI: 6, DO: 4, AI: 0, AO: 0, AIt: 0 }; // Mandatory reserved slot attribute to each project
     this.rName = "Reserved"; // Tag used to fill reserved slot
     this.rId = "0000"; // Id used for reserved slot
   }
@@ -268,7 +268,7 @@ export class DataBuilder extends DocumentBuilder {
     return ioList;
   }
 }
-// Class wich build special module and technical data like IO board (only with PROFACE)
+// Class which build special module and technical data like IO board (only with PROFACE)
 export class Proface extends DocumentBuilder {
   constructor(rawAbstract) {
     super(rawAbstract);
@@ -510,7 +510,7 @@ export class Proface extends DocumentBuilder {
     return this.proface.PROFACE[id][target];
   }
 }
-// Class wich provide several method to design and build word document
+// Class which provide several method to design and build word document
 export class DocxBuilder extends DocumentBuilder {
   constructor(rawAbstract) {
     super(rawAbstract);
@@ -587,7 +587,29 @@ export class DocxBuilder extends DocumentBuilder {
       lowerString.charAt(0).toUpperCase() + lowerString.slice(1);
     return resultString;
   }
+  // Method which return Hmi Io or false according type of HMI
+  getHmiQTSIo() {
+    const nativIo = this.proface["PROFACE"][this.HMI_id]["NativeIO"];
+    return nativIo;
+  }
   // Method wich return informations from landing page
+  nomenclatureHmi() {
+    const typeOfPlc = this.getHmiQTSIo();
+    const conceptionList =
+      typeOfPlc === false ? ["HMI", "PLC", "CAN"] : ["HMI"];
+    const firstRow = ["Item", "Denomination", "Ref", "Qtty"];
+    const table = this.list(firstRow);
+    for (const item of conceptionList) {
+      const _list = this.list();
+      _list.push(item);
+      _list.push(this.proface.PROFACE[this.HMI_id][item]["Denomination"]);
+      _list.push(this.proface.PROFACE[this.HMI_id][item]["Ref"]);
+      _list.push("1");
+      table.push(_list);
+    }
+    return table;
+  }
+  /* // Method wich return informations from landing page
   nomenclatureHmi() {
     const conceptionList = ["HMI", "PLC", "CAN"];
     const firstRow = ["Denomination", "Ref", "Provider", "Qtty"];
@@ -603,7 +625,7 @@ export class DocxBuilder extends DocumentBuilder {
       table.push(rows);
     }
     return table;
-  }
+  } */
   // Method wich return table of table representing the modules nomenclature
   nomenclatureModule(obj) {
     // obj param must be a module list ex :{moduleN:0 ...}
@@ -902,7 +924,7 @@ export class DocxBuilder extends DocumentBuilder {
     return pageBreak;
   }
 }
-// Class wich provide several method used to build adressTable document
+// Class which provide several method used to build adressTable document
 export class ArchDocBuilder extends DocumentBuilder {
   constructor(rawAbstract) {
     super(rawAbstract);
@@ -961,7 +983,7 @@ export class ArchDocBuilder extends DocumentBuilder {
   // Sub method which fill TableCell children with text (only for tableShapeArchitecture method)
   makeRowText(item) {
     const _list = this.list();
-    for (const [key, value] of Object.entries(item)) {
+    for (const key of Object.keys(item)) {
       const text = `Device=${key}`;
       _list.push(
         new TableCell({
@@ -1040,7 +1062,7 @@ export class ArchDocBuilder extends DocumentBuilder {
     return rowList;
   }
 }
-// Class wich provide several method used to build adressTable document
+// Class which provide several method used to build adressTable document
 export class IoDocBuilder extends DocumentBuilder {
   constructor(rawAbstract) {
     super(rawAbstract);
@@ -1187,6 +1209,7 @@ export class IoDocBuilder extends DocumentBuilder {
     return track;
   }
 }
+// Class which
 export class AfDocBuilder extends DocumentBuilder {
   constructor(rawAbstract) {
     super(rawAbstract);
@@ -1241,7 +1264,6 @@ export class AfDocBuilder extends DocumentBuilder {
     for (const item of set1) {
       _list2.push(this.private[item].Name);
     }
-    console.log(_list2);
     return _list2;
   }
   // Method which return HMI ref
@@ -1364,7 +1386,7 @@ export class AfDocBuilder extends DocumentBuilder {
               ),
             ],
             shading: {
-              type: ShadingType.PERCENT_75,
+              type: ShadingType.SOLID,
               color: style[shape].bgColor[Vkey],
             },
             columnSpan: key === 0 ? span : 0,
@@ -1564,24 +1586,24 @@ export class AfDocBuilder extends DocumentBuilder {
   }
   // Method which build control and command table according infos inside private JSON
   makeAfFaultTable(tList, firstRow, flag) {
-    const _matrix = this.list();
+    const _tensor = this.list();
     const unique = this.multiDimensionalUnique(tList);
     for (const item of unique) {
       const id = item[0];
       const tag = item[1];
-      const table = this.list([tag]);
-      table.push(firstRow);
-      const size = this.private[id]["FAULTS"][flag].length;
-      if (size > 2) {
+      const size = this.private[id]["FAULTS"][flag][0].length;
+      //console.log("size", size);
+      if (size !== 0) {
+        const table = this.list([tag]);
+        table.push(firstRow);
         for (let i = 0; i < this.private[id]["FAULTS"][flag].length; i++) {
           table.push(this.private[id]["FAULTS"][flag][i]);
         }
-      } else {
-        table.push(["NONE", "NONE", "NONE"]);
+        _tensor.push(table);
       }
-      _matrix.push(table);
     }
-    return _matrix;
+    //console.log(_tensor);
+    return _tensor;
   }
   // Method which build list with exact number of function bloc used in this project
   makeFunctionBlocList() {

@@ -309,7 +309,7 @@ export function handleClick_AF(rawAbstract, tongue) {
       children.push(Afb.makeAfTitleRankX(speak.subTitleC, 3));
       // Build control command table part C
       const firstRowC = speak["ccTableRow"];
-      // Manage multi c&c table
+      // Manage multi c&c table "BLUE"
       const managedByFbC = Afb.makeAfText(speak[key]["C-control&command"]);
       const matrixC = Afb.makeAfCustomTable(keyTupleList, firstRowC, flag);
       for (const table of matrixC) {
@@ -324,16 +324,22 @@ export function handleClick_AF(rawAbstract, tongue) {
       children.push(Afb.makeAfTitleRankX(speak.subTitleD, 3));
       // Build faults table part D
       const firstRowD = speak["faultTableRow"];
-      // Manage multi fault table
+      // Manage multi fault table "ORANGE"
       const managedByFbD = Afb.makeAfText(speak[key]["D-fault"]);
       const matrixD = Afb.makeAfFaultTable(keyTupleList, firstRowD, flag);
+      const noFaultInsideTable = Afb.makeAfText("NONE");
+      const space = Dx.makeText("", 0, 0);
+      console.log(matrixD);
+      if (matrixD.length === 0) {
+        children.push(noFaultInsideTable);
+      }
       for (const table of matrixD) {
-        children.push(
-          Afb.checkFb(elemId) === false
-            ? Afb.makeAfTable(table, "orange")
-            : managedByFbD
-        );
-        children.push(Dx.makeText("", 0, 0));
+        if (Afb.checkFb(elemId) === true) {
+          children.push(managedByFbD);
+        } else {
+          const orangeTable = Afb.makeAfTable(table, "orange");
+          children.push(orangeTable, space);
+        }
       }
     }
   }

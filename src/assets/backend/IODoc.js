@@ -73,10 +73,10 @@ export function handleClick_IO(rawAbstract, tongue) {
       );
       EmptyRawArray.push(listWithTag);
     }
-    Dx.makeMainTable(EmptyRawArray, children);
+    //Dx.makeMainTable(EmptyRawArray, children);
     // Build LT4000 rest of IOList
-    const plcTitle = Dx.makeTitleRankX(speak.plcTitle, 2);
-    children.push(plcTitle);
+    //const plcTitle = Dx.makeTitleRankX(speak.plcTitle, 2);
+    //children.push(plcTitle);
     for (const [key, value] of Object.entries(ioList)) {
       const isEmpty = !Object.values(value).some((x) => x !== 0);
       if (isEmpty !== true) {
