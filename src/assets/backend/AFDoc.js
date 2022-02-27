@@ -65,7 +65,7 @@ export function handleClick_AF(rawAbstract, tongue) {
   children.push(title3, subTitle3a, text3a, text3aa);
   // Build bullet list for PLC part
   const plcInfos = Afb.afGetDeviceInfoChapter3("PLC");
-  console.log("===========", plcInfos);
+
   const plcBullet = Afb.makeLevelAfBullet(plcInfos);
   for (const bullet of plcBullet) {
     children.push(bullet);
@@ -236,7 +236,7 @@ export function handleClick_AF(rawAbstract, tongue) {
     const rawFbTitle1 = Dx.makeDocxjsCustomText(speak[item].title1, [item]);
     const fbTitle1 = Afb.makeAfTitleRankX(rawFbTitle1, 1);
     children.push(fbTitle1);
-    const subtitle1 = Afb.makeAfTitleRankX(speak[item].subtitle1, 2);
+    const subtitle1 = Afb.makeAfTitleRankX(speak[item].subTitle1, 2);
     children.push(subtitle1);
     const text1 = Afb.makeAfText(speak[item].text1);
     children.push(text1);
@@ -280,17 +280,25 @@ export function handleClick_AF(rawAbstract, tongue) {
   children.push(title11, text11);
   // ---- Build CHAPTER 12+ "Instrumentation + Process component + ..." ---- //
   const elementsMainObject = Afb.makeWorkingBasisObjectForAf();
+  //console.log("elementsMainObject", elementsMainObject);
   for (const item of Object.keys(elementsMainObject)) {
     // Push title rank 1
-    children.push(Afb.makeAfTitleRankX(speak[item].title, 1));
+    //console.log(item);
+    /* const itemtitle = Afb.makeAfTitleRankX(speak[item].title, 1);
+    
+    children.push(itemtitle);
     // Push main intro text
     if (speak[item].infos !== "") {
       children.push(Afb.makeAfText(speak[item].infos));
-    }
+    } */
     for (const key of Object.keys(elementsMainObject[item])) {
+      // console.log(key);
       // Variables
+      //console.log(key);
       const keyTupleList = elementsMainObject[item][key];
+
       const elemId = elementsMainObject[item][key][0][0];
+      console.log(elemId);
       // Push sub title rank 2
       children.push(Afb.makeAfTitleRankX(speak[key].title, 2));
       // Push sub title rank 3 A
@@ -330,7 +338,7 @@ export function handleClick_AF(rawAbstract, tongue) {
       const matrixD = Afb.makeAfFaultTable(keyTupleList, firstRowD, flag);
       const noFaultInsideTable = Afb.makeAfText("NONE");
       const space = Dx.makeText("", 0, 0);
-      console.log(matrixD);
+
       if (matrixD.length === 0) {
         children.push(noFaultInsideTable);
       }
@@ -395,8 +403,8 @@ export function handleClick_AF(rawAbstract, tongue) {
     ],
   });
   // Print document
-  /* Packer.toBlob(doc).then((blob) => {
+  Packer.toBlob(doc).then((blob) => {
     saveAs(blob, `${speak.docName}-${projectTitle}.docx`);
   });
-  return false; */
+  return false;
 }

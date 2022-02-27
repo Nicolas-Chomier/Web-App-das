@@ -43,7 +43,7 @@
             "uk": [],
             "fr": []
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "0001": {},
@@ -98,7 +98,7 @@
             "uk": [],
             "fr": []
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "------------------------------------------------": "--------------------------------------------------",
@@ -182,7 +182,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": "FB001"
     },
     "2002": {
@@ -277,7 +277,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "2003": {
@@ -392,7 +392,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "2004": {
@@ -479,7 +479,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "2005": {
@@ -562,7 +562,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": "FB001"
     },
     "2006": {
@@ -657,7 +657,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "2007": {
@@ -744,7 +744,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "2008": {
@@ -827,7 +827,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": "FB001"
     },
     "2009": {
@@ -910,7 +910,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": "FB001"
     },
     "2010": {
@@ -1005,7 +1005,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "2011": {
@@ -1092,7 +1092,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "2012": {
@@ -1175,7 +1175,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": "FB001"
     },
     "2013": {
@@ -1262,7 +1262,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "2014": {
@@ -1349,7 +1349,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "2015": {
@@ -1436,7 +1436,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "2016": {
@@ -1523,7 +1523,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "2017": {
@@ -1618,7 +1618,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "----------------------------------------------": "--------------------------------------------------",
@@ -1714,7 +1714,7 @@
                 ]
             ]
         },
-        "Name": "Chilleur",
+        "ConsumerName": "Chilleur",
         "FunctionBloc": false
     },
     "3002": {
@@ -1801,7 +1801,7 @@
                 ]
             ]
         },
-        "Name": "Frigoric dryer",
+        "ConsumerName": "Frigoric dryer",
         "FunctionBloc": false
     },
     "3003": {
@@ -1906,7 +1906,7 @@
                 ]
             ]
         },
-        "Name": "Frigoric dryer",
+        "ConsumerName": "Frigoric dryer",
         "FunctionBloc": false
     },
     "3004": {
@@ -1993,7 +1993,7 @@
                 ]
             ]
         },
-        "Name": "Adsorbtion dryer",
+        "ConsumerName": "Adsorbtion dryer",
         "FunctionBloc": false
     },
     "3005": {
@@ -2104,7 +2104,7 @@
                 ]
             ]
         },
-        "Name": "Adsorbtion dryer",
+        "ConsumerName": "Adsorbtion dryer",
         "FunctionBloc": false
     },
     "3006": {
@@ -2209,7 +2209,7 @@
                 ]
             ]
         },
-        "Name": "Adsorbtion dryer",
+        "ConsumerName": "Adsorbtion dryer",
         "FunctionBloc": false
     },
     "3007": {
@@ -2320,7 +2320,7 @@
                 ]
             ]
         },
-        "Name": "Adsorbtion dryer",
+        "ConsumerName": "Adsorbtion dryer",
         "FunctionBloc": false
     },
     "3008": {
@@ -2407,7 +2407,7 @@
                 ]
             ]
         },
-        "Name": "Bekosplit",
+        "ConsumerName": "Bekosplit",
         "FunctionBloc": false
     },
     "3009": {
@@ -2494,7 +2494,7 @@
                 ]
             ]
         },
-        "Name": "Heater",
+        "ConsumerName": "Heater",
         "FunctionBloc": false
     },
     "3010": {
@@ -2581,7 +2581,7 @@
                 ]
             ]
         },
-        "Name": "Heater",
+        "ConsumerName": "Heater",
         "FunctionBloc": false
     },
     "3011": {
@@ -2660,7 +2660,7 @@
                 ]
             ]
         },
-        "Name": "Drain",
+        "ConsumerName": "Drain",
         "FunctionBloc": false
     },
     "3012": {
@@ -2747,7 +2747,7 @@
                 ]
             ]
         },
-        "Name": "Drain",
+        "ConsumerName": "Drain",
         "FunctionBloc": false
     },
     "3013": {
@@ -2834,7 +2834,7 @@
                 ]
             ]
         },
-        "Name": "Drain",
+        "ConsumerName": "Drain",
         "FunctionBloc": false
     },
     "3014": {
@@ -2929,7 +2929,7 @@
                 ]
             ]
         },
-        "Name": "Drain",
+        "ConsumerName": "Drain",
         "FunctionBloc": false
     },
     "3015": {
@@ -3032,7 +3032,7 @@
                 ]
             ]
         },
-        "Name": "Heater",
+        "ConsumerName": "Heater",
         "FunctionBloc": false
     },
     "---------------------------------------------------": "--------------------------------------------------",
@@ -3112,7 +3112,7 @@
                 []
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4002": {
@@ -3233,7 +3233,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4003": {
@@ -3330,7 +3330,7 @@
                 []
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4004": {
@@ -3467,7 +3467,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4005": {
@@ -3546,7 +3546,7 @@
                 []
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4006": {
@@ -3667,7 +3667,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4007": {
@@ -3746,7 +3746,7 @@
                 []
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4008": {
@@ -3841,7 +3841,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4009": {
@@ -3920,7 +3920,7 @@
                 []
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4010": {
@@ -4041,7 +4041,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4011": {
@@ -4138,7 +4138,7 @@
                 []
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4012": {
@@ -4275,7 +4275,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4013": {
@@ -4354,7 +4354,7 @@
                 []
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4014": {
@@ -4475,7 +4475,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4015": {
@@ -4554,7 +4554,7 @@
                 []
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4016": {
@@ -4649,7 +4649,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4017": {
@@ -4728,7 +4728,7 @@
                 []
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4018": {
@@ -4849,7 +4849,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4019": {
@@ -4928,7 +4928,7 @@
                 []
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4020": {
@@ -5023,7 +5023,7 @@
                 ]
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "4021": {
@@ -5102,7 +5102,7 @@
                 []
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "--------------------------------------------------": "--------------------------------------------------",
@@ -5198,7 +5198,7 @@
                 []
             ]
         },
-        "Name": "ULTRAMAT",
+        "ConsumerName": "ULTRAMAT",
         "FunctionBloc": false
     },
     "5002": {
@@ -5317,7 +5317,7 @@
                 []
             ]
         },
-        "Name": "VAR-18",
+        "ConsumerName": "VAR-18",
         "FunctionBloc": false
     },
     "5003": {
@@ -5396,7 +5396,7 @@
                 []
             ]
         },
-        "Name": "O2 Analyzer",
+        "ConsumerName": "O2 Analyzer",
         "FunctionBloc": false
     },
     "-------------------------------------------": "--------------------------------------------------",
@@ -5582,7 +5582,7 @@
                 ]
             ]
         },
-        "Name": "Compressor with fixed flow",
+        "ConsumerName": "Compressor with fixed flow",
         "FunctionBloc": false
     },
     "6002": {
@@ -5815,7 +5815,7 @@
                 ]
             ]
         },
-        "Name": "Compressor with variable flow",
+        "ConsumerName": "Compressor with variable flow",
         "FunctionBloc": false
     },
     "6003": {
@@ -5910,7 +5910,7 @@
                 ]
             ]
         },
-        "Name": "Compressor standard",
+        "ConsumerName": "Compressor standard",
         "FunctionBloc": false
     },
     "6004": {
@@ -6021,7 +6021,7 @@
                 ]
             ]
         },
-        "Name": "Compressor standard",
+        "ConsumerName": "Compressor standard",
         "FunctionBloc": false
     },
     "6005": {
@@ -6116,7 +6116,7 @@
                 ]
             ]
         },
-        "Name": "Booster",
+        "ConsumerName": "Booster",
         "FunctionBloc": false
     },
     "6006": {
@@ -6195,7 +6195,7 @@
                 []
             ]
         },
-        "Name": "Fan",
+        "ConsumerName": "Fan",
         "FunctionBloc": false
     },
     "6007": {
@@ -6290,7 +6290,7 @@
                 ]
             ]
         },
-        "Name": "Water pump",
+        "ConsumerName": "Water pump",
         "FunctionBloc": false
     },
     "6008": {
@@ -6385,7 +6385,7 @@
                 ]
             ]
         },
-        "Name": "Vacuum pump",
+        "ConsumerName": "Vacuum pump",
         "FunctionBloc": false
     },
     "6009": {
@@ -6480,7 +6480,7 @@
                 ]
             ]
         },
-        "Name": "Fan",
+        "ConsumerName": "Fan",
         "FunctionBloc": false
     },
     "--------------------------------------------": "--------------------------------------------------",
@@ -6560,7 +6560,7 @@
                 []
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "7002": {
@@ -6639,7 +6639,7 @@
                 []
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "7003": {
@@ -6714,7 +6714,7 @@
                 []
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "7004": {
@@ -6793,7 +6793,7 @@
                 []
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     },
     "7005": {
@@ -6872,7 +6872,7 @@
                 []
             ]
         },
-        "Name": false,
+        "ConsumerName": false,
         "FunctionBloc": false
     }
 }

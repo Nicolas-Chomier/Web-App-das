@@ -117,14 +117,32 @@ export class MainDataCreator extends MotherDataCreator {
     return modele;
   }
   /** */
-  projectConsumerList(bool) {
+  specialProjectListFor(target, bool = true) {
     const list = [];
     this.infosElement.forEach((element) => {
-      const item = privateDatas[element.id]["Name"];
+      const item = privateDatas[element.id][target];
       if (item) {
         list.push(bool ? item.toUpperCase() : item.toLowerCase());
       }
     });
     return [...new Set(list)];
+  }
+  /** */
+  projectTagsAndIdObject() {
+    const dataSet = this.removeAbstractDuplicate();
+    const obj = {};
+    // {"str":{}}
+    for (const value of Object.values(dataSet)) {
+      obj[value.categorie] = {};
+    }
+    // {"str":{"str":[]}}
+    for (const value of Object.values(dataSet)) {
+      obj[value.categorie][value.name] = [];
+    }
+    // {"str":{"str":[id,tag]}}
+    for (const value of Object.values(dataSet)) {
+      obj[value.categorie][value.name].push([value.id, value.tag]);
+    }
+    return obj;
   }
 }

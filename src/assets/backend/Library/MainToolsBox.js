@@ -1,6 +1,8 @@
 import proface from "../../data/proface.json";
+import privates from "../../data/private.json";
 
 const profaceDatas = JSON.parse(JSON.stringify(proface));
+const privateDatas = JSON.parse(JSON.stringify(privates));
 
 class MainToolsBox {
   constructor(rawAbstract) {
@@ -70,6 +72,17 @@ export class QTSBuilder extends MainToolsBox {
 }
 /** */
 export class AFBuilder extends MainToolsBox {
+  constructor(rawAbstract) {
+    super(rawAbstract);
+    this.cmdCtrlRow1 = [
+      "DESIGNATION",
+      "TYPE",
+      "N°",
+      "ACTIVATION CONDITION",
+      "FUNCTION",
+    ];
+    this.faultRow1 = ["NAME", "ALARM", "ACTIVATION CONDITION"];
+  }
   nativeDeviceInfos() {
     const bool = typeof this.native === "boolean" ? this.native : false;
     return bool;
@@ -85,5 +98,67 @@ export class AFBuilder extends MainToolsBox {
     const Dev = profaceDatas.PROFACE[this.hmiId][type].Devices;
     const intro = `${Den}(${Ref}) with:`;
     return [intro, Dev];
+  }
+  /** */
+  // Method which build control and command table according infos inside private JSON
+  controlAndCommandTable(source, flag) {
+    const matrix = [];
+    for (const item of source) {
+      const table = [];
+      const id = item[0];
+      const tag = item[1];
+      if (privateDatas[id]["FunctionBloc"] === false) {
+        table.push([tag]);
+        table.push(this.cmdCtrlRow1);
+        for (const [key, value] of Object.entries(privateDatas[id]["IO"])) {
+          for (let i = 0; i < value; i++) {
+            const size = privateDatas[id]["AF"][flag][key][i].length;
+            if (size !== 0) {
+              const data = privateDatas[id]["AF"][flag][key][i];
+              table.push(this.buildCompleteArray(i, key, data));
+              // Attention ! Erreur possible si IOList ne correspond pas avec la taille de la liste de liste de text correspondante
+            }
+          }
+        }
+        matrix.push(table);
+      } else {
+        matrix.push(table);
+      }
+    }
+    //console.log("matrice", matrix); //(to keep for debug)
+    return matrix;
+  }
+  buildCompleteArray(i, key, data) {
+    const newData = [...data];
+    newData.splice(1, 0, key);
+    newData.splice(2, 0, i + 1);
+    return newData;
+  }
+  checkFb(id) {
+    const checkFb = privateDatas[id]["FunctionBloc"];
+    return checkFb;
+  }
+  /** */
+  faultTable(source, flag) {
+    const tensor = [];
+    for (const item of source) {
+      const table = [];
+      const id = item[0];
+      const tag = item[1];
+      const size = privateDatas[id]["FAULTS"][flag][0].length;
+      if (privateDatas[id]["FunctionBloc"] === false) {
+        if (size !== 0) {
+          table.push([tag]);
+          table.push(this.faultRow1);
+          for (let i = 0; i < privateDatas[id]["FAULTS"][flag].length; i++) {
+            table.push(privateDatas[id]["FAULTS"][flag][i]);
+          }
+          tensor.push(table);
+        }
+      } else {
+        tensor.push(table);
+      }
+    }
+    return tensor;
   }
 }

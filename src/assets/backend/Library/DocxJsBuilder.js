@@ -179,6 +179,17 @@ export class DocxJsMethods extends DocxJsBuilder {
         color: "000000",
       },
     };
+    // Document table custom color
+    this.customColor = {
+      GREY: "C7C7C7",
+      BLUE: "0063E5",
+      GREEN: "16CD07",
+      RED: "EB0D0D",
+      CYAN: "0AEAF0",
+      PURPLE: "9108F1",
+      ORANGE: "F9B30C",
+      BROWN: "744611",
+    };
   }
   /** */
   documentTitle(source, child, rank = 1, targetList = []) {
@@ -215,7 +226,7 @@ export class DocxJsMethods extends DocxJsBuilder {
     italics = false,
     underline = false
   ) {
-    if (Array.isArray(child)) {
+    if (Array.isArray(child) && !!source) {
       const text = new Paragraph({
         children: [
           new TextRun({
@@ -244,7 +255,7 @@ export class DocxJsMethods extends DocxJsBuilder {
   }
   /** */
   documentTable(source, child, color = "grey", targetList = []) {
-    if (Array.isArray(child)) {
+    if (Array.isArray(child) && source.length !== 0) {
       const style = this.sta[color];
       const span = source[1].length;
       const table = new Table({
@@ -281,7 +292,10 @@ export class DocxJsMethods extends DocxJsBuilder {
               ],
               shading: {
                 type: ShadingType.SOLID,
-                color: style[colorKey].bgColor,
+                color:
+                  item in this.customColor
+                    ? this.customColor[item]
+                    : style[colorKey].bgColor,
               },
               columnSpan: !key ? span : 0,
             })
@@ -292,6 +306,17 @@ export class DocxJsMethods extends DocxJsBuilder {
       child.push(table);
       return true;
     }
+    this.documentText(
+      "Non-existent or managed by Function bloc",
+      child,
+      [],
+      false,
+      "Calibri",
+      12,
+      "000000",
+      true,
+      false
+    );
     return false;
   }
   /** */
@@ -345,5 +370,17 @@ export class DocxJsMethods extends DocxJsBuilder {
       return true;
     }
     return false;
+  }
+  /** */
+  documentSpace(child, a = 50, b = 50) {
+    const space = new Paragraph({
+      text: "",
+      spacing: {
+        after: a,
+        before: b,
+      },
+    });
+    child.push(space);
+    return true;
   }
 }

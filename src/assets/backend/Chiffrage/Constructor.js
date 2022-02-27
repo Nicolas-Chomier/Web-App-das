@@ -16,9 +16,9 @@ const traductionJson = JSON.parse(JSON.stringify(language));
 /**
  * Function which construct the QTS document in word format
  * * Software architecture Version 2
+ * * This function is called by "LastPage"
  * ! Attention : Logic to determine language will be changed soon !
  * ? Should add throw expression ?
- * * This function is called by "LastPage"
  * @param rawAbstract = Datas from FRONT END
  * @param tongue = Printable language choosen by user
  */

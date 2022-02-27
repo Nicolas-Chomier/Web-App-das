@@ -58,7 +58,7 @@
         "title5": "P&ID element listing",
         "text5": "This installation is composed of many different elements which involved to the programming and setting / sizing of automation part.See the elements listing document, reference: @-IOLIST-001",
         "title6": "PLC settings",
-        "text6A": "The installation is managed by @ PLC and @ Can Open master board.@ is a combined unit of Display Module and Power Box Module.To manage the installation, a panel is installed on the front of the cabinet.",
+        "text6A": "This installation is managed by a set composed of one HMI (tactile panel), one PLC (type \"PowerBox\") and one CanOpen master board. The panel is installed on the front of the cabinet",
         "text6B": "For more details see technical documentation, reference: @-SPECIFICATIONS.",
         "text6C": "Installed equipment are PROFACE materials, they are programming with GP-Pro EX 4.09 SP1.Product Version:V4.09.350, (latest version).Product version date:01\/02\/2022",
         "title7": "HMI settings",
@@ -247,11 +247,11 @@
         "smallTitle9D": "HMI screen view",
         "text9D": "Alarms that have disappeared are shown in white. The alarms are acknowledged by pressing the button (level 1 required).The date and time when the alarm was triggered are indicated on the left. The number of times the alarm has been triggered is shown on the right. The alarm counter is reset by selecting the alarm table and pressing the button (level 1 required).The deletion of a disappeared alarm is done by selecting the line concerned and then pressing the \"Delete\" button (level 1 required). To delete all the missing alarms, select the alarm table and press the \"Delete all\" button (level 1 required).",
         "FB001": {
-            "title1": "Function block description @",
-            "subtitle1": "General description",
+            "title1": "Description for function bloc [@]",
+            "subTitle1": "General description",
             "text1": "This is a completely custom installation, however some elements are same, for them we will use the function block programming method (FB).The instrumentation will be managed by standardized blocks, in order to ensure homogenization of the programming. These blocks are used only in the process PLC, this chapter presents their functionalities.",
             "subTitle2": "Analog measurements function block",
-            "text2": "The function block @ is used:",
+            "text2": "The function block [@] is used:",
             "bulletList1": [
                 [
                     "To display the measured value from an electrical signal (4-20mA or 0-10V)."
@@ -332,10 +332,10 @@
                     "Drive back installation to Default state"
                 ]
             ],
-            "smallTilte2": "Function block @, screen description",
+            "smallTilte2": "Function block [@], screen description",
             "table2": [
                 [
-                    "Function block screen description"
+                    "Function block [@], screen description"
                 ],
                 [
                     "Number",
@@ -603,18 +603,9 @@
             "A-infos": "A pressure sensor is a system that converts a mechanical pressure into an electrical value.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PIT",
-                    "Pressure Indicator Transmitter"
-                ],
-                [
-                    "PT",
-                    "Pressure Transmitter"
-                ],
-                [
-                    "PDT",
-                    "Pressure Differential Transmitter"
-                ]
+                "PIT = Pressure Indicator Transmitter",
+                "PT = Pressure Transmitter",
+                "PDT = Pressure Differential Transmitter"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -625,18 +616,9 @@
             "A-infos": "A pressure sensor is a system that converts a mechanical pressure into an electrical value. This one can provide one digital information more.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PIT",
-                    "Pressure Indicator Transmitter"
-                ],
-                [
-                    "PT",
-                    "Pressure Transmitter"
-                ],
-                [
-                    "PDT",
-                    "Pressure Differential Transmitter"
-                ]
+                "PIT = Pressure Indicator Transmitter",
+                "PT = Pressure Transmitter",
+                "PDT = Pressure Differential Transmitter"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -647,18 +629,9 @@
             "A-infos": "A pressure sensor is a system that converts a mechanical pressure into an electrical value. This one can provide two digital informations more.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PIT",
-                    "Pressure Indicator Transmitter"
-                ],
-                [
-                    "PT",
-                    "Pressure Transmitter"
-                ],
-                [
-                    "PDT",
-                    "Pressure Differential Transmitter"
-                ]
+                "PIT = Pressure Indicator Transmitter",
+                "PT = Pressure Transmitter",
+                "PDT = Pressure Differential Transmitter"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -669,10 +642,7 @@
             "A-infos": "the pressure switch allows to check the minimum pressure in the water circuit.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PSL",
-                    "Pressure Switch Limit"
-                ]
+                "PSL = Pressure Switch Limit"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -683,10 +653,7 @@
             "A-infos": "Magnetic flow meters consist of a transmitter and a sensor that work together to measure flow. The magnetic flowmeter sensor is placed in-line and measures an induced voltage generated by the fluid as it passes through a pipe.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "FT",
-                    "Flow Transmitter"
-                ]
+                "FT = Flow Transmitter"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -697,10 +664,7 @@
             "A-infos": "Magnetic flow meters consist of a transmitter and a sensor that work together to measure flow. The magnetic flowmeter sensor is placed in-line and measures an induced voltage generated by the fluid as it passes through a pipe.This one can provide one digital informations more.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "FT",
-                    "Flow Transmitter"
-                ]
+                "FT = Flow Transmitter"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -711,10 +675,7 @@
             "A-infos": "Device which provide digital information when the fluid to which it is subjected is in motion",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "FD",
-                    "Flow Detector"
-                ]
+                "FD = Flow Detector"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -725,14 +686,8 @@
             "A-infos": "A temperature transmitter is a system that converts a temperature into an electrical value.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "TT",
-                    "Temperature Transmitter"
-                ],
-                [
-                    "TIT",
-                    "Temperature Indicator Transmitter"
-                ]
+                "TT = Temperature Transmitter",
+                "TIT = Temperature Indicator Transmitter"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -743,14 +698,8 @@
             "A-infos": "A temperature sensor is a system that converts a temperature into a measurable physical value.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "TT",
-                    "Temperature Transmitter"
-                ],
-                [
-                    "TIT",
-                    "Temperature Indicator Transmitter"
-                ]
+                "TT = Temperature Transmitter",
+                "TIT = Temperature Indicator Transmitter"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -761,14 +710,8 @@
             "A-infos": "A temperature transmitter is a system that converts a temperature into an electrical value.This one can provide one digital informations more.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "TT",
-                    "Temperature Transmitter"
-                ],
-                [
-                    "TIT",
-                    "Temperature Indicator Transmitter"
-                ]
+                "TT = Temperature Transmitter",
+                "TIT = Temperature Indicator Transmitter"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -779,10 +722,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "TS*",
-                    "Transmitter Switch *level"
-                ]
+                "TS* = Transmitter Switch *level"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -793,10 +733,7 @@
             "A-infos": "Hygrometer is based on the measurement of the dew point temperature, and is used to measure the humidity in the air, or another gas mixture",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "AT",
-                    "Analyser Transmitter"
-                ]
+                "AT = Analyser Transmitter"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -807,22 +744,10 @@
             "A-infos": "A level sensor is an electronic device that measures the height of material, usually liquid, in a tank.It detects in a binary way, like a switch, if the water level reaches a certain limit or not.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "LSLL",
-                    "Level Switch Low Low"
-                ],
-                [
-                    "LSL",
-                    "Level Switch Low"
-                ],
-                [
-                    "LSH",
-                    "Level Switch High"
-                ],
-                [
-                    "LSHH",
-                    "Level Switch High High"
-                ]
+                "LSLL = Level Switch Low Low",
+                "LSL = Level Switch Low",
+                "LSH = Level Switch High",
+                "LSHH = Level Switch High High"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -833,14 +758,8 @@
             "A-infos": "Water meter produce pulse according settable amount water through inside it.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "FQIT",
-                    "WIP"
-                ],
-                [
-                    "FQT",
-                    "WIP"
-                ]
+                "FQIT = WIP",
+                "FQT = WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -851,9 +770,7 @@
             "A-infos": "Energy meter produce pulse according settable amount energy through inside it.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "WIP"
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -864,9 +781,7 @@
             "A-infos": "Electrical meter produce pulse according settable amount of current through inside it.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "WIP"
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -877,9 +792,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "WIP"
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -890,9 +803,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "WIP"
-                ]
+                "CHILL = Chilleur"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -903,9 +814,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "WIP"
-                ]
+                "DRY = Dryer"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -916,9 +825,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "WIP"
-                ]
+                "DRY = Dryer"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -929,10 +836,7 @@
             "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "DRY",
-                    "Dryer"
-                ]
+                "DRY = Dryer"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -943,10 +847,7 @@
             "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "DRY",
-                    "Dryer"
-                ]
+                "DRY = Dryer"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -957,10 +858,7 @@
             "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "DRY",
-                    "Dryer"
-                ]
+                "DRY = Dryer"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -971,10 +869,7 @@
             "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "DRY",
-                    "Dryer"
-                ]
+                "DRY = Dryer"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -985,9 +880,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -998,9 +891,7 @@
             "A-infos": "Element which produce heat when current pass through it",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "WIP"
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1011,9 +902,7 @@
             "A-infos": "Element which produce heat when current pass through it, Can be driven by analog signal",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "WIP"
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1024,10 +913,7 @@
             "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "DR",
-                    "Drain Valve"
-                ]
+                "DR = Drain Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1038,10 +924,7 @@
             "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "DR",
-                    "Drain Valve"
-                ]
+                "DR = Drain Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1052,10 +935,7 @@
             "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "DR",
-                    "Drain Valve"
-                ]
+                "DR = Drain Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1066,10 +946,7 @@
             "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "DR",
-                    "Drain Valve"
-                ]
+                "DR = Drain Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1080,10 +957,7 @@
             "A-infos": "A valve piloted by pneumatic distributor, move back to default and safety position in case of lack of compressed air.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1094,18 +968,9 @@
             "A-infos": "A valve piloted by pneumatic distributor and sending feedback depending to its position, move back to default and safety position in case of lack of compressed air.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ],
-                [
-                    "YSC",
-                    "State Switch Close"
-                ],
-                [
-                    "YSO",
-                    "State Switch Open"
-                ]
+                "PV = Powered Valve",
+                "YSC = State Switch Close",
+                "YSO = State Switch Open"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1116,10 +981,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1130,18 +992,9 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ],
-                [
-                    "YSC",
-                    "State Switch Close"
-                ],
-                [
-                    "YSO",
-                    "State Switch Open"
-                ]
+                "PV = Powered Valve",
+                "YSC = State Switch Close",
+                "YSO = State Switch Open"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1152,10 +1005,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1166,10 +1016,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1180,10 +1027,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1194,10 +1038,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1208,10 +1049,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1222,10 +1060,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1236,10 +1071,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1250,10 +1082,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1264,10 +1093,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1278,10 +1104,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1292,10 +1115,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1306,10 +1126,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1320,9 +1137,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1333,9 +1148,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1346,9 +1159,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1359,9 +1170,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1372,10 +1181,7 @@
             "A-infos": "The electromagnetic valve (EMV) or solenoid valve allows to interrupt or not the fluid flow, it behaves like a switch",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1386,9 +1192,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1399,9 +1203,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1412,9 +1214,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1425,9 +1225,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1438,9 +1236,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1451,10 +1247,7 @@
             "A-infos": "An air blower is a piece of equipment designed to deliver air at overpressure. These blowers allow to obtain compressed air at low pressure",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "BL",
-                    "Blower"
-                ]
+                "BL = Blower"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1465,10 +1258,7 @@
             "A-infos": "The fan blows air at low pressure but at high speed",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "FAN",
-                    "Fan"
-                ]
+                "FAN = Fan"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1479,10 +1269,7 @@
             "A-infos": "The fan blows air at low pressure but at high speed",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "FAN",
-                    "Fan"
-                ]
+                "FAN = Fan"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1493,9 +1280,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1506,9 +1291,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1519,9 +1302,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1532,10 +1313,7 @@
             "A-infos": "A vacuum pump is a type of pump allowing to make the vacuum, i.e. to extract the air or any other gas contained in a closed enclosure, in order to decrease its pressure.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PU",
-                    "Pumps"
-                ]
+                "PU = Pumps"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1546,9 +1324,7 @@
             "A-infos": "Add one Digital Input to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                [
-                    ""
-                ]
+                "NONE"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1559,9 +1335,7 @@
             "A-infos": "Add one Digital Output to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                [
-                    ""
-                ]
+                "NONE"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1572,9 +1346,7 @@
             "A-infos": "Add one Analog Input to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                [
-                    ""
-                ]
+                "NONE"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1585,9 +1357,7 @@
             "A-infos": "Add one Analog Intput for temperature sensor to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                [
-                    ""
-                ]
+                "NONE"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1598,9 +1368,7 @@
             "A-infos": "Add one Analog Output to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                [
-                    ""
-                ]
+                "NONE"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -1611,7 +1379,7 @@
     "fr": {
         "docName": "Functional analysis",
         "title1": "Document presentation",
-        "text1": "This document defines the elements, functions and operating principles of the PLC package for the project: ",
+        "text1": "This document defines the elements, functions and operating principles of the PLC package for the project: @",
         "title2": "Reference document",
         "text2": "This functional analysis is carried out on the basis of the following documents.",
         "table2": [
@@ -1625,42 +1393,53 @@
             ],
             [
                 "PROCESS FUNCTIONAL ANALYSIS",
-                "XXXXX",
-                "XXXXX"
+                "@-XXX-XXX",
+                "X"
             ],
             [
                 "MODULE & AUTOMATION ARCHITECTURE",
-                "ORANO-ARCH-001",
+                "@-ARCH-001",
                 "1.0"
             ],
             [
-                "ELEMENT IOLIST",
-                "ORANO-IOLIST-001",
+                "NETWORK ARCHITECTURE",
+                "@-OVERALL-NETWORK",
                 "1.0"
             ],
             [
-                "",
-                "",
-                ""
+                "IO & ELEMENT LIST",
+                "@-IOLIST-001",
+                "1.0"
             ],
             [
-                "",
-                "",
-                ""
+                "HMI TECHNICAL SPECIFICATIONS",
+                "£-SPECIFICATIONS",
+                "X"
+            ],
+            [
+                "PLC TECHNICAL SPECIFICATIONS",
+                "§-SPECIFICATIONS",
+                "X"
             ]
         ],
         "title3": "Installation architecture",
-        "text3": "This installation is managed by @ PROFACE HMI (@), all connected to TM3 input-output modules. See the document describing the PLC architecture, reference : @",
-        "title4": "P&ID element listing",
-        "text4": "This installation is composed of many different elements which involved to the programming and setting / sizing of automation part.See the elements listing document, reference: ORANO-IOLIST-001",
-        "title5": "Network architecture",
-        "text5": "NONE",
+        "subTitle3a": "PLC & HMI",
+        "text3a": "This installation is controlled by a PROFACE PLC + HMI installed in the control cabinet under the drawing reference WIP",
+        "text3aa": "The controller is composed of:",
+        "subTitle3b": "Managed equipment",
+        "text3b": "Different way is used to manage and share information with equipment's installation.",
+        "smallTitle3b1": "Managed by CANOPEN TM3 module",
+        "smallTitle3b2": "Managed by other communications protocols",
+        "title4": "Network architecture",
+        "text4": "This installation is composed of many different devices which need to communicate with each other. See the document, reference: @-OVERALL-NETWORK",
+        "title5": "P&ID element listing",
+        "text5": "This installation is composed of many different elements which involved to the programming and setting / sizing of automation part.See the elements listing document, reference: @-IOLIST-001",
         "title6": "PLC settings",
-        "text6A": "The installation is managed by @ PLC and @ Can Open master board.@ is a combined unit of Display Module and Power Box Module.To manage the installation, a panel is installed on the front of the cabinet.",
-        "text6B": "For more details see technical documentation, reference: @.",
+        "text6A": "This installation is managed by a set composed of one HMI (tactile panel), one PLC (type \"PowerBox\") and one CanOpen master board. The panel is installed on the front of the cabinet",
+        "text6B": "For more details see technical documentation, reference: @-SPECIFICATIONS.",
         "text6C": "Installed equipment are PROFACE materials, they are programming with GP-Pro EX 4.09 SP1.Product Version:V4.09.350, (latest version).Product version date:01\/02\/2022",
         "title7": "HMI settings",
-        "text7": "The installation is controlled by a PROFACE (SCHNEIDER) human machine interface.For more details see specification document reference: @",
+        "text7": "The installation is controlled by a PROFACE (SCHNEIDER) human machine interface.For more details see specification document reference: @-SPECIFICATIONS",
         "table7": [
             [
                 "Access level table"
@@ -1845,11 +1624,11 @@
         "smallTitle9D": "HMI screen view",
         "text9D": "Alarms that have disappeared are shown in white. The alarms are acknowledged by pressing the button (level 1 required).The date and time when the alarm was triggered are indicated on the left. The number of times the alarm has been triggered is shown on the right. The alarm counter is reset by selecting the alarm table and pressing the button (level 1 required).The deletion of a disappeared alarm is done by selecting the line concerned and then pressing the \"Delete\" button (level 1 required). To delete all the missing alarms, select the alarm table and press the \"Delete all\" button (level 1 required).",
         "FB001": {
-            "title1": "Function block description @",
-            "subtitle1": "General description",
+            "title1": "Description for function bloc [@]",
+            "subTitle1": "General description",
             "text1": "This is a completely custom installation, however some elements are same, for them we will use the function block programming method (FB).The instrumentation will be managed by standardized blocks, in order to ensure homogenization of the programming. These blocks are used only in the process PLC, this chapter presents their functionalities.",
             "subTitle2": "Analog measurements function block",
-            "text2": "The function block @ is used:",
+            "text2": "The function block [@] is used:",
             "bulletList1": [
                 [
                     "To display the measured value from an electrical signal (4-20mA or 0-10V)."
@@ -1930,10 +1709,10 @@
                     "Drive back installation to Default state"
                 ]
             ],
-            "smallTilte2": "Function block @, screen description",
+            "smallTilte2": "Function block [@], screen description",
             "table2": [
                 [
-                    "Function block screen description"
+                    "Function block [@], screen description"
                 ],
                 [
                     "Number",
@@ -2155,7 +1934,7 @@
             ]
         ],
         "title19": "Security management",
-        "-----END-----": "-----END-----",
+        "----------------------------END----------------------------": "----------------------------END----------------------------",
         "subTitleA": "General informations",
         "subTitleB": "List of concerned items",
         "subTitleC": "Control and command",
@@ -2172,7 +1951,7 @@
             "ALARM",
             "ACTIVATION CONDITION"
         ],
-        "Intrumentation": {
+        "Instrumentation": {
             "title": "Intrumentation",
             "infos": "All analogue measurements are processed in the same way for them we will use the function bloc programming method (FB)."
         },
@@ -2188,31 +1967,22 @@
             "title": "Analyzer",
             "infos": ""
         },
-        "Air supply": {
-            "title": "Air supply",
+        "Fluid supply": {
+            "title": "Fluid supply",
             "infos": ""
         },
-        "Pumps": {
-            "title": "Pumps",
-            "infos": ""
+        "Devices": {
+            "title": "Devices",
+            "infos": "External device add to project for special needs"
         },
         "PT": {
             "title": "Pressure transmitter",
             "A-infos": "A pressure sensor is a system that converts a mechanical pressure into an electrical value.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PIT",
-                    "Pressure Indicator Transmitter"
-                ],
-                [
-                    "PT",
-                    "Pressure Transmitter"
-                ],
-                [
-                    "PDT",
-                    "Pressure Differential Transmitter"
-                ]
+                "PIT = Pressure Indicator Transmitter",
+                "PT = Pressure Transmitter",
+                "PDT = Pressure Differential Transmitter"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2223,18 +1993,9 @@
             "A-infos": "A pressure sensor is a system that converts a mechanical pressure into an electrical value. This one can provide one digital information more.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PIT",
-                    "Pressure Indicator Transmitter"
-                ],
-                [
-                    "PT",
-                    "Pressure Transmitter"
-                ],
-                [
-                    "PDT",
-                    "Pressure Differential Transmitter"
-                ]
+                "PIT = Pressure Indicator Transmitter",
+                "PT = Pressure Transmitter",
+                "PDT = Pressure Differential Transmitter"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2245,18 +2006,9 @@
             "A-infos": "A pressure sensor is a system that converts a mechanical pressure into an electrical value. This one can provide two digital informations more.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PIT",
-                    "Pressure Indicator Transmitter"
-                ],
-                [
-                    "PT",
-                    "Pressure Transmitter"
-                ],
-                [
-                    "PDT",
-                    "Pressure Differential Transmitter"
-                ]
+                "PIT = Pressure Indicator Transmitter",
+                "PT = Pressure Transmitter",
+                "PDT = Pressure Differential Transmitter"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2267,10 +2019,7 @@
             "A-infos": "the pressure switch allows to check the minimum pressure in the water circuit.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PSL",
-                    "Pressure Switch Limit"
-                ]
+                "PSL = Pressure Switch Limit"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2281,10 +2030,7 @@
             "A-infos": "Magnetic flow meters consist of a transmitter and a sensor that work together to measure flow. The magnetic flowmeter sensor is placed in-line and measures an induced voltage generated by the fluid as it passes through a pipe.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "FT",
-                    "Flow Transmitter"
-                ]
+                "FT = Flow Transmitter"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2295,10 +2041,7 @@
             "A-infos": "Magnetic flow meters consist of a transmitter and a sensor that work together to measure flow. The magnetic flowmeter sensor is placed in-line and measures an induced voltage generated by the fluid as it passes through a pipe.This one can provide one digital informations more.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "FT",
-                    "Flow Transmitter"
-                ]
+                "FT = Flow Transmitter"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2309,10 +2052,7 @@
             "A-infos": "Device which provide digital information when the fluid to which it is subjected is in motion",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "FD",
-                    "Flow Detector"
-                ]
+                "FD = Flow Detector"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2323,14 +2063,8 @@
             "A-infos": "A temperature transmitter is a system that converts a temperature into an electrical value.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "TT",
-                    "Temperature Transmitter"
-                ],
-                [
-                    "TIT",
-                    "Temperature Indicator Transmitter"
-                ]
+                "TT = Temperature Transmitter",
+                "TIT = Temperature Indicator Transmitter"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2341,14 +2075,8 @@
             "A-infos": "A temperature sensor is a system that converts a temperature into a measurable physical value.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "TT",
-                    "Temperature Transmitter"
-                ],
-                [
-                    "TIT",
-                    "Temperature Indicator Transmitter"
-                ]
+                "TT = Temperature Transmitter",
+                "TIT = Temperature Indicator Transmitter"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2359,14 +2087,8 @@
             "A-infos": "A temperature transmitter is a system that converts a temperature into an electrical value.This one can provide one digital informations more.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "TT",
-                    "Temperature Transmitter"
-                ],
-                [
-                    "TIT",
-                    "Temperature Indicator Transmitter"
-                ]
+                "TT = Temperature Transmitter",
+                "TIT = Temperature Indicator Transmitter"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2377,9 +2099,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "WIP"
-                ]
+                "TS* = Transmitter Switch *level"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2390,10 +2110,7 @@
             "A-infos": "Hygrometer is based on the measurement of the dew point temperature, and is used to measure the humidity in the air, or another gas mixture",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "AT",
-                    "Analyser Transmitter"
-                ]
+                "AT = Analyser Transmitter"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2404,22 +2121,10 @@
             "A-infos": "A level sensor is an electronic device that measures the height of material, usually liquid, in a tank.It detects in a binary way, like a switch, if the water level reaches a certain limit or not.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "LSLL",
-                    "Level Switch Low Low"
-                ],
-                [
-                    "LSL",
-                    "Level Switch Low"
-                ],
-                [
-                    "LSH",
-                    "Level Switch High"
-                ],
-                [
-                    "LSHH",
-                    "Level Switch High High"
-                ]
+                "LSLL = Level Switch Low Low",
+                "LSL = Level Switch Low",
+                "LSH = Level Switch High",
+                "LSHH = Level Switch High High"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2430,14 +2135,8 @@
             "A-infos": "Water meter produce pulse according settable amount water through inside it.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "FQIT",
-                    "WIP"
-                ],
-                [
-                    "FQT",
-                    "WIP"
-                ]
+                "FQIT = WIP",
+                "FQT = WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2448,9 +2147,7 @@
             "A-infos": "Energy meter produce pulse according settable amount energy through inside it.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "WIP"
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2461,9 +2158,7 @@
             "A-infos": "Electrical meter produce pulse according settable amount of current through inside it.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "WIP"
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2474,9 +2169,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "WIP"
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2487,9 +2180,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "WIP"
-                ]
+                "CHILL = Chilleur"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2500,22 +2191,18 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "WIP"
-                ]
+                "DRY = Dryer"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
             "zxyzxy": ""
         },
-        "Fg dry eco": {
+        "Fg dry hygro": {
             "title": "Dryer with hygrometer",
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "WIP"
-                ]
+                "DRY = Dryer"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2526,10 +2213,7 @@
             "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "DRY",
-                    "Dryer"
-                ]
+                "DRY = Dryer"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2540,10 +2224,7 @@
             "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "DRY",
-                    "Dryer"
-                ]
+                "DRY = Dryer"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2554,10 +2235,7 @@
             "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "DRY",
-                    "Dryer"
-                ]
+                "DRY = Dryer"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2568,10 +2246,7 @@
             "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "DRY",
-                    "Dryer"
-                ]
+                "DRY = Dryer"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2582,9 +2257,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2595,9 +2268,18 @@
             "A-infos": "Element which produce heat when current pass through it",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "WIP"
-                ]
+                "WIP"
+            ],
+            "C-control&command": "Please refer to chapter XXXXX",
+            "D-fault": "Please refer to chapter XXXXX",
+            "zxyzxy": ""
+        },
+        "Rc": {
+            "title": "Drivable Heater",
+            "A-infos": "Element which produce heat when current pass through it, Can be driven by analog signal",
+            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+            "B-tags": [
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2608,10 +2290,7 @@
             "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "DR",
-                    "Drain Valve"
-                ]
+                "DR = Drain Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2622,10 +2301,7 @@
             "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "DR",
-                    "Drain Valve"
-                ]
+                "DR = Drain Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2636,10 +2312,7 @@
             "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "DR",
-                    "Drain Valve"
-                ]
+                "DR = Drain Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2650,10 +2323,7 @@
             "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "DR",
-                    "Drain Valve"
-                ]
+                "DR = Drain Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2664,10 +2334,7 @@
             "A-infos": "A valve piloted by pneumatic distributor, move back to default and safety position in case of lack of compressed air.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2678,18 +2345,9 @@
             "A-infos": "A valve piloted by pneumatic distributor and sending feedback depending to its position, move back to default and safety position in case of lack of compressed air.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ],
-                [
-                    "YSC",
-                    "State Switch Close"
-                ],
-                [
-                    "YSO",
-                    "State Switch Open"
-                ]
+                "PV = Powered Valve",
+                "YSC = State Switch Close",
+                "YSO = State Switch Open"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2700,10 +2358,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2714,18 +2369,9 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ],
-                [
-                    "YSC",
-                    "State Switch Close"
-                ],
-                [
-                    "YSO",
-                    "State Switch Open"
-                ]
+                "PV = Powered Valve",
+                "YSC = State Switch Close",
+                "YSO = State Switch Open"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2736,10 +2382,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2750,10 +2393,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2764,10 +2404,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2778,10 +2415,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2792,10 +2426,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2806,10 +2437,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2820,10 +2448,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2834,10 +2459,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2848,10 +2470,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2862,10 +2481,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2876,10 +2492,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2890,10 +2503,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2904,9 +2514,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2917,9 +2525,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2930,9 +2536,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2943,9 +2547,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2956,10 +2558,7 @@
             "A-infos": "The electromagnetic valve (EMV) or solenoid valve allows to interrupt or not the fluid flow, it behaves like a switch",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PV",
-                    "Powered Valve"
-                ]
+                "PV = Powered Valve"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2970,9 +2569,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2983,9 +2580,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -2996,9 +2591,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -3009,9 +2602,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -3022,9 +2613,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -3035,10 +2624,7 @@
             "A-infos": "An air blower is a piece of equipment designed to deliver air at overpressure. These blowers allow to obtain compressed air at low pressure",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "BL",
-                    "Blower"
-                ]
+                "BL = Blower"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -3046,12 +2632,21 @@
         },
         "Fan": {
             "title": "Fan",
-            "A-infos": "WIP",
+            "A-infos": "The fan blows air at low pressure but at high speed",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "FAN = Fan"
+            ],
+            "C-control&command": "Please refer to chapter XXXXX",
+            "D-fault": "Please refer to chapter XXXXX",
+            "zxyzxy": ""
+        },
+        "Fan F": {
+            "title": "Fan",
+            "A-infos": "The fan blows air at low pressure but at high speed",
+            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+            "B-tags": [
+                "FAN = Fan"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -3062,9 +2657,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -3075,9 +2668,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -3088,9 +2679,7 @@
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    ""
-                ]
+                "WIP"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -3101,10 +2690,7 @@
             "A-infos": "A vacuum pump is a type of pump allowing to make the vacuum, i.e. to extract the air or any other gas contained in a closed enclosure, in order to decrease its pressure.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                [
-                    "PU",
-                    "Pumps"
-                ]
+                "PU = Pumps"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -3115,9 +2701,7 @@
             "A-infos": "Add one Digital Input to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                [
-                    ""
-                ]
+                "NONE"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -3128,9 +2712,7 @@
             "A-infos": "Add one Digital Output to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                [
-                    ""
-                ]
+                "NONE"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -3141,9 +2723,7 @@
             "A-infos": "Add one Analog Input to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                [
-                    ""
-                ]
+                "NONE"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -3154,9 +2734,7 @@
             "A-infos": "Add one Analog Intput for temperature sensor to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                [
-                    ""
-                ]
+                "NONE"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",
@@ -3167,9 +2745,7 @@
             "A-infos": "Add one Analog Output to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                [
-                    ""
-                ]
+                "NONE"
             ],
             "C-control&command": "Please refer to chapter XXXXX",
             "D-fault": "Please refer to chapter XXXXX",

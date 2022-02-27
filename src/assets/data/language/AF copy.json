@@ -2,7 +2,7 @@
     "uk": {
         "docName": "Functional analysis",
         "title1": "Document presentation",
-        "text1": "This document defines the elements, functions and operating principles of the PLC package for the project: @",
+        "text1": "This document defines the elements, functions and operating principles of the PLC package for the project: ",
         "title2": "Reference document",
         "text2": "This functional analysis is carried out on the basis of the following documents.",
         "table2": [
@@ -58,7 +58,7 @@
         "title5": "P&ID element listing",
         "text5": "This installation is composed of many different elements which involved to the programming and setting / sizing of automation part.See the elements listing document, reference: @-IOLIST-001",
         "title6": "PLC settings",
-        "text6A": "This installation is managed by a set composed of one HMI (tactile panel), one PLC (type \"PowerBox\") and one CanOpen master board. The panel is installed on the front of the cabinet",
+        "text6A": "The installation is managed by @ PLC and @ Can Open master board.@ is a combined unit of Display Module and Power Box Module.To manage the installation, a panel is installed on the front of the cabinet.",
         "text6B": "For more details see technical documentation, reference: @-SPECIFICATIONS.",
         "text6C": "Installed equipment are PROFACE materials, they are programming with GP-Pro EX 4.09 SP1.Product Version:V4.09.350, (latest version).Product version date:01\/02\/2022",
         "title7": "HMI settings",
@@ -247,11 +247,11 @@
         "smallTitle9D": "HMI screen view",
         "text9D": "Alarms that have disappeared are shown in white. The alarms are acknowledged by pressing the button (level 1 required).The date and time when the alarm was triggered are indicated on the left. The number of times the alarm has been triggered is shown on the right. The alarm counter is reset by selecting the alarm table and pressing the button (level 1 required).The deletion of a disappeared alarm is done by selecting the line concerned and then pressing the \"Delete\" button (level 1 required). To delete all the missing alarms, select the alarm table and press the \"Delete all\" button (level 1 required).",
         "FB001": {
-            "title1": "Description for function bloc [@]",
-            "subTitle1": "General description",
+            "title1": "Function block description @",
+            "subtitle1": "General description",
             "text1": "This is a completely custom installation, however some elements are same, for them we will use the function block programming method (FB).The instrumentation will be managed by standardized blocks, in order to ensure homogenization of the programming. These blocks are used only in the process PLC, this chapter presents their functionalities.",
             "subTitle2": "Analog measurements function block",
-            "text2": "The function block [@] is used:",
+            "text2": "The function block @ is used:",
             "bulletList1": [
                 [
                     "To display the measured value from an electrical signal (4-20mA or 0-10V)."
@@ -332,10 +332,10 @@
                     "Drive back installation to Default state"
                 ]
             ],
-            "smallTilte2": "Function block [@], screen description",
+            "smallTilte2": "Function block @, screen description",
             "table2": [
                 [
-                    "Function block [@], screen description"
+                    "Function block screen description"
                 ],
                 [
                     "Number",
