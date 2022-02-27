@@ -592,58 +592,6 @@ export class DocxBuilder extends DocumentBuilder {
     const nativIo = this.proface["PROFACE"][this.HMI_id]["NativeIO"];
     return nativIo;
   }
-  // Method wich return informations from landing page
-  nomenclatureHmi() {
-    const typeOfPlc = this.getHmiQTSIo();
-    const conceptionList =
-      typeOfPlc === false ? ["HMI", "PLC", "CAN"] : ["HMI"];
-    const firstRow = ["Item", "Denomination", "Ref", "Qtty"];
-    const table = this.list(firstRow);
-    for (const item of conceptionList) {
-      const _list = this.list();
-      _list.push(item);
-      _list.push(this.proface.PROFACE[this.HMI_id][item]["Denomination"]);
-      _list.push(this.proface.PROFACE[this.HMI_id][item]["Ref"]);
-      _list.push("1");
-      table.push(_list);
-    }
-    return table;
-  }
-  /* // Method wich return informations from landing page
-  nomenclatureHmi() {
-    const conceptionList = ["HMI", "PLC", "CAN"];
-    const firstRow = ["Denomination", "Ref", "Provider", "Qtty"];
-    const table = this.list(firstRow);
-    for (const item of conceptionList) {
-      const rows = this.list();
-      for (const value of Object.values(
-        this.proface.PROFACE[this.HMI_id][item]
-      )) {
-        rows.push(value);
-      }
-      rows.push(this.group);
-      table.push(rows);
-    }
-    return table;
-  } */
-  // Method wich return table of table representing the modules nomenclature
-  nomenclatureModule(obj) {
-    // obj param must be a module list ex :{moduleN:0 ...}
-    const firstRow = ["Ref", "Provider", "Description", "Qtty"];
-    const table = this.list(firstRow);
-    for (const [key, value] of Object.entries(obj)) {
-      if (value !== 0) {
-        const rows = this.list();
-        rows.push(this.proface.PROFACE[key]["Reference"]);
-        rows.push(this.proface.PROFACE[key]["Manufacturer"]);
-        rows.push(this.proface.PROFACE[key]["Description"]);
-        // Qty of module can only be a str for display in wordx function
-        rows.push(`${value}`);
-        table.push(rows);
-      }
-    }
-    return table;
-  }
   // Method which return table according matrix parameter
   docxTable(matrix, span) {
     const result = this.list();
