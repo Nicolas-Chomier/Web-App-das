@@ -65,6 +65,7 @@ export function handleClick_AF(rawAbstract, tongue) {
   children.push(title3, subTitle3a, text3a, text3aa);
   // Build bullet list for PLC part
   const plcInfos = Afb.afGetDeviceInfoChapter3("PLC");
+  console.log("===========", plcInfos);
   const plcBullet = Afb.makeLevelAfBullet(plcInfos);
   for (const bullet of plcBullet) {
     children.push(bullet);
@@ -394,8 +395,8 @@ export function handleClick_AF(rawAbstract, tongue) {
     ],
   });
   // Print document
-  Packer.toBlob(doc).then((blob) => {
+  /* Packer.toBlob(doc).then((blob) => {
     saveAs(blob, `${speak.docName}-${projectTitle}.docx`);
   });
-  return false;
+  return false; */
 }

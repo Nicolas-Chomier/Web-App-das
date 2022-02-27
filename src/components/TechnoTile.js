@@ -19,7 +19,7 @@ const TechnoTile = ({ title, datas, output }) => {
       output(result);
     }
   }, [result, output]);
-  // //
+
   return (
     <Card sx={{ width: "100%", mx: "1vw", my: "1vh" }} elevation={5}>
       <Stack

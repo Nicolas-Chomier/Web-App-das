@@ -2,12 +2,12 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { Button, Card, Stack, Avatar } from "@mui/material";
 import RequestCards from "../components/RequestCards";
-import { handleClick_QTS } from "../assets/backend/Chiffrage/Constructor";
+import { documentConstructorForQts } from "../assets/backend/Chiffrage/Constructor";
 import { handleClick_ARCH } from "../assets/backend/ARCHDoc";
 import { handleClick_IO } from "../assets/backend/IODoc";
-import { handleClick_AF } from "../assets/backend/AFDoc";
+import { documentConstructorForAf } from "../assets/backend/Analyse Fonctionelle/Constructor";
 import contents from "../assets/data/lastPage.json";
-
+import { handleClick_AF } from "../assets/backend/AFDoc";
 // Load text information to display for Requestcards elements
 const content = JSON.parse(JSON.stringify(contents));
 
@@ -40,14 +40,14 @@ const LastPage = () => {
             <Button
               className="flag-btn"
               variant="outlined"
-              onClick={() => handleClick_QTS(rawAbstract, 0)}
+              onClick={() => documentConstructorForQts(rawAbstract, 0)}
             >
               <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
             </Button>
             <Button
               className="flag-btn"
               variant="outlined"
-              onClick={() => handleClick_QTS(rawAbstract, 1)}
+              onClick={() => documentConstructorForQts(rawAbstract, 1)}
             >
               <Avatar alt="FR flag" src="/FRFlag.png" sx={avtConf} />
             </Button>
@@ -70,7 +70,7 @@ const LastPage = () => {
             <Button
               className="flag-btn"
               variant="outlined"
-              onClick={() => handleClick_AF(rawAbstract, 0)}
+              onClick={() => documentConstructorForAf(rawAbstract, 0)}
             >
               <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
             </Button>

@@ -2,7 +2,7 @@ import privates from "../../data/private.json";
 
 const privateDatas = JSON.parse(JSON.stringify(privates));
 
-class MainDataSetBuilder {
+class MotherDataCreator {
   constructor(rawAbstract) {
     this.infosElement = rawAbstract.Elements;
     this.coef = rawAbstract.Project.Coef;
@@ -64,13 +64,23 @@ class MainDataSetBuilder {
   }
 }
 
-export class DataSetBuilder extends MainDataSetBuilder {
+export class MainDataCreator extends MotherDataCreator {
   constructor(rawAbstract) {
     super(rawAbstract);
+    this.pTitle = rawAbstract.Project.Title;
     this.openAirItemTable = ["OPA-F", "OPA-V"];
     this.rsl = { DI: 6, DO: 4, AI: 0, AO: 0, AIt: 0 }; // Mandatory reserved slot attribute to each project
     this.rName = "Reserved"; // Tag used to fill reserved slot
     this.rId = "0000"; // Id used for reserved slot
+  }
+
+  /** */
+  projectTitle(bool = true) {
+    const title = this.pTitle.toLowerCase();
+    if (bool) {
+      return title.toUpperCase();
+    }
+    return title.charAt(0).toUpperCase() + title.slice(1);
   }
   /** */
   projectMainObjIoList(plcNative) {
@@ -105,5 +115,16 @@ export class DataSetBuilder extends MainDataSetBuilder {
       }
     }
     return modele;
+  }
+  /** */
+  projectConsumerList(bool) {
+    const list = [];
+    this.infosElement.forEach((element) => {
+      const item = privateDatas[element.id]["Name"];
+      if (item) {
+        list.push(bool ? item.toUpperCase() : item.toLowerCase());
+      }
+    });
+    return [...new Set(list)];
   }
 }

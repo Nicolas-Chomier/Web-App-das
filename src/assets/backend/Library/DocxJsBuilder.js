@@ -170,14 +170,15 @@ export class DocxJsMethods extends DocxJsBuilder {
         },
       },
     };
-  }
-  /** */
-  projectTitle(bool = true) {
-    const title = this.pTitle.toLowerCase();
-    if (bool) {
-      return title.toUpperCase();
-    }
-    return title.charAt(0).toUpperCase() + title.slice(1);
+    // Document list style
+    this.stl = {
+      classic: {
+        bold: false,
+        font: "Calibri",
+        textSize: 10,
+        color: "000000",
+      },
+    };
   }
   /** */
   documentTitle(source, child, rank = 1, targetList = []) {
@@ -206,15 +207,15 @@ export class DocxJsMethods extends DocxJsBuilder {
   documentText(
     source,
     child,
+    targetList = [],
     bold = false,
     font = "Calibri",
     textSize = 10,
     color = "000000",
     italics = false,
-    underline = false,
-    targetList = []
+    underline = false
   ) {
-    if (typeof child === "object") {
+    if (Array.isArray(child)) {
       const text = new Paragraph({
         children: [
           new TextRun({
@@ -289,6 +290,58 @@ export class DocxJsMethods extends DocxJsBuilder {
         table.root.push(row);
       });
       child.push(table);
+      return true;
+    }
+    return false;
+  }
+  /** */
+  documentList(source, child, targetList = [], deep = 0, style = "classic") {
+    if (Array.isArray(source) && Array.isArray(child)) {
+      const styles = this.stl[style];
+      for (const item of source) {
+        if (Array.isArray(item) && item.length !== 0) {
+          const ld = deep + 1;
+          for (const value of item) {
+            const text = !targetList.length
+              ? `${value}`
+              : this.replaceTableContent(value, targetList);
+            const bullet = new Paragraph({
+              children: [
+                new TextRun({
+                  text: text,
+                  bold: styles.bold,
+                  font: styles.font,
+                  size: styles.textSize,
+                  color: styles.color,
+                }),
+              ],
+              bullet: {
+                level: ld,
+              },
+            });
+            child.push(bullet);
+          }
+        } else {
+          const text = !targetList.length
+            ? `${item}`
+            : this.replaceTableContent(item, targetList);
+          const bullet = new Paragraph({
+            children: [
+              new TextRun({
+                text: text,
+                bold: styles.bold,
+                font: styles.font,
+                size: styles.textSize,
+                color: styles.color,
+              }),
+            ],
+            bullet: {
+              level: deep,
+            },
+          });
+          child.push(bullet);
+        }
+      }
       return true;
     }
     return false;

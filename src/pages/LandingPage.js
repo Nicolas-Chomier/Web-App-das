@@ -11,8 +11,8 @@ import SendIcon from "@mui/icons-material/Send";
 import CoefTile from "../components/CoefTile";
 
 // Importation for main datas sources
-const datas = JSON.parse(JSON.stringify(publics));
-const dataHMI = datas.IHM_PROFACE.data;
+const publicDatas = JSON.parse(JSON.stringify(publics));
+const dataHMI = publicDatas.IHM_PROFACE.data;
 
 const LandingPage = () => {
   //const componentData = data["data"];

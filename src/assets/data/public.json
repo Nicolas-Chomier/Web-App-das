@@ -8,37 +8,44 @@
             "Gamme LT4000": {
                 "5.7'": {
                     "id": "0000",
-                    "generic name": "IHM 5.7 pouces"
+                    "generic name": "IHM 5.7 pouces",
+                    "nativeDevice": true
                 }
             },
             "Gamme eXtrem": {
                 "12'": {
                     "id": "0001",
-                    "generic name": "IHM 12 pouces"
+                    "generic name": "IHM 12 pouces",
+                    "nativeDevice": false
                 },
                 "15'": {
                     "id": "0002",
-                    "generic name": "IHM 15 pouces"
+                    "generic name": "IHM 15 pouces",
+                    "nativeDevice": false
                 }
             },
             "Gamme budget": {
                 "12'": {
                     "id": "0003",
-                    "generic name": "IHM 12 pouces"
+                    "generic name": "IHM 12 pouces",
+                    "nativeDevice": false
                 }
             },
             "Gamme premium": {
                 "12'": {
                     "id": "0004",
-                    "generic name": "IHM 12 pouces"
+                    "generic name": "IHM 12 pouces",
+                    "nativeDevice": false
                 },
                 "15'": {
                     "id": "0005",
-                    "generic name": "IHM 15 pouces"
+                    "generic name": "IHM 15 pouces",
+                    "nativeDevice": false
                 },
                 "19'": {
                     "id": "0006",
-                    "generic name": "IHM 19 pouces"
+                    "generic name": "IHM 19 pouces",
+                    "nativeDevice": false
                 }
             }
         }

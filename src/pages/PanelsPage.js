@@ -6,7 +6,7 @@ import ElementPanel from "../components/ElementPanel";
 import TableCustom from "../components/TableCustom";
 
 // Importation for main datas sources
-const datas = JSON.parse(JSON.stringify(publics));
+const publicDatas = JSON.parse(JSON.stringify(publics));
 
 const PanelsPage = () => {
   // Variable for next page
@@ -15,14 +15,14 @@ const PanelsPage = () => {
   const location = useLocation();
   const projectData = location.state;
   // All panel datas attribution (by category):
-  const Instrumentations = datas.Instrumentations;
-  const Process_components = datas.Process_components;
-  const Valves_and_dampers = datas.Valves_and_dampers;
-  const Analyzer = datas.Analyzer;
+  const Instrumentations = publicDatas.Instrumentations;
+  const Process_components = publicDatas.Process_components;
+  const Valves_and_dampers = publicDatas.Valves_and_dampers;
+  const Analyzer = publicDatas.Analyzer;
   const opt = projectData.OpenAir; // Depend on Open Air option chossen or not:
-  const Fluid_supply = datas.Fluid_supply;
-  const OpenAir = datas.OpenAir;
-  const Devices = datas.Devices;
+  const Fluid_supply = publicDatas.Fluid_supply;
+  const OpenAir = publicDatas.OpenAir;
+  const Devices = publicDatas.Devices;
   // Result from choice on different panels (false protect against empty entry when page build/refresh)
   const [config, setConfig] = useState(false);
   // Result read from abstract table
@@ -39,7 +39,7 @@ const PanelsPage = () => {
       });
       // Trap first loading page
     } else if (abstract.length === 0) {
-      console.log("trap");
+      console.log(":)");
     } else {
       alert("Something wrong append, please restart application");
       // Faire qqchose pour refresh all !!
