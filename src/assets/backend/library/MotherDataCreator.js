@@ -67,6 +67,7 @@ class MotherDataCreator {
 export class MainDataCreator extends MotherDataCreator {
   constructor(rawAbstract) {
     super(rawAbstract);
+    this.infosElement = rawAbstract.Elements;
     this.pTitle = rawAbstract.Project.Title;
     this.openAirItemTable = ["OPA-F", "OPA-V"];
     this.rsl = { DI: 6, DO: 4, AI: 0, AO: 0, AIt: 0 }; // Mandatory reserved slot attribute to each project
@@ -74,7 +75,11 @@ export class MainDataCreator extends MotherDataCreator {
     this.rId = "0000"; // Id used for reserved slot
   }
 
-  /** */
+  /**
+   * * Method used to get and format the main project title
+   * @param bool = Uppercase if true, if not only the first letter in uppercase
+   * ? source shape needed => bool
+   */
   projectTitle(bool = true) {
     const title = this.pTitle.toLowerCase();
     if (bool) {
@@ -144,5 +149,14 @@ export class MainDataCreator extends MotherDataCreator {
       obj[value.categorie][value.name].push([value.id, value.tag]);
     }
     return obj;
+  }
+  /** */
+  projectTagsAndIdList() {
+    const dataSet = this.removeAbstractDuplicate();
+    const list = [];
+    for (const item of dataSet) {
+      list.push([item.id, item.tag]);
+    }
+    return list;
   }
 }

@@ -82,6 +82,7 @@ export class AFBuilder extends MainToolsBox {
       "FUNCTION",
     ];
     this.faultRow1 = ["NAME", "ALARM", "ACTIVATION CONDITION"];
+    this.faultTableOverview = ["NAME", "TYPE", "ADRESS", "IMPACT"];
   }
   nativeDeviceInfos() {
     const bool = typeof this.native === "boolean" ? this.native : false;
@@ -160,5 +161,28 @@ export class AFBuilder extends MainToolsBox {
       }
     }
     return tensor;
+  }
+  /** */
+  faultsTableOverviewFor(source, target, flag) {
+    const table = [];
+    if (Array.isArray(source) && source.length !== 0) {
+      const table = [];
+      table.push([target]);
+      table.push(this.faultTableOverview);
+      for (const item of source) {
+        const id = item[0];
+        const tag = item[1];
+        const faults = privateDatas[id]["FAULTS"][flag];
+        const fb = privateDatas[id]["FunctionBloc"];
+        for (const fault of faults) {
+          if (target === fault[1]) {
+            const newTag = fault[0].replace("TAG", tag);
+            table.push([newTag, fault[1], "WIP", fb ? fault[2] : "WIP"]);
+          }
+        }
+      }
+      return table;
+    }
+    return table;
   }
 }

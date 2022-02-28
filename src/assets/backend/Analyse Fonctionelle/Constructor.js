@@ -1,8 +1,7 @@
 // Class
-import { MainDataCreator } from "../Library/MotherDataCreator";
-import { AFBuilder } from "../Library/MainToolsBox";
-import { DocxJsMethods } from "../Library/DocxJsBuilder";
-//import { Proface } from "../Library/Proface";
+import { MainDataCreator } from "../library/MotherDataCreator";
+import { AFBuilder } from "../library/MainToolsBox";
+import { DocxJsMethods } from "../library/DocxJsBuilder";
 // DocxJs
 import { Packer, Document, ImageRun, Paragraph } from "docx";
 import { Buffer } from "buffer";
@@ -15,227 +14,190 @@ import { IFTV } from "../../image/image_af_hmiFault";
 import { IFB001 } from "../../image/image_af_fb001_screenView";
 //import { header } from "../shared/DocumentHeader";
 import { footer } from "../shared/DocumentFooterAf";
-// Contents
-import language from "./Traduction.json";
-
-const traductionJson = JSON.parse(JSON.stringify(language));
 /**
  * Function which construct the AF document in word format
  * * Software architecture Version 2
  * * This function is called by "LastPage"
- * ! Attention : Logic to determine language will be changed soon !
- * ? Should add throw expression ?
+ * ? Should add "throw"expression ?
  * TODO Refactoring image function
  * @param rawAbstract = Datas from FRONT END
  * @param tongue = Printable language choosen by user
+ * + fqfcqzfzq
  */
-export function documentConstructorForAf(rawAbstract, tongue) {
-  const flag = !tongue ? "uk" : "fr";
-  const speak = traductionJson[flag];
-  // Class draft
-  const Make = new MainDataCreator(rawAbstract);
-  const Write = new DocxJsMethods(rawAbstract);
-  const Get = new AFBuilder(rawAbstract);
-  //const fromProviderDatas = new Proface(rawAbstract);
-  // Logic const declaration
-
-  // Document const declaration
-  const projectTitle = Make.projectTitle(true);
-  //const native = Get.nativeDeviceInfos();
-  const hmiRef = Get.choosenDeviceReference("HMI", true);
-  const plcRef = Get.choosenDeviceReference("PLC", true);
-  const hmiInfos = Get.editedDeviceInformations("HMI");
-  const plcInfos = Get.editedDeviceInformations("PLC");
-  const canInfos = Get.editedDeviceInformations("CAN");
-  const csList = Make.specialProjectListFor("ConsumerName");
-  const fbList = Make.specialProjectListFor("FunctionBloc");
-  const tagIdObj = Make.projectTagsAndIdObject();
-  // Document Pattern
-  const children = [];
-  Write.documentTitle(speak.title1, children);
-  Write.documentText(speak.text1, children, [projectTitle]);
-  Write.documentTitle(speak.title2, children, 2);
-  Write.documentText(speak.text2, children);
-  Write.documentTable(speak.table2, children, "grey", [
-    projectTitle,
-    hmiRef,
-    plcRef,
-  ]);
-  Write.documentTitle(speak.title3, children);
-  Write.documentTitle(speak.subTitle3a, children, 2);
-  Write.documentText(speak.text3a, children);
-  Write.documentText(speak.text3aa, children);
-  Write.documentList(hmiInfos, children);
-  Write.documentList(plcInfos, children);
-  Write.documentList(canInfos, children);
-  Write.documentTitle(speak.subTitle3b, children, 2);
-  Write.documentText(speak.text3b, children);
-  Write.documentTitle(speak.smallTitle3b1, children, 3);
-  Write.documentList(csList, children);
-  Write.documentTitle(speak.smallTitle3b2, children, 3);
-  Write.documentText("WIP", children);
-  Write.documentTitle(speak.title4, children);
-  Write.documentText(speak.text4, children, [projectTitle]);
-  Write.documentTitle(speak.title5, children);
-  Write.documentText(speak.text5, children, [projectTitle]);
-  Write.documentTitle(speak.title6, children);
-  Write.documentText(speak.text6A, children);
-  Write.documentText(speak.text6B, children, [plcRef]);
-  Write.documentText(speak.text6C, children);
-  Write.documentTitle(speak.title7, children);
-  Write.documentText(speak.text7, children, [hmiRef]);
-  Write.documentTable(speak.table7, children);
-  Write.documentTitle(speak.title8, children);
-  Write.documentTable(speak.table8, children);
-  Write.documentTitle(speak.title9, children);
-  Write.documentTitle(speak.subTitle9A, children, 2);
-  Write.documentTable(speak.table9A, children);
-  Write.documentTitle(speak.smallTitle9A, children, 3);
-  const image9A = new Paragraph({
-    children: [
-      new ImageRun({
-        data: Buffer.from(ICC, "base64"),
-        transformation: {
-          width: 520,
-          height: 450,
+export function documentConstructorForAf(rawAbstract, country) {
+  import(`./${country}-translations.json`)
+    .catch(() => import("./uk-translations.json"))
+    .then(({ core }) => {
+      const translate = JSON.parse(JSON.stringify(core));
+      const flag = country;
+      // Class draft
+      const Make = new MainDataCreator(rawAbstract);
+      const Write = new DocxJsMethods(rawAbstract);
+      const Get = new AFBuilder(rawAbstract);
+      // Logic const declaration
+      const tagIdObj = Make.projectTagsAndIdObject();
+      const tagIdList = Make.projectTagsAndIdList();
+      // Document const declaration
+      const projectTitle = Make.projectTitle(true);
+      const hmiRef = Get.choosenDeviceReference("HMI", true);
+      const plcRef = Get.choosenDeviceReference("PLC", true);
+      const hmiInfos = Get.editedDeviceInformations("HMI");
+      const plcInfos = Get.editedDeviceInformations("PLC");
+      const canInfos = Get.editedDeviceInformations("CAN");
+      const csList = Make.specialProjectListFor("ConsumerName");
+      const fbList = Make.specialProjectListFor("FunctionBloc");
+      const tmaTable = Get.faultsTableOverviewFor(tagIdList, "TMA", flag);
+      const tmiTable = Get.faultsTableOverviewFor(tagIdList, "TMI", flag);
+      const pmaTable = Get.faultsTableOverviewFor(tagIdList, "PMA", flag);
+      const pmiTable = Get.faultsTableOverviewFor(tagIdList, "PMI", flag);
+      // Images
+      function putImageOnDocument(imageName, child, w = 490, h = 290) {
+        const img = new Paragraph({
+          children: [
+            new ImageRun({
+              data: Buffer.from(imageName, "base64"),
+              transformation: {
+                width: w,
+                height: h,
+              },
+            }),
+          ],
+        });
+        child.push(img);
+      }
+      // Document Pattern
+      const children = [];
+      Write.documentTitle(translate.title1, children);
+      Write.documentText(translate.text1, children, [projectTitle]);
+      Write.documentTitle(translate.title2, children, 2);
+      Write.documentText(translate.text2, children);
+      Write.documentTable(translate.table2, children, [
+        projectTitle,
+        hmiRef,
+        plcRef,
+      ]);
+      Write.documentTitle(translate.title3, children);
+      Write.documentTitle(translate.subTitle3a, children, 2);
+      Write.documentText(translate.text3a, children);
+      Write.documentText(translate.text3aa, children);
+      Write.documentList(hmiInfos, children);
+      Write.documentList(plcInfos, children);
+      Write.documentList(canInfos, children);
+      Write.documentTitle(translate.subTitle3b, children, 2);
+      Write.documentText(translate.text3b, children);
+      Write.documentTitle(translate.smallTitle3b1, children, 3);
+      Write.documentList(csList, children);
+      Write.documentTitle(translate.smallTitle3b2, children, 3);
+      Write.documentText("WIP", children);
+      Write.documentTitle(translate.title4, children);
+      Write.documentText(translate.text4, children, [projectTitle]);
+      Write.documentTitle(translate.title5, children);
+      Write.documentText(translate.text5, children, [projectTitle]);
+      Write.documentTitle(translate.title6, children);
+      Write.documentText(translate.text6A, children);
+      Write.documentText(translate.text6B, children, [plcRef]);
+      Write.documentText(translate.text6C, children);
+      Write.documentTitle(translate.title7, children);
+      Write.documentText(translate.text7, children, [hmiRef]);
+      Write.documentTable(translate.table7, children);
+      Write.documentTitle(translate.title8, children);
+      Write.documentTable(translate.table8, children);
+      Write.documentTitle(translate.title9, children);
+      Write.documentTitle(translate.subTitle9A, children, 2);
+      Write.documentTable(translate.table9A, children);
+      Write.documentTitle(translate.smallTitle9A, children, 3);
+      putImageOnDocument(ICC, children); // img
+      Write.documentTitle(translate.subTitle9B, children, 2);
+      Write.documentText(translate.text9B, children);
+      Write.documentTitle(translate.smallTitle9B1, children, 3);
+      putImageOnDocument(IRV, children, 100, 65); // img
+      Write.documentTitle(translate.smallTitle9B2, children, 3);
+      putImageOnDocument(IWV, children, 100, 65); // img
+      Write.documentTitle(translate.subTitle9C, children, 2);
+      Write.documentTable(translate.table9C, children);
+      Write.documentTitle(translate.subTitle9D, children, 2);
+      Write.documentTable(translate.table9D, children);
+      Write.documentTitle(translate.smallTitle9D, children, 3);
+      putImageOnDocument(IFTV, children); // img
+      Write.documentText(translate.text9D, children);
+      //* Function bloc chapter
+      for (const bloc of fbList) {
+        Write.documentTitle(translate[bloc].title1, children, 1, [bloc]);
+        Write.documentTitle(translate[bloc].subTitle1, children, 2);
+        Write.documentText(translate[bloc].text1, children);
+        Write.documentTitle(translate[bloc].subTitle2, children, 2);
+        Write.documentText(translate[bloc].text2, children, [bloc]);
+        Write.documentList(translate[bloc].bulletList1, children);
+        Write.documentTitle(translate[bloc].smallTilte1, children, 3);
+        Write.documentTable(translate[bloc].table1, children);
+        Write.documentTitle(translate[bloc].smallTilte2, children, 3, [bloc]);
+        putImageOnDocument(IFB001, children, 550, 320); //! Ne regle pas le probleme de l'import pour d'autre FB
+        Write.documentSpace(children);
+        Write.documentTable(translate[bloc].table2, children);
+      }
+      Write.documentTitle(translate.title11, children);
+      Write.documentText(translate.text11, children);
+      //* Elements chapter
+      for (const item of Object.keys(tagIdObj)) {
+        Write.documentTitle(translate[item].title, children);
+        Write.documentText(translate[item].infos, children);
+        for (const [key, value] of Object.entries(tagIdObj[item])) {
+          Write.documentTitle(translate[key].title, children, 2);
+          Write.documentTitle(translate.subTitleA, children, 3);
+          Write.documentText(translate[key]["A-infos"], children);
+          Write.documentTitle(translate.subTitleB, children, 3);
+          Write.documentText(translate[key]["B-intro"], children);
+          Write.documentList(translate[key]["B-tags"], children);
+          // c&c table
+          Write.documentTitle(translate.subTitleC, children, 3);
+          const ccMatrix = Get.controlAndCommandTable(value, flag);
+          for (const table of ccMatrix) {
+            Write.documentTable(table, children, [], "blue");
+            Write.documentSpace(children);
+          }
+          // fault table
+          Write.documentTitle(translate.subTitleD, children, 3);
+          const ftMatrix = Get.faultTable(value, flag);
+          for (const table of ftMatrix) {
+            Write.documentTable(table, children, [], "orange");
+            Write.documentSpace(children);
+          }
+        }
+      }
+      //* Chapter 18
+      Write.documentTitle(translate.title18, children);
+      Write.documentTitle(translate.subTitle18, children, 2);
+      Write.documentText(translate.text18, children);
+      Write.documentTitle(translate.smallTitle18A, children, 3);
+      Write.documentText(translate.text18A, children);
+      Write.documentTitle(translate.smallTitle18B, children, 3);
+      Write.documentText(translate.text18B, children);
+      Write.documentTitle(translate.subTitle18C, children, 2);
+      Write.documentTable(tmaTable, children);
+      Write.documentTitle(translate.subTitle18D, children, 2);
+      Write.documentTable(tmiTable, children);
+      Write.documentTitle(translate.subTitle18E, children, 2);
+      Write.documentTable(pmaTable, children);
+      Write.documentTitle(translate.subTitle18F, children, 2);
+      Write.documentTable(pmiTable, children);
+      Write.documentTitle(translate.title19, children);
+      Write.documentText("WIP", children);
+      const doc = new Document({
+        features: {
+          updateFields: true,
         },
-      }),
-    ],
-  });
-  children.push(image9A);
-  Write.documentTitle(speak.subTitle9B, children, 2);
-  Write.documentText(speak.text9B, children);
-  Write.documentTitle(speak.smallTitle9B1, children, 3);
-  const image9B1 = new Paragraph({
-    children: [
-      new ImageRun({
-        data: Buffer.from(IRV, "base64"),
-        transformation: {
-          width: 100,
-          height: 65,
-        },
-      }),
-    ],
-  });
-  children.push(image9B1);
-  Write.documentTitle(speak.smallTitle9B2, children, 3);
-  const image9B2 = new Paragraph({
-    children: [
-      new ImageRun({
-        data: Buffer.from(IWV, "base64"),
-        transformation: {
-          width: 100,
-          height: 65,
-        },
-      }),
-    ],
-  });
-  children.push(image9B2);
-  Write.documentTitle(speak.subTitle9C, children, 2);
-  Write.documentTable(speak.table9C, children);
-  Write.documentTitle(speak.subTitle9D, children, 2);
-  Write.documentTable(speak.table9D, children);
-  Write.documentTitle(speak.smallTitle9D, children, 3);
-  const image9D = new Paragraph({
-    children: [
-      new ImageRun({
-        data: Buffer.from(IFTV, "base64"),
-        transformation: {
-          width: 450,
-          height: 400,
-        },
-      }),
-    ],
-  });
-  children.push(image9D);
-  Write.documentText(speak.text9D, children);
-  /** */
-  for (const bloc of fbList) {
-    Write.documentTitle(speak[bloc].title1, children, 1, [bloc]);
-    Write.documentTitle(speak[bloc].subTitle1, children, 2);
-    Write.documentText(speak[bloc].text1, children);
-    Write.documentTitle(speak[bloc].subTitle2, children, 2);
-    Write.documentText(speak[bloc].text2, children, [bloc]);
-    Write.documentList(speak[bloc].bulletList1, children);
-    Write.documentTitle(speak[bloc].smallTilte1, children, 3);
-    Write.documentTable(speak[bloc].table1, children);
-    Write.documentTitle(speak[bloc].smallTilte2, children, 3, [bloc]);
-    const img1 = new Paragraph({
-      children: [
-        new ImageRun({
-          data: Buffer.from(IFB001, "base64"),
-          transformation: {
-            width: 600,
-            height: 350,
+        sections: [
+          {
+            //headers: header,
+            footers: footer,
+            children: children,
           },
-        }),
-      ],
+        ],
+      });
+      // Print document
+      Packer.toBlob(doc).then((blob) => {
+        saveAs(blob, `${translate.docName}-${projectTitle}.docx`);
+      });
     });
-    children.push(img1);
-    Write.documentTable(speak[bloc].table2, children);
-  }
-  Write.documentTitle(speak.title11, children);
-  Write.documentText(speak.text11, children);
-  /** */
-  for (const item of Object.keys(tagIdObj)) {
-    Write.documentTitle(speak[item].title, children);
-    Write.documentText(speak[item].infos, children);
-    for (const [key, value] of Object.entries(tagIdObj[item])) {
-      Write.documentTitle(speak[key].title, children, 2);
-      Write.documentTitle(speak.subTitleA, children, 3);
-      Write.documentText(speak[key]["A-infos"], children);
-      Write.documentTitle(speak.subTitleB, children, 3);
-      Write.documentText(speak[key]["B-intro"], children);
-      Write.documentList(speak[key]["B-tags"], children);
-      // c&c table
-      Write.documentTitle(speak.subTitleC, children, 3);
-      const ccMatrix = Get.controlAndCommandTable(value, flag);
-      for (const table of ccMatrix) {
-        Write.documentTable(table, children, "blue");
-        Write.documentSpace(children);
-      }
-      // fault table
-      Write.documentTitle(speak.subTitleD, children, 3);
-      const ftMatrix = Get.faultTable(value, flag);
-      for (const table of ftMatrix) {
-        Write.documentTable(table, children, "orange");
-        Write.documentSpace(children);
-      }
-    }
-  }
-  Write.documentTitle(speak.title18, children);
-  Write.documentTitle(speak.subTitle18, children, 2);
-  Write.documentText(speak.text18, children);
-  Write.documentTitle(speak.smallTitle18A, children, 3);
-  Write.documentText(speak.text18A, children);
-  Write.documentTitle(speak.smallTitle18B, children, 3);
-  Write.documentText(speak.text18B, children);
-  Write.documentTitle(speak.subTitle18C, children, 2);
-  Write.documentTable(speak.table18C, children);
-  Write.documentTitle(speak.subTitle18D, children, 2);
-  Write.documentTable(speak.table18D, children);
-  Write.documentTitle(speak.subTitle18E, children, 2);
-  Write.documentTable(speak.table18E, children);
-  Write.documentTitle(speak.subTitle18F, children, 2);
-  Write.documentTable(speak.table18F, children);
-  Write.documentTitle(speak.title19, children);
-  Write.documentText("WIP", children);
-  // ...
-  const doc = new Document({
-    features: {
-      updateFields: true,
-    },
-    sections: [
-      {
-        //headers: header,
-        footers: footer,
-        children: children,
-      },
-    ],
-  });
-  // Print document
-  Packer.toBlob(doc).then((blob) => {
-    saveAs(blob, `${speak.docName}-${projectTitle}.docx`);
-  });
   return false;
 }

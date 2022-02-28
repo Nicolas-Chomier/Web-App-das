@@ -1,0 +1,11 @@
+{
+    "core": {
+        "docTitle": "@ HMI & PLC architecture",
+        "hmiTitle": "HMI @ presentation",
+        "hmiText": "Size and implantation drawing for choosen HMI",
+        "plcTitle": "Material architecture for @ project",
+        "subTitle": "@ line-up",
+        "plcText": "This chapter details the entire architecture for the automation package",
+        "docName": "Architecture"
+    }
+}

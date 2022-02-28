@@ -173,12 +173,56 @@
         "FAULTS": {
             "uk": [
                 [
-                    "Managed by function block"
+                    "def_signal_[TAG]",
+                    "TMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SL_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SLL_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
+                ],
+                [
+                    "def_SH_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SHH_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
                 ]
             ],
             "fr": [
                 [
-                    "Managed by function block"
+                    "def_signal_[TAG]",
+                    "TMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SL_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SLL_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
+                ],
+                [
+                    "def_SH_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SHH_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
                 ]
             ]
         },
@@ -553,12 +597,56 @@
         "FAULTS": {
             "uk": [
                 [
-                    "Managed by function block"
+                    "def_signal_[TAG]",
+                    "TMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SL_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SLL_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
+                ],
+                [
+                    "def_SH_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SHH_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
                 ]
             ],
             "fr": [
                 [
-                    "Managed by function block"
+                    "def_signal_[TAG]",
+                    "TMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SL_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SLL_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
+                ],
+                [
+                    "def_SH_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SHH_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
                 ]
             ]
         },
@@ -818,12 +906,56 @@
         "FAULTS": {
             "uk": [
                 [
-                    "Managed by function block"
+                    "def_signal_[TAG]",
+                    "TMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SL_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SLL_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
+                ],
+                [
+                    "def_SH_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SHH_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
                 ]
             ],
             "fr": [
                 [
-                    "Managed by function block"
+                    "def_signal_[TAG]",
+                    "TMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SL_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SLL_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
+                ],
+                [
+                    "def_SH_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SHH_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
                 ]
             ]
         },
@@ -901,12 +1033,56 @@
         "FAULTS": {
             "uk": [
                 [
-                    "Managed by function block"
+                    "def_signal_[TAG]",
+                    "TMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SL_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SLL_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
+                ],
+                [
+                    "def_SH_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SHH_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
                 ]
             ],
             "fr": [
                 [
-                    "Managed by function block"
+                    "def_signal_[TAG]",
+                    "TMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SL_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SLL_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
+                ],
+                [
+                    "def_SH_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SHH_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
                 ]
             ]
         },
@@ -1166,12 +1342,56 @@
         "FAULTS": {
             "uk": [
                 [
-                    "Managed by function block"
+                    "def_signal_[TAG]",
+                    "TMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SL_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SLL_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
+                ],
+                [
+                    "def_SH_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SHH_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
                 ]
             ],
             "fr": [
                 [
-                    "Managed by function block"
+                    "def_signal_[TAG]",
+                    "TMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SL_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SLL_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
+                ],
+                [
+                    "def_SH_[TAG]",
+                    "PMI",
+                    "Warning displayed"
+                ],
+                [
+                    "def_SHH_[TAG]",
+                    "PMA",
+                    "Drive back installation to Default state"
                 ]
             ]
         },

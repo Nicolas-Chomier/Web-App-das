@@ -10,12 +10,12 @@ import {
   AlignmentType,
   WidthType,
 } from "docx";
-/** */
+//* Class and method used to build any document in "WORD" format
 class DocxJsBuilder {
   constructor(rawAbstract) {
     this.pTitle = rawAbstract.Project.Title;
   }
-  /** */
+  //* used in method below (documentTable,documentList)
   replaceTableContent(source, targetList) {
     let text = "";
     for (const item of source) {
@@ -31,7 +31,7 @@ class DocxJsBuilder {
     }
     return text;
   }
-  /** */
+  //* used in method below (documentTitle,documentText)
   replaceTextContent(source, targetList) {
     let text = "";
     let i = 0;
@@ -45,16 +45,15 @@ class DocxJsBuilder {
     }
     return text;
   }
-  /** */
+  //* used in method below (documentTable)
   numIsPair(n) {
     return n & 1 ? true : false;
   }
 }
-/** */
 export class DocxJsMethods extends DocxJsBuilder {
   constructor(rawAbstract) {
     super(rawAbstract);
-    // Document title style
+    //* Document title style
     this.sti = {
       0: {
         rank: HeadingLevel.HEADING_1,
@@ -77,7 +76,7 @@ export class DocxJsMethods extends DocxJsBuilder {
         break: false,
       },
     };
-    // Document table style
+    //* Document table style
     this.sta = {
       grey: {
         0: {
@@ -170,7 +169,7 @@ export class DocxJsMethods extends DocxJsBuilder {
         },
       },
     };
-    // Document list style
+    //* Document list style
     this.stl = {
       classic: {
         bold: false,
@@ -179,7 +178,7 @@ export class DocxJsMethods extends DocxJsBuilder {
         color: "000000",
       },
     };
-    // Document table custom color
+    //* Document table custom color
     this.customColor = {
       GREY: "C7C7C7",
       BLUE: "0063E5",
@@ -191,7 +190,18 @@ export class DocxJsMethods extends DocxJsBuilder {
       BROWN: "744611",
     };
   }
-  /** */
+  /**
+   * * Method used to write title on document
+   * @param source = content / title to write
+   * ? source shape needed => "string"
+   * @param child = used in docxJs to render final result, result of this method is automaticly push in child
+   * ? source shape needed => []
+   * @param rank = rank / size of the title
+   * ? source shape needed => int
+   * * title style object define in constructor
+   * @param targetList = Each @ in content can replace by item in list 'first input first output'
+   * ? source shape needed => ["string"]
+   */
   documentTitle(source, child, rank = 1, targetList = []) {
     if (Array.isArray(child)) {
       const style = this.sti[rank];
@@ -214,7 +224,16 @@ export class DocxJsMethods extends DocxJsBuilder {
     }
     return false;
   }
-  /** */
+  /**
+   * * Method used to write text on document
+   * @param source = content / text to write
+   * ? source shape needed => "string"
+   * @param child = used in docxJs to render final result, result of this method is automaticly push in child
+   * ? source shape needed => []
+   * @param targetList = Each @ in content can replace by item in list 'first input first output'
+   * ? source shape needed => ["string"]
+   * @param bold... = classic customisation param for Word text
+   */
   documentText(
     source,
     child,
@@ -253,8 +272,19 @@ export class DocxJsMethods extends DocxJsBuilder {
     }
     return false;
   }
-  /** */
-  documentTable(source, child, color = "grey", targetList = []) {
+  /**
+   * * Method used to write array on document
+   * @param source = content / table to write
+   * ? source shape needed => [["string"],["string"],...]
+   * @param child = used in docxJs to render final result, result of this method is automaticly push in child
+   * ? source shape needed => []
+   * @param targetList = Each @,£,§ in content can replace by item in list, ex: all @ will be replace by targetList rank 0
+   * ? source shape needed => ["string 1 @", "string 2 £", "string 3 §"]
+   * @param color = define the style of the table
+   * ? source shape needed => "string"
+   * * table style object define in constructor
+   */
+  documentTable(source, child, targetList = [], color = "grey") {
     if (Array.isArray(child) && source.length !== 0) {
       const style = this.sta[color];
       const span = source[1].length;
@@ -319,7 +349,22 @@ export class DocxJsMethods extends DocxJsBuilder {
     );
     return false;
   }
-  /** */
+  /**
+   * * Method used to write bullet list on document
+   * @param source = content / list to write
+   * ? source shape needed => ["string","string",["string"],...]
+   * @param child = used in docxJs to render final result, result of this method is automaticly push in child
+   * ? source shape needed => []
+   * @param targetList = Each @,£,§ in content can replace by item in list, ex: all @ will be replace by targetList rank 0
+   * ? source shape needed => ["string 1 @", "string 2 £", "string 3 §"]
+   * @param deep = define the bullet deep
+   * ? source shape needed => int
+   * ! this method can generate deeper level of bullet list, depend if a second tables are inside the source
+   * @param style = define the style of the table
+   * ? source shape needed => "string"
+   *
+   * * bullet list style object define in constructor
+   */
   documentList(source, child, targetList = [], deep = 0, style = "classic") {
     if (Array.isArray(source) && Array.isArray(child)) {
       const styles = this.stl[style];
@@ -371,7 +416,15 @@ export class DocxJsMethods extends DocxJsBuilder {
     }
     return false;
   }
-  /** */
+  /**
+   * * Method used to write a space on document
+   * @param child = used in docxJs to render final result, result of this method is automaticly push in child
+   * ? source shape needed => []
+   * @param a = define space before
+   * ? source shape needed => int
+   * @param b = define space after
+   * ? source shape needed => int
+   */
   documentSpace(child, a = 50, b = 50) {
     const space = new Paragraph({
       text: "",

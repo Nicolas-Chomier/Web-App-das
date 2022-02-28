@@ -7,7 +7,6 @@ import { handleClick_ARCH } from "../assets/backend/ARCHDoc";
 import { handleClick_IO } from "../assets/backend/IODoc";
 import { documentConstructorForAf } from "../assets/backend/Analyse Fonctionelle/Constructor";
 import contents from "../assets/data/lastPage.json";
-import { handleClick_AF } from "../assets/backend/AFDoc";
 // Load text information to display for Requestcards elements
 const content = JSON.parse(JSON.stringify(contents));
 
@@ -24,6 +23,7 @@ const LastPage = () => {
       <div className="head"></div>
       <div className="leftp"></div>
       <div className="rightp"></div>
+      {/* Quotation */}
       <div className="r1">
         <Card sx={{ width: "100%", mx: "1vw" }} elevation={5}>
           <RequestCards
@@ -40,20 +40,21 @@ const LastPage = () => {
             <Button
               className="flag-btn"
               variant="outlined"
-              onClick={() => documentConstructorForQts(rawAbstract, 0)}
+              onClick={() => documentConstructorForQts(rawAbstract, "uk")}
             >
               <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
             </Button>
             <Button
               className="flag-btn"
               variant="outlined"
-              onClick={() => documentConstructorForQts(rawAbstract, 1)}
+              onClick={() => documentConstructorForQts(rawAbstract, "fr")}
             >
               <Avatar alt="FR flag" src="/FRFlag.png" sx={avtConf} />
             </Button>
           </Stack>
         </Card>
       </div>
+      {/* Functional Analysis */}
       <div className="r2">
         <Card sx={{ width: "100%", mx: "1vw" }} elevation={5}>
           <RequestCards
@@ -70,14 +71,14 @@ const LastPage = () => {
             <Button
               className="flag-btn"
               variant="outlined"
-              onClick={() => documentConstructorForAf(rawAbstract, 0)}
+              onClick={() => documentConstructorForAf(rawAbstract, "uk")}
             >
               <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
             </Button>
             <Button
               className="flag-btn"
               variant="outlined"
-              onClick={() => handleClick_AF(rawAbstract, 1)}
+              onClick={() => documentConstructorForAf(rawAbstract, "fr")}
             >
               <Avatar alt="FR flag" src="/FRFlag.png" sx={avtConf} />
             </Button>

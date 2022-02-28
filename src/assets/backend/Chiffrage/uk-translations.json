@@ -1,0 +1,30 @@
+{
+    "core": {
+        "text1": "Hello, please find in this document a quotation request for the following references and quantities :",
+        "title2": "NOMENCLATURE for HMI",
+        "hmiTable": [
+            [
+                "HMI Quotation"
+            ],
+            [
+                "Item",
+                "Denomination",
+                "Ref",
+                "Qtty"
+            ]
+        ],
+        "title3": "NOMENCLATURE for TM3 modules",
+        "moduleTable": [
+            [
+                "Module quotation"
+            ],
+            [
+                "Ref",
+                "Provider",
+                "Description",
+                "Qtty"
+            ]
+        ],
+        "docName": "Quotation request"
+    }
+}

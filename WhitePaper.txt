@@ -16,3 +16,5 @@ trouvez comment importer des image dynamiquement pour les function block
 faire en sorte que makeDocxjsCustomText (method pour af) produise directement le text sous forme docxjs
 faire des tableaux de defaut et de controle command separé quand plusieur meme element ont ete choisi
 changer les header de l'af
+utiliser method replace a la place de la fonction avec les @
+faire un JSOn par langue
