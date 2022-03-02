@@ -19,6 +19,7 @@ class MainToolsBox {
     this.openAir = rawAbstract.Project.OpenAir;
     this.hmiId = rawAbstract.Project.Technology.id;
     this.native = rawAbstract.Project.Technology.nativeDevice;
+    this.noSlot = "Spare";
   }
 }
 /**
@@ -178,7 +179,6 @@ export class ARCHBuilder extends MainToolsBox {
       AO: "F9B30C",
       AIt: "9108F1",
     };
-    this.noSlot = "Spare";
   }
   nativeDeviceInfos() {
     const bool = typeof this.native === "boolean" ? this.native : false;
@@ -352,9 +352,82 @@ export class ARCHBuilder extends MainToolsBox {
 export class IOLISTBuilder extends MainToolsBox {
   constructor(rawAbstract) {
     super(rawAbstract);
-    this.a = "";
+    this.com = "";
   }
-  aaa() {
-    return false;
+  //
+  nativePlcIo() {
+    return profaceDatas.PROFACE[this.hmiId]["NativeIO"];
+  }
+  // Method which count duplicate in given list
+  counter(list) {
+    const counts = {};
+    list.forEach(function (x) {
+      counts[x] = (counts[x] || 0) + 1;
+    });
+    return counts;
+  }
+  //Special == LT4000
+  reshapeTagListSpecial(idList, tagList, key, value, title, firsRow, flag) {
+    const result = this.ioListTableForPlc(
+      idList,
+      tagList,
+      key,
+      value,
+      title,
+      firsRow,
+      flag
+    );
+    const _olist = [];
+    _olist.length = 0;
+    for (const item of result) {
+      _olist.push(item);
+    }
+    return _olist;
+  }
+  //
+  ioListTableForPlc(idList, tagList, key, value, title, firsRow, flag) {
+    console.log("#######", key, value);
+    const table = [];
+    table.length = 0;
+    const titleT = typeof title === "string" ? title : this.projectTitle;
+    //table.push([titleT], firsRow);*
+    table.push(firsRow);
+    for (let i = 0; i < value; i++) {
+      const ctObj = this.counter(tagList);
+      //console.log(")))))))))))))))))))", tagList);
+      const actualTag = tagList[0];
+      const ctr = ctObj[actualTag];
+      const tag = tagList.length > 0 ? tagList.shift() : this.noSlot;
+      const id = idList.length > 0 ? idList.shift() : this.noSlot;
+      const func = this.addFunc(id, key, ctr, flag);
+      const way = this.addWay(key, i);
+      table.push([way, func, tag, `${key}`, "", titleT]);
+      console.log(table);
+    }
+    return table;
+  }
+  addFunc(id, key, counter, flag) {
+    //console.log(id, key, counter, flag);
+    const target = privateDatas[id]["Text"][flag][key];
+
+    //console.log("target", target);
+    const text = typeof target === "string" ? target : target[counter - 1];
+    return text;
+  }
+  addWay(key, i) {
+    const num = `${key}/${i + 1}`;
+    return num;
   }
 }
+
+/* if (Array.isArray(data)) {
+  const table = [];
+  for (let i = 0; i < data.length; i++) {
+    const id = idListing[types][key].shift();
+    const way = `${key}/i`;
+    const func = privateDatas[id]["Text"][flag][key];
+    const label = tagListing[types][key].shift();
+    const type = `${key}`;
+    const desc = "";
+    const module = titleT;
+  } */

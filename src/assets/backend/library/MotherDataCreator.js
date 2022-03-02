@@ -70,6 +70,7 @@ export class MainDataCreator extends MotherDataCreator {
   constructor(rawAbstract) {
     super(rawAbstract);
     this.infosElement = rawAbstract.Elements;
+    this.native = rawAbstract.Project.Technology.nativeDevice;
     this.hmiId = rawAbstract.Project.Technology.id;
     this.pTitle = rawAbstract.Project.Title;
     this.openAirItemTable = ["OPA-F", "OPA-V"]; //! A commenter
@@ -99,6 +100,10 @@ export class MainDataCreator extends MotherDataCreator {
   plcNativeIoList() {
     const nativIo = profaceDatas.PROFACE[this.hmiId]["NativeIO"];
     return nativIo;
+  }
+  nativeDeviceInfos() {
+    const bool = typeof this.native === "boolean" ? this.native : true;
+    return bool;
   }
   /** */
   deviceReferenceFor(type, bool) {
@@ -183,7 +188,7 @@ export class MainDataCreator extends MotherDataCreator {
     const dataset = this.removeAbstractDuplicate();
     const obj = this.emptyShapeForTagList();
     const lowTar = target.toLowerCase();
-    const rSlot = "Reserved";
+    const rSlot = lowTar === "id" ? "0000" : "Reserved";
     let j = 1;
     // Fill listing with tags
     for (const item of dataset) {

@@ -4,6 +4,14 @@
         "docText": "This document details the entire Input Output elements list for the automation package",
         "hmiTitle": "Nativ Input Output elements list for @",
         "plcTitle": "Rest of Input Output elements list managed by external boards",
-        "docName": "List and elements adress"
+        "docName": "List and elements adress",
+        "firstRow": [
+            "N° Voie",
+            "Fonction",
+            "Repere",
+            "Nature",
+            "Description",
+            "Ref module"
+        ]
     }
 }

@@ -1,9 +1,17 @@
 {
     "core": {
-        "docTitle": "@, Input Output elements list",
+        "docTitle": "Overall I/O list for @",
         "docText": "This document details the entire Input Output elements list for the automation package",
         "hmiTitle": "Nativ Input Output elements list for @",
         "plcTitle": "Rest of Input Output elements list managed by external boards",
-        "docName": "List and elements adress"
+        "docName": "List and elements adress",
+        "firstRow": [
+            "Way N°",
+            "Fonction",
+            "Label",
+            "Type",
+            "Description",
+            "Module REF"
+        ]
     }
 }

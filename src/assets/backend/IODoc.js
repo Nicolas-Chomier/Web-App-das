@@ -25,8 +25,10 @@ export function handleClick_IO(rawAbstract, tongue) {
   const masterIo = rawMasterIo["1"]; // DELETE le GRP
   const rawMasterTag = Dt.tagListObject();
   const masterTag = rawMasterTag["1"]; // DELETE le GRP
+  console.log(masterTag);
   const rawMasterId = Dt.idListObject();
   const masterId = rawMasterId["1"]; // DELETE le GRP
+  console.log(masterId);
   // Variables for document construction
   const id = rawAbstract.Project.Technology.id;
   const projectTitle = Dx.buildTitle();
@@ -49,7 +51,8 @@ export function handleClick_IO(rawAbstract, tongue) {
   const intro = Dx.makeText(speak.docText);
   children.push(intro);
   // Creation - IOList
-  if (native) {
+  //console.log(masterTag, masterId);
+  /* if (native) {
     // Build LT4000 IOList
     const hmiTitle = Dx.makeTitleRankX(
       Dx.makeCustomText(speak.hmiTitle, [HmiRef]),
@@ -61,8 +64,11 @@ export function handleClick_IO(rawAbstract, tongue) {
     // Build substracted IOList in case of LT4000
     EmptyRawArray.push([`${HmiRef}`]);
     for (const [key, value] of Object.entries(native)) {
+      console.log("===============", native);
       const idList = masterId["MAIN"][key];
+      console.log("idList", idList);
       const tagList = masterTag["MAIN"][key];
+      console.log("tagList", tagList);
       const listWithTag = Iob.reshapeTagListSpecial(
         tagList,
         idList,
@@ -72,12 +78,12 @@ export function handleClick_IO(rawAbstract, tongue) {
         HmiRef
       );
       EmptyRawArray.push(listWithTag);
-    }
-    //Dx.makeMainTable(EmptyRawArray, children);
-    // Build LT4000 rest of IOList
-    //const plcTitle = Dx.makeTitleRankX(speak.plcTitle, 2);
-    //children.push(plcTitle);
-    for (const [key, value] of Object.entries(ioList)) {
+    } */
+  //Dx.makeMainTable(EmptyRawArray, children);
+  // Build LT4000 rest of IOList
+  //const plcTitle = Dx.makeTitleRankX(speak.plcTitle, 2);
+  //children.push(plcTitle);
+  /* for (const [key, value] of Object.entries(ioList)) {
       const isEmpty = !Object.values(value).some((x) => x !== 0);
       if (isEmpty !== true) {
         const idList = masterId[key];
@@ -103,8 +109,8 @@ export function handleClick_IO(rawAbstract, tongue) {
         }
       }
     }
-    Dx.makeMainTable(EmptyRawArray, children);
-  } else {
+    Dx.makeMainTable(EmptyRawArray, children); */
+  /* } else {
     for (const [key, value] of Object.entries(masterIo)) {
       const idList = masterId[key];
       const tagList = masterTag[key];
@@ -129,7 +135,7 @@ export function handleClick_IO(rawAbstract, tongue) {
       }
     }
     Dx.makeMainTable(EmptyRawArray, children);
-  }
+  } */
   // AdressTable pattern
   const doc = new Document({
     sections: [
@@ -141,8 +147,8 @@ export function handleClick_IO(rawAbstract, tongue) {
     ],
   });
   // Print document
-  Packer.toBlob(doc).then((blob) => {
+  /* Packer.toBlob(doc).then((blob) => {
     saveAs(blob, `${speak.docName}-${projectTitle}.docx`);
-  });
+  }); */
   return false;
 }

@@ -1113,11 +1113,13 @@ export class IoDocBuilder extends DocumentBuilder {
   }
   // Pick tag to dictionnary tag and fill list according module size
   attribTagToListSpecial(tagList, idList, key, value, flag, HmiRef) {
+    console.log("#######", key, value);
     const _list = this.list();
     _list.push(flag === "uk" ? this.firstRowUK : this.firstRowFR);
     for (let i = 0; i < value; i++) {
       // Object with duplicate {name : number}
       const counterObject = this.countDuplicateInList(tagList);
+      //console.log(")))))))))))))))))))", tagList);
       // Number of duplicate leaving for actual tag
       const actualTag = tagList[0];
       const counter = counterObject[actualTag];
@@ -1126,7 +1128,9 @@ export class IoDocBuilder extends DocumentBuilder {
       const id = idList.length > 0 ? idList.shift() : this.noSlot;
       const fluf = this.AddFlufToRawAdressTable(id, key, flag, counter);
       const trackNbs = this.AddTrackNumberToRawAdressTable(key, i);
+
       _list.push([trackNbs, fluf, tag, key, this.comment, HmiRef]);
+      console.log(_list);
     }
 
     return _list;
@@ -1150,12 +1154,17 @@ export class IoDocBuilder extends DocumentBuilder {
   }
   //
   AddFlufToRawAdressTable(id, key, flag, counter) {
-    const dataType = typeof this.private[id]["Text"][flag][key];
+    /* const dataType = typeof this.private[id]["Text"][flag][key];
     if (dataType === "string") {
       return this.private[id]["Text"][flag][key];
     }
     const fluf = this.private[id]["Text"][flag][key][counter - 1];
-    return fluf;
+    return fluf; */
+    const target = this.private[id]["Text"][flag][key];
+
+    //console.log("target", target);
+    const text = typeof target === "string" ? target : target[counter - 1];
+    return text;
   }
   //
   AddTrackNumberToRawAdressTable(key, i) {

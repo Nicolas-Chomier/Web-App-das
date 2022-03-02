@@ -43,8 +43,8 @@ export function documentConstructorForArchitecture(rawAbstract, country) {
       const plcRef = Make.deviceReferenceFor("PLC", true);
       const tagListing = Make.projectListingfor("TAG");
       const ioListing = Make.projectIoListing();
+      const bool = Make.nativeDeviceInfos();
       // Document const declaration
-      const bool = Get.nativeDeviceInfos();
       const imgListing = [IM1, IM1, IM2, IM3, IM4, IM5, IM6, IM7];
       // Document Pattern
       const children = [];
@@ -61,6 +61,7 @@ export function documentConstructorForArchitecture(rawAbstract, country) {
         Write.documentTable(nativeTable, children, [], "grey", "multiColor");
         for (const [key, value] of Object.entries(ioListing)) {
           Write.documentTitle(translate.subTitle, children, 3, [key], true);
+          console.log(value); //! Bug si lineup vide
           const lineUp = fromProviderDatas.GetlineUp(value); // Provider const declaration
           for (const item of lineUp) {
             Get.drawedTable(item, children, tagListing[key], imgListing);
