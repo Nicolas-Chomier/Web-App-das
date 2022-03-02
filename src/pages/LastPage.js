@@ -3,7 +3,8 @@ import { useLocation } from "react-router-dom";
 import { Button, Card, Stack, Avatar } from "@mui/material";
 import RequestCards from "../components/RequestCards";
 import { documentConstructorForQts } from "../assets/backend/Chiffrage/Constructor";
-import { handleClick_ARCH } from "../assets/backend/ARCHDoc";
+import { documentConstructorForArchitecture } from "../assets/backend/Architecture/Constructor";
+import { documentConstructorForIOList } from "../assets/backend/IOliste/Constructor";
 import { handleClick_IO } from "../assets/backend/IODoc";
 import { documentConstructorForAf } from "../assets/backend/Analyse Fonctionelle/Constructor";
 import contents from "../assets/data/lastPage.json";
@@ -85,6 +86,7 @@ const LastPage = () => {
           </Stack>
         </Card>
       </div>
+      {/* Architecture */}
       <div className="r3">
         <Card sx={{ width: "100%", mx: "1vw" }} elevation={5}>
           <RequestCards
@@ -102,7 +104,7 @@ const LastPage = () => {
               className="flag-btn"
               variant="outlined"
               onClick={() => {
-                handleClick_ARCH(rawAbstract, 0);
+                documentConstructorForArchitecture(rawAbstract, "uk");
               }}
             >
               <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
@@ -111,7 +113,7 @@ const LastPage = () => {
               className="flag-btn"
               variant="outlined"
               onClick={() => {
-                handleClick_ARCH(rawAbstract, 1);
+                documentConstructorForArchitecture(rawAbstract, "fr");
               }}
             >
               <Avatar alt="FR flag" src="/FRFlag.png" sx={avtConf} />
@@ -119,6 +121,7 @@ const LastPage = () => {
           </Stack>
         </Card>
       </div>
+      {/* IOList */}
       <div className="r4">
         <Card sx={{ width: "100%", mx: "1vw" }} elevation={5}>
           <RequestCards
@@ -136,7 +139,7 @@ const LastPage = () => {
               className="flag-btn"
               variant="outlined"
               onClick={() => {
-                handleClick_IO(rawAbstract, 0);
+                documentConstructorForIOList(rawAbstract, "uk");
               }}
             >
               <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />

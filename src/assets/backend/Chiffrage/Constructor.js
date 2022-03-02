@@ -27,13 +27,13 @@ export function documentConstructorForQts(rawAbstract, country) {
       const Write = new DocxJsMethods(rawAbstract);
       const Get = new QTSBuilder(rawAbstract);
       const fromProviderDatas = new Proface(rawAbstract);
-      // Logic const declaration
-      const plcNative = Get.plcNativeIoList();
-      const pml = Make.projectMainObjIoList(plcNative);
-      const unique = Get.uniqueIoList(pml);
+      // General & project const declaration
+      const projectTitle = Make.projectTitle(true);
+      const ioListing = Make.projectIoListing();
+      // Provider const declaration
+      const unique = fromProviderDatas.uniqueIoList(ioListing);
       const lineUp = fromProviderDatas.getModuleList(unique);
       // Document const declaration
-      const projectTitle = Make.projectTitle(true);
       const table1 = Get.nomenclatureForHmi(translate.hmiTable);
       const table2 = Get.nomenclatureForModule(translate.moduleTable, lineUp);
       // Document Pattern
@@ -44,6 +44,7 @@ export function documentConstructorForQts(rawAbstract, country) {
       Write.documentTable(table1, children, "grey");
       Write.documentTitle(translate.title3, children, 2);
       Write.documentTable(table2, children, "grey");
+      // Document
       const document = new Document({
         sections: [
           {

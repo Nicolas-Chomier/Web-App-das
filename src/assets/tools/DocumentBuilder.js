@@ -216,6 +216,7 @@ export class DataBuilder extends DocumentBuilder {
         }
       }
     }
+    console.log(">>>>>>>>>>>>>>>>", _obj);
     return _obj;
   }
   // Method which build a usefull IOList dictionnary from raw abstract elements list
@@ -265,6 +266,7 @@ export class DataBuilder extends DocumentBuilder {
     for (const key of Object.keys(ioList[grp]["MAIN"])) {
       ioList[grp]["MAIN"][key] += this.rsl[key];
     }
+    console.log("ioList", ioList);
     return ioList;
   }
 }
@@ -427,6 +429,7 @@ export class Proface extends DocumentBuilder {
       const splitedLineUp = this.splitModuleLine(filteredRaw);
       const orderedLineUp = this.orderedModuleLine(splitedLineUp);
       // Step 3 : return it
+      console.log("orderedLineUp", orderedLineUp);
       return orderedLineUp;
     }
     return false;
@@ -744,8 +747,10 @@ export class DocxBuilder extends DocumentBuilder {
   }
   // Sub method which fill TableCell children with text (only for tableShapeArchitecture method)
   makeRowText(array, target) {
+    console.log("array", array);
     const _list = this.list();
     for (const module of array) {
+      console.log(">module", module);
       const text = `${this.proface.PROFACE[module][target]}`;
       _list.push(
         new TableCell({
@@ -910,6 +915,7 @@ export class ArchDocBuilder extends DocumentBuilder {
   }
   // Method which build architecture under table shape for each array given in parameters
   makeTable(item, masterTag) {
+    console.log("maketable!!!!!", item);
     const table = new Table({
       rows: [
         // Call method which build array text

@@ -216,4 +216,22 @@ export class Proface {
   giveMeHmiInformations(id, target) {
     return this.proface.PROFACE[id][target];
   }
+  // Method which add all module number in one module line up
+  uniqueIoList(obj = {}) {
+    var size = Object.keys(obj).length;
+    if (size !== 0) {
+      const list = [];
+      for (const value of Object.values(obj)) {
+        list.push(value);
+      }
+      const result = list.reduce((a, b) => {
+        for (let k in b) {
+          if (b.hasOwnProperty(k)) a[k] = (a[k] || 0) + b[k];
+        }
+        return a;
+      }, {});
+      return result;
+    }
+    return this.emptyIoListModel;
+  }
 }

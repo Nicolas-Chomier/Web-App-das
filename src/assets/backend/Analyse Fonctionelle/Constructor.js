@@ -3,15 +3,14 @@ import { MainDataCreator } from "../library/MotherDataCreator";
 import { AFBuilder } from "../library/MainToolsBox";
 import { DocxJsMethods } from "../library/DocxJsBuilder";
 // DocxJs
-import { Packer, Document, ImageRun, Paragraph } from "docx";
-import { Buffer } from "buffer";
+import { Packer, Document } from "docx";
 import { saveAs } from "file-saver";
 // Datas & Images
-import { ICC } from "../../image/image_af_colourCode";
-import { IRV } from "../../image/image_af_readingValue";
-import { IWV } from "../../image/image_af_writingValue";
-import { IFTV } from "../../image/image_af_hmiFault";
-import { IFB001 } from "../../image/image_af_fb001_screenView";
+import { ICC } from "./images/image_af_colourCode";
+import { IRV } from "./images/image_af_readingValue";
+import { IWV } from "./images/image_af_writingValue";
+import { IFTV } from "./images/image_af_hmiFault";
+import { IFB001 } from "./images/image_af_fb001_screenView";
 //import { header } from "../shared/DocumentHeader";
 import { footer } from "../shared/DocumentFooterAf";
 /**
@@ -22,7 +21,6 @@ import { footer } from "../shared/DocumentFooterAf";
  * TODO Refactoring image function
  * @param rawAbstract = Datas from FRONT END
  * @param tongue = Printable language choosen by user
- * + fqfcqzfzq
  */
 export function documentConstructorForAf(rawAbstract, country) {
   import(`./${country}-translations.json`)
@@ -34,37 +32,22 @@ export function documentConstructorForAf(rawAbstract, country) {
       const Make = new MainDataCreator(rawAbstract);
       const Write = new DocxJsMethods(rawAbstract);
       const Get = new AFBuilder(rawAbstract);
-      // Logic const declaration
+      // General & project const declaration
+      const projectTitle = Make.projectTitle(true);
+      const hmiRef = Make.deviceReferenceFor("HMI", true);
+      const plcRef = Make.deviceReferenceFor("PLC", true);
       const tagIdObj = Make.projectTagsAndIdObject();
       const tagIdList = Make.projectTagsAndIdList();
+      const csList = Make.specialProjectListFor("ConsumerName");
+      const fbList = Make.specialProjectListFor("FunctionBloc");
       // Document const declaration
-      const projectTitle = Make.projectTitle(true);
-      const hmiRef = Get.choosenDeviceReference("HMI", true);
-      const plcRef = Get.choosenDeviceReference("PLC", true);
       const hmiInfos = Get.editedDeviceInformations("HMI");
       const plcInfos = Get.editedDeviceInformations("PLC");
       const canInfos = Get.editedDeviceInformations("CAN");
-      const csList = Make.specialProjectListFor("ConsumerName");
-      const fbList = Make.specialProjectListFor("FunctionBloc");
       const tmaTable = Get.faultsTableOverviewFor(tagIdList, "TMA", flag);
       const tmiTable = Get.faultsTableOverviewFor(tagIdList, "TMI", flag);
       const pmaTable = Get.faultsTableOverviewFor(tagIdList, "PMA", flag);
       const pmiTable = Get.faultsTableOverviewFor(tagIdList, "PMI", flag);
-      // Images
-      function putImageOnDocument(imageName, child, w = 490, h = 290) {
-        const img = new Paragraph({
-          children: [
-            new ImageRun({
-              data: Buffer.from(imageName, "base64"),
-              transformation: {
-                width: w,
-                height: h,
-              },
-            }),
-          ],
-        });
-        child.push(img);
-      }
       // Document Pattern
       const children = [];
       Write.documentTitle(translate.title1, children);
@@ -106,19 +89,19 @@ export function documentConstructorForAf(rawAbstract, country) {
       Write.documentTitle(translate.subTitle9A, children, 2);
       Write.documentTable(translate.table9A, children);
       Write.documentTitle(translate.smallTitle9A, children, 3);
-      putImageOnDocument(ICC, children); // img
+      Write.documentImage(ICC, children); // img
       Write.documentTitle(translate.subTitle9B, children, 2);
       Write.documentText(translate.text9B, children);
       Write.documentTitle(translate.smallTitle9B1, children, 3);
-      putImageOnDocument(IRV, children, 100, 65); // img
+      Write.documentImage(IRV, children, 100, 65); // img
       Write.documentTitle(translate.smallTitle9B2, children, 3);
-      putImageOnDocument(IWV, children, 100, 65); // img
+      Write.documentImage(IWV, children, 100, 65); // img
       Write.documentTitle(translate.subTitle9C, children, 2);
       Write.documentTable(translate.table9C, children);
       Write.documentTitle(translate.subTitle9D, children, 2);
       Write.documentTable(translate.table9D, children);
       Write.documentTitle(translate.smallTitle9D, children, 3);
-      putImageOnDocument(IFTV, children); // img
+      Write.documentImage(IFTV, children); // img
       Write.documentText(translate.text9D, children);
       //* Function bloc chapter
       for (const bloc of fbList) {
@@ -131,7 +114,7 @@ export function documentConstructorForAf(rawAbstract, country) {
         Write.documentTitle(translate[bloc].smallTilte1, children, 3);
         Write.documentTable(translate[bloc].table1, children);
         Write.documentTitle(translate[bloc].smallTilte2, children, 3, [bloc]);
-        putImageOnDocument(IFB001, children, 550, 320); //! Ne regle pas le probleme de l'import pour d'autre FB
+        Write.documentImage(IFB001, children, 550, 320); //! Ne regle pas le probleme de l'import pour d'autre FB
         Write.documentSpace(children);
         Write.documentTable(translate[bloc].table2, children);
       }
@@ -182,6 +165,7 @@ export function documentConstructorForAf(rawAbstract, country) {
       Write.documentTable(pmiTable, children);
       Write.documentTitle(translate.title19, children);
       Write.documentText("WIP", children);
+      // Document
       const doc = new Document({
         features: {
           updateFields: true,

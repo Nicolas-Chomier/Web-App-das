@@ -9,7 +9,9 @@ import {
   HeadingLevel,
   AlignmentType,
   WidthType,
+  ImageRun,
 } from "docx";
+import { Buffer } from "buffer";
 //* Class and method used to build any document in "WORD" format
 class DocxJsBuilder {
   constructor(rawAbstract) {
@@ -82,28 +84,28 @@ export class DocxJsMethods extends DocxJsBuilder {
         0: {
           bold: true,
           font: "Calibri",
-          textSize: 20,
+          textSize: 24,
           textColor: "FFFFFF",
           bgColor: "3C3C3C",
         },
         1: {
           bold: true,
           font: "Calibri",
-          textSize: 18,
+          textSize: 20,
           textColor: "000000",
           bgColor: "9D9D9D",
         },
         2: {
           bold: false,
           font: "Calibri",
-          textSize: 12,
+          textSize: 20,
           textColor: "000000",
           bgColor: "FFFFFF",
         },
         3: {
           bold: false,
           font: "Calibri",
-          textSize: 12,
+          textSize: 20,
           textColor: "000000",
           bgColor: "FFFFFF",
         },
@@ -112,28 +114,28 @@ export class DocxJsMethods extends DocxJsBuilder {
         0: {
           bold: true,
           font: "Calibri",
-          textSize: 20,
+          textSize: 24,
           textColor: "FFFFFF",
           bgColor: "FF6B00",
         },
         1: {
           bold: true,
           font: "Calibri",
-          textSize: 18,
+          textSize: 20,
           textColor: "000000",
           bgColor: "FFB00F",
         },
         2: {
           bold: false,
           font: "Calibri",
-          textSize: 12,
+          textSize: 20,
           textColor: "000000",
           bgColor: "FFFFFF",
         },
         3: {
           bold: false,
           font: "Calibri",
-          textSize: 12,
+          textSize: 20,
           textColor: "000000",
           bgColor: "FFDBB4",
         },
@@ -142,39 +144,43 @@ export class DocxJsMethods extends DocxJsBuilder {
         0: {
           bold: true,
           font: "Calibri",
-          textSize: 20,
+          textSize: 24,
           textColor: "FFFFFF",
           bgColor: "0059FF",
         },
         1: {
           bold: true,
           font: "Calibri",
-          textSize: 18,
+          textSize: 20,
           textColor: "000000",
           bgColor: "4A8DFF",
         },
         2: {
           bold: false,
           font: "Calibri",
-          textSize: 12,
+          textSize: 20,
           textColor: "000000",
           bgColor: "FFFFFF",
         },
         3: {
           bold: false,
           font: "Calibri",
-          textSize: 12,
+          textSize: 20,
           textColor: "000000",
           bgColor: "B4D2FF",
         },
       },
+    };
+    //* Document table style only for column
+    this.scc = {
+      multiColor: ["000000", "B4D2FF", "FF6B00", "0063E5", "F9B30C", "9108F1"],
     };
     //* Document list style
     this.stl = {
       classic: {
         bold: false,
         font: "Calibri",
-        textSize: 10,
+        textSize: 20,
         color: "000000",
       },
     };
@@ -189,6 +195,8 @@ export class DocxJsMethods extends DocxJsBuilder {
       ORANGE: "F9B30C",
       BROWN: "744611",
     };
+    //* Document array style
+    this.sar = { multi: [] };
   }
   /**
    * * Method used to write title on document
@@ -202,7 +210,7 @@ export class DocxJsMethods extends DocxJsBuilder {
    * @param targetList = Each @ in content can replace by item in list 'first input first output'
    * ? source shape needed => ["string"]
    */
-  documentTitle(source, child, rank = 1, targetList = []) {
+  documentTitle(source, child, rank = 1, targetList = [], pBreak = false) {
     if (Array.isArray(child)) {
       const style = this.sti[rank];
       const title = new Paragraph({
@@ -216,7 +224,7 @@ export class DocxJsMethods extends DocxJsBuilder {
         ],
         heading: style.rank,
         thematicBreak: false,
-        pageBreakBefore: style.break,
+        pageBreakBefore: !pBreak ? style.break : true,
         alignment: AlignmentType.START,
       });
       child.push(title);
@@ -240,7 +248,7 @@ export class DocxJsMethods extends DocxJsBuilder {
     targetList = [],
     bold = false,
     font = "Calibri",
-    textSize = 10,
+    textSize = 20,
     color = "000000",
     italics = false,
     underline = false
@@ -273,7 +281,7 @@ export class DocxJsMethods extends DocxJsBuilder {
     return false;
   }
   /**
-   * * Method used to write array on document
+   * * Method used to write table on document
    * @param source = content / table to write
    * ? source shape needed => [["string"],["string"],...]
    * @param child = used in docxJs to render final result, result of this method is automaticly push in child
@@ -284,9 +292,16 @@ export class DocxJsMethods extends DocxJsBuilder {
    * ? source shape needed => "string"
    * * table style object define in constructor
    */
-  documentTable(source, child, targetList = [], color = "grey") {
+  documentTable(
+    source,
+    child,
+    targetList = [],
+    color = "grey",
+    cColumn = false
+  ) {
     if (Array.isArray(child) && source.length !== 0) {
-      const style = this.sta[color];
+      const rowStyle = this.sta[color];
+      const colStyle = cColumn ? this.scc[cColumn] : false;
       const span = source[1].length;
       const table = new Table({
         columnWidths: [],
@@ -297,13 +312,16 @@ export class DocxJsMethods extends DocxJsBuilder {
         },
       });
       source.forEach((element, key) => {
-        const colorKey = key > 1 ? (this.numIsPair(key) ? 3 : 2) : key;
+        const colorRow = key > 1 ? (this.numIsPair(key) ? 3 : 2) : key;
+        let colorCol = 0;
         const row = new TableRow({
           children: [],
         });
         element.forEach((item) => {
+          colorCol += 1;
+
           const text = !targetList.length
-            ? `${item}`
+            ? `${item !== undefined ? item : ""}`
             : this.replaceTableContent(item, targetList);
           row.root.push(
             new TableCell({
@@ -312,10 +330,14 @@ export class DocxJsMethods extends DocxJsBuilder {
                   children: [
                     new TextRun({
                       text: text,
-                      bold: style[colorKey].bold,
-                      font: style[colorKey].font,
-                      size: style[colorKey].textSize,
-                      color: style[colorKey].textColor,
+                      bold: rowStyle[colorRow].bold,
+                      font: rowStyle[colorRow].font,
+                      size: rowStyle[colorRow].textSize,
+                      color: colStyle
+                        ? colorCol > colStyle[colorCol].length || key <= 1
+                          ? rowStyle[colorRow].textColor
+                          : colStyle[colorCol]
+                        : rowStyle[colorRow].textColor,
                     }),
                   ],
                 }),
@@ -325,7 +347,7 @@ export class DocxJsMethods extends DocxJsBuilder {
                 color:
                   item in this.customColor
                     ? this.customColor[item]
-                    : style[colorKey].bgColor,
+                    : rowStyle[colorRow].bgColor,
               },
               columnSpan: !key ? span : 0,
             })
@@ -415,6 +437,33 @@ export class DocxJsMethods extends DocxJsBuilder {
       return true;
     }
     return false;
+  }
+  /**
+   * * Method used to put image on document
+   * @param imageName = first import image in base64 format in main function and put it in this parameter
+   * ? source shape needed => "str"
+   * @param child = used in docxJs to render final result, result of this method is automaticly push in child
+   * ? source shape needed => []
+   * @param w = define width of image
+   * ? source shape needed => int
+   * @param h = define height of image
+   * ? source shape needed => int
+   */
+  documentImage(imageName, child, w = 490, h = 290) {
+    if (Array.isArray(child) && typeof imageName === "string") {
+      const img = new Paragraph({
+        children: [
+          new ImageRun({
+            data: Buffer.from(imageName, "base64"),
+            transformation: {
+              width: w,
+              height: h,
+            },
+          }),
+        ],
+      });
+      child.push(img);
+    }
   }
   /**
    * * Method used to write a space on document

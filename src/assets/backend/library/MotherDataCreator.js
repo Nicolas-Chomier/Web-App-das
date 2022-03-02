@@ -1,5 +1,7 @@
+import proface from "../../data/proface.json";
 import privates from "../../data/private.json";
 
+const profaceDatas = JSON.parse(JSON.stringify(proface));
 const privateDatas = JSON.parse(JSON.stringify(privates));
 
 class MotherDataCreator {
@@ -52,7 +54,7 @@ class MotherDataCreator {
   // Method which return an formatted empty structure only to use with dictionnaryWithTag method
   emptyShapeForTagList() {
     const obj = this.object();
-    obj["MAIN"] = { MAIN: this.emptyTagList() };
+    obj["MAIN"] = this.emptyTagList();
     return obj;
   }
   // Method which delete duplicate in front elements list (tag is unique)
@@ -68,17 +70,19 @@ export class MainDataCreator extends MotherDataCreator {
   constructor(rawAbstract) {
     super(rawAbstract);
     this.infosElement = rawAbstract.Elements;
+    this.hmiId = rawAbstract.Project.Technology.id;
     this.pTitle = rawAbstract.Project.Title;
-    this.openAirItemTable = ["OPA-F", "OPA-V"];
+    this.openAirItemTable = ["OPA-F", "OPA-V"]; //! A commenter
     this.rsl = { DI: 6, DO: 4, AI: 0, AO: 0, AIt: 0 }; // Mandatory reserved slot attribute to each project
-    this.rName = "Reserved"; // Tag used to fill reserved slot
     this.rId = "0000"; // Id used for reserved slot
+    this.mandatoryIdName = "Compressor-";
   }
 
   /**
    * * Method used to get and format the main project title
    * @param bool = Uppercase if true, if not only the first letter in uppercase
    * ? source shape needed => bool
+   * @returns
    */
   projectTitle(bool = true) {
     const title = this.pTitle.toLowerCase();
@@ -87,16 +91,31 @@ export class MainDataCreator extends MotherDataCreator {
     }
     return title.charAt(0).toUpperCase() + title.slice(1);
   }
+  /**
+   *
+   * @param
+   * @returns
+   */
+  plcNativeIoList() {
+    const nativIo = profaceDatas.PROFACE[this.hmiId]["NativeIO"];
+    return nativIo;
+  }
   /** */
-  projectMainObjIoList(plcNative) {
+  deviceReferenceFor(type, bool) {
+    const ref = profaceDatas.PROFACE[this.hmiId][type]["Ref"];
+    return bool ? ref.toUpperCase() : ref;
+  }
+  /** */
+  projectIoListing() {
     const dataSet = this.removeAbstractDuplicate();
     const modele = this.emptyShapeForIolist(); // Get the empty modele
+    const plcNative = this.plcNativeIoList(); // Get native device IOList from choosen PLC
     let j = 1; // Counter for OPEN AIR Compressor
     // Build object with sub object inside each sub Object represent an IOList
     for (const value of Object.values(dataSet)) {
       const elemIoList = privateDatas[value.id]["IO"];
       if (this.openAirItemTable.includes(value.name)) {
-        const label = `CP n°${j}, (${value.name})`;
+        const label = `${this.mandatoryIdName}${j}`;
         modele[label] = this.emptyIolist();
         for (const [item, numbers] of Object.entries(elemIoList)) {
           modele[label][item] += numbers;
@@ -113,7 +132,7 @@ export class MainDataCreator extends MotherDataCreator {
       modele["MAIN"][key] += this.rsl[key];
     }
     // Substract PLC native IOList to main IOLIst if there one
-    if (plcNative) {
+    if (typeof plcNative === "object") {
       for (const [key, value] of Object.entries(plcNative)) {
         modele["MAIN"][key] =
           modele["MAIN"][key] - value < 0 ? 0 : modele["MAIN"][key] - value;
@@ -158,5 +177,49 @@ export class MainDataCreator extends MotherDataCreator {
       list.push([item.id, item.tag]);
     }
     return list;
+  }
+  /** */
+  projectListingfor(target) {
+    const dataset = this.removeAbstractDuplicate();
+    const obj = this.emptyShapeForTagList();
+    const lowTar = target.toLowerCase();
+    const rSlot = "Reserved";
+    let j = 1;
+    // Fill listing with tags
+    for (const item of dataset) {
+      const elemIoList = privateDatas[item.id]["IO"];
+      // If tag belong to Main line
+      if (!this.openAirItemTable.includes(item.name)) {
+        for (const [key, value] of Object.entries(elemIoList)) {
+          if (value) {
+            for (let i = 0; i < value; i++) {
+              obj["MAIN"][key].push(item[lowTar]);
+            }
+          }
+        }
+        // Tag belong to compressor Open air line
+      } else {
+        const label = `${this.mandatoryIdName}${j}`;
+        obj[label] = this.emptyTagList();
+        for (const [key, value] of Object.entries(elemIoList)) {
+          if (value) {
+            for (let i = 0; i < value; i++) {
+              obj[label][key].push(item[lowTar]);
+            }
+          }
+        }
+        j += 1;
+      }
+    }
+    // Fill listing with reserved slot
+    for (const [key, value] of Object.entries(obj["MAIN"])) {
+      if (key in this.rsl) {
+        const rslv = this.rsl[key];
+        for (let i = 0; i < rslv; i++) {
+          value.unshift(rSlot);
+        }
+      }
+    }
+    return obj;
   }
 }

@@ -11,6 +11,7 @@ import { Document, Paragraph, ImageRun } from "docx";
 // Images importation for AF document
 import { LT4 } from "../image/image_arch_LT4000";
 import { SP5 } from "../image/image_arch_SP5000";
+
 // Elements for document presentation
 import { header } from "../tools/DocumentHeader";
 import { footer } from "../tools/DocumentFooter";
@@ -73,9 +74,9 @@ export function handleClick_ARCH(rawAbstract, tongue) {
   const plcIntro = Dx.makeText(speak.plcText);
   children.push(break1, plcTitle, plcIntro);
   // Creation - PLC part, structure builded by many array with board image and list of tags ...
-  console.log("masterIo", masterIo);
+  /* console.log("masterIo", masterIo);
   console.log("masterTag", masterTag);
-  console.log("native", native);
+  console.log("native", native); */
 
   if (native) {
     // Build LT4000 Architecture
@@ -84,14 +85,14 @@ export function handleClick_ARCH(rawAbstract, tongue) {
       3
     );
     children.push(plcSubTitle);
-    // Build substracted IOList in case of LT4000
+    // Build substracted IOList in case of LT4000//+++++++
     const ioList = Ar.substractIoList(masterIo, native);
-    const array = Ar.makeTable(native, masterTag); //!
+    const array = Ar.makeTable(native, masterTag);
     children.push(array);
     const space = Dx.makeText(); // Space after module row
     children.push(space);
     for (const [key, value] of Object.entries(ioList)) {
-      console.log(key, value);
+      console.log("key value", key, value);
       const plcSubTitle = Dx.makeTitleRankX(
         Dx.makeCustomText(speak.subTitle, [key]),
         3
@@ -100,8 +101,9 @@ export function handleClick_ARCH(rawAbstract, tongue) {
       // Get tag list from tag dictionnary
       const tagList = masterTag[key];
       const lineUp = Tp.lineUpBuilder(value);
+      console.log("lineup=", lineUp);
       for (const item of lineUp) {
-        console.log(item);
+        //console.log("==", item);
         const array = Dx.makeTable(item, tagList); //!
         children.push(array);
         const space = Dx.makeText(); // Space after module row
@@ -110,7 +112,7 @@ export function handleClick_ARCH(rawAbstract, tongue) {
     }
   } else {
     for (const [key, value] of Object.entries(masterIo)) {
-      console.log(key, value);
+      //console.log(key, value);
       const plcSubTitle = Dx.makeTitleRankX(
         Dx.makeCustomText(speak.subTitle, [key]),
         3
@@ -120,7 +122,7 @@ export function handleClick_ARCH(rawAbstract, tongue) {
       const tagList = masterTag[key];
       const lineUp = Tp.lineUpBuilder(value);
       for (const item of lineUp) {
-        console.log(item);
+        //console.log("<<<<<<<fefqcvsvqscc<<<<<<,", item);
         const array = Dx.makeTable(item, tagList); //!
         children.push(array);
         const space = Dx.makeText(); // Space after module row
