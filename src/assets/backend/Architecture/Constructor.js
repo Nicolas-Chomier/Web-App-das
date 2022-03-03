@@ -60,12 +60,14 @@ export function documentConstructorForArchitecture(rawAbstract, country) {
         Write.documentTitle(translate.subTitle, children, 3, [plcRef]);
         Write.documentTable(nativeTable, children, [], "grey", "multiColor");
         for (const [key, value] of Object.entries(ioListing)) {
-          Write.documentTitle(translate.subTitle, children, 3, [key], true);
-          console.log(value); //! Bug si lineup vide
-          const lineUp = fromProviderDatas.GetlineUp(value); // Provider const declaration
-          for (const item of lineUp) {
-            Get.drawedTable(item, children, tagListing[key], imgListing);
-            Write.documentSpace(children);
+          const isNotEmpty = Object.values(value).some((x) => x !== 0);
+          if (isNotEmpty) {
+            Write.documentTitle(translate.subTitle, children, 3, [key], true);
+            const lineUp = fromProviderDatas.GetlineUp(value); // Provider const declaration
+            for (const item of lineUp) {
+              Get.drawedTable(item, children, tagListing[key], imgListing);
+              Write.documentSpace(children);
+            }
           }
         }
       } else {
