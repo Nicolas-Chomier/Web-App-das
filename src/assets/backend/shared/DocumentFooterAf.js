@@ -13,7 +13,7 @@ export const footer = {
             text: text,
             bold: false,
             font: "Calibri",
-            size: 8,
+            size: 18,
             color: "2E2E2E",
           }),
         ],

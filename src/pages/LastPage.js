@@ -5,9 +5,8 @@ import RequestCards from "../components/RequestCards";
 import { documentConstructorForQts } from "../assets/backend/Chiffrage/Constructor";
 import { documentConstructorForArchitecture } from "../assets/backend/Architecture/Constructor";
 import { documentConstructorForIOList } from "../assets/backend/IOliste/Constructor";
-import { handleClick_IO } from "../assets/backend/IODoc";
 import { documentConstructorForAf } from "../assets/backend/Analyse Fonctionelle/Constructor";
-import contents from "../assets/data/lastPage.json";
+import contents from "./json/lastPage.json";
 // Load text information to display for Requestcards elements
 const content = JSON.parse(JSON.stringify(contents));
 
@@ -43,14 +42,14 @@ const LastPage = () => {
               variant="outlined"
               onClick={() => documentConstructorForQts(rawAbstract, "uk")}
             >
-              <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
+              <Avatar alt="UK flag" src="/images/flag-uk.png" sx={avtConf} />
             </Button>
             <Button
               className="flag-btn"
               variant="outlined"
               onClick={() => documentConstructorForQts(rawAbstract, "fr")}
             >
-              <Avatar alt="FR flag" src="/FRFlag.png" sx={avtConf} />
+              <Avatar alt="FR flag" src="/images/flag-fr.png" sx={avtConf} />
             </Button>
           </Stack>
         </Card>
@@ -74,14 +73,14 @@ const LastPage = () => {
               variant="outlined"
               onClick={() => documentConstructorForAf(rawAbstract, "uk")}
             >
-              <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
+              <Avatar alt="UK flag" src="/images/flag-uk.png" sx={avtConf} />
             </Button>
             <Button
               className="flag-btn"
               variant="outlined"
               onClick={() => documentConstructorForAf(rawAbstract, "fr")}
             >
-              <Avatar alt="FR flag" src="/FRFlag.png" sx={avtConf} />
+              <Avatar alt="FR flag" src="/images/flag-fr.png" sx={avtConf} />
             </Button>
           </Stack>
         </Card>
@@ -107,7 +106,7 @@ const LastPage = () => {
                 documentConstructorForArchitecture(rawAbstract, "uk");
               }}
             >
-              <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
+              <Avatar alt="UK flag" src="/images/flag-uk.png" sx={avtConf} />
             </Button>
             <Button
               className="flag-btn"
@@ -116,7 +115,7 @@ const LastPage = () => {
                 documentConstructorForArchitecture(rawAbstract, "fr");
               }}
             >
-              <Avatar alt="FR flag" src="/FRFlag.png" sx={avtConf} />
+              <Avatar alt="FR flag" src="/images/flag-fr.png" sx={avtConf} />
             </Button>
           </Stack>
         </Card>
@@ -142,16 +141,16 @@ const LastPage = () => {
                 documentConstructorForIOList(rawAbstract, "uk");
               }}
             >
-              <Avatar alt="UK flag" src="/UKFlag.png" sx={avtConf} />
+              <Avatar alt="UK flag" src="/images/flag-uk.png" sx={avtConf} />
             </Button>
             <Button
               className="flag-btn"
               variant="outlined"
               onClick={() => {
-                handleClick_IO(rawAbstract, 1);
+                documentConstructorForIOList(rawAbstract, "fr");
               }}
             >
-              <Avatar alt="FR flag" src="/FRFlag.png" sx={avtConf} />
+              <Avatar alt="FR flag" src="/images/flag-fr.png" sx={avtConf} />
             </Button>
           </Stack>
         </Card>

@@ -23,7 +23,6 @@ export function documentConstructorForIOList(rawAbstract, country) {
     .then(({ core }) => {
       const translate = JSON.parse(JSON.stringify(core));
       const flag = country;
-
       // Class draft
       const Make = new MainDataCreator(rawAbstract);
       const Write = new DocxJsMethods(rawAbstract);
@@ -32,45 +31,64 @@ export function documentConstructorForIOList(rawAbstract, country) {
       // General & project const declaration
       const projectTitle = Make.projectTitle(true);
       const hmiRef = Make.deviceReferenceFor("HMI", true);
-      const plcRef = Make.deviceReferenceFor("PLC", true);
       const tagListing = Make.projectListingfor("TAG");
       const idListing = Make.projectListingfor("ID");
       const ioListing = Make.projectIoListing();
-      const EmptyRawArray = [];
       // Document const declaration
       const natIo = Get.nativePlcIo();
+      const UselessModule = ["module10", "module11", "module12"]; //! a ranger ds proface
       console.log(natIo);
       const firstRow = translate.firstRow;
-
+      let byPass = false;
       const children = [];
       Write.documentTitle(translate.docTitle, children, 1, [projectTitle]);
       Write.documentText(translate.docText, children, [projectTitle]);
-      //! test
-      console.log("tagListing", tagListing);
-      console.log("idListing", idListing);
-      console.log("ioListing", ioListing);
 
-      if (natIo) {
-        for (const [key, value] of Object.entries(natIo)) {
-          console.log("===============", natIo);
-          const idList = idListing["MAIN"][key];
-          console.log("idList", idList);
-          const tagList = tagListing["MAIN"][key];
-          console.log("tagList", tagList);
-          const listWithTag = Get.reshapeTagListSpecial(
-            idList,
-            tagList,
-            key,
-            value,
-            hmiRef,
-            firstRow,
-            flag
-          );
+      for (const [type, object] of Object.entries(ioListing)) {
+        Write.documentTitle(type.toUpperCase(), children, 3, [], byPass);
+        if (natIo && !byPass) {
+          byPass = true;
+          for (const [key, value] of Object.entries(natIo)) {
+            const idList = idListing[type][key]; //! a factoriser
+            const tagList = tagListing[type][key]; //! a factoriser
+            const listWithTag = Get.ioListTableForPlc(
+              idList,
+              tagList,
+              key,
+              value,
+              hmiRef,
+              firstRow,
+              flag
+            );
+            Write.documentTable(listWithTag, children, [], "gold");
+            Write.documentSpace(children);
+          }
+        }
+        const idList2 = idListing[type];
+        const tagList2 = tagListing[type];
+        // lineup
+        const lineUp = fromProviderDatas.getModuleList(object);
+        let moduleNbs = 0;
+        for (const [module, number] of Object.entries(lineUp)) {
+          if (number !== 0 && UselessModule.includes(module) === false) {
+            for (let k = 0; k < number; k++) {
+              moduleNbs += 1;
+              console.log(module, number);
+              const test = Get.ioListTableForLineUp(
+                idList2,
+                tagList2,
+                module,
+                moduleNbs,
+                firstRow,
+                type,
+                flag
+              );
 
-          EmptyRawArray.push(listWithTag);
+              Write.documentTable(test, children, [], "blue");
+            }
+          }
         }
       }
-
       // Document
       const doc = new Document({
         features: {
@@ -84,10 +102,9 @@ export function documentConstructorForIOList(rawAbstract, country) {
           },
         ],
       });
-      console.log("iolist ok");
       // Print document
-      /* Packer.toBlob(doc).then((blob) => {
+      Packer.toBlob(doc).then((blob) => {
         saveAs(blob, `${translate.docName}-${projectTitle}.docx`);
-      }); */
+      });
     });
 }

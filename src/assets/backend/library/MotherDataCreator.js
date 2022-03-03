@@ -1,5 +1,5 @@
-import proface from "../../data/proface.json";
-import privates from "../../data/private.json";
+import proface from "../shared/json/proface.json";
+import privates from "../shared/json/private.json";
 
 const profaceDatas = JSON.parse(JSON.stringify(proface));
 const privateDatas = JSON.parse(JSON.stringify(privates));

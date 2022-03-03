@@ -1,11 +1,11 @@
 import { Header, Paragraph, ImageRun } from "docx";
 import { Buffer } from "buffer";
 // Images importation for header
-import { IH1 } from "../../image/image_header_1";
-import { IH2 } from "../../image/image_header_2";
-import { IH3 } from "../../image/image_header_3";
-import { IH4 } from "../../image/image_header_4";
-import { IH5 } from "../../image/image_header_5";
+import { IH1 } from "./images/image_header_1";
+import { IH2 } from "./images/image_header_2";
+import { IH3 } from "./images/image_header_3";
+import { IH4 } from "./images/image_header_4";
+import { IH5 } from "./images/image_header_5";
 // Size for image document header:
 const width = 120;
 const height = 110;

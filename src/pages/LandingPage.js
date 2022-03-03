@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import publics from "../assets/data/public.json";
+import publics from "./json/public.json";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import TitleTile from "../components/TitleTile";

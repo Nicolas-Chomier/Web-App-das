@@ -1,5 +1,5 @@
-import proface from "../../data/proface.json";
-import privates from "../../data/private.json";
+import proface from "../shared/json/proface.json";
+import privates from "../shared/json/private.json";
 //
 import { Buffer } from "buffer";
 import { Table, TableRow, TableCell } from "docx";
@@ -358,7 +358,61 @@ export class IOLISTBuilder extends MainToolsBox {
   nativePlcIo() {
     return profaceDatas.PROFACE[this.hmiId]["NativeIO"];
   }
-  // Method which count duplicate in given list
+  /** */
+  ioListTableForLineUp(
+    idList,
+    tagList,
+    module,
+    moduleNbs,
+    firstRow,
+    type,
+    flag
+  ) {
+    console.log(module, moduleNbs);
+    const table = [];
+    const com = "";
+    const mIoL = profaceDatas.PROFACE[module]["IoList"];
+    const mRef = profaceDatas.PROFACE[module]["Reference"];
+    const title = `${type}, Module N°${moduleNbs}`;
+    table.push([title], firstRow);
+    for (const [key, value] of Object.entries(mIoL)) {
+      for (let i = 0; i < value; i++) {
+        const ctObj = this.counter(tagList[key]);
+        const actualTag = tagList[key][0];
+        const ctr = ctObj[actualTag];
+        const tag =
+          tagList[key].length > 0 ? tagList[key].shift() : this.noSlot;
+        const id = idList[key].length > 0 ? idList[key].shift() : this.noSlot;
+        const func = this.addFunc(id, key, ctr, flag);
+        const way = this.addWay(key, i, moduleNbs);
+        table.push([way, func, tag, key, com, mRef]);
+      }
+    }
+    return table;
+  }
+  /** */
+  ioListTableForPlc(idList, tagList, key, value, title, firsRow, flag) {
+    console.log(">>>><<<<<", key, value);
+    const table = [];
+    if (value) {
+      table.length = 0;
+      const titleC = typeof title === "string" ? title : this.projectTitle;
+      const titleT = `${key} for ${titleC}`;
+      table.push([titleT], firsRow);
+      for (let i = 0; i < value; i++) {
+        const ctObj = this.counter(tagList);
+        const actualTag = tagList[0];
+        const ctr = ctObj[actualTag];
+        const tag = tagList.length > 0 ? tagList.shift() : this.noSlot;
+        const id = idList.length > 0 ? idList.shift() : this.noSlot;
+        const func = this.addFunc(id, key, ctr, flag);
+        const way = this.addWay(key, i);
+        table.push([way, func, tag, `${key}`, "", titleC]);
+      }
+      return table;
+    }
+    return table;
+  }
   counter(list) {
     const counts = {};
     list.forEach(function (x) {
@@ -366,57 +420,15 @@ export class IOLISTBuilder extends MainToolsBox {
     });
     return counts;
   }
-  //Special == LT4000
-  reshapeTagListSpecial(idList, tagList, key, value, title, firsRow, flag) {
-    const result = this.ioListTableForPlc(
-      idList,
-      tagList,
-      key,
-      value,
-      title,
-      firsRow,
-      flag
-    );
-    const _olist = [];
-    _olist.length = 0;
-    for (const item of result) {
-      _olist.push(item);
-    }
-    return _olist;
-  }
-  //
-  ioListTableForPlc(idList, tagList, key, value, title, firsRow, flag) {
-    console.log("#######", key, value);
-    const table = [];
-    table.length = 0;
-    const titleT = typeof title === "string" ? title : this.projectTitle;
-    //table.push([titleT], firsRow);*
-    table.push(firsRow);
-    for (let i = 0; i < value; i++) {
-      const ctObj = this.counter(tagList);
-      //console.log(")))))))))))))))))))", tagList);
-      const actualTag = tagList[0];
-      const ctr = ctObj[actualTag];
-      const tag = tagList.length > 0 ? tagList.shift() : this.noSlot;
-      const id = idList.length > 0 ? idList.shift() : this.noSlot;
-      const func = this.addFunc(id, key, ctr, flag);
-      const way = this.addWay(key, i);
-      table.push([way, func, tag, `${key}`, "", titleT]);
-      console.log(table);
-    }
-    return table;
-  }
   addFunc(id, key, counter, flag) {
-    //console.log(id, key, counter, flag);
     const target = privateDatas[id]["Text"][flag][key];
-
-    //console.log("target", target);
     const text = typeof target === "string" ? target : target[counter - 1];
     return text;
   }
-  addWay(key, i) {
-    const num = `${key}/${i + 1}`;
-    return num;
+  addWay(key, i, moduleNbs = false) {
+    const trackId = `M${moduleNbs}/${i + 1}`;
+    const trackId2 = `${key}/${i + 1}`;
+    return moduleNbs ? trackId : trackId2;
   }
 }
 

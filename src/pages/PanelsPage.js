@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import publics from "../assets/data/public.json";
+import publics from "./json/public.json";
 import ElementPanel from "../components/ElementPanel";
 import TableCustom from "../components/TableCustom";
 

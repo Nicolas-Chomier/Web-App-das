@@ -115,28 +115,28 @@ export class DocxJsMethods extends DocxJsBuilder {
           bold: true,
           font: "Calibri",
           textSize: 24,
-          textColor: "FFFFFF",
+          textColor: "232c33",
           bgColor: "FF6B00",
         },
         1: {
           bold: true,
           font: "Calibri",
           textSize: 20,
-          textColor: "000000",
+          textColor: "232c33",
           bgColor: "FFB00F",
         },
         2: {
           bold: false,
           font: "Calibri",
           textSize: 20,
-          textColor: "000000",
+          textColor: "232c33",
           bgColor: "FFFFFF",
         },
         3: {
           bold: false,
           font: "Calibri",
           textSize: 20,
-          textColor: "000000",
+          textColor: "232c33",
           bgColor: "FFDBB4",
         },
       },
@@ -145,29 +145,59 @@ export class DocxJsMethods extends DocxJsBuilder {
           bold: true,
           font: "Calibri",
           textSize: 24,
-          textColor: "FFFFFF",
-          bgColor: "0059FF",
+          textColor: "232c33",
+          bgColor: "538ddf",
         },
         1: {
           bold: true,
           font: "Calibri",
           textSize: 20,
-          textColor: "000000",
-          bgColor: "4A8DFF",
+          textColor: "232c33",
+          bgColor: "98bbec",
         },
         2: {
           bold: false,
           font: "Calibri",
           textSize: 20,
-          textColor: "000000",
+          textColor: "232c33",
           bgColor: "FFFFFF",
         },
         3: {
           bold: false,
           font: "Calibri",
           textSize: 20,
-          textColor: "000000",
-          bgColor: "B4D2FF",
+          textColor: "232c33",
+          bgColor: "98bbec",
+        },
+      },
+      gold: {
+        0: {
+          bold: true,
+          font: "Calibri",
+          textSize: 24,
+          textColor: "232c33",
+          bgColor: "fdd692",
+        },
+        1: {
+          bold: true,
+          font: "Calibri",
+          textSize: 20,
+          textColor: "232c33",
+          bgColor: "FFEED2",
+        },
+        2: {
+          bold: false,
+          font: "Calibri",
+          textSize: 20,
+          textColor: "232c33",
+          bgColor: "FFFFFF",
+        },
+        3: {
+          bold: false,
+          font: "Calibri",
+          textSize: 20,
+          textColor: "232c33",
+          bgColor: "FFEED2",
         },
       },
     };
@@ -297,7 +327,8 @@ export class DocxJsMethods extends DocxJsBuilder {
     child,
     targetList = [],
     color = "grey",
-    cColumn = false
+    cColumn = false,
+    error = false
   ) {
     if (Array.isArray(child) && source.length !== 0) {
       const rowStyle = this.sta[color];
@@ -358,17 +389,20 @@ export class DocxJsMethods extends DocxJsBuilder {
       child.push(table);
       return true;
     }
-    this.documentText(
-      "Non-existent or managed by Function bloc",
-      child,
-      [],
-      false,
-      "Calibri",
-      12,
-      "000000",
-      true,
-      false
-    );
+    // Inhib or not error message if table is empty
+    if (error) {
+      this.documentText(
+        "Non-existent or managed by Function bloc",
+        child,
+        [],
+        false,
+        "Calibri",
+        12,
+        "000000",
+        true,
+        false
+      );
+    }
     return false;
   }
   /**
