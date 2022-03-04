@@ -12,7 +12,7 @@ import { footer } from "../shared/DocumentFooterAf";
 /**
  * Function which construct the IOList document in word format
  * * Software architecture Version 2
- * * This function is called by "LastPage"
+ * + This function is called by "LastPage"
  * ? Should add "throw"expression ?
  * @param rawAbstract = Datas from FRONT END
  * @param tongue = Printable language choosen by user
@@ -37,13 +37,11 @@ export function documentConstructorForIOList(rawAbstract, country) {
       // Document const declaration
       const natIo = Get.nativePlcIo();
       const UselessModule = ["module10", "module11", "module12"]; //! a ranger ds proface
-      console.log(natIo);
       const firstRow = translate.firstRow;
       let byPass = false;
       const children = [];
       Write.documentTitle(translate.docTitle, children, 1, [projectTitle]);
       Write.documentText(translate.docText, children, [projectTitle]);
-
       for (const [type, object] of Object.entries(ioListing)) {
         Write.documentTitle(type.toUpperCase(), children, 3, [], byPass);
         if (natIo && !byPass) {
@@ -73,7 +71,6 @@ export function documentConstructorForIOList(rawAbstract, country) {
           if (number !== 0 && UselessModule.includes(module) === false) {
             for (let k = 0; k < number; k++) {
               moduleNbs += 1;
-              console.log(module, number);
               const test = Get.ioListTableForLineUp(
                 idList2,
                 tagList2,

@@ -2,10 +2,10 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { Button, Card, Stack, Avatar } from "@mui/material";
 import RequestCards from "../components/RequestCards";
-import { documentConstructorForQts } from "../assets/backend/Chiffrage/Constructor";
-import { documentConstructorForArchitecture } from "../assets/backend/Architecture/Constructor";
-import { documentConstructorForIOList } from "../assets/backend/IOliste/Constructor";
-import { documentConstructorForAf } from "../assets/backend/Analyse Fonctionelle/Constructor";
+import { documentConstructorForQts } from "../assets/Chiffrage/Constructor";
+import { documentConstructorForArchitecture } from "../assets/Architecture/Constructor";
+import { documentConstructorForIOList } from "../assets/IOliste/Constructor";
+import { documentConstructorForAf } from "../assets/Analyse Fonctionelle/Constructor";
 import contents from "./json/lastPage.json";
 // Load text information to display for Requestcards elements
 const content = JSON.parse(JSON.stringify(contents));

@@ -23,9 +23,14 @@ class MainToolsBox {
   }
 }
 /**
- * TODO a commenter !
+ * + Class used for build quotation document
+ * * All methodes are made only for Quotation document class
  */
 export class QTSBuilder extends MainToolsBox {
+  /**
+   * @param source pre-formatted empty table with the same format of return
+   * @returns [["string"],["string","string"],["string","string"]...]
+   */
   nomenclatureForHmi(source) {
     const typeOfPlc = profaceDatas.PROFACE[this.hmiId]["NativeIO"];
     const conceptionList =
@@ -41,6 +46,11 @@ export class QTSBuilder extends MainToolsBox {
     }
     return table;
   }
+  /**
+   * @param source pre-formatted empty table with the same format of return
+   * @param moduleList list of module used in project this list is generated with PROFACE Class
+   * @returns [["string"],["string","string"],["string","string"]...]
+   */
   nomenclatureForModule(source, moduleList) {
     const table = [...source];
     for (const [key, value] of Object.entries(moduleList)) {
@@ -368,7 +378,6 @@ export class IOLISTBuilder extends MainToolsBox {
     type,
     flag
   ) {
-    console.log(module, moduleNbs);
     const table = [];
     const com = "";
     const mIoL = profaceDatas.PROFACE[module]["IoList"];
@@ -392,7 +401,6 @@ export class IOLISTBuilder extends MainToolsBox {
   }
   /** */
   ioListTableForPlc(idList, tagList, key, value, title, firsRow, flag) {
-    console.log(">>>><<<<<", key, value);
     const table = [];
     if (value) {
       table.length = 0;
@@ -431,15 +439,3 @@ export class IOLISTBuilder extends MainToolsBox {
     return moduleNbs ? trackId : trackId2;
   }
 }
-
-/* if (Array.isArray(data)) {
-  const table = [];
-  for (let i = 0; i < data.length; i++) {
-    const id = idListing[types][key].shift();
-    const way = `${key}/i`;
-    const func = privateDatas[id]["Text"][flag][key];
-    const label = tagListing[types][key].shift();
-    const type = `${key}`;
-    const desc = "";
-    const module = titleT;
-  } */

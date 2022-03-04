@@ -16,7 +16,7 @@ import { footer } from "../shared/DocumentFooterAf";
 /**
  * Function which construct the AF document in word format
  * * Software architecture Version 2
- * * This function is called by "LastPage"
+ * + This function is called by "LastPage"
  * ? Should add "throw"expression ?
  * TODO Refactoring image function
  * @param rawAbstract = Datas from FRONT END
@@ -28,11 +28,11 @@ export function documentConstructorForAf(rawAbstract, country) {
     .then(({ core }) => {
       const translate = JSON.parse(JSON.stringify(core));
       const flag = country;
-      // Class draft
+      //* Class draft
       const Make = new MainDataCreator(rawAbstract);
       const Write = new DocxJsMethods(rawAbstract);
       const Get = new AFBuilder(rawAbstract);
-      // General & project const declaration
+      //* General & project const declaration
       const projectTitle = Make.projectTitle(true);
       const hmiRef = Make.deviceReferenceFor("HMI", true);
       const plcRef = Make.deviceReferenceFor("PLC", true);
@@ -40,7 +40,7 @@ export function documentConstructorForAf(rawAbstract, country) {
       const tagIdList = Make.projectTagsAndIdList();
       const csList = Make.specialProjectListFor("ConsumerName");
       const fbList = Make.specialProjectListFor("FunctionBloc");
-      // Document const declaration
+      //* Document const declaration
       const hmiInfos = Get.editedDeviceInformations("HMI");
       const plcInfos = Get.editedDeviceInformations("PLC");
       const canInfos = Get.editedDeviceInformations("CAN");
@@ -48,7 +48,7 @@ export function documentConstructorForAf(rawAbstract, country) {
       const tmiTable = Get.faultsTableOverviewFor(tagIdList, "TMI", flag);
       const pmaTable = Get.faultsTableOverviewFor(tagIdList, "PMA", flag);
       const pmiTable = Get.faultsTableOverviewFor(tagIdList, "PMI", flag);
-      // Document Pattern
+      //* Document Pattern
       const children = [];
       Write.documentTitle(translate.title1, children);
       Write.documentText(translate.text1, children, [projectTitle]);
@@ -114,7 +114,7 @@ export function documentConstructorForAf(rawAbstract, country) {
         Write.documentTitle(translate[bloc].smallTilte1, children, 3);
         Write.documentTable(translate[bloc].table1, children);
         Write.documentTitle(translate[bloc].smallTilte2, children, 3, [bloc]);
-        Write.documentImage(IFB001, children, 550, 320); //! Ne regle pas le probleme de l'import pour d'autre FB
+        Write.documentImage(IFB001, children, 550, 320); //! Ne regle pas le probleme de l'import d'image pour d'autre FB
         Write.documentSpace(children);
         Write.documentTable(translate[bloc].table2, children);
       }

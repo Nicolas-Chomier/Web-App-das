@@ -78,7 +78,6 @@ export class MainDataCreator extends MotherDataCreator {
     this.rId = "0000"; // Id used for reserved slot
     this.mandatoryIdName = "Compressor-";
   }
-
   /**
    * * Method used to get and format the main project title
    * @param bool = Uppercase if true, if not only the first letter in uppercase
@@ -118,7 +117,9 @@ export class MainDataCreator extends MotherDataCreator {
     let j = 1; // Counter for OPEN AIR Compressor
     // Build object with sub object inside each sub Object represent an IOList
     for (const value of Object.values(dataSet)) {
+      //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
       const elemIoList = privateDatas[value.id]["IO"];
+      //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
       if (this.openAirItemTable.includes(value.name)) {
         const label = `${this.mandatoryIdName}${j}`;
         modele[label] = this.emptyIolist();
