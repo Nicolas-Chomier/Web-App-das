@@ -7,8 +7,8 @@ import { Proface } from "../library/Proface";
 import { Packer, Document } from "docx";
 import { saveAs } from "file-saver";
 // Datas
-import { header } from "../shared/DocumentHeader";
-import { footer } from "../shared/DocumentFooterAf";
+import { header } from "../shared/js/DocumentHeader";
+import { footer } from "../shared/js/DocumentFooterAf";
 /**
  * Function which construct the IOList document in word format
  * * Software architecture Version 2

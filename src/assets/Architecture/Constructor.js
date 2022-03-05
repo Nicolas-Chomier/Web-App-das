@@ -17,8 +17,8 @@ import { IM5 } from "./images/image_module_pf_5";
 import { IM6 } from "./images/image_module_pf_6";
 import { IM7 } from "./images/image_module_pf_7";
 // Datas
-import { header } from "../shared/DocumentHeader";
-import { footer } from "../shared/DocumentFooter";
+import { header } from "../shared/js/DocumentHeader";
+import { footer } from "../shared/js/DocumentFooter";
 /**
  * Function which construct the ARCH document in word format
  * * Software architecture Version 2

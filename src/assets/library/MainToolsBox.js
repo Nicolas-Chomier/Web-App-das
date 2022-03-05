@@ -1,5 +1,5 @@
-import proface from "../shared/json/proface.json";
-import privates from "../shared/json/private.json";
+import proface from "../shared/providerInfos/proface.json";
+import privates from "../shared/Private/elementDataSet.json";
 //
 import { Buffer } from "buffer";
 import { Table, TableRow, TableCell } from "docx";
@@ -23,8 +23,8 @@ class MainToolsBox {
   }
 }
 /**
- * + Class used for build quotation document
  * * All methodes are made only for Quotation document class
+ * + Class used for build quotation document
  */
 export class QTSBuilder extends MainToolsBox {
   /**
@@ -67,7 +67,8 @@ export class QTSBuilder extends MainToolsBox {
   }
 }
 /**
- * TODO a commenter !
+ * * All methodes are made only for AF document class
+ * + Class used for build AF document
  */
 export class AFBuilder extends MainToolsBox {
   constructor(rawAbstract) {
@@ -177,7 +178,8 @@ export class AFBuilder extends MainToolsBox {
   }
 }
 /**
- * TODO a commenter !
+ * * All methodes are made only for Architecture document class
+ * + Class used for build Architecture document
  */
 export class ARCHBuilder extends MainToolsBox {
   constructor(rawAbstract) {
@@ -357,7 +359,8 @@ export class ARCHBuilder extends MainToolsBox {
   }
 }
 /**
- * TODO a commenter !
+ * * All methodes are made only for IO list document class
+ * + Class used for build IO list document
  */
 export class IOLISTBuilder extends MainToolsBox {
   constructor(rawAbstract) {

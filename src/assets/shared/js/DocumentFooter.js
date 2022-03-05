@@ -1,7 +1,7 @@
 import { Footer, Paragraph, ImageRun, TextRun, AlignmentType } from "docx";
 import { Buffer } from "buffer";
 // Images importation for footer
-import { IF1 } from "./images/image_footer_1";
+import { IF1 } from "../images/image_footer_1";
 // Data to display inside footer
 const name = "Nicolas CHOMIER";
 const mail = "nicolaschomier@dalkiaairsolutions.fr";

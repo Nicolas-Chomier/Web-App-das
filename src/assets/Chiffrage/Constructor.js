@@ -7,8 +7,8 @@ import { Proface } from "../library/Proface";
 import { Packer, Document } from "docx";
 import { saveAs } from "file-saver";
 // Datas
-import { header } from "../shared/DocumentHeader";
-import { footer } from "../shared/DocumentFooter";
+import { header } from "../shared/js/DocumentHeader";
+import { footer } from "../shared/js/DocumentFooter";
 /**
  * Function which construct the QTS document in word format
  * * Software architecture Version 2

@@ -422,7 +422,7 @@ export class DocxJsMethods extends DocxJsBuilder {
    * * bullet list style object define in constructor
    */
   documentList(source, child, targetList = [], deep = 0, style = "classic") {
-    if (Array.isArray(source) && Array.isArray(child)) {
+    if (Array.isArray(source) && source.length !== 0) {
       const styles = this.stl[style];
       for (const item of source) {
         if (Array.isArray(item) && item.length !== 0) {
@@ -469,8 +469,20 @@ export class DocxJsMethods extends DocxJsBuilder {
         }
       }
       return true;
+    } else {
+      this.documentText(
+        "Non important consumer in this installation",
+        child,
+        [],
+        false,
+        "Calibri",
+        20,
+        "000000",
+        true,
+        false
+      );
+      return true;
     }
-    return false;
   }
   /**
    * * Method used to put image on document
