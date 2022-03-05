@@ -7,8 +7,6 @@ import { Proface } from "../library/Proface";
 import { Packer, Document } from "docx";
 import { saveAs } from "file-saver";
 // Datas & Images
-import { LT4 } from "./images/image_arch_LT4000";
-import { SP5 } from "./images/image_arch_SP5000";
 import { IM1 } from "./images/image_module_pf_1";
 import { IM2 } from "./images/image_module_pf_2";
 import { IM3 } from "./images/image_module_pf_3";
@@ -28,6 +26,7 @@ import { footer } from "../shared/js/DocumentFooter";
  * @param tongue = Printable language choosen by user
  */
 export function documentConstructorForArchitecture(rawAbstract, country) {
+  //* Import
   import(`./${country}-translations.json`)
     .catch(() => import("./uk-translations.json"))
     .then(({ core }) => {
@@ -46,57 +45,74 @@ export function documentConstructorForArchitecture(rawAbstract, country) {
       const bool = Make.nativeDeviceInfos();
       // Document const declaration
       const imgListing = [IM1, IM1, IM2, IM3, IM4, IM5, IM6, IM7];
-      // Document Pattern
-      const children = [];
-      Write.documentTitle(translate.docTitle, children, 1, [projectTitle]);
-      Write.documentTitle(translate.hmiTitle, children, 2, [hmiRef]);
-      Write.documentText(translate.hmiText, children);
-      Write.documentImage(bool ? LT4 : SP5, children, 350, 250); // img
-      Write.documentTitle(translate.plcTitle, children, 2, [projectTitle]);
-      Write.documentText(translate.plcText, children);
-      // Document construction design
-      if (bool) {
-        const nativeTable = Get.nativeArchitectureTable(tagListing, plcRef);
-        Write.documentTitle(translate.subTitle, children, 3, [plcRef]);
-        Write.documentTable(nativeTable, children, [], "grey", "multiColor");
-        for (const [key, value] of Object.entries(ioListing)) {
-          const isNotEmpty = Object.values(value).some((x) => x !== 0);
-          if (isNotEmpty) {
-            Write.documentTitle(translate.subTitle, children, 3, [key], true);
-            const lineUp = fromProviderDatas.GetlineUp(value); // Provider const declaration
-            for (const item of lineUp) {
-              Get.drawedTable(item, children, tagListing[key], imgListing);
-              Write.documentSpace(children);
+      import(`./images/image-${hmiRef}`)
+        .catch(() => import("./images/image_arch_SP5000"))
+        .then((obj) => {
+          const strImage = obj[hmiRef];
+          // Document Pattern
+          const children = [];
+          Write.documentTitle(translate.docTitle, children, 1, [projectTitle]);
+          Write.documentTitle(translate.hmiTitle, children, 2, [hmiRef]);
+          Write.documentText(translate.hmiText, children);
+          Write.documentImage(strImage, children, 350, 250);
+          Write.documentTitle(translate.plcTitle, children, 2, [projectTitle]);
+          Write.documentText(translate.plcText, children);
+          // Document construction design
+          if (bool) {
+            const nativeTable = Get.nativeArchitectureTable(tagListing, plcRef);
+            Write.documentTitle(translate.subTitle, children, 3, [plcRef]);
+            Write.documentTable(
+              nativeTable,
+              children,
+              [],
+              "grey",
+              "multiColor"
+            );
+            for (const [key, value] of Object.entries(ioListing)) {
+              const isNotEmpty = Object.values(value).some((x) => x !== 0);
+              if (isNotEmpty) {
+                Write.documentTitle(
+                  translate.subTitle,
+                  children,
+                  3,
+                  [key],
+                  true
+                );
+                const lineUp = fromProviderDatas.GetlineUp(value);
+                for (const item of lineUp) {
+                  Get.drawedTable(item, children, tagListing[key], imgListing);
+                  Write.documentSpace(children);
+                }
+              }
+            }
+          } else {
+            for (const [key, value] of Object.entries(ioListing)) {
+              Write.documentTitle(translate.subTitle, children, 3, [key]);
+              const lineUp = fromProviderDatas.GetlineUp(value);
+              for (const item of lineUp) {
+                Get.drawedTable(item, children, tagListing[key], imgListing);
+                Write.documentSpace(children);
+              }
             }
           }
-        }
-      } else {
-        for (const [key, value] of Object.entries(ioListing)) {
-          Write.documentTitle(translate.subTitle, children, 3, [key]);
-          const lineUp = fromProviderDatas.GetlineUp(value); // Provider const declaration
-          for (const item of lineUp) {
-            Get.drawedTable(item, children, tagListing[key], imgListing);
-            Write.documentSpace(children);
-          }
-        }
-      }
-      // Document
-      const doc = new Document({
-        features: {
-          updateFields: true,
-        },
-        sections: [
-          {
-            headers: header,
-            footers: footer,
-            children: children,
-          },
-        ],
-      });
-      // Print document
-      Packer.toBlob(doc).then((blob) => {
-        saveAs(blob, `${translate.docName}-${projectTitle}.docx`);
-      });
+          // Document
+          const doc = new Document({
+            features: {
+              updateFields: true,
+            },
+            sections: [
+              {
+                headers: header,
+                footers: footer,
+                children: children,
+              },
+            ],
+          });
+          // Print document
+          Packer.toBlob(doc).then((blob) => {
+            saveAs(blob, `${translate.docName}-${projectTitle}.docx`);
+          });
+        });
     });
   return false;
 }

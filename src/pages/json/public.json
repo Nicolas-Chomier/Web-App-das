@@ -12,7 +12,7 @@
                     "nativeDevice": true
                 }
             },
-            "Gamme eXtrem": {
+            "Extrem Display": {
                 "12'": {
                     "id": "0001",
                     "generic name": "IHM 12 pouces",
@@ -24,19 +24,14 @@
                     "nativeDevice": false
                 }
             },
-            "Gamme budget": {
+            "Advanced Display": {
                 "12'": {
                     "id": "0003",
                     "generic name": "IHM 12 pouces",
                     "nativeDevice": false
                 }
             },
-            "Gamme premium": {
-                "12'": {
-                    "id": "0004",
-                    "generic name": "IHM 12 pouces",
-                    "nativeDevice": false
-                },
+            "Premium Display": {
                 "15'": {
                     "id": "0005",
                     "generic name": "IHM 15 pouces",

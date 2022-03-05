@@ -40,7 +40,7 @@
             "Image": "SP5000",
             "NativeIO": false,
             "PLC": {
-                "Denomination": "SP5000X eXtreme Box",
+                "Denomination": "SP-5690WA eXtreme Box",
                 "Ref": "PFXSP5B90",
                 "Devices": [
                     "RS-232C / 422 / 485 x 2",
@@ -59,8 +59,8 @@
                 "Ref": "PFXSP5690WAD",
                 "Devices": [
                     "TFT Color LCD (High brightness)",
-                    "1,366 x 768 pixels (FWXGA)",
-                    "15” wide"
+                    "1,280 x 800 pixels (WXGA)",
+                    "12” wide"
                 ]
             },
             "CAN": {
@@ -90,8 +90,8 @@
                 ]
             },
             "HMI": {
-                "Denomination": "SP5000X eXtreme display",
-                "Ref": "PFXSP5690WAD",
+                "Denomination": "SP-5790WA eXtreme display",
+                "Ref": "PFXSP5790WAD",
                 "Devices": [
                     "TFT Color LCD (High brightness)",
                     "1,366 x 768 pixels (FWXGA)",
@@ -110,8 +110,8 @@
             "Image": "SP5000",
             "NativeIO": false,
             "PLC": {
-                "Denomination": "SP5000X eXtreme Box",
-                "Ref": "PFXSP5B90",
+                "Denomination": "SP-5B10 Box Module",
+                "Ref": "PFXSP5B10",
                 "Devices": [
                     "RS-232C / 422 / 485 x 2",
                     "Ethernet x 2",
@@ -119,53 +119,18 @@
                     "USB (mini-B) x 1",
                     "SD Card Slot (System) x 1",
                     "SD Card Slot (Storage) x 1",
-                    "Speaker Output x 1",
+                    "Speaker Output: 300 mW (Rated Load: 8 Ω, Frequency : 1kHz)",
                     "Alarm Output or Buzzer Output x 1",
                     "Fieldbus Unit x 1 (PROFIBUS / J1939 / CANopen / FLEX NETWORK"
                 ]
             },
             "HMI": {
-                "Denomination": "SP5000X eXtreme display",
-                "Ref": "PFXSP5690WAD",
+                "Denomination": "SP-5600WA Advanced Display",
+                "Ref": "PFXSP5600WAD",
                 "Devices": [
-                    "TFT Color LCD (High brightness)",
-                    "1,366 x 768 pixels (FWXGA)",
-                    "15” wide"
-                ]
-            },
-            "CAN": {
-                "Denomination": "CAN open Master Unit for SP5000",
-                "Ref": "PFXZCHEUCAM1",
-                "Devices": [
-                    "1024 bit input / output / 256 bit input / output"
-                ]
-            }
-        },
-        "0004": {
-            "Image": "SP5000",
-            "NativeIO": false,
-            "PLC": {
-                "Denomination": "SP5000X eXtreme Box",
-                "Ref": "PFXSP5B90",
-                "Devices": [
-                    "RS-232C / 422 / 485 x 2",
-                    "Ethernet x 2",
-                    "USB (Type A) x 2",
-                    "USB (mini-B) x 1",
-                    "SD Card Slot (System) x 1",
-                    "SD Card Slot (Storage) x 1",
-                    "Speaker Output x 1",
-                    "Alarm Output or Buzzer Output x 1",
-                    "Fieldbus Unit x 1 (PROFIBUS / J1939 / CANopen / FLEX NETWORK"
-                ]
-            },
-            "HMI": {
-                "Denomination": "SP5000X eXtreme display",
-                "Ref": "PFXSP5690WAD",
-                "Devices": [
-                    "TFT Color LCD (High brightness)",
-                    "1,366 x 768 pixels (FWXGA)",
-                    "15” wide"
+                    "TFT Color LCD",
+                    "1,280 x 800 pixels (WXGA)",
+                    "12” wide"
                 ]
             },
             "CAN": {
@@ -180,8 +145,8 @@
             "Image": "SP5000",
             "NativeIO": false,
             "PLC": {
-                "Denomination": "SP5000X eXtreme Box",
-                "Ref": "PFXSP5B90",
+                "Denomination": "SP-5B10 Box Module",
+                "Ref": "PFXSP5B10",
                 "Devices": [
                     "RS-232C / 422 / 485 x 2",
                     "Ethernet x 2",
@@ -189,16 +154,16 @@
                     "USB (mini-B) x 1",
                     "SD Card Slot (System) x 1",
                     "SD Card Slot (Storage) x 1",
-                    "Speaker Output x 1",
+                    "Speaker Output: 300 mW (Rated Load: 8 Ω, Frequency : 1kHz)",
                     "Alarm Output or Buzzer Output x 1",
                     "Fieldbus Unit x 1 (PROFIBUS / J1939 / CANopen / FLEX NETWORK"
                 ]
             },
             "HMI": {
-                "Denomination": "SP5000X eXtreme display",
-                "Ref": "PFXSP5690WAD",
+                "Denomination": "SP-5700WC Premium Display",
+                "Ref": "PFXSP5700WCD",
                 "Devices": [
-                    "TFT Color LCD (High brightness)",
+                    "TFT Color LCD",
                     "1,366 x 768 pixels (FWXGA)",
                     "15” wide"
                 ]
@@ -215,8 +180,8 @@
             "Image": "SP5000",
             "NativeIO": false,
             "PLC": {
-                "Denomination": "SP5000X eXtreme Box",
-                "Ref": "PFXSP5B90",
+                "Denomination": "SP-5B10 Box Module",
+                "Ref": "PFXSP5B10",
                 "Devices": [
                     "RS-232C / 422 / 485 x 2",
                     "Ethernet x 2",
@@ -224,18 +189,18 @@
                     "USB (mini-B) x 1",
                     "SD Card Slot (System) x 1",
                     "SD Card Slot (Storage) x 1",
-                    "Speaker Output x 1",
+                    "Speaker Output: 300 mW (Rated Load: 8 Ω, Frequency : 1kHz)",
                     "Alarm Output or Buzzer Output x 1",
                     "Fieldbus Unit x 1 (PROFIBUS / J1939 / CANopen / FLEX NETWORK"
                 ]
             },
             "HMI": {
-                "Denomination": "SP5000X eXtreme display",
-                "Ref": "PFXSP5690WAD",
+                "Denomination": "SP-5800WC Premium Display",
+                "Ref": "PFXSP5800WCD",
                 "Devices": [
-                    "TFT Color LCD (High brightness)",
+                    "TFT Color LCD",
                     "1,366 x 768 pixels (FWXGA)",
-                    "15” wide"
+                    "19” wide"
                 ]
             },
             "CAN": {

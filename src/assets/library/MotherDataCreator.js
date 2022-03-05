@@ -82,7 +82,7 @@ export class MainDataCreator extends MotherDataCreator {
    * * Method used to get and format the main project title
    * @param bool = Uppercase if true, if not only the first letter in uppercase
    * ? source shape needed => bool
-   * @returns
+   * @returns string
    */
   projectTitle(bool = true) {
     const title = this.pTitle.toLowerCase();
@@ -91,11 +91,6 @@ export class MainDataCreator extends MotherDataCreator {
     }
     return title.charAt(0).toUpperCase() + title.slice(1);
   }
-  /**
-   *
-   * @param
-   * @returns
-   */
   plcNativeIoList() {
     const nativIo = profaceDatas.PROFACE[this.hmiId]["NativeIO"];
     return nativIo;
@@ -117,9 +112,7 @@ export class MainDataCreator extends MotherDataCreator {
     let j = 1; // Counter for OPEN AIR Compressor
     // Build object with sub object inside each sub Object represent an IOList
     for (const value of Object.values(dataSet)) {
-      //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
       const elemIoList = privateDatas[value.id]["IO"];
-      //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
       if (this.openAirItemTable.includes(value.name)) {
         const label = `${this.mandatoryIdName}${j}`;
         modele[label] = this.emptyIolist();

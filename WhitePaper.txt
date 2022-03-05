@@ -1,21 +1,16 @@
 Modification pour plus tard:
 
-Afficher le contenu des documents générés dans une liste sur les requestCards en LastPage.
 Corriger les bugs d'affichages des boutton des requestCards en LastPage.
-Refaire les methodes d'attribution des modules ds la class proface
+Revoire et tester les methodes d'attribution des modules ds la class proface
 
-STYLISER LES DOCUMENT GENERER !!
+en cour ... STYLISER LES DOCUMENT GENERER !!
 
-sur tout les element docxjs passer par l'api (root.push ..)
-creation d'un sous dossier images pour le dossier public + re routage des dependances
-Rajout pour le document IOList d'une colonne reference module
-concatenation des textes et elements de traduction sur un seul JSON
+
 Finir la traduction
 Utiliser .innerText pour mettre en forme les text depuis JSON
-trouvez comment importer des image dynamiquement pour les function block
-faire en sorte que makeDocxjsCustomText (method pour af) produise directement le text sous forme docxjs
-faire des tableaux de defaut et de controle command separé quand plusieur meme element ont ete choisi
+
+
 changer les header de l'af
-utiliser method replace a la place de la fonction avec les @
-faire un JSOn par langue
+voir pour utiliser method replace a la place de la fonction avec les @
+
 utiliser l'id pour la creation du chapitre "Elements chapter" dans l'af et nom pas les noms

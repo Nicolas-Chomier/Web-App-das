@@ -19,19 +19,10 @@ class DocxJsBuilder {
   }
   //* used in method below (documentTable,documentList)
   replaceTableContent(source, targetList) {
-    let text = "";
-    for (const item of source) {
-      if (item === "@") {
-        text += targetList[0];
-      } else if (item === "£") {
-        text += targetList[1];
-      } else if (item === "§") {
-        text += targetList[2];
-      } else {
-        text += item;
-      }
-    }
-    return text;
+    const str1 = source.replaceAll("@", targetList[0]);
+    const str2 = str1.replaceAll("£", targetList[1]);
+    const str3 = str2.replaceAll("§", targetList[2]);
+    return str3;
   }
   //* used in method below (documentTitle,documentText)
   replaceTextContent(source, targetList) {
