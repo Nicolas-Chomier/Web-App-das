@@ -297,7 +297,7 @@
         },
         "2w pbs": {
             "title": "Pneumatic bistable 2 way valves",
-            "A-infos": "WIP",
+            "A-infos": "A valve piloted by pneumatic distributor",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "PV = Powered Valve"
@@ -305,17 +305,15 @@
         },
         "2w pbfa": {
             "title": "Pneumatic bistable 2 way valves whith analog position feedback",
-            "A-infos": "WIP",
+            "A-infos": "A valve piloted by pneumatic distributor and sending feedback depending to its position.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                "PV = Powered Valve",
-                "YSC = State Switch Close",
-                "YSO = State Switch Open"
+                "PV = Powered Valve"
             ]
         },
         "2w es": {
             "title": "Motorised 2 way valves",
-            "A-infos": "WIP",
+            "A-infos": "A valve piloted by electrical motor",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "PV = Powered Valve"
@@ -323,15 +321,17 @@
         },
         "2w ef": {
             "title": "Motorised 2 way valves whith position feedback",
-            "A-infos": "WIP",
+            "A-infos": "A valve piloted by electrical motor and sending feedback depending to its position.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                "PV = Powered Valve"
+                "PV = Powered Valve",
+                "YSC = State Switch Close",
+                "YSO = State Switch Open"
             ]
         },
         "2w ep": {
             "title": "Motorised 2 way valves",
-            "A-infos": "WIP",
+            "A-infos": "A valve piloted by electrical motor.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "PV = Powered Valve"
@@ -339,7 +339,7 @@
         },
         "2w epfa": {
             "title": "Motorised 2 way valves whith analog position feedback",
-            "A-infos": "WIP",
+            "A-infos": "A valve piloted by electrical motor and sending an accuracy analog feedback depending to its position.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "PV = Powered Valve"
@@ -347,7 +347,7 @@
         },
         "3w pms": {
             "title": "Pneumatic monostable 3 way valves",
-            "A-infos": "WIP",
+            "A-infos": "A valve piloted by pneumatic distributor.Move back to default and safety position in case of lack of compressed air.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "PV = Powered Valve"
@@ -355,15 +355,17 @@
         },
         "3w pmf": {
             "title": "Pneumatic monostable 3 way valves whith position feedback",
-            "A-infos": "WIP",
+            "A-infos": "A valve piloted by pneumatic distributor, sending feedback depending to its position.Move back to default and safety position in case of lack of compressed air.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                "PV = Powered Valve"
+                "PV = Powered Valve",
+                "YSC = State Switch Close",
+                "YSO = State Switch Open"
             ]
         },
         "3w pbs": {
             "title": "Pneumatic bistable 3 way valves",
-            "A-infos": "WIP",
+            "A-infos": "A valve piloted by pneumatic distributor.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "PV = Powered Valve"
@@ -371,15 +373,17 @@
         },
         "3w pbf": {
             "title": "Pneumatic bistable 3 way valves whith position feedback",
-            "A-infos": "WIP",
+            "A-infos": "A valve piloted by pneumatic distributor and sending feedback depending to its position",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                "PV = Powered Valve"
+                "PV = Powered Valve",
+                "YSC = State Switch Close",
+                "YSO = State Switch Open"
             ]
         },
         "3w es": {
             "title": "Motorised 3 way valves",
-            "A-infos": "WIP",
+            "A-infos": "A valve piloted by electrical motor",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "PV = Powered Valve"
@@ -387,15 +391,17 @@
         },
         "3w ef": {
             "title": "Motorised 3 way valves whith position feedback",
-            "A-infos": "WIP",
+            "A-infos": "A valve piloted by electrical motor and sending feedback depending to its position.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                "PV = Powered Valve"
+                "PV = Powered Valve",
+                "YSC = State Switch Close",
+                "YSO = State Switch Open"
             ]
         },
         "3w ep": {
             "title": "Motorised 3 way valves",
-            "A-infos": "WIP",
+            "A-infos": "A valve piloted by electrical motor.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "PV = Powered Valve"
@@ -403,7 +409,7 @@
         },
         "3w epfa": {
             "title": "Motorised 3 way valves whith analog position feedback",
-            "A-infos": "WIP",
+            "A-infos": "A valve piloted by electrical motor and sending an accuracy analog feedback depending to its position.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "PV = Powered Valve"
@@ -411,7 +417,7 @@
         },
         "Ds": {
             "title": "Dampers",
-            "A-infos": "WIP",
+            "A-infos": "A damper is an element, a kind of flap, which allows to regulate the air by creating a pressure drop.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "WIP"
@@ -419,26 +425,28 @@
         },
         "Dsf": {
             "title": "Dampers with position feedback",
-            "A-infos": "WIP",
+            "A-infos": "A damper is an element, a kind of flap, which allows to regulate the air by creating a pressure drop and sending feedback depending to its position.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                "WIP"
+                "PD = Powered Damper",
+                "YSC = State Switch Close",
+                "YSO = State Switch Open"
             ]
         },
         "Dp": {
             "title": "Piloted dampers",
-            "A-infos": "WIP",
+            "A-infos": "A damper is an element, a kind of flap, which allows to regulate the air by creating a pressure drop, piloted by analog command",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                "WIP"
+                "PD = Powered Damper"
             ]
         },
         "Dpfa": {
             "title": "Piloted Dampers with analog position feedback",
-            "A-infos": "WIP",
+            "A-infos": "A damper is an element, a kind of flap, which allows to regulate the air by creating a pressure drop and sending an accuracy analog feedback depending to its position.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                "WIP"
+                "PD = Powered Damper"
             ]
         },
         "Valve TOR": {
@@ -478,7 +486,7 @@
             "A-infos": "Compressor piloted by our Open Air system in all or nothing control",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                "WIP"
+                "CPF = Compressor at Fixed Flow"
             ]
         },
         "OPA-V": {
@@ -486,7 +494,7 @@
             "A-infos": "Compressor piloted by our Open Air system with analog control",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                "WIP"
+                "CPV = Compressor at Varaible Flow"
             ]
         },
         "Booster": {
@@ -518,7 +526,7 @@
             "A-infos": "The principle of operation of an air compressor is to take in outside air before expelling it as compressed air.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                "WIP"
+                "CP = Compressor"
             ]
         },
         "CP opt": {
@@ -526,7 +534,7 @@
             "A-infos": "The principle of operation of an air compressor is to take in outside air before expelling it as compressed air.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                "WIP"
+                "CP = Compressor"
             ]
         },
         "Water pump": {
@@ -534,7 +542,7 @@
             "A-infos": "The basic principle of a hydraulic pump is to circulate a fluid to allow it to be discharged. It is to pump a constant volume of liquid to evacuate or distribute it.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
-                "WIP"
+                "PU = Pumps"
             ]
         },
         "Vacuum pump": {
@@ -550,7 +558,7 @@
             "A-infos": "Add one Digital Input to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                "NONE"
+                "No tag for this \"element\""
             ]
         },
         "Special DO": {
@@ -558,7 +566,7 @@
             "A-infos": "Add one Digital Output to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                "NONE"
+                "No tag for this \"element\""
             ]
         },
         "Special AI": {
@@ -566,7 +574,7 @@
             "A-infos": "Add one Analog Input to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                "NONE"
+                "No tag for this \"element\""
             ]
         },
         "Special AIt": {
@@ -574,7 +582,7 @@
             "A-infos": "Add one Analog Intput for temperature sensor to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                "NONE"
+                "No tag for this \"element\""
             ]
         },
         "Special AO": {
@@ -582,7 +590,7 @@
             "A-infos": "Add one Analog Output to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                "NONE"
+                "No tag for this \"element\""
             ]
         }
     }
