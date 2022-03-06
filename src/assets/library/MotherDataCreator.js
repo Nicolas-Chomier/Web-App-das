@@ -1,16 +1,16 @@
 import proface from "../shared/providerInfos/proface.json";
 import privates from "../shared/Private/elementDataSet.json";
-
+// JSON
 const profaceDatas = JSON.parse(JSON.stringify(proface));
 const privateDatas = JSON.parse(JSON.stringify(privates));
-
+/**
+ ** Mother Class with basic mandatory methods to build data structure in children class
+ */
 class MotherDataCreator {
   constructor(rawAbstract) {
     this.infosElement = rawAbstract.Elements;
     this.coef = rawAbstract.Project.Coef;
-    this.emptyIoListModel = { DI: 0, DO: 0, AI: 0, AO: 0, AIt: 0 };
-    // Main list configuration for different type of input output hardware
-    this.hwl = ["DI", "DO", "AI", "AO", "AIt"];
+    this.hwl = ["DI", "DO", "AI", "AO", "AIt"]; // Main modele for IO list or other device
   }
   // Method which return empty Object
   object() {
@@ -29,7 +29,7 @@ class MotherDataCreator {
     }
     return _list;
   }
-  // Empty IOList model
+  // Method which return empty IO List model based on hwl model
   emptyIolist() {
     const _obj = this.object();
     for (const item of this.hwl) {
@@ -37,7 +37,7 @@ class MotherDataCreator {
     }
     return _obj;
   }
-  // Empty tagList model
+  // Method which return empty Tag List model based on hwl model
   emptyTagList() {
     const _obj = this.object();
     for (const item of this.hwl) {
@@ -57,7 +57,7 @@ class MotherDataCreator {
     obj["MAIN"] = this.emptyTagList();
     return obj;
   }
-  // Method which delete duplicate in front elements list (tag is unique)
+  // Method which delete duplicate in front elements list (only tag is unique)
   removeAbstractDuplicate() {
     const uniqueObjects = [
       ...new Map(this.infosElement.map((item) => [item.tag, item])).values(),
@@ -65,7 +65,9 @@ class MotherDataCreator {
     return uniqueObjects;
   }
 }
-
+/**
+ ** Class generaly used to build all needed data structures
+ */
 export class MainDataCreator extends MotherDataCreator {
   constructor(rawAbstract) {
     super(rawAbstract);
@@ -73,15 +75,26 @@ export class MainDataCreator extends MotherDataCreator {
     this.native = rawAbstract.Project.Technology.nativeDevice;
     this.hmiId = rawAbstract.Project.Technology.id;
     this.pTitle = rawAbstract.Project.Title;
-    this.openAirItemTable = ["OPA-F", "OPA-V"]; //! A commenter
+    this.openAirItemTable = ["OPA-F", "OPA-V"]; // When Open air option is choosen, its important to filter open air compressor
     this.rsl = { DI: 6, DO: 4, AI: 0, AO: 0, AIt: 0 }; // Mandatory reserved slot attribute to each project
-    this.rId = "0000"; // Id used for reserved slot
     this.mandatoryIdName = "Compressor-";
   }
+
+  plcNativeIoList() {
+    const nativIo = profaceDatas.PROFACE[this.hmiId]["NativeIO"];
+    return nativIo;
+  }
+  nativeDeviceInfos() {
+    const bool = typeof this.native === "boolean" ? this.native : true;
+    return bool;
+  }
+  deviceReferenceFor(type, bool) {
+    const ref = profaceDatas.PROFACE[this.hmiId][type]["Ref"];
+    return bool ? ref.toUpperCase() : ref;
+  }
   /**
-   * * Method used to get and format the main project title
+   * Method used to get and format the main project title
    * @param bool = Uppercase if true, if not only the first letter in uppercase
-   * ? source shape needed => bool
    * @returns string
    */
   projectTitle(bool = true) {
@@ -91,20 +104,10 @@ export class MainDataCreator extends MotherDataCreator {
     }
     return title.charAt(0).toUpperCase() + title.slice(1);
   }
-  plcNativeIoList() {
-    const nativIo = profaceDatas.PROFACE[this.hmiId]["NativeIO"];
-    return nativIo;
-  }
-  nativeDeviceInfos() {
-    const bool = typeof this.native === "boolean" ? this.native : true;
-    return bool;
-  }
-  /** */
-  deviceReferenceFor(type, bool) {
-    const ref = profaceDatas.PROFACE[this.hmiId][type]["Ref"];
-    return bool ? ref.toUpperCase() : ref;
-  }
-  /** */
+  /**
+   * Method which build object with IOlist inside
+   * @returns {MAIN: {DI: x, DO: x, AI: x, AO: x, AIt: x}, Compressor XX: {DI: x, DO: x, AI: x, AO: x, AIt: x}}
+   */
   projectIoListing() {
     const dataSet = this.removeAbstractDuplicate();
     const modele = this.emptyShapeForIolist(); // Get the empty modele
@@ -114,6 +117,7 @@ export class MainDataCreator extends MotherDataCreator {
     for (const value of Object.values(dataSet)) {
       const elemIoList = privateDatas[value.id]["IO"];
       if (this.openAirItemTable.includes(value.name)) {
+        // Naming open air compressor
         const label = `${this.mandatoryIdName}${j}`;
         modele[label] = this.emptyIolist();
         for (const [item, numbers] of Object.entries(elemIoList)) {
@@ -139,7 +143,12 @@ export class MainDataCreator extends MotherDataCreator {
     }
     return modele;
   }
-  /** */
+  /**
+   * Method which build a set of main element used in the project
+   * @param target "string", consumer name or function bloc
+   * @param bool boolean if true apply toUpperCase to item
+   * @returns [set of targeted item]
+   */
   specialProjectListFor(target, bool = true) {
     const list = [];
     this.infosElement.forEach((element) => {
@@ -150,7 +159,10 @@ export class MainDataCreator extends MotherDataCreator {
     });
     return [...new Set(list)];
   }
-  /** */
+  /**
+   * Method which build an object classified by family group, item name and array of couple [id,Tag]
+   * @returns {Family group: {itemX:[id,tag]}}
+   */
   projectTagsAndIdObject() {
     const dataSet = this.removeAbstractDuplicate();
     const obj = {};
@@ -168,7 +180,10 @@ export class MainDataCreator extends MotherDataCreator {
     }
     return obj;
   }
-  /** */
+  /**
+   * Method which build list of unique couple [id,tag]
+   * @returns [[idX,tagX],[idN,tagN]...]
+   */
   projectTagsAndIdList() {
     const dataSet = this.removeAbstractDuplicate();
     const list = [];
@@ -177,7 +192,11 @@ export class MainDataCreator extends MotherDataCreator {
     }
     return list;
   }
-  /** */
+  /**
+   * Method which build an object classified by type of lineUp (MAIN or CP), with list of id/tag by input output type
+   * @param target "string" tag or id
+   * @returns {LineUp: {MAIN: AI: ["str"],AIt: ["str"],AO: ["str"],DI: ["str"],DO: ["str"]}
+   */
   projectListingfor(target) {
     const dataset = this.removeAbstractDuplicate();
     const obj = this.emptyShapeForTagList();

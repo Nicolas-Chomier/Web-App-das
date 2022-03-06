@@ -179,7 +179,12 @@
                 }
             },
             "Secheur frigorifique": {
-                "standard": {
+                "defaut simple": {
+                    "id": 3016,
+                    "generic name": "Fg dry def",
+                    "FB": ""
+                },
+                "ordre de marche et defaut": {
                     "id": 3002,
                     "generic name": "Fg dry",
                     "FB": ""
@@ -191,7 +196,12 @@
                 }
             },
             "Secheur à adsorbtion": {
-                "standard": {
+                "defaut simple": {
+                    "id": 3017,
+                    "generic name": "Ads dry def",
+                    "FB": ""
+                },
+                "ordre de marche et defaut": {
                     "id": 3004,
                     "generic name": "Ads Dry",
                     "FB": ""
@@ -201,7 +211,7 @@
                     "generic name": "Ads Dry eco",
                     "FB": ""
                 },
-                "standard avec capteur d'hygrométrie integré": {
+                "avec capteur d'hygrométrie integré": {
                     "id": 3006,
                     "generic name": "Ads Dry hygro",
                     "FB": ""
