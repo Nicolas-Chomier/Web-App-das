@@ -1,7 +1,7 @@
 {
     "core": {
         "PT": {
-            "title": "Transmetteur de pression",
+            "title": "Pressure transmitter",
             "A-infos": "A pressure sensor is a system that converts a mechanical pressure into an electrical value.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
@@ -91,7 +91,7 @@
         },
         "Thermostat": {
             "title": "Thermostat",
-            "A-infos": "WIP",
+            "A-infos": "When the measured temperature falls below set point, the thermostat sends a signal to PLC",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "TS* = Transmitter Switch *level"
@@ -143,7 +143,7 @@
         },
         "F&TT": {
             "title": "Hybride transmitter (Flow + T°)",
-            "A-infos": "WIP",
+            "A-infos": "Transmitter which measure Flow and Temperature",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "WIP"
@@ -157,17 +157,33 @@
                 "CHILL = Chilleur"
             ]
         },
+        "Fg dry def": {
+            "title": "Refrigeration dryer",
+            "A-infos": "This type of dryer consists of cooling the compressed air to a temperature below its dew point by means of a heat exchanger connected to a conventional refrigeration unit, which causes the humidity it contains to condense.",
+            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+            "B-tags": [
+                "DRY = Dryer"
+            ]
+        },
         "Fg dry": {
-            "title": "Dryier",
-            "A-infos": "WIP",
+            "title": "Refrigeration dryer",
+            "A-infos": "This type of dryer consists of cooling the compressed air to a temperature below its dew point by means of a heat exchanger connected to a conventional refrigeration unit, which causes the humidity it contains to condense.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "DRY = Dryer"
             ]
         },
         "Fg dry hygro": {
-            "title": "Dryer with hygrometer",
-            "A-infos": "WIP",
+            "title": "Refrigeration dryer with hygrometer",
+            "A-infos": "This type of dryer consists of cooling the compressed air to a temperature below its dew point by means of a heat exchanger connected to a conventional refrigeration unit, which causes the humidity it contains to condense.",
+            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+            "B-tags": [
+                "DRY = Dryer"
+            ]
+        },
+        "Ads dry def": {
+            "title": "Adsorption dryer",
+            "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "DRY = Dryer"

@@ -91,7 +91,7 @@
         },
         "Thermostat": {
             "title": "Thermostat",
-            "A-infos": "WIP",
+            "A-infos": "When the measured temperature falls below set point, the thermostat sends a signal to PLC",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "TS* = Transmitter Switch *level"
@@ -142,8 +142,8 @@
             ]
         },
         "F&TT": {
-            "title": "Hybride transmitter (Flow + T°)",
-            "A-infos": "WIP",
+            "title": "Hybride transmitter (Flow + T°).",
+            "A-infos": "Transmitter which measure Flow and Temperature",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "WIP"
@@ -151,7 +151,7 @@
         },
         "Chill": {
             "title": "Chilleur",
-            "A-infos": "WIP",
+            "A-infos": "Systems designed to extract excess heat from a fluid by heat exchange with water or air.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "CHILL = Chilleur"
@@ -222,8 +222,8 @@
             ]
         },
         "Separator": {
-            "title": "Separator",
-            "A-infos": "WIP",
+            "title": "Cyclonic condensate separators",
+            "A-infos": "Cyclonic condensate separators use centrifugal force to force condensate out of the compressed air. The spinning causes the condensate to clump on the walls of the centrifugal separators.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "WIP"
@@ -246,7 +246,7 @@
             ]
         },
         "Dr": {
-            "title": "Drain",
+            "title": "Condensate drain",
             "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
@@ -254,7 +254,7 @@
             ]
         },
         "Dr f": {
-            "title": "Drain + fault feedback",
+            "title": "Condensate drain & fault feedback",
             "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
@@ -262,7 +262,7 @@
             ]
         },
         "Dr p": {
-            "title": "Piloted drain",
+            "title": "Piloted condensate drain",
             "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
@@ -270,7 +270,7 @@
             ]
         },
         "Dr pf": {
-            "title": "Piloted drain + fault feedback",
+            "title": "Piloted condensate drain & fault feedback",
             "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
@@ -278,7 +278,7 @@
             ]
         },
         "2w pms": {
-            "title": "pneumatic monostable 2 way valves",
+            "title": "Pneumatic monostable 2 way valves",
             "A-infos": "A valve piloted by pneumatic distributor, move back to default and safety position in case of lack of compressed air.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
@@ -286,7 +286,7 @@
             ]
         },
         "2w pmf": {
-            "title": "pneumatic monostable 2 way valves whith position feedback",
+            "title": "Pneumatic monostable 2 way valves whith position feedback",
             "A-infos": "A valve piloted by pneumatic distributor and sending feedback depending to its position, move back to default and safety position in case of lack of compressed air.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
@@ -296,7 +296,7 @@
             ]
         },
         "2w pbs": {
-            "title": "pneumatic bistable 2 way valves",
+            "title": "Pneumatic bistable 2 way valves",
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
@@ -304,7 +304,7 @@
             ]
         },
         "2w pbfa": {
-            "title": "pneumatic bistable 2 way valves whith analog position feedback",
+            "title": "Pneumatic bistable 2 way valves whith analog position feedback",
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
@@ -346,7 +346,7 @@
             ]
         },
         "3w pms": {
-            "title": "pneumatic monostable 3 way valves",
+            "title": "Pneumatic monostable 3 way valves",
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
@@ -354,7 +354,7 @@
             ]
         },
         "3w pmf": {
-            "title": "pneumatic monostable 3 way valves whith position feedback",
+            "title": "Pneumatic monostable 3 way valves whith position feedback",
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
@@ -362,7 +362,7 @@
             ]
         },
         "3w pbs": {
-            "title": "pneumatic bistable 3 way valves",
+            "title": "Pneumatic bistable 3 way valves",
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
@@ -370,7 +370,7 @@
             ]
         },
         "3w pbf": {
-            "title": "pneumatic bistable 3 way valves whith position feedback",
+            "title": "Pneumatic bistable 3 way valves whith position feedback",
             "A-infos": "WIP",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
@@ -475,7 +475,7 @@
         },
         "OPA-F": {
             "title": "Open Air with static flow",
-            "A-infos": "WIP",
+            "A-infos": "Compressor piloted by our Open Air system in all or nothing control",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "WIP"
@@ -483,7 +483,7 @@
         },
         "OPA-V": {
             "title": "Open Air with variable flow",
-            "A-infos": "WIP",
+            "A-infos": "Compressor piloted by our Open Air system with analog control",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "WIP"
@@ -515,7 +515,7 @@
         },
         "CP": {
             "title": "Standard air compressor",
-            "A-infos": "WIP",
+            "A-infos": "The principle of operation of an air compressor is to take in outside air before expelling it as compressed air.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "WIP"
@@ -523,7 +523,7 @@
         },
         "CP opt": {
             "title": "Standard air compressor with options",
-            "A-infos": "WIP",
+            "A-infos": "The principle of operation of an air compressor is to take in outside air before expelling it as compressed air.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "WIP"
@@ -531,7 +531,7 @@
         },
         "Water pump": {
             "title": "Water pump",
-            "A-infos": "WIP",
+            "A-infos": "The basic principle of a hydraulic pump is to circulate a fluid to allow it to be discharged. It is to pump a constant volume of liquid to evacuate or distribute it.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "WIP"
