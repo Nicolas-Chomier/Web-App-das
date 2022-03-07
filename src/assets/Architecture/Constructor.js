@@ -28,7 +28,7 @@ import { footer } from "../shared/js/DocumentFooter";
 export function documentConstructorForArchitecture(rawAbstract, country) {
   //* Import
   import(`./${country}-translations.json`)
-    .catch(() => import("./uk-translations.json"))
+    .catch(() => import("./fr-translations.json"))
     .then(({ core }) => {
       const translate = JSON.parse(JSON.stringify(core));
       // Class draft
@@ -54,8 +54,14 @@ export function documentConstructorForArchitecture(rawAbstract, country) {
           Write.documentTitle(translate.docTitle, children, 1, [projectTitle]);
           Write.documentTitle(translate.hmiTitle, children, 2, [hmiRef]);
           Write.documentText(translate.hmiText, children);
-          Write.documentImage(strImage, children, 350, 250);
-          Write.documentTitle(translate.plcTitle, children, 2, [projectTitle]);
+          Write.documentImage(strImage, children, 450, 370);
+          Write.documentTitle(
+            translate.plcTitle,
+            children,
+            2,
+            [projectTitle],
+            true
+          );
           Write.documentText(translate.plcText, children);
           // Document construction design
           if (bool) {
@@ -110,7 +116,7 @@ export function documentConstructorForArchitecture(rawAbstract, country) {
           });
           // Print document
           Packer.toBlob(doc).then((blob) => {
-            saveAs(blob, `${translate.docName}-${projectTitle}.docx`);
+            saveAs(blob, `${projectTitle} - ARCH - V1.docx`);
           });
         });
     });

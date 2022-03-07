@@ -26,7 +26,7 @@ import { footer } from "../shared/js/DocumentFooterAf";
 export function documentConstructorForAf(rawAbstract, flag) {
   //* Import translation for document content
   import(`./${flag}-translations.json`)
-    .catch(() => import("./uk-translations.json"))
+    .catch(() => import("./fr-translations.json"))
     .then(({ core }) => {
       const translate = JSON.parse(JSON.stringify(core));
       //* Import relative information for elements
@@ -54,10 +54,10 @@ export function documentConstructorForAf(rawAbstract, flag) {
           const tmiTable = Get.faultsTableOverviewFor(tagIdList, "TMI", flag);
           const pmaTable = Get.faultsTableOverviewFor(tagIdList, "PMA", flag);
           const pmiTable = Get.faultsTableOverviewFor(tagIdList, "PMI", flag);
-          const subTitleA = "General informations";
-          const subTitleB = "List of concerned items";
-          const subTitleC = "Control and command";
-          const subTitleD = "Faults";
+          const subTitleA = "Information générale";
+          const subTitleB = "Désignations et labels utilisées";
+          const subTitleC = "Contrôle et commande";
+          const subTitleD = "Défauts";
           //* Document Pattern
           const children = [];
           Write.documentTitle(translate.title1, children);
@@ -191,7 +191,7 @@ export function documentConstructorForAf(rawAbstract, flag) {
           });
           // Print document
           Packer.toBlob(doc).then((blob) => {
-            saveAs(blob, `${translate.docName}-${projectTitle}.docx`);
+            saveAs(blob, `${projectTitle} - AF - V1.docx`);
           });
         });
     });

@@ -118,8 +118,10 @@ export class MainDataCreator extends MotherDataCreator {
       const elemIoList = privateDatas[value.id]["IO"];
       if (this.openAirItemTable.includes(value.name)) {
         // Naming open air compressor
+        //! a voir pour chnager le nom generic des compresseurs
         const label = `${this.mandatoryIdName}${j}`;
         modele[label] = this.emptyIolist();
+        //const labelTest = value.tag
         for (const [item, numbers] of Object.entries(elemIoList)) {
           modele[label][item] += numbers;
         }

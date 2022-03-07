@@ -19,7 +19,7 @@ import { footer } from "../shared/js/DocumentFooter";
  */
 export function documentConstructorForQts(rawAbstract, country) {
   import(`./${country}-translations.json`)
-    .catch(() => import("./uk-translations.json"))
+    .catch(() => import("./fr-translations.json"))
     .then(({ core }) => {
       const translate = JSON.parse(JSON.stringify(core));
       // Class draft
@@ -28,22 +28,37 @@ export function documentConstructorForQts(rawAbstract, country) {
       const Get = new QTSBuilder(rawAbstract);
       const fromProviderDatas = new Proface(rawAbstract);
       // General & project const declaration
-      const projectTitle = Make.projectTitle(true);
+      const projectTitle = Make.projectTitle(false);
       const ioListing = Make.projectIoListing();
       // Provider const declaration
-      const unique = fromProviderDatas.uniqueIoList(ioListing);
-      const lineUp = fromProviderDatas.getModuleList(unique);
+      const elu = fromProviderDatas.dropEmptyLineUp();
+      // Some logic
+      for (const value of Object.values(ioListing)) {
+        const lineUp = fromProviderDatas.getModuleList(value);
+        elu.module1 += lineUp.module1;
+        elu.module2 += lineUp.module2;
+        elu.module3 += lineUp.module3;
+        elu.module4 += lineUp.module4;
+        elu.module5 += lineUp.module5;
+        elu.module6 += lineUp.module6;
+        elu.module7 += lineUp.module7;
+        elu.module8 += lineUp.module8;
+        elu.module9 += lineUp.module9;
+        elu.module10 += lineUp.module10;
+        elu.module11 += lineUp.module11;
+        elu.module12 += lineUp.module12;
+      }
       // Document const declaration
-      const table1 = Get.nomenclatureForHmi(translate.hmiTable);
-      const table2 = Get.nomenclatureForModule(translate.moduleTable, lineUp);
+      const hmiTable = Get.nomenclatureForHmi(translate.hmiTable);
+      const moduleTable = Get.nomenclatureForModule(translate.moduleTable, elu);
       // Document Pattern
       const children = [];
       Write.documentTitle(projectTitle, children);
       Write.documentText(translate.text1, children);
       Write.documentTitle(translate.title2, children, 2);
-      Write.documentTable(table1, children, "grey");
+      Write.documentTable(hmiTable, children, "grey");
       Write.documentTitle(translate.title3, children, 2);
-      Write.documentTable(table2, children, "grey");
+      Write.documentTable(moduleTable, children, "grey");
       // Document
       const document = new Document({
         sections: [
@@ -56,7 +71,7 @@ export function documentConstructorForQts(rawAbstract, country) {
       });
       // Print document
       Packer.toBlob(document).then((blob) => {
-        saveAs(blob, `${projectTitle}-CHIFFRAGE.docx`);
+        saveAs(blob, `Chiffrage pour ${projectTitle}.docx`);
       });
     });
   return false;

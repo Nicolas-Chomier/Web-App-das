@@ -137,14 +137,14 @@ export class DocxJsMethods extends DocxJsBuilder {
           font: "Calibri",
           textSize: 24,
           textColor: "232c33",
-          bgColor: "538ddf",
+          bgColor: "4B95FF",
         },
         1: {
           bold: true,
           font: "Calibri",
           textSize: 20,
           textColor: "232c33",
-          bgColor: "98bbec",
+          bgColor: "C6DDFF",
         },
         2: {
           bold: false,
@@ -158,7 +158,7 @@ export class DocxJsMethods extends DocxJsBuilder {
           font: "Calibri",
           textSize: 20,
           textColor: "232c33",
-          bgColor: "98bbec",
+          bgColor: "C6DDFF",
         },
       },
       gold: {
@@ -194,7 +194,7 @@ export class DocxJsMethods extends DocxJsBuilder {
     };
     //* Document table style only for column
     this.scc = {
-      multiColor: ["000000", "B4D2FF", "FF6B00", "0063E5", "F9B30C", "9108F1"],
+      multiColor: ["000000", "9cfffa", "f3d34a", "a97c73", "af3e4d", "011638"],
     };
     //* Document list style
     this.stl = {
@@ -462,7 +462,7 @@ export class DocxJsMethods extends DocxJsBuilder {
       return true;
     } else {
       this.documentText(
-        "Non important consumer in this installation",
+        "NONE",
         child,
         [],
         false,

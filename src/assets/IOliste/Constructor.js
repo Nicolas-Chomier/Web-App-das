@@ -101,7 +101,7 @@ export function documentConstructorForIOList(rawAbstract, country) {
       });
       // Print document
       Packer.toBlob(doc).then((blob) => {
-        saveAs(blob, `${translate.docName}-${projectTitle}.docx`);
+        saveAs(blob, `${projectTitle} - IOList - V1.docx`);
       });
     });
 }

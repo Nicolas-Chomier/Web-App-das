@@ -1,106 +1,106 @@
 {
     "core": {
         "docName": "Analyse Fonctionelle",
-        "title1": "Presentation du document",
-        "text1": "This document defines the elements, functions and operating principles of the PLC package for the project: @",
-        "title2": "Reference document",
-        "text2": "This functional analysis is carried out on the basis of the following documents.",
+        "title1": "Présentation du document",
+        "text1": "Ce document définit les éléments et les principes de fonctionnement de l'enssemble du lot automatisme pour le projet : @",
+        "title2": "Documents de réferences",
+        "text2": "Cette analyse fonctionnelle est réalisée sur la base des documents suivants.",
         "table2": [
             [
-                "Reference document"
+                "Document de référence"
             ],
             [
-                "Title",
-                "Tag",
+                "Titre",
+                "Label",
                 "Version"
             ],
             [
-                "PROCESS FUNCTIONAL ANALYSIS",
+                "Analyse Fonctionelle",
                 "@-XXX-XXX",
                 "X"
             ],
             [
-                "MODULE & AUTOMATION ARCHITECTURE",
+                "Architecture automate",
                 "@-ARCH-001",
                 "1.0"
             ],
             [
-                "NETWORK ARCHITECTURE",
+                "Architecture du réseaux",
                 "@-OVERALL-NETWORK",
                 "1.0"
             ],
             [
-                "IO & ELEMENT LIST",
+                "Liste des entrées & sorties du projet",
                 "@-IOLIST-001",
                 "1.0"
             ],
             [
-                "HMI TECHNICAL SPECIFICATIONS",
+                "Spécifications technique de l'IHM",
                 "£-SPECIFICATIONS",
                 "X"
             ],
             [
-                "PLC TECHNICAL SPECIFICATIONS",
+                "Spécifications technique de l'automate",
                 "§-SPECIFICATIONS",
                 "X"
             ]
         ],
-        "title3": "Installation architecture",
-        "subTitle3a": "PLC & HMI",
-        "text3a": "This installation is controlled by a PROFACE PLC + HMI installed in the control cabinet under the drawing reference WIP",
-        "text3aa": "The controller is composed of:",
-        "subTitle3b": "Managed equipment",
-        "text3b": "Different way is used to manage and share information with equipment's installation.",
-        "smallTitle3b1": "Managed by CANOPEN TM3 module",
-        "smallTitle3b2": "Managed by other communications protocols",
-        "title4": "Network architecture",
-        "text4": "This installation is composed of many different devices which need to communicate with each other. See the document, reference: @-OVERALL-NETWORK",
-        "title5": "P&ID element listing",
-        "text5": "This installation is composed of many different elements which involved to the programming and setting / sizing of automation part.See the elements listing document, reference: @-IOLIST-001",
-        "title6": "PLC settings",
-        "text6A": "This installation is managed by a set composed of one HMI (tactile panel), one PLC (type \"PowerBox\") and one CanOpen master board. The panel is installed on the front of the cabinet",
-        "text6B": "For more details see technical documentation, reference: @-SPECIFICATIONS.",
-        "text6C": "Installed equipment are PROFACE materials, they are programming with GP-Pro EX 4.09 SP1.Product Version:V4.09.350, (latest version).Product version date:01\/02\/2022",
-        "title7": "HMI settings",
-        "text7": "The installation is controlled by a PROFACE (SCHNEIDER) human machine interface.For more details see specification document reference: @-SPECIFICATIONS",
+        "title3": "Architecture de l'installation",
+        "subTitle3a": "IHM & CPU",
+        "text3a": "Cette installation est pilotée par un automate et un IHM PROFACE installé dans l'armoire de commande sous la référence WIP.",
+        "text3aa": "L'automate est composé de :",
+        "subTitle3b": "Equipement de l'installation",
+        "text3b": "d'autres méthodes sont utilisées pour gérer et partager des informations avec l'ensemble de l'installation.",
+        "smallTitle3b1": "Gestion par le protocole CAN OPEN et module TM3",
+        "smallTitle3b2": "Gestion par d'autre protocole",
+        "title4": "Architecture réseaux",
+        "text4": "Cette installation est composée de nombreux appareils différents qui doivent communiquer entre eux. Voir le document, réference: @-OVERALL-NETWORK",
+        "title5": "Liste des connexion des éléments du process gérés par l'automate",
+        "text5": "Cette installation est composée de nombreux éléments différents qui participent à la programmation et au réglage/dimensionnement de la partie automatisme. Voir le document, référence : @-IOLIST-001",
+        "title6": "Configuration de la CPU",
+        "text6A": "Cette installation est gérée par un ensemble composé d'une IHM (panneau tactile), d'une CPU (type \"PowerBox\") et d'une carte maîtresse CanOpen. Le panneau est installé sur la face avant de l'armoire.",
+        "text6B": "Voir le document référence: @-SPECIFICATIONS.",
+        "text6C": "Les équipements installés sont des équipements de la marque PROFACE (SCHNEIDER), l'automate est programmés avec le logiciel GP-Pro EX 4.09 SP1. Version du produit : V4.09.350, (dernière version). Date de la version du produit : 01/02/2022",
+        "title7": "Configuration de l'IHM",
+        "text7": "L'installation est contrôlée par une interface homme-machine PROFACE (SCHNEIDER). Voir le document référence: @-SPECIFICATIONS.",
         "table7": [
             [
-                "Access level table"
+                "Tableau des niveaux d'accès"
             ],
             [
-                "Name",
-                "Level",
+                "Nom",
+                "Niveau",
                 "Permissions",
-                "Password"
+                "Mot de passe"
             ],
             [
-                "User Default",
+                "Utilisateur",
                 "0",
-                "Visualization",
+                "Visualisation",
                 "0"
             ],
             [
-                "Operator",
+                "Opérateur",
                 "1",
-                "Start and stop installations,alarms acknowledge",
+                "Marche / Arret de l'installation et acquittement des alarmes",
                 "1"
             ],
             [
-                "Administrator",
+                "Administrateur",
                 "2",
-                "Start and stop installations, alarms acknowledge, installations parameters setting, access to system view",
+                "Marche / Arret de l'installation, acquittement des alarmes, paramétrage de l'installation, accès à la vue du système.",
                 "2"
             ]
         ],
-        "title8": "Abbreviations",
+        "title8": "Abréviations",
         "table8": [
             [
-                "Abbreviations table"
+                "Tableau des abréviations"
             ],
             [
-                "Short name",
-                "Name",
-                "Description"
+                "Abréviations",
+                "Nom complet",
+                "Déscription"
             ],
             [
                 "ATMP",
@@ -158,48 +158,48 @@
                 "Output 4-20mA for example"
             ]
         ],
-        "title9": "Colour code",
-        "subTitle9A": "Equipment",
+        "title9": "Code couleurs",
+        "subTitle9A": "Equipements",
         "table9A": [
             [
-                "Equipment's colour code"
+                "Code couleur des équipements"
             ],
             [
-                "States",
-                "Stopped or Closed",
-                "In motion",
-                "Start or open",
-                "Fault"
+                "Statut",
+                "Arrété ou Fermé",
+                "Mouvement",
+                "Démarré ou Ouvert",
+                "Défaut"
             ],
             [
-                "Colour:",
+                "Couleur:",
                 "GREY",
                 "BLUE",
                 "GREEN",
                 "RED"
             ]
         ],
-        "smallTitle9A": "HMI screen view",
-        "subTitle9B": "Numeric display",
-        "text9B": "Different types of analog variables are present in the different views. For some it is only possible to view the value, for others it is possible to enter a value.",
-        "smallTitle9B1": "Reading values",
-        "smallTitle9B2": "Writing values",
-        "subTitle9C": "Pipes",
+        "smallTitle9A": "Description de la \"vue\" IHM",
+        "subTitle9B": "Affichage numérique",
+        "text9B": "Différents types de variables analogiques sont présents sur les différentes vues. Pour certaines, il est seulement possible de visualiser la valeur, pour d'autres, il est possible d'entrer une valeur.",
+        "smallTitle9B1": "Valeurs lues",
+        "smallTitle9B2": "Valeurs ecrites",
+        "subTitle9C": "Tuyauterie",
         "table9C": [
             [
-                "Pipes colour code"
+                "Code couleur de la tuyauterie"
             ],
             [
                 "Types",
-                "Compressed AIR",
-                "Demineralized WATER",
-                "VACUUM",
-                "Polluted AIR",
-                "Helium",
-                "Condensate"
+                "Air comprimée",
+                "Eau déminéralisée",
+                "Vide",
+                "Air polluée",
+                "Hélium",
+                "Condensats"
             ],
             [
-                "Colour:",
+                "Couleurs:",
                 "BLUE",
                 "GREEN",
                 "CYAN",
@@ -208,15 +208,15 @@
                 "BROWN"
             ]
         ],
-        "subTitle9D": "Faults and messages",
+        "subTitle9D": "Défauts et messages",
         "table9D": [
             [
-                "Faults and messages colour code"
+                "Code couleurs des defauts et des messages"
             ],
             [
                 "Types",
                 "Messages",
-                "Description"
+                "Déscription"
             ],
             [
                 "MES",
@@ -226,273 +226,273 @@
             [
                 "TMA",
                 "Technical major fault",
-                "Technical fault with equipment stops"
+                "Defaut technique entrainant l'arret de l'installation"
             ],
             [
                 "TMI",
                 "Technical minor fault",
-                "Technical fault without equipment stop"
+                "Defaut technique sans arret de l'installation"
             ],
             [
                 "PMA",
                 "Process major fault",
-                "Exceeding threshold in the process with an impact on the quality of the product"
+                "Dépassement de seuil dans le processus avec un impact sur la qualité du produit"
             ],
             [
                 "PMI",
                 "Process minor fault",
-                "Exceeding threshold in the process without an impact on the quality of the product"
+                "Dépassement de seuil dans le processus sans impact sur la qualité du produit"
             ]
         ],
-        "smallTitle9D": "HMI screen view",
-        "text9D": "Alarms that have disappeared are shown in white. The alarms are acknowledged by pressing the button (level 1 required).The date and time when the alarm was triggered are indicated on the left. The number of times the alarm has been triggered is shown on the right. The alarm counter is reset by selecting the alarm table and pressing the button (level 1 required).The deletion of a disappeared alarm is done by selecting the line concerned and then pressing the \"Delete\" button (level 1 required). To delete all the missing alarms, select the alarm table and press the \"Delete all\" button (level 1 required).",
+        "smallTitle9D": "Description de la vue des defauts sur l'IHM",
+        "text9D": "Les alarmes qui ont disparu sont indiquées en blanc. Les alarmes sont acquittées en appuyant sur le bouton (niveau 1 requis).la date et l'heure de déclenchement de l'alarme sont indiquées à gauche. Le nombre de fois que l'alarme a été déclenchée est indiqué à droite. La remise à zéro du compteur d'alarmes se fait en sélectionnant la table des alarmes et en appuyant sur le bouton (niveau 1 requis).La suppression d'une alarme disparue se fait en sélectionnant la ligne concernée puis en appuyant sur le bouton \"Supprimer\" (niveau 1 requis). Pour supprimer toutes les alarmes disparues, sélectionnez la table des alarmes et appuyez sur le bouton \"Supprimer tout\" (niveau 1 requis).",
         "FB001": {
-            "title1": "Description for function bloc [@]",
-            "subTitle1": "General description",
-            "text1": "This is a completely custom installation, however some elements are same, for them we will use the function block programming method (FB).The instrumentation will be managed by standardized blocks, in order to ensure homogenization of the programming. These blocks are used only in the process PLC, this chapter presents their functionalities.",
-            "subTitle2": "Analog measurements function block",
-            "text2": "The function block [@] is used:",
+            "title1": "Description du bloc de fonctions FB001",
+            "subTitle1": "Description générale",
+            "text1": "Il s'agit d'une installation entièrement personnalisée, cependant certains éléments sont identiques, pour eux nous utiliserons la méthode de programmation par blocs fonctionnels (FB).L'instrumentation sera gérée par des blocs standardisés, afin d'assurer une homogénéisation de la programmation. Ce chapitre présente leurs fonctionnalités.",
+            "subTitle2": "Bloc de fonctions \"Mesures analogiques\"",
+            "text2": "Le bloc de fonction FB001 est utilisé :",
             "bulletList1": [
                 [
-                    "To display the measured value from an electrical signal (4-20mA or 0-10V)."
+                    "Pour afficher la valeur mesurée à partir d'un signal électrique (4-20mA ou 0-10V)."
                 ],
                 [
-                    "To set the scale of measured value."
+                    "Pour définir l'échelle de la valeur mesurée."
                 ],
                 [
-                    "To filter the measured value."
+                    "Pour filtrer la valeur mesurée."
                 ],
                 [
-                    "To add an offset that can correct a potential derivation."
+                    "Pour ajouter un décalage (offset) qui peut corriger une dérivation potentielle."
                 ],
                 [
-                    "To force a value to perform tests."
+                    "Pour forcer une valeur à effectuer des tests."
                 ],
                 [
-                    "To manage the display and the scales of the curves."
+                    "Pour gérer l'affichage et les échelles des courbes."
                 ],
                 [
-                    "To know sensor fault."
+                    "Pour détecter une panne du capteur."
                 ],
                 [
-                    "To memorize 4 thresholds of alarms and one sensor fault."
+                    "Pour mémoriser 4 seuils d'alarmes et un défaut de capteur."
                 ],
                 [
-                    "To manage 4 thresholds of alarms, each threshold can be activated or deactivated via the panel (these thresholds are used for diagnostics; they are not used for the process, all alarms are temporised)."
+                    "Gestion de 4 seuils d'alarmes, chaque seuil peut être activé ou désactivé via le panneau (ces seuils sont utilisés pour le diagnostic, ils ne sont pas utilisés pour le processus, toutes les alarmes sont temporisées)."
                 ],
                 [
-                    "To recovery factory settings."
+                    "Pour récupérer les paramètres d'usine."
                 ]
             ],
-            "smallTilte1": "Block faults",
+            "smallTilte1": "Défauts du bloc",
             "table1": [
                 [
-                    "Block fault table"
+                    "Tableau des defauts"
                 ],
                 [
-                    "TAG",
+                    "LABEL",
                     "DESIGNATION",
                     "TYPE",
                     "OPTION",
-                    "EFFECT"
+                    "EFFET"
                 ],
                 [
                     "def_signal_[TAG]",
-                    "Default on sensor",
+                    "Défaut du capteur",
                     "TMI",
                     "_",
-                    "Warning displayed"
+                    "Afficher un avertissement"
                 ],
                 [
                     "def_SL_[TAG]",
-                    "Default Low Threshold",
+                    "Défaut seuil bas",
                     "PMI",
                     "_",
-                    "Warning displayed"
+                    "Afficher un avertissement"
                 ],
                 [
                     "def_SLL_[TAG]",
-                    "Default Very Low Threshold",
+                    "Défaut seuil tres bas",
                     "PMA",
                     "_",
-                    "Drive back installation to Default state"
+                    "Ramener l'installation à l'état par défaut"
                 ],
                 [
                     "def_SH_[TAG]",
-                    "Default High Threshold",
+                    "Défaut seuil haut",
                     "PMI",
                     "_",
-                    "Warning displayed"
+                    "Afficher un avertissement"
                 ],
                 [
                     "def_SHH_[TAG]",
-                    "Default Very High Threshold",
+                    "Défaut seuil tres haut",
                     "PMA",
                     "_",
-                    "Drive back installation to Default state"
+                    "Ramener l'installation à l'état par défaut"
                 ]
             ],
-            "smallTilte2": "Function block [@], screen description",
+            "smallTilte2": "Description de la vue IHM du bloc de fonction FB001",
             "table2": [
                 [
-                    "Function block [@], screen description"
+                    "Tableau des descriptions"
                 ],
                 [
-                    "Number",
+                    "N°",
                     "Description"
                 ],
                 [
                     "1",
-                    "Fault activation pushbutton signal [TAG]"
+                    "Bouton poussoir d'activation du defaut capteur [TAG]"
                 ],
                 [
                     "2",
-                    "Measure indication [TAG]"
+                    "Affichage de la mesure [TAG]"
                 ],
                 [
                     "3",
-                    "Temporisation signal fault [TAG]"
+                    "Réglage de la temporisation avant défaut [TAG]"
                 ],
                 [
                     "4",
-                    "Measure memory fault pushbutton activation [TAG]"
+                    "Mémorisation du défaut [TAG]"
                 ],
                 [
                     "5",
-                    "Signal fault indicator [TAG]"
+                    "Indication lumineuse du défaut [TAG]"
                 ],
                 [
                     "6",
-                    "Forcing pushbutton activation [TAG]"
+                    "Bouton d'activation de forçage [TAG]"
                 ],
                 [
                     "7",
-                    "Forcing indication value [TAG]"
+                    "Indication de la valeur forcée [TAG]"
                 ],
                 [
                     "8",
-                    "Forcing indicator [TAG]"
+                    "Indicateur valeur forcée [TAG]"
                 ],
                 [
                     "9",
-                    "SHH fault activation [TAG]"
+                    "Activation defaut SHH [TAG]"
                 ],
                 [
                     "10",
-                    "SHH value settings [TAG]"
+                    "Réglage SHH [TAG]"
                 ],
                 [
                     "11",
-                    "SHH signal fault temporisation [TAG]"
+                    "Temporisation du défaut de signal SHH [TAG]"
                 ],
                 [
                     "12",
-                    "SHH Memory fault pushbutton [TAG]"
+                    "Mémorisation du défaut SHH [TAG]"
                 ],
                 [
                     "13",
-                    "SHH fault indicator [TAG]"
+                    "Indication lumineuse SHH [TAG]"
                 ],
                 [
                     "14",
-                    "SH fault activation [TAG]"
+                    "Activation defaut SH [TAG]"
                 ],
                 [
                     "15",
-                    "SH value settings [TAG]"
+                    "Réglage SH [TAG]"
                 ],
                 [
                     "16",
-                    "SH signal fault temporisation [TAG]"
+                    "Temporisation du défaut de signal SH [TAG]"
                 ],
                 [
                     "17",
-                    "SH Memory fault pushbutton [TAG]"
+                    "Mémorisation du défaut SH [TAG]"
                 ],
                 [
                     "18",
-                    "SH fault indicator [TAG]"
+                    "Indication lumineuse SH [TAG]"
                 ],
                 [
                     "19",
-                    "SL fault activation [TAG]"
+                    "Activation defaut SL [TAG]"
                 ],
                 [
                     "20",
-                    "SL value settings [TAG]"
+                    "Réglage SL [TAG]"
                 ],
                 [
                     "21",
-                    "SL signal fault temporisation [TAG]"
+                    "Temporisation du défaut de signal SL [TAG]"
                 ],
                 [
                     "22",
-                    "SL Memory fault pushbutton [TAG]"
+                    "Mémorisation du défaut SL [TAG]"
                 ],
                 [
                     "23",
-                    "SL fault indicator [TAG]"
+                    "Indication lumineuse SL [TAG]"
                 ],
                 [
                     "24",
-                    "SLL fault activation [TAG]"
+                    "Activation defaut SLL [TAG]"
                 ],
                 [
                     "25",
-                    "SLL value settings [TAG]"
+                    "Réglage SLL [TAG]"
                 ],
                 [
                     "26",
-                    "SLL signal fault temporisation [TAG]"
+                    "Temporisation du défaut de signal SLL [TAG]"
                 ],
                 [
                     "27",
-                    "SLL Memory fault pushbutton [TAG]"
+                    "Mémorisation du défaut SLL [TAG]"
                 ],
                 [
                     "28",
-                    "SLL fault indicator [TAG]"
+                    "Indication lumineuse SLL [TAG]"
                 ],
                 [
                     "29",
-                    "MAX scale range settings [TAG]"
+                    "Réglages de l'échelle MAX [TAG]"
                 ],
                 [
                     "30",
-                    "MIN scale range settings [TAG]"
+                    "Réglages de l'échelle MIN [TAG]"
                 ],
                 [
                     "31",
-                    "OFFSET settings [TAG]"
+                    "Réglage de l'offset [TAG]"
                 ],
                 [
                     "32",
-                    "Factory settings pushbutton [TAG]"
+                    "Bouton poussoir des paramètres d'usine [TAG]"
                 ],
                 [
                     "33",
-                    "Go to HMI curves screen pushbutton [TAG]"
+                    "Bouton poussoir pour passer à l'écran des courbes de l'IHM [TAG]"
                 ]
             ]
         },
-        "title11": "Operation of the installation",
+        "title11": "Fonctionnement de l'installation",
         "text11": " ICI, DESCRIPTION SUCCINTE DE L'INSTALLATION !",
-        "title18": "Alarms management",
+        "title18": "Gestion des alarmes",
         "subTitle18": "Introduction",
-        "text18": "Security management share four “big” family of faults.All faults family when triggered set a synthesis and fault message on HMI alarms screen.An acknowledgment request can acquit and reset default. Alarms are classified into 2 categories:",
-        "smallTitle18A": "Minor",
-        "text18A": "Warning without immediate impact on the system's capacity to ensure the main functions of the process or when the state of a measurement approaches the ultimate limits of a process. Without treatment, a minor alarm can lead to a major alarm due to the evolution of the phenomenon. This type of alarm can be treated within a few days and allows to avoid major alarms.",
-        "smallTitle18B": "Major",
-        "text18B": "State of an equipment making it inoperable or a state of a measure having exceeded the ultimate specifications of a process.This type of alarm must be treated as an emergency to avoid loss of production and/or risk of damage to equipment.",
-        "subTitle18C": "Technical major fault",
+        "text18": "La gestion de la sécurité partage quatre \"grandes\" familles de défauts. Toutes les familles de défauts, lorsqu'elles sont déclenchées, déclenchent une synthèse et un message de défaut sur l'écran des alarmes de l'IHM. Une demande d'acquittement permet d'acquitter et de réinitialiser le défaut. Les alarmes sont classées en 2 catégories : ",
+        "smallTitle18A": "Défaut mineur",
+        "text18A": "Alerte sans impact immédiat sur la capacité du système à assurer les fonctions principales du processus ou lorsque l'état d'une mesure s'approche des limites ultimes d'un processus. Sans traitement, une alarme mineure peut conduire à une alarme majeure du fait de l'évolution du phénomène. Ce type d'alarme peut être traité en quelques jours et permet d'éviter les alarmes majeures.",
+        "smallTitle18B": "Défaut majeur",
+        "text18B": "État d'un équipement le rendant inopérant ou état d'une mesure ayant dépassé les spécifications ultimes d'un processus. Ce type d'alarme doit être traité comme une urgence afin d'éviter une perte de production et/ou un risque d'endommagement des équipements.",
+        "subTitle18C": "Défaut technique majeur",
         "table18C": [
             [
                 "TMA"
             ],
             [
-                "NAME",
+                "NOM",
                 "TYPE",
-                "ADRESS",
+                "ADRESSE",
                 "IMPACT"
             ],
             [
@@ -502,13 +502,13 @@
                 ""
             ]
         ],
-        "subTitle18D": "Technical minor fault",
+        "subTitle18D": "Défaut technique mineur",
         "table18D": [
             [
                 "TMI"
             ],
             [
-                "NAME",
+                "NOM",
                 "TYPE",
                 "ADRESS",
                 "IMPACT"
@@ -520,13 +520,13 @@
                 ""
             ]
         ],
-        "subTitle18E": "Process major fault",
+        "subTitle18E": "Défaut majeur process",
         "table18E": [
             [
                 "PMA"
             ],
             [
-                "NAME",
+                "NOM",
                 "TYPE",
                 "ADRESS",
                 "IMPACT"
@@ -538,13 +538,13 @@
                 ""
             ]
         ],
-        "subTitle18F": "Process minor fault",
+        "subTitle18F": "Défaut mineur process",
         "table18F": [
             [
                 "PMI"
             ],
             [
-                "NAME",
+                "NOM",
                 "TYPE",
                 "ADRESS",
                 "IMPACT"
@@ -556,823 +556,6 @@
                 ""
             ]
         ],
-        "title19": "Security management",
-        "----------------------------END----------------------------": "----------------------------END----------------------------",
-        "subTitleA": "General informations",
-        "subTitleB": "List of concerned items",
-        "subTitleC": "Control and command",
-        "subTitleD": "Faults",
-        "ccTableRow": [
-            "DESIGNATION",
-            "TYPE",
-            "N°",
-            "ACTIVATION CONDITION",
-            "FUNCTION"
-        ],
-        "faultTableRow": [
-            "NAME",
-            "ALARM",
-            "ACTIVATION CONDITION"
-        ],
-        "Instrumentation": {
-            "title": "Intrumentation",
-            "infos": "All analogue measurements are processed in the same way for them we will use the function bloc programming method (FB)."
-        },
-        "Process component": {
-            "title": "Process component",
-            "infos": ""
-        },
-        "Valves and dampers": {
-            "title": "Valves and dampers",
-            "infos": ""
-        },
-        "Analyzer": {
-            "title": "Analyzer",
-            "infos": ""
-        },
-        "Fluid supply": {
-            "title": "Fluid supply",
-            "infos": ""
-        },
-        "Devices": {
-            "title": "Devices",
-            "infos": "External device add to project for special needs"
-        },
-        "PT": {
-            "title": "Pressure transmitter",
-            "A-infos": "A pressure sensor is a system that converts a mechanical pressure into an electrical value.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PIT = Pressure Indicator Transmitter",
-                "PT = Pressure Transmitter",
-                "PDT = Pressure Differential Transmitter"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "PT I": {
-            "title": "Pressure transmitter whith one dry contact",
-            "A-infos": "A pressure sensor is a system that converts a mechanical pressure into an electrical value. This one can provide one digital information more.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PIT = Pressure Indicator Transmitter",
-                "PT = Pressure Transmitter",
-                "PDT = Pressure Differential Transmitter"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "PT 2I": {
-            "title": "Pressure transmitter whith two dry contact",
-            "A-infos": "A pressure sensor is a system that converts a mechanical pressure into an electrical value. This one can provide two digital informations more.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PIT = Pressure Indicator Transmitter",
-                "PT = Pressure Transmitter",
-                "PDT = Pressure Differential Transmitter"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Pressostat": {
-            "title": "Pressostat",
-            "A-infos": "the pressure switch allows to check the minimum pressure in the water circuit.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PSL = Pressure Switch Limit"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "FT": {
-            "title": "Flow transmitter",
-            "A-infos": "Magnetic flow meters consist of a transmitter and a sensor that work together to measure flow. The magnetic flowmeter sensor is placed in-line and measures an induced voltage generated by the fluid as it passes through a pipe.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "FT = Flow Transmitter"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "FT pulse": {
-            "title": "Pulse flow transmitter",
-            "A-infos": "Magnetic flow meters consist of a transmitter and a sensor that work together to measure flow. The magnetic flowmeter sensor is placed in-line and measures an induced voltage generated by the fluid as it passes through a pipe.This one can provide one digital informations more.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "FT = Flow Transmitter"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Flow detector": {
-            "title": "Flow detector",
-            "A-infos": "Device which provide digital information when the fluid to which it is subjected is in motion",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "FD = Flow Detector"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "TT": {
-            "title": "Temperature transmitter",
-            "A-infos": "A temperature transmitter is a system that converts a temperature into an electrical value.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "TT = Temperature Transmitter",
-                "TIT = Temperature Indicator Transmitter"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Temperature sensor": {
-            "title": "Temperature sensor",
-            "A-infos": "A temperature sensor is a system that converts a temperature into a measurable physical value.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "TT = Temperature Transmitter",
-                "TIT = Temperature Indicator Transmitter"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "TTS": {
-            "title": "Temperature transmitter witch switch",
-            "A-infos": "A temperature transmitter is a system that converts a temperature into an electrical value.This one can provide one digital informations more.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "TT = Temperature Transmitter",
-                "TIT = Temperature Indicator Transmitter"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Thermostat": {
-            "title": "Thermostat",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "TS* = Transmitter Switch *level"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Hygrometer": {
-            "title": "Hygrometer",
-            "A-infos": "Hygrometer is based on the measurement of the dew point temperature, and is used to measure the humidity in the air, or another gas mixture",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "AT = Analyser Transmitter"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "WLS": {
-            "title": "Water level sensor",
-            "A-infos": "A level sensor is an electronic device that measures the height of material, usually liquid, in a tank.It detects in a binary way, like a switch, if the water level reaches a certain limit or not.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "LSLL = Level Switch Low Low",
-                "LSL = Level Switch Low",
-                "LSH = Level Switch High",
-                "LSHH = Level Switch High High"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Water meter": {
-            "title": "Water meter",
-            "A-infos": "Water meter produce pulse according settable amount water through inside it.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "FQIT = WIP",
-                "FQT = WIP"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Energy meter": {
-            "title": "Energy meter",
-            "A-infos": "Energy meter produce pulse according settable amount energy through inside it.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "WIP"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Electric meter": {
-            "title": "Electric meter",
-            "A-infos": "Electrical meter produce pulse according settable amount of current through inside it.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "WIP"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "F&TT": {
-            "title": "Hybride transmitter (Flow + T°)",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "WIP"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Chill": {
-            "title": "Chilleur",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "CHILL = Chilleur"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Fg dry": {
-            "title": "Dryier",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "DRY = Dryer"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Fg dry hygro": {
-            "title": "Dryer with hygrometer",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "DRY = Dryer"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Ads Dry": {
-            "title": "Adsorption dryer",
-            "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "DRY = Dryer"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Ads Dry eco": {
-            "title": "Adsorption dryer with eco mode",
-            "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "DRY = Dryer"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Ads Dry hygro": {
-            "title": "Adsorption dryer with hygrometer",
-            "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "DRY = Dryer"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Ads Dry eco hygro": {
-            "title": "Adsorption dryer with hygrometer and eco mode",
-            "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "DRY = Dryer"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Separator": {
-            "title": "Separator",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "WIP"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Resistor": {
-            "title": "Resistor",
-            "A-infos": "Element which produce heat when current pass through it",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "WIP"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Rc": {
-            "title": "Drivable Heater",
-            "A-infos": "Element which produce heat when current pass through it, Can be driven by analog signal",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "WIP"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Dr": {
-            "title": "Drain",
-            "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "DR = Drain Valve"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Dr f": {
-            "title": "Drain + fault feedback",
-            "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "DR = Drain Valve"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Dr p": {
-            "title": "Piloted drain",
-            "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "DR = Drain Valve"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Dr pf": {
-            "title": "Piloted drain + fault feedback",
-            "A-infos": "The condensate is detected by the capacitive sensors of the automatic drainers and sent to the treatment circuit.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "DR = Drain Valve"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "2w pms": {
-            "title": "pneumatic monostable 2 way valves",
-            "A-infos": "A valve piloted by pneumatic distributor, move back to default and safety position in case of lack of compressed air.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PV = Powered Valve"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "2w pmf": {
-            "title": "pneumatic monostable 2 way valves whith position feedback",
-            "A-infos": "A valve piloted by pneumatic distributor and sending feedback depending to its position, move back to default and safety position in case of lack of compressed air.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PV = Powered Valve",
-                "YSC = State Switch Close",
-                "YSO = State Switch Open"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "2w pbs": {
-            "title": "pneumatic bistable 2 way valves",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PV = Powered Valve"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "2w pbfa": {
-            "title": "pneumatic bistable 2 way valves whith analog position feedback",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PV = Powered Valve",
-                "YSC = State Switch Close",
-                "YSO = State Switch Open"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "2w es": {
-            "title": "Motorised 2 way valves",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PV = Powered Valve"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "2w ef": {
-            "title": "Motorised 2 way valves whith position feedback",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PV = Powered Valve"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "2w ep": {
-            "title": "Motorised 2 way valves",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PV = Powered Valve"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "2w epfa": {
-            "title": "Motorised 2 way valves whith analog position feedback",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PV = Powered Valve"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "3w pms": {
-            "title": "pneumatic monostable 3 way valves",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PV = Powered Valve"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "3w pmf": {
-            "title": "pneumatic monostable 3 way valves whith position feedback",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PV = Powered Valve"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "3w pbs": {
-            "title": "pneumatic bistable 3 way valves",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PV = Powered Valve"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "3w pbf": {
-            "title": "pneumatic bistable 3 way valves whith position feedback",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PV = Powered Valve"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "3w es": {
-            "title": "Motorised 3 way valves",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PV = Powered Valve"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "3w ef": {
-            "title": "Motorised 3 way valves whith position feedback",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PV = Powered Valve"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "3w ep": {
-            "title": "Motorised 3 way valves",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PV = Powered Valve"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "3w epfa": {
-            "title": "Motorised 3 way valves whith analog position feedback",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PV = Powered Valve"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Ds": {
-            "title": "Dampers",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "WIP"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Dsf": {
-            "title": "Dampers with position feedback",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "WIP"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Dp": {
-            "title": "Piloted dampers",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "WIP"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Dpfa": {
-            "title": "Piloted Dampers with analog position feedback",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "WIP"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Valve TOR": {
-            "title": "Solenoide valves",
-            "A-infos": "The electromagnetic valve (EMV) or solenoid valve allows to interrupt or not the fluid flow, it behaves like a switch",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PV = Powered Valve"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "ULTRAMAT": {
-            "title": "ULTRAMAT",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "WIP"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "VAR-18": {
-            "title": "VAR-18",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "WIP"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "O2 Analyzer": {
-            "title": "O2 Analyzer",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "WIP"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "OPA-F": {
-            "title": "Open Air with static flow",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "WIP"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "OPA-V": {
-            "title": "Open Air with variable flow",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "WIP"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Booster": {
-            "title": "Surpressor / Blower",
-            "A-infos": "An air blower is a piece of equipment designed to deliver air at overpressure. These blowers allow to obtain compressed air at low pressure",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "BL = Blower"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Fan": {
-            "title": "Fan",
-            "A-infos": "The fan blows air at low pressure but at high speed",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "FAN = Fan"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Fan F": {
-            "title": "Fan",
-            "A-infos": "The fan blows air at low pressure but at high speed",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "FAN = Fan"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "CP": {
-            "title": "Standard air compressor",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "WIP"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "CP opt": {
-            "title": "Standard air compressor with options",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "WIP"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Water pump": {
-            "title": "Water pump",
-            "A-infos": "WIP",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "WIP"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Vacuum pump": {
-            "title": "Vacuum pump",
-            "A-infos": "A vacuum pump is a type of pump allowing to make the vacuum, i.e. to extract the air or any other gas contained in a closed enclosure, in order to decrease its pressure.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
-            "B-tags": [
-                "PU = Pumps"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Special DI": {
-            "title": "Special DI",
-            "A-infos": "Add one Digital Input to project from external needs",
-            "B-intro": "This external needs have no TAG on PID",
-            "B-tags": [
-                "NONE"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Special DO": {
-            "title": "Special DO",
-            "A-infos": "Add one Digital Output to project from external needs",
-            "B-intro": "This external needs have no TAG on PID",
-            "B-tags": [
-                "NONE"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Special AI": {
-            "title": "Special AI",
-            "A-infos": "Add one Analog Input to project from external needs",
-            "B-intro": "This external needs have no TAG on PID",
-            "B-tags": [
-                "NONE"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Special AIt": {
-            "title": "Special AIt",
-            "A-infos": "Add one Analog Intput for temperature sensor to project from external needs",
-            "B-intro": "This external needs have no TAG on PID",
-            "B-tags": [
-                "NONE"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        },
-        "Special AO": {
-            "title": "Special AO",
-            "A-infos": "Add one Analog Output to project from external needs",
-            "B-intro": "This external needs have no TAG on PID",
-            "B-tags": [
-                "NONE"
-            ],
-            "C-control&command": "Please refer to chapter XXXXX",
-            "D-fault": "Please refer to chapter XXXXX",
-            "zxyzxy": ""
-        }
+        "title19": "Gestion de la sécurité"
     }
 }

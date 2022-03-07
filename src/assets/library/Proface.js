@@ -11,8 +11,26 @@ export class Proface {
     this.sMax = 14; // Maximum module capacity accepted by rack (PROFACE specificity)
     // Module list used for make table in designModuleLine method
     this.mSpe = ["module10", "module11", "module12"];
+    // Empty lineUp (to chnage if we work whith other module)
+    this.emptyLineUp = {
+      module1: 0,
+      module2: 0,
+      module3: 0,
+      module4: 0,
+      module5: 0,
+      module6: 0,
+      module7: 0,
+      module8: 0,
+      module9: 0,
+      module10: 0,
+      module11: 0,
+      module12: 0,
+    };
   }
-
+  // Method which give empty line up (most secure to manage here)
+  dropEmptyLineUp() {
+    return this.emptyLineUp;
+  }
   // Method wich calcul the numbers of numerical proface module selection according given IOList
   numericalModule(target) {
     const numericalResult = {
@@ -215,23 +233,5 @@ export class Proface {
   // Method which give all info about choosen HMI
   giveMeHmiInformations(id, target) {
     return this.proface.PROFACE[id][target];
-  }
-  // Method which add all module number in one module line up
-  uniqueIoList(obj = {}) {
-    var size = Object.keys(obj).length;
-    if (size !== 0) {
-      const list = [];
-      for (const value of Object.values(obj)) {
-        list.push(value);
-      }
-      const result = list.reduce((a, b) => {
-        for (let k in b) {
-          if (b.hasOwnProperty(k)) a[k] = (a[k] || 0) + b[k];
-        }
-        return a;
-      }, {});
-      return result;
-    }
-    return this.emptyIoListModel;
   }
 }

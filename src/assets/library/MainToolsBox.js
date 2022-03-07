@@ -77,11 +77,11 @@ export class AFBuilder extends MainToolsBox {
       "DESIGNATION",
       "TYPE",
       "N°",
-      "ACTIVATION CONDITION",
-      "FUNCTION",
+      "CONDITION D'ACTIVATION",
+      "FONCTION",
     ];
-    this.faultRow1 = ["NAME", "ALARM", "ACTIVATION CONDITION"];
-    this.faultTableOverview = ["NAME", "TYPE", "ADRESS", "IMPACT"];
+    this.faultRow1 = ["NOM", "ALARME", "CONDITION D'ACTIVATION"];
+    this.faultTableOverview = ["NOM", "TYPE", "ADRESSE", "IMPACT"];
   }
   /** */
   editedDeviceInformations(type) {
@@ -185,11 +185,11 @@ export class ARCHBuilder extends MainToolsBox {
   constructor(rawAbstract) {
     super(rawAbstract);
     this.colorPanel = {
-      DI: "B4D2FF",
-      DO: "FF6B00",
-      AI: "0063E5",
-      AO: "F9B30C",
-      AIt: "9108F1",
+      DI: "9cfffa",
+      DO: "f3d34a",
+      AI: "a97c73",
+      AO: "af3e4d",
+      AIt: "011638",
     };
   }
   nativeDeviceInfos() {
@@ -329,7 +329,7 @@ export class ARCHBuilder extends MainToolsBox {
   /** */
   nativeArchitectureTable(source, title = "") {
     const nativIo = profaceDatas.PROFACE[this.hmiId]["NativeIO"];
-    const arrayTitle = [`IO array for ${title}`];
+    const arrayTitle = [`Tableau d'entrées sortie pour ${title}`];
     const RawTable = [];
     const firstRow = [];
     const result = [arrayTitle];

@@ -1,13 +1,13 @@
 {
     "core": {
         "PT": {
-            "title": "Pressure transmitter",
-            "A-infos": "A pressure sensor is a system that converts a mechanical pressure into an electrical value.",
-            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+            "title": "Transmetteur de pression",
+            "A-infos": "Un capteur de pression est un système qui convertit une pression mécanique en une valeur électrique",
+            "B-intro": "Tous les éléments dessinés sur le P&ID avec cette étiquette sont traités de la même manière :",
             "B-tags": [
-                "PIT = Pressure Indicator Transmitter",
-                "PT = Pressure Transmitter",
-                "PDT = Pressure Differential Transmitter"
+                "PIT = Transmetteur à indicateur de pression",
+                "PT = Transmetteur de pression",
+                "PDT = Transmetteur de pression différentielle"
             ]
         },
         "PT I": {
@@ -558,7 +558,7 @@
             "A-infos": "Add one Digital Input to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                "No tag for this \"element\""
+                ""
             ]
         },
         "Special DO": {
@@ -566,7 +566,7 @@
             "A-infos": "Add one Digital Output to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                "No tag for this \"element\""
+                ""
             ]
         },
         "Special AI": {
@@ -574,7 +574,7 @@
             "A-infos": "Add one Analog Input to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                "No tag for this \"element\""
+                ""
             ]
         },
         "Special AIt": {
@@ -582,7 +582,7 @@
             "A-infos": "Add one Analog Intput for temperature sensor to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                "No tag for this \"element\""
+                ""
             ]
         },
         "Special AO": {
@@ -590,7 +590,7 @@
             "A-infos": "Add one Analog Output to project from external needs",
             "B-intro": "This external needs have no TAG on PID",
             "B-tags": [
-                "No tag for this \"element\""
+                ""
             ]
         }
     }

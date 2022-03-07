@@ -1,30 +1,30 @@
 {
     "core": {
-        "text1": "Bonjour, please find in this document a quotation request for the following references and quantities :",
-        "title2": "NOMENCLATURE for HMI",
+        "text1": "Bonjour, vous trouverez dans ce document une demande de devis pour les références et quantités suivantes :",
+        "title2": "Nomenclature pour l'IHM",
         "hmiTable": [
             [
-                "HMI Quotation"
+                "Chiffrage pour l'IHM"
             ],
             [
-                "Item",
-                "Denomination",
-                "Ref",
-                "Qtty"
+                "Article",
+                "Dénomination",
+                "Réf",
+                "Qtté"
             ]
         ],
-        "title3": "NOMENCLATURE for TM3 modules",
+        "title3": "Nomenclature des modules",
         "moduleTable": [
             [
-                "Module quotation"
+                "Chiffrage des modules"
             ],
             [
-                "Ref",
-                "Provider",
+                "Réf",
+                "Fournisseur",
                 "Description",
-                "Qtty"
+                "Qtté"
             ]
         ],
-        "docName": "Quotation request"
+        "docName": "Demande de chiffrage"
     }
 }

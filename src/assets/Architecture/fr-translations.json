@@ -1,11 +1,11 @@
 {
     "core": {
-        "docTitle": "Architecture materielle pour @",
-        "hmiTitle": "HMI @ presentation",
-        "hmiText": "Size and implantation drawing for choosen HMI",
-        "plcTitle": "Material architecture for @ project",
-        "subTitle": "@ line-up",
-        "plcText": "This chapter details the entire architecture for the automation package",
-        "docName": "Architecture"
+        "docTitle": "Architecture materielle pour le projet : @",
+        "hmiTitle": "Présentation de l'IHM @",
+        "hmiText": "Schéma d'implantation de l'IHM choisit",
+        "plcTitle": "Architecture matérielle pour le projet : £",
+        "subTitle": "@",
+        "plcText": "Ce chapitre détaille l'architecture complète de l'installation pour le projet : @",
+        "docName": "ARCH"
     }
 }
