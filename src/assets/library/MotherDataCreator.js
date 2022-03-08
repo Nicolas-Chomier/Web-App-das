@@ -1,16 +1,17 @@
 import proface from "../shared/providerInfos/proface.json";
-import privates from "../shared/Private/elementDataSet.json";
+//import privates from "../shared/Private/elementDataSet.json";
 // JSON
 const profaceDatas = JSON.parse(JSON.stringify(proface));
-const privateDatas = JSON.parse(JSON.stringify(privates));
+//const privateDatas = JSON.parse(JSON.stringify(privates));
 /**
  ** Mother Class with basic mandatory methods to build data structure in children class
  */
 class MotherDataCreator {
-  constructor(rawAbstract) {
+  constructor(rawAbstract, flag) {
     this.infosElement = rawAbstract.Elements;
     this.coef = rawAbstract.Project.Coef;
     this.hwl = ["DI", "DO", "AI", "AO", "AIt"]; // Main modele for IO list or other device
+    this.privateDatas = require(`../shared/Private/${flag}-elementDataSet.json`);
   }
   // Method which return empty Object
   object() {
@@ -69,8 +70,8 @@ class MotherDataCreator {
  ** Class generaly used to build all needed data structures
  */
 export class MainDataCreator extends MotherDataCreator {
-  constructor(rawAbstract) {
-    super(rawAbstract);
+  constructor(rawAbstract, flag) {
+    super(rawAbstract, flag);
     this.infosElement = rawAbstract.Elements;
     this.native = rawAbstract.Project.Technology.nativeDevice;
     this.hmiId = rawAbstract.Project.Technology.id;
@@ -115,7 +116,7 @@ export class MainDataCreator extends MotherDataCreator {
     let j = 1; // Counter for OPEN AIR Compressor
     // Build object with sub object inside each sub Object represent an IOList
     for (const value of Object.values(dataSet)) {
-      const elemIoList = privateDatas[value.id]["IO"];
+      const elemIoList = this.privateDatas[value.id]["IO"];
       if (this.openAirItemTable.includes(value.name)) {
         // Naming open air compressor
         //! a voir pour chnager le nom generic des compresseurs
@@ -154,7 +155,7 @@ export class MainDataCreator extends MotherDataCreator {
   specialProjectListFor(target, bool = true) {
     const list = [];
     this.infosElement.forEach((element) => {
-      const item = privateDatas[element.id][target];
+      const item = this.privateDatas[element.id][target];
       if (item) {
         list.push(bool ? item.toUpperCase() : item.toLowerCase());
       }
@@ -207,7 +208,7 @@ export class MainDataCreator extends MotherDataCreator {
     let j = 1;
     // Fill listing with tags
     for (const item of dataset) {
-      const elemIoList = privateDatas[item.id]["IO"];
+      const elemIoList = this.privateDatas[item.id]["IO"];
       // If tag belong to Main line
       if (!this.openAirItemTable.includes(item.name)) {
         for (const [key, value] of Object.entries(elemIoList)) {

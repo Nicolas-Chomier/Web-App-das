@@ -17,16 +17,15 @@ import { footer } from "../shared/js/DocumentFooterAf";
  * @param rawAbstract = Datas from FRONT END
  * @param tongue = Printable language choosen by user
  */
-export function documentConstructorForIOList(rawAbstract, country) {
-  import(`./${country}-translations.json`)
+export function documentConstructorForIOList(rawAbstract, flag) {
+  import(`./${flag}-translations.json`)
     .catch(() => import("./uk-translations.json"))
     .then(({ core }) => {
       const translate = JSON.parse(JSON.stringify(core));
-      const flag = country;
       // Class draft
-      const Make = new MainDataCreator(rawAbstract);
+      const Make = new MainDataCreator(rawAbstract, flag);
+      const Get = new IOLISTBuilder(rawAbstract, flag);
       const Write = new DocxJsMethods(rawAbstract);
-      const Get = new IOLISTBuilder(rawAbstract);
       const fromProviderDatas = new Proface(rawAbstract);
       // General & project const declaration
       const projectTitle = Make.projectTitle(true);

@@ -556,6 +556,10 @@
                 ""
             ]
         ],
-        "title19": "Security management"
+        "title19": "Security management",
+        "subTitleA": "General information",
+        "subTitleB": "Designation and labels used",
+        "subTitleC": "Control and command",
+        "subTitleD": "Faults"
     }
 }

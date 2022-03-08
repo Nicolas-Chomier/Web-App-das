@@ -1,0 +1,4267 @@
+{
+    "Spare": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Disponible",
+                "DO": "Disponible",
+                "AI": "Disponible",
+                "AO": "Disponible",
+                "AIt": "Disponible"
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [],
+                "DO": [],
+                "AI": [],
+                "AO": [],
+                "AIt": []
+            }
+        },
+        "FAULTS": {
+            "fr": []
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "0000": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Réservé",
+                "DO": "Réservé",
+                "AI": "Réservé",
+                "AO": "Réservé",
+                "AIt": "Réservé"
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [],
+                "DO": [],
+                "AI": [],
+                "AO": [],
+                "AIt": []
+            }
+        },
+        "FAULTS": {
+            "fr": []
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "2001": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 1,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "Transmetteur de pression 4-20mA",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    [
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_signal_[TAG]",
+                    "TMI",
+                    "Affichage d'un avertissement"
+                ],
+                [
+                    "def_SL_[TAG]",
+                    "PMI",
+                    "Affichage d'un avertissement"
+                ],
+                [
+                    "def_SLL_[TAG]",
+                    "PMA",
+                    "Retour à l'etat par défaut"
+                ],
+                [
+                    "def_SH_[TAG]",
+                    "PMI",
+                    "Affichage d'un avertissement"
+                ],
+                [
+                    "def_SHH_[TAG]",
+                    "PMA",
+                    "Retour à l'etat par défaut"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": "FB001"
+    },
+    "2002": {
+        "IO": {
+            "DI": 1,
+            "DO": 0,
+            "AI": 1,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Envoi d'un signal numérique",
+                "DO": "",
+                "AI": "Transmetteur de pression 4-20mA",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Indicateur de niveau de pression",
+                        "Déclenchement lorsque le niveau de pression est atteint",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    [
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "PMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "2003": {
+        "IO": {
+            "DI": 2,
+            "DO": 0,
+            "AI": 1,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Envoi d'un signal numérique",
+                "DO": "",
+                "AI": "Transmetteur de pression 4-20mA",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Indicateur de niveau de pression",
+                        "Déclenchement lorsque le niveau de pression 1 est atteint",
+                        "Activation d'un défaut"
+                    ],
+                    [
+                        "Indicateur de niveau de pression",
+                        "Déclenchement lorsque le niveau de pression 2 est atteint",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    [
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]_1",
+                    "PMI",
+                    "Entrée PLC activée après 3 secondes"
+                ],
+                [
+                    "def_[TAG]_2",
+                    "PMA",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "2004": {
+        "IO": {
+            "DI": 1,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Envoi d'un signal numérique",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Indicateur de niveau de pression",
+                        "Déclenchement lorsque le niveau de pression est atteint",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "PMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "2005": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 1,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "Transmetteur de débit 4-20mA",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    [
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_signal_[TAG]",
+                    "TMI",
+                    "Affichage d'un avertissement"
+                ],
+                [
+                    "def_SL_[TAG]",
+                    "PMI",
+                    "Affichage d'un avertissement"
+                ],
+                [
+                    "def_SLL_[TAG]",
+                    "PMA",
+                    "Retour à l'etat par défaut"
+                ],
+                [
+                    "def_SH_[TAG]",
+                    "PMI",
+                    "Affichage d'un avertissement"
+                ],
+                [
+                    "def_SHH_[TAG]",
+                    "PMA",
+                    "Retour à l'etat par défaut"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": "FB001"
+    },
+    "2006": {
+        "IO": {
+            "DI": 1,
+            "DO": 0,
+            "AI": 1,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Envoi d'un signal numérique (pulse)",
+                "DO": "",
+                "AI": "Transmetteur de pression 4-20mA",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Indicateur du volume du débit par l'envoi d'une impulsion",
+                        "Impulsion par unité de volume définie dans les paramètres de l'élément",
+                        "Incrémentation du compteur"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    [
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "PMI",
+                    "Lorsque la somme des impulsions atteint le seuil limite haut"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "2007": {
+        "IO": {
+            "DI": 1,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Envoi d'un signal numérique",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Indicateur de débit volumique",
+                        "Déclenchement lorsque la limite de débit est atteinte",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "PMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "2008": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 1,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "Transmetteur de température 4-20mA",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    [
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_signal_[TAG]",
+                    "TMI",
+                    "Affichage d'un avertissement"
+                ],
+                [
+                    "def_SL_[TAG]",
+                    "PMI",
+                    "Affichage d'un avertissement"
+                ],
+                [
+                    "def_SLL_[TAG]",
+                    "PMA",
+                    "Retour à l'etat par défaut"
+                ],
+                [
+                    "def_SH_[TAG]",
+                    "PMI",
+                    "Affichage d'un avertissement"
+                ],
+                [
+                    "def_SHH_[TAG]",
+                    "PMA",
+                    "Retour à l'etat par défaut"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": "FB001"
+    },
+    "2009": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 1
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": "Capteur de température (PT100)"
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    [
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel"
+                    ]
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_signal_[TAG]",
+                    "TMI",
+                    "Affichage d'un avertissement"
+                ],
+                [
+                    "def_SL_[TAG]",
+                    "PMI",
+                    "Affichage d'un avertissement"
+                ],
+                [
+                    "def_SLL_[TAG]",
+                    "PMA",
+                    "Retour à l'etat par défaut"
+                ],
+                [
+                    "def_SH_[TAG]",
+                    "PMI",
+                    "Affichage d'un avertissement"
+                ],
+                [
+                    "def_SHH_[TAG]",
+                    "PMA",
+                    "Retour à l'etat par défaut"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": "FB001"
+    },
+    "2010": {
+        "IO": {
+            "DI": 1,
+            "DO": 0,
+            "AI": 1,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Envoi d'un signal numérique",
+                "DO": "",
+                "AI": "Transmetteur de température 4-20mA",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Indicateur du niveau de température",
+                        "Déclenchement lorsque le niveau de température est atteint",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    [
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "PMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "2011": {
+        "IO": {
+            "DI": 1,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Envoi d'un signal numérique",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Indicateur du niveau de température",
+                        "Déclenchement lorsque le niveau de température est atteint",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "PMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "2012": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 1,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "Transmetteur d'humidité",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    [
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_signal_[TAG]",
+                    "TMI",
+                    "Affichage d'un avertissement"
+                ],
+                [
+                    "def_SL_[TAG]",
+                    "PMI",
+                    "Affichage d'un avertissement"
+                ],
+                [
+                    "def_SLL_[TAG]",
+                    "PMA",
+                    "Retour à l'etat par défaut"
+                ],
+                [
+                    "def_SH_[TAG]",
+                    "PMI",
+                    "Affichage d'un avertissement"
+                ],
+                [
+                    "def_SHH_[TAG]",
+                    "PMA",
+                    "Retour à l'etat par défaut"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": "FB001"
+    },
+    "2013": {
+        "IO": {
+            "DI": 1,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Envoi d'un signal numérique",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Indicateur de niveau d'eau",
+                        "Déclenchement lorsque le niveau d'eau atteint la limite haute/basse.",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "PMA",
+                    "Lorsque le niveau d'eau atteint la limite très élevée à l'intérieur du réservoir."
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "2014": {
+        "IO": {
+            "DI": 1,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Impulsions du compteur d'eau",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Impulsions du compteur d'eau",
+                        "Impulsion par unité de volume définie dans le compteur d'eau",
+                        "Incrémentation du compteur"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "Défaut de seuil",
+                    "PMI",
+                    "Lorsque la somme des impulsions atteint un nombre limite défini"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "2015": {
+        "IO": {
+            "DI": 1,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Impulsion du compteur d'énergie thermique",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Impulsions du compteur d'eau",
+                        "Impulsion par unité de volume définie dans le compteur d'énergie thermique",
+                        "Incrémentation du compteur"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "Défaut de seuil",
+                    "PMI",
+                    "Lorsque la somme des impulsions atteint un nombre limite défini"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "2016": {
+        "IO": {
+            "DI": 1,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Impulsion du compteur électrique",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Impulsion du compteur électrique",
+                        "Impulsion par unité de puissance définie dans le compteur électrique",
+                        "Incrémentation du compteur"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "Défaut de seuil",
+                    "PMI",
+                    "Lorsque la somme des impulsions atteint un nombre limite défini"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "2017": {
+        "IO": {
+            "DI": 1,
+            "DO": 0,
+            "AI": 1,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Envoi d'un signal numérique",
+                "DO": "",
+                "AI": "Transmetteur de pression 4-20mA",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Indicateur du niveau de température",
+                        "Déclenchement lorsque le niveau de température est atteint",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    [
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel",
+                        "Géré par bloc fonctionnel"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "PMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "3001": {
+        "IO": {
+            "DI": 1,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Informations sur le défaut du refroidisseur",
+                "DO": "Odre de marche du refroidisseur",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Defaut refroidisseur",
+                        "Chilleur output fault",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Demarrage du refroidisseur",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarre le chilleur"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Chilleur",
+        "FunctionBloc": false
+    },
+    "3016": {
+        "IO": {
+            "DI": 1,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Info défauts sécheur",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut du sécheur frigorifique",
+                        "Sortie défaut du sécheur frigorifique",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Sécheur frigorifique",
+        "FunctionBloc": false
+    },
+    "3002": {
+        "IO": {
+            "DI": 1,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Info défauts sécheur",
+                "DO": "Ordre de démarrage du sécheur",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut du sécheur frigorifique",
+                        "Sortie défaut du sécheur frigorifique",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Démarrage du sécheur",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarre le sécheur"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Sécheur frigorifique",
+        "FunctionBloc": false
+    },
+    "3003": {
+        "IO": {
+            "DI": 1,
+            "DO": 1,
+            "AI": 1,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Info défauts sécheur",
+                "DO": "Ordre de démarrage du sécheur",
+                "AI": "Transmetteur d'humidité 4-20mA",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut du sécheur frigorifique",
+                        "Sortie défaut du sécheur frigorifique",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Démarrage du sécheur",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarre le sécheur"
+                    ]
+                ],
+                "AI": [
+                    [
+                        "Informations sur l'hygrométrie",
+                        "Envoi d'un signal analogique par le sécheur",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ],
+                [
+                    "def_[TAG]",
+                    "PMI",
+                    "Le taux d'humidité dans l'air qui traverse le sécheur est supérieure à la limite"
+                ]
+            ]
+        },
+        "ConsumerName": "Sécheur frigorifique",
+        "FunctionBloc": false
+    },
+    "3017": {
+        "IO": {
+            "DI": 1,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Info défauts sécheur",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut du sécheur à adsorption",
+                        "Sortie défaut du sécheur par adsorption",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Sécheur par adsorption",
+        "FunctionBloc": false
+    },
+    "3004": {
+        "IO": {
+            "DI": 1,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Info défauts sécheur",
+                "DO": "Ordre de démarrage du sécheur",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut du sécheur à adsorption",
+                        "Sortie défaut du sécheur par adsorption",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Démarrage du sécheur",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarre le sécheur"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Sécheur par adsorption",
+        "FunctionBloc": false
+    },
+    "3005": {
+        "IO": {
+            "DI": 1,
+            "DO": 2,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Info défauts sécheur",
+                "DO": [
+                    "Démarrage du sécheur + Mode économique",
+                    "Ordre de démarrage du sécheur"
+                ],
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut du sécheur à adsorption",
+                        "Sortie défaut du sécheur par adsorption",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Démarrage du sécheur",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarre le sécheur"
+                    ],
+                    [
+                        "Mode économique",
+                        "Activation de la sortie numérique de l'automate",
+                        "Demarrage du sécheur en mode économique"
+                    ]
+                ],
+                "AI": [
+                    [
+                        "Informations sur l'hygrométrie",
+                        "Envoi d'un signal analogique par le sécheur",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Sécheur par adsorption",
+        "FunctionBloc": false
+    },
+    "3006": {
+        "IO": {
+            "DI": 1,
+            "DO": 1,
+            "AI": 1,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Info défauts sécheur",
+                "DO": "Ordre de démarrage du sécheur",
+                "AI": "Transmetteur d'humidité 4-20mA",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut du sécheur à adsorption",
+                        "Sortie défaut du sécheur par adsorption",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Démarrage du sécheur",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarre le sécheur"
+                    ]
+                ],
+                "AI": [
+                    [
+                        "Informations sur l'hygrométrie",
+                        "Envoi d'un signal analogique par le sécheur",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ],
+                [
+                    "def_[TAG]",
+                    "PMI",
+                    "Le taux d'humidité dans l'air qui traverse le sécheur est supérieure à la limite"
+                ]
+            ]
+        },
+        "ConsumerName": "Sécheur par adsorption",
+        "FunctionBloc": false
+    },
+    "3007": {
+        "IO": {
+            "DI": 1,
+            "DO": 2,
+            "AI": 1,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Info défauts sécheur",
+                "DO": [
+                    "Démarrage du sécheur + Mode économique",
+                    "Ordre de démarrage du sécheur"
+                ],
+                "AI": "Transmetteur d'humidité 4-20mA",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut du sécheur à adsorption",
+                        "Sortie défaut du sécheur par adsorption",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Démarrage du sécheur",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarre le sécheur"
+                    ],
+                    [
+                        "Mode économique",
+                        "Activation de la sortie numérique de l'automate",
+                        "Demarrage du sécheur en mode économique"
+                    ]
+                ],
+                "AI": [
+                    [
+                        "Informations sur l'hygrométrie",
+                        "Envoi d'un signal analogique par le sécheur",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Sécheur par adsorption",
+        "FunctionBloc": false
+    },
+    "3008": {
+        "IO": {
+            "DI": 1,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Info sur le défaut du séparateur de condensat",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut du séparateur de condensat",
+                        "Sortie défaut du séparateur de condensat",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Bekosplit",
+        "FunctionBloc": false
+    },
+    "3009": {
+        "IO": {
+            "DI": 0,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "Démarrage du réchauffeur",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    [
+                        "Ordre de démarrage du réchauffeur",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarre le réchauffeur"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": "Réchauffeur",
+        "FunctionBloc": false
+    },
+    "3010": {
+        "IO": {
+            "DI": 0,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "Démarrage du réchauffeur",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    [
+                        "Ordre de démarrage du réchauffeur",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarre le réchauffeur"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": "réchauffeur",
+        "FunctionBloc": false
+    },
+    "3011": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": "Purgeur",
+        "FunctionBloc": false
+    },
+    "3012": {
+        "IO": {
+            "DI": 1,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Info sur les défauts du purgeur",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut de purgeur",
+                        "Sortie défaut purgeur",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Purgeur",
+        "FunctionBloc": false
+    },
+    "3013": {
+        "IO": {
+            "DI": 0,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "Ordre de démarrage du purgeur",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    [
+                        "Ordre de démarrage du purgeur",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarre le Purgeur"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": "Purgeur",
+        "FunctionBloc": false
+    },
+    "3014": {
+        "IO": {
+            "DI": 1,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Info sur les défauts du purgeur",
+                "DO": "Ordre de démarrage du purgeur",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut de purgeur",
+                        "Sortie défaut purgeur",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Ordre de démarrage du purgeur",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarre le Purgeur"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Purgeur",
+        "FunctionBloc": false
+    },
+    "3015": {
+        "IO": {
+            "DI": 1,
+            "DO": 1,
+            "AI": 0,
+            "AO": 1,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Informations sur les défauts du réchauffeur",
+                "DO": "Ordre de démarrage du réchauffeur",
+                "AI": "",
+                "AO": "Pilote le réchauffeur",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut du réchauffeur",
+                        "Sortie défaut du réchauffeur",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Ordre de démarrage du réchauffeur",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarrer le réchauffeur"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    [
+                        "Pilote la temperature du réchauffeur",
+                        "Activation de la sortie analogique du PLC",
+                        "Pilote la température"
+                    ]
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Réchauffeur",
+        "FunctionBloc": false
+    },
+    "4001": {
+        "IO": {
+            "DI": 0,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "Ordre d'ouverture de la vanne",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    [
+                        "Ordre d'ouverture de la vanne",
+                        "Activation de la sortie numérique de l'automate",
+                        "Ouvre la vanne"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4002": {
+        "IO": {
+            "DI": 2,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": [
+                    "Retour de position de la vanne",
+                    "Retour de position de la vanne"
+                ],
+                "DO": "Ordre d'ouverture de la vanne",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Retour de position de la vanne (OUVERT)",
+                        "Vanne ouverte",
+                        "Obtenir un retour d'information sur la position et activer les défauts"
+                    ],
+                    [
+                        "Retour de position de la vanne (FERME)",
+                        "Vanne fermée",
+                        "Obtenir un retour d'information sur la position et activer les défauts"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Ordre d'ouverture de la vanne",
+                        "Activation de la sortie numérique de l'automate",
+                        "Ouvre la vanne"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "Def_anomalie_ouverture_vanne",
+                    "TMA",
+                    "Entrée PLC activée après 3 secondes"
+                ],
+                [
+                    "Def_anomalie_fermeture_vanne",
+                    "TMA",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4003": {
+        "IO": {
+            "DI": 0,
+            "DO": 2,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": [
+                    "Ordre d'ouverture de la vanne",
+                    "Valve close order"
+                ],
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    [
+                        "Ordre d'ouverture de la vanne",
+                        "Activation de la sortie numérique de l'automate",
+                        "Ouvre la vanne"
+                    ],
+                    [
+                        "Closing valve order",
+                        "Activation de la sortie numérique de l'automate",
+                        "Close the valve"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [],
+                []
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4004": {
+        "IO": {
+            "DI": 2,
+            "DO": 2,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": [
+                    "Retour de position de la vanne",
+                    "Retour de position de la vanne"
+                ],
+                "DO": [
+                    "Ordre d'ouverture de la vanne",
+                    "Valve close order"
+                ],
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Retour de position de la vanne (open)",
+                        "Vanne ouverte",
+                        "Obtenir un retour d'information sur la position et activer les défauts"
+                    ],
+                    [
+                        "Retour de position de la vanne (close)",
+                        "Vanne fermée",
+                        "Obtenir un retour d'information sur la position et activer les défauts"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Ordre d'ouverture de la vanne",
+                        "Activation de la sortie numérique de l'automate",
+                        "Ouvre la vanne"
+                    ],
+                    [
+                        "Closing valve order",
+                        "Activation de la sortie numérique de l'automate",
+                        "Close the valve"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "Def_anomalie_ouverture_vanne",
+                    "TMA",
+                    "Entrée PLC activée après 3 secondes"
+                ],
+                [
+                    "Def_anomalie_fermeture_vanne",
+                    "TMA",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4005": {
+        "IO": {
+            "DI": 0,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "Ordre d'ouverture de la vanne",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    [
+                        "Ordre d'ouverture de la vanne",
+                        "Activation de la sortie numérique de l'automate",
+                        "Ouvre la vanne"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4006": {
+        "IO": {
+            "DI": 2,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": [
+                    "Retour de position de la vanne",
+                    "Retour de position de la vanne"
+                ],
+                "DO": "Ordre d'ouverture de la vanne",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Retour de position de la vanne (open)",
+                        "Vanne ouverte",
+                        "Obtenir un retour d'information sur la position et activer les défauts"
+                    ],
+                    [
+                        "Retour de position de la vanne (close)",
+                        "Vanne fermée",
+                        "Obtenir un retour d'information sur la position et activer les défauts"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Ordre d'ouverture de la vanne",
+                        "Activation de la sortie numérique de l'automate",
+                        "Ouvre la vanne"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "Def_anomalie_ouverture_vanne",
+                    "TMA",
+                    "Entrée PLC activée après 3 secondes"
+                ],
+                [
+                    "Def_anomalie_fermeture_vanne",
+                    "TMA",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4007": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 0,
+            "AO": 1,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "Pilotage de la vanne",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    [
+                        "Odre de pilotage de la vanne",
+                        "Activation de la sortie analogique du PLC",
+                        "Pilotage de la vanne"
+                    ]
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4008": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 1,
+            "AO": 1,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "Retour de position",
+                "AO": "Pilotage de la vanne",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    [
+                        "Retour de position de la vanne",
+                        "Valve position",
+                        "Obtenir un retour d'information sur la position et activer les défauts"
+                    ]
+                ],
+                "AO": [
+                    [
+                        "Odre de pilotage de la vanne",
+                        "Activation de la sortie analogique du PLC",
+                        "Pilotage de la vanne"
+                    ]
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "Def_anomalie_position_vanne",
+                    "TMA",
+                    "Déclenchement du comparateur de valeurs sur le PLC"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4009": {
+        "IO": {
+            "DI": 0,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "Ordre d'ouverture de la vanne",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    [
+                        "Ordre d'ouverture de la vanne",
+                        "Activation de la sortie numérique de l'automate",
+                        "Ouvre la vanne"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4010": {
+        "IO": {
+            "DI": 2,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": [
+                    "Retour de position de la vanne",
+                    "Retour de position de la vanne"
+                ],
+                "DO": "Ordre d'ouverture de la vanne",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Retour de position de la vanne (open)",
+                        "Vanne ouverte",
+                        "Obtenir un retour d'information sur la position et activer les défauts"
+                    ],
+                    [
+                        "Retour de position de la vanne (close)",
+                        "Vanne fermée",
+                        "Obtenir un retour d'information sur la position et activer les défauts"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Ordre d'ouverture de la vanne",
+                        "Activation de la sortie numérique de l'automate",
+                        "Ouvre la vanne"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "Def_anomalie_ouverture_vanne",
+                    "TMA",
+                    "Entrée PLC activée après 3 secondes"
+                ],
+                [
+                    "Def_anomalie_fermeture_vanne",
+                    "TMA",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4011": {
+        "IO": {
+            "DI": 0,
+            "DO": 2,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": [
+                    "Ordre d'ouverture de la vanne",
+                    "Valve close order"
+                ],
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    [
+                        "Ordre d'ouverture de la vanne",
+                        "Activation de la sortie numérique de l'automate",
+                        "Ouvre la vanne"
+                    ],
+                    [
+                        "Closing valve order",
+                        "Activation de la sortie numérique de l'automate",
+                        "Close the valve"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [],
+                []
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4012": {
+        "IO": {
+            "DI": 2,
+            "DO": 2,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": [
+                    "Retour de position de la vanne",
+                    "Retour de position de la vanne"
+                ],
+                "DO": [
+                    "Ordre d'ouverture de la vanne",
+                    "Valve close order"
+                ],
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Retour de position de la vanne (open)",
+                        "Vanne ouverte",
+                        "Obtenir un retour d'information sur la position et activer les défauts"
+                    ],
+                    [
+                        "Retour de position de la vanne (close)",
+                        "Vanne fermée",
+                        "Obtenir un retour d'information sur la position et activer les défauts"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Ordre d'ouverture de la vanne",
+                        "Activation de la sortie numérique de l'automate",
+                        "Ouvre la vanne"
+                    ],
+                    [
+                        "Closing valve order",
+                        "Activation de la sortie numérique de l'automate",
+                        "Close the valve"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "Def_anomalie_ouverture_vanne",
+                    "TMA",
+                    "Entrée PLC activée après 3 secondes"
+                ],
+                [
+                    "Def_anomalie_fermeture_vanne",
+                    "TMA",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4013": {
+        "IO": {
+            "DI": 0,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "Ordre d'ouverture de la vanne",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    [
+                        "Ordre d'ouverture de la vanne",
+                        "Activation de la sortie numérique de l'automate",
+                        "Ouvre la vanne"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4014": {
+        "IO": {
+            "DI": 2,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": [
+                    "Retour de position de la vanne",
+                    "Retour de position de la vanne"
+                ],
+                "DO": "Ordre d'ouverture de la vanne",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Retour de position de la vanne (open)",
+                        "Vanne ouverte",
+                        "Obtenir un retour d'information sur la position et activer les défauts"
+                    ],
+                    [
+                        "Retour de position de la vanne (close)",
+                        "Vanne fermée",
+                        "Obtenir un retour d'information sur la position et activer les défauts"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Ordre d'ouverture de la vanne",
+                        "Activation de la sortie numérique de l'automate",
+                        "Ouvre la vanne"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "Def_anomalie_ouverture_vanne",
+                    "TMA",
+                    "Entrée PLC activée après 3 secondes"
+                ],
+                [
+                    "Def_anomalie_fermeture_vanne",
+                    "TMA",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4015": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 0,
+            "AO": 1,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "Pilotage de la vanne",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    [
+                        "Odre de pilotage de la vanne",
+                        "Activation de la sortie analogique du PLC",
+                        "Pilotage de la vanne"
+                    ]
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4016": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 1,
+            "AO": 1,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "Retour de position",
+                "AO": "Pilotage de la vanne",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    [
+                        "Retour de position de la vanne",
+                        "Valve position",
+                        "Obtenir un retour d'information sur la position et activer les défauts"
+                    ]
+                ],
+                "AO": [
+                    [
+                        "Odre de pilotage de la vanne",
+                        "Activation de la sortie analogique du PLC",
+                        "Pilotage de la vanne"
+                    ]
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "Def_anomalie_position_vanne",
+                    "TMA",
+                    "Déclenchement du comparateur de valeurs sur le PLC"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4017": {
+        "IO": {
+            "DI": 0,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "Ordre d'ouverture du volet",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    [
+                        "Ordre d'ouverture du volet",
+                        "Activation de la sortie numérique de l'automate",
+                        "Ouverture du volet"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4018": {
+        "IO": {
+            "DI": 2,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": [
+                    "Retour de position du volet",
+                    "Retour de position du volet"
+                ],
+                "DO": "Ordre d'ouverture du volet",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Retour de position du volet (OUVERT)",
+                        "Volet ouvert",
+                        "Obtenir un retour d'information sur la position et activer les défauts"
+                    ],
+                    [
+                        "Retour de position du volet (FERME)",
+                        "Volet fermé",
+                        "Obtenir un retour d'information sur la position et activer les défauts"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Odre d'ouverture du volet",
+                        "Activation de la sortie numérique de l'automate",
+                        "Ouvre le volet"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "Def_anomalie_ouverture_volet",
+                    "TMA",
+                    "Entrée PLC activée après 3 secondes"
+                ],
+                [
+                    "Def_anomalie_fermeture_volet",
+                    "TMA",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4019": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 0,
+            "AO": 1,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "Pilotage du volet",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    [
+                        "Pilotage du volet",
+                        "Activation de la sortie analogique du PLC",
+                        "Mouvement du volet"
+                    ]
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4020": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 1,
+            "AO": 1,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "Retour de position",
+                "AO": "Pilotage du volet",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    [
+                        "Retour de position du volet",
+                        "Position du volet",
+                        "Obtenir un retour d'information sur la position et activer les défauts"
+                    ]
+                ],
+                "AO": [
+                    [
+                        "Pilotage du volet",
+                        "Activation de la sortie analogique du PLC",
+                        "Pilotage du volet"
+                    ]
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "Def_anomalie_position_volet",
+                    "TMA",
+                    "Déclenchement du comparateur de valeurs sur le PLC"
+                ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4021": {
+        "IO": {
+            "DI": 0,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "Ordre d'ouverture de la vanne",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    [
+                        "Ordre d'ouverture de la vanne",
+                        "Activation de la sortie numérique de l'automate",
+                        "Ouvre la vanne"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "5001": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 2,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": [
+                    "WIP",
+                    "WIP"
+                ],
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": "ULTRAMAT",
+        "FunctionBloc": false
+    },
+    "5002": {
+        "IO": {
+            "DI": 2,
+            "DO": 0,
+            "AI": 2,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": [
+                    "WIP",
+                    "WIP"
+                ],
+                "DO": "",
+                "AI": [
+                    "WIP",
+                    "WIP"
+                ],
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": "VAR-18",
+        "FunctionBloc": false
+    },
+    "5003": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 1,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "WIP",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": "Analyseur d'oxygène",
+        "FunctionBloc": false
+    },
+    "6001": {
+        "IO": {
+            "DI": 6,
+            "DO": 2,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": [
+                    "Fonctionnement du compresseur",
+                    "Fonctionnement en charge",
+                    "Moteur en marche",
+                    "Synthèse d'alerte",
+                    "Synthèse d'alarme",
+                    "locale / distance"
+                ],
+                "DO": [
+                    "Activation de la charge à distance",
+                    "Contrôle de la charge"
+                ],
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Compresseur en marche",
+                        "Le compresseur est prêt",
+                        "Indique que le compresseur est opérationnel"
+                    ],
+                    [
+                        "Fonctionnement en charge",
+                        "Fonctionnement du compresseur",
+                        "Indique que le compresseur fonctionne"
+                    ],
+                    [
+                        "Moteur en fonctionnement",
+                        "Moteur du compresseur en fonctionnement",
+                        "Indique que le moteur du compresseur est en fonctionnement"
+                    ],
+                    [
+                        "Synthèse des avertissements",
+                        "Problème technique ou de dépassement de seuil sans arrêt de l'équipement",
+                        "Activation d'un défaut"
+                    ],
+                    [
+                        "Synthèse d'alarme",
+                        "Problème technique ou de dépassement de seuil avec arrêt de l'équipement",
+                        "Activation d'un défaut"
+                    ],
+                    [
+                        "Commande locale/à distance",
+                        "Dépend du choix de l'opérateur",
+                        "Laisser le compresseur s'autogérer ou non"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Activation de la charge à distance",
+                        "Activation de la sortie numérique de l'automate",
+                        "Laisser l'autorisation de gestion de la charge au logiciel externe"
+                    ],
+                    [
+                        "Contrôle de la charge",
+                        "Activation de la sortie numérique de l'automate",
+                        "Piloter la charge"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "Def_avertissement_compresseur_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ],
+                [
+                    "Def_alarme_compresseur_[TAG]",
+                    "TMA",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Compresseur à débit fixe",
+        "FunctionBloc": false
+    },
+    "6002": {
+        "IO": {
+            "DI": 6,
+            "DO": 2,
+            "AI": 2,
+            "AO": 2,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": [
+                    "Fonctionnement du compresseur",
+                    "Fonctionnement en charge",
+                    "Moteur en marche",
+                    "Synthèse d'alerte",
+                    "Synthèse d'alarme",
+                    "locale / distance"
+                ],
+                "DO": [
+                    "Activation de la charge à distance",
+                    "Contrôle de la charge"
+                ],
+                "AI": [
+                    "WIP",
+                    "WIP"
+                ],
+                "AO": [
+                    "WIP",
+                    "WIP"
+                ],
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Compresseur en marche",
+                        "Le compresseur est prêt",
+                        "Indique que le compresseur est opérationnel"
+                    ],
+                    [
+                        "Fonctionnement en charge",
+                        "Fonctionnement du compresseur",
+                        "Indique que le compresseur fonctionne"
+                    ],
+                    [
+                        "Moteur en fonctionnement",
+                        "Moteur du compresseur en fonctionnement",
+                        "Indicates that the Moteur du compresseur en fonctionnement"
+                    ],
+                    [
+                        "Synthèse des avertissements",
+                        "Problème technique ou de dépassement de seuil sans arrêt de l'équipement",
+                        "Activation d'un défaut"
+                    ],
+                    [
+                        "Synthèse d'alarme",
+                        "Problème technique ou de dépassement de seuil avec arrêt de l'équipement",
+                        "Activation d'un défaut"
+                    ],
+                    [
+                        "Commande locale/à distance",
+                        "Dépend du choix de l'opérateur",
+                        "Laisser le compresseur s'autogérer ou non"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Activation de la charge à distance",
+                        "Activation de la sortie numérique de l'automate",
+                        "Laisser l'autorisation de gestion de la charge au logiciel externe"
+                    ],
+                    [
+                        "Contrôle de la charge",
+                        "Activation de la sortie numérique de l'automate",
+                        "Piloter la charge"
+                    ]
+                ],
+                "AI": [
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
+                ],
+                "AO": [
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "Def_avertissement_compresseur_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ],
+                [
+                    "Def_alarme_compresseur_[TAG]",
+                    "TMA",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Compresseur à débit variable",
+        "FunctionBloc": false
+    },
+    "6003": {
+        "IO": {
+            "DI": 1,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Info défaut compresseur",
+                "DO": "Ordre de démarrage du compresseur",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut du compresseur",
+                        "Défaut sortie compresseur",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Démarrage du compresseur",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarrer le compresseur"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Compresseur standard",
+        "FunctionBloc": false
+    },
+    "6004": {
+        "IO": {
+            "DI": 2,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": [
+                    "Info défaut du compresseur",
+                    "WIP"
+                ],
+                "DO": "Ordre de démarrage du compresseur",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut du compresseur",
+                        "Défaut sortie compresseur",
+                        "Activation d'un défaut"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Démarrage du compresseur",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarrer le compresseur"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Compresseur standard",
+        "FunctionBloc": false
+    },
+    "6005": {
+        "IO": {
+            "DI": 1,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Info sur le défaut du booster",
+                "DO": "Ordre de démarrage du booster",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut du booster",
+                        "Défaut sortie Booster",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Démarrage du booster",
+                        "Activation de la sortie numérique du booster",
+                        "Démarrage du booster"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Booster",
+        "FunctionBloc": false
+    },
+    "6006": {
+        "IO": {
+            "DI": 0,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "Ordre de démarrage du ventilateur",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    [
+                        "Démarrage du ventilateur",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarrer le ventilateur"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": "ventilateur",
+        "FunctionBloc": false
+    },
+    "6007": {
+        "IO": {
+            "DI": 1,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Info sur le défaut de la pompe à eau",
+                "DO": "Ordre de démarrage de la pompe à eau",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut pompe à eau",
+                        "Défaut de sortie de pompe à eau",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Démarrage de la pompe à eau",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarrer la pompe à eau"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Pompe à eau",
+        "FunctionBloc": false
+    },
+    "6008": {
+        "IO": {
+            "DI": 1,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Info sur le défaut de la pompe à vide",
+                "DO": "Odre de demarrage de la pompe à vide",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut de vide",
+                        "Défaut de sortie de vide",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Démarrage du vide",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarrage du vide"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Pompe à vide",
+        "FunctionBloc": false
+    },
+    "6009": {
+        "IO": {
+            "DI": 1,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Info defaut du ventillateur",
+                "DO": "Ordre de démarrage du ventilateur",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Defaut du ventillateur",
+                        "Sortie defaut du ventillateur",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Démarrage du ventilateur",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarrer le ventilateur"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "ventilateur",
+        "FunctionBloc": false
+    },
+    "7001": {
+        "IO": {
+            "DI": 1,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "Entrée TOR spécial",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Special",
+                        "Ajout ponctuel",
+                        "******"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "7002": {
+        "IO": {
+            "DI": 0,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "Sortie TOR spécial",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    [
+                        "Special",
+                        "Ajout ponctuel",
+                        "******"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "7003": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 1,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "Entrée analogique special",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [],
+                "AI": [
+                    [
+                        "Special",
+                        "Ajout ponctuel",
+                        "******"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "7004": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 1
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": "Entrée température spécial"
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    [
+                        "Special",
+                        "Ajout ponctuel",
+                        "******"
+                    ]
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "7005": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 0,
+            "AO": 1,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "",
+                "AO": "Sortie analogique special",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    [
+                        "Special",
+                        "Ajout ponctuel",
+                        "******"
+                    ]
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    }
+}

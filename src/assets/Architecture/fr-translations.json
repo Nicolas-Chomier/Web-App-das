@@ -3,9 +3,9 @@
         "docTitle": "Architecture materielle pour le projet : @",
         "hmiTitle": "Présentation de l'IHM @",
         "hmiText": "Schéma d'implantation de l'IHM choisit",
-        "plcTitle": "Architecture matérielle pour le projet : £",
+        "plcTitle": "Architecture matérielle pour le projet : @",
         "subTitle": "@",
-        "plcText": "Ce chapitre détaille l'architecture complète de l'installation pour le projet : @",
+        "plcText": "Ce chapitre détaille l'architecture complète de cette l'installation.",
         "docName": "ARCH"
     }
 }

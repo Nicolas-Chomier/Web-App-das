@@ -25,16 +25,16 @@ import { footer } from "../shared/js/DocumentFooter";
  * @param rawAbstract = Datas from FRONT END
  * @param tongue = Printable language choosen by user
  */
-export function documentConstructorForArchitecture(rawAbstract, country) {
+export function documentConstructorForArchitecture(rawAbstract, flag) {
   //* Import
-  import(`./${country}-translations.json`)
+  import(`./${flag}-translations.json`)
     .catch(() => import("./fr-translations.json"))
     .then(({ core }) => {
       const translate = JSON.parse(JSON.stringify(core));
       // Class draft
-      const Make = new MainDataCreator(rawAbstract);
+      const Make = new MainDataCreator(rawAbstract, flag);
+      const Get = new ARCHBuilder(rawAbstract, flag);
       const Write = new DocxJsMethods(rawAbstract);
-      const Get = new ARCHBuilder(rawAbstract);
       const fromProviderDatas = new Proface(rawAbstract);
       // General & project const declaration
       const projectTitle = Make.projectTitle(true);

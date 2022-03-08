@@ -1,5 +1,5 @@
 import proface from "../shared/providerInfos/proface.json";
-import privates from "../shared/Private/elementDataSet.json";
+//import privates from "../shared/Private/elementDataSet.json";
 //
 import { Buffer } from "buffer";
 import { Table, TableRow, TableCell } from "docx";
@@ -8,10 +8,11 @@ import { VerticalAlign, WidthType } from "docx";
 import { ImageRun } from "docx";
 //
 const profaceDatas = JSON.parse(JSON.stringify(proface));
-const privateDatas = JSON.parse(JSON.stringify(privates));
+//const privateDatas = JSON.parse(JSON.stringify(privates));
 
 class MainToolsBox {
-  constructor(rawAbstract) {
+  constructor(rawAbstract, flag) {
+    this.privateDatas = require(`../shared/Private/${flag}-elementDataSet.json`);
     this.infosElement = rawAbstract.Elements;
     this.emptyIoListModel = { DI: 0, DO: 0, AI: 0, AO: 0, AIt: 0 };
     this.projectTitle = rawAbstract.Project.Title;
@@ -27,6 +28,10 @@ class MainToolsBox {
  * + Class used for build quotation document
  */
 export class QTSBuilder extends MainToolsBox {
+  constructor(rawAbstract, flag) {
+    super(rawAbstract, flag);
+    this.aaa = "";
+  }
   /**
    * @param source pre-formatted empty table with the same format of return
    * @returns [["string"],["string","string"],["string","string"]...]
@@ -71,8 +76,8 @@ export class QTSBuilder extends MainToolsBox {
  * + Class used for build AF document
  */
 export class AFBuilder extends MainToolsBox {
-  constructor(rawAbstract) {
-    super(rawAbstract);
+  constructor(rawAbstract, flag) {
+    super(rawAbstract, flag);
     this.cmdCtrlRow1 = [
       "DESIGNATION",
       "TYPE",
@@ -99,14 +104,16 @@ export class AFBuilder extends MainToolsBox {
       const table = [];
       const id = item[0];
       const tag = item[1];
-      if (privateDatas[id]["FunctionBloc"] === false) {
+      if (this.privateDatas[id]["FunctionBloc"] === false) {
         table.push([tag]);
         table.push(this.cmdCtrlRow1);
-        for (const [key, value] of Object.entries(privateDatas[id]["IO"])) {
+        for (const [key, value] of Object.entries(
+          this.privateDatas[id]["IO"]
+        )) {
           for (let i = 0; i < value; i++) {
-            const size = privateDatas[id]["AF"][flag][key][i].length;
+            const size = this.privateDatas[id]["AF"][flag][key][i].length;
             if (size !== 0) {
-              const data = privateDatas[id]["AF"][flag][key][i];
+              const data = this.privateDatas[id]["AF"][flag][key][i];
               table.push(this.buildCompleteArray(i, key, data));
               // Attention ! Erreur possible si IOList ne correspond pas avec la taille de la liste de liste de text correspondante
             }
@@ -127,7 +134,7 @@ export class AFBuilder extends MainToolsBox {
     return newData;
   }
   checkFb(id) {
-    const checkFb = privateDatas[id]["FunctionBloc"];
+    const checkFb = this.privateDatas[id]["FunctionBloc"];
     return checkFb;
   }
   /** */
@@ -137,16 +144,14 @@ export class AFBuilder extends MainToolsBox {
       const table = [];
       const id = item[0];
       const tag = item[1];
-      const size = privateDatas[id]["FAULTS"][flag][0].length;
-      if (privateDatas[id]["FunctionBloc"] === false) {
-        if (size !== 0) {
-          table.push([tag]);
-          table.push(this.faultRow1);
-          for (let i = 0; i < privateDatas[id]["FAULTS"][flag].length; i++) {
-            table.push(privateDatas[id]["FAULTS"][flag][i]);
-          }
-          tensor.push(table);
+      const size = this.privateDatas[id]["FAULTS"][flag][0].length;
+      if (this.privateDatas[id]["FunctionBloc"] === false && size !== 0) {
+        table.push([tag]);
+        table.push(this.faultRow1);
+        for (let i = 0; i < this.privateDatas[id]["FAULTS"][flag].length; i++) {
+          table.push(this.privateDatas[id]["FAULTS"][flag][i]);
         }
+        tensor.push(table);
       } else {
         tensor.push(table);
       }
@@ -157,14 +162,13 @@ export class AFBuilder extends MainToolsBox {
   faultsTableOverviewFor(source, target, flag) {
     const table = [];
     if (Array.isArray(source) && source.length !== 0) {
-      const table = [];
       table.push([target]);
       table.push(this.faultTableOverview);
       for (const item of source) {
         const id = item[0];
         const tag = item[1];
-        const faults = privateDatas[id]["FAULTS"][flag];
-        const fb = privateDatas[id]["FunctionBloc"];
+        const faults = this.privateDatas[id]["FAULTS"][flag];
+        const fb = this.privateDatas[id]["FunctionBloc"];
         for (const fault of faults) {
           if (target === fault[1]) {
             const newTag = fault[0].replace("TAG", tag);
@@ -182,8 +186,8 @@ export class AFBuilder extends MainToolsBox {
  * + Class used for build Architecture document
  */
 export class ARCHBuilder extends MainToolsBox {
-  constructor(rawAbstract) {
-    super(rawAbstract);
+  constructor(rawAbstract, flag) {
+    super(rawAbstract, flag);
     this.colorPanel = {
       DI: "9cfffa",
       DO: "f3d34a",
@@ -363,8 +367,8 @@ export class ARCHBuilder extends MainToolsBox {
  * + Class used for build IO list document
  */
 export class IOLISTBuilder extends MainToolsBox {
-  constructor(rawAbstract) {
-    super(rawAbstract);
+  constructor(rawAbstract, flag) {
+    super(rawAbstract, flag);
     this.com = "";
   }
   //
@@ -432,7 +436,7 @@ export class IOLISTBuilder extends MainToolsBox {
     return counts;
   }
   addFunc(id, key, counter, flag) {
-    const target = privateDatas[id]["Text"][flag][key];
+    const target = this.privateDatas[id]["Text"][flag][key];
     const text = typeof target === "string" ? target : target[counter - 1];
     return text;
   }

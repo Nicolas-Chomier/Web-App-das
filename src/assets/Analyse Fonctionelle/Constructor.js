@@ -35,9 +35,9 @@ export function documentConstructorForAf(rawAbstract, flag) {
         .then(({ core }) => {
           const elemInfos = JSON.parse(JSON.stringify(core));
           //* Class draft
-          const Make = new MainDataCreator(rawAbstract);
+          const Make = new MainDataCreator(rawAbstract, flag);
+          const Get = new AFBuilder(rawAbstract, flag);
           const Write = new DocxJsMethods(rawAbstract);
-          const Get = new AFBuilder(rawAbstract);
           //* General & project const declaration
           const projectTitle = Make.projectTitle(true);
           const hmiRef = Make.deviceReferenceFor("HMI", true);
@@ -54,10 +54,6 @@ export function documentConstructorForAf(rawAbstract, flag) {
           const tmiTable = Get.faultsTableOverviewFor(tagIdList, "TMI", flag);
           const pmaTable = Get.faultsTableOverviewFor(tagIdList, "PMA", flag);
           const pmiTable = Get.faultsTableOverviewFor(tagIdList, "PMI", flag);
-          const subTitleA = "Information générale";
-          const subTitleB = "Désignations et labels utilisées";
-          const subTitleC = "Contrôle et commande";
-          const subTitleD = "Défauts";
           //* Document Pattern
           const children = [];
           Write.documentTitle(translate.title1, children);
@@ -137,20 +133,20 @@ export function documentConstructorForAf(rawAbstract, flag) {
             Write.documentTitle(item, children);
             for (const [key, value] of Object.entries(tagIdObj[item])) {
               Write.documentTitle(elemInfos[key].title, children, 2);
-              Write.documentTitle(subTitleA, children, 3);
+              Write.documentTitle(translate.subTitleA, children, 3);
               Write.documentText(elemInfos[key]["A-infos"], children);
-              Write.documentTitle(subTitleB, children, 3);
+              Write.documentTitle(translate.subTitleB, children, 3);
               Write.documentText(elemInfos[key]["B-intro"], children);
               Write.documentList(elemInfos[key]["B-tags"], children);
               // c&c table
-              Write.documentTitle(subTitleC, children, 3);
+              Write.documentTitle(translate.subTitleC, children, 3);
               const ccMatrix = Get.controlAndCommandTable(value, flag);
               for (const table of ccMatrix) {
                 Write.documentTable(table, children, [], "blue", false, true);
                 Write.documentSpace(children);
               }
               // fault table
-              Write.documentTitle(subTitleD, children, 3);
+              Write.documentTitle(translate.subTitleD, children, 3);
               const ftMatrix = Get.faultTable(value, flag);
               for (const table of ftMatrix) {
                 Write.documentTable(table, children, [], "orange", false, true);

@@ -556,6 +556,10 @@
                 ""
             ]
         ],
-        "title19": "Gestion de la sécurité"
+        "title19": "Gestion de la sécurité",
+        "subTitleA": "Information générale",
+        "subTitleB": "Désignations et labels utilisées",
+        "subTitleC": "Contrôle et commande",
+        "subTitleD": "Défauts"
     }
 }

@@ -17,15 +17,15 @@ import { footer } from "../shared/js/DocumentFooter";
  * @param rawAbstract = Datas from FRONT END
  * @param tongue = Printable language choosen by user
  */
-export function documentConstructorForQts(rawAbstract, country) {
-  import(`./${country}-translations.json`)
+export function documentConstructorForQts(rawAbstract, flag) {
+  import(`./${flag}-translations.json`)
     .catch(() => import("./fr-translations.json"))
     .then(({ core }) => {
       const translate = JSON.parse(JSON.stringify(core));
       // Class draft
-      const Make = new MainDataCreator(rawAbstract);
+      const Make = new MainDataCreator(rawAbstract, flag);
+      const Get = new QTSBuilder(rawAbstract, flag);
       const Write = new DocxJsMethods(rawAbstract);
-      const Get = new QTSBuilder(rawAbstract);
       const fromProviderDatas = new Proface(rawAbstract);
       // General & project const declaration
       const projectTitle = Make.projectTitle(false);

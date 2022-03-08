@@ -9,18 +9,11 @@
         },
         "Text": {
             "uk": {
-                "DI": "spare",
-                "DO": "spare",
-                "AI": "spare",
-                "AO": "spare",
-                "AIt": "spare"
-            },
-            "fr": {
-                "DI": "spare",
-                "DO": "spare",
-                "AI": "spare",
-                "AO": "spare",
-                "AIt": "spare"
+                "DI": "Spare",
+                "DO": "Spare",
+                "AI": "Spare",
+                "AO": "Spare",
+                "AIt": "Spare"
             }
         },
         "AF": {
@@ -30,18 +23,10 @@
                 "AI": [],
                 "AO": [],
                 "AIt": []
-            },
-            "fr": {
-                "DI": [],
-                "DO": [],
-                "AI": [],
-                "AO": [],
-                "AIt": []
             }
         },
         "FAULTS": {
-            "uk": [],
-            "fr": []
+            "uk": []
         },
         "ConsumerName": false,
         "FunctionBloc": false
@@ -56,18 +41,11 @@
         },
         "Text": {
             "uk": {
-                "DI": "Reserved for project",
-                "DO": "Reserved for project",
-                "AI": "Reserved for project",
-                "AO": "Reserved for project",
-                "AIt": "Reserved for project"
-            },
-            "fr": {
-                "DI": "Reserved for project",
-                "DO": "Reserved for project",
-                "AI": "Reserved for project",
-                "AO": "Reserved for project",
-                "AIt": "Reserved for project"
+                "DI": "Reserved",
+                "DO": "Reserved",
+                "AI": "Reserved",
+                "AO": "Reserved",
+                "AIt": "Reserved"
             }
         },
         "AF": {
@@ -77,18 +55,10 @@
                 "AI": [],
                 "AO": [],
                 "AIt": []
-            },
-            "fr": {
-                "DI": [],
-                "DO": [],
-                "AI": [],
-                "AO": [],
-                "AIt": []
             }
         },
         "FAULTS": {
-            "uk": [],
-            "fr": []
+            "uk": []
         },
         "ConsumerName": false,
         "FunctionBloc": false
@@ -108,13 +78,6 @@
                 "AI": "Pressure transmitter 4-20mA",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "Pressure transmitter 4-20mA",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -127,30 +90,9 @@
                 ],
                 "AI": [
                     [
-                        "Managed by function block",
-                        "Managed by function block",
-                        "Managed by function block"
-                    ]
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    [
-                        "Managed by function block",
-                        "Managed by function block",
-                        "Managed by function block"
+                        "Managed by functional block",
+                        "Managed by functional block",
+                        "Managed by functional block"
                     ]
                 ],
                 "AO": [
@@ -166,12 +108,12 @@
                 [
                     "def_signal_[TAG]",
                     "TMI",
-                    "Warning displayed"
+                    "Display a warning"
                 ],
                 [
                     "def_SL_[TAG]",
                     "PMI",
-                    "Warning displayed"
+                    "Display a warning"
                 ],
                 [
                     "def_SLL_[TAG]",
@@ -181,34 +123,7 @@
                 [
                     "def_SH_[TAG]",
                     "PMI",
-                    "Warning displayed"
-                ],
-                [
-                    "def_SHH_[TAG]",
-                    "PMA",
-                    "Drive back installation to Default state"
-                ]
-            ],
-            "fr": [
-                [
-                    "def_signal_[TAG]",
-                    "TMI",
-                    "Warning displayed"
-                ],
-                [
-                    "def_SL_[TAG]",
-                    "PMI",
-                    "Warning displayed"
-                ],
-                [
-                    "def_SLL_[TAG]",
-                    "PMA",
-                    "Drive back installation to Default state"
-                ],
-                [
-                    "def_SH_[TAG]",
-                    "PMI",
-                    "Warning displayed"
+                    "Display a warning"
                 ],
                 [
                     "def_SHH_[TAG]",
@@ -235,13 +150,6 @@
                 "AI": "Pressure transmitter 4-20mA",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Sending digital signal",
-                "DO": "",
-                "AI": "Pressure transmitter 4-20mA",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -269,42 +177,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Pressure level indicator",
-                        "Trigger when pressure level reached",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    [
-                        "Managed by function block",
-                        "Managed by function block",
-                        "Managed by function block"
-                    ]
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "PMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "PMI",
@@ -330,13 +206,6 @@
                 "AI": "Pressure transmitter 4-20mA",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Sending digital signal",
-                "DO": "",
-                "AI": "Pressure transmitter 4-20mA",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -369,52 +238,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Pressure level indicator",
-                        "Trigger when pressure level 1 reached",
-                        "Fault activation"
-                    ],
-                    [
-                        "Pressure level indicator",
-                        "Trigger when pressure level 2 reached",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    [
-                        "Managed by function block",
-                        "Managed by function block",
-                        "Managed by function block"
-                    ]
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]_1",
-                    "PMI",
-                    "PLC input activated after 3 seconds"
-                ],
-                [
-                    "def_[TAG]_2",
-                    "PMA",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]_1",
                     "PMI",
@@ -445,13 +272,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Sending digital signal",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -475,38 +295,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Pressure level indicator",
-                        "Trigger when pressure level reached",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "PMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "PMI",
@@ -532,38 +324,10 @@
                 "AI": "Flow transmitter 4-20mA",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "Flow transmitter 4-20mA",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
             "uk": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    [
-                        "Managed by function block",
-                        "Managed by function block",
-                        "Managed by function block"
-                    ]
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
-            },
-            "fr": {
                 "DI": [
                     []
                 ],
@@ -590,12 +354,12 @@
                 [
                     "def_signal_[TAG]",
                     "TMI",
-                    "Warning displayed"
+                    "Display a warning"
                 ],
                 [
                     "def_SL_[TAG]",
                     "PMI",
-                    "Warning displayed"
+                    "Display a warning"
                 ],
                 [
                     "def_SLL_[TAG]",
@@ -605,34 +369,7 @@
                 [
                     "def_SH_[TAG]",
                     "PMI",
-                    "Warning displayed"
-                ],
-                [
-                    "def_SHH_[TAG]",
-                    "PMA",
-                    "Drive back installation to Default state"
-                ]
-            ],
-            "fr": [
-                [
-                    "def_signal_[TAG]",
-                    "TMI",
-                    "Warning displayed"
-                ],
-                [
-                    "def_SL_[TAG]",
-                    "PMI",
-                    "Warning displayed"
-                ],
-                [
-                    "def_SLL_[TAG]",
-                    "PMA",
-                    "Drive back installation to Default state"
-                ],
-                [
-                    "def_SH_[TAG]",
-                    "PMI",
-                    "Warning displayed"
+                    "Display a warning"
                 ],
                 [
                     "def_SHH_[TAG]",
@@ -659,13 +396,6 @@
                 "AI": "Pressure transmitter 4-20mA",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Sending digital signal (pulse)",
-                "DO": "",
-                "AI": "Pressure transmitter 4-20mA",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -693,42 +423,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Flow volume indicator by sending pulse",
-                        "Pulse per unit volume defined in the transmitter settings",
-                        "Counter incrementation"
-                    ]
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    [
-                        "Managed by function block",
-                        "Managed by function block",
-                        "Managed by function block"
-                    ]
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "PMI",
-                    "When sum of pulse reach high limit number"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "PMI",
@@ -754,13 +452,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Sending digital signal",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -784,38 +475,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Flow volume indicator",
-                        "Trigger when flow limit reached",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "PMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "PMI",
@@ -841,38 +504,10 @@
                 "AI": "Temperature transmitter 4-20mA",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "Temperature transmitter 4-20mA",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
             "uk": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    [
-                        "Managed by function block",
-                        "Managed by function block",
-                        "Managed by function block"
-                    ]
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
-            },
-            "fr": {
                 "DI": [
                     []
                 ],
@@ -899,12 +534,12 @@
                 [
                     "def_signal_[TAG]",
                     "TMI",
-                    "Warning displayed"
+                    "Display a warning"
                 ],
                 [
                     "def_SL_[TAG]",
                     "PMI",
-                    "Warning displayed"
+                    "Display a warning"
                 ],
                 [
                     "def_SLL_[TAG]",
@@ -914,34 +549,7 @@
                 [
                     "def_SH_[TAG]",
                     "PMI",
-                    "Warning displayed"
-                ],
-                [
-                    "def_SHH_[TAG]",
-                    "PMA",
-                    "Drive back installation to Default state"
-                ]
-            ],
-            "fr": [
-                [
-                    "def_signal_[TAG]",
-                    "TMI",
-                    "Warning displayed"
-                ],
-                [
-                    "def_SL_[TAG]",
-                    "PMI",
-                    "Warning displayed"
-                ],
-                [
-                    "def_SLL_[TAG]",
-                    "PMA",
-                    "Drive back installation to Default state"
-                ],
-                [
-                    "def_SH_[TAG]",
-                    "PMI",
-                    "Warning displayed"
+                    "Display a warning"
                 ],
                 [
                     "def_SHH_[TAG]",
@@ -968,38 +576,10 @@
                 "AI": "",
                 "AO": "",
                 "AIt": "Temperature sensor (PT100)"
-            },
-            "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": "Temperature sensor (PT100)"
             }
         },
         "AF": {
             "uk": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    [
-                        "Managed by function block",
-                        "Managed by function block",
-                        "Managed by function block"
-                    ]
-                ]
-            },
-            "fr": {
                 "DI": [
                     []
                 ],
@@ -1026,12 +606,12 @@
                 [
                     "def_signal_[TAG]",
                     "TMI",
-                    "Warning displayed"
+                    "Display a warning"
                 ],
                 [
                     "def_SL_[TAG]",
                     "PMI",
-                    "Warning displayed"
+                    "Display a warning"
                 ],
                 [
                     "def_SLL_[TAG]",
@@ -1041,34 +621,7 @@
                 [
                     "def_SH_[TAG]",
                     "PMI",
-                    "Warning displayed"
-                ],
-                [
-                    "def_SHH_[TAG]",
-                    "PMA",
-                    "Drive back installation to Default state"
-                ]
-            ],
-            "fr": [
-                [
-                    "def_signal_[TAG]",
-                    "TMI",
-                    "Warning displayed"
-                ],
-                [
-                    "def_SL_[TAG]",
-                    "PMI",
-                    "Warning displayed"
-                ],
-                [
-                    "def_SLL_[TAG]",
-                    "PMA",
-                    "Drive back installation to Default state"
-                ],
-                [
-                    "def_SH_[TAG]",
-                    "PMI",
-                    "Warning displayed"
+                    "Display a warning"
                 ],
                 [
                     "def_SHH_[TAG]",
@@ -1095,13 +648,6 @@
                 "AI": "Temperature transmitter 4-20mA",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Sending digital signal",
-                "DO": "",
-                "AI": "Temperature transmitter 4-20mA",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -1129,42 +675,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Temperature level indicator",
-                        "Trigger when Temperature level reached",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    [
-                        "Managed by function block",
-                        "Managed by function block",
-                        "Managed by function block"
-                    ]
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "PMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "PMI",
@@ -1190,13 +704,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Sending digital signal",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -1220,38 +727,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Temperature level indicator",
-                        "Trigger when temperature level reached",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "PMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "PMI",
@@ -1277,38 +756,10 @@
                 "AI": "Moisture transmitter",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "Moisture transmitter",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
             "uk": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    [
-                        "Managed by function block",
-                        "Managed by function block",
-                        "Managed by function block"
-                    ]
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
-            },
-            "fr": {
                 "DI": [
                     []
                 ],
@@ -1335,12 +786,12 @@
                 [
                     "def_signal_[TAG]",
                     "TMI",
-                    "Warning displayed"
+                    "Display a warning"
                 ],
                 [
                     "def_SL_[TAG]",
                     "PMI",
-                    "Warning displayed"
+                    "Display a warning"
                 ],
                 [
                     "def_SLL_[TAG]",
@@ -1350,34 +801,7 @@
                 [
                     "def_SH_[TAG]",
                     "PMI",
-                    "Warning displayed"
-                ],
-                [
-                    "def_SHH_[TAG]",
-                    "PMA",
-                    "Drive back installation to Default state"
-                ]
-            ],
-            "fr": [
-                [
-                    "def_signal_[TAG]",
-                    "TMI",
-                    "Warning displayed"
-                ],
-                [
-                    "def_SL_[TAG]",
-                    "PMI",
-                    "Warning displayed"
-                ],
-                [
-                    "def_SLL_[TAG]",
-                    "PMA",
-                    "Drive back installation to Default state"
-                ],
-                [
-                    "def_SH_[TAG]",
-                    "PMI",
-                    "Warning displayed"
+                    "Display a warning"
                 ],
                 [
                     "def_SHH_[TAG]",
@@ -1404,13 +828,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Sending digital signal",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -1434,38 +851,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Water level indicator",
-                        "Trigger when water level reach high/low limit",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "PMA",
-                    "When water level reach very high-level limit inside tank"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "PMA",
@@ -1491,38 +880,10 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Water meter impulse",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
             "uk": {
-                "DI": [
-                    [
-                        "Water meter impulse",
-                        "Pulse per unit volume defined in the water meter",
-                        "Counter incrementation"
-                    ]
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
-            },
-            "fr": {
                 "DI": [
                     [
                         "Water meter impulse",
@@ -1551,13 +912,6 @@
                     "PMI",
                     "When sum of pulse reach defined limit number"
                 ]
-            ],
-            "fr": [
-                [
-                    "Threshold fault",
-                    "PMI",
-                    "When sum of pulse reach defined limit number"
-                ]
             ]
         },
         "ConsumerName": false,
@@ -1573,13 +927,6 @@
         },
         "Text": {
             "uk": {
-                "DI": "Thermal energy meter impulse",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
-            },
-            "fr": {
                 "DI": "Thermal energy meter impulse",
                 "DO": "",
                 "AI": "",
@@ -1608,38 +955,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Water meter impulse",
-                        "Pulse per unit volume defined in the thermal energy meter",
-                        "Counter incrementation"
-                    ]
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "Threshold fault",
-                    "PMI",
-                    "When sum of pulse reach defined limit number"
-                ]
-            ],
-            "fr": [
                 [
                     "Threshold fault",
                     "PMI",
@@ -1665,13 +984,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Electric meter impulse",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -1695,38 +1007,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Electric meter impulse",
-                        "Pulse per unit power defined in the electric meter",
-                        "Counter incrementation"
-                    ]
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "Threshold fault",
-                    "PMI",
-                    "When sum of pulse reach defined limit number"
-                ]
-            ],
-            "fr": [
                 [
                     "Threshold fault",
                     "PMI",
@@ -1752,42 +1036,10 @@
                 "AI": "Pressure transmitter 4-20mA",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Sending digital signal",
-                "DO": "",
-                "AI": "Pressure transmitter 4-20mA",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
             "uk": {
-                "DI": [
-                    [
-                        "Temperature level indicator",
-                        "Trigger when temperature level reached",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    [
-                        "Managed by function block",
-                        "Managed by function block",
-                        "Managed by function block"
-                    ]
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
-            },
-            "fr": {
                 "DI": [
                     [
                         "Temperature level indicator",
@@ -1820,19 +1072,11 @@
                     "PMI",
                     "PLC input activated after 3 seconds"
                 ]
-            ],
-            "fr": [
-                [
-                    "def_[TAG]",
-                    "PMI",
-                    "PLC input activated after 3 seconds"
-                ]
             ]
         },
         "ConsumerName": false,
         "FunctionBloc": false
     },
-    "----------------------------------------------": "--------------------------------------------------",
     "3001": {
         "IO": {
             "DI": 1,
@@ -1848,13 +1092,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Chilleur fault info",
-                "DO": "Chilleur start order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -1882,42 +1119,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Chilleur fault",
-                        "Chilleur output fault",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Chilleur start",
-                        "PLC digital output activation",
-                        "Start the chilleur"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "TMI",
@@ -1943,13 +1148,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Dryer fault info",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -1973,38 +1171,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Refrigeration dryer fault",
-                        "Refrigeration dryer output fault",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "TMI",
@@ -2030,13 +1200,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Dryer fault info",
-                "DO": "Dryer start order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -2064,42 +1227,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Refrigeration dryer fault",
-                        "Refrigeration dryer output fault",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Dryer start",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "TMI",
@@ -2125,13 +1256,6 @@
                 "AI": "Humidity transmitter 4-20mA",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Dryer fault info",
-                "DO": "Dryer start order",
-                "AI": "Humidity transmitter 4-20mA",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -2163,51 +1287,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Refrigeration dryer fault",
-                        "Refrigeration dryer output fault",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Dryer start",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
-                ],
-                "AI": [
-                    [
-                        "Humidity information",
-                        "Analog signal sending by dryer",
-                        "Fault activation"
-                    ]
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ],
-                [
-                    "def_[TAG]",
-                    "PMI",
-                    "Humidity passing through dryer is over limit"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "TMI",
@@ -2238,13 +1321,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Dryer fault info",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -2268,38 +1344,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Adsorbtion dryer fault",
-                        "Adsorbtion dryer output fault",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "TMI",
@@ -2325,13 +1373,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Dryer fault info",
-                "DO": "Dryer start order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -2359,42 +1400,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Adsorbtion dryer fault",
-                        "Adsorbtion dryer output fault",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Dryer start",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "TMI",
@@ -2423,16 +1432,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Dryer fault info",
-                "DO": [
-                    "Dryer start eco mode",
-                    "Dryer start order"
-                ],
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -2469,51 +1468,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Adsorbtion dryer fault",
-                        "Adsorbtion dryer output fault",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Dryer start",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ],
-                    [
-                        "Eco mode",
-                        "PLC digital output activation",
-                        "Start dryer eco mode"
-                    ]
-                ],
-                "AI": [
-                    [
-                        "Humidity information",
-                        "Analog signal sending by dryer",
-                        "Fault activation"
-                    ]
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "TMI",
@@ -2539,13 +1497,6 @@
                 "AI": "Humidity transmitter 4-20mA",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Dryer fault info",
-                "DO": "Dryer start order",
-                "AI": "Humidity transmitter 4-20mA",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -2577,51 +1528,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Adsorbtion dryer fault",
-                        "Adsorbtion dryer output fault",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Dryer start",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ]
-                ],
-                "AI": [
-                    [
-                        "Humidity information",
-                        "Analog signal sending by dryer",
-                        "Fault activation"
-                    ]
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ],
-                [
-                    "def_[TAG]",
-                    "PMI",
-                    "Humidity passing through dryenr is over limit"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "TMI",
@@ -2655,16 +1565,6 @@
                 "AI": "Humidity transmitter 4-20mA",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Dryer fault info",
-                "DO": [
-                    "Dryer start eco mode",
-                    "Dryer start order"
-                ],
-                "AI": "Humidity transmitter 4-20mA",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -2701,51 +1601,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Adsorbtion dryer fault",
-                        "Adsorbtion dryer output fault",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Dryer start",
-                        "PLC digital output activation",
-                        "Start the dryer"
-                    ],
-                    [
-                        "Eco mode",
-                        "PLC digital output activation",
-                        "Start dryer eco mode"
-                    ]
-                ],
-                "AI": [
-                    [
-                        "Humidity information",
-                        "Analog signal sending by dryer",
-                        "Fault activation"
-                    ]
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "TMI",
@@ -2771,13 +1630,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Condensate separator fault info",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -2801,38 +1653,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Condensate separator fault",
-                        "Condensate separator output fault",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "TMI",
@@ -2858,13 +1682,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "Starting heater",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -2888,43 +1705,11 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    [
-                        "Heater start order",
-                        "PLC digital output activation",
-                        "Start the heater"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "NONE",
-                    "NONE",
-                    "NONE"
-                ]
-            ],
-            "fr": [
-                [
-                    "NONE",
-                    "NONE",
-                    "NONE"
-                ]
+                []
             ]
         },
         "ConsumerName": "Heater",
@@ -2945,13 +1730,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "Starting heater",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -2975,43 +1753,11 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    [
-                        "Heater start order",
-                        "PLC digital output activation",
-                        "Start the heater"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "NONE",
-                    "NONE",
-                    "NONE"
-                ]
-            ],
-            "fr": [
-                [
-                    "NONE",
-                    "NONE",
-                    "NONE"
-                ]
+                []
             ]
         },
         "ConsumerName": "Heater",
@@ -3032,13 +1778,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -3058,39 +1797,11 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "NONE",
-                    "NONE",
-                    "NONE"
-                ]
-            ],
-            "fr": [
-                [
-                    "NONE",
-                    "NONE",
-                    "NONE"
-                ]
+                []
             ]
         },
         "ConsumerName": "Drain",
@@ -3111,13 +1822,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Drain fault info",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -3141,38 +1845,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Drain fault",
-                        "Drain output fault",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "TMI",
@@ -3198,13 +1874,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "Drain start order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -3228,43 +1897,11 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    [
-                        "Drain start order",
-                        "PLC digital output activation",
-                        "Start the drain"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "NONE",
-                    "NONE",
-                    "NONE"
-                ]
-            ],
-            "fr": [
-                [
-                    "NONE",
-                    "NONE",
-                    "NONE"
-                ]
+                []
             ]
         },
         "ConsumerName": "Drain",
@@ -3285,13 +1922,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Drain fault info",
-                "DO": "Drain start order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -3319,42 +1949,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Drain fault",
-                        "Drain output fault",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Drain start order",
-                        "PLC digital output activation",
-                        "Start the drain"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "TMI",
@@ -3380,46 +1978,10 @@
                 "AI": "",
                 "AO": "Drive the heater",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Heater fault info",
-                "DO": "Heater start order",
-                "AI": "",
-                "AO": "Drive the heater",
-                "AIt": ""
             }
         },
         "AF": {
             "uk": {
-                "DI": [
-                    [
-                        "Heater fault",
-                        "Heater output fault",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Heater start order",
-                        "PLC digital output activation",
-                        "Start the heater"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    [
-                        "Driving heater temperature",
-                        "PLC analog output activation",
-                        "Drive the temperature"
-                    ]
-                ],
-                "AIt": [
-                    []
-                ]
-            },
-            "fr": {
                 "DI": [
                     [
                         "Heater fault",
@@ -3456,19 +2018,11 @@
                     "TMI",
                     "PLC input activated after 3 seconds"
                 ]
-            ],
-            "fr": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
             ]
         },
         "ConsumerName": "Heater",
         "FunctionBloc": false
     },
-    "---------------------------------------------------": "--------------------------------------------------",
     "4001": {
         "IO": {
             "DI": 0,
@@ -3484,13 +2038,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "Valve open order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -3514,34 +2061,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    [
-                        "Opening valve order",
-                        "PLC digital output activation",
-                        "Open the valve"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                []
-            ],
-            "fr": [
                 []
             ]
         },
@@ -3566,16 +2089,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": [
-                    "Valve position feedback",
-                    "Valve position feedback"
-                ],
-                "DO": "Valve open order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -3608,52 +2121,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Valve Position Feedback (open)",
-                        "Valve open",
-                        "Get position information feedback & Fault activation"
-                    ],
-                    [
-                        "Valve Position Feedback (close)",
-                        "Valve closed",
-                        "Get position information feedback & Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Opening valve order",
-                        "PLC digital output activation",
-                        "Open the valve"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "Def_opening_valves_discrepancy",
-                    "TMA",
-                    "PLC input activated after 3 seconds"
-                ],
-                [
-                    "Def_closing_valves_discrepancy",
-                    "TMA",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "Def_opening_valves_discrepancy",
                     "TMA",
@@ -3687,16 +2158,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": [
-                    "Valve open order",
-                    "Valve close order"
-                ],
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -3725,40 +2186,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    [
-                        "Opening valve order",
-                        "PLC digital output activation",
-                        "Open the valve"
-                    ],
-                    [
-                        "Closing valve order",
-                        "PLC digital output activation",
-                        "Close the valve"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [],
-                []
-            ],
-            "fr": [
                 [],
                 []
             ]
@@ -3787,19 +2218,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": [
-                    "Valve position feedback",
-                    "Valve position feedback"
-                ],
-                "DO": [
-                    "Valve open order",
-                    "Valve close order"
-                ],
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -3837,57 +2255,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Valve Position Feedback (open)",
-                        "Valve open",
-                        "Get position information feedback & Fault activation"
-                    ],
-                    [
-                        "Valve Position Feedback (close)",
-                        "Valve closed",
-                        "Get position information feedback & Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Opening valve order",
-                        "PLC digital output activation",
-                        "Open the valve"
-                    ],
-                    [
-                        "Closing valve order",
-                        "PLC digital output activation",
-                        "Close the valve"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "Def_opening_valves_discrepancy",
-                    "TMA",
-                    "PLC input activated after 3 seconds"
-                ],
-                [
-                    "Def_closing_valves_discrepancy",
-                    "TMA",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "Def_opening_valves_discrepancy",
                     "TMA",
@@ -3918,13 +2289,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "Valve open order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -3948,34 +2312,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    [
-                        "Opening valve order",
-                        "PLC digital output activation",
-                        "Open the valve"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                []
-            ],
-            "fr": [
                 []
             ]
         },
@@ -4000,16 +2340,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": [
-                    "Valve position feedback",
-                    "Valve position feedback"
-                ],
-                "DO": "Valve open order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -4042,52 +2372,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Valve Position Feedback (open)",
-                        "Valve open",
-                        "Get position information feedback & Fault activation"
-                    ],
-                    [
-                        "Valve Position Feedback (close)",
-                        "Valve closed",
-                        "Get position information feedback & Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Opening valve order",
-                        "PLC digital output activation",
-                        "Open the valve"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "Def_opening_valves_discrepancy",
-                    "TMA",
-                    "PLC input activated after 3 seconds"
-                ],
-                [
-                    "Def_closing_valves_discrepancy",
-                    "TMA",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "Def_opening_valves_discrepancy",
                     "TMA",
@@ -4118,13 +2406,6 @@
                 "AI": "",
                 "AO": "Drive the valve",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "Drive the valve",
-                "AIt": ""
             }
         },
         "AF": {
@@ -4148,34 +2429,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    [
-                        "Driving valve order",
-                        "PLC analog output activation",
-                        "Drive the valve"
-                    ]
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                []
-            ],
-            "fr": [
                 []
             ]
         },
@@ -4197,13 +2454,6 @@
                 "AI": "Position feedback",
                 "AO": "Drive the valve",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "Position feedback",
-                "AO": "Drive the valve",
-                "AIt": ""
             }
         },
         "AF": {
@@ -4231,42 +2481,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    [
-                        "Valve position feedback",
-                        "Valve position",
-                        "Get position information feedback & Fault activation"
-                    ]
-                ],
-                "AO": [
-                    [
-                        "Driving valve order",
-                        "PLC analog output activation",
-                        "Drive the valve"
-                    ]
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "Def_position_valves_discrepancy",
-                    "TMA",
-                    "PLC value comparator triggered"
-                ]
-            ],
-            "fr": [
                 [
                     "Def_position_valves_discrepancy",
                     "TMA",
@@ -4292,13 +2510,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "Valve open order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -4322,34 +2533,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    [
-                        "Opening valve order",
-                        "PLC digital output activation",
-                        "Open the valve"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                []
-            ],
-            "fr": [
                 []
             ]
         },
@@ -4374,16 +2561,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": [
-                    "Valve position feedback",
-                    "Valve position feedback"
-                ],
-                "DO": "Valve open order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -4416,52 +2593,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Valve Position Feedback (open)",
-                        "Valve open",
-                        "Get position information feedback & Fault activation"
-                    ],
-                    [
-                        "Valve Position Feedback (close)",
-                        "Valve closed",
-                        "Get position information feedback & Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Opening valve order",
-                        "PLC digital output activation",
-                        "Open the valve"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "Def_opening_valves_discrepancy",
-                    "TMA",
-                    "PLC input activated after 3 seconds"
-                ],
-                [
-                    "Def_closing_valves_discrepancy",
-                    "TMA",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "Def_opening_valves_discrepancy",
                     "TMA",
@@ -4495,16 +2630,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": [
-                    "Valve open order",
-                    "Valve close order"
-                ],
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -4533,40 +2658,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    [
-                        "Opening valve order",
-                        "PLC digital output activation",
-                        "Open the valve"
-                    ],
-                    [
-                        "Closing valve order",
-                        "PLC digital output activation",
-                        "Close the valve"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [],
-                []
-            ],
-            "fr": [
                 [],
                 []
             ]
@@ -4595,19 +2690,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": [
-                    "Valve position feedback",
-                    "Valve position feedback"
-                ],
-                "DO": [
-                    "Valve open order",
-                    "Valve close order"
-                ],
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -4645,57 +2727,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Valve Position Feedback (open)",
-                        "Valve open",
-                        "Get position information feedback & Fault activation"
-                    ],
-                    [
-                        "Valve Position Feedback (close)",
-                        "Valve closed",
-                        "Get position information feedback & Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Opening valve order",
-                        "PLC digital output activation",
-                        "Open the valve"
-                    ],
-                    [
-                        "Closing valve order",
-                        "PLC digital output activation",
-                        "Close the valve"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "Def_opening_valves_discrepancy",
-                    "TMA",
-                    "PLC input activated after 3 seconds"
-                ],
-                [
-                    "Def_closing_valves_discrepancy",
-                    "TMA",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "Def_opening_valves_discrepancy",
                     "TMA",
@@ -4726,13 +2761,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "Valve open order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -4756,34 +2784,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    [
-                        "Opening valve order",
-                        "PLC digital output activation",
-                        "Open the valve"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                []
-            ],
-            "fr": [
                 []
             ]
         },
@@ -4808,16 +2812,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": [
-                    "Valve position feedback",
-                    "Valve position feedback"
-                ],
-                "DO": "Valve open order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -4850,52 +2844,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Valve Position Feedback (open)",
-                        "Valve open",
-                        "Get position information feedback & Fault activation"
-                    ],
-                    [
-                        "Valve Position Feedback (close)",
-                        "Valve closed",
-                        "Get position information feedback & Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Opening valve order",
-                        "PLC digital output activation",
-                        "Open the valve"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "Def_opening_valves_discrepancy",
-                    "TMA",
-                    "PLC input activated after 3 seconds"
-                ],
-                [
-                    "Def_closing_valves_discrepancy",
-                    "TMA",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "Def_opening_valves_discrepancy",
                     "TMA",
@@ -4926,13 +2878,6 @@
                 "AI": "",
                 "AO": "Drive the valve",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "Drive the valve",
-                "AIt": ""
             }
         },
         "AF": {
@@ -4956,34 +2901,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    [
-                        "Driving valve order",
-                        "PLC analog output activation",
-                        "Drive the valve"
-                    ]
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                []
-            ],
-            "fr": [
                 []
             ]
         },
@@ -5005,13 +2926,6 @@
                 "AI": "Position feedback",
                 "AO": "Drive the valve",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "Position feedback",
-                "AO": "Drive the valve",
-                "AIt": ""
             }
         },
         "AF": {
@@ -5039,42 +2953,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    [
-                        "Valve position feedback",
-                        "Valve position",
-                        "Get position information feedback & Fault activation"
-                    ]
-                ],
-                "AO": [
-                    [
-                        "Driving valve order",
-                        "PLC analog output activation",
-                        "Drive the valve"
-                    ]
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "Def_position_valves_discrepancy",
-                    "TMA",
-                    "PLC value comparator triggered"
-                ]
-            ],
-            "fr": [
                 [
                     "Def_position_valves_discrepancy",
                     "TMA",
@@ -5100,13 +2982,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "Damper open order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -5130,34 +3005,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    [
-                        "Damper opening order",
-                        "PLC digital output activation",
-                        "Open the Damper"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                []
-            ],
-            "fr": [
                 []
             ]
         },
@@ -5182,16 +3033,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": [
-                    "Damper position feedback",
-                    "Damper position feedback"
-                ],
-                "DO": "Damper open order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -5224,52 +3065,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Damper Position Feedback (open)",
-                        "Damper open",
-                        "Get position information feedback & Fault activation"
-                    ],
-                    [
-                        "Damper Position Feedback (close)",
-                        "Damper closed",
-                        "Get position information feedback & Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Opening Damper order",
-                        "PLC digital output activation",
-                        "Open the Damper"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "Def_opening_Damper_discrepancy",
-                    "TMA",
-                    "PLC input activated after 3 seconds"
-                ],
-                [
-                    "Def_closing_Damper_discrepancy",
-                    "TMA",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "Def_opening_Damper_discrepancy",
                     "TMA",
@@ -5300,13 +3099,6 @@
                 "AI": "",
                 "AO": "Drive the damper",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "Drive the damper",
-                "AIt": ""
             }
         },
         "AF": {
@@ -5330,34 +3122,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    [
-                        "Driving damper order",
-                        "PLC analog output activation",
-                        "Drive the damper"
-                    ]
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                []
-            ],
-            "fr": [
                 []
             ]
         },
@@ -5379,13 +3147,6 @@
                 "AI": "Position feedback",
                 "AO": "Drive the damper",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "Position feedback",
-                "AO": "Drive the damper",
-                "AIt": ""
             }
         },
         "AF": {
@@ -5413,42 +3174,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    [
-                        "Damper position feedback",
-                        "Damper position",
-                        "Get position information feedback & Fault activation"
-                    ]
-                ],
-                "AO": [
-                    [
-                        "Driving Damper order",
-                        "PLC analog output activation",
-                        "Drive the Damper"
-                    ]
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "Def_position_Damper_discrepancy",
-                    "TMA",
-                    "PLC value comparator triggered"
-                ]
-            ],
-            "fr": [
                 [
                     "Def_position_Damper_discrepancy",
                     "TMA",
@@ -5474,38 +3203,10 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "Valve open order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
             "uk": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    [
-                        "Opening valve order",
-                        "PLC digital output activation",
-                        "Open the valve"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
-            },
-            "fr": {
                 "DI": [
                     []
                 ],
@@ -5530,15 +3231,11 @@
         "FAULTS": {
             "uk": [
                 []
-            ],
-            "fr": [
-                []
             ]
         },
         "ConsumerName": false,
         "FunctionBloc": false
     },
-    "--------------------------------------------------": "--------------------------------------------------",
     "5001": {
         "IO": {
             "DI": 0,
@@ -5557,16 +3254,6 @@
                 ],
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": [
-                    "WIP",
-                    "WIP"
-                ],
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -5595,39 +3282,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    [
-                        "WIP",
-                        "WIP",
-                        "WIP"
-                    ],
-                    [
-                        "WIP",
-                        "WIP",
-                        "WIP"
-                    ]
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                []
-            ],
-            "fr": [
                 []
             ]
         },
@@ -5655,19 +3313,6 @@
                 ],
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": [
-                    "WIP",
-                    "WIP"
-                ],
-                "DO": "",
-                "AI": [
-                    "WIP",
-                    "WIP"
-                ],
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -5705,48 +3350,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "WIP",
-                        "WIP",
-                        "WIP"
-                    ],
-                    [
-                        "WIP",
-                        "WIP",
-                        "WIP"
-                    ]
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    [
-                        "WIP",
-                        "WIP",
-                        "WIP"
-                    ],
-                    [
-                        "WIP",
-                        "WIP",
-                        "WIP"
-                    ]
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                []
-            ],
-            "fr": [
                 []
             ]
         },
@@ -5768,38 +3375,10 @@
                 "AI": "WIP",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "WIP",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
             "uk": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    [
-                        "WIP",
-                        "WIP",
-                        "WIP"
-                    ]
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
-            },
-            "fr": {
                 "DI": [
                     []
                 ],
@@ -5824,15 +3403,11 @@
         "FAULTS": {
             "uk": [
                 []
-            ],
-            "fr": [
-                []
             ]
         },
         "ConsumerName": "O2 Analyzer",
         "FunctionBloc": false
     },
-    "-------------------------------------------": "--------------------------------------------------",
     "6001": {
         "IO": {
             "DI": 6,
@@ -5858,23 +3433,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": [
-                    "Operating compressor",
-                    "On-load operation",
-                    "Engine running",
-                    "Warning synthesis",
-                    "Alarm synthesis",
-                    "local/remote"
-                ],
-                "DO": [
-                    "Remote load activation",
-                    "Load control"
-                ],
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -5932,77 +3490,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Operating compressor",
-                        "Compressor is ready",
-                        "Indicates that the compressor is operational"
-                    ],
-                    [
-                        "On-load operation",
-                        "Compressor working",
-                        "Indicates that the compressor is working"
-                    ],
-                    [
-                        "Engine running",
-                        "Compressor engine running",
-                        "Indicates that the compressor engine running"
-                    ],
-                    [
-                        "Warning synthesis",
-                        "Technical or exceeding threshold problem with-out equipment stop",
-                        "Fault activation"
-                    ],
-                    [
-                        "Alarm synthesis",
-                        "Technical or exceeding threshold problem with equipment stop ",
-                        "Fault activation"
-                    ],
-                    [
-                        "local/remote order",
-                        "Depend of the operator's choice",
-                        "Let the compressor self managed or not"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Remote load activation",
-                        "PLC digital output activation",
-                        "Let the load management authorization to the external software"
-                    ],
-                    [
-                        "Load control",
-                        "PLC digital output activation",
-                        "Drive the load"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "Def_compressor_warning_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ],
-                [
-                    "Def_compressor_alarm_[TAG]",
-                    "TMA",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "Def_compressor_warning_[TAG]",
                     "TMI",
@@ -6049,29 +3540,6 @@
                     "WIP"
                 ],
                 "AIt": ""
-            },
-            "fr": {
-                "DI": [
-                    "Operating compressor",
-                    "On-load operation",
-                    "Engine running",
-                    "Warning synthesis",
-                    "Alarm synthesis",
-                    "local/remote"
-                ],
-                "DO": [
-                    "Remote load activation",
-                    "Load control"
-                ],
-                "AI": [
-                    "WIP",
-                    "WIP"
-                ],
-                "AO": [
-                    "WIP",
-                    "WIP"
-                ],
-                "AIt": ""
             }
         },
         "AF": {
@@ -6147,95 +3615,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Operating compressor",
-                        "Compressor is ready",
-                        "Indicates that the compressor is operational"
-                    ],
-                    [
-                        "On-load operation",
-                        "Compressor working",
-                        "Indicates that the compressor is working"
-                    ],
-                    [
-                        "Engine running",
-                        "Compressor engine running",
-                        "Indicates that the compressor engine running"
-                    ],
-                    [
-                        "Warning synthesis",
-                        "Technical or exceeding threshold problem with-out equipment stop",
-                        "Fault activation"
-                    ],
-                    [
-                        "Alarm synthesis",
-                        "Technical or exceeding threshold problem with equipment stop ",
-                        "Fault activation"
-                    ],
-                    [
-                        "local/remote order",
-                        "Depend of the operator's choice",
-                        "Let the compressor self managed or not"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Remote load activation",
-                        "PLC digital output activation",
-                        "Let the load management authorization to the external software"
-                    ],
-                    [
-                        "Load control",
-                        "PLC digital output activation",
-                        "Drive the load"
-                    ]
-                ],
-                "AI": [
-                    [
-                        "WIP",
-                        "WIP",
-                        "WIP"
-                    ],
-                    [
-                        "WIP",
-                        "WIP",
-                        "WIP"
-                    ]
-                ],
-                "AO": [
-                    [
-                        "WIP",
-                        "WIP",
-                        "WIP"
-                    ],
-                    [
-                        "WIP",
-                        "WIP",
-                        "WIP"
-                    ]
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "Def_compressor_warning_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ],
-                [
-                    "Def_compressor_alarm_[TAG]",
-                    "TMA",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "Def_compressor_warning_[TAG]",
                     "TMI",
@@ -6266,13 +3649,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Compressor fault info",
-                "DO": "Compressor start order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -6300,42 +3676,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Compressor fault",
-                        "Compressor output fault",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Compressor start",
-                        "PLC digital output activation",
-                        "Start the compressor"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "TMI",
@@ -6364,16 +3708,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": [
-                    "Compressor fault info",
-                    "WIP"
-                ],
-                "DO": "Compressor start order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -6406,47 +3740,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Compressor fault",
-                        "Compressor output fault",
-                        "Fault activation"
-                    ],
-                    [
-                        "WIP",
-                        "WIP",
-                        "WIP"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Compressor start",
-                        "PLC digital output activation",
-                        "Start the compressor"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "TMI",
@@ -6472,13 +3769,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Booster fault info",
-                "DO": "Booster start order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -6506,42 +3796,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Booster fault",
-                        "Booster output fault",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Booster start",
-                        "PLC digital output activation",
-                        "Start the booster"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "TMI",
@@ -6567,13 +3825,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "Fan start order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -6597,34 +3848,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    [
-                        "Fan start",
-                        "PLC digital output activation",
-                        "Start the Fan"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                []
-            ],
-            "fr": [
                 []
             ]
         },
@@ -6646,13 +3873,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Water pump fault info",
-                "DO": "Water pump start order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -6680,42 +3900,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Water pump fault",
-                        "Water pump output fault",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Water pump start",
-                        "PLC digital output activation",
-                        "Start the Water pump"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "TMI",
@@ -6741,13 +3929,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Vacuum fault info",
-                "DO": "Vacuum start order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -6775,42 +3956,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Vacuum fault",
-                        "Vacuum output fault",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Vacuum start",
-                        "PLC digital output activation",
-                        "Start the Vacuum"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
-            ],
-            "fr": [
                 [
                     "def_[TAG]",
                     "TMI",
@@ -6836,42 +3985,10 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Fan fault info",
-                "DO": "Fan start order",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
             "uk": {
-                "DI": [
-                    [
-                        "Fan fault",
-                        "Fan output fault",
-                        "Fault activation"
-                    ]
-                ],
-                "DO": [
-                    [
-                        "Fan start",
-                        "PLC digital output activation",
-                        "Start the Fan"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
-            },
-            "fr": {
                 "DI": [
                     [
                         "Fan fault",
@@ -6904,19 +4021,11 @@
                     "TMI",
                     "PLC input activated after 3 seconds"
                 ]
-            ],
-            "fr": [
-                [
-                    "def_[TAG]",
-                    "TMI",
-                    "PLC input activated after 3 seconds"
-                ]
             ]
         },
         "ConsumerName": "Fan",
         "FunctionBloc": false
     },
-    "--------------------------------------------": "--------------------------------------------------",
     "7001": {
         "IO": {
             "DI": 1,
@@ -6932,13 +4041,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "Special Digital Input",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -6962,34 +4064,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    [
-                        "Special",
-                        "Outside needs",
-                        "******"
-                    ]
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                []
-            ],
-            "fr": [
                 []
             ]
         },
@@ -7011,13 +4089,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "Special Digital Output",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -7041,34 +4112,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    [
-                        "Special",
-                        "External needs",
-                        "******"
-                    ]
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                []
-            ],
-            "fr": [
                 []
             ]
         },
@@ -7090,13 +4137,6 @@
                 "AI": "Special Analog Input",
                 "AO": "",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "Special Analog Input",
-                "AO": "",
-                "AIt": ""
             }
         },
         "AF": {
@@ -7118,32 +4158,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [],
-                "AI": [
-                    [
-                        "Special",
-                        "External needs",
-                        "******"
-                    ]
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                []
-            ],
-            "fr": [
                 []
             ]
         },
@@ -7165,13 +4183,6 @@
                 "AI": "",
                 "AO": "",
                 "AIt": "Special Temperature Input"
-            },
-            "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": "Special Temperature Input"
             }
         },
         "AF": {
@@ -7195,34 +4206,10 @@
                         "******"
                     ]
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    []
-                ],
-                "AIt": [
-                    [
-                        "Special",
-                        "External needs",
-                        "******"
-                    ]
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                []
-            ],
-            "fr": [
                 []
             ]
         },
@@ -7244,13 +4231,6 @@
                 "AI": "",
                 "AO": "Special Analog Output",
                 "AIt": ""
-            },
-            "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "Special Analog Output",
-                "AIt": ""
             }
         },
         "AF": {
@@ -7274,34 +4254,10 @@
                 "AIt": [
                     []
                 ]
-            },
-            "fr": {
-                "DI": [
-                    []
-                ],
-                "DO": [
-                    []
-                ],
-                "AI": [
-                    []
-                ],
-                "AO": [
-                    [
-                        "Special",
-                        "External needs",
-                        "******"
-                    ]
-                ],
-                "AIt": [
-                    []
-                ]
             }
         },
         "FAULTS": {
             "uk": [
-                []
-            ],
-            "fr": [
                 []
             ]
         },

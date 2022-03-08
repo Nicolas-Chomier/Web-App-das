@@ -383,12 +383,12 @@ export class DocxJsMethods extends DocxJsBuilder {
     // Inhib or not error message if table is empty
     if (error) {
       this.documentText(
-        "Non-existent or managed by Function bloc",
+        "NONE",
         child,
         [],
         false,
         "Calibri",
-        12,
+        18,
         "000000",
         true,
         false
