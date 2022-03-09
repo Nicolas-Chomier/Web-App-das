@@ -37,13 +37,13 @@ const LastPage = () => {
             alignItems="center"
             spacing={4}
           >
-            <Button
+            {/* <Button
               className="flag-btn"
               variant="outlined"
               onClick={() => documentConstructorForQts(rawAbstract, "uk")}
             >
               <Avatar alt="UK flag" src="/images/flag-uk.png" sx={avtConf} />
-            </Button>
+            </Button> */}
             <Button
               className="flag-btn"
               variant="outlined"

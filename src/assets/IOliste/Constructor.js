@@ -33,11 +33,13 @@ export function documentConstructorForIOList(rawAbstract, flag) {
       const tagListing = Make.projectListingfor("TAG");
       const idListing = Make.projectListingfor("ID");
       const ioListing = Make.projectIoListing();
+      // Provider const declaration
+      const UselessModule = fromProviderDatas.dropNoModule();
       // Document const declaration
       const natIo = Get.nativePlcIo();
-      const UselessModule = ["module10", "module11", "module12"]; //! a ranger ds proface
       const firstRow = translate.firstRow;
       let byPass = false;
+      // Document Pattern
       const children = [];
       Write.documentTitle(translate.docTitle, children, 1, [projectTitle]);
       Write.documentText(translate.docText, children, [projectTitle]);

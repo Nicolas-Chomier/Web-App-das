@@ -27,6 +27,10 @@ export class Proface {
       module12: 0,
     };
   }
+  // Method which give module which have to be avoid when we construct IOList document
+  dropNoModule() {
+    return this.mSpe;
+  }
   // Method which give empty line up (most secure to manage here)
   dropEmptyLineUp() {
     return this.emptyLineUp;

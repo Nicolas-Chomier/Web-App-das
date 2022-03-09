@@ -8,10 +8,10 @@ const profaceDatas = JSON.parse(JSON.stringify(proface));
  */
 class MotherDataCreator {
   constructor(rawAbstract, flag) {
+    this.privateDatas = require(`../shared/Private/${flag}-elementDataSet.json`);
     this.infosElement = rawAbstract.Elements;
     this.coef = rawAbstract.Project.Coef;
     this.hwl = ["DI", "DO", "AI", "AO", "AIt"]; // Main modele for IO list or other device
-    this.privateDatas = require(`../shared/Private/${flag}-elementDataSet.json`);
   }
   // Method which return empty Object
   object() {
