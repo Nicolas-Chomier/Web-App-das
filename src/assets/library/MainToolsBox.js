@@ -1,6 +1,4 @@
 import proface from "../shared/providerInfos/proface.json";
-//import privates from "../shared/Private/elementDataSet.json";
-//
 import { Buffer } from "buffer";
 import { Table, TableRow, TableCell } from "docx";
 import { Paragraph, TextRun } from "docx";
@@ -8,7 +6,6 @@ import { VerticalAlign, WidthType } from "docx";
 import { ImageRun } from "docx";
 //
 const profaceDatas = JSON.parse(JSON.stringify(proface));
-//const privateDatas = JSON.parse(JSON.stringify(privates));
 
 class MainToolsBox {
   constructor(rawAbstract, flag) {
@@ -23,10 +20,7 @@ class MainToolsBox {
     this.noSlot = "Spare";
   }
 }
-/**
- * * All methodes are made only for Quotation document class
- * + Class used for build quotation document
- */
+// Specific class for quotation document
 export class QTSBuilder extends MainToolsBox {
   constructor(rawAbstract, flag) {
     super(rawAbstract, flag);
@@ -71,10 +65,7 @@ export class QTSBuilder extends MainToolsBox {
     return table;
   }
 }
-/**
- * * All methodes are made only for AF document class
- * + Class used for build AF document
- */
+// Specific class for af document
 export class AFBuilder extends MainToolsBox {
   constructor(rawAbstract, flag) {
     super(rawAbstract, flag);
@@ -181,10 +172,7 @@ export class AFBuilder extends MainToolsBox {
     return table;
   }
 }
-/**
- * * All methodes are made only for Architecture document class
- * + Class used for build Architecture document
- */
+// Specific class for architecture document
 export class ARCHBuilder extends MainToolsBox {
   constructor(rawAbstract, flag) {
     super(rawAbstract, flag);
@@ -362,20 +350,27 @@ export class ARCHBuilder extends MainToolsBox {
     return result;
   }
 }
-/**
- * * All methodes are made only for IO list document class
- * + Class used for build IO list document
- */
+// Specific class for IO list document
 export class IOLISTBuilder extends MainToolsBox {
   constructor(rawAbstract, flag) {
     super(rawAbstract, flag);
     this.com = "";
   }
-  //
   nativePlcIo() {
     return profaceDatas.PROFACE[this.hmiId]["NativeIO"];
   }
-  /** */
+  /**
+   * Method which build raw table with needed value for one module given, Tag and other info are push inside from idList and tagList.
+   * * value used for build raw array : ['Way N°', 'Fonction', 'Label', 'Type', 'Description', 'Module REF']
+   * @param idList {DI: Array(id), DO: Array(id), AI: Array(id), AO: Array(id), AIt: Array(id)}
+   * @param tagList {DI: Array(tag), DO: Array(tag), AI: Array(tag), AO: Array(tag), AIt: Array(tag)}
+   * @param module "string" (name of module given)
+   * @param moduleNbs integer (module number, if module with the same name appear many time in the same line up)
+   * @param firstRow [string, ...] (first line for the table result construction)
+   * @param type "string" (type of line up in the architecture project like example : "MAIN"
+   * @param flag "string" chosen language (fr or uk)
+   * @returns table [["string"],["string,..."] ...]
+   */
   ioListTableForLineUp(
     idList,
     tagList,
@@ -406,7 +401,18 @@ export class IOLISTBuilder extends MainToolsBox {
     }
     return table;
   }
-  /** */
+  /**
+   * Method which build raw table with needed value for PLC with native Input Output device.
+   * * Likely the same method than "ioListTableForLineUp"
+   * @param idList {DI: Array(id), DO: Array(id), AI: Array(id), AO: Array(id), AIt: Array(id)}
+   * @param tagList {DI: Array(tag), DO: Array(tag), AI: Array(tag), AO: Array(tag), AIt: Array(tag)}
+   * @param key "string" (name of device)
+   * @param value integer (number of Input or output in given device)
+   * @param firstRow [string, ...] (first line for the table result construction)
+   * @param title "string" (PLC reference)
+   * @param flag "string" chosen language (fr or uk)
+   * @returns table [["string"],["string,..."] ...]
+   */
   ioListTableForPlc(idList, tagList, key, value, title, firsRow, flag) {
     const table = [];
     if (value) {
@@ -428,6 +434,11 @@ export class IOLISTBuilder extends MainToolsBox {
     }
     return table;
   }
+  /**
+   * Method which count number of occurence in given parameter
+   * @param list ["string",...]
+   * @returns counts {string:int,...}
+   */
   counter(list) {
     const counts = {};
     list.forEach(function (x) {

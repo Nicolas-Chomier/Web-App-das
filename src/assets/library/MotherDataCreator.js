@@ -1,8 +1,7 @@
 import proface from "../shared/providerInfos/proface.json";
-//import privates from "../shared/Private/elementDataSet.json";
-// JSON
+
 const profaceDatas = JSON.parse(JSON.stringify(proface));
-//const privateDatas = JSON.parse(JSON.stringify(privates));
+
 /**
  ** Mother Class with basic mandatory methods to build data structure in children class
  */
@@ -80,7 +79,6 @@ export class MainDataCreator extends MotherDataCreator {
     this.rsl = { DI: 6, DO: 4, AI: 0, AO: 0, AIt: 0 }; // Mandatory reserved slot attribute to each project
     this.mandatoryIdName = "Compressor-";
   }
-
   plcNativeIoList() {
     const nativIo = profaceDatas.PROFACE[this.hmiId]["NativeIO"];
     return nativIo;
