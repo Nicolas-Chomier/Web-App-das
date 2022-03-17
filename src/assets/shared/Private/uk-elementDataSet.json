@@ -4026,6 +4026,131 @@
         "ConsumerName": "Fan",
         "FunctionBloc": false
     },
+    "6010": {
+        "IO": {
+            "DI": 6,
+            "DO": 2,
+            "AI": 2,
+            "AO": 2,
+            "AIt": 0
+        },
+        "Text": {
+            "uk": {
+                "DI": [
+                    "Operating compressor",
+                    "On-load operation",
+                    "Engine running",
+                    "Warning synthesis",
+                    "Alarm synthesis",
+                    "local/remote"
+                ],
+                "DO": [
+                    "Remote load activation",
+                    "Load control"
+                ],
+                "AI": [
+                    "WIP",
+                    "WIP"
+                ],
+                "AO": [
+                    "WIP",
+                    "WIP"
+                ],
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "uk": {
+                "DI": [
+                    [
+                        "Operating compressor",
+                        "Compressor is ready",
+                        "Indicates that the compressor is operational"
+                    ],
+                    [
+                        "On-load operation",
+                        "Compressor working",
+                        "Indicates that the compressor is working"
+                    ],
+                    [
+                        "Engine running",
+                        "Compressor engine running",
+                        "Indicates that the compressor engine running"
+                    ],
+                    [
+                        "Warning synthesis",
+                        "Technical or exceeding threshold problem with-out equipment stop",
+                        "Fault activation"
+                    ],
+                    [
+                        "Alarm synthesis",
+                        "Technical or exceeding threshold problem with equipment stop ",
+                        "Fault activation"
+                    ],
+                    [
+                        "local/remote order",
+                        "Depend of the operator's choice",
+                        "Let the compressor self managed or not"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Remote load activation",
+                        "PLC digital output activation",
+                        "Let the load management authorization to the external software"
+                    ],
+                    [
+                        "Load control",
+                        "PLC digital output activation",
+                        "Drive the load"
+                    ]
+                ],
+                "AI": [
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
+                ],
+                "AO": [
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "uk": [
+                [
+                    "Def_compressor_warning_[TAG]",
+                    "TMI",
+                    "PLC input activated after 3 seconds"
+                ],
+                [
+                    "Def_compressor_alarm_[TAG]",
+                    "TMA",
+                    "PLC input activated after 3 seconds"
+                ]
+            ]
+        },
+        "ConsumerName": "Compressor with variable flow",
+        "FunctionBloc": false
+    },
     "7001": {
         "IO": {
             "DI": 1,

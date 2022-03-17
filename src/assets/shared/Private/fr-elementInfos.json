@@ -482,7 +482,7 @@
             ]
         },
         "OPA-F": {
-            "title": "Compresseur \"OPEN AIR\" à débit fixe",
+            "title": "Compresseur à débit fixe (OPEN AIR)",
             "A-infos": "Compresseur piloté par notre système Open Air avec contrôle tout ou rien",
             "B-intro": "Tous les éléments dessinés sur le P&ID avec cette étiquette sont traités de la même manière :",
             "B-tags": [
@@ -490,11 +490,19 @@
             ]
         },
         "OPA-V": {
-            "title": "Compresseur \"OPEN AIR\" à débit variable",
+            "title": "Compresseur à vitesse variable (OPEN AIR)",
             "A-infos": "Compresseur piloté par notre système Open Air avec contrôle analogique",
             "B-intro": "Tous les éléments dessinés sur le P&ID avec cette étiquette sont traités de la même manière :",
             "B-tags": [
                 "CPV = Compresseur à Débit Variable"
+            ]
+        },
+        "OPA-CTF": {
+            "title": "Compresseur centrifuge (OPEN AIR)",
+            "A-infos": "Compresseur piloté par notre système Open Air avec contrôle analogique",
+            "B-intro": "Tous les éléments dessinés sur le P&ID avec cette étiquette sont traités de la même manière :",
+            "B-tags": [
+                "CTF = Compresseur centrifuge"
             ]
         },
         "Booster": {

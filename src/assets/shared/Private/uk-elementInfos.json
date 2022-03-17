@@ -482,7 +482,7 @@
             ]
         },
         "OPA-F": {
-            "title": "Open Air with static flow",
+            "title": "Static flow compressor (OPEN AIR)",
             "A-infos": "Compressor piloted by our Open Air system in all or nothing control",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
@@ -490,11 +490,19 @@
             ]
         },
         "OPA-V": {
-            "title": "Open Air with variable flow",
+            "title": "Variable speed compressor (OPEN AIR)",
             "A-infos": "Compressor piloted by our Open Air system with analog control",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [
                 "CPV = Compressor at Varaible Flow"
+            ]
+        },
+        "OPA-CTF": {
+            "title": "Centrifugal compressor (OPEN AIR)",
+            "A-infos": "Compressor piloted by our Open Air system with analog control",
+            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+            "B-tags": [
+                "CTF = Centrifugal compressor"
             ]
         },
         "Booster": {

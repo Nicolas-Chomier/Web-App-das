@@ -436,6 +436,11 @@
                     "id": 6002,
                     "generic name": "OPA-V",
                     "FB": "OPA"
+                },
+                "Centrifuge": {
+                    "id": 6010,
+                    "generic name": "OPA-CTF",
+                    "FB": "OPA"
                 }
             },
             "Surpresseur": {

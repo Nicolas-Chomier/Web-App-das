@@ -15,3 +15,6 @@ changer les header de l'af
 
 utiliser l'id pour la creation du chapitre "Elements chapter" dans l'af et nom pas les noms
 
+chnager la manere dont l'af ecrit les fonction bloc
+
+tt regrouper en fiche element

@@ -4026,6 +4026,131 @@
         "ConsumerName": "ventilateur",
         "FunctionBloc": false
     },
+    "6010": {
+        "IO": {
+            "DI": 6,
+            "DO": 2,
+            "AI": 2,
+            "AO": 2,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": [
+                    "Fonctionnement du compresseur",
+                    "Fonctionnement en charge",
+                    "Moteur en marche",
+                    "Synthèse d'alerte",
+                    "Synthèse d'alarme",
+                    "locale / distance"
+                ],
+                "DO": [
+                    "Activation de la charge à distance",
+                    "Contrôle de la charge"
+                ],
+                "AI": [
+                    "WIP",
+                    "WIP"
+                ],
+                "AO": [
+                    "WIP",
+                    "WIP"
+                ],
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Compresseur en marche",
+                        "Le compresseur est prêt",
+                        "Indique que le compresseur est opérationnel"
+                    ],
+                    [
+                        "Fonctionnement en charge",
+                        "Fonctionnement du compresseur",
+                        "Indique que le compresseur fonctionne"
+                    ],
+                    [
+                        "Moteur en fonctionnement",
+                        "Moteur du compresseur en fonctionnement",
+                        "Indicates that the Moteur du compresseur en fonctionnement"
+                    ],
+                    [
+                        "Synthèse des avertissements",
+                        "Problème technique ou de dépassement de seuil sans arrêt de l'équipement",
+                        "Activation d'un défaut"
+                    ],
+                    [
+                        "Synthèse d'alarme",
+                        "Problème technique ou de dépassement de seuil avec arrêt de l'équipement",
+                        "Activation d'un défaut"
+                    ],
+                    [
+                        "Commande locale/à distance",
+                        "Dépend du choix de l'opérateur",
+                        "Laisser le compresseur s'autogérer ou non"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Activation de la charge à distance",
+                        "Activation de la sortie numérique de l'automate",
+                        "Laisser l'autorisation de gestion de la charge au logiciel externe"
+                    ],
+                    [
+                        "Contrôle de la charge",
+                        "Activation de la sortie numérique de l'automate",
+                        "Piloter la charge"
+                    ]
+                ],
+                "AI": [
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
+                ],
+                "AO": [
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ],
+                    [
+                        "WIP",
+                        "WIP",
+                        "WIP"
+                    ]
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "Def_avertissement_compresseur_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ],
+                [
+                    "Def_alarme_compresseur_[TAG]",
+                    "TMA",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Compresseur à débit variable",
+        "FunctionBloc": false
+    },
     "7001": {
         "IO": {
             "DI": 1,
