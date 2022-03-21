@@ -367,7 +367,7 @@ export class IOLISTBuilder extends MainToolsBox {
    * @param module "string" (name of module given)
    * @param moduleNbs integer (module number, if module with the same name appear many time in the same line up)
    * @param firstRow [string, ...] (first line for the table result construction)
-   * @param type "string" (type of line up in the architecture project like example : "MAIN"
+   * @param type "string" (type of line up in the architecture project like example : "MAIN" or "Compressor 1"
    * @param flag "string" chosen language (fr or uk)
    * @returns table [["string"],["string,..."] ...]
    */
@@ -384,6 +384,7 @@ export class IOLISTBuilder extends MainToolsBox {
     const com = "";
     const mIoL = profaceDatas.PROFACE[module]["IoList"];
     const mRef = profaceDatas.PROFACE[module]["Reference"];
+    // Build table sub title
     const title = `${type}, Module N°${moduleNbs}`;
     table.push([title], firstRow);
     for (const [key, value] of Object.entries(mIoL)) {

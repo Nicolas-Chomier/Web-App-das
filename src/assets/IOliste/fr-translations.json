@@ -1,10 +1,10 @@
 {
     "core": {
-        "docTitle": "Liste d'entrées et sorties pour @",
-        "docText": "This document details the entire Input Output elements list for the automation package",
-        "hmiTitle": "Nativ Input Output elements list for @",
-        "plcTitle": "Rest of Input Output elements list managed by external boards",
-        "docName": "List and elements adress",
+        "docTitle": "Liste des entrées et sorties pour le projet @",
+        "docText": "Ce document détaille la liste complète des éléments d'entrée-sortie pour le paquet d'automatisation.",
+        "hmiTitle": "Entrée et sortie native IHM @",
+        "plcTitle": "Le reste de la liste des éléments d'entrée-sortie est géré par des cartes externes.",
+        "docName": "Liste et adresse des éléments",
         "firstRow": [
             "N° Voie",
             "Fonction",
