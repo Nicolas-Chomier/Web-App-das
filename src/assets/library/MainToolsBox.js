@@ -371,21 +371,13 @@ export class IOLISTBuilder extends MainToolsBox {
    * @param flag "string" chosen language (fr or uk)
    * @returns table [["string"],["string,..."] ...]
    */
-  ioListTableForLineUp(
-    idList,
-    tagList,
-    module,
-    moduleNbs,
-    firstRow,
-    type,
-    flag
-  ) {
+  ioListTableForLineUp(idList, tagList, module, moduleNbs, firstRow, flag) {
     const table = [];
     const com = "";
     const mIoL = profaceDatas.PROFACE[module]["IoList"];
     const mRef = profaceDatas.PROFACE[module]["Reference"];
     // Build table sub title
-    const title = `${type}, Module N°${moduleNbs}`;
+    const title = `Module Réf: ${mRef}`; //!
     table.push([title], firstRow);
     for (const [key, value] of Object.entries(mIoL)) {
       for (let i = 0; i < value; i++) {
@@ -397,7 +389,7 @@ export class IOLISTBuilder extends MainToolsBox {
         const id = idList[key].length > 0 ? idList[key].shift() : this.noSlot;
         const func = this.addFunc(id, key, ctr, flag);
         const way = this.addWay(key, i, moduleNbs);
-        table.push([way, func, tag, key, com, mRef]);
+        table.push([way, func, tag, key, com]);
       }
     }
     return table;

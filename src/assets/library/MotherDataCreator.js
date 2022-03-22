@@ -75,9 +75,9 @@ export class MainDataCreator extends MotherDataCreator {
     this.native = rawAbstract.Project.Technology.nativeDevice;
     this.hmiId = rawAbstract.Project.Technology.id;
     this.pTitle = rawAbstract.Project.Title;
-    this.openAirItemTable = ["OPA-F", "OPA-V"]; // When Open air option is choosen, its important to filter open air compressor
+    this.openAirItemTable = ["OPA-F", "OPA-V", "OPA-CTF"]; // When Open air option is choosen, its important to filter open air compressor
     this.rsl = { DI: 6, DO: 4, AI: 0, AO: 0, AIt: 0 }; // Mandatory reserved slot attribute to each project
-    this.mandatoryIdName = "Compressor-";
+    this.mandatoryIdName = "CP-";
   }
   plcNativeIoList() {
     const nativIo = profaceDatas.PROFACE[this.hmiId]["NativeIO"];

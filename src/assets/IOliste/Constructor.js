@@ -65,7 +65,7 @@ export function documentConstructorForIOList(rawAbstract, flag) {
         }
         const idList2 = idListing[type];
         const tagList2 = tagListing[type];
-        // lineup
+        // Boucle a travers la line up de module
         const lineUp = fromProviderDatas.getModuleList(object);
         let moduleNbs = 0;
         for (const [module, number] of Object.entries(lineUp)) {
@@ -78,10 +78,8 @@ export function documentConstructorForIOList(rawAbstract, flag) {
                 module,
                 moduleNbs,
                 firstRow,
-                type,
                 flag
               );
-
               Write.documentTable(test, children, [], "blue");
             }
           }

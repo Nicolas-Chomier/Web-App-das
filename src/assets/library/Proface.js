@@ -26,10 +26,28 @@ export class Proface {
       module11: 0,
       module12: 0,
     };
+    this.stationHeadMod = "module10";
+    this.newOrder = [
+      "module10",
+      "module1",
+      "module2",
+      "module3",
+      "module4",
+      "module5",
+      "module6",
+      "module7",
+      "module8",
+      "module9",
+      "module11",
+      "module12",
+    ];
   }
   // Method which give module which have to be avoid when we construct IOList document
   dropNoModule() {
-    return this.mSpe;
+    const undisplayableModuleList = [...this.mSpe];
+    //return forbiden module list without module head station
+    undisplayableModuleList.shift();
+    return undisplayableModuleList;
   }
   // Method which give empty line up (most secure to manage here)
   dropEmptyLineUp() {
@@ -165,7 +183,9 @@ export class Proface {
     };
     const specialModule = this.totalModule(moduleList);
     const finalResult = { ...moduleList, ...specialModule };
-    return finalResult;
+    // Change module list oreder to have module station head in first
+    const data = this.preferredOrder(finalResult, this.newOrder);
+    return data;
   }
   // Method which transform IOList to clean and ordered line up module lists (using method below)
   GetlineUp(IOList) {
@@ -174,6 +194,7 @@ export class Proface {
     if (isEmpty !== true) {
       // Step 1 : build raw line up module
       const raw = this.getModuleList(IOList);
+      console.log("raw", raw);
       // Step 2 : Work on raw
       const filteredRaw = this.designModuleLine(raw);
       const splitedLineUp = this.splitModuleLine(filteredRaw);
@@ -237,5 +258,15 @@ export class Proface {
   // Method which give all info about choosen HMI
   giveMeHmiInformations(id, target) {
     return this.proface.PROFACE[id][target];
+  }
+  // Method which swap elment in js obj according order list
+  preferredOrder(obj, order) {
+    const newObject = {};
+    for (let i = 0; i < order.length; i++) {
+      if (obj.hasOwnProperty(order[i])) {
+        newObject[order[i]] = obj[order[i]];
+      }
+    }
+    return newObject;
   }
 }
