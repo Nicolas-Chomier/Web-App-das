@@ -181,6 +181,22 @@
                 "DRY = Sécheur"
             ]
         },
+        "Fg dry run def run": {
+            "title": "Sécheur frigorifique",
+            "A-infos": "Ce type de sécheur consiste à refroidir l'air comprimé à une température inférieure à son point de rosée au moyen d'un échangeur de chaleur relié à un groupe frigorifique classique, ce qui provoque la condensation de l'humidité qu'il contient",
+            "B-intro": "Tous les éléments dessinés sur le P&ID avec cette étiquette sont traités de la même manière :",
+            "B-tags": [
+                "DRY = Sécheur"
+            ]
+        },
+        "Fg dry run def": {
+            "title": "Sécheur frigorifique",
+            "A-infos": "Ce type de sécheur consiste à refroidir l'air comprimé à une température inférieure à son point de rosée au moyen d'un échangeur de chaleur relié à un groupe frigorifique classique, ce qui provoque la condensation de l'humidité qu'il contient",
+            "B-intro": "Tous les éléments dessinés sur le P&ID avec cette étiquette sont traités de la même manière :",
+            "B-tags": [
+                "DRY = Sécheur"
+            ]
+        },
         "Ads dry def": {
             "title": "Sécheur à adsorption",
             "A-infos": "L'adsorption est un processus physique qui permet aux molécules de se fixer à la surface d'un solide. Dans notre cas, il va déshumidifier l'air comprimé qui le traverse",
@@ -215,6 +231,22 @@
         },
         "Ads Dry eco hygro": {
             "title": "Sécheur à adsorption avec hygromètre et mode éco",
+            "A-infos": "L'adsorption est un processus physique qui permet aux molécules de se fixer à la surface d'un solide. Dans notre cas, il va déshumidifier l'air comprimé qui le traverse",
+            "B-intro": "Tous les éléments dessinés sur le P&ID avec ce tag sont traités de la même manière :",
+            "B-tags": [
+                "DRY = Sécheur"
+            ]
+        },
+        "Ads Dry eco hygro run def run": {
+            "title": "Sécheur à adsorption",
+            "A-infos": "L'adsorption est un processus physique qui permet aux molécules de se fixer à la surface d'un solide. Dans notre cas, il va déshumidifier l'air comprimé qui le traverse",
+            "B-intro": "Tous les éléments dessinés sur le P&ID avec ce tag sont traités de la même manière :",
+            "B-tags": [
+                "DRY = Sécheur"
+            ]
+        },
+        "Ads Dry eco hygro run def": {
+            "title": "Sécheur à adsorption",
             "A-infos": "L'adsorption est un processus physique qui permet aux molécules de se fixer à la surface d'un solide. Dans notre cas, il va déshumidifier l'air comprimé qui le traverse",
             "B-intro": "Tous les éléments dessinés sur le P&ID avec ce tag sont traités de la même manière :",
             "B-tags": [

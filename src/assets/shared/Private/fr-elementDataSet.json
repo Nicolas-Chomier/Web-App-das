@@ -1306,6 +1306,130 @@
         "ConsumerName": "Sécheur frigorifique",
         "FunctionBloc": false
     },
+    "3018": {
+        "IO": {
+            "DI": 2,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": [
+                    "Info défauts sécheur",
+                    "Info fonctionement sécheur"
+                ],
+                "DO": "Ordre de démarrage du sécheur",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut du sécheur frigorifique",
+                        "Sortie défaut du sécheur frigorifique",
+                        "Activation d'un défaut"
+                    ],
+                    [
+                        "Information fonctionement du sécheur",
+                        "Sortie info fonctionement du sécheur frigorifique activée",
+                        "Indique que le sécheur frigorifique est pret"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Démarrage du sécheur",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarre le sécheur"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Sécheur frigorifique",
+        "FunctionBloc": false
+    },
+    "3019": {
+        "IO": {
+            "DI": 2,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": [
+                    "Info défauts sécheur",
+                    "Info fonctionement sécheur"
+                ],
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut du sécheur frigorifique",
+                        "Sortie défaut du sécheur frigorifique",
+                        "Activation d'un défaut"
+                    ],
+                    [
+                        "Information fonctionement du sécheur",
+                        "Sortie info fonctionement du sécheur frigorifique activée",
+                        "Indique que le sécheur frigorifique est pret"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Sécheur frigorifique",
+        "FunctionBloc": false
+    },
     "3017": {
         "IO": {
             "DI": 1,
@@ -1426,7 +1550,7 @@
             "fr": {
                 "DI": "Info défauts sécheur",
                 "DO": [
-                    "Démarrage du sécheur + Mode économique",
+                    "Activation du mode économique",
                     "Ordre de démarrage du sécheur"
                 ],
                 "AI": "",
@@ -1559,7 +1683,7 @@
             "fr": {
                 "DI": "Info défauts sécheur",
                 "DO": [
-                    "Démarrage du sécheur + Mode économique",
+                    "Activation du mode économique",
                     "Ordre de démarrage du sécheur"
                 ],
                 "AI": "Transmetteur d'humidité 4-20mA",
@@ -1587,6 +1711,138 @@
                         "Activation de la sortie numérique de l'automate",
                         "Demarrage du sécheur en mode économique"
                     ]
+                ],
+                "AI": [
+                    [
+                        "Informations sur l'hygrométrie",
+                        "Envoi d'un signal analogique par le sécheur",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Sécheur par adsorption",
+        "FunctionBloc": false
+    },
+    "3020": {
+        "IO": {
+            "DI": 2,
+            "DO": 1,
+            "AI": 1,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": [
+                    "Info défauts sécheur",
+                    "Info fonctionement sécheur"
+                ],
+                "DO": "Ordre de démarrage du sécheur",
+                "AI": "Transmetteur d'humidité 4-20mA",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut du sécheur à adsorption",
+                        "Sortie défaut du sécheur par adsorption",
+                        "Activation d'un défaut"
+                    ],
+                    [
+                        "Information fonctionnement du sécheur",
+                        "Sortie info fonctionnement du sécheur adsorption activée",
+                        "Indique que le sécheur à adsorption est prêt"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Démarrage du sécheur",
+                        "Activation de la sortie numérique de l'automate",
+                        "Démarre le sécheur"
+                    ]
+                ],
+                "AI": [
+                    [
+                        "Informations sur l'hygrométrie",
+                        "Envoi d'un signal analogique par le sécheur",
+                        "Activation d'un défaut"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "Entrée PLC activée après 3 secondes"
+                ]
+            ]
+        },
+        "ConsumerName": "Sécheur par adsorption",
+        "FunctionBloc": false
+    },
+    "3021": {
+        "IO": {
+            "DI": 2,
+            "DO": 0,
+            "AI": 1,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": [
+                    "Info défauts sécheur",
+                    "Info fonctionement sécheur"
+                ],
+                "DO": "",
+                "AI": "Transmetteur d'humidité 4-20mA",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    [
+                        "Défaut du sécheur à adsorption",
+                        "Sortie défaut du sécheur par adsorption",
+                        "Activation d'un défaut"
+                    ],
+                    [
+                        "Information fonctionement du sécheur",
+                        "Sortie info fonctionement du sécheur adsorption activée",
+                        "Indique que le sécheur à adsorption est pret"
+                    ]
+                ],
+                "DO": [
+                    []
                 ],
                 "AI": [
                     [
@@ -3556,13 +3812,13 @@
                     "Contrôle de la charge"
                 ],
                 "AI": [
-                    "Espace disponible",
-                    "Espace disponible",
+                    "Mesure d'intensité du moteur",
+                    "Mesure de la pression de sortie du compresseur",
                     "Espace disponible",
                     "Espace disponible"
                 ],
                 "AO": [
-                    "Espace disponible",
+                    "Envoi de la consigne de pilotage",
                     "Espace disponible"
                 ],
                 "AIt": ""
@@ -3624,29 +3880,25 @@
                 ],
                 "AI": [
                     [
-                        "WIP",
-                        "WIP",
-                        "WIP"
+                        "Mesure d'intensité du moteur",
+                        "Signal 4-20mA actif",
+                        "Indique la valeur du courant traversant le moteur"
                     ],
                     [
-                        "WIP",
-                        "WIP",
-                        "WIP"
+                        "Mesure de pression",
+                        "Signal 4-20mA actif",
+                        "Mesure de la pression de sortie du compresseur"
                     ],
                     [],
                     []
                 ],
                 "AO": [
                     [
-                        "WIP",
-                        "WIP",
-                        "WIP"
+                        "Envoie d'une valeur analogique (4-20mA)",
+                        "Sortie analogique de l'automate active",
+                        "Pilote le compresseur avec une nouvelle consigne"
                     ],
-                    [
-                        "WIP",
-                        "WIP",
-                        "WIP"
-                    ]
+                    []
                 ],
                 "AIt": [
                     []
@@ -4093,13 +4345,13 @@
                     "Contrôle de la charge"
                 ],
                 "AI": [
-                    "Espace disponible",
-                    "Espace disponible",
-                    "Espace disponible",
+                    "Mesure d'intensité du moteur",
+                    "Mesure de la pression de sortie du compresseur",
+                    "Mesure de la pression d'entrée' du compresseur",
                     "Espace disponible"
                 ],
                 "AO": [
-                    "Espace disponible",
+                    "Envoi de la consigne de pilotage",
                     "Espace disponible"
                 ],
                 "AIt": ""
@@ -4161,29 +4413,29 @@
                 ],
                 "AI": [
                     [
-                        "WIP",
-                        "WIP",
-                        "WIP"
+                        "Mesure d'intensité du moteur",
+                        "Signal 4-20mA actif",
+                        "Indique la valeur du courant traversant le moteur"
                     ],
                     [
-                        "WIP",
-                        "WIP",
-                        "WIP"
+                        "Mesure de pression",
+                        "Signal 4-20mA actif",
+                        "Mesure de la pression de sortie du compresseur"
                     ],
-                    [],
+                    [
+                        "Mesure de pression",
+                        "Signal 4-20mA actif",
+                        "Mesure de la pression d'entrée du compresseur"
+                    ],
                     []
                 ],
                 "AO": [
                     [
-                        "WIP",
-                        "WIP",
-                        "WIP"
+                        "Envoie d'une valeur analogique (4-20mA)",
+                        "Sortie analogique de l'automate active",
+                        "Pilote le compresseur avec une nouvelle consigne"
                     ],
-                    [
-                        "WIP",
-                        "WIP",
-                        "WIP"
-                    ]
+                    []
                 ],
                 "AIt": [
                     []

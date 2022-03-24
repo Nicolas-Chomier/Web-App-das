@@ -181,6 +181,22 @@
                 "DRY = Dryer"
             ]
         },
+        "Fg dry run def run": {
+            "title": "Refrigeration dryer",
+            "A-infos": "This type of dryer consists of cooling the compressed air to a temperature below its dew point by means of a heat exchanger connected to a conventional refrigeration unit, which causes the humidity it contains to condense.",
+            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+            "B-tags": [
+                "DRY = Dryer"
+            ]
+        },
+        "Fg dry run def": {
+            "title": "Refrigeration dryer",
+            "A-infos": "This type of dryer consists of cooling the compressed air to a temperature below its dew point by means of a heat exchanger connected to a conventional refrigeration unit, which causes the humidity it contains to condense.",
+            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+            "B-tags": [
+                "DRY = Dryer"
+            ]
+        },
         "Ads dry def": {
             "title": "Adsorption dryer",
             "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it.",
@@ -215,6 +231,22 @@
         },
         "Ads Dry eco hygro": {
             "title": "Adsorption dryer with hygrometer and eco mode",
+            "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it.",
+            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+            "B-tags": [
+                "DRY = Dryer"
+            ]
+        },
+        "Ads Dry eco hygro run def run": {
+            "title": "Adsorption dryer",
+            "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it.",
+            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+            "B-tags": [
+                "DRY = Dryer"
+            ]
+        },
+        "Ads Dry eco hygro run def": {
+            "title": "Adsorption dryer",
             "A-infos": "Adsorption is a physical process that allows molecules to be attached to the surface of a solid. In our case, it will dehumidify the compressed air passing through it.",
             "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
             "B-tags": [

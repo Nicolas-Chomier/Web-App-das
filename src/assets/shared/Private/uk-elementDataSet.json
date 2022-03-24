@@ -1306,6 +1306,130 @@
         "ConsumerName": "Refrigeration dryer",
         "FunctionBloc": false
     },
+    "3018": {
+        "IO": {
+            "DI": 2,
+            "DO": 1,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "uk": {
+                "DI": [
+                    "Dryer fault info",
+                    "Dryer running info"
+                ],
+                "DO": "Dryer start order",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "uk": {
+                "DI": [
+                    [
+                        "Refrigeration dryer fault",
+                        "Refrigeration dryer output fault",
+                        "Fault activation"
+                    ],
+                    [
+                        "Drier operation information",
+                        "Refrigeration dryer operation information output activated",
+                        "Indicates that the refrigeration dryer is ready"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Start of the dryer",
+                        "Activate the digital output of the PLC",
+                        "Start the dryer"
+                    ]
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "uk": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "PLC input activated after 3 seconds"
+                ]
+            ]
+        },
+        "ConsumerName": "Refrigeration dryer",
+        "FunctionBloc": false
+    },
+    "3019": {
+        "IO": {
+            "DI": 2,
+            "DO": 0,
+            "AI": 0,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "uk": {
+                "DI": [
+                    "Dryer fault info",
+                    "Dryer running info"
+                ],
+                "DO": "",
+                "AI": "",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "uk": {
+                "DI": [
+                    [
+                        "Refrigeration dryer fault",
+                        "Refrigeration dryer output fault",
+                        "Fault activation"
+                    ],
+                    [
+                        "Drier operation information",
+                        "Refrigeration dryer operation information output activated",
+                        "Indicates that the refrigeration dryer is ready"
+                    ]
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    []
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "uk": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "PLC input activated after 3 seconds"
+                ]
+            ]
+        },
+        "ConsumerName": "Sécheur frigorifique",
+        "FunctionBloc": false
+    },
     "3017": {
         "IO": {
             "DI": 1,
@@ -1587,6 +1711,138 @@
                         "PLC digital output activation",
                         "Start dryer eco mode"
                     ]
+                ],
+                "AI": [
+                    [
+                        "Humidity information",
+                        "Analog signal sending by dryer",
+                        "Fault activation"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "uk": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "PLC input activated after 3 seconds"
+                ]
+            ]
+        },
+        "ConsumerName": "Adsorbtion dryer",
+        "FunctionBloc": false
+    },
+    "3020": {
+        "IO": {
+            "DI": 2,
+            "DO": 1,
+            "AI": 1,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "uk": {
+                "DI": [
+                    "Dryer fault info",
+                    "Dryer running info"
+                ],
+                "DO": "Dryer start order",
+                "AI": "Humidity transmitter 4-20mA",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "uk": {
+                "DI": [
+                    [
+                        "Adsorbtion dryer fault",
+                        "Adsorbtion dryer output fault",
+                        "Fault activation"
+                    ],
+                    [
+                        "Dryer operation information",
+                        "Adsorption dryer operation info output activated",
+                        "Indicates that the adsorption dryer is ready"
+                    ]
+                ],
+                "DO": [
+                    [
+                        "Dryer start",
+                        "PLC digital output activation",
+                        "Start the dryer"
+                    ]
+                ],
+                "AI": [
+                    [
+                        "Humidity information",
+                        "Analog signal sending by dryer",
+                        "Fault activation"
+                    ]
+                ],
+                "AO": [
+                    []
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "uk": [
+                [
+                    "def_[TAG]",
+                    "TMI",
+                    "PLC input activated after 3 seconds"
+                ]
+            ]
+        },
+        "ConsumerName": "Adsorbtion dryer",
+        "FunctionBloc": false
+    },
+    "3021": {
+        "IO": {
+            "DI": 2,
+            "DO": 0,
+            "AI": 1,
+            "AO": 0,
+            "AIt": 0
+        },
+        "Text": {
+            "uk": {
+                "DI": [
+                    "Dryer fault info",
+                    "Dryer running info"
+                ],
+                "DO": "",
+                "AI": "Humidity transmitter 4-20mA",
+                "AO": "",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "uk": {
+                "DI": [
+                    [
+                        "Adsorbtion dryer fault",
+                        "Adsorbtion dryer output fault",
+                        "Fault activation"
+                    ],
+                    [
+                        "Dryer operation information",
+                        "Adsorption dryer operation info output activated",
+                        "Indicates that the adsorption dryer is ready"
+                    ]
+                ],
+                "DO": [
+                    []
                 ],
                 "AI": [
                     [
@@ -3556,13 +3812,13 @@
                     "Load control"
                 ],
                 "AI": [
-                    "Slot available",
-                    "Slot available",
+                    "Motor current measurement",
+                    "Compressor outlet pressure measurement",
                     "Slot available",
                     "Slot available"
                 ],
                 "AO": [
-                    "Slot available",
+                    "Sending the control setpoint",
                     "Slot available"
                 ],
                 "AIt": ""
@@ -3624,29 +3880,25 @@
                 ],
                 "AI": [
                     [
-                        "WIP",
-                        "WIP",
-                        "WIP"
+                        "Motor current measurement",
+                        "4-20mA signal active",
+                        "Indicates the value of the current flowing through the motor"
                     ],
                     [
-                        "WIP",
-                        "WIP",
-                        "WIP"
+                        "Pressure measurement",
+                        "4-20mA signal active",
+                        "Compressor output pressure measurement"
                     ],
                     [],
                     []
                 ],
                 "AO": [
                     [
-                        "WIP",
-                        "WIP",
-                        "WIP"
+                        "Sends an analogue value (4-20mA)",
+                        "Analogue output of the PLC active",
+                        "Controls the compressor with a new setpoint"
                     ],
-                    [
-                        "WIP",
-                        "WIP",
-                        "WIP"
-                    ]
+                    []
                 ],
                 "AIt": [
                     []
@@ -4093,13 +4345,13 @@
                     "Load control"
                 ],
                 "AI": [
-                    "Slot available",
-                    "Slot available",
-                    "Slot available",
+                    "Motor current measurement",
+                    "Compressor outlet pressure measurement",
+                    "Compressor inlet pressure measurement",
                     "Slot available"
                 ],
                 "AO": [
-                    "Slot available",
+                    "Sending the control setpoint",
                     "Slot available"
                 ],
                 "AIt": ""
@@ -4161,29 +4413,29 @@
                 ],
                 "AI": [
                     [
-                        "WIP",
-                        "WIP",
-                        "WIP"
+                        "Motor current measurement",
+                        "4-20mA signal active",
+                        "Indicates the value of the current flowing through the motor"
                     ],
                     [
-                        "WIP",
-                        "WIP",
-                        "WIP"
+                        "Pressure measurement",
+                        "4-20mA signal active",
+                        "Compressor output pressure measurement"
                     ],
-                    [],
+                    [
+                        "Pressure measurement",
+                        "4-20mA signal active",
+                        "Compressor inlet pressure measurement"
+                    ],
                     []
                 ],
                 "AO": [
                     [
-                        "WIP",
-                        "WIP",
-                        "WIP"
+                        "Sends an analogue value (4-20mA)",
+                        "Analogue output of the PLC active",
+                        "Controls the compressor with a new setpoint"
                     ],
-                    [
-                        "WIP",
-                        "WIP",
-                        "WIP"
-                    ]
+                    []
                 ],
                 "AIt": [
                     []

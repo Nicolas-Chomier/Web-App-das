@@ -179,46 +179,66 @@
                 }
             },
             "Secheur frigorifique": {
-                "defaut simple": {
+                "retour défaut": {
                     "id": 3016,
                     "generic name": "Fg dry def",
                     "FB": ""
                 },
-                "ordre de marche et defaut": {
+                "ordre marche, retour défaut": {
                     "id": 3002,
                     "generic name": "Fg dry",
                     "FB": ""
                 },
-                "avec capteur d'hygrométrie integré": {
+                "ordre marche, retour défaut, FT": {
                     "id": 3003,
                     "generic name": "Fg dry hygro",
+                    "FB": ""
+                },
+                "ordre marche, retour défaut, retour marche": {
+                    "id": 3018,
+                    "generic name": "Fg dry run def run",
+                    "FB": ""
+                },
+                "retour défaut, retour marche": {
+                    "id": 3019,
+                    "generic name": "Fg dry run def",
                     "FB": ""
                 }
             },
             "Secheur à adsorbtion": {
-                "defaut simple": {
+                "retour défaut": {
                     "id": 3017,
                     "generic name": "Ads dry def",
                     "FB": ""
                 },
-                "ordre de marche et defaut": {
+                "ordre marche, retour défaut": {
                     "id": 3004,
                     "generic name": "Ads Dry",
                     "FB": ""
                 },
-                "avec mode économique": {
+                "ordre marche, retour défaut, mode éco": {
                     "id": 3005,
                     "generic name": "Ads Dry eco",
                     "FB": ""
                 },
-                "avec capteur d'hygrométrie integré": {
+                "ordre marche, retour défaut, FT": {
                     "id": 3006,
                     "generic name": "Ads Dry hygro",
                     "FB": ""
                 },
-                "avec mode économique, et capteur d'hygrométrie integré": {
+                "ordre marche, retour défaut, FT, mode éco": {
                     "id": 3007,
                     "generic name": "Ads Dry eco hygro",
+                    "FB": ""
+                },
+                "ordre marche, retour défaut, retour marche, FT": {
+                    "id": 3020,
+                    "generic name": "Ads Dry eco hygro run def run",
+                    "FB": ""
+                },
+                "retour défaut, retour marche, FT": {
+                    "id": 3021,
+                    "generic name": "Ads Dry eco hygro run def",
                     "FB": ""
                 }
             },
