@@ -2785,7 +2785,7 @@
                 ],
                 "AO": [
                     [
-                        "Odre de pilotage de la vanne",
+                        "Ordre de pilotage de la vanne",
                         "Activation de la sortie analogique du PLC",
                         "Pilotage de la vanne (4-20mA)"
                     ]
@@ -2845,7 +2845,7 @@
                 ],
                 "AO": [
                     [
-                        "Odre de pilotage de la vanne",
+                        "Ordre de pilotage de la vanne",
                         "Activation de la sortie analogique du PLC",
                         "Pilotage de la vanne (4-20mA)"
                     ]
