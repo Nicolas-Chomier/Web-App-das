@@ -319,24 +319,34 @@
                 }
             },
             "Vanne 2 voies motorisée": {
-                "Simple": {
+                "TOR": {
                     "id": 4005,
                     "generic name": "2w es",
                     "FB": ""
                 },
-                "Simple + retour de position": {
+                "TOR, retour de position": {
                     "id": 4006,
                     "generic name": "2w ef",
                     "FB": ""
                 },
-                "Pilotée": {
+                "Pilotée (4-20mA)": {
                     "id": 4007,
                     "generic name": "2w ep",
                     "FB": ""
                 },
-                "Pilotée + retour de position(analogique)": {
+                "Pilotée (4-20mA), retour de position (4-20mA)": {
                     "id": 4008,
                     "generic name": "2w epfa",
+                    "FB": ""
+                },
+                "Pilotée, PT amont": {
+                    "id": 4022,
+                    "generic name": "2w pta",
+                    "FB": ""
+                },
+                "Pilotée, PT amont, PT aval": {
+                    "id": 4023,
+                    "generic name": "2w ptal",
                     "FB": ""
                 }
             },

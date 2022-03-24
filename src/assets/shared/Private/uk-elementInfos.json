@@ -351,6 +351,22 @@
                 "PV = Powered Valve"
             ]
         },
+        "2w pta": {
+            "title": "Exhaust valve with upstream pressure measurement",
+            "A-infos": "A valve driven by an electric motor (4-20mA signal) with an upstream pressure measurement",
+            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+            "B-tags": [
+                "PV = Powered Valve"
+            ]
+        },
+        "2w ptal": {
+            "title": "Weir valves with upstream & downstream pressure measurement",
+            "A-infos": "A valve driven by an electric motor (4-20mA signal) with upstream and downstream pressure measurement",
+            "B-intro": "All elements drawn on P&ID with this tag are treated on the same way:",
+            "B-tags": [
+                "PV = Powered Valve"
+            ]
+        },
         "2w ef": {
             "title": "Motorised 2 way valves whith position feedback",
             "A-infos": "A valve piloted by electrical motor and sending feedback depending to its position.",

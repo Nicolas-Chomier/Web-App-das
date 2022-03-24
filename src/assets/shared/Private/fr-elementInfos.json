@@ -351,6 +351,22 @@
                 "PV = Vanne pilotée"
             ]
         },
+        "2w pta": {
+            "title": "Vanne d'échappement avec mesure de pression amont",
+            "A-infos": "Une vanne pilotée par un moteur électrique (signal 4-20mA) avec une mesure de pression en amont",
+            "B-intro": "Tous les éléments dessinés sur le P&ID avec cette étiquette sont traités de la même manière :",
+            "B-tags": [
+                "PV = Vanne pilotée"
+            ]
+        },
+        "2w ptal": {
+            "title": "Vannes de déverse avec mesure de pression amont & aval",
+            "A-infos": "Une vanne pilotée par un moteur électrique (signal 4-20mA) avec une mesure de pression en amont et aval",
+            "B-intro": "Tous les éléments dessinés sur le P&ID avec cette étiquette sont traités de la même manière :",
+            "B-tags": [
+                "PV = Vanne pilotée"
+            ]
+        },
         "2w ef": {
             "title": "Vannes motorisées à 2 voies avec retour de position",
             "A-infos": "Une vanne pilotée par un moteur électrique et envoyant un retour d'information en fonction de sa position.",

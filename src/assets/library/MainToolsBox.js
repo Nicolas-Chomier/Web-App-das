@@ -17,7 +17,7 @@ class MainToolsBox {
     this.openAir = rawAbstract.Project.OpenAir;
     this.hmiId = rawAbstract.Project.Technology.id;
     this.native = rawAbstract.Project.Technology.nativeDevice;
-    this.noSlot = "Spare";
+    this.noSlot = "";
   }
 }
 // Specific class for quotation document
@@ -70,7 +70,7 @@ export class AFBuilder extends MainToolsBox {
   constructor(rawAbstract, flag) {
     super(rawAbstract, flag);
     this.cmdCtrlRow1 = [
-      "DESIGNATION",
+      "DÉSIGNATION",
       "TYPE",
       "N°",
       "CONDITION D'ACTIVATION",
@@ -177,11 +177,11 @@ export class ARCHBuilder extends MainToolsBox {
   constructor(rawAbstract, flag) {
     super(rawAbstract, flag);
     this.colorPanel = {
-      DI: "9cfffa",
-      DO: "f3d34a",
-      AI: "a97c73",
+      DI: "244EF1",
+      DO: "FFA300",
+      AI: "B936CD",
       AO: "af3e4d",
-      AIt: "011638",
+      AIt: "DD122D",
     };
   }
   nativeDeviceInfos() {
@@ -291,7 +291,7 @@ export class ARCHBuilder extends MainToolsBox {
       if (value !== 0) {
         for (let i = 0; i < value; i++) {
           const tag =
-            tagList[key].length > 0 ? tagList[key].shift() : this.noSlot;
+            tagList[key].length > 0 ? tagList[key].shift() : "disponible";
           list.push(
             new Paragraph({
               children: [
@@ -333,7 +333,7 @@ export class ARCHBuilder extends MainToolsBox {
       const rowKey = [];
       for (let i = 0; i < value; i++) {
         const rawTag = source["MAIN"][key].shift();
-        const tag = rawTag === undefined ? "Available" : rawTag;
+        const tag = rawTag === undefined ? "Disponible" : rawTag;
         rowKey.push(tag);
       }
       RawTable.push(rowKey);
@@ -377,7 +377,7 @@ export class IOLISTBuilder extends MainToolsBox {
     const mIoL = profaceDatas.PROFACE[module]["IoList"];
     const mRef = profaceDatas.PROFACE[module]["Reference"];
     // Build table sub title
-    const title = `Module Réf: ${mRef}`; //!
+    const title = `Module Réf : ${mRef}`;
     table.push([title], firstRow);
     for (const [key, value] of Object.entries(mIoL)) {
       for (let i = 0; i < value; i++) {

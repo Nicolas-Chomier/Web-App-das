@@ -106,7 +106,7 @@ export class Proface {
     let ti = target.AIt;
     let ri = ai % this.aMax;
     let ro = ao % this.aMid;
-    let _input = 0; //! utile ?.
+    //let _input = 0; //! utile ?.
     let _output = 0; //! utile ?.
     //console.log("proface", ai, ao);
     // Analog Input Filling :
@@ -114,10 +114,10 @@ export class Proface {
     if (ri !== 0) {
       if (ri > this.aMid) {
         analogResult.module6 += 1;
-        _input += this.aMax - ri;
+        //_input += this.aMax - ri;
       } else {
         analogResult.module9 += 1;
-        _input += this.aMid - ri;
+        //_input += this.aMid - ri;
         _output += this.aMin;
       }
     }
@@ -134,11 +134,11 @@ export class Proface {
         _output += this.aMid - ro;
       } else if (_output >= ro) {
         _output += this.aMin - ro;
-        _input += this.aMid;
+        //_input += this.aMid;
       } else {
         analogResult.module9 += 1;
         _output += this.aMin - ro;
-        _input += this.aMid;
+        //_input += this.aMid;
       }
     }
     // Correction : //! A tester, si pas de bug a virer

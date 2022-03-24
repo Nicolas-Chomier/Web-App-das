@@ -1,5 +1,5 @@
 {
-    "Spare": {
+    "": {
         "IO": {
             "DI": 0,
             "DO": 0,
@@ -41,11 +41,11 @@
         },
         "Text": {
             "fr": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": "Espace réservé au projet",
+                "DO": "Espace réservé au projet",
+                "AI": "Espace réservé au projet",
+                "AO": "Espace réservé au projet",
+                "AIt": "Espace réservé au projet"
             }
         },
         "AF": {
@@ -2660,7 +2660,7 @@
                 "DI": "",
                 "DO": "",
                 "AI": "",
-                "AO": "Pilotage de la vanne",
+                "AO": "Pilotage de la vanne (4-20mA)",
                 "AIt": ""
             }
         },
@@ -2746,6 +2746,118 @@
                     "TMA",
                     "Déclenchement du comparateur de valeurs sur le PLC"
                 ]
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4022": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 1,
+            "AO": 1,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": "Mesure de la pression d'entrée",
+                "AO": "Pilotage de la vanne (4-20mA)",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    [
+                        "Mesure de pression",
+                        "Signal 4-20mA actif",
+                        "Mesure de la pression en amont de la vanne"
+                    ]
+                ],
+                "AO": [
+                    [
+                        "Odre de pilotage de la vanne",
+                        "Activation de la sortie analogique du PLC",
+                        "Pilotage de la vanne (4-20mA)"
+                    ]
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4023": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 2,
+            "AO": 1,
+            "AIt": 0
+        },
+        "Text": {
+            "fr": {
+                "DI": "",
+                "DO": "",
+                "AI": [
+                    "Mesure de la pression d'entrée",
+                    "Mesure de la pression de sortie"
+                ],
+                "AO": "Pilotage de la vanne (4-20mA)",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "fr": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    [
+                        "Mesure de pression",
+                        "Signal 4-20mA actif",
+                        "Mesure de la pression en amont de la vanne"
+                    ],
+                    [
+                        "Mesure de pression",
+                        "Signal 4-20mA actif",
+                        "Mesure de la pression en aval de la vanne"
+                    ]
+                ],
+                "AO": [
+                    [
+                        "Odre de pilotage de la vanne",
+                        "Activation de la sortie analogique du PLC",
+                        "Pilotage de la vanne (4-20mA)"
+                    ]
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "fr": [
+                []
             ]
         },
         "ConsumerName": false,

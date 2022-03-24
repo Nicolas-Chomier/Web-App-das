@@ -65,7 +65,7 @@ export class DocxJsMethods extends DocxJsBuilder {
       },
       3: {
         rank: HeadingLevel.HEADING_3,
-        color: "FBBF08",
+        color: "FFB100",
         break: false,
       },
     };
@@ -194,7 +194,7 @@ export class DocxJsMethods extends DocxJsBuilder {
     };
     //* Document table style only for column
     this.scc = {
-      multiColor: ["000000", "9cfffa", "f3d34a", "a97c73", "af3e4d", "011638"],
+      multiColor: ["000000", "244EF1", "FFA300", "B936CD", "af3e4d", "DD122D"],
     };
     //* Document list style
     this.stl = {
@@ -215,6 +215,7 @@ export class DocxJsMethods extends DocxJsBuilder {
       PURPLE: "9108F1",
       ORANGE: "F9B30C",
       BROWN: "744611",
+      PINK: "FB2DFF",
     };
     //* Document array style
     this.sar = { multi: [] };
@@ -269,7 +270,7 @@ export class DocxJsMethods extends DocxJsBuilder {
     targetList = [],
     bold = false,
     font = "Calibri",
-    textSize = 20,
+    textSize = 24,
     color = "000000",
     italics = false,
     underline = false

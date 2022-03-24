@@ -76,8 +76,8 @@ export class MainDataCreator extends MotherDataCreator {
     this.hmiId = rawAbstract.Project.Technology.id;
     this.pTitle = rawAbstract.Project.Title;
     this.openAirItemTable = ["OPA-F", "OPA-V", "OPA-CTF"]; // When Open air option is choosen, its important to filter open air compressor
-    this.rsl = { DI: 6, DO: 4, AI: 0, AO: 0, AIt: 0 }; // Mandatory reserved slot attribute to each project
-    this.mandatoryIdName = "CP-";
+    this.rsl = { DI: 6, DO: 5, AI: 0, AO: 0, AIt: 0 }; // Mandatory reserved slot attribute to each project
+    this.mandatoryIdName = "Compresseur N°";
   }
   plcNativeIoList() {
     const nativIo = profaceDatas.PROFACE[this.hmiId]["NativeIO"];
@@ -113,14 +113,13 @@ export class MainDataCreator extends MotherDataCreator {
     const plcNative = this.plcNativeIoList(); // Get native device IOList from choosen PLC
     let j = 1; // Counter for OPEN AIR Compressor
     // Build object with sub object inside each sub Object represent an IOList
-    for (const value of Object.values(dataSet)) {
-      const elemIoList = this.privateDatas[value.id]["IO"];
-      if (this.openAirItemTable.includes(value.name)) {
+    for (const item of Object.values(dataSet)) {
+      const elemIoList = this.privateDatas[item.id]["IO"];
+      if (this.openAirItemTable.includes(item.name)) {
         // Naming open air compressor
-        //! a voir pour chnager le nom generic des compresseurs
-        const label = `${this.mandatoryIdName}${j}`;
+        //! a voir pour changer le nom generic des compresseurs
+        const label = `${this.mandatoryIdName}${j} : ${item.tag}`; // : ${value.tag}
         modele[label] = this.emptyIolist();
-        //const labelTest = value.tag
         for (const [item, numbers] of Object.entries(elemIoList)) {
           modele[label][item] += numbers;
         }
@@ -202,7 +201,7 @@ export class MainDataCreator extends MotherDataCreator {
     const dataset = this.removeAbstractDuplicate();
     const obj = this.emptyShapeForTagList();
     const lowTar = target.toLowerCase();
-    const rSlot = lowTar === "id" ? "0000" : "Reserved";
+    const rSlot = lowTar === "id" ? "0000" : "espace réservé au projet";
     let j = 1;
     // Fill listing with tags
     for (const item of dataset) {
@@ -218,7 +217,8 @@ export class MainDataCreator extends MotherDataCreator {
         }
         // Tag belong to compressor Open air line
       } else {
-        const label = `${this.mandatoryIdName}${j}`;
+        //! a voir pour changer le nom generic des compresseurs
+        const label = `${this.mandatoryIdName}${j} : ${item.tag}`;
         obj[label] = this.emptyTagList();
         for (const [key, value] of Object.entries(elemIoList)) {
           if (value) {

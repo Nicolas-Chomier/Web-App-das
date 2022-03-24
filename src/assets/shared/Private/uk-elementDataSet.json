@@ -1,5 +1,5 @@
 {
-    "Spare": {
+    "": {
         "IO": {
             "DI": 0,
             "DO": 0,
@@ -9,11 +9,11 @@
         },
         "Text": {
             "uk": {
-                "DI": "",
-                "DO": "",
-                "AI": "",
-                "AO": "",
-                "AIt": ""
+                "DI": "Available",
+                "DO": "Available",
+                "AI": "Available",
+                "AO": "Available",
+                "AIt": "Available"
             }
         },
         "AF": {
@@ -41,11 +41,11 @@
         },
         "Text": {
             "uk": {
-                "DI": "Reserved",
-                "DO": "Reserved",
-                "AI": "Reserved",
-                "AO": "Reserved",
-                "AIt": "Reserved"
+                "DI": "Reserved for project",
+                "DO": "Reserved for project",
+                "AI": "Reserved for project",
+                "AO": "Reserved for project",
+                "AIt": "Reserved for project"
             }
         },
         "AF": {
@@ -2660,7 +2660,7 @@
                 "DI": "",
                 "DO": "",
                 "AI": "",
-                "AO": "Drive the valve",
+                "AO": "Drive the valve (4-20mA)",
                 "AIt": ""
             }
         },
@@ -2680,6 +2680,118 @@
                         "Driving valve order",
                         "PLC analog output activation",
                         "Drive the valve"
+                    ]
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "uk": [
+                []
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4022": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 1,
+            "AO": 1,
+            "AIt": 0
+        },
+        "Text": {
+            "uk": {
+                "DI": "",
+                "DO": "",
+                "AI": "Inlet pressure measurement",
+                "AO": "Valve control (4-20mA)",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "uk": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    [
+                        "Pressure measurement",
+                        "4-20mA signal active",
+                        "Pressure measurement upstream of the valve"
+                    ]
+                ],
+                "AO": [
+                    [
+                        "Valve control order",
+                        "Activation of the PLC analogue output",
+                        "Valve control (4-20mA)"
+                    ]
+                ],
+                "AIt": [
+                    []
+                ]
+            }
+        },
+        "FAULTS": {
+            "uk": [
+                []
+            ]
+        },
+        "ConsumerName": false,
+        "FunctionBloc": false
+    },
+    "4023": {
+        "IO": {
+            "DI": 0,
+            "DO": 0,
+            "AI": 2,
+            "AO": 1,
+            "AIt": 0
+        },
+        "Text": {
+            "uk": {
+                "DI": "",
+                "DO": "",
+                "AI": [
+                    "Inlet pressure measurement",
+                    "Outlet pressure measurement"
+                ],
+                "AO": "Valve control (4-20mA)",
+                "AIt": ""
+            }
+        },
+        "AF": {
+            "uk": {
+                "DI": [
+                    []
+                ],
+                "DO": [
+                    []
+                ],
+                "AI": [
+                    [
+                        "Pressure measurement",
+                        "4-20mA signal active",
+                        "Pressure measurement upstream of the valve"
+                    ],
+                    [
+                        "Pressure measurement",
+                        "4-20mA signal active",
+                        "Pressure measurement downstream of the valve"
+                    ]
+                ],
+                "AO": [
+                    [
+                        "Valve control order",
+                        "Activation of the PLC analogue output",
+                        "Valve control (4-20mA)"
                     ]
                 ],
                 "AIt": [
