@@ -86,6 +86,7 @@ export function documentConstructorForArchitecture(rawAbstract, flag) {
                 );
                 const lineUp = fromProviderDatas.GetlineUp(value);
                 for (const item of lineUp) {
+                  console.log(item);
                   Get.drawedTable(item, children, tagListing[key], imgListing);
                   Write.documentSpace(children);
                 }

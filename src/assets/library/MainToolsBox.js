@@ -103,10 +103,10 @@ export class AFBuilder extends MainToolsBox {
         )) {
           for (let i = 0; i < value; i++) {
             const size = this.privateDatas[id]["AF"][flag][key][i].length;
+            //! Attention ! Erreur possible si IOList ne correspond pas avec la taille de la liste de liste de text correspondante
             if (size !== 0) {
               const data = this.privateDatas[id]["AF"][flag][key][i];
               table.push(this.buildCompleteArray(i, key, data));
-              // Attention ! Erreur possible si IOList ne correspond pas avec la taille de la liste de liste de text correspondante
             }
           }
         }

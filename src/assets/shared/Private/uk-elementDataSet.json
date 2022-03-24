@@ -3410,8 +3410,8 @@
     },
     "6001": {
         "IO": {
-            "DI": 6,
-            "DO": 2,
+            "DI": 8,
+            "DO": 8,
             "AI": 0,
             "AO": 0,
             "AIt": 0
@@ -3419,6 +3419,8 @@
         "Text": {
             "uk": {
                 "DI": [
+                    "Slot available",
+                    "Slot available",
                     "Operating compressor",
                     "On-load operation",
                     "Engine running",
@@ -3427,6 +3429,12 @@
                     "local/remote"
                 ],
                 "DO": [
+                    "Slot available",
+                    "Slot available",
+                    "Slot available",
+                    "Slot available",
+                    "Slot available",
+                    "Slot available",
                     "Remote load activation",
                     "Load control"
                 ],
@@ -3467,7 +3475,9 @@
                         "local/remote order",
                         "Depend of the operator's choice",
                         "Let the compressor self managed or not"
-                    ]
+                    ],
+                    [],
+                    []
                 ],
                 "DO": [
                     [
@@ -3479,7 +3489,13 @@
                         "Load control",
                         "PLC digital output activation",
                         "Drive the load"
-                    ]
+                    ],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
                 ],
                 "AI": [
                     []
@@ -3511,15 +3527,17 @@
     },
     "6002": {
         "IO": {
-            "DI": 6,
-            "DO": 2,
-            "AI": 2,
+            "DI": 8,
+            "DO": 8,
+            "AI": 4,
             "AO": 2,
             "AIt": 0
         },
         "Text": {
             "uk": {
                 "DI": [
+                    "Slot available",
+                    "Slot available",
                     "Operating compressor",
                     "On-load operation",
                     "Engine running",
@@ -3528,16 +3546,24 @@
                     "local/remote"
                 ],
                 "DO": [
+                    "Slot available",
+                    "Slot available",
+                    "Slot available",
+                    "Slot available",
+                    "Slot available",
+                    "Slot available",
                     "Remote load activation",
                     "Load control"
                 ],
                 "AI": [
-                    "WIP",
-                    "WIP"
+                    "Slot available",
+                    "Slot available",
+                    "Slot available",
+                    "Slot available"
                 ],
                 "AO": [
-                    "WIP",
-                    "WIP"
+                    "Slot available",
+                    "Slot available"
                 ],
                 "AIt": ""
             }
@@ -3574,7 +3600,9 @@
                         "local/remote order",
                         "Depend of the operator's choice",
                         "Let the compressor self managed or not"
-                    ]
+                    ],
+                    [],
+                    []
                 ],
                 "DO": [
                     [
@@ -3586,7 +3614,13 @@
                         "Load control",
                         "PLC digital output activation",
                         "Drive the load"
-                    ]
+                    ],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
                 ],
                 "AI": [
                     [
@@ -3598,7 +3632,9 @@
                         "WIP",
                         "WIP",
                         "WIP"
-                    ]
+                    ],
+                    [],
+                    []
                 ],
                 "AO": [
                     [
@@ -4028,15 +4064,17 @@
     },
     "6010": {
         "IO": {
-            "DI": 6,
-            "DO": 2,
-            "AI": 2,
+            "DI": 8,
+            "DO": 8,
+            "AI": 4,
             "AO": 2,
             "AIt": 0
         },
         "Text": {
             "uk": {
                 "DI": [
+                    "Slot available",
+                    "Slot available",
                     "Operating compressor",
                     "On-load operation",
                     "Engine running",
@@ -4045,16 +4083,24 @@
                     "local/remote"
                 ],
                 "DO": [
+                    "Slot available",
+                    "Slot available",
+                    "Slot available",
+                    "Slot available",
+                    "Slot available",
+                    "Slot available",
                     "Remote load activation",
                     "Load control"
                 ],
                 "AI": [
-                    "WIP",
-                    "WIP"
+                    "Slot available",
+                    "Slot available",
+                    "Slot available",
+                    "Slot available"
                 ],
                 "AO": [
-                    "WIP",
-                    "WIP"
+                    "Slot available",
+                    "Slot available"
                 ],
                 "AIt": ""
             }
@@ -4091,7 +4137,9 @@
                         "local/remote order",
                         "Depend of the operator's choice",
                         "Let the compressor self managed or not"
-                    ]
+                    ],
+                    [],
+                    []
                 ],
                 "DO": [
                     [
@@ -4103,7 +4151,13 @@
                         "Load control",
                         "PLC digital output activation",
                         "Drive the load"
-                    ]
+                    ],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
                 ],
                 "AI": [
                     [
@@ -4115,7 +4169,9 @@
                         "WIP",
                         "WIP",
                         "WIP"
-                    ]
+                    ],
+                    [],
+                    []
                 ],
                 "AO": [
                     [

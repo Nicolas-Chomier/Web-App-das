@@ -3410,8 +3410,8 @@
     },
     "6001": {
         "IO": {
-            "DI": 6,
-            "DO": 2,
+            "DI": 8,
+            "DO": 8,
             "AI": 0,
             "AO": 0,
             "AIt": 0
@@ -3419,6 +3419,8 @@
         "Text": {
             "fr": {
                 "DI": [
+                    "Espace disponible",
+                    "Espace disponible",
                     "Fonctionnement du compresseur",
                     "Fonctionnement en charge",
                     "Moteur en marche",
@@ -3427,6 +3429,12 @@
                     "locale / distance"
                 ],
                 "DO": [
+                    "Espace disponible",
+                    "Espace disponible",
+                    "Espace disponible",
+                    "Espace disponible",
+                    "Espace disponible",
+                    "Espace disponible",
                     "Activation de la charge à distance",
                     "Contrôle de la charge"
                 ],
@@ -3467,7 +3475,9 @@
                         "Commande locale/à distance",
                         "Dépend du choix de l'opérateur",
                         "Laisser le compresseur s'autogérer ou non"
-                    ]
+                    ],
+                    [],
+                    []
                 ],
                 "DO": [
                     [
@@ -3479,7 +3489,13 @@
                         "Contrôle de la charge",
                         "Activation de la sortie numérique de l'automate",
                         "Piloter la charge"
-                    ]
+                    ],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
                 ],
                 "AI": [
                     []
@@ -3511,15 +3527,17 @@
     },
     "6002": {
         "IO": {
-            "DI": 6,
-            "DO": 2,
-            "AI": 2,
+            "DI": 8,
+            "DO": 8,
+            "AI": 4,
             "AO": 2,
             "AIt": 0
         },
         "Text": {
             "fr": {
                 "DI": [
+                    "Espace disponible",
+                    "Espace disponible",
                     "Fonctionnement du compresseur",
                     "Fonctionnement en charge",
                     "Moteur en marche",
@@ -3528,16 +3546,24 @@
                     "locale / distance"
                 ],
                 "DO": [
+                    "Espace disponible",
+                    "Espace disponible",
+                    "Espace disponible",
+                    "Espace disponible",
+                    "Espace disponible",
+                    "Espace disponible",
                     "Activation de la charge à distance",
                     "Contrôle de la charge"
                 ],
                 "AI": [
-                    "WIP",
-                    "WIP"
+                    "Espace disponible",
+                    "Espace disponible",
+                    "Espace disponible",
+                    "Espace disponible"
                 ],
                 "AO": [
-                    "WIP",
-                    "WIP"
+                    "Espace disponible",
+                    "Espace disponible"
                 ],
                 "AIt": ""
             }
@@ -3574,7 +3600,9 @@
                         "Commande locale/à distance",
                         "Dépend du choix de l'opérateur",
                         "Laisser le compresseur s'autogérer ou non"
-                    ]
+                    ],
+                    [],
+                    []
                 ],
                 "DO": [
                     [
@@ -3586,7 +3614,13 @@
                         "Contrôle de la charge",
                         "Activation de la sortie numérique de l'automate",
                         "Piloter la charge"
-                    ]
+                    ],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
                 ],
                 "AI": [
                     [
@@ -3598,7 +3632,9 @@
                         "WIP",
                         "WIP",
                         "WIP"
-                    ]
+                    ],
+                    [],
+                    []
                 ],
                 "AO": [
                     [
@@ -4028,15 +4064,17 @@
     },
     "6010": {
         "IO": {
-            "DI": 6,
-            "DO": 2,
-            "AI": 2,
+            "DI": 8,
+            "DO": 8,
+            "AI": 4,
             "AO": 2,
             "AIt": 0
         },
         "Text": {
             "fr": {
                 "DI": [
+                    "Espace disponible",
+                    "Espace disponible",
                     "Fonctionnement du compresseur",
                     "Fonctionnement en charge",
                     "Moteur en marche",
@@ -4045,16 +4083,24 @@
                     "locale / distance"
                 ],
                 "DO": [
+                    "Espace disponible",
+                    "Espace disponible",
+                    "Espace disponible",
+                    "Espace disponible",
+                    "Espace disponible",
+                    "Espace disponible",
                     "Activation de la charge à distance",
                     "Contrôle de la charge"
                 ],
                 "AI": [
-                    "WIP",
-                    "WIP"
+                    "Espace disponible",
+                    "Espace disponible",
+                    "Espace disponible",
+                    "Espace disponible"
                 ],
                 "AO": [
-                    "WIP",
-                    "WIP"
+                    "Espace disponible",
+                    "Espace disponible"
                 ],
                 "AIt": ""
             }
@@ -4091,7 +4137,9 @@
                         "Commande locale/à distance",
                         "Dépend du choix de l'opérateur",
                         "Laisser le compresseur s'autogérer ou non"
-                    ]
+                    ],
+                    [],
+                    []
                 ],
                 "DO": [
                     [
@@ -4103,7 +4151,13 @@
                         "Contrôle de la charge",
                         "Activation de la sortie numérique de l'automate",
                         "Piloter la charge"
-                    ]
+                    ],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    []
                 ],
                 "AI": [
                     [
@@ -4115,7 +4169,9 @@
                         "WIP",
                         "WIP",
                         "WIP"
-                    ]
+                    ],
+                    [],
+                    []
                 ],
                 "AO": [
                     [

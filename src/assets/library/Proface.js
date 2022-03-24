@@ -98,6 +98,7 @@ export class Proface {
     return numericalResult;
   }
   // Method wich calcul the numbers of analog proface module selection according given IOList //obsolete a refaire
+  //! Fonstion en test pour l'utilité de _input et _output
   analogModule(target) {
     const analogResult = { module6: 0, module7: 0, module8: 0, module9: 0 };
     let ai = target.AI;
@@ -105,9 +106,9 @@ export class Proface {
     let ti = target.AIt;
     let ri = ai % this.aMax;
     let ro = ao % this.aMid;
-    let _input = 0;
-    let _output = 0;
-
+    let _input = 0; //! utile ?.
+    let _output = 0; //! utile ?.
+    //console.log("proface", ai, ao);
     // Analog Input Filling :
     analogResult.module6 += Math.floor(ai / this.aMax);
     if (ri !== 0) {
@@ -140,10 +141,11 @@ export class Proface {
         _input += this.aMid;
       }
     }
-    // Correction :
-    if (_input === this.aMid && _output === this.aMin) {
+    // Correction : //! A tester, si pas de bug a virer
+    /* if (_input === this.aMid && _output === this.aMin) {
       analogResult.module9 -= 1;
-    }
+    } */
+    //console.log("analogResult", analogResult);
     return analogResult;
   }
   // Method wich calcul the numbers of special proface module according previous result on numerical and analog method
@@ -194,7 +196,6 @@ export class Proface {
     if (isEmpty !== true) {
       // Step 1 : build raw line up module
       const raw = this.getModuleList(IOList);
-      console.log("raw", raw);
       // Step 2 : Work on raw
       const filteredRaw = this.designModuleLine(raw);
       const splitedLineUp = this.splitModuleLine(filteredRaw);
