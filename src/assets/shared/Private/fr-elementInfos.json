@@ -497,7 +497,7 @@
                 "PD = Registre motorisé"
             ]
         },
-        "Vanne TOR": {
+        "Valve TOR": {
             "title": "Vannes solénoïdes",
             "A-infos": "La vanne électromagnétique (VME) ou électrovanne permet d'interrompre ou non le passage d'un fluide, elle se comporte comme un interrupteur",
             "B-intro": "Tous les éléments dessinés sur le P&ID avec cette étiquette sont traités de la même manière :",
